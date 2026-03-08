@@ -577,8 +577,8 @@ async function main() {
   // 6. Build dashboard HTML and write to /dashboard for GitHub Pages
   console.log("5. Building dashboard...");
   const dashboardHTML = buildDashboardHTML(top10, gameResults, aiAnalysis, date.label);
-  mkdirSync(join(__dirname, "../dashboard"), { recursive: true });
-  writeFileSync(join(__dirname, "../dashboard/index.html"), dashboardHTML);
+  mkdirSync(join(__dirname, "dashboard"), { recursive: true });
+  writeFileSync(join(__dirname, "dashboard/index.html"), dashboardHTML);
   console.log("   dashboard/index.html written");
 
   // 7. Send email via SendGrid
