@@ -17,7 +17,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DRY_RUN = process.argv.includes("--dry-run");
-const isDryRun = DRY_RUN || !process.env.SENDGRID_API_KEY;
+const isDryRun = DRY_RUN;
 
 // ─── DATE HELPERS ─────────────────────────────────────────────────
 function getYesterdayET() {
