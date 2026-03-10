@@ -28,7 +28,6 @@ jobs:
 
       - name: Run NBA report generator
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SPORTRADAR_API_KEY: ${{ secrets.SPORTRADAR_API_KEY }}
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
           REPORT_EMAIL_TO: ${{ secrets.REPORT_EMAIL_TO }}

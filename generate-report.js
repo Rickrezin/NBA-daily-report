@@ -3,13 +3,11 @@
  * Runs every morning via GitHub Actions
  * - Fetches all last night's games from SportRadar NBA API
  * - Computes QPIX™ (QCore Advanced Player Performance Index)
- *   with proprietary Off/Def +/- split — unique to QCore Labs
- * - Calls Claude for AI analysis
+ *   running the formula directly against live Sportradar box score data
  * - Sends rich HTML email via SendGrid
  * - Writes dashboard/index.html for GitHub Pages
  */
 
-import Anthropic from "@anthropic-ai/sdk";
 import sgMail from "@sendgrid/mail";
 import { writeFileSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
@@ -78,89 +76,86 @@ async function fetchGameBoxScore(gameId) {
 }
 
 // ─── QPIX™ ENGINE — QCore Labs Proprietary ────────────────────────
-// The only player metric separating offensive and defensive +/-
-// at the individual level. Patent Pending. QCore Labs © 2026.
+// Patent Pending. QCore Labs © 2026.
 function computeQPIX(p) {
   let score = 0;
   const notes = [];
 
   // Base weighted stats
-  score += p.points * 1.0;
-  score += p.rebounds * 1.2;
-  score += p.assists * 1.5;
-  score += p.steals * 3.0;
-  score += p.blocks * 2.5;
-  score -= p.turnovers * 2.0;
+  score += p.pts * 1.0 + p.reb * 1.2 + p.ast * 1.5 + p.stl * 3.0 + p.blk * 2.5 - p.to * 2.0;
 
-  // True Shooting bonus/penalty vs 55% baseline
-  const ts = computeTS(p);
-  const tsDelta = (ts - 55) * 0.3;
-  score += tsDelta;
-  if (ts >= 65) notes.push(`Elite efficiency (${ts.toFixed(1)}% TS)`);
-  if (ts < 38 && p.fga > 5) { score -= 4; notes.push(`Poor efficiency (${ts.toFixed(1)}% TS)`); }
+  const tsDenom = 2 * (p.fga + 0.44 * p.fta);
+  const ts = tsDenom > 0 ? (p.pts / tsDenom) * 100 : 0;
+  score += (ts - 55) * 0.3;
 
-  // ── QPIX PROPRIETARY: Off/Def +/- Split ──────────────────────
-  // Separates individual offensive and defensive rating contribution
-  // No other public metric does this at the player level
-  const offImpact = (p.offensive_rating - 110) / 10;
-  const defImpact = (110 - p.defensive_rating) / 10;
-  score += offImpact * 2;
-  score += defImpact * 2;
+  if (ts >= 72) { score += 5; notes.push("Elite TS% (" + ts.toFixed(1) + "%)"); }
+  else if (ts >= 65) { score += 3; notes.push("High efficiency (" + ts.toFixed(1) + "% TS)"); }
+  else if (ts >= 58) notes.push("Efficient (" + ts.toFixed(1) + "% TS)");
+  else if (ts < 38 && p.fga > 5) { score -= 5; notes.push("Inefficient volume (" + ts.toFixed(1) + "% TS)"); }
 
-  if (defImpact > 1.5) notes.push(`Strong defensive impact (Def±: ${p.defensive_rating?.toFixed(1)})`);
-  if (offImpact > 2)  notes.push(`Dominant offensive presence (Off±: ${p.offensive_rating?.toFixed(1)})`);
-  // ─────────────────────────────────────────────────────────────
+  if (p.fta >= 8) { score += (p.fta - 8) * 0.3; notes.push("Foul drawing (" + p.fta + " FTA)"); }
 
-  // Context bonuses
-  if (p.second_chance_points > 0) {
-    score += p.second_chance_points * 0.8;
-    notes.push(`${p.second_chance_points} second-chance pts`);
-  }
-  if (p.fast_break_points > 0) {
-    score += p.fast_break_points * 0.5;
-    notes.push(`${p.fast_break_points} fast break pts`);
-  }
+  const offImpact = (p.offRtg - 110) / 10;
+  const defImpact = (110 - p.defRtg) / 10;
+  score += offImpact * 2.5 + defImpact * 2.5;
 
-  // Assist quality
-  const astToRatio = p.turnovers > 0 ? p.assists / p.turnovers : p.assists;
-  if (astToRatio >= 4 && p.assists >= 6) {
-    score += 5;
-    notes.push(`Elite playmaking ratio (${p.assists}/${p.turnovers} AST/TO)`);
-  }
+  if (defImpact > 2.5) { score += 4; notes.push("Anchor defender (DefRtg " + p.defRtg.toFixed(1) + ")"); }
+  else if (defImpact > 1.5) notes.push("Strong D (DefRtg " + p.defRtg.toFixed(1) + ")");
+  else if (defImpact < -2) notes.push("Defensive liability (DefRtg " + p.defRtg.toFixed(1) + ")");
+  if (offImpact > 3) notes.push("Offensive engine (OffRtg " + p.offRtg.toFixed(1) + ")");
 
-  // Raw +/-
-  score += (p.plus_minus || 0) * 0.4;
-  if (p.plus_minus >= 15) notes.push(`+${p.plus_minus} net differential`);
+  const stocks = p.stl + p.blk;
+  if (stocks >= 5) { score += 8; notes.push(stocks + " stocks (elite)"); }
+  else if (stocks >= 3) { score += 3; notes.push(stocks + " stocks"); }
 
-  // Defensive hold bonus
-  if (p.defensive_rating < 98 && p.minutes >= 20) {
-    score += 6;
-    notes.push(`Held opponents under 98 DefRtg`);
-  }
+  if (p.defRtg < 96 && p.min >= 20) { score += 8; notes.push("Elite defensive anchor"); }
+  else if (p.defRtg < 100 && p.min >= 20) { score += 5; notes.push("Held opponents under 100 DefRtg"); }
+  else if (p.defRtg < 104 && p.min >= 20) score += 2;
 
-  // Multi-category bonuses
-  const ddCats = [p.points >= 10, p.rebounds >= 10, p.assists >= 10].filter(Boolean).length;
-  if (ddCats >= 3) { score += 12; notes.push("TRIPLE-DOUBLE"); }
-  else if (ddCats >= 2) { score += 5; notes.push("Double-double"); }
+  if (p.dreb >= 8) { score += 3; notes.push(p.dreb + " defensive boards"); }
 
-  // Defensive stocks
-  if ((p.steals + p.blocks) >= 4) {
-    score += 4;
-    notes.push(`${p.steals + p.blocks} combined stocks`);
-  }
+  // AST/TO ratio — reward clean playmaking, penalise turnover-heavy ball-handling
+  const astTo = p.to > 0 ? p.ast / p.to : (p.ast > 0 ? p.ast * 2 : 0);
+  if (astTo >= 6 && p.ast >= 10) { score += 10; notes.push("Elite playmaker (" + p.ast + "ast/" + p.to + "to)"); }
+  else if (astTo >= 4 && p.ast >= 8) { score += 7; notes.push("High-level playmaking (" + p.ast + "/" + p.to + ")"); }
+  else if (astTo >= 3 && p.ast >= 5) { score += 4; notes.push("Clean playmaking (" + p.ast + "/" + p.to + " AST/TO)"); }
+  else if (astTo >= 2 && p.ast >= 4) score += 2;
+  else if (astTo < 1 && p.to >= 4) { score -= 4; notes.push("Turnover-prone (" + p.ast + "/" + p.to + ")"); }
 
-  return {
-    score: Math.round(score * 10) / 10,
-    notes,
-    offPlusMinus: Math.round(offImpact * 10) / 10,
-    defPlusMinus: Math.round(defImpact * 10) / 10,
-    ts: Math.round(ts * 10) / 10
-  };
-}
+  score += p.scp >= 6 ? p.scp * 1.0 : p.scp * 0.7;
+  if (p.scp >= 6) notes.push(p.scp + " second-chance pts");
 
-function computeTS(p) {
-  const denom = 2 * (p.fga + 0.44 * p.fta);
-  return denom > 0 ? (p.points / denom) * 100 : 0;
+  score += p.fbp >= 8 ? p.fbp * 0.8 : p.fbp * 0.5;
+  if (p.fbp >= 8) notes.push(p.fbp + " fast break pts");
+
+  if (p.pip >= 18) { score += 5; notes.push(p.pip + " points in paint"); }
+  else if (p.pip >= 12) score += 3;
+  else if (p.pip >= 8) score += 1;
+
+  // Gravity: reward high-usage playmakers who create for others (capped at 7)
+  const usage = p.fga + 0.44 * p.fta + p.to;
+  const grav = usage > 12 && p.ast >= 3 ? Math.min((p.ast / Math.max(usage, 1)) * 30, 7) : 0;
+  if (grav >= 4) { score += grav; notes.push("Gravity " + grav.toFixed(1)); }
+  else score += grav;
+
+  // +/- score: base rate (×0.3) plus per-minute weight capped at 36 min (×0.15)
+  const pmScore = p.pm * 0.3 + (p.min > 0 ? (p.pm / p.min) * Math.min(p.min, 36) * 0.15 : 0);
+  score += pmScore;
+  if (p.pm >= 25) notes.push("+" + p.pm + " dominant differential");
+  else if (p.pm >= 15) notes.push("+" + p.pm + " net differential");
+  else if (p.pm <= -15) notes.push(p.pm + " net differential");
+
+  const ddCats = [p.pts >= 10, p.reb >= 10, p.ast >= 10, p.stl >= 5, p.blk >= 5].filter(Boolean).length;
+  if (ddCats >= 3) { score += 15; notes.push("TRIPLE-DOUBLE"); }
+  else if (ddCats >= 2) { score += 6; notes.push("Double-double"); }
+
+  const nearCats = [p.pts >= 9, p.reb >= 9, p.ast >= 9].filter(Boolean).length;
+  if (nearCats >= 3 && ddCats < 3) { score += 4; notes.push("Near triple-double"); }
+
+  if (!p.starter && p.pm > 0 && p.min >= 18) { score += 4; notes.push("Second unit anchor"); }
+  if (p.min >= 28 && p.pm <= -15) score -= 4;
+
+  return { score: Math.round((score || 0) * 10) / 10, ts: Math.round((ts || 0) * 10) / 10, notes };
 }
 
 // ─── PARSE SPORTRADAR BOXSCORE ────────────────────────────────────
@@ -179,16 +174,17 @@ function parseBoxScore(game, boxscore) {
       players.push({
         name: player.full_name,
         team: teamAbbr,
-        position: player.primary_position || "?",
-        minutes: s.minutes || 0,
-        points: s.points || 0,
-        rebounds: s.rebounds || 0,
-        offensive_rebounds: s.offensive_rebounds || 0,
-        defensive_rebounds: s.defensive_rebounds || 0,
-        assists: s.assists || 0,
-        steals: s.steals || 0,
-        blocks: s.blocks || 0,
-        turnovers: s.turnovers || 0,
+        pos: player.primary_position || "?",
+        starter: player.starter || false,
+        min: s.minutes || 0,
+        pts: s.points || 0,
+        reb: s.rebounds || 0,
+        oreb: s.offensive_rebounds || 0,
+        dreb: s.defensive_rebounds || 0,
+        ast: s.assists || 0,
+        stl: s.steals || 0,
+        blk: s.blocks || 0,
+        to: s.turnovers || 0,
         fouls: s.personal_fouls || 0,
         fgm: s.field_goals_made || 0,
         fga: s.field_goals_att || 0,
@@ -196,11 +192,12 @@ function parseBoxScore(game, boxscore) {
         fg3a: s.three_points_att || 0,
         ftm: s.free_throws_made || 0,
         fta: s.free_throws_att || 0,
-        plus_minus: s.plus_minus || 0,
-        offensive_rating: s.offensive_rating || 110,
-        defensive_rating: s.defensive_rating || 110,
-        second_chance_points: s.second_chance_pts || 0,
-        fast_break_points: s.fast_break_pts || 0,
+        pm: s.plus_minus || 0,
+        offRtg: s.offensive_rating || 110,
+        defRtg: s.defensive_rating || 110,
+        scp: s.second_chance_pts || 0,
+        fbp: s.fast_break_pts || 0,
+        pip: s.points_in_paint || 0,
         game: `${boxscore.away?.alias || "?"} @ ${boxscore.home?.alias || "?"}`,
         home_score: game.home_points,
         away_score: game.away_points,
@@ -213,36 +210,13 @@ function parseBoxScore(game, boxscore) {
   return players;
 }
 
-// ─── AI ANALYSIS ──────────────────────────────────────────────────
-async function getAIAnalysis(top10, dateLabel) {
-  if (!process.env.ANTHROPIC_API_KEY) {
-    return "AI analysis unavailable — set ANTHROPIC_API_KEY in GitHub secrets.";
-  }
-
-  const client = new Anthropic();
-  const playerSummary = top10.slice(0, 5).map((p, i) =>
-    `${i + 1}. ${p.name} (${p.team}): ${p.points}pts/${p.rebounds}reb/${p.assists}ast, TS%: ${p.ts.toFixed(1)}, Off±: ${p.offPlusMinus > 0 ? "+" : ""}${p.offPlusMinus}, Def±: ${p.defPlusMinus > 0 ? "+" : ""}${p.defPlusMinus}, QPIX: ${p.score}`
-  ).join("\n");
-
-  const msg = await client.messages.create({
-    model: "claude-sonnet-4-20250514",
-    max_tokens: 500,
-    messages: [{
-      role: "user",
-      content: `You are an elite NBA analyst writing a sharp morning briefing for ${dateLabel}. Based on last night's top QPIX performers (QCore Labs' proprietary metric that uniquely separates offensive and defensive +/- at the individual player level), give a crisp 4-5 sentence analysis. Focus on: the best two-way performer, any standout efficiency story, a player who impacted winning that the box score undersells, and one bold take. Be specific and direct.\n\nTop 5 QPIX performers:\n${playerSummary}`
-    }]
-  });
-
-  return msg.content[0].text;
-}
-
 // ─── HTML EMAIL TEMPLATE ──────────────────────────────────────────
-function buildEmailHTML(top10, games, aiAnalysis, dateLabel) {
+function buildEmailHTML(top10, games, dateLabel) {
 
   const playerRow = (p, rank) => {
     const medal = rank === 1 ? "🥇" : rank === 2 ? "🥈" : rank === 3 ? "🥉" : `#${rank}`;
-    const offColor = p.offPlusMinus >= 0 ? "#22c55e" : "#ef4444";
-    const defColor = p.defPlusMinus >= 0 ? "#3b82f6" : "#ef4444";
+    const offColor = p.offRtg >= 110 ? "#22c55e" : "#ef4444";
+    const defColor = p.defRtg <= 110 ? "#3b82f6" : "#ef4444";
     return `
     <tr style="border-bottom:1px solid #1e293b;">
       <td style="padding:12px 8px;color:#94a3b8;font-size:15px;text-align:center;">${medal}</td>
@@ -250,14 +224,14 @@ function buildEmailHTML(top10, games, aiAnalysis, dateLabel) {
         <div style="font-weight:800;color:#f1f5f9;font-size:14px;">${p.name}</div>
         <div style="font-size:11px;color:#475569;">${p.team} · ${p.game}</div>
       </td>
-      <td style="padding:12px 8px;text-align:center;font-weight:900;color:#f97316;font-size:16px;">${p.points}</td>
-      <td style="padding:12px 8px;text-align:center;color:#e2e8f0;">${p.rebounds}</td>
-      <td style="padding:12px 8px;text-align:center;color:#e2e8f0;">${p.assists}</td>
-      <td style="padding:12px 8px;text-align:center;color:#e2e8f0;">${p.steals}/${p.blocks}</td>
+      <td style="padding:12px 8px;text-align:center;font-weight:900;color:#f97316;font-size:16px;">${p.pts}</td>
+      <td style="padding:12px 8px;text-align:center;color:#e2e8f0;">${p.reb}</td>
+      <td style="padding:12px 8px;text-align:center;color:#e2e8f0;">${p.ast}</td>
+      <td style="padding:12px 8px;text-align:center;color:#e2e8f0;">${p.stl}/${p.blk}</td>
       <td style="padding:12px 8px;text-align:center;font-size:12px;">
-        <span style="color:${offColor};">O:${p.offPlusMinus > 0 ? "+" : ""}${p.offPlusMinus}</span>
+        <span style="color:${offColor};">O:${p.offRtg.toFixed(1)}</span>
         <span style="color:#475569;"> / </span>
-        <span style="color:${defColor};">D:${p.defPlusMinus > 0 ? "+" : ""}${p.defPlusMinus}</span>
+        <span style="color:${defColor};">D:${p.defRtg.toFixed(1)}</span>
       </td>
       <td style="padding:12px 8px;text-align:center;font-size:12px;color:#94a3b8;">${p.ts.toFixed(1)}%</td>
       <td style="padding:12px 8px;text-align:center;">
@@ -293,12 +267,6 @@ function buildEmailHTML(top10, games, aiAnalysis, dateLabel) {
   <div style="background:#0c1520;border:1px solid #1e293b;border-radius:12px;padding:16px;margin-bottom:20px;text-align:center;">
     <div style="font-size:11px;color:#475569;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Last Night's Results</div>
     ${scoreboardItems}
-  </div>
-
-  <!-- AI Analysis -->
-  <div style="background:linear-gradient(135deg,#0c1a2e,#0f1f35);border:1px solid #1d4ed8;border-radius:12px;padding:20px;margin-bottom:20px;">
-    <div style="font-size:11px;color:#3b82f6;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">🤖 QCore AI Analyst</div>
-    <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.8;font-style:italic;">"${aiAnalysis}"</p>
   </div>
 
   <!-- Top 10 QPIX Table -->
@@ -341,9 +309,8 @@ function buildEmailHTML(top10, games, aiAnalysis, dateLabel) {
   <!-- Footer -->
   <div style="text-align:center;padding:16px;color:#1e3a5f;font-size:11px;line-height:1.8;">
     <span style="color:#f97316;font-weight:700;">QPIX™</span> by QCore Labs<br>
-    QPIX = PTS×1 + REB×1.2 + AST×1.5 + STL×3 + BLK×2.5 − TO×2 + TS%Δ×0.3 + Proprietary Off/Def ± Split + Context Bonuses<br>
-    The only player metric separating offensive and defensive impact at the individual level.<br>
-    Generated automatically via GitHub Actions · QCore AI Analysis
+    QPIX = PTS×1 + REB×1.2 + AST×1.5 + STL×3 + BLK×2.5 − TO×2 + TS%Δ×0.3 + Off/Def Rating Split + Context Bonuses<br>
+    Generated automatically via GitHub Actions · Powered by Sportradar API
   </div>
 
 </div>
@@ -352,10 +319,10 @@ function buildEmailHTML(top10, games, aiAnalysis, dateLabel) {
 }
 
 // ─── DASHBOARD HTML (GitHub Pages) ───────────────────────────────
-function buildDashboardHTML(top10, games, aiAnalysis, dateLabel) {
+function buildDashboardHTML(top10, games, dateLabel) {
   const rows = top10.map((p, i) => {
-    const offColor = p.offPlusMinus >= 0 ? "#22c55e" : "#ef4444";
-    const defColor = p.defPlusMinus >= 0 ? "#3b82f6" : "#ef4444";
+    const offColor = p.offRtg >= 110 ? "#22c55e" : "#ef4444";
+    const defColor = p.defRtg <= 110 ? "#3b82f6" : "#ef4444";
     const rank = i + 1;
     const rankColors = ["#ffd700", "#c0c0c0", "#cd7f32"];
     const rankColor = rankColors[i] || "#475569";
@@ -365,15 +332,15 @@ function buildDashboardHTML(top10, games, aiAnalysis, dateLabel) {
         <td style="padding:14px 8px;text-align:center;color:${rankColor};font-weight:900;font-size:16px;">${rank <= 3 ? ["🥇","🥈","🥉"][rank-1] : rank}</td>
         <td style="padding:14px 8px;">
           <div style="font-weight:800;color:#f1f5f9;font-size:14px;">${p.name}</div>
-          <div style="font-size:11px;color:#475569;">${p.team} · ${p.position} · ${p.game}</div>
+          <div style="font-size:11px;color:#475569;">${p.team} · ${p.pos} · ${p.game}</div>
         </td>
-        <td style="padding:14px 8px;text-align:center;font-weight:900;color:#f97316;font-size:18px;">${p.points}</td>
-        <td style="padding:14px 8px;text-align:center;color:#e2e8f0;">${p.rebounds}</td>
-        <td style="padding:14px 8px;text-align:center;color:#e2e8f0;">${p.assists}</td>
-        <td style="padding:14px 8px;text-align:center;color:#e2e8f0;">${p.steals}/${p.blocks}</td>
+        <td style="padding:14px 8px;text-align:center;font-weight:900;color:#f97316;font-size:18px;">${p.pts}</td>
+        <td style="padding:14px 8px;text-align:center;color:#e2e8f0;">${p.reb}</td>
+        <td style="padding:14px 8px;text-align:center;color:#e2e8f0;">${p.ast}</td>
+        <td style="padding:14px 8px;text-align:center;color:#e2e8f0;">${p.stl}/${p.blk}</td>
         <td style="padding:14px 8px;text-align:center;font-size:13px;">
-          <span style="color:${offColor};font-weight:700;">O:${p.offPlusMinus>=0?"+":""}${p.offPlusMinus}</span><br>
-          <span style="color:${defColor};font-weight:700;">D:${p.defPlusMinus>=0?"+":""}${p.defPlusMinus}</span>
+          <span style="color:${offColor};font-weight:700;">O:${p.offRtg.toFixed(1)}</span><br>
+          <span style="color:${defColor};font-weight:700;">D:${p.defRtg.toFixed(1)}</span>
         </td>
         <td style="padding:14px 8px;text-align:center;color:#94a3b8;">${p.ts.toFixed(1)}%</td>
         <td style="padding:14px 8px;text-align:center;">
@@ -387,8 +354,8 @@ function buildDashboardHTML(top10, games, aiAnalysis, dateLabel) {
               <div style="font-size:11px;color:#f97316;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Full Stat Line</div>
               <div style="display:flex;flex-wrap:wrap;gap:8px;">
                 ${[["FG",`${p.fgm}/${p.fga}`],["3P",`${p.fg3m}/${p.fg3a}`],["FT",`${p.ftm}/${p.fta}`],
-                   ["TS%",`${p.ts.toFixed(1)}%`],["+/-",p.plus_minus>=0?`+${p.plus_minus}`:p.plus_minus],
-                   ["2CH",p.second_chance_points],["FBK",p.fast_break_points],["MIN",Math.round(p.minutes)]
+                   ["TS%",`${p.ts.toFixed(1)}%`],["+/-",p.pm>=0?`+${p.pm}`:p.pm],
+                   ["2CH",p.scp],["FBK",p.fbp],["MIN",Math.round(p.min)]
                   ].map(([l,v])=>`<div style="background:#0f172a;border:1px solid #1e293b;border-radius:6px;padding:6px 12px;text-align:center;">
                     <div style="font-size:13px;font-weight:700;color:#e2e8f0;">${v}</div>
                     <div style="font-size:9px;color:#475569;">${l}</div>
@@ -457,17 +424,11 @@ function buildDashboardHTML(top10, games, aiAnalysis, dateLabel) {
     <div style="padding:16px;"><div class="scores">${scoreboard}</div></div>
   </div>
 
-  <!-- AI Analysis -->
-  <div style="background:linear-gradient(135deg,#0c1a2e,#0f1f35);border:1px solid #1d4ed8;border-radius:12px;padding:20px;margin-bottom:20px;">
-    <div style="font-size:11px;color:#3b82f6;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">🤖 QCore AI Analyst</div>
-    <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.8;font-style:italic;">"${aiAnalysis}"</p>
-  </div>
-
   <!-- QPIX Rankings -->
   <div class="card">
     <div class="card-header">
       <div style="font-size:13px;font-weight:800;color:#f97316;text-transform:uppercase;letter-spacing:1px;">QPIX™ Top 10 Rankings</div>
-      <div style="font-size:11px;color:#475569;margin-top:3px;">Click any row to expand · The only metric with proprietary Off/Def ± split at the individual player level</div>
+      <div style="font-size:11px;color:#475569;margin-top:3px;">Click any row to expand · Ranked by QPIX™ score</div>
     </div>
     <table>
       <thead>
@@ -478,7 +439,7 @@ function buildDashboardHTML(top10, games, aiAnalysis, dateLabel) {
           <th class="hide-mobile">REB</th>
           <th class="hide-mobile">AST</th>
           <th class="hide-mobile">STL/BLK</th>
-          <th>O/D ±</th>
+          <th>O/D Rtg</th>
           <th class="hide-mobile">TS%</th>
           <th style="color:#f97316;">QPIX™</th>
         </tr>
@@ -490,9 +451,8 @@ function buildDashboardHTML(top10, games, aiAnalysis, dateLabel) {
   <!-- Footer -->
   <div style="text-align:center;font-size:11px;color:#1e3a5f;line-height:1.8;">
     <span style="color:#f97316;font-weight:700;">QPIX™</span> — QCore Labs Proprietary Player Performance Index<br>
-    QPIX = PTS×1 + REB×1.2 + AST×1.5 + STL×3 + BLK×2.5 − TO×2 + TS%Δ×0.3 + Off/Def ± Split + Context Bonuses<br>
-    The only metric separating offensive and defensive impact at the individual player level.<br>
-    Auto-generated via GitHub Actions · Powered by Sportradar API + QCore AI
+    QPIX = PTS×1 + REB×1.2 + AST×1.5 + STL×3 + BLK×2.5 − TO×2 + TS%Δ×0.3 + Off/Def Rating Split + Context Bonuses<br>
+    Auto-generated via GitHub Actions · Powered by Sportradar API
   </div>
 
 </div>
@@ -519,9 +479,9 @@ function getMockData(date) {
 
 function getMockPlayers() {
   return [
-    { name: "Jayson Tatum", team: "BOS", position: "F", minutes: 36, points: 32, rebounds: 8, assists: 6, steals: 2, blocks: 1, turnovers: 2, fgm: 12, fga: 22, fg3m: 3, fg3a: 8, ftm: 5, fta: 6, offensive_rebounds: 1, defensive_rebounds: 7, plus_minus: 14, offensive_rating: 128, defensive_rating: 102, second_chance_points: 2, fast_break_points: 4, game: "NYK @ BOS" },
-    { name: "Karl-Anthony Towns", team: "NYK", position: "C", minutes: 32, points: 28, rebounds: 12, assists: 3, steals: 1, blocks: 2, turnovers: 2, fgm: 10, fga: 16, fg3m: 2, fg3a: 5, ftm: 6, fta: 8, offensive_rebounds: 2, defensive_rebounds: 10, plus_minus: 8, offensive_rating: 122, defensive_rating: 105, second_chance_points: 4, fast_break_points: 2, game: "NYK @ BOS" },
-    { name: "LeBron James", team: "LAL", position: "F", minutes: 34, points: 27, rebounds: 7, assists: 9, steals: 1, blocks: 0, turnovers: 3, fgm: 10, fga: 18, fg3m: 2, fg3a: 5, ftm: 5, fta: 6, offensive_rebounds: 0, defensive_rebounds: 7, plus_minus: 6, offensive_rating: 124, defensive_rating: 108, second_chance_points: 0, fast_break_points: 6, game: "GSW @ LAL" },
+    { name: "Jayson Tatum", team: "BOS", pos: "F", starter: true, min: 36, pts: 32, reb: 8, oreb: 1, dreb: 7, ast: 6, stl: 2, blk: 1, to: 2, fgm: 12, fga: 22, fg3m: 3, fg3a: 8, ftm: 5, fta: 6, pm: 14, offRtg: 128, defRtg: 102, scp: 2, fbp: 4, pip: 10, game: "NYK @ BOS" },
+    { name: "Karl-Anthony Towns", team: "NYK", pos: "C", starter: true, min: 32, pts: 28, reb: 12, oreb: 2, dreb: 10, ast: 3, stl: 1, blk: 2, to: 2, fgm: 10, fga: 16, fg3m: 2, fg3a: 5, ftm: 6, fta: 8, pm: 8, offRtg: 122, defRtg: 105, scp: 4, fbp: 2, pip: 14, game: "NYK @ BOS" },
+    { name: "LeBron James", team: "LAL", pos: "F", starter: true, min: 34, pts: 27, reb: 7, oreb: 0, dreb: 7, ast: 9, stl: 1, blk: 0, to: 3, fgm: 10, fga: 18, fg3m: 2, fg3a: 5, ftm: 5, fta: 6, pm: 6, offRtg: 124, defRtg: 108, scp: 0, fbp: 6, pip: 8, game: "GSW @ LAL" },
   ];
 }
 
@@ -565,17 +525,13 @@ async function main() {
   console.log("3. Computing QPIX™ scores...");
   const scoredPlayers = allPlayers
     .map(p => {
-      const { score, notes, offPlusMinus, defPlusMinus, ts } = computeQPIX(p);
-      return { ...p, score, notes, offPlusMinus, defPlusMinus, ts };
+      const { score, notes, ts } = computeQPIX(p);
+      return { ...p, score, notes, ts };
     })
     .sort((a, b) => b.score - a.score);
 
   const top10 = scoredPlayers.slice(0, 10);
   console.log(`   Top QPIX™ performer: ${top10[0]?.name} (${top10[0]?.score})`);
-
-  console.log("4. Getting QCore AI analysis...");
-  const aiAnalysis = await getAIAnalysis(top10, date.label);
-  console.log(`   Done.`);
 
   const gameResults = games.map(g => ({
     home_alias: g.home?.alias || "?",
@@ -584,26 +540,26 @@ async function main() {
     away_points: g.away_points || 0,
   }));
 
-  console.log("5. Building QPIX™ dashboard...");
-  const dashboardHTML = buildDashboardHTML(top10, gameResults, aiAnalysis, date.label);
+  console.log("4. Building QPIX™ dashboard...");
+  const dashboardHTML = buildDashboardHTML(top10, gameResults, date.label);
   mkdirSync(join(__dirname, "dashboard"), { recursive: true });
   writeFileSync(join(__dirname, "dashboard/index.html"), dashboardHTML);
   console.log("   dashboard/index.html written");
 
   if (!isDryRun && process.env.SENDGRID_API_KEY) {
-    console.log("6. Sending email...");
+    console.log("5. Sending email...");
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-    const emailHTML = buildEmailHTML(top10, gameResults, aiAnalysis, date.label);
+    const emailHTML = buildEmailHTML(top10, gameResults, date.label);
 
     await sgMail.send({
       to: process.env.REPORT_EMAIL_TO,
       from: process.env.REPORT_EMAIL_FROM,
-      subject: `🏀 QPIX™ Daily — ${date.label} | #1: ${top10[0]?.name} (${top10[0]?.points}pts, QPIX ${top10[0]?.score})`,
+      subject: `🏀 QPIX™ Daily — ${date.label} | #1: ${top10[0]?.name} (${top10[0]?.pts}pts, QPIX ${top10[0]?.score})`,
       html: emailHTML,
     });
     console.log(`   Email sent to ${process.env.REPORT_EMAIL_TO}`);
   } else {
-    console.log("6. Skipping email (dry run or no SendGrid key)");
+    console.log("5. Skipping email (dry run or no SendGrid key)");
   }
 
   console.log("\n✅ QPIX™ Report complete!\n");
