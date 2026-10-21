@@ -25,6 +25,73 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const isDryRun = process.argv.includes("--dry-run");
+const qpixPhase = (process.env.QPIX_PHASE || "preseason").toLowerCase();
+
+// ─── VENUE FAMILIARITY (data-driven, edit data/venue_familiarity.json) ──
+// Players who treat a road arena as partly "home" (college home games,
+// former NBA team, hometown) get a reduced road credit in C8. Tiers and
+// weights live in the JSON so they can be tuned without touching the engine.
+// Missing/invalid file = no familiarity adjustments (engine unchanged).
+const VENUE_FAMILIARITY = (() => {
+  try {
+    return JSON.parse(readFileSync(join(process.cwd(), "data", "venue_familiarity.json"), "utf-8"));
+  } catch {
+    return { tiers: {}, players: {} };
+  }
+})();
+
+// ─── FORMER-TEAM KNOWLEDGE FACTOR / SFA (data/former_team_familiarity.json) ──
+// Opponent-specific, separate from venue: a player who knows his former team's
+// personnel, coverages, terminology and rotations has that edge whether the
+// game is at his old building or his new one. Applies home or away.
+// Effective weight = weight × 0.5^(years_since / half_life_years), so it
+// fades the longer ago he left. Years come from `left_season` (season-ending
+// year of his last season with the team; never goes stale) or, as a fallback,
+// a fixed `years_since`. Missing/invalid file = no adjustment.
+const FORMER_TEAM = (() => {
+  try {
+    return JSON.parse(readFileSync(join(process.cwd(), "data", "former_team_familiarity.json"), "utf-8"));
+  } catch {
+    return { decay: {}, players: {} };
+  }
+})();
+let REPORT_SEASON_END = null; // season-ending year of the report date; set in main()
+
+// ─── QPIX-SFA COMPANION (big night vs a former team) ───────────────
+// Raw QPIX is never altered by this. QPIX-SFA = Raw QPIX − adjustment, shown
+// alongside QPIX and QPIX-R only when ALL of these hold:
+//   1. a former-team relationship with tonight's opponent exists (sfaWeight > 0)
+//   2. clearly positive performance: raw QPIX ≥ min_qpix and +/− ≥ min_plus_minus
+//   3. meaningful impact: C3 off + def impact ≥ min_net_impact (≈ net rating ≥ +15)
+// adjustment = max_adjustment × effective (decayed) SFA weight. Motivation
+// ("revenge game") is deliberately NOT modeled. Tunable in the JSON's
+// "companion" block; these are the defaults.
+const SFA_COMPANION = {
+  max_adjustment: 4,
+  min_qpix: 30,
+  min_plus_minus: 1,
+  min_net_impact: 1.5,
+  ...(FORMER_TEAM.companion || {})
+};
+
+function formerTeamWeight(playerName, oppAlias) {
+  const e = FORMER_TEAM.players?.[playerName]?.[oppAlias];
+  if (!e) return { eff: 0, years: null };
+
+  const base = Math.min(1, Math.max(0, Number(e.weight) || 0));
+  let years = null;
+  if (Number.isFinite(e.left_season) && REPORT_SEASON_END) {
+    years = Math.max(0, REPORT_SEASON_END - e.left_season);
+  } else if (Number.isFinite(e.years_since)) {
+    years = Math.max(0, e.years_since);
+  }
+  if (years === null) return { eff: 0, years: null };
+
+  const half = FORMER_TEAM.decay?.half_life_years > 0 ? FORMER_TEAM.decay.half_life_years : 3;
+  const floor = FORMER_TEAM.decay?.min_effective_weight ?? 0.02;
+  const eff = base * Math.pow(0.5, years / half);
+  return eff >= floor ? { eff, years } : { eff: 0, years };
+}
 
 // ─── DATE HELPERS ─────────────────────────────────────────────────
 function getYesterdayET() {
@@ -83,24 +150,63 @@ function computeC1(p) {
 
 // C2 — SHOOTING EFFICIENCY
 // TS% delta vs 55% baseline × 0.3, foul drawing bonus, inefficiency penalty
+// Attempt-volume gate applies to the ENTIRE C2 result:
+//   0 FGA  -> C2 = 0
+//   1 FGA  -> 1/3 weight
+//   2 FGA  -> 2/3 weight
+//   3+ FGA -> full weight
 function computeC2(p) {
   const ts = computeTS(p);
-  let score = (ts - 55) * 0.4;
+  const fga = p.fga || 0;
+
+  if (fga === 0) return { score: 0, ts };
+
+  let score = (ts - 55) * 0.3;
+
   if (p.fta >= 8) score += 3;
   else if (p.fta >= 5) score += 1.5;
-  if (ts < 38 && p.fga > 5) score -= 4;
+
+  if (ts < 38 && fga > 5) score -= 4;
+
+  const attemptWeight = Math.min(1, fga / 3);
+  score *= attemptWeight;
+
   return { score, ts };
 }
 
 // C3 — PROPRIETARY OFF/DEF ± SPLIT
 // Both sides measured against 110 baseline, weighted equally — the QPIX™ moat
+// A missing individual ORtg/DRtg makes this component UNAVAILABLE (score 0,
+// flagged) instead of poisoning the whole QPIX with NaN. No team-rating
+// substitute and no +/− proxy. rawOffImpact/rawDefImpact are unclamped and
+// unrounded (their sum is net rating / 10) for threshold checks like QPIX-SFA.
 function computeC3(p) {
-  const offImpact = Math.min(4.0, Math.max(-4.0, (p.offensive_rating - 110) / 10));
-  const defImpact = Math.min(4.0, Math.max(-4.0, (110 - p.defensive_rating) / 10));
+  const ratingsAvailable =
+    Number.isFinite(p.offensive_rating) &&
+    Number.isFinite(p.defensive_rating);
+
+  if (!ratingsAvailable) {
+    return {
+      score: 0,
+      offImpact: 0,
+      defImpact: 0,
+      rawOffImpact: null,
+      rawDefImpact: null,
+      ratingsAvailable: false
+    };
+  }
+
+  const rawOffImpact = (p.offensive_rating - 110) / 10;
+  const rawDefImpact = (110 - p.defensive_rating) / 10;
+  const offImpact = Math.min(4.0, Math.max(-4.0, rawOffImpact));
+  const defImpact = Math.min(4.0, Math.max(-4.0, rawDefImpact));
   return {
     score: offImpact * 2 + defImpact * 2,
     offImpact: Math.round(offImpact * 10) / 10,
-    defImpact: Math.round(defImpact * 10) / 10
+    defImpact: Math.round(defImpact * 10) / 10,
+    rawOffImpact,
+    rawDefImpact,
+    ratingsAvailable: true
   };
 }
 
@@ -227,11 +333,14 @@ function computeC8(p, gameContext) {
     const contextScore = relativePM * osm;
 
     let envBonus = 0;
-    if (gameContext?.isRoad) envBonus += 1.5;
+    // Road credit is scaled down in a familiar venue (weight 0 = no change)
+    if (gameContext?.isRoad) envBonus += 1.5 * (1 - (gameContext.venueWeight ?? 0));
     if (gameContext?.isolationCarrier) {
       envBonus += Math.min(4.0, gameContext.isolationSeverity ?? 2.0);
     }
     envBonus = Math.min(envBonus, 5.5);
+    // Former-team knowledge: facing his old team (home or away) reduces the credit
+    envBonus *= (1 - (gameContext?.sfaWeight ?? 0));
 
     score = (contextScore * 0.4) + envBonus;
 
@@ -301,13 +410,26 @@ function computeC12(p, gameContext) {
   const notes = [];
   const pm = p.plus_minus || 0;
 
+  // Preseason rule (effective Oct 8): C12 is not applied. Starters are capped
+  // near ~13 min, which inverts the fifth-highest-minute cutoff. The bonus is
+  // ignored for scoring and a notation is logged instead.
   if (gameContext?.isBenchPlayer) {
+    let bonus = 0;
+    let label = "";
     if (p.minutes >= 20 && pm > 8) {
-      score += 8;
-      notes.push("Dominant bench contribution (+8)");
+      bonus = 8;
+      label = "Dominant bench contribution";
     } else if (p.minutes >= 15 && pm >= 0) {
-      score += 5;
-      notes.push("Second unit anchor (+5)");
+      bonus = 5;
+      label = "Second unit anchor";
+    }
+    if (bonus > 0) {
+      if (qpixPhase === "preseason") {
+        notes.push(`C12 not applied (preseason) — would have been +${bonus}`);
+      } else {
+        score += bonus;
+        notes.push(`${label} (+${bonus})`);
+      }
     }
   }
 
@@ -397,7 +519,16 @@ function computeC13_QPIXR(p, qpixRaw) {
   };
 
   const posKey = (p.position || "G").toUpperCase();
-  const ftaExpected = seasonalFTA[p.name] ?? ftaPositionDefaults[posKey] ?? 3.0;
+  const positionalExpected = ftaPositionDefaults[posKey] ?? 3.0;
+
+  // Preseason: positional baselines only.
+  // Regular/postseason: use rolling-20 FTA if the data feed supplies it;
+  // otherwise fall back to the named seasonal table, then position.
+  const rolling20FTA = Number.isFinite(p.rolling_20_fta) ? p.rolling_20_fta : null;
+  const ftaExpected = qpixPhase === "preseason"
+    ? positionalExpected
+    : (rolling20FTA ?? seasonalFTA[p.name] ?? positionalExpected);
+
   const ftaActual = p.fta || 0;
   const ftaDelta = ftaActual - ftaExpected;
   const ftPct = p.ft_pct || 0.75;
@@ -442,8 +573,10 @@ function computeQPIX(p, gameContext = {}) {
   if (ts >= 70) notes.push(`Elite TS% (${ts.toFixed(1)}%)`);
 
   // C3
-  const { score: c3score, offImpact, defImpact } = computeC3(p);
+  const c3 = computeC3(p);
+  const { score: c3score, offImpact, defImpact } = c3;
   total += c3score;
+  if (!c3.ratingsAvailable) notes.push("C3 unavailable: individual ORtg/DRtg missing");
   if (offImpact > 2)   notes.push(`Dominant off presence (OffRtg: ${p.offensive_rating?.toFixed(1)})`);
   if (defImpact > 1.5) notes.push(`Strong def impact (DefRtg: ${p.defensive_rating?.toFixed(1)})`);
 
@@ -470,6 +603,26 @@ function computeQPIX(p, gameContext = {}) {
   total += c8score;
   notes.push(...c8n);
 
+  // Venue familiarity flag — logged every time it applies, even when the C8
+  // gate doesn't fire (the road credit only matters inside the gate).
+  if (gameContext.venueTier) {
+    const gateFired = (p.plus_minus || 0) < -5;
+    const factor = (1 - (gameContext.venueWeight ?? 0)).toFixed(2);
+    notes.push(gateFired
+      ? `Familiar venue (${gameContext.venueTier}): road credit ×${factor}`
+      : `Familiar venue (${gameContext.venueTier}): flagged, no score change (C8 gate not fired)`);
+  }
+
+  // Former-team knowledge flag (SFA) — same logging rule as venue
+  if (gameContext.sfaOpp) {
+    const gateFired = (p.plus_minus || 0) < -5;
+    const factor = (1 - (gameContext.sfaWeight ?? 0)).toFixed(2);
+    const tag = `Former-team knowledge (${gameContext.sfaOpp}, ${gameContext.sfaYears}y)`;
+    notes.push(gateFired
+      ? `${tag}: environment credit ×${factor}`
+      : `${tag}: flagged, no score change (C8 gate not fired)`);
+  }
+
   // C9
   const { score: c9score, notes: c9n } = computeC9(p);
   total += c9score;
@@ -488,12 +641,42 @@ function computeQPIX(p, gameContext = {}) {
 
   const qpixRaw = Math.round(total * 10) / 10;
 
+  // QPIX-SFA companion — computed from RAW, never feeds back into it
+  let sfaAdj = 0;
+  let qpixSFA = qpixRaw;
+  if (gameContext.sfaOpp) {
+    // "Meaningful impact" needs the player's OWN ORtg/DRtg. If either is missing
+    // the threshold can't be verified: don't fire, say so, and never substitute
+    // team ratings or infer it from +/−.
+    const ratingsOk = c3.ratingsAvailable;
+    // Unrounded, unclamped (C3's displayed offImpact/defImpact are rounded to 0.1)
+    const netImpact = ratingsOk ? c3.rawOffImpact + c3.rawDefImpact : null;
+    const eligible =
+      ratingsOk &&
+      qpixRaw >= SFA_COMPANION.min_qpix &&
+      (p.plus_minus || 0) >= SFA_COMPANION.min_plus_minus &&
+      netImpact >= SFA_COMPANION.min_net_impact;
+    if (!ratingsOk) {
+      notes.push("QPIX-SFA unavailable: individual ORtg/DRtg missing");
+    }
+    if (eligible) {
+      sfaAdj = Math.round(SFA_COMPANION.max_adjustment * (gameContext.sfaWeight ?? 0) * 10) / 10;
+      qpixSFA = Math.round((qpixRaw - sfaAdj) * 10) / 10;
+      if (sfaAdj > 0) {
+        notes.push(`QPIX-SFA: −${sfaAdj.toFixed(1)} (big night vs former team ${gameContext.sfaOpp}, ${gameContext.sfaYears}y)`);
+      }
+    }
+  }
+
   // C13 — QPIX-R post-processor (displayed separately, never modifies raw)
   const { qpixR, refPenalty, refBonus, qpixRFlag } = computeC13_QPIXR(p, qpixRaw);
   if (qpixRFlag) notes.push(`QPIX-R flag: ${qpixRFlag}`);
 
   return {
     score: qpixRaw,
+    ratingsAvailable: c3.ratingsAvailable,
+    qpixSFA,
+    sfaAdj,
     qpixR,
     refPenalty,
     refBonus,
@@ -516,6 +699,21 @@ function buildGameContext(player, allGamePlayers, gameResult) {
   const oppScore  = player.team === gameResult.home_alias ? gameResult.away_points : gameResult.home_points;
   const wonGame   = teamScore > oppScore;
   const isRoad    = player.team === gameResult.away_alias;
+
+  // Venue familiarity — only meaningful on the road (venue = home team's arena)
+  const venueTier = isRoad
+    ? (VENUE_FAMILIARITY.players?.[player.name]?.[gameResult.home_alias] ?? null)
+    : null;
+  const venueWeight = venueTier ? (VENUE_FAMILIARITY.tiers?.[venueTier] ?? 0) : 0;
+
+  // Former-team knowledge (SFA) — opponent-specific, home or away
+  const opponentAlias =
+    player.team === gameResult.home_alias ? gameResult.away_alias :
+    player.team === gameResult.away_alias ? gameResult.home_alias : null;
+  const sfa = opponentAlias ? formerTeamWeight(player.name, opponentAlias) : { eff: 0, years: null };
+  const sfaWeight = sfa.eff;
+  const sfaOpp = sfa.eff > 0 ? opponentAlias : null;
+  const sfaYears = sfa.eff > 0 ? sfa.years : null;
 
   // Opponent strength — defaults to neutral; integrate standings for precision
   const opponentStrength = 1.0;
@@ -541,7 +739,12 @@ function buildGameContext(player, allGamePlayers, gameResult) {
     opponentStrength,
     isolationCarrier,
     isolationSeverity,
-    isBenchPlayer
+    isBenchPlayer,
+    venueTier,
+    venueWeight,
+    sfaWeight,
+    sfaOpp,
+    sfaYears
   };
 }
 
@@ -567,13 +770,16 @@ function buildDashboardHTML(top10, games, dateLabel) {
         <td style="padding:14px 8px;text-align:center;color:#e2e8f0;">${p.assists}</td>
         <td style="padding:14px 8px;text-align:center;color:#e2e8f0;">${p.steals}/${p.blocks}</td>
         <td style="padding:14px 8px;text-align:center;font-size:13px;">
-          <span style="color:${offColor};font-weight:700;">O:${p.offImpact>=0?"+":""}${p.offImpact}</span><br>
-          <span style="color:${defColor};font-weight:700;">D:${p.defImpact>=0?"+":""}${p.defImpact}</span>
+          ${p.ratingsAvailable === false
+            ? `<span style="color:#64748b;font-weight:700;">O/D n/a</span>`
+            : `<span style="color:${offColor};font-weight:700;">O:${p.offImpact>=0?"+":""}${p.offImpact}</span><br>
+          <span style="color:${defColor};font-weight:700;">D:${p.defImpact>=0?"+":""}${p.defImpact}</span>`}
         </td>
         <td style="padding:14px 8px;text-align:center;color:#94a3b8;">${p.ts?.toFixed(1)}%</td>
         <td style="padding:14px 8px;text-align:center;">
           <span style="background:#f97316;color:#fff;font-weight:900;padding:4px 10px;border-radius:6px;">${p.score}</span>
           <div style="font-size:10px;color:${qpixRColor};margin-top:3px;">R: ${p.qpixR} (${qpixRLabel})</div>
+          ${p.sfaAdj > 0 ? `<div style="font-size:10px;color:#ef4444;margin-top:3px;">SFA: ${p.qpixSFA} (−${p.sfaAdj.toFixed(1)})</div>` : ""}
         </td>
       </tr>
       <tr id="detail-${i}" style="display:none;background:#0a1628;">
@@ -585,7 +791,8 @@ function buildDashboardHTML(top10, games, dateLabel) {
                 ${[["FG",`${p.fgm}/${p.fga}`],["3P",`${p.fg3m}/${p.fg3a}`],["FT",`${p.ftm}/${p.fta}`],
                    ["TS%",`${p.ts?.toFixed(1)}%`],["+/-",p.plus_minus>=0?`+${p.plus_minus}`:p.plus_minus],
                    ["2CH",p.second_chance_points],["FBK",p.fast_break_points],["MIN",Math.round(p.minutes)],
-                   ["QPIX",p.score],["QPIX-R",p.qpixR]
+                   ["QPIX",p.score],["QPIX-R",p.qpixR],
+                   ...(p.sfaAdj > 0 ? [["QPIX-SFA",p.qpixSFA]] : [])
                   ].map(([l,v])=>`<div style="background:#0f172a;border:1px solid #1e293b;border-radius:6px;padding:6px 12px;text-align:center;">
                     <div style="font-size:13px;font-weight:700;color:#e2e8f0;">${v}</div>
                     <div style="font-size:9px;color:#475569;">${l}</div>
@@ -648,7 +855,7 @@ function buildDashboardHTML(top10, games, dateLabel) {
   <div class="card">
     <div class="card-header">
       <div style="font-size:13px;font-weight:800;color:#f97316;text-transform:uppercase;letter-spacing:1px;">QPIX™ Top 10</div>
-      <div style="font-size:11px;color:#475569;margin-top:3px;">Click any row to expand · QPIX = raw · QPIX-R = referee-adjusted</div>
+      <div style="font-size:11px;color:#475569;margin-top:3px;">Click any row to expand · QPIX = raw · QPIX-R = referee-adjusted · QPIX-SFA = former-team adjusted (big nights vs a former team only)</div>
     </div>
     <table>
       <thead><tr>
@@ -667,6 +874,7 @@ function buildDashboardHTML(top10, games, dateLabel) {
   </div>
   <div style="text-align:center;font-size:11px;color:#1e3a5f;line-height:1.8;">
     QPIX™ 13 Categories: Base Production · Shooting Efficiency · Proprietary Off/Def ± Split · Defensive Activity · Playmaking Quality · Offensive Context · Gravity Score · Context-Weighted +/− · Multi-Category Bonuses · Fatigue Curve · Momentum Swing · Second Unit Anchor · QPIX-R Referee Layer<br>
+    ${qpixPhase === "preseason" ? "Preseason: C12 Second Unit Anchor not applied (starter minutes capped) · QPIX-R uses positional FTA baselines<br>" : ""}
     Auto-generated via GitHub Actions · Sportradar API · QCore Labs © 2026 · QCoreLabs.com
   </div>
 </div>
@@ -683,6 +891,9 @@ function toggleRow(i) {
 // ─── MAIN ──────────────────────────────────────────────────────────
 async function main() {
   const date = getYesterdayET();
+  // NBA season-ending year (Aug–Dec belongs to the season that ends next year)
+  REPORT_SEASON_END = Number(process.env.QPIX_SEASON_END) ||
+    (Number(date.month) >= 8 ? date.year + 1 : date.year);
   console.log(`\n📊 QPIX™ Daily Report — ${date.label}`);
   console.log(`Mode: ${isDryRun ? "DRY RUN" : "LIVE"}\n`);
 
@@ -729,9 +940,8 @@ async function main() {
   const top10 = scoredPlayers.slice(0, 10);
   console.log(`   Top: ${top10[0]?.name} | QPIX: ${top10[0]?.score} | QPIX-R: ${top10[0]?.qpixR}`);
 
-  // Separate evidence-backed familiarity snapshot; leaves RAW QPIX and QPIX-R intact.
   writeFamiliarityReport(scoredPlayers, gameResults, `${date.year}-${date.month}-${date.day}`);
-  console.log("   dashboard/familiarity.json written (unverified history omitted)");
+  console.log("   dashboard/familiarity.json written");
 
   console.log("4. Building dashboard...");
   const dashboardHTML = buildDashboardHTML(top10, gameResults, date.label);
