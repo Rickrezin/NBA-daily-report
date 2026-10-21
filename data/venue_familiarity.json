@@ -1,0 +1,551 @@
+{
+  "_coverage": "Former-team venue relationships mirror all expanded SFA relationships. College/hometown ties are curated high-confidence cases and should continue to be expanded as verified.",
+  "_readme": "Venue familiarity for QPIX. players -> player name (exactly as in the data feed) -> home-team alias of the arena -> tier. A tier weight is the share of C8 road credit removed when the player is on the road in that building. Expanded 2026-10-14. Former-team venue familiarity is mirrored from the SFA file; college entries are limited to strong same-arena/shared-arena cases; hometown entries are conservative.",
+  "_reasons": {
+    "Aaron Gordon|GSW": "hometown/metro familiarity",
+    "Anthony Edwards|ATL": "hometown/metro familiarity",
+    "Collin Gillespie|PHI": "college/shared-arena familiarity",
+    "Damian Lillard|GSW": "hometown/metro familiarity",
+    "Dante DiVincenzo|PHI": "college/shared-arena familiarity",
+    "DeMar DeRozan|LAC": "hometown/metro familiarity",
+    "DeMar DeRozan|LAL": "hometown/metro familiarity",
+    "Jalen Brunson|PHI": "college/shared-arena familiarity",
+    "Jalen Duren|MEM": "college/shared-arena familiarity",
+    "James Harden|LAL": "hometown/metro familiarity",
+    "James Wiseman|MEM": "college/shared-arena familiarity",
+    "Jaylen Brown|ATL": "hometown/metro familiarity",
+    "Jeff Green|WAS": "college/shared-arena familiarity",
+    "Jimmy Butler III|MIL": "college/shared-arena familiarity",
+    "Josh Hart|PHI": "college/shared-arena familiarity",
+    "Julian Champagnie|NYK": "college/shared-arena familiarity",
+    "Kam Jones|MIL": "college/shared-arena familiarity",
+    "Karl-Anthony Towns|BKN": "hometown/metro familiarity",
+    "Kevin Durant|WAS": "hometown/metro familiarity",
+    "Kyrie Irving|NYK": "hometown/metro familiarity",
+    "Mikal Bridges|PHI": "college/shared-arena familiarity",
+    "Olivier-Maxence Prosper|MIL": "college/shared-arena familiarity",
+    "Paul George|LAL": "hometown/metro familiarity",
+    "Precious Achiuwa|MEM": "college/shared-arena familiarity",
+    "Saddiq Bey|PHI": "college/shared-arena familiarity",
+    "Stephen Curry|CHA": "hometown/metro familiarity",
+    "Thomas Sorber|WAS": "college/shared-arena familiarity",
+    "Trae Young|OKC": "hometown/metro familiarity",
+    "Tyler Kolek|MIL": "college/shared-arena familiarity",
+    "Zion Williamson|CHA": "hometown/metro familiarity"
+  },
+  "players": {
+    "AJ Johnson": {
+      "DAL": "former_team",
+      "MEM": "former_team",
+      "WAS": "former_team"
+    },
+    "Aaron Gordon": {
+      "GSW": "hometown"
+    },
+    "Aaron Wiggins": {
+      "OKC": "former_team"
+    },
+    "Andre Drummond": {
+      "BKN": "former_team",
+      "PHI": "former_team"
+    },
+    "Anfernee Simons": {
+      "BOS": "former_team",
+      "CHI": "former_team",
+      "POR": "former_team"
+    },
+    "Anthony Edwards": {
+      "ATL": "hometown"
+    },
+    "Ariel Hukporti": {
+      "NYK": "former_team"
+    },
+    "Bennedict Mathurin": {
+      "IND": "former_team",
+      "LAC": "former_team"
+    },
+    "Bobby Portis": {
+      "MIL": "former_team"
+    },
+    "Bogdan Bogdanovic": {
+      "ATL": "former_team",
+      "LAC": "former_team"
+    },
+    "Bradley Beal": {
+      "PHX": "former_team",
+      "WAS": "former_team"
+    },
+    "Branden Carlson": {
+      "OKC": "former_team"
+    },
+    "Brandon Ingram": {
+      "LAL": "former_team",
+      "NOP": "former_team",
+      "TOR": "former_team"
+    },
+    "Brandon Williams": {
+      "DAL": "former_team"
+    },
+    "Brook Lopez": {
+      "BKN": "former_team",
+      "MIL": "former_team"
+    },
+    "Buddy Hield": {
+      "ATL": "former_team",
+      "GSW": "former_team",
+      "IND": "former_team",
+      "PHI": "former_team"
+    },
+    "Cam Johnson": {
+      "BKN": "former_team"
+    },
+    "Caris LeVert": {
+      "ATL": "former_team",
+      "CLE": "former_team",
+      "DET": "former_team"
+    },
+    "Chris Boucher": {
+      "TOR": "former_team"
+    },
+    "Clint Capela": {
+      "ATL": "former_team",
+      "HOU": "former_team"
+    },
+    "Cody Williams": {
+      "UTA": "former_team"
+    },
+    "Collin Gillespie": {
+      "PHI": "college"
+    },
+    "Collin Sexton": {
+      "CHA": "former_team",
+      "CHI": "former_team",
+      "CLE": "former_team",
+      "UTA": "former_team"
+    },
+    "D'Angelo Russell": {
+      "BKN": "former_team",
+      "DAL": "former_team",
+      "LAL": "former_team",
+      "WAS": "former_team"
+    },
+    "Damian Lillard": {
+      "GSW": "hometown",
+      "MIL": "former_team",
+      "POR": "former_team"
+    },
+    "Dante DiVincenzo": {
+      "PHI": "college"
+    },
+    "DeMar DeRozan": {
+      "CHI": "former_team",
+      "LAC": "hometown",
+      "LAL": "hometown",
+      "SAC": "former_team"
+    },
+    "Dean Wade": {
+      "CLE": "former_team"
+    },
+    "Deandre Ayton": {
+      "LAL": "former_team",
+      "PHX": "former_team",
+      "POR": "former_team"
+    },
+    "Dennis Schroder": {
+      "BKN": "former_team",
+      "CLE": "former_team",
+      "DET": "former_team",
+      "TOR": "former_team"
+    },
+    "Desmond Bane": {
+      "MEM": "former_team"
+    },
+    "Dorian Finney-Smith": {
+      "BKN": "former_team",
+      "HOU": "former_team",
+      "LAL": "former_team"
+    },
+    "Duncan Robinson": {
+      "MIA": "former_team"
+    },
+    "Georges Niang": {
+      "CLE": "former_team"
+    },
+    "Giannis Antetokounmpo": {
+      "MIL": "former_team"
+    },
+    "Gradey Dick": {
+      "TOR": "former_team"
+    },
+    "Grayson Allen": {
+      "MIL": "former_team",
+      "PHX": "former_team"
+    },
+    "Isaac Okoro": {
+      "CLE": "former_team"
+    },
+    "Isaiah Joe": {
+      "OKC": "former_team"
+    },
+    "Isaiah Stewart": {
+      "DET": "former_team"
+    },
+    "Ivica Zubac": {
+      "LAC": "former_team"
+    },
+    "Ja Morant": {
+      "MEM": "former_team"
+    },
+    "Jaden Hardy": {
+      "DAL": "former_team",
+      "WAS": "former_team"
+    },
+    "Jaime Jaquez Jr.": {
+      "MIA": "former_team"
+    },
+    "Jake LaRavia": {
+      "MEM": "former_team",
+      "SAC": "former_team"
+    },
+    "Jalen Brunson": {
+      "PHI": "college"
+    },
+    "Jalen Duren": {
+      "MEM": "college"
+    },
+    "James Harden": {
+      "HOU": "former_team",
+      "LAC": "former_team",
+      "LAL": "hometown",
+      "PHI": "former_team"
+    },
+    "James Wiseman": {
+      "MEM": "college"
+    },
+    "Jaxson Hayes": {
+      "LAL": "former_team",
+      "NOP": "former_team"
+    },
+    "Jaylen Brown": {
+      "ATL": "hometown",
+      "BOS": "former_team"
+    },
+    "Jeff Green": {
+      "WAS": "college"
+    },
+    "Jerami Grant": {
+      "DEN": "former_team",
+      "DET": "former_team",
+      "POR": "former_team"
+    },
+    "Jeremy Sochan": {
+      "NYK": "former_team",
+      "SAS": "former_team"
+    },
+    "Jimmy Butler III": {
+      "MIL": "college"
+    },
+    "John Collins": {
+      "ATL": "former_team",
+      "LAC": "former_team",
+      "UTA": "former_team"
+    },
+    "Johnny Juzang": {
+      "UTA": "former_team"
+    },
+    "Jonathan Kuminga": {
+      "ATL": "former_team",
+      "GSW": "former_team"
+    },
+    "Josh Green": {
+      "CHA": "former_team",
+      "DAL": "former_team"
+    },
+    "Josh Hart": {
+      "PHI": "college"
+    },
+    "Josh Minott": {
+      "MIN": "former_team"
+    },
+    "Josh Okogie": {
+      "CHA": "former_team",
+      "HOU": "former_team",
+      "MIN": "former_team",
+      "PHX": "former_team"
+    },
+    "Julian Champagnie": {
+      "NYK": "college"
+    },
+    "Julius Randle": {
+      "MIN": "former_team",
+      "NYK": "former_team"
+    },
+    "Kam Jones": {
+      "MIL": "college"
+    },
+    "Karl-Anthony Towns": {
+      "BKN": "hometown"
+    },
+    "Kasparas Jakucionis": {
+      "MIA": "former_team"
+    },
+    "Kawhi Leonard": {
+      "LAC": "former_team",
+      "SAS": "former_team",
+      "TOR": "former_team"
+    },
+    "Kel'el Ware": {
+      "MIA": "former_team"
+    },
+    "Kelly Oubre Jr.": {
+      "CHA": "former_team",
+      "PHI": "former_team"
+    },
+    "Kentavious Caldwell-Pope": {
+      "DEN": "former_team",
+      "LAL": "former_team",
+      "MEM": "former_team",
+      "ORL": "former_team",
+      "WAS": "former_team"
+    },
+    "Keon Ellis": {
+      "CLE": "former_team",
+      "SAC": "former_team"
+    },
+    "Kevin Durant": {
+      "BKN": "former_team",
+      "GSW": "former_team",
+      "PHX": "former_team",
+      "WAS": "hometown"
+    },
+    "Kevon Looney": {
+      "GSW": "former_team",
+      "NOP": "former_team"
+    },
+    "Khris Middleton": {
+      "DAL": "former_team",
+      "MIL": "former_team"
+    },
+    "Klay Thompson": {
+      "DAL": "former_team",
+      "GSW": "former_team"
+    },
+    "Kris Murray": {
+      "POR": "former_team"
+    },
+    "Kristaps Porzingis": {
+      "ATL": "former_team",
+      "BOS": "former_team",
+      "WAS": "former_team"
+    },
+    "Kyle Anderson": {
+      "GSW": "former_team",
+      "MIN": "former_team"
+    },
+    "Kyrie Irving": {
+      "NYK": "hometown"
+    },
+    "LaMelo Ball": {
+      "CHA": "former_team"
+    },
+    "Larry Nance Jr.": {
+      "ATL": "former_team",
+      "CLE": "former_team",
+      "NOP": "former_team"
+    },
+    "LeBron James": {
+      "CLE": "former_team",
+      "LAL": "former_team",
+      "MIA": "former_team"
+    },
+    "Luguentz Dort": {
+      "OKC": "former_team"
+    },
+    "Luka Garza": {
+      "MIN": "former_team"
+    },
+    "Luke Kennard": {
+      "ATL": "former_team",
+      "LAL": "former_team",
+      "MEM": "former_team"
+    },
+    "Luke Kornet": {
+      "BOS": "former_team"
+    },
+    "Marcus Sasser": {
+      "DET": "former_team"
+    },
+    "Marcus Smart": {
+      "BOS": "former_team",
+      "LAL": "former_team",
+      "MEM": "former_team",
+      "WAS": "former_team"
+    },
+    "Marvin Bagley III": {
+      "DAL": "former_team",
+      "DET": "former_team",
+      "WAS": "former_team"
+    },
+    "Matisse Thybulle": {
+      "PHI": "former_team",
+      "POR": "former_team"
+    },
+    "Max Strus": {
+      "CLE": "former_team",
+      "MIA": "former_team"
+    },
+    "Micah Peavy": {
+      "NOP": "former_team"
+    },
+    "Micah Potter": {
+      "IND": "former_team"
+    },
+    "Michael Porter Jr.": {
+      "DEN": "former_team"
+    },
+    "Mikal Bridges": {
+      "PHI": "college"
+    },
+    "Mike Conley": {
+      "MIN": "former_team"
+    },
+    "Miles Bridges": {
+      "CHA": "former_team"
+    },
+    "Mitchell Robinson": {
+      "NYK": "former_team"
+    },
+    "Moritz Wagner": {
+      "ORL": "former_team"
+    },
+    "Myles Turner": {
+      "IND": "former_team"
+    },
+    "Naz Reid": {
+      "MIN": "former_team"
+    },
+    "Nic Claxton": {
+      "BKN": "former_team"
+    },
+    "Nick Richards": {
+      "CHA": "former_team",
+      "CHI": "former_team",
+      "PHX": "former_team"
+    },
+    "Nickeil Alexander-Walker": {
+      "MIN": "former_team"
+    },
+    "Nikola Vucevic": {
+      "BOS": "former_team",
+      "CHI": "former_team",
+      "ORL": "former_team"
+    },
+    "Norman Powell": {
+      "LAC": "former_team",
+      "MIA": "former_team"
+    },
+    "Olivier-Maxence Prosper": {
+      "MIL": "college"
+    },
+    "Paul George": {
+      "LAC": "former_team",
+      "LAL": "hometown",
+      "PHI": "former_team"
+    },
+    "Peyton Watson": {
+      "DEN": "former_team"
+    },
+    "Precious Achiuwa": {
+      "MEM": "college"
+    },
+    "Quentin Grimes": {
+      "DAL": "former_team",
+      "DET": "former_team",
+      "NYK": "former_team",
+      "PHI": "former_team"
+    },
+    "Quinten Post": {
+      "GSW": "former_team"
+    },
+    "Rob Dillingham": {
+      "CHI": "former_team",
+      "MIN": "former_team"
+    },
+    "Royce O'Neale": {
+      "BKN": "former_team",
+      "PHX": "former_team"
+    },
+    "Rui Hachimura": {
+      "LAL": "former_team",
+      "WAS": "former_team"
+    },
+    "Saddiq Bey": {
+      "PHI": "college"
+    },
+    "Sandro Mamukelashvili": {
+      "MIL": "former_team",
+      "SAS": "former_team",
+      "TOR": "former_team"
+    },
+    "Santi Aldama": {
+      "MEM": "former_team"
+    },
+    "Stephen Curry": {
+      "CHA": "hometown"
+    },
+    "Taurean Prince": {
+      "LAL": "former_team",
+      "MIL": "former_team"
+    },
+    "Thomas Sorber": {
+      "WAS": "college"
+    },
+    "Tim Hardaway Jr.": {
+      "DAL": "former_team",
+      "DEN": "former_team",
+      "DET": "former_team"
+    },
+    "Tobias Harris": {
+      "DET": "former_team",
+      "PHI": "former_team"
+    },
+    "Trae Young": {
+      "OKC": "hometown"
+    },
+    "Tre Mann": {
+      "CHA": "former_team",
+      "OKC": "former_team"
+    },
+    "Trendon Watford": {
+      "BKN": "former_team",
+      "PHI": "former_team"
+    },
+    "Ty Jerome": {
+      "CLE": "former_team"
+    },
+    "Tyler Herro": {
+      "MIA": "former_team"
+    },
+    "Tyler Kolek": {
+      "MIL": "college"
+    },
+    "Walker Kessler": {
+      "UTA": "former_team"
+    },
+    "Zaccharie Risacher": {
+      "ATL": "former_team"
+    },
+    "Ziaire Williams": {
+      "BKN": "former_team",
+      "MEM": "former_team"
+    },
+    "Zion Williamson": {
+      "CHA": "hometown"
+    }
+  },
+  "tiers": {
+    "college": 0.5,
+    "former_team": 0.5,
+    "hometown": 0.25
+  }
+}
