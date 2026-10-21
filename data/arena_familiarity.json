@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "season": "2026-27",
+  "description": "Arena/venue familiarity. Entries require verified arena identifiers and underlying game records.",
+  "arenas": {},
+  "player_arenas": {}
+}
