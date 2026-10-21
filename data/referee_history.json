@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "season": "2026-27",
+  "description": "Observed officiating crews and game-level QPIX-R environment. Whistle outcomes are crew-level correlations, not referee-specific causal effects.",
+  "methodology": {
+    "unit": "game_crew",
+    "uniqueness": "official_game_id when verified, otherwise date_ET + away_team + home_team",
+    "individual_official_attribution": "association_only",
+    "qpix_r_scoring": "existing player-level QPIX-R; referee tracking is diagnostic only",
+    "minimum_sample_for_trend": 5,
+    "rolling_windows": [
+      10,
+      20
+    ]
+  },
+  "games": [
+    {
+      "date_et": "2026-10-20",
+      "away_team": "PHI",
+      "home_team": "NYK",
+      "official_game_id": null,
+      "officials": [
+        {
+          "name": "Matt Myers",
+          "role": null
+        },
+        {
+          "name": "Josh Tiven",
+          "role": null
+        },
+        {
+          "name": "Justin Van Duyne",
+          "role": null
+        }
+      ],
+      "team_box_score": {
+        "PHI": {
+          "fta": 27,
+          "ftm": 21,
+          "pf": 23
+        },
+        "NYK": {
+          "fta": 27,
+          "ftm": 19,
+          "pf": 22
+        }
+      },
+      "home_minus_away_fta": 0,
+      "player_qpix_r_adjustments": [],
+      "source": "Basketball Reference basic/advanced box score copied by user",
+      "status": "crew_and_team_totals_verified;player_qpix_r_pending"
+    },
+    {
+      "date_et": "2026-10-20",
+      "away_team": "OKC",
+      "home_team": "SAS",
+      "official_game_id": null,
+      "officials": [
+        {
+          "name": "Brian Forte",
+          "role": null
+        },
+        {
+          "name": "J.T. Orr",
+          "role": null
+        },
+        {
+          "name": "Ben Taylor",
+          "role": null
+        }
+      ],
+      "team_box_score": {
+        "OKC": {
+          "fta": 20,
+          "ftm": 16,
+          "pf": 22
+        },
+        "SAS": {
+          "fta": 25,
+          "ftm": 22,
+          "pf": 24
+        }
+      },
+      "home_minus_away_fta": 5,
+      "player_qpix_r_adjustments": [],
+      "source": "Basketball Reference basic/advanced box score copied by user",
+      "status": "crew_and_team_totals_verified;player_qpix_r_pending"
+    }
+  ],
+  "official_summaries": {},
+  "notes": [
+    "BOS at DET opening-night crew not yet verified; do not infer.",
+    "Game IDs must be verified before changing keys to official IDs.",
+    "Do not claim any referee caused a particular free-throw differential."
+  ]
+}
