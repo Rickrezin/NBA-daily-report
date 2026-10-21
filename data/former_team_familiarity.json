@@ -1,0 +1,1282 @@
+{
+  "_coverage": "Expanded recent-team-history set emphasizing active 2026-27 players and 2025-26/2024-25 former teams. Add older relationships as verified; decay handles age automatically.",
+  "_readme": "Former-team knowledge (SFA) for QPIX. Applies against the listed former opponent home or away. Effective weight = weight x 0.5^(years_since / half_life_years). left_season is the season-ending year of the player's last season with that team. Expanded 2026-10-14 from NBA transaction/offseason records; conservative: only actual playing-team relationships, not draft-rights or same-offseason routing stops.",
+  "decay": {
+    "half_life_years": 3,
+    "min_effective_weight": 0.02
+  },
+  "players": {
+    "AJ Johnson": {
+      "DAL": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "MEM": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "WAS": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Aaron Wiggins": {
+      "OKC": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Andre Drummond": {
+      "BKN": {
+        "left_season": 2022,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "PHI": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Anfernee Simons": {
+      "BOS": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "CHI": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "POR": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Ariel Hukporti": {
+      "NYK": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Bennedict Mathurin": {
+      "IND": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "LAC": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Bobby Portis": {
+      "MIL": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Bogdan Bogdanovic": {
+      "ATL": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "LAC": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Bradley Beal": {
+      "PHX": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "WAS": {
+        "left_season": 2023,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Branden Carlson": {
+      "OKC": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Brandon Ingram": {
+      "LAL": {
+        "left_season": 2019,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "NOP": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "TOR": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Brandon Williams": {
+      "DAL": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Brook Lopez": {
+      "BKN": {
+        "left_season": 2017,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "MIL": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Buddy Hield": {
+      "ATL": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "GSW": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "IND": {
+        "left_season": 2024,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "PHI": {
+        "left_season": 2024,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Cam Johnson": {
+      "BKN": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Caris LeVert": {
+      "ATL": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "CLE": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "DET": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Chris Boucher": {
+      "TOR": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Clint Capela": {
+      "ATL": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "HOU": {
+        "left_season": 2020,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Cody Williams": {
+      "UTA": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Collin Sexton": {
+      "CHA": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "CHI": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "CLE": {
+        "left_season": 2022,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "UTA": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "D'Angelo Russell": {
+      "BKN": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "DAL": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "LAL": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "WAS": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Damian Lillard": {
+      "MIL": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "POR": {
+        "left_season": 2023,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "DeMar DeRozan": {
+      "CHI": {
+        "left_season": 2024,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "SAC": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Dean Wade": {
+      "CLE": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Deandre Ayton": {
+      "LAL": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "PHX": {
+        "left_season": 2023,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "POR": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Dennis Schroder": {
+      "BKN": {
+        "left_season": 2024,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "CLE": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "DET": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "TOR": {
+        "left_season": 2024,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Desmond Bane": {
+      "MEM": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Dorian Finney-Smith": {
+      "BKN": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "HOU": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "LAL": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Duncan Robinson": {
+      "MIA": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Georges Niang": {
+      "CLE": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Giannis Antetokounmpo": {
+      "MIL": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Gradey Dick": {
+      "TOR": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Grayson Allen": {
+      "MIL": {
+        "left_season": 2023,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "PHX": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Isaac Okoro": {
+      "CLE": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Isaiah Joe": {
+      "OKC": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Isaiah Stewart": {
+      "DET": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Ivica Zubac": {
+      "LAC": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Ja Morant": {
+      "MEM": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Jaden Hardy": {
+      "DAL": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "WAS": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Jaime Jaquez Jr.": {
+      "MIA": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Jake LaRavia": {
+      "MEM": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "SAC": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "James Harden": {
+      "HOU": {
+        "left_season": 2021,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "LAC": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "PHI": {
+        "left_season": 2023,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Jaxson Hayes": {
+      "LAL": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "NOP": {
+        "left_season": 2023,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Jaylen Brown": {
+      "BOS": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Jerami Grant": {
+      "DEN": {
+        "left_season": 2020,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "DET": {
+        "left_season": 2022,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "POR": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Jeremy Sochan": {
+      "NYK": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "SAS": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "John Collins": {
+      "ATL": {
+        "left_season": 2023,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "LAC": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "UTA": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Johnny Juzang": {
+      "UTA": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Jonathan Kuminga": {
+      "ATL": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "GSW": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Josh Green": {
+      "CHA": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "DAL": {
+        "left_season": 2024,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Josh Minott": {
+      "MIN": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Josh Okogie": {
+      "CHA": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "HOU": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "MIN": {
+        "left_season": 2022,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "PHX": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Julius Randle": {
+      "MIN": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "NYK": {
+        "left_season": 2024,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Kasparas Jakucionis": {
+      "MIA": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Kawhi Leonard": {
+      "LAC": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "SAS": {
+        "left_season": 2018,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "TOR": {
+        "left_season": 2019,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Kel'el Ware": {
+      "MIA": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Kelly Oubre Jr.": {
+      "CHA": {
+        "left_season": 2023,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "PHI": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Kentavious Caldwell-Pope": {
+      "DEN": {
+        "left_season": 2024,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "LAL": {
+        "left_season": 2021,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "MEM": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "ORL": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "WAS": {
+        "left_season": 2022,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Keon Ellis": {
+      "CLE": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "SAC": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Kevin Durant": {
+      "BKN": {
+        "left_season": 2023,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "GSW": {
+        "left_season": 2019,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "PHX": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Kevon Looney": {
+      "GSW": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "NOP": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Khris Middleton": {
+      "DAL": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "MIL": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Klay Thompson": {
+      "DAL": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "GSW": {
+        "left_season": 2024,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Kris Murray": {
+      "POR": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Kristaps Porzingis": {
+      "ATL": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "BOS": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "WAS": {
+        "left_season": 2023,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Kyle Anderson": {
+      "GSW": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "MIN": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "LaMelo Ball": {
+      "CHA": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Larry Nance Jr.": {
+      "ATL": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "CLE": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "NOP": {
+        "left_season": 2024,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "LeBron James": {
+      "CLE": {
+        "left_season": 2018,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "LAL": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "MIA": {
+        "left_season": 2014,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Luguentz Dort": {
+      "OKC": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Luka Garza": {
+      "MIN": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Luke Kennard": {
+      "ATL": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "LAL": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "MEM": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Luke Kornet": {
+      "BOS": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Marcus Sasser": {
+      "DET": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Marcus Smart": {
+      "BOS": {
+        "left_season": 2023,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "LAL": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "MEM": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "WAS": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Marvin Bagley III": {
+      "DAL": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "DET": {
+        "left_season": 2024,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "WAS": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Matisse Thybulle": {
+      "PHI": {
+        "left_season": 2023,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "POR": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Max Strus": {
+      "CLE": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "MIA": {
+        "left_season": 2023,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Micah Peavy": {
+      "NOP": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Micah Potter": {
+      "IND": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Michael Porter Jr.": {
+      "DEN": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Mike Conley": {
+      "MIN": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Miles Bridges": {
+      "CHA": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Mitchell Robinson": {
+      "NYK": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Moritz Wagner": {
+      "ORL": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Myles Turner": {
+      "IND": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Naz Reid": {
+      "MIN": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Nic Claxton": {
+      "BKN": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Nick Richards": {
+      "CHA": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "CHI": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "PHX": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Nickeil Alexander-Walker": {
+      "MIN": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Nikola Vucevic": {
+      "BOS": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "CHI": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "ORL": {
+        "left_season": 2021,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Norman Powell": {
+      "LAC": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "MIA": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Paul George": {
+      "LAC": {
+        "left_season": 2024,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "PHI": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Peyton Watson": {
+      "DEN": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Quentin Grimes": {
+      "DAL": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "DET": {
+        "left_season": 2024,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "NYK": {
+        "left_season": 2024,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "PHI": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Quinten Post": {
+      "GSW": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Rob Dillingham": {
+      "CHI": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "MIN": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Royce O'Neale": {
+      "BKN": {
+        "left_season": 2024,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "PHX": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Rui Hachimura": {
+      "LAL": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "WAS": {
+        "left_season": 2023,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Sandro Mamukelashvili": {
+      "MIL": {
+        "left_season": 2023,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "SAS": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "TOR": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Santi Aldama": {
+      "MEM": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Taurean Prince": {
+      "LAL": {
+        "left_season": 2024,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "MIL": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Tim Hardaway Jr.": {
+      "DAL": {
+        "left_season": 2024,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "DEN": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "DET": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Tobias Harris": {
+      "DET": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "PHI": {
+        "left_season": 2024,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Tre Mann": {
+      "CHA": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "OKC": {
+        "left_season": 2024,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Trendon Watford": {
+      "BKN": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "PHI": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Ty Jerome": {
+      "CLE": {
+        "left_season": 2025,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Tyler Herro": {
+      "MIA": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Walker Kessler": {
+      "UTA": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Zaccharie Risacher": {
+      "ATL": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    },
+    "Ziaire Williams": {
+      "BKN": {
+        "left_season": 2026,
+        "type": "former_team",
+        "weight": 0.5
+      },
+      "MEM": {
+        "left_season": 2024,
+        "type": "former_team",
+        "weight": 0.5
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "season": "2026-27",
+  "description": "Verified player-opponent history, updated as games are validated. No inferred game results.",
+  "player_opponents": {}
+}
