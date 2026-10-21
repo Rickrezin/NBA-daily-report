@@ -19,6 +19,7 @@
  */
 
 import { writeFileSync, mkdirSync, readFileSync } from "fs";
+import { writeFamiliarityReport } from "./scripts/familiarity.js";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -727,6 +728,10 @@ async function main() {
 
   const top10 = scoredPlayers.slice(0, 10);
   console.log(`   Top: ${top10[0]?.name} | QPIX: ${top10[0]?.score} | QPIX-R: ${top10[0]?.qpixR}`);
+
+  // Separate evidence-backed familiarity snapshot; leaves RAW QPIX and QPIX-R intact.
+  writeFamiliarityReport(scoredPlayers, gameResults, `${date.year}-${date.month}-${date.day}`);
+  console.log("   dashboard/familiarity.json written (unverified history omitted)");
 
   console.log("4. Building dashboard...");
   const dashboardHTML = buildDashboardHTML(top10, gameResults, date.label);
