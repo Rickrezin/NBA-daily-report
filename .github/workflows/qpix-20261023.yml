@@ -1,0 +1,30 @@
+name: QPIX October 23 verified run
+on:
+  push:
+    paths:
+      - 'scripts/qpix_20261023_run.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Source and score all October 23 games
+        run: python3 scripts/qpix_20261023_run.py
+      - name: Validate output files and commit
+        run: |
+          test -s docs/reports/2026-10-23.md
+          test -s data/daily/2026-10-23.json
+          test -s data/daily/2026-10-23.csv
+          git config user.name "QPIX report bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/reports/2026-10-23.md data/daily/2026-10-23.json data/daily/2026-10-23.csv
+          git commit -m "Publish verified October 23 QPIX full-slate index"
+          git push
