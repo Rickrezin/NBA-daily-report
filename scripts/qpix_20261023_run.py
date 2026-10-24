@@ -72,3 +72,4 @@ try:subprocess.run(['node','generate-report.js'],check=True,env=env)
 finally:Path('generate-report.js').write_text(Path('generate-report.js').read_text().replace(extra+'\n',''))
 for path in ['data/daily/2026-10-23.json','data/daily/2026-10-23.csv','docs/reports/2026-10-23.md']:assert Path(path).stat().st_size>100
 print('Verified',len(players),'players and 12 games')
+# Trigger GitHub Actions for current run.
