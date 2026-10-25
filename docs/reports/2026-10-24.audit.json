@@ -1,0 +1,133 @@
+{
+  "date_et": "2026-10-24",
+  "games": 8,
+  "players": 170,
+  "top10": [
+    [
+      "Nikola Jokic",
+      "DEN",
+      117.2,
+      117.2
+    ],
+    [
+      "Jalen Johnson",
+      "ATL",
+      91.7,
+      86.6
+    ],
+    [
+      "Jamal Murray",
+      "DEN",
+      90.2,
+      82.2
+    ],
+    [
+      "Joel Embiid",
+      "PHI",
+      89,
+      81.3
+    ],
+    [
+      "Caleb Wilson",
+      "CHI",
+      85,
+      79.1
+    ],
+    [
+      "Devin Booker",
+      "PHX",
+      75.3,
+      70.8
+    ],
+    [
+      "Evan Mobley",
+      "CLE",
+      71.4,
+      69.8
+    ],
+    [
+      "Victor Wembanyama",
+      "SAS",
+      70.8,
+      72.1
+    ],
+    [
+      "De'Aaron Fox",
+      "SAS",
+      70.8,
+      69.2
+    ],
+    [
+      "Jaylen Brown",
+      "PHI",
+      66.4,
+      66.4
+    ]
+  ],
+  "bottom10": [
+    [
+      "Luke Kornet",
+      "SAS",
+      -16.9
+    ],
+    [
+      "Myles Turner",
+      "MIL",
+      -15.2
+    ],
+    [
+      "Isaac Okoro",
+      "CHI",
+      -13.9
+    ],
+    [
+      "Jordan McLaughlin",
+      "SAS",
+      -13.6
+    ],
+    [
+      "Christian Anderson",
+      "CHA",
+      -13
+    ],
+    [
+      "Anfernee Simons",
+      "PHI",
+      -10.7
+    ],
+    [
+      "Harrison Barnes",
+      "SAS",
+      -8.9
+    ],
+    [
+      "Kingston Flemings",
+      "ATL",
+      -8
+    ],
+    [
+      "Duop Reath",
+      "PHX",
+      -7.1
+    ],
+    [
+      "Adem Bona",
+      "PHI",
+      -6.9
+    ]
+  ],
+  "quality": {
+    "Source": "ESPN final scoreboard/box scores or official NBA LiveData where accessible; NBA CDN returned HTTP 403 in this run; all 8 fixtures and player-point totals verified",
+    "C3 individual ORtg/DRtg": "0/170 verified; unavailable for others, engine C3=0 per existing fallback; NO team-rating substitute.",
+    "C6 second-chance points": "0/170 individual records available; rest omitted (engine zero fallback)",
+    "C6 fast-break points": "0/170 individual records available; rest omitted (engine zero fallback)",
+    "C6 paint points": "0/170 individual records available; rest omitted (engine zero fallback)",
+    "C11 fast-break bonus": "Individual fast-break values available for 0/170 records; omitted where absent",
+    "QPIX-R": "Authorized generate-report.js seasonal/positional FTA baselines; no fabricated rolling-20 FTA",
+    "QPIX-SFA": "Authorized checked-in former_team_familiarity.json, requiring verified individual ratings to trigger; no score-substitutes",
+    "game-point reconciliation": "PASS: All team individual player points exactly match official final scores",
+    "Player inclusion": "All recorded ESPN or NBA LiveData players with >0 minutes; no 5-minute cutoff",
+    "Opponent strength": "Engine default 1.0 (no external standings coefficient)",
+    "Advanced retrieval audit": "[{\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600107&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0\", \"assigned\": 0, \"total\": 20, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600108&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0\", \"assigned\": 0, \"total\": 20, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600106&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0\", \"assigned\": 0, \"total\": 22, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600109&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0\", \"assigned\": 0, \"total\": 25, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600110&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0\", \"assigned\": 0, \"total\": 21, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600104&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0\", \"assigned\": 0, \"total\": 20, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600105&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0\", \"assigned\": 0, \"total\": 21, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600111&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0\", \"assigned\": 0, \"total\": 21, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}]"
+  }
+}
