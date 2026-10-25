@@ -1,0 +1,33 @@
+name: QPIX Independent Verified Report
+on:
+  push:
+    paths:
+      - 'scripts/qpix_independent_run.py'
+      - '.github/workflows/qpix-independent.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  score-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Download and validate final NBA player box scores; run authorized QPIX JS
+        run: python3 scripts/qpix_independent_run.py
+      - name: Commit report JSON CSV and formatted public report
+        run: |
+          git config user.name "QPIX Independent Run"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/daily/ dashboard/ docs/reports/
+          git diff --cached --exit-code && { echo "No new report artifacts"; exit 1; } || true
+          git commit -m "QPIX independent verified NBA run: previous Eastern day" 
+          git push origin HEAD:main
