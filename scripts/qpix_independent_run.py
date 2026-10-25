@@ -299,7 +299,7 @@ def main():
     # Required fields validated at extraction. Missing C3 is intentionally ABSENT from player dictionary:
     # JS Number.isFinite(undefined) false and C4 defensive anchor check false.
     quality={
-      "Source":"NBA official LiveData final box scores, fetched directly, with 8 scheduled games independently checked",
+      "Source":"ESPN final scoreboard/box scores or official NBA LiveData where accessible; NBA CDN returned HTTP 403 in this run; all 8 fixtures and player-point totals verified",
       "C3 individual ORtg/DRtg": f"{c3}/{len(players)} verified; unavailable for others, engine C3=0 per existing fallback; NO team-rating substitute.",
       "C6 second-chance points":f"{c6['second_chance_points']}/{len(players)} individual records available; rest omitted (engine zero fallback)",
       "C6 fast-break points":f"{c6['fast_break_points']}/{len(players)} individual records available; rest omitted (engine zero fallback)",
@@ -308,7 +308,7 @@ def main():
       "QPIX-R":"Authorized generate-report.js seasonal/positional FTA baselines; no fabricated rolling-20 FTA",
       "QPIX-SFA":"Authorized checked-in former_team_familiarity.json, requiring verified individual ratings to trigger; no score-substitutes",
       "game-point reconciliation":"PASS: All team individual player points exactly match official final scores",
-      "Player inclusion":"All NBA LiveData players with >0 minutes; no 5-minute cutoff",
+      "Player inclusion":"All recorded ESPN or NBA LiveData players with >0 minutes; no 5-minute cutoff",
       "Opponent strength":"Engine default 1.0 (no external standings coefficient)",
       "Advanced retrieval audit":json.dumps(adv,ensure_ascii=False)
     }

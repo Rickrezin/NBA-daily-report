@@ -27,7 +27,8 @@ jobs:
         run: |
           git config user.name "QPIX Independent Run"
           git config user.email "actions@users.noreply.github.com"
-          git add data/daily/ dashboard/ docs/reports/
-          git diff --cached --exit-code && { echo "No new report artifacts"; exit 1; } || true
+          git add data/daily/ docs/reports/
+          git add -f dashboard/index.html dashboard/familiarity.json
+          if git diff --cached --quiet; then echo 'No new report artifacts'; exit 1; fi
           git commit -m "QPIX independent verified NBA run: previous Eastern day" 
           git push origin HEAD:main
