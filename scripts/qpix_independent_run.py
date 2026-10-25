@@ -60,9 +60,105 @@ def choose_position(p):
     if pos in ("G","GUARD","PG","SG"):return "G"
     return "G" # explicit positional fallback, not claimed verified
 
+
+# ESPN official game recap/box-score feed is an independently verifiable fallback
+# when the NBA LiveData CDN blocks cloud IP addresses.
+from functools import lru_cache
+MATCHUPS_20261024={
+"0022600104":("MIA","CHA"),"0022600105":("BKN","CLE"),
+"0022600106":("MIL","PHI"),"0022600107":("HOU","ATL"),
+"0022600108":("WAS","CHI"),"0022600109":("SAS","DAL"),
+"0022600110":("NOP","DEN"),"0022600111":("GSW","PHX")
+}
+def normalize_alias(s):
+    return {"SA":"SAS","GS":"GSW","NO":"NOP","NY":"NYK","WSH":"WAS","PHO":"PHX","UTAH":"UTA"}.get(str(s).upper(),str(s).upper())
+
+@lru_cache(None)
+def espn_scoreboard():
+    url="https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates="+RUN_DATE.replace("-","")
+    return fetch_json(url,timeout=20)
+
+def espn_game(game_id):
+    want=MATCHUPS_20261024.get(game_id)
+    if not want:raise RuntimeError("No verified NBA-to-ESPN game id relationship for "+game_id)
+    board=espn_scoreboard()
+    matching=[]
+    for event in board.get("events",[]):
+        competition=event["competitions"][0]
+        comps=competition.get("competitors",[])
+        if len(comps)!=2:continue
+        home=next((c for c in comps if c.get("homeAway")=="home"),None)
+        away=next((c for c in comps if c.get("homeAway")=="away"),None)
+        if not home or not away:continue
+        names=(normalize_alias(away["team"]["abbreviation"]), normalize_alias(home["team"]["abbreviation"]))
+        if names==want:matching.append((event,competition,home,away))
+    if len(matching)!=1:raise RuntimeError("ESPN scoreboard fixture not unique for "+game_id+": "+str(len(matching)))
+    event,competition,home,away=matching[0]
+    status=event.get("status",{}).get("type",{})
+    if status.get("completed") is not True:
+        raise RuntimeError("ESPN says not final "+game_id+": "+str(status))
+    ha,aa=want[1],want[0]
+    hp,ap=int(home["score"]),int(away["score"])
+    eventid=event["id"]
+    url="https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event="+eventid
+    details=fetch_json(url,timeout=20)
+    rows=details.get("boxscore",{}).get("players",[])
+    if len(rows)!=2:raise RuntimeError("ESPN boxscore missing a team "+game_id)
+    out=[]
+    for team in rows:
+        a=normalize_alias(team.get("team",{}).get("abbreviation",""))
+        if a not in (ha,aa):raise RuntimeError("ESPN unexpected team "+a+" in "+game_id)
+        for block in team.get("statistics",[]):
+            labels=[str(x).strip().upper() for x in block.get("labels",[])]
+            for athlete in block.get("athletes",[]):
+                if athlete.get("didNotPlay"):continue
+                values=athlete.get("stats",[])
+                stats={k:str(v).strip() for k,v in zip(labels,values)}
+                mins=minute_float(stats.get("MIN"))
+                if not mins or mins<=0:continue
+                meta=athlete.get("athlete",{})
+                name=meta.get("displayName") or meta.get("fullName")
+                if not name:raise RuntimeError("ESPN player name absent")
+                def one(field):
+                    val=stats.get(field)
+                    if val is None or val=="":raise RuntimeError(f"ESPN missing {field} for {name}")
+                    return int(val.replace("+",""))
+                def pair(field):
+                    val=stats.get(field)
+                    if val is None or not re.fullmatch(r"\d+-\d+",val):
+                        raise RuntimeError(f"ESPN missing attempts {field} for {name}: {val}")
+                    return tuple(int(v) for v in val.split("-"))
+                fg,att=pair("FG")
+                three,threeatt=pair("3PT")
+                ft,fta=pair("FT")
+                oreb,dreb,reb=one("OREB"),one("DREB"),one("REB")
+                if oreb+dreb!=reb:raise RuntimeError("ESPN rebound mismatch "+name)
+                if "+/-" not in stats:raise RuntimeError("ESPN player +/- missing "+name)
+                pm_str=stats["+/-"].replace("+","")
+                pm=float(pm_str)
+                p={
+                "name":name,"player_id":meta.get("id"),"team":a,
+                "position":choose_position({"position":meta.get("position",{}).get("abbreviation","G")}),
+                "minutes":mins,"game":f"{aa} @ {ha}","game_id":game_id,"home_alias":ha,"away_alias":aa,
+                "home_points":hp,"away_points":ap,"is_home":a==ha,"source":url,
+                "points":one("PTS"),"rebounds":reb,"offensive_rebounds":oreb,"defensive_rebounds":dreb,
+                "assists":one("AST"),"steals":one("STL"),"blocks":one("BLK"),
+                "turnovers":one("TO"),"fgm":fg,"fga":att,"fg3m":three,"fg3a":threeatt,
+                "ftm":ft,"fta":fta,"ft_pct":ft/fta if fta else .75,"plus_minus":pm}
+                out.append(p)
+    for alias,score in ((ha,hp),(aa,ap)):
+        actual=sum(x["points"] for x in out if x["team"]==alias)
+        if actual!=score:raise RuntimeError(f"ESPN point reconciliation failed {alias}: {actual} != {score}")
+    if not out:raise RuntimeError("ESPN player details missing "+game_id)
+    return {"game_id":game_id,"home_alias":ha,"away_alias":aa,"home_points":hp,"away_points":ap,"date_et":RUN_DATE,"source":url,"status":"FINAL"},out
+
 def normalize_game(game_id):
     url="https://cdn.nba.com/static/json/liveData/boxscore/boxscore_"+game_id+".json"
-    doc=fetch_json(url)
+    try:
+        doc=fetch_json(url)
+    except Exception as exc:
+        print("NBA CDN unavailable",game_id,str(exc)[:100],"; trying ESPN final player feed",flush=True)
+        return espn_game(game_id)
     g=doc.get("game",doc)
     if str(g.get("gameId",game_id))!=game_id:raise RuntimeError("Game id mismatch "+game_id)
     status=int(g.get("gameStatus",0))
