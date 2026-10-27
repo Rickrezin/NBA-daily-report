@@ -24,20 +24,65 @@ def fetch(url, timeout=16):
 
 def fetch_json(url,timeout=16):return json.loads(fetch(url,timeout))
 
+
+DYNAMIC_MATCHUPS={}
+SCHEDULE_AUDIT={}
+
 def game_ids_for(date):
-    if date=="2026-10-24":return EXPECTED_20261024
-    url="https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_1.json"
-    doc=fetch_json(url)
-    target=date.replace("-","/")
-    out=[]
-    for day in doc.get("leagueSchedule",{}).get("gameDates",[]):
-        daystr=str(day.get("gameDate",""))
-        mmddyyyy="/".join([date[5:7],date[8:10],date[:4]])
-        if date not in daystr and mmddyyyy not in daystr:continue
-        for g in day.get("games",[]):
-            game_id=str(g.get("gameId",""))
-            if game_id and game_id[:3] in ("001","002","004"):out.append(game_id)
-    return out
+    """Resolve every final Eastern-day fixture, checking NBA schedule vs ESPN.
+    Prefer NBA IDs for LiveData and advanced rating requests; fall back to verified
+    ESPN event IDs if the NBA schedule endpoint cannot be fetched."""
+    if date=="2026-10-24":
+        return EXPECTED_20261024
+
+    board=espn_scoreboard()
+    events=[]
+    for event in board.get("events",[]):
+        competitions=event.get("competitions") or []
+        if len(competitions)!=1:raise RuntimeError("Incomplete ESPN fixture "+str(event.get("id")))
+        comps=competitions[0].get("competitors") or []
+        home=next((c for c in comps if c.get("homeAway")=="home"),None)
+        away=next((c for c in comps if c.get("homeAway")=="away"),None)
+        if not home or not away:raise RuntimeError("Missing home/away ESPN competition")
+        alias=(normalize_alias(away["team"]["abbreviation"]),normalize_alias(home["team"]["abbreviation"]))
+        if not event.get("status",{}).get("type",{}).get("completed",False):
+            raise RuntimeError("Previous ET date includes a nonfinal game: "+str(event.get("id")))
+        if not all(str(x.get("score","")).isdigit() for x in (away,home)):
+            raise RuntimeError("Missing final score in ESPN event "+str(event.get("id")))
+        events.append((str(event["id"]),alias))
+    if not events:raise RuntimeError("ESPN scoreboard found no games "+date)
+    if len(set(pair for _,pair in events))!=len(events):
+        raise RuntimeError("Duplicate fixture on ESPN scoreboard "+date)
+    SCHEDULE_AUDIT["ESPN_final_fixtures"]=len(events)
+
+    # Cross-check NBA's own schedule when accessible.
+    try:
+        schedule=fetch_json("https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_1.json",timeout=12)
+        ids=[]
+        date_formats=(date,"/".join([date[5:7],date[8:10],date[:4]]))
+        expected={pair for _,pair in events}
+        for day in schedule.get("leagueSchedule",{}).get("gameDates",[]):
+            if not any(x in str(day.get("gameDate","")) for x in date_formats):continue
+            for game in day.get("games",[]):
+                gid=str(game.get("gameId",""))
+                if not gid.startswith(("001","002","004")):continue
+                away=normalize_alias(game.get("awayTeam",{}).get("teamTricode",""))
+                home=normalize_alias(game.get("homeTeam",{}).get("teamTricode",""))
+                if (away,home) not in expected:continue
+                DYNAMIC_MATCHUPS[gid]=(away,home)
+                ids.append(gid)
+        if len(ids)==len(events) and len(set(ids))==len(ids) and {DYNAMIC_MATCHUPS[x] for x in ids}==expected:
+            SCHEDULE_AUDIT["NBA_schedule"]="Matched every ESPN final fixture; NBA LiveData attempted"
+            return ids
+        SCHEDULE_AUDIT["NBA_schedule"]="Unavailable or incomplete NBA schedule matchup map; used ESPN fallback"
+    except Exception as exc:
+        SCHEDULE_AUDIT["NBA_schedule"]="Retrieval failed: "+str(exc)[:140]
+    ids=[]
+    for eventid,pair in events:
+        gid="ESPN_"+eventid
+        DYNAMIC_MATCHUPS[gid]=pair
+        ids.append(gid)
+    return ids
 
 def minute_float(raw):
     if raw is None:return None
@@ -79,7 +124,7 @@ def espn_scoreboard():
     return fetch_json(url,timeout=20)
 
 def espn_game(game_id):
-    want=MATCHUPS_20261024.get(game_id)
+    want=MATCHUPS_20261024.get(game_id) or DYNAMIC_MATCHUPS.get(game_id)
     if not want:raise RuntimeError("No verified NBA-to-ESPN game id relationship for "+game_id)
     board=espn_scoreboard()
     matching=[]
@@ -150,9 +195,12 @@ def espn_game(game_id):
         actual=sum(x["points"] for x in out if x["team"]==alias)
         if actual!=score:raise RuntimeError(f"ESPN point reconciliation failed {alias}: {actual} != {score}")
     if not out:raise RuntimeError("ESPN player details missing "+game_id)
-    return {"game_id":game_id,"home_alias":ha,"away_alias":aa,"home_points":hp,"away_points":ap,"date_et":RUN_DATE,"source":url,"status":"FINAL"},out
+    game_info=details.get("gameInfo",{})
+    officials=[r.get("displayName") for r in game_info.get("officials",[]) if r.get("displayName")]
+    return {"game_id":game_id,"espn_event_id":eventid,"home_alias":ha,"away_alias":aa,"home_points":hp,"away_points":ap,"date_et":RUN_DATE,"source":url,"status":"FINAL","officials":officials,"attendance":game_info.get("attendance")},out
 
 def normalize_game(game_id):
+    if game_id.startswith("ESPN_"):return espn_game(game_id)
     url="https://cdn.nba.com/static/json/liveData/boxscore/boxscore_"+game_id+".json"
     try:
         doc=fetch_json(url)
@@ -166,7 +214,7 @@ def normalize_game(game_id):
     home,away=g["homeTeam"],g["awayTeam"]
     ha,aa=str(home["teamTricode"]),str(away["teamTricode"])
     hp,ap=int(home["score"]),int(away["score"])
-    result={"game_id":game_id,"home_alias":ha,"away_alias":aa,"home_points":hp,"away_points":ap,"date_et":RUN_DATE,"source":url,"status":"FINAL"}
+    result={"game_id":game_id,"home_alias":ha,"away_alias":aa,"home_points":hp,"away_points":ap,"date_et":RUN_DATE,"source":url,"status":"FINAL","officials":[v.get("name") for v in g.get("officials",[]) if v.get("name")]}
     players=[]
     for team,other,is_home in ((home,away,True),(away,home,False)):
         alias=team["teamTricode"]
@@ -204,7 +252,9 @@ def normalize_game(game_id):
 
 def add_advanced(game_id, players):
     """Try NBA Stats advanced v3; if blocked, legitimately mark missing (no inference)."""
-    url=f"https://stats.nba.com/stats/boxscoreadvancedv3?GameID={game_id}&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0"
+    if game_id.startswith("ESPN_"):
+        return {"source":"NBA Stats advanced (requires official game ID)","assigned":0,"total":len(players),"status":"unavailable","error":"NBA schedule could not resolve this ESPN event to a verified NBA game ID"}
+    url=f"https://stats.nba.com/stats/boxscoreadvancedv3?GameID={game_id}&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0"
     try:
         doc=fetch_json(url,timeout=9)
         main=doc.get("boxScoreAdvanced",doc)
@@ -229,7 +279,7 @@ def create_report(result, quality):
     players=result["players"]
     games=result["games"]
     day=RUN_DATE
-    byname={"MIA":"Miami Heat","CHA":"Charlotte Hornets","MIL":"Milwaukee Bucks","PHI":"Philadelphia 76ers","BKN":"Brooklyn Nets","CLE":"Cleveland Cavaliers","SAS":"San Antonio Spurs","DAL":"Dallas Mavericks","WAS":"Washington Wizards","CHI":"Chicago Bulls","HOU":"Houston Rockets","ATL":"Atlanta Hawks","NOP":"New Orleans Pelicans","DEN":"Denver Nuggets","GSW":"Golden State Warriors","PHX":"Phoenix Suns"}
+    byname={"MIA":"Miami Heat","CHA":"Charlotte Hornets","MIL":"Milwaukee Bucks","PHI":"Philadelphia 76ers","BKN":"Brooklyn Nets","CLE":"Cleveland Cavaliers","SAS":"San Antonio Spurs","DAL":"Dallas Mavericks","WAS":"Washington Wizards","CHI":"Chicago Bulls","HOU":"Houston Rockets","ATL":"Atlanta Hawks","NOP":"New Orleans Pelicans","DEN":"Denver Nuggets","GSW":"Golden State Warriors","PHX":"Phoenix Suns","MIN":"Minnesota Timberwolves","IND":"Indiana Pacers","BOS":"Boston Celtics","UTA":"Utah Jazz","MEM":"Memphis Grizzlies","OKC":"Oklahoma City Thunder"}
     top=players[:10]
     bottom=list(reversed(players[-10:]))
     def player_rank(p):return f"{p['name']} | {p['team']} — {p['score']:.1f}"
@@ -299,7 +349,7 @@ def main():
     # Required fields validated at extraction. Missing C3 is intentionally ABSENT from player dictionary:
     # JS Number.isFinite(undefined) false and C4 defensive anchor check false.
     quality={
-      "Source":"ESPN final scoreboard/box scores or official NBA LiveData where accessible; NBA CDN returned HTTP 403 in this run; all 8 fixtures and player-point totals verified",
+      "Source":f"ESPN final scoreboard/box scores or official NBA LiveData where accessible; all {len(games)} FINAL fixtures and player-point totals reconciled; "+str(SCHEDULE_AUDIT),
       "C3 individual ORtg/DRtg": f"{c3}/{len(players)} verified; unavailable for others, engine C3=0 per existing fallback; NO team-rating substitute.",
       "C6 second-chance points":f"{c6['second_chance_points']}/{len(players)} individual records available; rest omitted (engine zero fallback)",
       "C6 fast-break points":f"{c6['fast_break_points']}/{len(players)} individual records available; rest omitted (engine zero fallback)",
