@@ -1,0 +1,133 @@
+{
+  "date_et": "2026-10-26",
+  "games": 9,
+  "players": 210,
+  "top10": [
+    [
+      "Alperen Sengun",
+      "HOU",
+      109.9,
+      108.3
+    ],
+    [
+      "Cooper Flagg",
+      "DAL",
+      104.8,
+      104.8
+    ],
+    [
+      "Brandon Miller",
+      "CHA",
+      84.5,
+      84.5
+    ],
+    [
+      "Yaxel Lendeborg",
+      "GSW",
+      84.5,
+      76.4
+    ],
+    [
+      "Giannis Antetokounmpo",
+      "MIA",
+      80.1,
+      81.1
+    ],
+    [
+      "Anthony Edwards",
+      "MIN",
+      79.4,
+      79.4
+    ],
+    [
+      "Tyler Herro",
+      "MIL",
+      74.2,
+      69.3
+    ],
+    [
+      "Nikola Jokic",
+      "DEN",
+      72.3,
+      75.6
+    ],
+    [
+      "Kevin Durant",
+      "HOU",
+      65.9,
+      62.5
+    ],
+    [
+      "Ajay Mitchell",
+      "OKC",
+      64.7,
+      58.4
+    ]
+  ],
+  "bottom10": [
+    [
+      "Kyle Filipowski",
+      "UTA",
+      -23.7
+    ],
+    [
+      "Jaylin Sellers",
+      "CHI",
+      -23
+    ],
+    [
+      "Josh Dix",
+      "OKC",
+      -22.1
+    ],
+    [
+      "Marcus Sasser",
+      "DAL",
+      -18.6
+    ],
+    [
+      "Svi Mykhailiuk",
+      "UTA",
+      -16.3
+    ],
+    [
+      "Josh Okogie",
+      "UTA",
+      -16
+    ],
+    [
+      "Noa Essengue",
+      "CHI",
+      -14.5
+    ],
+    [
+      "Isaiah Crawford",
+      "HOU",
+      -10
+    ],
+    [
+      "Sergio de Larrea",
+      "DAL",
+      -8.4
+    ],
+    [
+      "Zach Collins",
+      "CHI",
+      -7.9
+    ]
+  ],
+  "quality": {
+    "Source": "ESPN final scoreboard/box scores or official NBA LiveData where accessible; all 9 FINAL fixtures and player-point totals reconciled; {'ESPN_final_fixtures': 9, 'NBA_schedule': 'Retrieval failed: HTTP Error 403: Forbidden'}",
+    "C3 individual ORtg/DRtg": "0/210 verified; unavailable for others, engine C3=0 per existing fallback; NO team-rating substitute.",
+    "C6 second-chance points": "0/210 individual records available; rest omitted (engine zero fallback)",
+    "C6 fast-break points": "0/210 individual records available; rest omitted (engine zero fallback)",
+    "C6 paint points": "0/210 individual records available; rest omitted (engine zero fallback)",
+    "C11 fast-break bonus": "Individual fast-break values available for 0/210 records; omitted where absent",
+    "QPIX-R": "Authorized generate-report.js seasonal/positional FTA baselines; no fabricated rolling-20 FTA",
+    "QPIX-SFA": "Authorized checked-in former_team_familiarity.json, requiring verified individual ratings to trigger; no score-substitutes",
+    "game-point reconciliation": "PASS: All team individual player points exactly match official final scores",
+    "Player inclusion": "All recorded ESPN or NBA LiveData players with >0 minutes; no 5-minute cutoff",
+    "Opponent strength": "Engine default 1.0 (no external standings coefficient)",
+    "Advanced retrieval audit": "[{\"source\": \"NBA Stats advanced (requires official game ID)\", \"assigned\": 0, \"total\": 24, \"status\": \"unavailable\", \"error\": \"NBA schedule could not resolve this ESPN event to a verified NBA game ID\"}, {\"source\": \"NBA Stats advanced (requires official game ID)\", \"assigned\": 0, \"total\": 21, \"status\": \"unavailable\", \"error\": \"NBA schedule could not resolve this ESPN event to a verified NBA game ID\"}, {\"source\": \"NBA Stats advanced (requires official game ID)\", \"assigned\": 0, \"total\": 19, \"status\": \"unavailable\", \"error\": \"NBA schedule could not resolve this ESPN event to a verified NBA game ID\"}, {\"source\": \"NBA Stats advanced (requires official game ID)\", \"assigned\": 0, \"total\": 19, \"status\": \"unavailable\", \"error\": \"NBA schedule could not resolve this ESPN event to a verified NBA game ID\"}, {\"source\": \"NBA Stats advanced (requires official game ID)\", \"assigned\": 0, \"total\": 25, \"status\": \"unavailable\", \"error\": \"NBA schedule could not resolve this ESPN event to a verified NBA game ID\"}, {\"source\": \"NBA Stats advanced (requires official game ID)\", \"assigned\": 0, \"total\": 21, \"status\": \"unavailable\", \"error\": \"NBA schedule could not resolve this ESPN event to a verified NBA game ID\"}, {\"source\": \"NBA Stats advanced (requires official game ID)\", \"assigned\": 0, \"total\": 29, \"status\": \"unavailable\", \"error\": \"NBA schedule could not resolve this ESPN event to a verified NBA game ID\"}, {\"source\": \"NBA Stats advanced (requires official game ID)\", \"assigned\": 0, \"total\": 24, \"status\": \"unavailable\", \"error\": \"NBA schedule could not resolve this ESPN event to a verified NBA game ID\"}, {\"source\": \"NBA Stats advanced (requires official game ID)\", \"assigned\": 0, \"total\": 28, \"status\": \"unavailable\", \"error\": \"NBA schedule could not resolve this ESPN event to a verified NBA game ID\"}]"
+  }
+}
