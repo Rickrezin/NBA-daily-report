@@ -1,0 +1,134 @@
+{
+  "date_et": "2026-10-27",
+  "games": 4,
+  "players": 93,
+  "top10": [
+    [
+      "Victor Wembanyama",
+      "SAS",
+      104.1,
+      109.4
+    ],
+    [
+      "Jayson Tatum",
+      "BOS",
+      86.2,
+      72.4
+    ],
+    [
+      "Luka Doncic",
+      "LAL",
+      82.5,
+      80.2
+    ],
+    [
+      "Domantas Sabonis",
+      "SAC",
+      69.6,
+      72.2
+    ],
+    [
+      "Michael Porter Jr.",
+      "BKN",
+      63.5,
+      61.5
+    ],
+    [
+      "Austin Reaves",
+      "LAL",
+      62.1,
+      58.4
+    ],
+    [
+      "Robert Williams III",
+      "POR",
+      61.1,
+      63.4
+    ],
+    [
+      "Dylan Harper",
+      "SAS",
+      59.6,
+      59.6
+    ],
+    [
+      "Paul Reed",
+      "DET",
+      55.1,
+      55.1
+    ],
+    [
+      "Deni Avdija",
+      "POR",
+      54.6,
+      55.7
+    ]
+  ],
+  "bottom10": [
+    [
+      "Hugo Gonzalez",
+      "BOS",
+      -12.6
+    ],
+    [
+      "Quentin Grimes",
+      "LAL",
+      -6.8
+    ],
+    [
+      "Nique Clifford",
+      "SAC",
+      -6.5
+    ],
+    [
+      "Precious Achiuwa",
+      "SAC",
+      -6.5
+    ],
+    [
+      "Javonte Green",
+      "DET",
+      -6.5
+    ],
+    [
+      "Luke Kornet",
+      "SAS",
+      -3.7
+    ],
+    [
+      "Tolu Smith",
+      "DET",
+      -3.7
+    ],
+    [
+      "Alex Karaban",
+      "SAC",
+      -3.6
+    ],
+    [
+      "Scoot Henderson",
+      "POR",
+      -3.3
+    ],
+    [
+      "Jonathan Mogbo",
+      "SAC",
+      -2.2
+    ]
+  ],
+  "quality": {
+    "Source": "ESPN final scoreboard/box scores or official NBA LiveData where accessible; all 4 FINAL fixtures and player-point totals reconciled; {'ESPN_final_fixtures': 4, 'NBA_schedule': 'Retrieval failed: HTTP Error 403: Forbidden'}",
+    "C3 individual ORtg/DRtg": "0/93 verified; unavailable for others, engine C3=0 per existing fallback; NO team-rating substitute.",
+    "C6 second-chance points": "0/93 individual records available; rest omitted (engine zero fallback)",
+    "C6 fast-break points": "0/93 individual records available; rest omitted (engine zero fallback)",
+    "C6 paint points": "0/93 individual records available; rest omitted (engine zero fallback)",
+    "C11 fast-break bonus": "Individual fast-break values available for 0/93 records; omitted where absent",
+    "QPIX-R": "Authorized generate-report.js seasonal/positional FTA baselines; no fabricated rolling-20 FTA",
+    "QPIX-SFA": "Authorized checked-in former_team_familiarity.json, requiring verified individual ratings to trigger; no score-substitutes",
+    "game-point reconciliation": "PASS: All team individual player points exactly match official final scores",
+    "Player inclusion": "All recorded ESPN or NBA LiveData players with >0 minutes; no 5-minute cutoff",
+    "Top 10 eligibility": "Minimum 4 field-goal attempts (FGA); 0-3 FGA stay in full JSON/CSV and bottom ranking but cannot appear in public Top 10",
+    "Opponent strength": "Engine default 1.0 (no external standings coefficient)",
+    "Advanced retrieval audit": "[{\"source\": \"NBA Stats advanced (requires official game ID)\", \"assigned\": 0, \"total\": 21, \"status\": \"unavailable\", \"error\": \"NBA schedule could not resolve this ESPN event to a verified NBA game ID\"}, {\"source\": \"NBA Stats advanced (requires official game ID)\", \"assigned\": 0, \"total\": 28, \"status\": \"unavailable\", \"error\": \"NBA schedule could not resolve this ESPN event to a verified NBA game ID\"}, {\"source\": \"NBA Stats advanced (requires official game ID)\", \"assigned\": 0, \"total\": 24, \"status\": \"unavailable\", \"error\": \"NBA schedule could not resolve this ESPN event to a verified NBA game ID\"}, {\"source\": \"NBA Stats advanced (requires official game ID)\", \"assigned\": 0, \"total\": 20, \"status\": \"unavailable\", \"error\": \"NBA schedule could not resolve this ESPN event to a verified NBA game ID\"}]"
+  }
+}
