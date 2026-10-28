@@ -117,7 +117,7 @@
     ]
   ],
   "quality": {
-    "Source": "ESPN final scoreboard/box scores or official NBA LiveData where accessible; all 4 FINAL fixtures and player-point totals reconciled; {'ESPN_final_fixtures': 4, 'NBA_schedule': 'Retrieval failed: HTTP Error 403: Forbidden'}",
+    "Source": "ESPN final scoreboard/box scores or official NBA LiveData where accessible; all 4 FINAL fixtures and player-point totals reconciled; {'ESPN_final_fixtures': 4, 'NBA_game_id_crosscheck': 'All four independently verified NBA game IDs match ESPN final fixtures'}",
     "C3 individual ORtg/DRtg": "0/93 verified; unavailable for others, engine C3=0 per existing fallback; NO team-rating substitute.",
     "C6 second-chance points": "0/93 individual records available; rest omitted (engine zero fallback)",
     "C6 fast-break points": "0/93 individual records available; rest omitted (engine zero fallback)",
@@ -129,6 +129,6 @@
     "Player inclusion": "All recorded ESPN or NBA LiveData players with >0 minutes; no 5-minute cutoff",
     "Top 10 eligibility": "Minimum 4 field-goal attempts (FGA); 0-3 FGA stay in full JSON/CSV and bottom ranking but cannot appear in public Top 10",
     "Opponent strength": "Engine default 1.0 (no external standings coefficient)",
-    "Advanced retrieval audit": "[{\"source\": \"NBA Stats advanced (requires official game ID)\", \"assigned\": 0, \"total\": 21, \"status\": \"unavailable\", \"error\": \"NBA schedule could not resolve this ESPN event to a verified NBA game ID\"}, {\"source\": \"NBA Stats advanced (requires official game ID)\", \"assigned\": 0, \"total\": 28, \"status\": \"unavailable\", \"error\": \"NBA schedule could not resolve this ESPN event to a verified NBA game ID\"}, {\"source\": \"NBA Stats advanced (requires official game ID)\", \"assigned\": 0, \"total\": 24, \"status\": \"unavailable\", \"error\": \"NBA schedule could not resolve this ESPN event to a verified NBA game ID\"}, {\"source\": \"NBA Stats advanced (requires official game ID)\", \"assigned\": 0, \"total\": 20, \"status\": \"unavailable\", \"error\": \"NBA schedule could not resolve this ESPN event to a verified NBA game ID\"}]"
+    "Advanced retrieval audit": "[{\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600130&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 24, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600128&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 21, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600131&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 20, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600129&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 28, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}]"
   }
 }
