@@ -280,7 +280,7 @@ def create_report(result, quality):
     games=result["games"]
     day=RUN_DATE
     byname={"MIA":"Miami Heat","CHA":"Charlotte Hornets","MIL":"Milwaukee Bucks","PHI":"Philadelphia 76ers","BKN":"Brooklyn Nets","CLE":"Cleveland Cavaliers","SAS":"San Antonio Spurs","DAL":"Dallas Mavericks","WAS":"Washington Wizards","CHI":"Chicago Bulls","HOU":"Houston Rockets","ATL":"Atlanta Hawks","NOP":"New Orleans Pelicans","DEN":"Denver Nuggets","GSW":"Golden State Warriors","PHX":"Phoenix Suns","MIN":"Minnesota Timberwolves","IND":"Indiana Pacers","BOS":"Boston Celtics","UTA":"Utah Jazz","MEM":"Memphis Grizzlies","OKC":"Oklahoma City Thunder"}
-    top=players[:10]
+    top=[p for p in players if p.get('fga',0)>=4][:10]
     bottom=list(reversed(players[-10:]))
     def player_rank(p):return f"{p['name']} | {p['team']} — {p['score']:.1f}"
     m=[f"# 🏀 QCORE LABS | QPIX™ NBA DAILY PERFORMANCE INDEX","","**"+datetime.strptime(day,"%Y-%m-%d").strftime("%B %d, %Y").upper()+f" | {'PRESEASON' if PHASE=='preseason' else 'REGULAR SEASON'}**",
@@ -359,6 +359,7 @@ def main():
       "QPIX-SFA":"Authorized checked-in former_team_familiarity.json, requiring verified individual ratings to trigger; no score-substitutes",
       "game-point reconciliation":"PASS: All team individual player points exactly match official final scores",
       "Player inclusion":"All recorded ESPN or NBA LiveData players with >0 minutes; no 5-minute cutoff",
+      "Top 10 eligibility":"Minimum 4 field-goal attempts (FGA); 0-3 FGA stay in full JSON/CSV and bottom ranking but cannot appear in public Top 10", 
       "Opponent strength":"Engine default 1.0 (no external standings coefficient)",
       "Advanced retrieval audit":json.dumps(adv,ensure_ascii=False)
     }
@@ -369,7 +370,7 @@ def main():
     marker="  const top10 = scoredPlayers.slice(0, 10);"
     if js.count(marker)!=1:raise RuntimeError("Authorized engine extraction marker changed; refusing substitute implementation")
     instrument="  writeFileSync(join(process.cwd(), 'data', '_qpix_scored_automated.json'), JSON.stringify({games:gameResults, players:scoredPlayers}, null, 2));\n"
-    pathlib.Path("generate-report.js").write_text(js.replace(marker,instrument+marker),encoding="utf-8")
+    pathlib.Path("generate-report.js").write_text(js.replace(marker,instrument+"  const top10 = scoredPlayers.filter(p => p.fga >= 4).slice(0, 10);"),encoding="utf-8")
     try:
         env=os.environ.copy();env["QPIX_PHASE"]=PHASE
         subprocess.run(["node","generate-report.js"],check=True,env=env,timeout=120)
@@ -377,24 +378,26 @@ def main():
         pathlib.Path("generate-report.js").write_text(js,encoding="utf-8")
     scored=json.loads(pathlib.Path("data/_qpix_scored_automated.json").read_text(encoding="utf-8"))
     ranked=scored["players"]
+    for p in ranked: p["top10_eligible"] = bool(p.get("fga",0)>=4)
+    eligible=[p for p in ranked if p["top10_eligible"]]
     assert len(ranked)==len(players) and sorted(p["player_id"] for p in ranked)==sorted(p["player_id"] for p in players)
     assert all(isinstance(p["score"],(int,float)) and isinstance(p["qpixR"],(int,float)) for p in ranked)
     assert all(ranked[i]["score"]>=ranked[i+1]["score"] for i in range(len(ranked)-1))
     root=pathlib.Path("data/daily");root.mkdir(parents=True,exist_ok=True)
     output={"schema_version":3,"season":"2026-27","date_et":RUN_DATE,"phase":PHASE,
       "generated_at_utc":datetime.now(ZoneInfo("UTC")).isoformat(),
-      "scoring_engine":{"file":"generate-report.js","method":"Executed authorized JavaScript engine without modifying formula; ephemeral audit output injection restored after run","rank_by":"RAW QPIX"},
+      "scoring_engine":{"file":"generate-report.js","method":"Executed authorized JavaScript engine without modifying formula; ephemeral audit output injection and FGA ranking gate restored after run","rank_by":"RAW QPIX","top10_min_fga":4}, 
       "data_quality":quality,"games":games,"players":ranked}
     (root/(RUN_DATE+".json")).write_text(json.dumps(output,ensure_ascii=False,indent=2,allow_nan=False)+"\n",encoding="utf-8")
     csvpath=root/(RUN_DATE+".csv")
-    fields=["rank","name","team","game","minutes","points","rebounds","assists","steals","blocks","turnovers","fgm","fga","fg3m","fg3a","ftm","fta","plus_minus","offensive_rating","defensive_rating","second_chance_points","fast_break_points","points_in_paint","ts","score","qpixR","refPenalty","refBonus","qpixSFA","sfaAdj"]
+    fields=["rank","name","team","game","minutes","points","rebounds","assists","steals","blocks","turnovers","fgm","fga","fg3m","fg3a","ftm","fta","plus_minus","offensive_rating","defensive_rating","second_chance_points","fast_break_points","points_in_paint","ts","score","qpixR","refPenalty","refBonus","qpixSFA","sfaAdj","top10_eligible"]
     with csvpath.open("w",newline="",encoding="utf-8") as f:
         writer=csv.DictWriter(f,fieldnames=fields,extrasaction="ignore")
         writer.writeheader()
         for i,p in enumerate(ranked,1):writer.writerow({"rank":i,**p})
     out=pathlib.Path("docs/reports");out.mkdir(parents=True,exist_ok=True)
     (out/(RUN_DATE+".md")).write_text(create_report(output,quality),encoding="utf-8")
-    audit={"date_et":RUN_DATE,"games":len(games),"players":len(ranked),"top10":[[p["name"],p["team"],p["score"],p["qpixR"]] for p in ranked[:10]],"bottom10":[[p["name"],p["team"],p["score"]] for p in reversed(ranked[-10:])],"quality":quality}
+    audit={"date_et":RUN_DATE,"games":len(games),"players":len(ranked),"top10":[[p["name"],p["team"],p["score"],p["qpixR"]] for p in eligible[:10]],"bottom10":[[p["name"],p["team"],p["score"]] for p in reversed(ranked[-10:])],"quality":quality}
     (out/(RUN_DATE+".audit.json")).write_text(json.dumps(audit,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     print("SUCCESS",json.dumps({"games":len(games),"players":len(ranked),"top":audit["top10"][0]},ensure_ascii=False),flush=True)
 
