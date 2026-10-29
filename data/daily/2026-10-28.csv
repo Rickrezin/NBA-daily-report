@@ -1,5 +1,5 @@
 rank,name,team,game,minutes,points,rebounds,assists,steals,blocks,turnovers,fgm,fga,fg3m,fg3a,ftm,fta,plus_minus,offensive_rating,defensive_rating,second_chance_points,fast_break_points,points_in_paint,ts,score,qpixR,refPenalty,refBonus,qpixSFA,sfaAdj,top10_eligible
-1,Victor Wembanyama,SAS,SAS @ UTA,39,36,14,5,2,2,0,14,25,4,10,4,4,14,,,,,,67.26457399103138,106.1,108.7,0,2.6,106.1,0,True
+1,Victor Wembanyama,SAS,SAS @ UTA,39,36,14,5,3,2,0,14,25,4,10,4,4,14,,,,,,67.26457399103138,112.1,114.7,0,2.6,112.1,0,True
 2,Stephen Curry,GSW,GSW @ MIN,32,44,8,6,2,0,2,11,27,6,16,16,16,10,,,,,,64.6298472385429,85.5,73.4,12.1,0,85.5,0,True
 3,Scottie Barnes,TOR,ORL @ TOR,31,28,6,4,3,2,2,11,17,0,2,6,6,30,,,,,,71.28309572301426,82.1,80.7,1.4,0,82.1,0,True
 4,Nikola Jokic,DEN,DEN @ NOP,34,21,13,10,1,0,7,8,13,0,0,5,5,17,,,,,,69.07894736842105,78.6,81,0,2.4,78.6,0,True
