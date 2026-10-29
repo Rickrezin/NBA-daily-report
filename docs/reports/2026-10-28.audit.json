@@ -6,8 +6,8 @@
     [
       "Victor Wembanyama",
       "SAS",
-      106.1,
-      108.7
+      112.1,
+      114.7
     ],
     [
       "Stephen Curry",
@@ -131,5 +131,22 @@
     "Top 10 eligibility": "More than 8 minutes played; zero minimum field-goal attempts. All player results remain in JSON/CSV.",
     "Opponent strength": "Engine default 1.0 (no external standings coefficient)",
     "Advanced retrieval audit": "[{\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600138&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 26, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600134&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 21, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600136&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 25, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600132&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 19, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600133&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 19, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600135&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 20, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600137&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 20, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600139&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 21, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600141&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 19, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600142&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 24, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600140&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 21, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600143&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 21, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}]"
-  }
+  },
+  "corrections": [
+    {
+      "date": "2026-10-29",
+      "player": "Victor Wembanyama",
+      "game_id": "0022600141",
+      "field": "steals",
+      "old": 2,
+      "new": 3,
+      "source": "User-provided screenshot of final Spurs-Jazz box score",
+      "raw_old": 106.1,
+      "raw_new": 112.1,
+      "qpix_r_old": 108.7,
+      "qpix_r_new": 114.7,
+      "c1_delta": 3,
+      "c4_delta": 3
+    }
+  ]
 }
