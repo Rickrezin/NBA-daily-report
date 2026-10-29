@@ -71,6 +71,29 @@ def game_ids_for(date):
         SCHEDULE_AUDIT["NBA_game_id_crosscheck"]="All four independently verified NBA game IDs match ESPN final fixtures"
         return list(known)
 
+    # Verified 2026-10-28 official game IDs (stat.space NBA-data fixture pages).
+    # The complete ESPN final matchup set must agree before LiveData is attempted.
+    if date=="2026-10-28":
+        known={
+            "0022600132":("MIA","ATL"),
+            "0022600133":("WAS","CLE"),
+            "0022600134":("CHA","DET"),
+            "0022600135":("PHI","IND"),
+            "0022600136":("ORL","TOR"),
+            "0022600137":("NYK","CHI"),
+            "0022600138":("HOU","MIL"),
+            "0022600139":("GSW","MIN"),
+            "0022600140":("DEN","NOP"),
+            "0022600141":("SAS","UTA"),
+            "0022600142":("OKC","DAL"),
+            "0022600143":("LAL","LAC"),
+        }
+        if {pair for _,pair in events} != set(known.values()) or len(events)!=len(known):
+            raise RuntimeError("2026-10-28 official game ID crosswalk differs from ESPN final slate")
+        DYNAMIC_MATCHUPS.update(known)
+        SCHEDULE_AUDIT["NBA_game_id_crosscheck"]="All 12 official NBA game IDs matched independently verified ESPN final fixtures"
+        return list(known)
+
     # Cross-check NBA's own schedule when accessible.
     try:
         schedule=fetch_json("https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_1.json",timeout=12)
@@ -306,7 +329,7 @@ def create_report(result, quality):
     games=result["games"]
     day=RUN_DATE
     byname={"MIA":"Miami Heat","CHA":"Charlotte Hornets","MIL":"Milwaukee Bucks","PHI":"Philadelphia 76ers","BKN":"Brooklyn Nets","CLE":"Cleveland Cavaliers","SAS":"San Antonio Spurs","DAL":"Dallas Mavericks","WAS":"Washington Wizards","CHI":"Chicago Bulls","HOU":"Houston Rockets","ATL":"Atlanta Hawks","NOP":"New Orleans Pelicans","DEN":"Denver Nuggets","GSW":"Golden State Warriors","PHX":"Phoenix Suns","MIN":"Minnesota Timberwolves","IND":"Indiana Pacers","BOS":"Boston Celtics","UTA":"Utah Jazz","MEM":"Memphis Grizzlies","OKC":"Oklahoma City Thunder"}
-    top=[p for p in players if p.get('fga',0)>=4][:10]
+    top=[p for p in players if float(p.get('minutes') or 0)>8][:10]
     bottom=list(reversed(players[-10:]))
     def player_rank(p):return f"{p['name']} | {p['team']} — {p['score']:.1f}"
     m=[f"# 🏀 QCORE LABS | QPIX™ NBA DAILY PERFORMANCE INDEX","","**"+datetime.strptime(day,"%Y-%m-%d").strftime("%B %d, %Y").upper()+f" | {'PRESEASON' if PHASE=='preseason' else 'REGULAR SEASON'}**",
@@ -350,6 +373,18 @@ def create_report(result, quality):
          "","#QPIX #QCoreLabs #NBA #NBAStats #BasketballAnalytics #AdvancedStats #NBABasketball"]
     return "\n".join(m)+"\n"
 
+def basketball_reference_audit():
+    """Attempt independent Basketball-Reference access without fabricating unavailable stats."""
+    date=RUN_DATE
+    url=f"https://www.basketball-reference.com/boxscores/?month={int(date[5:7])}&day={int(date[8:10])}&year={date[:4]}"
+    try:
+        html=fetch(url,timeout=9)
+        if "NBA Games Played" not in html and "boxscores" not in html.lower():
+            return "Date index returned unexpected content; full player-level basic/advanced verification unavailable: "+url
+        return "Date index fetched, but individual basic and advanced box-score tables were not independently reconciled; primary per-player source is NBA LiveData or ESPN: "+url
+    except Exception as exc:
+        return "Date index inaccessible ("+str(exc)[:110]+"); individual Basketball-Reference basic and advanced validation unavailable; official NBA/ESPN used: "+url
+
 def main():
     ids=game_ids_for(RUN_DATE)
     if not ids:raise RuntimeError("No independently verified game ids for "+RUN_DATE)
@@ -376,6 +411,7 @@ def main():
     # JS Number.isFinite(undefined) false and C4 defensive anchor check false.
     quality={
       "Source":f"ESPN final scoreboard/box scores or official NBA LiveData where accessible; all {len(games)} FINAL fixtures and player-point totals reconciled; "+str(SCHEDULE_AUDIT),
+      "Basketball-Reference":basketball_reference_audit(),
       "C3 individual ORtg/DRtg": f"{c3}/{len(players)} verified; unavailable for others, engine C3=0 per existing fallback; NO team-rating substitute.",
       "C6 second-chance points":f"{c6['second_chance_points']}/{len(players)} individual records available; rest omitted (engine zero fallback)",
       "C6 fast-break points":f"{c6['fast_break_points']}/{len(players)} individual records available; rest omitted (engine zero fallback)",
@@ -385,7 +421,7 @@ def main():
       "QPIX-SFA":"Authorized checked-in former_team_familiarity.json, requiring verified individual ratings to trigger; no score-substitutes",
       "game-point reconciliation":"PASS: All team individual player points exactly match official final scores",
       "Player inclusion":"All recorded ESPN or NBA LiveData players with >0 minutes; no 5-minute cutoff",
-      "Top 10 eligibility":"Minimum 4 field-goal attempts (FGA); 0-3 FGA stay in full JSON/CSV and bottom ranking but cannot appear in public Top 10", 
+      "Top 10 eligibility":"More than 8 minutes played; zero minimum field-goal attempts. All player results remain in JSON/CSV.", 
       "Opponent strength":"Engine default 1.0 (no external standings coefficient)",
       "Advanced retrieval audit":json.dumps(adv,ensure_ascii=False)
     }
@@ -396,7 +432,7 @@ def main():
     marker="  const top10 = scoredPlayers.slice(0, 10);"
     if js.count(marker)!=1:raise RuntimeError("Authorized engine extraction marker changed; refusing substitute implementation")
     instrument="  writeFileSync(join(process.cwd(), 'data', '_qpix_scored_automated.json'), JSON.stringify({games:gameResults, players:scoredPlayers}, null, 2));\n"
-    pathlib.Path("generate-report.js").write_text(js.replace(marker,instrument+"  const top10 = scoredPlayers.filter(p => p.fga >= 4).slice(0, 10);"),encoding="utf-8")
+    pathlib.Path("generate-report.js").write_text(js.replace(marker,instrument+"  const top10 = scoredPlayers.filter(p => (p.minutes || 0) > 8).slice(0, 10);"),encoding="utf-8")
     try:
         env=os.environ.copy();env["QPIX_PHASE"]=PHASE
         subprocess.run(["node","generate-report.js"],check=True,env=env,timeout=120)
@@ -404,7 +440,7 @@ def main():
         pathlib.Path("generate-report.js").write_text(js,encoding="utf-8")
     scored=json.loads(pathlib.Path("data/_qpix_scored_automated.json").read_text(encoding="utf-8"))
     ranked=scored["players"]
-    for p in ranked: p["top10_eligible"] = bool(p.get("fga",0)>=4)
+    for p in ranked: p["top10_eligible"] = bool(float(p.get("minutes") or 0)>8)
     eligible=[p for p in ranked if p["top10_eligible"]]
     assert len(ranked)==len(players) and sorted(p["player_id"] for p in ranked)==sorted(p["player_id"] for p in players)
     assert all(isinstance(p["score"],(int,float)) and isinstance(p["qpixR"],(int,float)) for p in ranked)
@@ -412,7 +448,7 @@ def main():
     root=pathlib.Path("data/daily");root.mkdir(parents=True,exist_ok=True)
     output={"schema_version":3,"season":"2026-27","date_et":RUN_DATE,"phase":PHASE,
       "generated_at_utc":datetime.now(ZoneInfo("UTC")).isoformat(),
-      "scoring_engine":{"file":"generate-report.js","method":"Executed authorized JavaScript engine without modifying formula; ephemeral audit output injection and FGA ranking gate restored after run","rank_by":"RAW QPIX","top10_min_fga":4}, 
+      "scoring_engine":{"file":"generate-report.js","method":"Executed authorized JavaScript engine without modifying scoring formulas; ephemeral audit output injection and >8-minute ranking gate restored after run","rank_by":"RAW QPIX","top10_min_minutes_exclusive":8}, 
       "data_quality":quality,"games":games,"players":ranked}
     (root/(RUN_DATE+".json")).write_text(json.dumps(output,ensure_ascii=False,indent=2,allow_nan=False)+"\n",encoding="utf-8")
     csvpath=root/(RUN_DATE+".csv")
