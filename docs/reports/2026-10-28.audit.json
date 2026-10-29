@@ -1,0 +1,135 @@
+{
+  "date_et": "2026-10-28",
+  "games": 12,
+  "players": 256,
+  "top10": [
+    [
+      "Victor Wembanyama",
+      "SAS",
+      106.1,
+      108.7
+    ],
+    [
+      "Stephen Curry",
+      "GSW",
+      85.5,
+      73.4
+    ],
+    [
+      "Scottie Barnes",
+      "TOR",
+      82.1,
+      80.7
+    ],
+    [
+      "Nikola Jokic",
+      "DEN",
+      78.6,
+      81
+    ],
+    [
+      "Jalen Brunson",
+      "NYK",
+      72.4,
+      70.8
+    ],
+    [
+      "RJ Barrett",
+      "TOR",
+      71.4,
+      71.4
+    ],
+    [
+      "Jalen Smith",
+      "CHI",
+      70.3,
+      72.9
+    ],
+    [
+      "Cade Cunningham",
+      "DET",
+      67.1,
+      63
+    ],
+    [
+      "Clint Capela",
+      "HOU",
+      66.3,
+      69.7
+    ],
+    [
+      "Brandon Miller",
+      "CHA",
+      64.3,
+      64.3
+    ]
+  ],
+  "bottom10": [
+    [
+      "Ronald Holland II",
+      "DET",
+      -14.3
+    ],
+    [
+      "Josh Dix",
+      "OKC",
+      -13.5
+    ],
+    [
+      "John Collins",
+      "DET",
+      -12.1
+    ],
+    [
+      "Cam Christie",
+      "LAC",
+      -10.4
+    ],
+    [
+      "Jaden Hardy",
+      "LAL",
+      -7.7
+    ],
+    [
+      "Bryce Hopkins",
+      "DEN",
+      -7.4
+    ],
+    [
+      "Brook Lopez",
+      "LAC",
+      -6.6
+    ],
+    [
+      "Rudy Gobert",
+      "MIN",
+      -6.5
+    ],
+    [
+      "Mikal Bridges",
+      "NYK",
+      -6.2
+    ],
+    [
+      "Kel'el Ware",
+      "MIL",
+      -5.6
+    ]
+  ],
+  "quality": {
+    "Source": "ESPN final scoreboard/box scores or official NBA LiveData where accessible; all 12 FINAL fixtures and player-point totals reconciled; {'ESPN_final_fixtures': 12, 'NBA_game_id_crosscheck': 'All 12 official NBA game IDs matched independently verified ESPN final fixtures'}",
+    "Basketball-Reference": "Date index fetched, but individual basic and advanced box-score tables were not independently reconciled; primary per-player source is NBA LiveData or ESPN: https://www.basketball-reference.com/boxscores/?month=10&day=28&year=2026",
+    "C3 individual ORtg/DRtg": "0/256 verified; unavailable for others, engine C3=0 per existing fallback; NO team-rating substitute.",
+    "C6 second-chance points": "0/256 individual records available; rest omitted (engine zero fallback)",
+    "C6 fast-break points": "0/256 individual records available; rest omitted (engine zero fallback)",
+    "C6 paint points": "0/256 individual records available; rest omitted (engine zero fallback)",
+    "C11 fast-break bonus": "Individual fast-break values available for 0/256 records; omitted where absent",
+    "QPIX-R": "Authorized generate-report.js seasonal/positional FTA baselines; no fabricated rolling-20 FTA",
+    "QPIX-SFA": "Authorized checked-in former_team_familiarity.json, requiring verified individual ratings to trigger; no score-substitutes",
+    "game-point reconciliation": "PASS: All team individual player points exactly match official final scores",
+    "Player inclusion": "All recorded ESPN or NBA LiveData players with >0 minutes; no 5-minute cutoff",
+    "Top 10 eligibility": "More than 8 minutes played; zero minimum field-goal attempts. All player results remain in JSON/CSV.",
+    "Opponent strength": "Engine default 1.0 (no external standings coefficient)",
+    "Advanced retrieval audit": "[{\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600138&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 26, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600134&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 21, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600136&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 25, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600132&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 19, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600133&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 19, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600135&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 20, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600137&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 20, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600139&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 21, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600141&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 19, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600142&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 24, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600140&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 21, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600143&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 21, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}]"
+  }
+}
