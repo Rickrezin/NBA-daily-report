@@ -6,62 +6,62 @@
     [
       "Giannis Antetokounmpo",
       "MIA",
-      120,
-      122
-    ],
-    [
-      "Cooper Flagg",
-      "DAL",
-      81.1,
-      76.9
-    ],
-    [
-      "Jamal Murray",
-      "DEN",
-      77.6,
-      67.9
-    ],
-    [
-      "Collin Gillespie",
-      "PHX",
-      77.6,
-      79.5
-    ],
-    [
-      "Kyrie Irving",
-      "DAL",
-      75.2,
-      72.1
+      126.6,
+      128.6
     ],
     [
       "Trae Young",
       "WAS",
-      74.9,
-      68.1
+      90.3,
+      83.5
     ],
     [
-      "Franz Wagner",
-      "ORL",
-      74,
-      69.4
-    ],
-    [
-      "Luka Doncic",
-      "LAL",
-      72.2,
-      73.9
+      "Cooper Flagg",
+      "DAL",
+      86.7,
+      82.5
     ],
     [
       "Anthony Davis",
       "WAS",
-      69.5,
-      64
+      84.1,
+      78.6
     ],
     [
-      "Stephen Curry",
-      "GSW",
-      68.2,
-      68.2
+      "Collin Gillespie",
+      "PHX",
+      82.8,
+      84.7
+    ],
+    [
+      "Kyrie Irving",
+      "DAL",
+      81.2,
+      78.1
+    ],
+    [
+      "Jamal Murray",
+      "DEN",
+      80.6,
+      70.9
+    ],
+    [
+      "Jaden McDaniels",
+      "MIN",
+      76,
+      78.6
+    ],
+    [
+      "Ronald Holland II",
+      "DET",
+      75.9,
+      73.7
+    ],
+    [
+      "Bam Adebayo",
+      "MIA",
+      74.4,
+      74.4
     ]
   ],
   "bottom10": [
@@ -131,5 +131,89 @@
     "Top 10 eligibility": "More than 8 minutes played; zero minimum field-goal attempts. All player results remain in JSON/CSV.",
     "Opponent strength": "Engine default 1.0 (no external standings coefficient)",
     "Advanced retrieval audit": "[{\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600015&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 25, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600017&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 26, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600019&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 20, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600016&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 27, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600018&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 19, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600021&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 19, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600020&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 25, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600022&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 26, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600023&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 24, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}, {\"source\": \"https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600024&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0\", \"assigned\": 0, \"total\": 19, \"status\": \"unavailable\", \"error\": \"The read operation timed out\"}]"
+  },
+  "advanced_replay": {
+    "source": "User-supplied Basketball-Reference individual ORtg/DRtg",
+    "ratings_populated": 230,
+    "rating_methodology": "Basketball-Reference individual",
+    "engine_blob_sha": "ef7b46da7c5dde2835424750119c483cdb705a6f",
+    "baseline_exact_replay": 230,
+    "missing_context": [
+      "individual paint points",
+      "second chance points",
+      "fast break points"
+    ],
+    "top10": [
+      [
+        "Giannis Antetokounmpo",
+        "MIA",
+        126.6,
+        128.6,
+        126.6
+      ],
+      [
+        "Trae Young",
+        "WAS",
+        90.3,
+        83.5,
+        90.3
+      ],
+      [
+        "Cooper Flagg",
+        "DAL",
+        86.7,
+        82.5,
+        86.7
+      ],
+      [
+        "Anthony Davis",
+        "WAS",
+        84.1,
+        78.6,
+        84.1
+      ],
+      [
+        "Collin Gillespie",
+        "PHX",
+        82.8,
+        84.7,
+        82.8
+      ],
+      [
+        "Kyrie Irving",
+        "DAL",
+        81.2,
+        78.1,
+        81.2
+      ],
+      [
+        "Jamal Murray",
+        "DEN",
+        80.6,
+        70.9,
+        80.6
+      ],
+      [
+        "Jaden McDaniels",
+        "MIN",
+        76,
+        78.6,
+        76
+      ],
+      [
+        "Ronald Holland II",
+        "DET",
+        75.9,
+        73.7,
+        75.9
+      ],
+      [
+        "Bam Adebayo",
+        "MIA",
+        74.4,
+        74.4,
+        74.4
+      ]
+    ]
   }
 }
