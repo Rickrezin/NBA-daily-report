@@ -466,3 +466,5 @@ def main():
 if __name__=="__main__":
     try:main()
     except Exception as e:print("FATAL INPUT/SCORING AUDIT ERROR:",e,file=sys.stderr,flush=True);raise
+
+# QPIX Oct 30, 2026 daily run trigger (scoring and ingestion logic unchanged).
