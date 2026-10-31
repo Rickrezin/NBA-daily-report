@@ -94,6 +94,27 @@ def game_ids_for(date):
         SCHEDULE_AUDIT["NBA_game_id_crosscheck"]="All 12 official NBA game IDs matched independently verified ESPN final fixtures"
         return list(known)
 
+    # Independent NBA Cup game-ID crosswalk, October 30, 2026.
+    # These official game URLs were checked against NBA.com and the ESPN final slate.
+    if date=="2026-10-30":
+        known={
+            "0022600015":("CHA","WAS"),
+            "0022600016":("CHI","BOS"),
+            "0022600017":("DET","BKN"),
+            "0022600018":("NYK","PHI"),
+            "0022600019":("ORL","TOR"),
+            "0022600020":("IND","MIA"),
+            "0022600021":("HOU","DAL"),
+            "0022600022":("LAC","MIN"),
+            "0022600023":("LAL","GSW"),
+            "0022600024":("DEN","PHX"),
+        }
+        if {pair for _,pair in events} != set(known.values()) or len(events)!=len(known):
+            raise RuntimeError("2026-10-30 official game ID crosswalk differs from ESPN final slate")
+        DYNAMIC_MATCHUPS.update(known)
+        SCHEDULE_AUDIT["NBA_game_id_crosscheck"]="All 10 NBA Cup game IDs checked against NBA.com and ESPN final fixtures"
+        return list(known)
+
     # Cross-check NBA's own schedule when accessible.
     try:
         schedule=fetch_json("https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_1.json",timeout=12)
