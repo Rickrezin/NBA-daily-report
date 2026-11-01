@@ -489,3 +489,5 @@ if __name__=="__main__":
     except Exception as e:print("FATAL INPUT/SCORING AUDIT ERROR:",e,file=sys.stderr,flush=True);raise
 
 # QPIX Oct 30, 2026 daily run trigger (scoring and ingestion logic unchanged).
+
+# QPIX 2026-10-31 final-games run: existing authorized workflow trigger only; scoring and ingestion logic unchanged.
