@@ -5,6 +5,7 @@ on:
       - test/espn-api-probe-20261103
     paths:
       - '.github/workflows/espn-api-probe.yml'
+      - 'scripts/espn_probe.mjs'
   workflow_dispatch:
 
 permissions:
