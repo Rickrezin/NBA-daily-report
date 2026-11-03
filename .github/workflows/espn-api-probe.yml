@@ -1,0 +1,23 @@
+name: ESPN QPIX API connectivity probe
+on:
+  push:
+    branches:
+      - test/espn-api-probe-20261103
+    paths:
+      - '.github/workflows/espn-api-probe.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  espn-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Test ESPN November 2 scoreboard and sample player box score
+        run: node scripts/espn_probe.mjs
