@@ -43,3 +43,26 @@ if (!slate) {process.exitCode=1;} else {
     }
   }
 }
+
+console.log('FULL_SLATE_AUDIT_BEGIN');
+const slate2=await read(base+'/scoreboard?dates='+date+'&limit=100');
+const finals2=(slate2?.events||[]).filter(e=>e.status?.type?.completed);
+let playerCount=0, validGames=0, missingGames=[], advancedGames=0;
+for (const e of finals2) {
+ const s=await read(base+'/summary?event='+encodeURIComponent(e.id));
+ if (!s || (s.boxscore?.players||[]).length!==2) {missingGames.push(e.id);continue;}
+ validGames++;
+ let count=0, missing=0, sample='';
+ for(const team of s.boxscore.players) for(const grp of (team.statistics||[])) for(const p of(grp.athletes||[])){
+  if(p.didNotPlay)continue;
+  count++;
+  if(!Array.isArray(p.stats)||p.stats.length<14)missing++;
+  if(!sample)sample=p.athlete?.displayName||'';
+ }
+ playerCount+=count;
+ const lower=JSON.stringify(s).toLowerCase();
+ if(lower.includes('offensiverating')&&lower.includes('defensiverating'))advancedGames++;
+ console.log('GAME_AUDIT',JSON.stringify({id:e.id,match:e.shortName,playerRows:count,badStatRows:missing,playEvents:s.plays?.length||0,example:sample}));
+}
+console.log('FULL_SLATE_AUDIT',JSON.stringify({finals:finals2.length,validGames,playerRows:playerCount,missingGames,advancedGames}));
+if(validGames!==15||missingGames.length)process.exitCode=3;
