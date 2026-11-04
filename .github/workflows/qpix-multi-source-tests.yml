@@ -13,6 +13,8 @@ on:
       - 'tests/test_qpix_verified_sources.py'
       - 'tests/test_qpix_source_archive.py'
       - 'scripts/qpix_coverage_audit.py'
+      - 'scripts/qpix_collection_checkpoint.py'
+      - 'tests/test_qpix_collection_checkpoint.py'
   workflow_dispatch:
 
 permissions:
@@ -29,10 +31,11 @@ jobs:
           python-version: '3.12'
       - name: Validate multi-source adapters and 334 archived ratings
         run: |
-          python -m py_compile scripts/qpix_independent_run.py scripts/c6_sources.py scripts/qpix_verified_sources.py scripts/qpix_source_archive.py
+          python -m py_compile scripts/qpix_independent_run.py scripts/c6_sources.py scripts/qpix_verified_sources.py scripts/qpix_source_archive.py scripts/qpix_collection_checkpoint.py
           python -m unittest discover -s tests -p 'test_c6_sources.py' -v
           python -m unittest discover -s tests -p 'test_qpix_verified_sources.py' -v
           python -m unittest discover -s tests -p 'test_qpix_source_archive.py' -v
+          python -m unittest discover -s tests -p 'test_qpix_collection_checkpoint.py' -v
           python -m py_compile scripts/qpix_coverage_audit.py
           python scripts/qpix_coverage_audit.py 2099-01-01
           python -c "import json; p='data/historical/qpix_audits/2099-01-01.coverage.json'; d=json.load(open(p)); assert d['status']=='source_archive_unavailable'"
