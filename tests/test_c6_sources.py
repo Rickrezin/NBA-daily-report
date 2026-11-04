@@ -23,6 +23,15 @@ class TestC6(unittest.TestCase):
         with self.assertRaises(ValueError):read_c6_fields({"pointsPaint":-2})
         with self.assertRaises(ValueError):read_c6_fields({"pointsPaint":True})
         with self.assertRaises(ValueError):apply_c6_rows([{"player_id":"1"}],[{"personId":1},{"personId":"1"}],"test")
+    def test_cross_provider_name_and_team_join(self):
+        rows=[{"personId":1630595,"teamTricode":"DET","firstName":"Cade","familyName":"Cunningham",
+               "statistics":{"pointsPaint":18,"pointsSecondChance":"2","pointsFastBreak":0}}]
+        players=[{"player_id":"4432166","name":"Cade Cunningham","team":"DET"}]
+        r=apply_c6_rows(players,rows,"nba")
+        self.assertEqual(r["name_team_crosswalks"],1)
+        self.assertEqual(players[0]["points_in_paint"],18)
+        self.assertEqual(players[0]["second_chance_points"],2)
+        self.assertEqual(players[0]["fast_break_points"],0)
     def test_espn_id_not_valid_nba_id(self):
         # Official IDs and ESPN event IDs must never be mistaken for each other.
         self.assertTrue("ESPN_401909908".startswith("ESPN_"))
