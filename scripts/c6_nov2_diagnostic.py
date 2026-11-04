@@ -49,3 +49,5 @@ if test["status"]==200:
     print("MISC_ROWS",len(rows),"SAMPLE_KEYS",list(rows[0]) if rows else [],flush=True)
     print("MISC_FIELDS",json.dumps({k:sum(k in read_c6_fields(row.get("statistics",row)) for row in rows) for k in ("points_in_paint","fast_break_points","second_chance_points")}),flush=True)
 # Exit successful for diagnostic collection even if provider blocked; source failure reported explicitly.
+
+# Manual GitHub Actions diagnostic retry, 2026-11-04; read-only, no report writes.
