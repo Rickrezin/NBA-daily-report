@@ -12,6 +12,7 @@ on:
       - 'tests/test_c6_sources.py'
       - 'tests/test_qpix_verified_sources.py'
       - 'tests/test_qpix_source_archive.py'
+      - 'scripts/qpix_coverage_audit.py'
   workflow_dispatch:
 
 permissions:
@@ -32,3 +33,6 @@ jobs:
           python -m unittest discover -s tests -p 'test_c6_sources.py' -v
           python -m unittest discover -s tests -p 'test_qpix_verified_sources.py' -v
           python -m unittest discover -s tests -p 'test_qpix_source_archive.py' -v
+          python -m py_compile scripts/qpix_coverage_audit.py
+          python scripts/qpix_coverage_audit.py 2099-01-01
+          python -c "import json; p='data/historical/qpix_audits/2099-01-01.coverage.json'; d=json.load(open(p)); assert d['status']=='source_archive_unavailable'"
