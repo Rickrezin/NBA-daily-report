@@ -64,6 +64,11 @@ jobs:
           QPIX_PHASE: regular
         run: python3 scripts/qpix_independent_run.py "${{ steps.game_date.outputs.date_et }}"
 
+      - name: Summarize per-category and per-game field coverage
+        if: always()
+        shell: bash
+        run: python3 scripts/qpix_coverage_audit.py "${{ steps.game_date.outputs.date_et }}" || true
+
       - name: Upload pre-scoring source archive and audit (including failures)
         if: always()
         uses: actions/upload-artifact@v4
@@ -71,6 +76,7 @@ jobs:
           name: qpix-unified-shadow-${{ steps.game_date.outputs.date_et || 'unknown' }}
           path: |
             data/historical/qpix_input/
+            data/historical/qpix_audits/
             data/nba_data.json
             data/daily/${{ steps.game_date.outputs.date_et }}.json
             data/daily/${{ steps.game_date.outputs.date_et }}.csv
