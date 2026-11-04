@@ -83,7 +83,7 @@ def apply_c6_rows(players,rows,source_name):
         if row and _team(row) and _team(row)!=player.get("team"):
             raise ValueError("C6 player ID/team conflict for "+player["name"])
         if row is None:
-            key=(player["team"],_namekey(player.get("name")))
+            key=(player.get("team"),_namekey(player.get("name")))
             row=by_name.get(key)
             if row is not None:matched_by_name+=1
         if row is None:
