@@ -81,7 +81,7 @@ jobs:
             data/daily/${{ steps.game_date.outputs.date_et }}.json
             data/daily/${{ steps.game_date.outputs.date_et }}.csv
             docs/reports/${{ steps.game_date.outputs.date_et }}.audit.json
-          if-no-files-found: ignore
+          if-no-files-found: error
           retention-days: 7
 
       - name: Summarize result
