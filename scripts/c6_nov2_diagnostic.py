@@ -7,13 +7,27 @@ BASE="https://site.api.espn.com/apis/site/v2/sports/basketball/nba"
 DATE="20261102"
 NBA_GAME="0022600159" # NBA.com confirms DET @ CHA game ID
 def fetch(url,timeout=10):
-    try:
-        request=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/121 Safari/537.36","Accept":"application/json","Referer":"https://www.nba.com/","Origin":"https://www.nba.com"})
-        with urllib.request.urlopen(request,timeout=timeout) as r:
-            obj=json.loads(r.read())
-            return {"status":r.status,"json":obj}
-    except urllib.error.HTTPError as e:return {"status":e.code,"error":str(e)}
-    except Exception as e:return {"status":"ERR","error":str(e)[:180]}
+    last=None
+    for attempt in range(3):
+        try:
+            request=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/121 Safari/537.36","Accept":"application/json","Referer":"https://www.nba.com/","Origin":"https://www.nba.com"})
+            with urllib.request.urlopen(request,timeout=timeout) as r:
+                raw=r.read()
+                try: obj=json.loads(raw)
+                except (ValueError,UnicodeError) as exc:
+                    last={"status":"NON_JSON","error":str(exc)[:100],"bytes":len(raw),"sample":raw[:100].decode("utf-8","replace")}
+                    print("RETRY",json.dumps({"url":url,"attempt":attempt+1,**last}),flush=True)
+                    time.sleep(1+attempt)
+                    continue
+                return {"status":r.status,"json":obj}
+        except urllib.error.HTTPError as e:
+            last={"status":e.code,"error":str(e)}
+        except Exception as e:
+            last={"status":"ERR","error":str(e)[:180]}
+        print("RETRY",json.dumps({"url":url,"attempt":attempt+1,**last}),flush=True)
+        if attempt<2:time.sleep(1+attempt)
+    return last
+
 def one(event):
     result=fetch(BASE+"/summary?event="+event["id"])
     if result["status"]!=200:return {"id":event["id"],"status":result["status"],"error":result.get("error")}
