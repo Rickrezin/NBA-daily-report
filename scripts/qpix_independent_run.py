@@ -488,6 +488,7 @@ def main():
     if not snapshot["coverage"]["complete"]:
         counts={k:len(v) for k,v in snapshot["coverage"]["missing"].items() if v}
         raise RuntimeError("Refusing incomplete full-category QPIX report; missing="+json.dumps(counts,sort_keys=True))
+    PROGRESS.done(archived_path,snapshot['input_sha256'])
     # Verified advanced and C6 values are attached to per-game player references.
     c6={field:sum(1 for p in players if field in p) for field in ("second_chance_points","fast_break_points","points_in_paint")}
     c3=sum(1 for p in players if "offensive_rating" in p and "defensive_rating" in p)
