@@ -1,0 +1,25 @@
+name: NBA Stats V3 QPIX field probe
+on:
+  push:
+    branches:
+      - test/espn-api-probe-20261103
+    paths:
+      - '.github/workflows/nba-v3-probe.yml'
+      - 'scripts/nba_v3_probe.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  nba-v3-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install nba_api
+      - name: Test V3 advanced metrics and CDN scoring splits for Detroit Charlotte
+        run: python scripts/nba_v3_probe.py
