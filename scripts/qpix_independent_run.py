@@ -8,6 +8,7 @@ from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from html.parser import HTMLParser
+from c6_sources import read_c6_fields, apply_c6_rows, misc_v3_player_rows
 
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 os.chdir(ROOT)
@@ -300,8 +301,8 @@ def normalize_game(game_id):
             if "plusMinusPoints" not in st or st["plusMinusPoints"] is None:raise RuntimeError("Missing player plusMinusPoints "+name)
             base["plus_minus"]=float(st["plusMinusPoints"])
             base["ft_pct"]=base["ftm"]/base["fta"] if base["fta"] else 0.75
-            for field,source in (("second_chance_points","pointsSecondChance"),("fast_break_points","pointsFastBreak"),("points_in_paint","pointsInThePaint")):
-                if source in st and st[source] is not None:base[field]=int(st[source])
+            # Include official LiveData and Misc V3 naming variants. Missing != zero.
+            base.update(read_c6_fields(st))
             players.append(base)
     for team,score in ((ha,hp),(aa,ap)):
         actual=sum(x["points"] for x in players if x["team"]==team)
@@ -309,6 +310,29 @@ def normalize_game(game_id):
     if not any(x["team"]==ha for x in players) or not any(x["team"]==aa for x in players):
         raise RuntimeError("Missing one team of scoring players "+game_id)
     return result,players
+
+def add_misc_c6(game_id, players):
+    """Retrieve per-player paint, fast-break and second-chance points via NBA Misc V3.
+
+    Never substitute on-court/team metrics or treat missing input as observed zero.
+    A valid NBA game ID is required; ESPN event IDs cannot be substituted.
+    """
+    if game_id.startswith("ESPN_"):
+        return {"status":"unavailable","source":"BoxScoreMiscV3","total":len(players),
+                "error":"No verified NBA game ID; ESPN event ID is not interchangeable"}
+    url=(f"https://stats.nba.com/stats/boxscoremiscv3?GameID={game_id}"
+         "&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0")
+    try:
+        doc=fetch_json(url,timeout=9)
+        rows=misc_v3_player_rows(doc)
+        if not rows:
+            return {"status":"unavailable","source":url,"total":len(players),
+                    "error":"No player-level BoxScoreMiscV3 rows"}
+        report=apply_c6_rows(players,rows,url)
+        report["status"]="ok" if all(n==len(players) for n in report["coverage"].values()) else "partial"
+        return report
+    except Exception as exc:
+        return {"status":"unavailable","source":url,"total":len(players),"error":str(exc)[:200]}
 
 def add_advanced(game_id, players):
     """Try NBA Stats advanced v3; if blocked, legitimately mark missing (no inference)."""
@@ -425,7 +449,16 @@ def main():
         jobs={pool.submit(add_advanced,gid,results[gid][1]):gid for gid in ids}
         for job in as_completed(jobs):
             r=job.result();adv.append(r);print("Advanced",jobs[job],r["assigned"],"/",r["total"],r["status"],flush=True)
-    # Each game result already lists players by reference; advanced fields now available on players.
+    # Independently retrieve NBA Misc V3 player-level C6 values when available.
+    # Leave all unavailable fields absent; report the true coverage.
+    misc=[]
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        jobs={pool.submit(add_misc_c6,gid,results[gid][1]):gid for gid in ids}
+        for job in as_completed(jobs):
+            rec=job.result()
+            misc.append(rec)
+            print("C6 Misc V3",jobs[job],rec.get("status"),rec.get("coverage",{}),flush=True)
+    # Verified advanced and C6 values are attached to per-game player references.
     c6={field:sum(1 for p in players if field in p) for field in ("second_chance_points","fast_break_points","points_in_paint")}
     c3=sum(1 for p in players if "offensive_rating" in p and "defensive_rating" in p)
     # Required fields validated at extraction. Missing C3 is intentionally ABSENT from player dictionary:
@@ -444,7 +477,8 @@ def main():
       "Player inclusion":"All recorded ESPN or NBA LiveData players with >0 minutes; no 5-minute cutoff",
       "Top 10 eligibility":"More than 8 minutes played; zero minimum field-goal attempts. All player results remain in JSON/CSV.", 
       "Opponent strength":"Engine default 1.0 (no external standings coefficient)",
-      "Advanced retrieval audit":json.dumps(adv,ensure_ascii=False)
+      "Advanced retrieval audit":json.dumps(adv,ensure_ascii=False),
+      "C6 retrieval audit":json.dumps(misc,ensure_ascii=False)
     }
     pathlib.Path("data").mkdir(exist_ok=True)
     pathlib.Path("data/nba_data.json").write_text(json.dumps({"games":games,"players":players},ensure_ascii=False,indent=2),encoding="utf-8")
