@@ -1,0 +1,31 @@
+name: QPIX multi-source regression tests
+on:
+  push:
+    branches:
+      - feature/qpix-multi-source-ingestion-20261104
+    paths:
+      - '.github/workflows/qpix-multi-source-tests.yml'
+      - 'scripts/c6_sources.py'
+      - 'scripts/qpix_verified_sources.py'
+      - 'scripts/qpix_independent_run.py'
+      - 'tests/test_c6_sources.py'
+      - 'tests/test_qpix_verified_sources.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate multi-source adapters and 334 archived ratings
+        run: |
+          python -m py_compile scripts/qpix_independent_run.py scripts/c6_sources.py scripts/qpix_verified_sources.py
+          python -m unittest discover -s tests -p 'test_c6_sources.py' -v
+          python -m unittest discover -s tests -p 'test_qpix_verified_sources.py' -v
