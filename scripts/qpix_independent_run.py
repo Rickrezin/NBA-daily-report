@@ -11,6 +11,9 @@ from html.parser import HTMLParser
 from c6_sources import read_c6_fields, apply_c6_rows, misc_v3_player_rows
 from qpix_verified_sources import populate_verified_ratings
 from qpix_source_archive import canonical_snapshot, write_snapshot
+from qpix_collection_checkpoint import CollectionCheckpoint
+
+PROGRESS=None
 
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 os.chdir(ROOT)
@@ -433,15 +436,22 @@ def basketball_reference_audit():
         return "Date index inaccessible ("+str(exc)[:110]+"); individual Basketball-Reference basic and advanced validation unavailable; official NBA/ESPN used: "+url
 
 def main():
+    global PROGRESS
+    # Write-on-entry: even scoreboard failure leaves a durable partial artifact.
+    PROGRESS=CollectionCheckpoint(ROOT,RUN_DATE)
     ids=game_ids_for(RUN_DATE)
     if not ids:raise RuntimeError("No independently verified game ids for "+RUN_DATE)
+    PROGRESS.stage("schedule_verified",expected_game_ids=ids,source_audits={"schedule":dict(SCHEDULE_AUDIT)})
     print("NBA schedule date",RUN_DATE,"game IDs",ids,flush=True)
     results={}
     with ThreadPoolExecutor(max_workers=min(8,len(ids))) as pool:
         jobs={pool.submit(normalize_game,gid):gid for gid in ids}
         for job in as_completed(jobs):
             gid=jobs[job]
-            try:results[gid]=job.result();print("FINAL verified",gid,len(results[gid][1]),flush=True)
+            try:
+                results[gid]=job.result()
+                PROGRESS.game(results[gid][0],results[gid][1])
+                print("FINAL verified",gid,len(results[gid][1]),flush=True)
             except Exception as exc:raise RuntimeError("Required final game failed "+gid+": "+str(exc))
     games=[results[gid][0] for gid in ids]
     players=[p for gid in ids for p in results[gid][1]]
@@ -450,6 +460,8 @@ def main():
     # not NBA.com's different on-court ratings.
     # Reuse date-matched verified historical ratings only after strict box-line checks.
     c3archive=populate_verified_ratings(players,RUN_DATE,ROOT)
+    PROGRESS.state['source_audits']['C3']=c3archive
+    PROGRESS.stage('C3_reconciled')
     print('C3 historical validation',c3archive['status'],c3archive['assigned'],'/',len(players),flush=True)
     adv=[c3archive]
     # Independently retrieve NBA Misc V3 player-level C6 values when available.
@@ -460,6 +472,8 @@ def main():
         for job in as_completed(jobs):
             rec=job.result()
             misc.append(rec)
+            PROGRESS.state["source_audits"].setdefault("C6",[]).append({"game_id":jobs[job],**rec})
+            PROGRESS.stage("collecting_C6")
             print("C6 Misc V3",jobs[job],rec.get("status"),rec.get("coverage",{}),flush=True)
     # Write a QCore-normalized archive BEFORE invoking the authorized engine.
     # Incomplete inputs produce an audit snapshot, but cannot be published as a
@@ -468,6 +482,8 @@ def main():
     snapshot=canonical_snapshot(games,players,RUN_DATE,source_audits,require_complete=False)
     archived_path=write_snapshot(snapshot,ROOT)
     print("QCORE_INPUT_ARCHIVE",str(archived_path),"SHA256",snapshot["input_sha256"],flush=True)
+    PROGRESS.state["coverage"]=snapshot["coverage"]["fields"]
+    PROGRESS.stage("source_validation_complete",canonical_archive={"path":str(archived_path),"sha256":snapshot["input_sha256"]})
     print("QCORE_FIELD_COVERAGE",json.dumps(snapshot["coverage"]["fields"],sort_keys=True),flush=True)
     if not snapshot["coverage"]["complete"]:
         counts={k:len(v) for k,v in snapshot["coverage"]["missing"].items() if v}
@@ -534,7 +550,11 @@ def main():
 
 if __name__=="__main__":
     try:main()
-    except Exception as e:print("FATAL INPUT/SCORING AUDIT ERROR:",e,file=sys.stderr,flush=True);raise
+    except Exception as e:
+        if PROGRESS is not None:
+            PROGRESS.fail(e)
+        print("FATAL INPUT/SCORING AUDIT ERROR:",e,file=sys.stderr,flush=True)
+        raise
 
 # QPIX Oct 30, 2026 daily run trigger (scoring and ingestion logic unchanged).
 
