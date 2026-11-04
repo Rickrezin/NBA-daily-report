@@ -1,0 +1,22 @@
+name: November 2 C6 historical source diagnostic
+on:
+  push:
+    branches:
+      - test/qpix-c6-nov2-replay-20261104
+    paths:
+      - '.github/workflows/c6-nov2-diagnostic.yml'
+      - 'scripts/c6_nov2_diagnostic.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  nov2-c6:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test ESPN 15 finals and NBA BoxScoreMiscV3 field coverage
+        run: python scripts/c6_nov2_diagnostic.py
