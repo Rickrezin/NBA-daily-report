@@ -1,0 +1,88 @@
+name: QPIX Unified Source Branch - Daily Shadow Test
+
+on:
+  schedule:
+    - cron: '30 8 * * *'
+      timezone: 'America/New_York'
+  workflow_dispatch:
+    inputs:
+      date_et:
+        description: 'Optional YYYY-MM-DD ET game date (defaults to previous ET day)'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: qpix-unified-shadow
+  cancel-in-progress: false
+
+jobs:
+  source-shadow:
+    name: Independently test unified-source feature branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout unified-source branch (not production)
+        uses: actions/checkout@v4
+        with:
+          ref: feature/qpix-multi-source-ingestion-20261104
+          persist-credentials: false
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Select game date
+        id: game_date
+        shell: bash
+        env:
+          REQUESTED_DATE: ${{ inputs.date_et }}
+        run: |
+          if [[ -n "$REQUESTED_DATE" ]]; then
+            if [[ ! "$REQUESTED_DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+              echo 'date_et must be YYYY-MM-DD' >&2
+              exit 1
+            fi
+            RUN_DATE="$REQUESTED_DATE"
+          else
+            RUN_DATE="$(TZ=America/New_York date -d 'yesterday' +%F)"
+          fi
+          echo "date_et=$RUN_DATE" >> "$GITHUB_OUTPUT"
+          echo "Testing feature branch for ET game date: $RUN_DATE" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Collect sources, archive inputs, validate and test QPIX locally
+        id: shadow_run
+        env:
+          QPIX_PHASE: regular
+        run: python3 scripts/qpix_independent_run.py "${{ steps.game_date.outputs.date_et }}"
+
+      - name: Upload pre-scoring source archive and audit (including failures)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qpix-unified-shadow-${{ steps.game_date.outputs.date_et || 'unknown' }}
+          path: |
+            data/historical/qpix_input/
+            data/nba_data.json
+            data/daily/${{ steps.game_date.outputs.date_et }}.json
+            data/daily/${{ steps.game_date.outputs.date_et }}.csv
+            docs/reports/${{ steps.game_date.outputs.date_et }}.audit.json
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Summarize result
+        if: always()
+        shell: bash
+        env:
+          OUTCOME: ${{ steps.shadow_run.outcome }}
+        run: |
+          echo "Shadow test result: $OUTCOME" >> "$GITHUB_STEP_SUMMARY"
+          echo 'No commits, pushes, or publication to main are performed by this workflow.' >> "$GITHUB_STEP_SUMMARY"
