@@ -9,6 +9,7 @@ from zoneinfo import ZoneInfo
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from html.parser import HTMLParser
 from c6_sources import read_c6_fields, apply_c6_rows, misc_v3_player_rows
+from qpix_verified_sources import populate_verified_ratings
 
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 os.chdir(ROOT)
@@ -444,11 +445,12 @@ def main():
     games=[results[gid][0] for gid in ids]
     players=[p for gid in ids for p in results[gid][1]]
     assert len(games)==len(ids) and len({(p["game_id"],p["player_id"]) for p in players})==len(players)
-    adv=[]
-    with ThreadPoolExecutor(max_workers=8) as pool:
-        jobs={pool.submit(add_advanced,gid,results[gid][1]):gid for gid in ids}
-        for job in as_completed(jobs):
-            r=job.result();adv.append(r);print("Advanced",jobs[job],r["assigned"],"/",r["total"],r["status"],flush=True)
+    # C3 requires Basketball-Reference/Dean Oliver individual ratings,
+    # not NBA.com's different on-court ratings.
+    # Reuse date-matched verified historical ratings only after strict box-line checks.
+    c3archive=populate_verified_ratings(players,RUN_DATE,ROOT)
+    print('C3 historical validation',c3archive['status'],c3archive['assigned'],'/',len(players),flush=True)
+    adv=[c3archive]
     # Independently retrieve NBA Misc V3 player-level C6 values when available.
     # Leave all unavailable fields absent; report the true coverage.
     misc=[]
@@ -466,7 +468,7 @@ def main():
     quality={
       "Source":f"ESPN final scoreboard/box scores or official NBA LiveData where accessible; all {len(games)} FINAL fixtures and player-point totals reconciled; "+str(SCHEDULE_AUDIT),
       "Basketball-Reference":basketball_reference_audit(),
-      "C3 individual ORtg/DRtg": f"{c3}/{len(players)} verified; unavailable for others, engine C3=0 per existing fallback; NO team-rating substitute.",
+      "C3 individual ORtg/DRtg": f"{c3}/{len(players)} archived and validated individual Dean Oliver ORtg/DRtg; missing remain absent; no NBA on-court substitution.",
       "C6 second-chance points":f"{c6['second_chance_points']}/{len(players)} individual records available; rest omitted (engine zero fallback)",
       "C6 fast-break points":f"{c6['fast_break_points']}/{len(players)} individual records available; rest omitted (engine zero fallback)",
       "C6 paint points":f"{c6['points_in_paint']}/{len(players)} individual records available; rest omitted (engine zero fallback)",
