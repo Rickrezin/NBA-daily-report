@@ -46,15 +46,7 @@ def one(event):
                 fields=read_c6_fields(dict(zip(labels,vals)))
                 if fields:records.append(fields)
     return {"id":event["id"],"status":200,"players":len(active),"c6_players":len(records),"c6_fields":{k:sum(k in p for p in records) for k in ("points_in_paint","fast_break_points","second_chance_points")},"plays":len(data.get("plays",[]))}
-board=fetch(BASE+"/scoreboard?dates="+DATE+"&limit=100")
-print("SCOREBOARD",json.dumps({"status":board["status"],"error":board.get("error")}),flush=True)
-if board["status"]!=200:sys.exit(2)
-games=[e for e in board["json"].get("events",[]) if e.get("status",{}).get("type",{}).get("completed")]
-print("SLATE",len(games),flush=True)
-if len(games)!=15:sys.exit(3)
-with concurrent.futures.ThreadPoolExecutor(max_workers=5) as pool:stats=list(pool.map(one,games))
-print("GAMES",json.dumps(stats),flush=True)
-print("ESPN_C6_COVERAGE",json.dumps({"valid_games":sum(x.get("status")==200 for x in stats),"players":sum(x.get("players",0) for x in stats),"c6_player_records":sum(x.get("c6_players",0) for x in stats)}),flush=True)
+print("SOURCE_SCOPE", "NBA BoxScoreMiscV3 direct C6 probe only; ESPN 15/15 verified in prior run 41832727674",flush=True)
 misc="https://stats.nba.com/stats/boxscoremiscv3?GameID="+NBA_GAME+"&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0"
 test=fetch(misc,timeout=13)
 print("MISC_V3",json.dumps({"nba_game_id":NBA_GAME,"http_status":test["status"],"error":test.get("error")}),flush=True)
