@@ -10,6 +10,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from html.parser import HTMLParser
 from c6_sources import read_c6_fields, apply_c6_rows, misc_v3_player_rows
 from qpix_verified_sources import populate_verified_ratings
+from qpix_source_archive import canonical_snapshot, write_snapshot
 
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 os.chdir(ROOT)
@@ -460,6 +461,17 @@ def main():
             rec=job.result()
             misc.append(rec)
             print("C6 Misc V3",jobs[job],rec.get("status"),rec.get("coverage",{}),flush=True)
+    # Write a QCore-normalized archive BEFORE invoking the authorized engine.
+    # Incomplete inputs produce an audit snapshot, but cannot be published as a
+    # 'full category' report. Keep original scoring rules unchanged.
+    source_audits={"ESPN_and_LiveData":SCHEDULE_AUDIT,"C3":c3archive,"C6":misc}
+    snapshot=canonical_snapshot(games,players,RUN_DATE,source_audits,require_complete=False)
+    archived_path=write_snapshot(snapshot,ROOT)
+    print("QCORE_INPUT_ARCHIVE",str(archived_path),"SHA256",snapshot["input_sha256"],flush=True)
+    print("QCORE_FIELD_COVERAGE",json.dumps(snapshot["coverage"]["fields"],sort_keys=True),flush=True)
+    if not snapshot["coverage"]["complete"]:
+        counts={k:len(v) for k,v in snapshot["coverage"]["missing"].items() if v}
+        raise RuntimeError("Refusing incomplete full-category QPIX report; missing="+json.dumps(counts,sort_keys=True))
     # Verified advanced and C6 values are attached to per-game player references.
     c6={field:sum(1 for p in players if field in p) for field in ("second_chance_points","fast_break_points","points_in_paint")}
     c3=sum(1 for p in players if "offensive_rating" in p and "defensive_rating" in p)
