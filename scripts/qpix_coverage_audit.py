@@ -67,16 +67,25 @@ def main():
     root=Path(args.root)
     source=root/"data"/"historical"/"qpix_input"/(args.date+".json")
     if not source.exists():
+        partial_path=root/"data"/"historical"/"qpix_input"/(args.date+".partial.json")
+        partial=json.loads(partial_path.read_text(encoding="utf-8")) if partial_path.exists() else {}
+        games=partial.get("completed_games",[])
         report={"date_et":args.date,"status":"source_archive_unavailable",
-                "reason":"Collector did not produce a canonical input JSON; see preceding workflow logs.",
-                "expected_archive":str(source),"games":0,"players":0,
+                "reason":"Collector did not produce a certified input JSON",
+                "expected_archive":str(source),"partial_stage":partial.get("stage"),
+                "completed_games":len(games),
+                "completed_game_ids":[g.get("game_id") for g in games],
+                "failure":partial.get("failure"),
+                "source_audits":partial.get("source_audits",{}),
+                "games":len(games),"players":sum(g.get("player_count",0) for g in games),
                 "categories":[],"games_detail":[]}
         audit=root/"data"/"historical"/"qpix_audits"/(args.date+".coverage.json")
         audit.parent.mkdir(parents=True,exist_ok=True)
         audit.write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
         summary=(f"## QPIX source coverage — {args.date}\n"
-                 "**Pre-scoring archive unavailable.** The source collector failed before "
-                 "producing the canonical player input; inspect the workflow logs.\n")
+                 "**Certified input archive unavailable.** See workflow logs.\n"
+                 f"Partial checkpoint: {report['completed_games']} games, stage={report['partial_stage']}, "
+                 f"failure={report['failure']}\n")
         print(summary)
         import os
         if os.environ.get("GITHUB_STEP_SUMMARY"):
