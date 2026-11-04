@@ -7,9 +7,11 @@ on:
       - '.github/workflows/qpix-multi-source-tests.yml'
       - 'scripts/c6_sources.py'
       - 'scripts/qpix_verified_sources.py'
+      - 'scripts/qpix_source_archive.py'
       - 'scripts/qpix_independent_run.py'
       - 'tests/test_c6_sources.py'
       - 'tests/test_qpix_verified_sources.py'
+      - 'tests/test_qpix_source_archive.py'
   workflow_dispatch:
 
 permissions:
@@ -26,6 +28,7 @@ jobs:
           python-version: '3.12'
       - name: Validate multi-source adapters and 334 archived ratings
         run: |
-          python -m py_compile scripts/qpix_independent_run.py scripts/c6_sources.py scripts/qpix_verified_sources.py
+          python -m py_compile scripts/qpix_independent_run.py scripts/c6_sources.py scripts/qpix_verified_sources.py scripts/qpix_source_archive.py
           python -m unittest discover -s tests -p 'test_c6_sources.py' -v
           python -m unittest discover -s tests -p 'test_qpix_verified_sources.py' -v
+          python -m unittest discover -s tests -p 'test_qpix_source_archive.py' -v
