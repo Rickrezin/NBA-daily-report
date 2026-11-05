@@ -1,6 +1,10 @@
 name: QPIX Unified Source Branch - Daily Shadow Test
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/qpix-shadow-trigger.txt'
   schedule:
     # 13:30 UTC is 08:30 EST (winter). UTC schedules avoid unverified timezone behavior.
     - cron: '30 13 * * *'
