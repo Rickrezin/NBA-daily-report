@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Experimental QPIX C6 availability probe; cannot alter QPIX scores."""
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 from collections import defaultdict
 from datetime import date
 from html.parser import HTMLParser
@@ -34,7 +35,7 @@ def game_map(page):
 
 def get(url):
     h={"User-Agent":"Mozilla/5.0","Accept":"application/json,text/html,*/*","Referer":"https://www.nba.com/"}
-    with urlopen(Request(url,headers=h),timeout=18) as r:return r.read().decode("utf-8")
+    with urlopen(Request(url,headers=h),timeout=8) as r:return r.read().decode("utf-8")
 def get_json(url):return json.loads(get(url))
 
 def nba_field(row,keys):
@@ -84,7 +85,8 @@ def probe(day):
     nba=game_map(get(f"https://www.nba.com/games?date={day}"))
     if set(final)-set(nba):raise ValueError("NBA schedule missing games: "+str(set(final)-set(nba)))
     output={"date":day,"expected_games":len(final),"games":[],"coverage":{f:0 for f in FIELDS}}
-    for pair,score in sorted(final.items()):
+    def inspect_game(item):
+        pair,score=item
         gid=nba[pair]
         entry={"matchup":pair,"nba_game_id":gid,"attempts":[],"source":None}
         for source,url in (
@@ -101,10 +103,14 @@ def probe(day):
                 coverage={k:sum(p[k] is not None for t in teams for p in t["players"]) for k in FIELDS}
                 if not all(coverage.values()):raise ValueError("Missing one or more C6 fields "+str(coverage))
                 entry.update(source=url,teams=teams,coverage=coverage)
-                for field,n in coverage.items():output["coverage"][field]+=n
                 break
             except Exception as err:entry["attempts"].append({"endpoint":source,"error":str(err)[:250]})
-        output["games"].append(entry)
+        return entry
+    with ThreadPoolExecutor(max_workers=min(8,len(final))) as pool:
+        for entry in pool.map(inspect_game,sorted(final.items())):
+            if entry["source"]:
+                for field,n in entry["coverage"].items():output["coverage"][field]+=n
+            output["games"].append(entry)
     output["complete_games"]=sum(bool(g["source"]) for g in output["games"])
     return output
 
