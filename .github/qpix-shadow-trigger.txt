@@ -1,0 +1,3 @@
+QPIX unified shadow manual trigger
+Game date: previous America/New_York calendar day (2026-11-04 for this trigger).
+This file is a nonproduction trigger only; it does not modify scoring.
