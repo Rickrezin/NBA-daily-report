@@ -57,6 +57,38 @@ def resolve(date_et, fixtures, fetch_json, alias_normalize=lambda x:x):
             if len(crosswalk)==len(expected):break
         except Exception as exc:
             audit["attempts"].append({"source":url,"status":"failed","error":str(exc)[:180]})
+    # Independent official NBA Stats scoreboard endpoint. It provides GAMECODE
+    # (YYYYMMDD/AWAYHOME) and GAME_ID; do not depend on the blocked CDN.
+    if len(crosswalk)<len(expected):
+        from urllib.parse import urlencode
+        query=urlencode({"GameDate":date_et,"LeagueID":"00","DayOffset":"0"})
+        url="https://stats.nba.com/stats/scoreboardv2?"+query
+        try:
+            payload=fetch_json(url,timeout=13)
+            sets=payload.get("resultSets",payload.get("resultSet",[]))
+            if isinstance(sets,dict):sets=list(sets.values())
+            found={}
+            for section in sets:
+                if section.get("name")!="GameHeader":continue
+                headers=section.get("headers",[])
+                for values in section.get("rowSet",[]):
+                    data=dict(zip(headers,values))
+                    code=str(data.get("GAMECODE","")).upper()
+                    if "/" not in code:continue
+                    teams=code.rsplit("/",1)[-1]
+                    for pair,eid in by_matchup.items():
+                        if teams==pair[0]+pair[1]:
+                            gid=str(data.get("GAME_ID",""))
+                            if len(gid)!=10 or not gid.isdigit():
+                                raise ValueError("Invalid NBA scoreboard ID "+repr(gid))
+                            found[eid]=gid
+            for eid,gid in found.items():
+                if eid in crosswalk and crosswalk[eid]!=gid:
+                    raise ValueError("Conflicting NBA IDs from schedule and scoreboard for "+eid)
+                crosswalk[eid]=gid
+            audit["attempts"].append({"source":url,"status":"ok","matched":len(found)})
+        except Exception as exc:
+            audit["attempts"].append({"source":url,"status":"failed","error":str(exc)[:180]})
     if len(set(crosswalk.values()))!=len(crosswalk):
         raise ValueError("Duplicate NBA IDs for distinct ESPN fixtures")
     audit["resolved"]=len(crosswalk)
