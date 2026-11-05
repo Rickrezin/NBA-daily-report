@@ -2,8 +2,8 @@ name: QPIX Unified Source Branch - Daily Shadow Test
 
 on:
   schedule:
-    - cron: '30 8 * * *'
-      timezone: 'America/New_York'
+    # 13:30 UTC is 08:30 EST (winter). UTC schedules avoid unverified timezone behavior.
+    - cron: '30 13 * * *'
   workflow_dispatch:
     inputs:
       date_et:
