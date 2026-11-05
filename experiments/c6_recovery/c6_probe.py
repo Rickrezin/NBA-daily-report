@@ -72,7 +72,8 @@ def espn_finals(board):
     for event in board.get("events",[]):
         if not event.get("status",{}).get("type",{}).get("completed"):continue
         sides={x["homeAway"]:x for x in event["competitions"][0]["competitors"]}
-        pair=(sides["away"]["team"]["abbreviation"].upper(),sides["home"]["team"]["abbreviation"].upper())
+        alias={"SA":"SAS","NY":"NYK","WSH":"WAS","UTAH":"UTA","NO":"NOP","GS":"GSW","PHO":"PHX"}
+        pair=tuple(alias.get(sides[side]["team"]["abbreviation"].upper(),sides[side]["team"]["abbreviation"].upper()) for side in ("away","home"))
         games[pair]=(int(sides["away"]["score"]),int(sides["home"]["score"]))
     return games
 
