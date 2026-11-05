@@ -1,0 +1,6 @@
+{
+  "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261104&limit=100",
+  "retrieved_at_utc": "2026-11-05T14:52:04.105895+00:00",
+  "sha256": "fe5b819e6897a9c6d31fb267555b9e9387197468eb0b16a749c3c1795de6156c",
+  "bytes": 331359
+}

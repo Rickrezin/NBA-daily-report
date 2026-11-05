@@ -1,0 +1,906 @@
+{
+  "q_defr": [
+    {
+      "calibrated": {
+        "q_defr": 73.05226836838825,
+        "q_offr": 70.3311649648092
+      },
+      "cohort": "espn_nov2",
+      "game_id": "401909908",
+      "minutes": 6.0,
+      "name": "Ebuka Okorie",
+      "player_id": "5258459",
+      "prediction": {
+        "features": {
+          "ast_pct": 25.806451612903224,
+          "blk_pct": 0.0,
+          "drb_pct": 32.6530612244898,
+          "efg": 0.2857142857142857,
+          "individual_possessions": 6.051298567961924,
+          "orb_pct": 0.0,
+          "points_produced": 4.245970012848245,
+          "qast": 0.7088932738503775,
+          "scoring_possessions": 2.0544235679619236,
+          "stl_pct": 8.24152016626531,
+          "stop_pct": 1.0805760746982942,
+          "stops": 2.6222736895588112,
+          "team_defr": 93.7472918912679,
+          "team_possessions": 97.0694706632653,
+          "ts": 0.2857142857142857,
+          "usage_pct": 54.054054054054056
+        },
+        "flags": [
+          "short_minutes"
+        ],
+        "q_defr": 71.24470761987449,
+        "q_offr": 70.16626208675548
+      },
+      "reference": {
+        "q_defr": 68,
+        "q_offr": 70
+      },
+      "residual": {
+        "q_defr": 3.2447076198744895,
+        "q_offr": 0.1662620867554807
+      },
+      "split": "test",
+      "team": "DET"
+    },
+    {
+      "calibrated": {
+        "q_defr": 71.02194800499753,
+        "q_offr": 129.94046159208608
+      },
+      "cohort": "espn_nov2",
+      "game_id": "401909908",
+      "minutes": 6.0,
+      "name": "Isaac Jones",
+      "player_id": "5107818",
+      "prediction": {
+        "features": {
+          "ast_pct": 0.0,
+          "blk_pct": 40.0,
+          "drb_pct": 48.97959183673469,
+          "efg": 1.0,
+          "individual_possessions": 2.4283698100468394,
+          "orb_pct": 50.0,
+          "points_produced": 3.1509276627722045,
+          "qast": 0.7640343698854337,
+          "scoring_possessions": 1.4283698100468394,
+          "stl_pct": 0.0,
+          "stop_pct": 1.1259229300055391,
+          "stops": 2.73231857058176,
+          "team_defr": 93.7472918912679,
+          "team_possessions": 97.0694706632653,
+          "ts": 1.0,
+          "usage_pct": 15.444015444015443
+        },
+        "flags": [
+          "short_minutes"
+        ],
+        "q_defr": 69.13251169244381,
+        "q_offr": 129.75485240081403
+      },
+      "reference": {
+        "q_defr": 66,
+        "q_offr": 130
+      },
+      "residual": {
+        "q_defr": 3.1325116924438134,
+        "q_offr": -0.2451475991859695
+      },
+      "split": "test",
+      "team": "DET"
+    },
+    {
+      "calibrated": {
+        "q_defr": 103.28170926890813,
+        "q_offr": 0.14052095204286275
+      },
+      "cohort": "espn_nov2",
+      "game_id": "401909913",
+      "minutes": 3.0,
+      "name": "Nique Clifford",
+      "player_id": "4702384",
+      "prediction": {
+        "features": {
+          "ast_pct": 0.0,
+          "blk_pct": 0.0,
+          "drb_pct": 38.095238095238095,
+          "efg": 0.0,
+          "individual_possessions": 0.6942857142857143,
+          "orb_pct": 0.0,
+          "points_produced": 0.0,
+          "qast": 0.586482558139535,
+          "scoring_possessions": 0.0,
+          "stl_pct": 0.0,
+          "stop_pct": 0.555169640928756,
+          "stops": 0.6674460916442049,
+          "team_defr": 103.97274923753317,
+          "team_possessions": 96.17904761904762,
+          "ts": 0.0,
+          "usage_pct": 14.732965009208105
+        },
+        "flags": [
+          "short_minutes"
+        ],
+        "q_defr": 102.6931938341147,
+        "q_offr": 0.0
+      },
+      "reference": {
+        "q_defr": 104,
+        "q_offr": 0
+      },
+      "residual": {
+        "q_defr": -1.3068061658853054,
+        "q_offr": 0.0
+      },
+      "split": "test",
+      "team": "SAC"
+    },
+    {
+      "calibrated": {
+        "q_defr": 114.28937268513607,
+        "q_offr": 75.82561358897586
+      },
+      "cohort": "espn_nov2",
+      "game_id": "401909914",
+      "minutes": 6.0,
+      "name": "Bryce McGowens",
+      "player_id": "4576086",
+      "prediction": {
+        "features": {
+          "ast_pct": 0.0,
+          "blk_pct": 0.0,
+          "drb_pct": 0.0,
+          "efg": 0.0,
+          "individual_possessions": 1.069585080545646,
+          "orb_pct": 16.987179487179485,
+          "points_produced": 0.8092352595929634,
+          "qast": 0.5714150943396227,
+          "scoring_possessions": 0.357662003622569,
+          "stl_pct": 8.342702224256437,
+          "stop_pct": 0.7235881484456876,
+          "stops": 1.7346613339305161,
+          "team_defr": 126.55721864721085,
+          "team_possessions": 105.88096153846155,
+          "ts": 0.0,
+          "usage_pct": 7.228587015821058
+        },
+        "flags": [
+          "short_minutes"
+        ],
+        "q_defr": 114.14475697533996,
+        "q_offr": 75.65880211980277
+      },
+      "reference": {
+        "q_defr": 113,
+        "q_offr": 76
+      },
+      "residual": {
+        "q_defr": 1.1447569753399591,
+        "q_offr": -0.3411978801972282
+      },
+      "split": "test",
+      "team": "NOP"
+    },
+    {
+      "calibrated": {
+        "q_defr": 104.62409233094,
+        "q_offr": 94.13788899569171
+      },
+      "cohort": "espn_nov2",
+      "game_id": "401909910",
+      "minutes": 5.0,
+      "name": "Tyler Kolek",
+      "player_id": "4433225",
+      "prediction": {
+        "features": {
+          "ast_pct": 44.85981308411214,
+          "blk_pct": 0.0,
+          "drb_pct": 21.818181818181813,
+          "efg": 0.3333333333333333,
+          "individual_possessions": 2.4389884896043843,
+          "orb_pct": 0.0,
+          "points_produced": 2.2917886183358136,
+          "qast": 0.6909085770274345,
+          "scoring_possessions": 1.0752047058206005,
+          "stl_pct": 0.0,
+          "stop_pct": 0.5025087634149301,
+          "stops": 0.9301007392964498,
+          "team_defr": 101.30127754932217,
+          "team_possessions": 88.84389434889434,
+          "ts": 0.3333333333333333,
+          "usage_pct": 27.756360832690824
+        },
+        "flags": [
+          "short_minutes"
+        ],
+        "q_defr": 104.08971040746002,
+        "q_offr": 93.96471644306746
+      },
+      "reference": {
+        "q_defr": 105,
+        "q_offr": 94
+      },
+      "residual": {
+        "q_defr": -0.9102895925399821,
+        "q_offr": -0.035283556932540705
+      },
+      "split": "test",
+      "team": "NYK"
+    },
+    {
+      "calibrated": {
+        "q_defr": 106.34766139780224,
+        "q_offr": 169.7493646696248
+      },
+      "cohort": "espn_nov4",
+      "game_id": "401909924",
+      "minutes": 36.0,
+      "name": "Myles Turner",
+      "player_id": "3133628",
+      "prediction": {
+        "features": {
+          "ast_pct": 26.96629213483146,
+          "blk_pct": 5.128205128205128,
+          "drb_pct": 22.641509433962266,
+          "efg": 1.0,
+          "individual_possessions": 6.261199103512161,
+          "orb_pct": 0.0,
+          "points_produced": 10.615858520097978,
+          "qast": 0.705967897271268,
+          "scoring_possessions": 3.7729382339469435,
+          "stl_pct": 2.8506331792100155,
+          "stop_pct": 0.7302493041137051,
+          "stops": 10.246836519542317,
+          "team_defr": 116.51963120020939,
+          "team_possessions": 93.54646841673502,
+          "ts": 1.0,
+          "usage_pct": 8.613264427217917
+        },
+        "flags": [],
+        "q_defr": 105.88278485487979,
+        "q_offr": 169.54992717198712
+      },
+      "reference": {
+        "q_defr": 105.0,
+        "q_offr": 170.0
+      },
+      "residual": {
+        "q_defr": 0.8827848548797874,
+        "q_offr": -0.4500728280128783
+      },
+      "split": "external_test",
+      "team": "MIL"
+    },
+    {
+      "calibrated": {
+        "q_defr": 88.31662346250567,
+        "q_offr": 94.17576720813315
+      },
+      "cohort": "espn_nov2",
+      "game_id": "401909910",
+      "minutes": 13.0,
+      "name": "Andre Drummond",
+      "player_id": "6585",
+      "prediction": {
+        "features": {
+          "ast_pct": 0.0,
+          "blk_pct": 9.7165991902834,
+          "drb_pct": 50.349650349650354,
+          "efg": 0.3333333333333333,
+          "individual_possessions": 5.676826078080879,
+          "orb_pct": 29.93762993762994,
+          "points_produced": 5.33636306053981,
+          "qast": 0.8798773284870515,
+          "scoring_possessions": 2.3130422942970954,
+          "stl_pct": 0.0,
+          "stop_pct": 0.8686894271126334,
+          "stops": 4.180461549571469,
+          "team_defr": 101.30127754932217,
+          "team_possessions": 88.84389434889434,
+          "ts": 0.5154639175257733,
+          "usage_pct": 20.924025858490005
+        },
+        "flags": [],
+        "q_defr": 87.12461960125565,
+        "q_offr": 94.0025814978611
+      },
+      "reference": {
+        "q_defr": 88,
+        "q_offr": 94
+      },
+      "residual": {
+        "q_defr": -0.8753803987443547,
+        "q_offr": 0.0025814978611009565
+      },
+      "split": "test",
+      "team": "NYK"
+    },
+    {
+      "calibrated": {
+        "q_defr": 106.27228709336421,
+        "q_offr": 0.14052095204286275
+      },
+      "cohort": "espn_nov2",
+      "game_id": "401909913",
+      "minutes": 8.0,
+      "name": "Max Christie",
+      "player_id": "4432582",
+      "prediction": {
+        "features": {
+          "ast_pct": 0.0,
+          "blk_pct": 0.0,
+          "drb_pct": 34.285714285714285,
+          "efg": 0.0,
+          "individual_possessions": 4.726190476190476,
+          "orb_pct": 0.0,
+          "points_produced": 0.0,
+          "qast": 0.6076041666666667,
+          "scoring_possessions": 0.0,
+          "stl_pct": 6.23836495425199,
+          "stop_pct": 0.7867146314548775,
+          "stops": 2.5221821333766723,
+          "team_defr": 119.56866162316314,
+          "team_possessions": 96.17904761904762,
+          "ts": 0.0,
+          "usage_pct": 32.90676416819013
+        },
+        "flags": [
+          "short_minutes"
+        ],
+        "q_defr": 105.80437097412599,
+        "q_offr": 0.0
+      },
+      "reference": {
+        "q_defr": 105,
+        "q_offr": 0
+      },
+      "residual": {
+        "q_defr": 0.8043709741259875,
+        "q_offr": 0.0
+      },
+      "split": "test",
+      "team": "DAL"
+    },
+    {
+      "calibrated": {
+        "q_defr": 103.28170926890813,
+        "q_offr": 43.75628606242605
+      },
+      "cohort": "espn_nov2",
+      "game_id": "401909913",
+      "minutes": 3.0,
+      "name": "Daeqwon Plowden",
+      "player_id": "4279318",
+      "prediction": {
+        "features": {
+          "ast_pct": 0.0,
+          "blk_pct": 0.0,
+          "drb_pct": 38.095238095238095,
+          "efg": 0.0,
+          "individual_possessions": 2.1513804980286975,
+          "orb_pct": 0.0,
+          "points_produced": 0.9380151157621148,
+          "qast": 0.586482558139535,
+          "scoring_possessions": 0.5628090694572689,
+          "stl_pct": 0.0,
+          "stop_pct": 0.555169640928756,
+          "stops": 0.6674460916442049,
+          "team_defr": 103.97274923753317,
+          "team_possessions": 96.17904761904762,
+          "ts": 0.1736111111111111,
+          "usage_pct": 42.430939226519335
+        },
+        "flags": [
+          "short_minutes"
+        ],
+        "q_defr": 102.6931938341147,
+        "q_offr": 43.600614425091926
+      },
+      "reference": {
+        "q_defr": 102,
+        "q_offr": 44
+      },
+      "residual": {
+        "q_defr": 0.6931938341146946,
+        "q_offr": -0.3993855749080737
+      },
+      "split": "test",
+      "team": "SAC"
+    },
+    {
+      "calibrated": {
+        "q_defr": 128.22352818630995,
+        "q_offr": 0.14052095204286275
+      },
+      "cohort": "espn_nov4",
+      "game_id": "401909924",
+      "minutes": 2.0,
+      "name": "Ousmane Dieng",
+      "player_id": "4997526",
+      "prediction": {
+        "features": {
+          "ast_pct": 0.0,
+          "blk_pct": 0.0,
+          "drb_pct": 0.0,
+          "efg": 0.0,
+          "individual_possessions": 1.4882608695652173,
+          "orb_pct": 0.0,
+          "points_produced": 0.0,
+          "qast": 0.8046666666666666,
+          "scoring_possessions": 0.0,
+          "stl_pct": 0.0,
+          "stop_pct": 0.24560739752886426,
+          "stops": 0.19146420546541987,
+          "team_defr": 116.51963120020939,
+          "team_possessions": 93.54646841673502,
+          "ts": 0.0,
+          "usage_pct": 44.296788482835
+        },
+        "flags": [
+          "short_minutes"
+        ],
+        "q_defr": 128.64082716822963,
+        "q_offr": 0.0
+      },
+      "reference": {
+        "q_defr": 128.0,
+        "q_offr": 0.0
+      },
+      "residual": {
+        "q_defr": 0.6408271682296345,
+        "q_offr": 0.0
+      },
+      "split": "external_test",
+      "team": "MIL"
+    }
+  ],
+  "q_offr": [
+    {
+      "calibrated": {
+        "q_defr": 107.70554330595988,
+        "q_offr": 125.75547699947228
+      },
+      "cohort": "espn_nov2",
+      "game_id": "401909910",
+      "minutes": 11.0,
+      "name": "Jordan Clarkson",
+      "player_id": "2528426",
+      "prediction": {
+        "features": {
+          "ast_pct": 0.0,
+          "blk_pct": 11.483253588516748,
+          "drb_pct": 0.0,
+          "efg": 0.7,
+          "individual_possessions": 2.952953558534438,
+          "orb_pct": 0.0,
+          "points_produced": 3.7080628077515265,
+          "qast": 1.235252988373997,
+          "scoring_possessions": 1.5891697747506541,
+          "stl_pct": 0.0,
+          "stop_pct": 0.43331545252847803,
+          "stops": 1.7644656463584076,
+          "team_defr": 101.30127754932217,
+          "team_possessions": 88.84389434889434,
+          "ts": 0.7,
+          "usage_pct": 21.02754608537184
+        },
+        "flags": [
+          "qast_outside_unit_interval"
+        ],
+        "q_defr": 107.29542528742338,
+        "q_offr": 125.5713215344928
+      },
+      "reference": {
+        "q_defr": 107,
+        "q_offr": 134
+      },
+      "residual": {
+        "q_defr": 0.2954252874233845,
+        "q_offr": -8.428678465507204
+      },
+      "split": "test",
+      "team": "NYK"
+    },
+    {
+      "calibrated": {
+        "q_defr": 116.68870653506796,
+        "q_offr": 164.5648998819285
+      },
+      "cohort": "espn_nov2",
+      "game_id": "401909913",
+      "minutes": 26.0,
+      "name": "Daniel Gafford",
+      "player_id": "4278049",
+      "prediction": {
+        "features": {
+          "ast_pct": 0.0,
+          "blk_pct": 4.733727810650888,
+          "drb_pct": 21.0989010989011,
+          "efg": 0.9,
+          "individual_possessions": 8.264225255059669,
+          "orb_pct": 13.186813186813188,
+          "points_produced": 13.58368088445757,
+          "qast": 0.9326822916666667,
+          "scoring_possessions": 6.518987159821574,
+          "stl_pct": 1.9194969090006124,
+          "stop_pct": 0.5589915764564297,
+          "stops": 5.824355057153691,
+          "team_defr": 119.56866162316314,
+          "team_possessions": 96.17904761904762,
+          "ts": 0.9191176470588235,
+          "usage_pct": 20.047813247081987
+        },
+        "flags": [],
+        "q_defr": 116.64084738439696,
+        "q_offr": 164.36726329719934
+      },
+      "reference": {
+        "q_defr": 117,
+        "q_offr": 166
+      },
+      "residual": {
+        "q_defr": -0.3591526156030369,
+        "q_offr": -1.6327367028006563
+      },
+      "split": "test",
+      "team": "DAL"
+    },
+    {
+      "calibrated": {
+        "q_defr": 124.82813598282077,
+        "q_offr": 96.45588768426073
+      },
+      "cohort": "espn_nov4",
+      "game_id": "401909924",
+      "minutes": 18.0,
+      "name": "Nate Ament",
+      "player_id": "5164559",
+      "prediction": {
+        "features": {
+          "ast_pct": 0.0,
+          "blk_pct": 0.0,
+          "drb_pct": 5.031446540880504,
+          "efg": 0.4444444444444444,
+          "individual_possessions": 7.663803115935479,
+          "orb_pct": 5.797101449275362,
+          "points_produced": 7.378856013678486,
+          "qast": 0.9901481481481482,
+          "scoring_possessions": 2.999020507239827,
+          "stl_pct": 0.0,
+          "stop_pct": 0.32082953007388293,
+          "stops": 2.250935212665932,
+          "team_defr": 116.51963120020939,
+          "team_possessions": 93.54646841673502,
+          "ts": 0.4554655870445344,
+          "usage_pct": 24.31401501168943
+        },
+        "flags": [],
+        "q_defr": 125.10851093205565,
+        "q_offr": 96.28190993497084
+      },
+      "reference": {
+        "q_defr": 125.0,
+        "q_offr": 97.0
+      },
+      "residual": {
+        "q_defr": 0.10851093205565121,
+        "q_offr": -0.7180900650291591
+      },
+      "split": "external_test",
+      "team": "MIL"
+    },
+    {
+      "calibrated": {
+        "q_defr": 123.0772694333544,
+        "q_offr": 137.76902345213404
+      },
+      "cohort": "espn_nov2",
+      "game_id": "401909920",
+      "minutes": 21.0,
+      "name": "Jamison Battle",
+      "player_id": "4431893",
+      "prediction": {
+        "features": {
+          "ast_pct": 0.0,
+          "blk_pct": 0.0,
+          "drb_pct": 0.0,
+          "efg": 0.8571428571428571,
+          "individual_possessions": 5.508326340265372,
+          "orb_pct": 0.0,
+          "points_produced": 7.578393654942457,
+          "qast": 0.733531792758316,
+          "scoring_possessions": 2.5261312183141524,
+          "stl_pct": 0.0,
+          "stop_pct": 0.3129190455337591,
+          "stops": 2.8014533222195763,
+          "team_defr": 115.3290372361531,
+          "team_possessions": 102.31594993581514,
+          "ts": 0.8571428571428571,
+          "usage_pct": 15.612802498048401
+        },
+        "flags": [],
+        "q_defr": 123.28703819211754,
+        "q_offr": 137.58069487541215
+      },
+      "reference": {
+        "q_defr": 123,
+        "q_offr": 137
+      },
+      "residual": {
+        "q_defr": 0.2870381921175351,
+        "q_offr": 0.5806948754121493
+      },
+      "split": "test",
+      "team": "TOR"
+    },
+    {
+      "calibrated": {
+        "q_defr": 120.34154550300745,
+        "q_offr": 128.6572183350404
+      },
+      "cohort": "espn_nov4",
+      "game_id": "401909924",
+      "minutes": 33.0,
+      "name": "Tyler Herro",
+      "player_id": "4395725",
+      "prediction": {
+        "features": {
+          "ast_pct": 18.67704280155642,
+          "blk_pct": 0.0,
+          "drb_pct": 13.7221269296741,
+          "efg": 0.5882352941176471,
+          "individual_possessions": 15.801755368671685,
+          "orb_pct": 0.0,
+          "points_produced": 20.30083983246026,
+          "qast": 0.8759692884936076,
+          "scoring_possessions": 8.104581455628207,
+          "stl_pct": 0.0,
+          "stop_pct": 0.4202262664511781,
+          "stops": 5.405218934837921,
+          "team_defr": 116.51963120020939,
+          "team_possessions": 93.54646841673502,
+          "ts": 0.6510416666666667,
+          "usage_pct": 27.1150038591899
+        },
+        "flags": [],
+        "q_defr": 120.44099229293573,
+        "q_offr": 128.47205490035864
+      },
+      "reference": {
+        "q_defr": 120.0,
+        "q_offr": 129.0
+      },
+      "residual": {
+        "q_defr": 0.44099229293573217,
+        "q_offr": -0.5279450996413573
+      },
+      "split": "external_test",
+      "team": "MIL"
+    },
+    {
+      "calibrated": {
+        "q_defr": 132.95379972272644,
+        "q_offr": 121.68551635227033
+      },
+      "cohort": "espn_nov2",
+      "game_id": "401909908",
+      "minutes": 21.0,
+      "name": "Sion James",
+      "player_id": "4602025",
+      "prediction": {
+        "features": {
+          "ast_pct": 30.0,
+          "blk_pct": 0.0,
+          "drb_pct": 21.428571428571427,
+          "efg": 0.9166666666666666,
+          "individual_possessions": 7.741974672523044,
+          "orb_pct": 4.664723032069971,
+          "points_produced": 9.406714040438201,
+          "qast": 0.548203125,
+          "scoring_possessions": 3.5280971215026358,
+          "stl_pct": 0.0,
+          "stop_pct": 0.3326922946279044,
+          "stops": 2.825748181661806,
+          "team_defr": 127.74356257711231,
+          "team_possessions": 97.0694706632653,
+          "ts": 0.9166666666666666,
+          "usage_pct": 17.234775947912677
+        },
+        "flags": [],
+        "q_defr": 133.56185365006735,
+        "q_offr": 121.50277465803995
+      },
+      "reference": {
+        "q_defr": 133,
+        "q_offr": 121
+      },
+      "residual": {
+        "q_defr": 0.5618536500673486,
+        "q_offr": 0.5027746580399537
+      },
+      "split": "test",
+      "team": "CHA"
+    },
+    {
+      "calibrated": {
+        "q_defr": 92.5531077602523,
+        "q_offr": 146.68360300867897
+      },
+      "cohort": "espn_nov2",
+      "game_id": "401909913",
+      "minutes": 27.0,
+      "name": "Precious Achiuwa",
+      "player_id": "4431679",
+      "prediction": {
+        "features": {
+          "ast_pct": 13.521126760563378,
+          "blk_pct": 7.901234567901234,
+          "drb_pct": 33.86243386243386,
+          "efg": 0.6666666666666666,
+          "individual_possessions": 5.861239761679653,
+          "orb_pct": 10.158730158730158,
+          "points_produced": 8.586257772940815,
+          "qast": 0.5462151981657386,
+          "scoring_possessions": 4.033620714060605,
+          "stl_pct": 3.6968088617789574,
+          "stop_pct": 0.8095823091159731,
+          "stops": 8.759796239250417,
+          "team_defr": 103.97274923753317,
+          "team_possessions": 96.17904761904762,
+          "ts": 0.6944444444444444,
+          "usage_pct": 8.708819316554123
+        },
+        "flags": [],
+        "q_defr": 91.53194616984722,
+        "q_offr": 146.49217779960352
+      },
+      "reference": {
+        "q_defr": 92,
+        "q_offr": 146
+      },
+      "residual": {
+        "q_defr": -0.46805383015278323,
+        "q_offr": 0.4921777996035246
+      },
+      "split": "test",
+      "team": "SAC"
+    },
+    {
+      "calibrated": {
+        "q_defr": 90.9559546971221,
+        "q_offr": 118.69827045994015
+      },
+      "cohort": "espn_nov2",
+      "game_id": "401909910",
+      "minutes": 27.0,
+      "name": "Josh Hart",
+      "player_id": "3062679",
+      "prediction": {
+        "features": {
+          "ast_pct": 48.484848484848484,
+          "blk_pct": 0.0,
+          "drb_pct": 20.2020202020202,
+          "efg": 0.6666666666666666,
+          "individual_possessions": 9.270327813196646,
+          "orb_pct": 4.804804804804805,
+          "points_produced": 10.986874221644575,
+          "qast": 0.5486229227761485,
+          "scoring_possessions": 4.2246521375209705,
+          "stl_pct": 6.003038669589462,
+          "stop_pct": 0.809423818758128,
+          "stops": 8.090140976687893,
+          "team_defr": 101.30127754932217,
+          "team_possessions": 88.84389434889434,
+          "ts": 0.6666666666666666,
+          "usage_pct": 15.420200462606012
+        },
+        "flags": [],
+        "q_defr": 89.87038563178851,
+        "q_offr": 118.51656643688871
+      },
+      "reference": {
+        "q_defr": 90,
+        "q_offr": 119
+      },
+      "residual": {
+        "q_defr": -0.12961436821149164,
+        "q_offr": -0.4834335631112907
+      },
+      "split": "test",
+      "team": "NYK"
+    },
+    {
+      "calibrated": {
+        "q_defr": 118.03691675847442,
+        "q_offr": 203.69026086713305
+      },
+      "cohort": "espn_nov2",
+      "game_id": "401909920",
+      "minutes": 6.0,
+      "name": "Alijah Martin",
+      "player_id": "4702656",
+      "prediction": {
+        "features": {
+          "ast_pct": 0.0,
+          "blk_pct": 0.0,
+          "drb_pct": 21.052631578947366,
+          "efg": 1.0,
+          "individual_possessions": 0.9449512742110003,
+          "orb_pct": 19.51219512195122,
+          "points_produced": 1.9227777190179158,
+          "qast": 0.7361627906976744,
+          "scoring_possessions": 0.9449512742110003,
+          "stl_pct": 0.0,
+          "stop_pct": 0.42904875949353605,
+          "stops": 1.0974632849091055,
+          "team_defr": 115.3290372361531,
+          "team_possessions": 102.31594993581514,
+          "ts": 1.0,
+          "usage_pct": 6.830601092896174
+        },
+        "flags": [
+          "short_minutes"
+        ],
+        "q_defr": 118.04342610770925,
+        "q_offr": 203.47903341612664
+      },
+      "reference": {
+        "q_defr": 118,
+        "q_offr": 203
+      },
+      "residual": {
+        "q_defr": 0.04342610770925148,
+        "q_offr": 0.4790334161266401
+      },
+      "split": "test",
+      "team": "TOR"
+    },
+    {
+      "calibrated": {
+        "q_defr": 115.633231602028,
+        "q_offr": 57.685760632898834
+      },
+      "cohort": "espn_nov4",
+      "game_id": "401909924",
+      "minutes": 16.0,
+      "name": "Kel'el Ware",
+      "player_id": "5105623",
+      "prediction": {
+        "features": {
+          "ast_pct": 9.375,
+          "blk_pct": 5.769230769230769,
+          "drb_pct": 16.9811320754717,
+          "efg": 0.16666666666666666,
+          "individual_possessions": 6.366106727455939,
+          "orb_pct": 13.043478260869565,
+          "points_produced": 3.662118832725816,
+          "qast": 0.8139761904761904,
+          "scoring_possessions": 1.645454553542896,
+          "stl_pct": 0.0,
+          "stop_pct": 0.524535103574347,
+          "stops": 3.2712270999990993,
+          "team_defr": 116.51963120020939,
+          "team_possessions": 93.54646841673502,
+          "ts": 0.16666666666666666,
+          "usage_pct": 19.379844961240313
+        },
+        "flags": [],
+        "q_defr": 115.54280891949725,
+        "q_offr": 57.52525035327664
+      },
+      "reference": {
+        "q_defr": 115.0,
+        "q_offr": 58.0
+      },
+      "residual": {
+        "q_defr": 0.5428089194972472,
+        "q_offr": -0.4747496467233603
+      },
+      "split": "external_test",
+      "team": "MIL"
+    }
+  ]
+}

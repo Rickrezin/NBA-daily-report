@@ -1,0 +1,3317 @@
+[
+  {
+    "differences": {},
+    "game_id": "401909907",
+    "player_id": "4432823"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 27.883333333333333,
+        "espn": 28.0
+      }
+    },
+    "game_id": "401909907",
+    "player_id": "4222252"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 31.3,
+        "espn": 31.0
+      }
+    },
+    "game_id": "401909907",
+    "player_id": "3133626"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 38.6,
+        "espn": 39.0
+      }
+    },
+    "game_id": "401909907",
+    "player_id": "4278073"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 35.21666666666667,
+        "espn": 35.0
+      }
+    },
+    "game_id": "401909907",
+    "player_id": "4900671"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 19.983333333333334,
+        "espn": 20.0
+      }
+    },
+    "game_id": "401909907",
+    "player_id": "5174983"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 16.216666666666665,
+        "espn": 16.0
+      }
+    },
+    "game_id": "401909907",
+    "player_id": "4432185"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 26.65,
+        "espn": 27.0
+      }
+    },
+    "game_id": "401909907",
+    "player_id": "4683778"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 11.716666666666667,
+        "espn": 12.0
+      }
+    },
+    "game_id": "401909907",
+    "player_id": "5105800"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 12.433333333333334,
+        "espn": 12.0
+      }
+    },
+    "game_id": "401909907",
+    "player_id": "5241364"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 28.183333333333334,
+        "espn": 28.0
+      }
+    },
+    "game_id": "401909907",
+    "player_id": "4066328"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 32.7,
+        "espn": 33.0
+      }
+    },
+    "game_id": "401909907",
+    "player_id": "4432158"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 32.95,
+        "espn": 33.0
+      }
+    },
+    "game_id": "401909907",
+    "player_id": "3992"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 36.35,
+        "espn": 36.0
+      }
+    },
+    "game_id": "401909907",
+    "player_id": "3908809"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 26.183333333333334,
+        "espn": 26.0
+      }
+    },
+    "game_id": "401909907",
+    "player_id": "5041951"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 26.5,
+        "espn": 27.0
+      }
+    },
+    "game_id": "401909907",
+    "player_id": "2995706"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 4.9,
+        "espn": 5.0
+      }
+    },
+    "game_id": "401909907",
+    "player_id": "3934723"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 26.066666666666666,
+        "espn": 26.0
+      }
+    },
+    "game_id": "401909907",
+    "player_id": "4066757"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 7.666666666666667,
+        "espn": 8.0
+      }
+    },
+    "game_id": "401909907",
+    "player_id": "4701233"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 18.5,
+        "espn": 19.0
+      }
+    },
+    "game_id": "401909907",
+    "player_id": "5023693"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 32.06666666666667,
+        "espn": 32.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "3157465"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 18.966666666666665,
+        "espn": 19.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "3908845"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 27.55,
+        "espn": 28.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "4278562"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 26.65,
+        "espn": 27.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "4432166"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 25.783333333333335,
+        "espn": 26.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "4684742"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 8.083333333333334,
+        "espn": 8.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "4397882"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 19.95,
+        "espn": 20.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "4683771"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 5.5,
+        "espn": 6.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "5107818"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 20.45,
+        "espn": 20.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "2596112"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 19.75,
+        "espn": 20.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "4066372"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 6.9,
+        "espn": 7.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "4700852"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 22.85,
+        "espn": 23.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "5107199"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 5.5,
+        "espn": 6.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "5258459"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 23.933333333333334,
+        "espn": 24.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "4433249"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 31.05,
+        "espn": 31.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "4433287"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 26.6,
+        "espn": 27.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "4396971"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 15.916666666666666,
+        "espn": 16.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "4395651"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 21.483333333333334,
+        "espn": 21.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "4602025"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 18.116666666666667,
+        "espn": 18.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "2583632"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 18.9,
+        "espn": 19.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "5211176"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 8.833333333333334,
+        "espn": 9.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "5281370"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 15.733333333333333,
+        "espn": 16.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "4576060"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 22.55,
+        "espn": 23.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "3032979"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 19.216666666666665,
+        "espn": 19.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "3135045"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 8.833333333333334,
+        "espn": 9.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "5060701"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 8.833333333333334,
+        "espn": 9.0
+      }
+    },
+    "game_id": "401909908",
+    "player_id": "5239590"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 33.416666666666664,
+        "espn": 33.0
+      }
+    },
+    "game_id": "401909909",
+    "player_id": "4431680"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 32.483333333333334,
+        "espn": 32.0
+      }
+    },
+    "game_id": "401909909",
+    "player_id": "2490149"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 31.383333333333333,
+        "espn": 31.0
+      }
+    },
+    "game_id": "401909909",
+    "player_id": "4278039"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 30.833333333333332,
+        "espn": 31.0
+      }
+    },
+    "game_id": "401909909",
+    "player_id": "4397020"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 30.5,
+        "espn": 31.0
+      }
+    },
+    "game_id": "401909909",
+    "player_id": "4869342"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 18.083333333333332,
+        "espn": 18.0
+      }
+    },
+    "game_id": "401909909",
+    "player_id": "4280151"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 17.166666666666668,
+        "espn": 17.0
+      }
+    },
+    "game_id": "401909909",
+    "player_id": "4873201"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 14.583333333333334,
+        "espn": 15.0
+      }
+    },
+    "game_id": "401909909",
+    "player_id": "5106262"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 23.95,
+        "espn": 24.0
+      }
+    },
+    "game_id": "401909909",
+    "player_id": "4397183"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 7.6,
+        "espn": 8.0
+      }
+    },
+    "game_id": "401909909",
+    "player_id": "4431941"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 40.65,
+        "espn": 41.0
+      }
+    },
+    "game_id": "401909909",
+    "player_id": "4398207"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 44.68333333333333,
+        "espn": 45.0
+      }
+    },
+    "game_id": "401909909",
+    "player_id": "5106060"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 40.1,
+        "espn": 40.0
+      }
+    },
+    "game_id": "401909909",
+    "player_id": "4065731"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 34.5,
+        "espn": 35.0
+      }
+    },
+    "game_id": "401909909",
+    "player_id": "4592829"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 42.21666666666667,
+        "espn": 42.0
+      }
+    },
+    "game_id": "401909909",
+    "player_id": "5105854"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 37.85,
+        "espn": 38.0
+      }
+    },
+    "game_id": "401909909",
+    "player_id": "4431752"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 36.11666666666667,
+        "espn": 36.0
+      }
+    },
+    "game_id": "401909910",
+    "player_id": "3064514"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 37.35,
+        "espn": 37.0
+      }
+    },
+    "game_id": "401909910",
+    "player_id": "4278104"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 28.183333333333334,
+        "espn": 28.0
+      }
+    },
+    "game_id": "401909910",
+    "player_id": "5174655"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 21.85,
+        "espn": 22.0
+      }
+    },
+    "game_id": "401909910",
+    "player_id": "4432194"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 24.05,
+        "espn": 24.0
+      }
+    },
+    "game_id": "401909910",
+    "player_id": "5279130"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 0.08333333333333333,
+        "espn": 0.0
+      }
+    },
+    "game_id": "401909910",
+    "player_id": "4687718"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 19.916666666666668,
+        "espn": 20.0
+      }
+    },
+    "game_id": "401909910",
+    "player_id": "4712896"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 20.266666666666666,
+        "espn": 20.0
+      }
+    },
+    "game_id": "401909910",
+    "player_id": "3150844"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 25.283333333333335,
+        "espn": 25.0
+      }
+    },
+    "game_id": "401909910",
+    "player_id": "4702177"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 26.933333333333334,
+        "espn": 27.0
+      }
+    },
+    "game_id": "401909910",
+    "player_id": "5101761"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 38.11666666666667,
+        "espn": 38.0
+      }
+    },
+    "game_id": "401909910",
+    "player_id": "3934719"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 34.55,
+        "espn": 35.0
+      }
+    },
+    "game_id": "401909910",
+    "player_id": "3136195"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 26.9,
+        "espn": 27.0
+      }
+    },
+    "game_id": "401909910",
+    "player_id": "3062679"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 16.1,
+        "espn": 16.0
+      }
+    },
+    "game_id": "401909910",
+    "player_id": "3147657"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 33.5,
+        "espn": 34.0
+      }
+    },
+    "game_id": "401909910",
+    "player_id": "3934672"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 6.066666666666666,
+        "espn": 6.0
+      }
+    },
+    "game_id": "401909910",
+    "player_id": "5289900"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 13.15,
+        "espn": 13.0
+      }
+    },
+    "game_id": "401909910",
+    "player_id": "6585"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 10.883333333333333,
+        "espn": 11.0
+      }
+    },
+    "game_id": "401909910",
+    "player_id": "2528426"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 30.016666666666666,
+        "espn": 30.0
+      }
+    },
+    "game_id": "401909910",
+    "player_id": "3914044"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 8.716666666666667,
+        "espn": 9.0
+      }
+    },
+    "game_id": "401909910",
+    "player_id": "4277869"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 16.516666666666666,
+        "espn": 17.0
+      }
+    },
+    "game_id": "401909910",
+    "player_id": "4431823"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 5.483333333333333,
+        "espn": 5.0
+      }
+    },
+    "game_id": "401909910",
+    "player_id": "4433225"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 33.833333333333336,
+        "espn": 34.0
+      }
+    },
+    "game_id": "401909911",
+    "player_id": "6583"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 33.4,
+        "espn": 33.0
+      }
+    },
+    "game_id": "401909911",
+    "player_id": "5142718"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 36.53333333333333,
+        "espn": 37.0
+      }
+    },
+    "game_id": "401909911",
+    "player_id": "5174563"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 24.483333333333334,
+        "espn": 24.0
+      }
+    },
+    "game_id": "401909911",
+    "player_id": "4278129"
+  },
+  {
+    "differences": {},
+    "game_id": "401909911",
+    "player_id": "4277905"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 18.65,
+        "espn": 19.0
+      }
+    },
+    "game_id": "401909911",
+    "player_id": "4845374"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 33.18333333333333,
+        "espn": 33.0
+      }
+    },
+    "game_id": "401909911",
+    "player_id": "5104155"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 4.083333333333333,
+        "espn": 4.0
+      }
+    },
+    "game_id": "401909911",
+    "player_id": "5144126"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 21.816666666666666,
+        "espn": 22.0
+      }
+    },
+    "game_id": "401909911",
+    "player_id": "5238230"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 25.466666666666665,
+        "espn": 25.0
+      }
+    },
+    "game_id": "401909911",
+    "player_id": "4278572"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 37.733333333333334,
+        "espn": 38.0
+      }
+    },
+    "game_id": "401909911",
+    "player_id": "4566434"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 34.36666666666667,
+        "espn": 34.0
+      }
+    },
+    "game_id": "401909911",
+    "player_id": "4277847"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 36.31666666666667,
+        "espn": 36.0
+      }
+    },
+    "game_id": "401909911",
+    "player_id": "4066320"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 28.9,
+        "espn": 29.0
+      }
+    },
+    "game_id": "401909911",
+    "player_id": "5239561"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 32.45,
+        "espn": 32.0
+      }
+    },
+    "game_id": "401909911",
+    "player_id": "4702382"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 13.633333333333333,
+        "espn": 14.0
+      }
+    },
+    "game_id": "401909911",
+    "player_id": "6478"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 17.666666666666668,
+        "espn": 18.0
+      }
+    },
+    "game_id": "401909911",
+    "player_id": "3133635"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 13.5,
+        "espn": 14.0
+      }
+    },
+    "game_id": "401909911",
+    "player_id": "4593034"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 28.016666666666666,
+        "espn": 28.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "4397189"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 23.25,
+        "espn": 23.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "4711294"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 34.36666666666667,
+        "espn": 34.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "5095151"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 28.683333333333334,
+        "espn": 29.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "2595516"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 32.3,
+        "espn": 32.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "4871145"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 10.066666666666666,
+        "espn": 10.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "4066650"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 21.333333333333332,
+        "espn": 21.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "4432822"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 9.366666666666667,
+        "espn": 9.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "5044385"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 2.3666666666666667,
+        "espn": 2.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "5105555"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 14.466666666666667,
+        "espn": 14.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "5242496"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 12.233333333333333,
+        "espn": 12.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "2990984"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 18.816666666666666,
+        "espn": 19.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "4395626"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 2.3666666666666667,
+        "espn": 2.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "4683750"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 2.3666666666666667,
+        "espn": 2.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "4898010"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 31.083333333333332,
+        "espn": 31.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "1966"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 24.666666666666668,
+        "espn": 25.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "3059318"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 32.63333333333333,
+        "espn": 33.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "3917376"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 36.483333333333334,
+        "espn": 36.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "4431678"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 33.3,
+        "espn": 33.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "5124612"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 22.566666666666666,
+        "espn": 23.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "3912848"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 2.05,
+        "espn": 2.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "4432446"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 2.05,
+        "espn": 2.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "4711297"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 14.483333333333333,
+        "espn": 14.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "5105637"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 12.866666666666667,
+        "espn": 13.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "2581018"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 23.716666666666665,
+        "espn": 24.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "4351851"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 2.05,
+        "espn": 2.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "4873090"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 2.05,
+        "espn": 2.0
+      }
+    },
+    "game_id": "401909912",
+    "player_id": "5099752"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 30.866666666666667,
+        "espn": 31.0
+      }
+    },
+    "game_id": "401909913",
+    "player_id": "3155942"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 35.61666666666667,
+        "espn": 36.0
+      }
+    },
+    "game_id": "401909913",
+    "player_id": "4065732"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 27.216666666666665,
+        "espn": 27.0
+      }
+    },
+    "game_id": "401909913",
+    "player_id": "4431679"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 28.433333333333334,
+        "espn": 28.0
+      }
+    },
+    "game_id": "401909913",
+    "player_id": "3064440"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 36.833333333333336,
+        "espn": 37.0
+      }
+    },
+    "game_id": "401909913",
+    "player_id": "5142620"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 24.633333333333333,
+        "espn": 25.0
+      }
+    },
+    "game_id": "401909913",
+    "player_id": "4395650"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 30.066666666666666,
+        "espn": 30.0
+      }
+    },
+    "game_id": "401909913",
+    "player_id": "4066262"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 2.9166666666666665,
+        "espn": 3.0
+      }
+    },
+    "game_id": "401909913",
+    "player_id": "4279318"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 3.4833333333333334,
+        "espn": 3.0
+      }
+    },
+    "game_id": "401909913",
+    "player_id": "4702384"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 19.933333333333334,
+        "espn": 20.0
+      }
+    },
+    "game_id": "401909913",
+    "player_id": "5106058"
+  },
+  {
+    "differences": {},
+    "game_id": "401909913",
+    "player_id": "3138160"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 26.35,
+        "espn": 26.0
+      }
+    },
+    "game_id": "401909913",
+    "player_id": "4278049"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 37.63333333333333,
+        "espn": 38.0
+      }
+    },
+    "game_id": "401909913",
+    "player_id": "4278078"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 39.55,
+        "espn": 40.0
+      }
+    },
+    "game_id": "401909913",
+    "player_id": "5041939"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 7.666666666666667,
+        "espn": 8.0
+      }
+    },
+    "game_id": "401909913",
+    "player_id": "4432582"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 24.266666666666666,
+        "espn": 24.0
+      }
+    },
+    "game_id": "401909913",
+    "player_id": "4278594"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 17.05,
+        "espn": 17.0
+      }
+    },
+    "game_id": "401909913",
+    "player_id": "4873153"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 1.65,
+        "espn": 2.0
+      }
+    },
+    "game_id": "401909913",
+    "player_id": "5106040"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 18.583333333333332,
+        "espn": 19.0
+      }
+    },
+    "game_id": "401909913",
+    "player_id": "5211175"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 1.65,
+        "espn": 2.0
+      }
+    },
+    "game_id": "401909913",
+    "player_id": "4701208"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 19.383333333333333,
+        "espn": 19.0
+      }
+    },
+    "game_id": "401909913",
+    "player_id": "4432107"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 23.566666666666666,
+        "espn": 24.0
+      }
+    },
+    "game_id": "401909913",
+    "player_id": "4896372"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 1.65,
+        "espn": 2.0
+      }
+    },
+    "game_id": "401909913",
+    "player_id": "5105806"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 27.733333333333334,
+        "espn": 28.0
+      }
+    },
+    "game_id": "401909914",
+    "player_id": "4277813"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 35.35,
+        "espn": 35.0
+      }
+    },
+    "game_id": "401909914",
+    "player_id": "4395628"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 39.78333333333333,
+        "espn": 40.0
+      }
+    },
+    "game_id": "401909914",
+    "player_id": "4397688"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 28.8,
+        "espn": 29.0
+      }
+    },
+    "game_id": "401909914",
+    "player_id": "4997538"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 38.45,
+        "espn": 38.0
+      }
+    },
+    "game_id": "401909914",
+    "player_id": "5144091"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 36.18333333333333,
+        "espn": 36.0
+      }
+    },
+    "game_id": "401909914",
+    "player_id": "4397136"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 15.616666666666667,
+        "espn": 16.0
+      }
+    },
+    "game_id": "401909914",
+    "player_id": "4431675"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 24.083333333333332,
+        "espn": 24.0
+      }
+    },
+    "game_id": "401909914",
+    "player_id": "4869780"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 5.783333333333333,
+        "espn": 6.0
+      }
+    },
+    "game_id": "401909914",
+    "player_id": "4576086"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 13.216666666666667,
+        "espn": 13.0
+      }
+    },
+    "game_id": "401909914",
+    "player_id": "4683634"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 30.633333333333333,
+        "espn": 31.0
+      }
+    },
+    "game_id": "401909914",
+    "player_id": "4903027"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 37.85,
+        "espn": 38.0
+      }
+    },
+    "game_id": "401909914",
+    "player_id": "5041935"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 33.85,
+        "espn": 34.0
+      }
+    },
+    "game_id": "401909914",
+    "player_id": "5112087"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 19.4,
+        "espn": 19.0
+      }
+    },
+    "game_id": "401909914",
+    "player_id": "4600663"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 36.56666666666667,
+        "espn": 37.0
+      }
+    },
+    "game_id": "401909914",
+    "player_id": "4065733"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 24.083333333333332,
+        "espn": 24.0
+      }
+    },
+    "game_id": "401909914",
+    "player_id": "2991070"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 19.483333333333334,
+        "espn": 19.0
+      }
+    },
+    "game_id": "401909914",
+    "player_id": "4594326"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 16.216666666666665,
+        "espn": 16.0
+      }
+    },
+    "game_id": "401909914",
+    "player_id": "5105550"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 27.566666666666666,
+        "espn": 28.0
+      }
+    },
+    "game_id": "401909914",
+    "player_id": "4432810"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 19.166666666666668,
+        "espn": 19.0
+      }
+    },
+    "game_id": "401909914",
+    "player_id": "4433083"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 0.18333333333333332,
+        "espn": 0.0
+      }
+    },
+    "game_id": "401909914",
+    "player_id": "4683934"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 22.116666666666667,
+        "espn": 22.0
+      }
+    },
+    "game_id": "401909915",
+    "player_id": "3134907"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 28.116666666666667,
+        "espn": 28.0
+      }
+    },
+    "game_id": "401909915",
+    "player_id": "4432848"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 30.983333333333334,
+        "espn": 31.0
+      }
+    },
+    "game_id": "401909915",
+    "player_id": "3133628"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 30.666666666666668,
+        "espn": 31.0
+      }
+    },
+    "game_id": "401909915",
+    "player_id": "4395725"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 25.966666666666665,
+        "espn": 26.0
+      }
+    },
+    "game_id": "401909915",
+    "player_id": "5082206"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 7.6,
+        "espn": 8.0
+      }
+    },
+    "game_id": "401909915",
+    "player_id": "5164559"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 14.633333333333333,
+        "espn": 15.0
+      }
+    },
+    "game_id": "401909915",
+    "player_id": "4277922"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 17.016666666666666,
+        "espn": 17.0
+      }
+    },
+    "game_id": "401909915",
+    "player_id": "5105623"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 23.533333333333335,
+        "espn": 24.0
+      }
+    },
+    "game_id": "401909915",
+    "player_id": "4397475"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 17.333333333333332,
+        "espn": 17.0
+      }
+    },
+    "game_id": "401909915",
+    "player_id": "4591725"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 22.033333333333335,
+        "espn": 22.0
+      }
+    },
+    "game_id": "401909915",
+    "player_id": "5214640"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 29.25,
+        "espn": 29.0
+      }
+    },
+    "game_id": "401909915",
+    "player_id": "4431671"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 32.733333333333334,
+        "espn": 33.0
+      }
+    },
+    "game_id": "401909915",
+    "player_id": "4433247"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 31.2,
+        "espn": 31.0
+      }
+    },
+    "game_id": "401909915",
+    "player_id": "3032976"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 37.166666666666664,
+        "espn": 37.0
+      }
+    },
+    "game_id": "401909915",
+    "player_id": "4397002"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 32.86666666666667,
+        "espn": 33.0
+      }
+    },
+    "game_id": "401909915",
+    "player_id": "4432816"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 21.283333333333335,
+        "espn": 21.0
+      }
+    },
+    "game_id": "401909915",
+    "player_id": "3136196"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 6.616666666666667,
+        "espn": 7.0
+      }
+    },
+    "game_id": "401909915",
+    "player_id": "4895758"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 13.783333333333333,
+        "espn": 14.0
+      }
+    },
+    "game_id": "401909915",
+    "player_id": "5279133"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 20.9,
+        "espn": 21.0
+      }
+    },
+    "game_id": "401909915",
+    "player_id": "4432247"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 14.2,
+        "espn": 14.0
+      }
+    },
+    "game_id": "401909915",
+    "player_id": "4592492"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 32.28333333333333,
+        "espn": 32.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "4065648"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 25.766666666666666,
+        "espn": 26.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "4397424"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 29.75,
+        "espn": 30.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "3078576"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 26.95,
+        "espn": 27.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "4593841"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 15.933333333333334,
+        "espn": 16.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "5175647"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 18.933333333333334,
+        "espn": 19.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "4065804"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 2.4833333333333334,
+        "espn": 2.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "5106283"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 2.4833333333333334,
+        "espn": 2.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "5142621"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 17.516666666666666,
+        "espn": 18.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "4277951"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 15.216666666666667,
+        "espn": 15.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "4351852"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 3.5833333333333335,
+        "espn": 4.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "3195"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 30.333333333333332,
+        "espn": 30.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "4066354"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 6.55,
+        "espn": 7.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "4397251"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 12.233333333333333,
+        "espn": 12.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "4683689"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 32.71666666666667,
+        "espn": 33.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "3202"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 36.13333333333333,
+        "espn": 36.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "4432639"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 37.733333333333334,
+        "espn": 38.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "4871144"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 26.866666666666667,
+        "espn": 27.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "2991230"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 25.166666666666668,
+        "espn": 25.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "4684740"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 1.7,
+        "espn": 2.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "3136777"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 26.95,
+        "espn": 27.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "4433192"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 2.05,
+        "espn": 2.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "4592857"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 7.45,
+        "espn": 7.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "4432827"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 19.733333333333334,
+        "espn": 20.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "2990992"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 5.283333333333333,
+        "espn": 5.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "3037789"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 16.516666666666666,
+        "espn": 17.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "4711272"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 1.7,
+        "espn": 2.0
+      }
+    },
+    "game_id": "401909916",
+    "player_id": "5105837"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 30.9,
+        "espn": 31.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "4066336"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 22.35,
+        "espn": 22.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "4397077"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 22.05,
+        "espn": 22.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "4433627"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 24.4,
+        "espn": 24.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "4873138"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 32.78333333333333,
+        "espn": 33.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "5041955"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 8.116666666666667,
+        "espn": 8.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "4684793"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 14.25,
+        "espn": 14.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "5105839"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 7.3,
+        "espn": 7.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "4065673"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 18.166666666666668,
+        "espn": 18.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "4277919"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 14.433333333333334,
+        "espn": 14.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "3133602"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 18.55,
+        "espn": 19.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "4065663"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 14.7,
+        "espn": 15.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "4432811"
+  },
+  {
+    "differences": {},
+    "game_id": "401909917",
+    "player_id": "4683766"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 24.15,
+        "espn": 24.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "5104157"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 21.916666666666668,
+        "espn": 22.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "4066259"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 25.25,
+        "espn": 25.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "4395630"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 25.666666666666668,
+        "espn": 26.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "4845367"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 27.15,
+        "espn": 27.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "5037871"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 20.533333333333335,
+        "espn": 21.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "6578"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 26.5,
+        "espn": 27.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "4395723"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 22.483333333333334,
+        "espn": 22.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "4592479"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 14.383333333333333,
+        "espn": 14.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "5061568"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 16.55,
+        "espn": 17.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "3064560"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 7.3,
+        "espn": 7.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "5105809"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 8.116666666666667,
+        "espn": 8.0
+      }
+    },
+    "game_id": "401909917",
+    "player_id": "3134916"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 30.9,
+        "espn": 31.0
+      }
+    },
+    "game_id": "401909918",
+    "player_id": "4431736"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 34.8,
+        "espn": 35.0
+      }
+    },
+    "game_id": "401909918",
+    "player_id": "4683021"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 32.31666666666667,
+        "espn": 32.0
+      }
+    },
+    "game_id": "401909918",
+    "player_id": "5105565"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 30.05,
+        "espn": 30.0
+      }
+    },
+    "game_id": "401909918",
+    "player_id": "6606"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 25.533333333333335,
+        "espn": 26.0
+      }
+    },
+    "game_id": "401909918",
+    "player_id": "4683678"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 15.333333333333334,
+        "espn": 15.0
+      }
+    },
+    "game_id": "401909918",
+    "player_id": "4066211"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 30.833333333333332,
+        "espn": 31.0
+      }
+    },
+    "game_id": "401909918",
+    "player_id": "3995"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 2.4833333333333334,
+        "espn": 2.0
+      }
+    },
+    "game_id": "401909918",
+    "player_id": "4578893"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 15.45,
+        "espn": 15.0
+      }
+    },
+    "game_id": "401909918",
+    "player_id": "4706557"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 22.316666666666666,
+        "espn": 22.0
+      }
+    },
+    "game_id": "401909918",
+    "player_id": "5081727"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 30.4,
+        "espn": 30.0
+      }
+    },
+    "game_id": "401909918",
+    "player_id": "3064290"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 33.63333333333333,
+        "espn": 34.0
+      }
+    },
+    "game_id": "401909918",
+    "player_id": "3138196"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 35.833333333333336,
+        "espn": 36.0
+      }
+    },
+    "game_id": "401909918",
+    "player_id": "3112335"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 39.46666666666667,
+        "espn": 39.0
+      }
+    },
+    "game_id": "401909918",
+    "player_id": "3936299"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 36.95,
+        "espn": 37.0
+      }
+    },
+    "game_id": "401909918",
+    "player_id": "4431767"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 5.6,
+        "espn": 6.0
+      }
+    },
+    "game_id": "401909918",
+    "player_id": "4065813"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 12.166666666666666,
+        "espn": 12.0
+      }
+    },
+    "game_id": "401909918",
+    "player_id": "4277848"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 17.6,
+        "espn": 18.0
+      }
+    },
+    "game_id": "401909918",
+    "player_id": "4698719"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 20.116666666666667,
+        "espn": 20.0
+      }
+    },
+    "game_id": "401909918",
+    "player_id": "3978"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 8.25,
+        "espn": 8.0
+      }
+    },
+    "game_id": "401909918",
+    "player_id": "3135046"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 34.1,
+        "espn": 34.0
+      }
+    },
+    "game_id": "401909919",
+    "player_id": "3155526"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 35.15,
+        "espn": 35.0
+      }
+    },
+    "game_id": "401909919",
+    "player_id": "4066383"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 13.3,
+        "espn": 13.0
+      }
+    },
+    "game_id": "401909919",
+    "player_id": "5203685"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 34.96666666666667,
+        "espn": 35.0
+      }
+    },
+    "game_id": "401909919",
+    "player_id": "3136193"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 35.916666666666664,
+        "espn": 36.0
+      }
+    },
+    "game_id": "401909919",
+    "player_id": "4437244"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 24.4,
+        "espn": 24.0
+      }
+    },
+    "game_id": "401909919",
+    "player_id": "4601023"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 10.466666666666667,
+        "espn": 10.0
+      }
+    },
+    "game_id": "401909919",
+    "player_id": "4888725"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 17.7,
+        "espn": 18.0
+      }
+    },
+    "game_id": "401909919",
+    "player_id": "3913174"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 9.583333333333334,
+        "espn": 10.0
+      }
+    },
+    "game_id": "401909919",
+    "player_id": "4278402"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 24.433333333333334,
+        "espn": 24.0
+      }
+    },
+    "game_id": "401909919",
+    "player_id": "4278585"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 16.766666666666666,
+        "espn": 17.0
+      }
+    },
+    "game_id": "401909919",
+    "player_id": "6589"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 29.366666666666667,
+        "espn": 29.0
+      }
+    },
+    "game_id": "401909919",
+    "player_id": "5175737"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 32.833333333333336,
+        "espn": 33.0
+      }
+    },
+    "game_id": "401909919",
+    "player_id": "3975"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 32.63333333333333,
+        "espn": 33.0
+      }
+    },
+    "game_id": "401909919",
+    "player_id": "4709138"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 27.75,
+        "espn": 28.0
+      }
+    },
+    "game_id": "401909919",
+    "player_id": "4897262"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 21.966666666666665,
+        "espn": 22.0
+      }
+    },
+    "game_id": "401909919",
+    "player_id": "2990969"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 7.383333333333334,
+        "espn": 7.0
+      }
+    },
+    "game_id": "401909919",
+    "player_id": "4703396"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 22.933333333333334,
+        "espn": 23.0
+      }
+    },
+    "game_id": "401909919",
+    "player_id": "4397886"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 20.133333333333333,
+        "espn": 20.0
+      }
+    },
+    "game_id": "401909919",
+    "player_id": "3134903"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 27.616666666666667,
+        "espn": 28.0
+      }
+    },
+    "game_id": "401909919",
+    "player_id": "4066436"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 0.65,
+        "espn": 1.0
+      }
+    },
+    "game_id": "401909919",
+    "player_id": "4433149"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 37.15,
+        "espn": 37.0
+      }
+    },
+    "game_id": "401909920",
+    "player_id": "4395625"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 37.8,
+        "espn": 38.0
+      }
+    },
+    "game_id": "401909920",
+    "player_id": "4433134"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 28.133333333333333,
+        "espn": 28.0
+      }
+    },
+    "game_id": "401909920",
+    "player_id": "5093267"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 37.983333333333334,
+        "espn": 38.0
+      }
+    },
+    "game_id": "401909920",
+    "player_id": "4395724"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 34.833333333333336,
+        "espn": 35.0
+      }
+    },
+    "game_id": "401909920",
+    "player_id": "4684272"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 8.016666666666667,
+        "espn": 8.0
+      }
+    },
+    "game_id": "401909920",
+    "player_id": "2993874"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 2.066666666666667,
+        "espn": 2.0
+      }
+    },
+    "game_id": "401909920",
+    "player_id": "4431684"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 20.7,
+        "espn": 21.0
+      }
+    },
+    "game_id": "401909920",
+    "player_id": "4431893"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 7.433333333333334,
+        "espn": 7.0
+      }
+    },
+    "game_id": "401909920",
+    "player_id": "5149115"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 20.1,
+        "espn": 20.0
+      }
+    },
+    "game_id": "401909920",
+    "player_id": "4432241"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 5.783333333333333,
+        "espn": 6.0
+      }
+    },
+    "game_id": "401909920",
+    "player_id": "4702656"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 22.166666666666668,
+        "espn": 22.0
+      }
+    },
+    "game_id": "401909920",
+    "player_id": "3448"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 29.5,
+        "espn": 30.0
+      }
+    },
+    "game_id": "401909920",
+    "player_id": "2991139"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 36.11666666666667,
+        "espn": 36.0
+      }
+    },
+    "game_id": "401909920",
+    "player_id": "4396907"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 37.65,
+        "espn": 38.0
+      }
+    },
+    "game_id": "401909920",
+    "player_id": "4702352"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 28.766666666666666,
+        "espn": 29.0
+      }
+    },
+    "game_id": "401909920",
+    "player_id": "5106258"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 25.833333333333332,
+        "espn": 26.0
+      }
+    },
+    "game_id": "401909920",
+    "player_id": "4432170"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 12.383333333333333,
+        "espn": 12.0
+      }
+    },
+    "game_id": "401909920",
+    "player_id": "5075626"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 23.366666666666667,
+        "espn": 23.0
+      }
+    },
+    "game_id": "401909920",
+    "player_id": "4065778"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 24.216666666666665,
+        "espn": 24.0
+      }
+    },
+    "game_id": "401909920",
+    "player_id": "5254165"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 34.18333333333333,
+        "espn": 34.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "3032977"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 23.9,
+        "espn": 24.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "3059319"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 30.9,
+        "espn": 31.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "4066261"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 26.566666666666666,
+        "espn": 27.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "6475"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 29.233333333333334,
+        "espn": 29.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "4278053"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 18.133333333333333,
+        "espn": 18.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "3064482"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 1.3666666666666667,
+        "espn": 1.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "4431772"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 6.533333333333333,
+        "espn": 7.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "4997528"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 1.3666666666666667,
+        "espn": 1.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "4278076"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 19.15,
+        "espn": 19.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "2528210"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 10.666666666666666,
+        "espn": 11.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "4066993"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 29.733333333333334,
+        "espn": 30.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "4601025"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 8.266666666666667,
+        "espn": 8.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "5107157"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 25.55,
+        "espn": 26.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "4592691"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 32.13333333333333,
+        "espn": 32.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "4433136"
+  },
+  {
+    "differences": {},
+    "game_id": "401909921",
+    "player_id": "3907498"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 35.63333333333333,
+        "espn": 36.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "3945274"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 34.166666666666664,
+        "espn": 34.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "4066457"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 6.433333333333334,
+        "espn": 6.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "4278077"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 27.883333333333333,
+        "espn": 28.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "4278580"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 15.216666666666667,
+        "espn": 15.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "4433137"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 1.3666666666666667,
+        "espn": 1.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "4596528"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 15.866666666666667,
+        "espn": 16.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "4277811"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 22.65,
+        "espn": 23.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "4397014"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 1.3666666666666667,
+        "espn": 1.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "4683774"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 1.3666666666666667,
+        "espn": 1.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "4868423"
+  },
+  {
+    "differences": {
+      "mp": {
+        "archive": 1.3666666666666667,
+        "espn": 1.0
+      }
+    },
+    "game_id": "401909921",
+    "player_id": "5113969"
+  }
+]

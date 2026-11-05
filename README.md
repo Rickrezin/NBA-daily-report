@@ -139,6 +139,17 @@ For changes to the scoring formula, treat `generate-report.js` as authoritative 
 
 ## Maintenance
 
+### Independent QCore rating experiment
+
+`dev/qcore-independent-ratings-20261105` adds an isolated
+[Q-OffR/Q-DefR prototype](experiments/qcore/README.md) based on ESPN basic player,
+team and opponent box scores. It includes both supplied Milwaukee November 4
+BBRef exports, offline validation against the 334-player November 2 archive,
+game-level training/test separation, residuals and replayable source hashes.
+It does not replace authorized C3/C4, use QPIX-R as an input or publish historical
+reports. See its [validation report](experiments/qcore/results/report.md) for
+coverage limits, short-minute outliers and remaining adoption blockers.
+
 **Every material change to the scoring engine, source mappings, output schema, scheduling, archive layout or workflow names should update this README in the same pull request.** Keep production behavior, tested experimental behavior and planned future capabilities explicitly separate.
 
 QPIX™, QPIX-R and QPIX-SFA are QCore Labs project terminology. This repository is not operated by or affiliated with the NBA, ESPN or Basketball-Reference.

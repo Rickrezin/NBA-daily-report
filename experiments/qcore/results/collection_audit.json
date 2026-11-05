@@ -1,0 +1,347 @@
+[
+  {
+    "audit": [
+      {
+        "espn_team_turnovers": 0,
+        "espn_total_turnovers": 8,
+        "game_minutes": 48,
+        "player_minutes_sum": 240.0,
+        "player_turnovers": 8.0,
+        "team": "OKC",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      },
+      {
+        "espn_team_turnovers": 1,
+        "espn_total_turnovers": 8,
+        "game_minutes": 48,
+        "player_minutes_sum": 241.0,
+        "player_turnovers": 7.0,
+        "team": "CLE",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      }
+    ],
+    "game_id": "401909907"
+  },
+  {
+    "audit": [
+      {
+        "espn_team_turnovers": 1,
+        "espn_total_turnovers": 15,
+        "game_minutes": 48,
+        "player_minutes_sum": 242.0,
+        "player_turnovers": 14.0,
+        "team": "DET",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      },
+      {
+        "espn_team_turnovers": 2,
+        "espn_total_turnovers": 27,
+        "game_minutes": 48,
+        "player_minutes_sum": 241.0,
+        "player_turnovers": 25.0,
+        "team": "CHA",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      }
+    ],
+    "game_id": "401909908"
+  },
+  {
+    "audit": [
+      {
+        "espn_team_turnovers": 0,
+        "espn_total_turnovers": 16,
+        "game_minutes": 48,
+        "player_minutes_sum": 240.0,
+        "player_turnovers": 16.0,
+        "team": "ATL",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      },
+      {
+        "espn_team_turnovers": 1,
+        "espn_total_turnovers": 19,
+        "game_minutes": 48,
+        "player_minutes_sum": 241.0,
+        "player_turnovers": 18.0,
+        "team": "IND",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      }
+    ],
+    "game_id": "401909909"
+  },
+  {
+    "audit": [
+      {
+        "espn_team_turnovers": 3,
+        "espn_total_turnovers": 16,
+        "game_minutes": 48,
+        "player_minutes_sum": 239.0,
+        "player_turnovers": 13.0,
+        "team": "BKN",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      },
+      {
+        "espn_team_turnovers": 1,
+        "espn_total_turnovers": 16,
+        "game_minutes": 48,
+        "player_minutes_sum": 241.0,
+        "player_turnovers": 15.0,
+        "team": "NYK",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      }
+    ],
+    "game_id": "401909910"
+  },
+  {
+    "audit": [
+      {
+        "espn_team_turnovers": 2,
+        "espn_total_turnovers": 16,
+        "game_minutes": 48,
+        "player_minutes_sum": 240.0,
+        "player_turnovers": 14.0,
+        "team": "WAS",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      },
+      {
+        "espn_team_turnovers": 1,
+        "espn_total_turnovers": 18,
+        "game_minutes": 48,
+        "player_minutes_sum": 240.0,
+        "player_turnovers": 17.0,
+        "team": "ORL",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      }
+    ],
+    "game_id": "401909911"
+  },
+  {
+    "audit": [
+      {
+        "espn_team_turnovers": 2,
+        "espn_total_turnovers": 15,
+        "game_minutes": 48,
+        "player_minutes_sum": 237.0,
+        "player_turnovers": 13.0,
+        "team": "CHI",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      },
+      {
+        "espn_team_turnovers": 0,
+        "espn_total_turnovers": 14,
+        "game_minutes": 48,
+        "player_minutes_sum": 240.0,
+        "player_turnovers": 14.0,
+        "team": "PHI",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      }
+    ],
+    "game_id": "401909912"
+  },
+  {
+    "audit": [
+      {
+        "espn_team_turnovers": 3,
+        "espn_total_turnovers": 20,
+        "game_minutes": 48,
+        "player_minutes_sum": 240.0,
+        "player_turnovers": 17.0,
+        "team": "SAC",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      },
+      {
+        "espn_team_turnovers": 0,
+        "espn_total_turnovers": 16,
+        "game_minutes": 48,
+        "player_minutes_sum": 242.0,
+        "player_turnovers": 16.0,
+        "team": "DAL",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      }
+    ],
+    "game_id": "401909913"
+  },
+  {
+    "audit": [
+      {
+        "espn_team_turnovers": 0,
+        "espn_total_turnovers": 8,
+        "game_minutes": 53,
+        "player_minutes_sum": 265.0,
+        "player_turnovers": 8.0,
+        "team": "NOP",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      },
+      {
+        "espn_team_turnovers": 0,
+        "espn_total_turnovers": 16,
+        "game_minutes": 53,
+        "player_minutes_sum": 265.0,
+        "player_turnovers": 16.0,
+        "team": "MEM",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      }
+    ],
+    "game_id": "401909914"
+  },
+  {
+    "audit": [
+      {
+        "espn_team_turnovers": 1,
+        "espn_total_turnovers": 17,
+        "game_minutes": 48,
+        "player_minutes_sum": 241.0,
+        "player_turnovers": 16.0,
+        "team": "MIL",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      },
+      {
+        "espn_team_turnovers": 0,
+        "espn_total_turnovers": 11,
+        "game_minutes": 48,
+        "player_minutes_sum": 240.0,
+        "player_turnovers": 11.0,
+        "team": "MIN",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      }
+    ],
+    "game_id": "401909915"
+  },
+  {
+    "audit": [
+      {
+        "espn_team_turnovers": 1,
+        "espn_total_turnovers": 16,
+        "game_minutes": 48,
+        "player_minutes_sum": 240.0,
+        "player_turnovers": 15.0,
+        "team": "BOS",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      },
+      {
+        "espn_team_turnovers": 1,
+        "espn_total_turnovers": 14,
+        "game_minutes": 48,
+        "player_minutes_sum": 241.0,
+        "player_turnovers": 13.0,
+        "team": "HOU",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      }
+    ],
+    "game_id": "401909916"
+  },
+  {
+    "audit": [
+      {
+        "espn_team_turnovers": 0,
+        "espn_total_turnovers": 11,
+        "game_minutes": 48,
+        "player_minutes_sum": 239.0,
+        "player_turnovers": 11.0,
+        "team": "UTA",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      },
+      {
+        "espn_team_turnovers": 0,
+        "espn_total_turnovers": 12,
+        "game_minutes": 48,
+        "player_minutes_sum": 240.0,
+        "player_turnovers": 12.0,
+        "team": "SAS",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      }
+    ],
+    "game_id": "401909917"
+  },
+  {
+    "audit": [
+      {
+        "espn_team_turnovers": 0,
+        "espn_total_turnovers": 16,
+        "game_minutes": 48,
+        "player_minutes_sum": 239.0,
+        "player_turnovers": 16.0,
+        "team": "POR",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      },
+      {
+        "espn_team_turnovers": 0,
+        "espn_total_turnovers": 12,
+        "game_minutes": 48,
+        "player_minutes_sum": 240.0,
+        "player_turnovers": 12.0,
+        "team": "DEN",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      }
+    ],
+    "game_id": "401909918"
+  },
+  {
+    "audit": [
+      {
+        "espn_team_turnovers": 0,
+        "espn_total_turnovers": 15,
+        "game_minutes": 48,
+        "player_minutes_sum": 239.0,
+        "player_turnovers": 15.0,
+        "team": "PHX",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      },
+      {
+        "espn_team_turnovers": 0,
+        "espn_total_turnovers": 13,
+        "game_minutes": 48,
+        "player_minutes_sum": 241.0,
+        "player_turnovers": 13.0,
+        "team": "GSW",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      }
+    ],
+    "game_id": "401909919"
+  },
+  {
+    "audit": [
+      {
+        "espn_team_turnovers": 0,
+        "espn_total_turnovers": 13,
+        "game_minutes": 48,
+        "player_minutes_sum": 240.0,
+        "player_turnovers": 13.0,
+        "team": "TOR",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      },
+      {
+        "espn_team_turnovers": 1,
+        "espn_total_turnovers": 15,
+        "game_minutes": 48,
+        "player_minutes_sum": 240.0,
+        "player_turnovers": 14.0,
+        "team": "LAC",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      }
+    ],
+    "game_id": "401909920"
+  },
+  {
+    "audit": [
+      {
+        "espn_team_turnovers": 0,
+        "espn_total_turnovers": 19,
+        "game_minutes": 48,
+        "player_minutes_sum": 240.0,
+        "player_turnovers": 19.0,
+        "team": "MIA",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      },
+      {
+        "espn_team_turnovers": 0,
+        "espn_total_turnovers": 16,
+        "game_minutes": 48,
+        "player_minutes_sum": 239.0,
+        "player_turnovers": 16.0,
+        "team": "LAL",
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      }
+    ],
+    "game_id": "401909921"
+  }
+]

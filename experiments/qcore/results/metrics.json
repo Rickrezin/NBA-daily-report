@@ -1,0 +1,1502 @@
+{
+  "archive_exact_minutes/overall/all": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.18339204818635516,
+        "mae": 0.5715640890487752,
+        "max_abs": 23.922192676803718,
+        "minute_weighted_mae": 0.48583434594398806,
+        "rmse": 1.4773630241496238,
+        "rows": 334,
+        "scored": 334,
+        "unscorable": 0,
+        "within_1": 299
+      },
+      "raw": {
+        "bias": -0.0031676763469740805,
+        "mae": 0.34852228356228,
+        "max_abs": 1.7485861000253635,
+        "minute_weighted_mae": 0.34998276342793816,
+        "rmse": 0.4512057706829736,
+        "rows": 334,
+        "scored": 334,
+        "unscorable": 0,
+        "within_1": 324
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": 0.04503863539246581,
+        "mae": 0.4023446328992563,
+        "max_abs": 9.90532126643771,
+        "minute_weighted_mae": 0.318996701385194,
+        "rmse": 1.0369012528136963,
+        "rows": 334,
+        "scored": 318,
+        "unscorable": 16,
+        "within_1": 310
+      },
+      "raw": {
+        "bias": -0.1348665852597989,
+        "mae": 0.3822898453164844,
+        "max_abs": 10.063194653354117,
+        "minute_weighted_mae": 0.2969343198940972,
+        "rmse": 1.0440682394367313,
+        "rows": 334,
+        "scored": 318,
+        "unscorable": 16,
+        "within_1": 309
+      }
+    }
+  },
+  "archive_exact_minutes/overall/gt8": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.10253731784591232,
+        "mae": 0.49633200733048427,
+        "max_abs": 2.669573801519036,
+        "minute_weighted_mae": 0.4845022471651561,
+        "rmse": 0.6492456086673021,
+        "rows": 281,
+        "scored": 281,
+        "unscorable": 0,
+        "within_1": 253
+      },
+      "raw": {
+        "bias": -0.011008493460458296,
+        "mae": 0.35201215514002127,
+        "max_abs": 1.5232350017849257,
+        "minute_weighted_mae": 0.35016359420059945,
+        "rmse": 0.4503380849750474,
+        "rows": 281,
+        "scored": 281,
+        "unscorable": 0,
+        "within_1": 273
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": 0.12316953194941904,
+        "mae": 0.3206465872483129,
+        "max_abs": 8.578061328136783,
+        "minute_weighted_mae": 0.30537241535018705,
+        "rmse": 0.6385575521315014,
+        "rows": 281,
+        "scored": 280,
+        "unscorable": 1,
+        "within_1": 277
+      },
+      "raw": {
+        "bias": -0.05710652881737373,
+        "mae": 0.30089610143732254,
+        "max_abs": 8.762100932848284,
+        "minute_weighted_mae": 0.2826556001720843,
+        "rmse": 0.6291924039028163,
+        "rows": 281,
+        "scored": 280,
+        "unscorable": 1,
+        "within_1": 276
+      }
+    }
+  },
+  "archive_exact_minutes/overall/le8": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.6120746750856841,
+        "mae": 0.9704360694797136,
+        "max_abs": 23.922192676803718,
+        "minute_weighted_mae": 0.5307714069927779,
+        "rmse": 3.3940620232782446,
+        "rows": 53,
+        "scored": 53,
+        "unscorable": 0,
+        "within_1": 46
+      },
+      "raw": {
+        "bias": 0.038403448349046,
+        "mae": 0.3300193795368972,
+        "max_abs": 1.7485861000253635,
+        "minute_weighted_mae": 0.3438826125985084,
+        "rmse": 0.4557785471721891,
+        "rows": 53,
+        "scored": 53,
+        "unscorable": 0,
+        "within_1": 51
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": -0.5306627076587686,
+        "mae": 1.0043302324325234,
+        "max_abs": 9.90532126643771,
+        "minute_weighted_mae": 0.8481383784033614,
+        "rmse": 2.4480422301567617,
+        "rows": 53,
+        "scored": 38,
+        "unscorable": 15,
+        "within_1": 33
+      },
+      "raw": {
+        "bias": -0.7078354222039844,
+        "mae": 0.9820332212682034,
+        "max_abs": 10.063194653354117,
+        "minute_weighted_mae": 0.8514929719926312,
+        "rmse": 2.4910243964388936,
+        "rows": 53,
+        "scored": 38,
+        "unscorable": 15,
+        "within_1": 33
+      }
+    }
+  },
+  "archive_exact_minutes/test/all": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.29448245473399887,
+        "mae": 0.639340926742362,
+        "max_abs": 23.922192676803718,
+        "minute_weighted_mae": 0.41330733753475457,
+        "rmse": 2.3258347328000277,
+        "rows": 112,
+        "scored": 112,
+        "unscorable": 0,
+        "within_1": 106
+      },
+      "raw": {
+        "bias": -0.017353875996637975,
+        "mae": 0.2507814402043128,
+        "max_abs": 0.6960541954607606,
+        "minute_weighted_mae": 0.2482586237918585,
+        "rmse": 0.3009946403396633,
+        "rows": 112,
+        "scored": 112,
+        "unscorable": 0,
+        "within_1": 112
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": 0.10455951914665573,
+        "mae": 0.37837611008422184,
+        "max_abs": 8.578061328136783,
+        "minute_weighted_mae": 0.34861841891745193,
+        "rmse": 0.914806010926607,
+        "rows": 112,
+        "scored": 106,
+        "unscorable": 6,
+        "within_1": 104
+      },
+      "raw": {
+        "bias": -0.07504741101810027,
+        "mae": 0.356533658079203,
+        "max_abs": 8.762100932848284,
+        "minute_weighted_mae": 0.32425912964288567,
+        "rmse": 0.9123130882555383,
+        "rows": 112,
+        "scored": 106,
+        "unscorable": 6,
+        "within_1": 104
+      }
+    }
+  },
+  "archive_exact_minutes/test/gt8": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.048731824088315834,
+        "mae": 0.41346334784888744,
+        "max_abs": 1.4490724959300536,
+        "minute_weighted_mae": 0.4085466736150547,
+        "rmse": 0.5153497547236837,
+        "rows": 95,
+        "scored": 95,
+        "unscorable": 0,
+        "within_1": 92
+      },
+      "raw": {
+        "bias": -0.024935219453968215,
+        "mae": 0.24427859820229686,
+        "max_abs": 0.6523478978611479,
+        "minute_weighted_mae": 0.24746056152886206,
+        "rmse": 0.29654489910274123,
+        "rows": 95,
+        "scored": 95,
+        "unscorable": 0,
+        "within_1": 95
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": 0.11336643336140576,
+        "mae": 0.3977123220565156,
+        "max_abs": 8.578061328136783,
+        "minute_weighted_mae": 0.35236408387575224,
+        "rmse": 0.9618518333048175,
+        "rows": 95,
+        "scored": 95,
+        "unscorable": 0,
+        "within_1": 93
+      },
+      "raw": {
+        "bias": -0.06704477723483442,
+        "mae": 0.36846003233172,
+        "max_abs": 8.762100932848284,
+        "minute_weighted_mae": 0.3261668209388324,
+        "rmse": 0.9580934053083155,
+        "rows": 95,
+        "scored": 95,
+        "unscorable": 0,
+        "within_1": 93
+      }
+    }
+  },
+  "archive_exact_minutes/test/le8": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 1.6677948024598748,
+        "mae": 1.90159798526472,
+        "max_abs": 23.922192676803718,
+        "minute_weighted_mae": 0.5756496147620795,
+        "rmse": 5.844223879235141,
+        "rows": 17,
+        "scored": 17,
+        "unscorable": 0,
+        "within_1": 14
+      },
+      "raw": {
+        "bias": 0.025012455088442794,
+        "mae": 0.28712085139204896,
+        "max_abs": 0.6960541954607606,
+        "minute_weighted_mae": 0.27547315674973344,
+        "rmse": 0.3247403760302484,
+        "rows": 17,
+        "scored": 17,
+        "unscorable": 0,
+        "within_1": 17
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": 0.028499805473814567,
+        "mae": 0.21138155214168497,
+        "max_abs": 0.7002714594361805,
+        "minute_weighted_mae": 0.20600754305642996,
+        "rmse": 0.2727176047731424,
+        "rows": 17,
+        "scored": 11,
+        "unscorable": 6,
+        "within_1": 11
+      },
+      "raw": {
+        "bias": -0.14416106641903265,
+        "mae": 0.2535331531711019,
+        "max_abs": 0.4890405310785866,
+        "minute_weighted_mae": 0.251626491749169,
+        "rmse": 0.3046347534638668,
+        "rows": 17,
+        "scored": 11,
+        "unscorable": 6,
+        "within_1": 11
+      }
+    }
+  },
+  "archive_exact_minutes/train/all": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.1273464376758322,
+        "mae": 0.5373703691312899,
+        "max_abs": 3.4559474055368753,
+        "minute_weighted_mae": 0.5228529437217306,
+        "rmse": 0.7447234683288503,
+        "rows": 222,
+        "scored": 222,
+        "unscorable": 0,
+        "within_1": 193
+      },
+      "raw": {
+        "bias": 0.003989325278081577,
+        "mae": 0.39783297931044365,
+        "max_abs": 1.7485861000253635,
+        "minute_weighted_mae": 0.4019039041459867,
+        "rmse": 0.5104802086091529,
+        "rows": 222,
+        "scored": 222,
+        "unscorable": 0,
+        "within_1": 212
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": 0.01527819351537085,
+        "mae": 0.41432889430677355,
+        "max_abs": 9.90532126643771,
+        "minute_weighted_mae": 0.30382069272278733,
+        "rmse": 1.092845502949156,
+        "rows": 222,
+        "scored": 212,
+        "unscorable": 10,
+        "within_1": 206
+      },
+      "raw": {
+        "bias": -0.1647761723806482,
+        "mae": 0.3951679389351251,
+        "max_abs": 10.063194653354117,
+        "minute_weighted_mae": 0.28293507933707496,
+        "rmse": 1.1040652822182186,
+        "rows": 222,
+        "scored": 212,
+        "unscorable": 10,
+        "within_1": 205
+      }
+    }
+  },
+  "archive_exact_minutes/train/gt8": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.1300186184210288,
+        "mae": 0.5386573979259236,
+        "max_abs": 2.669573801519036,
+        "minute_weighted_mae": 0.5232889618441326,
+        "rmse": 0.7079292483485419,
+        "rows": 186,
+        "scored": 186,
+        "unscorable": 0,
+        "within_1": 161
+      },
+      "raw": {
+        "bias": -0.0038953807218376365,
+        "mae": 0.40703735895229987,
+        "max_abs": 1.5232350017849257,
+        "minute_weighted_mae": 0.40260889924824983,
+        "rmse": 0.5113435837340409,
+        "rows": 186,
+        "scored": 186,
+        "unscorable": 0,
+        "within_1": 178
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": 0.1282035555486691,
+        "mae": 0.2810722909954521,
+        "max_abs": 2.584770184949889,
+        "minute_weighted_mae": 0.28131564844928786,
+        "rmse": 0.3769114104139594,
+        "rows": 186,
+        "scored": 185,
+        "unscorable": 1,
+        "within_1": 184
+      },
+      "raw": {
+        "bias": -0.05200310395435337,
+        "mae": 0.2662011098969563,
+        "max_abs": 2.76220748282158,
+        "minute_weighted_mae": 0.2603806027437679,
+        "rmse": 0.35748884127789565,
+        "rows": 186,
+        "scored": 185,
+        "unscorable": 1,
+        "within_1": 183
+      }
+    }
+  },
+  "archive_exact_minutes/train/le8": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.11354017049231639,
+        "mae": 0.5307207203590162,
+        "max_abs": 3.4559474055368753,
+        "minute_weighted_mae": 0.5082246298649188,
+        "rmse": 0.9114644075756655,
+        "rows": 36,
+        "scored": 36,
+        "unscorable": 0,
+        "within_1": 32
+      },
+      "raw": {
+        "bias": 0.044726972944330846,
+        "mae": 0.35027701782751997,
+        "max_abs": 1.7485861000253635,
+        "minute_weighted_mae": 0.3782514706952778,
+        "rmse": 0.5059959693047137,
+        "rows": 36,
+        "scored": 36,
+        "unscorable": 0,
+        "within_1": 34
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": -0.7584696574535246,
+        "mae": 1.3273833984769392,
+        "max_abs": 9.90532126643771,
+        "minute_weighted_mae": 1.186952946329419,
+        "rmse": 2.898993983183928,
+        "rows": 36,
+        "scored": 27,
+        "unscorable": 9,
+        "within_1": 22
+      },
+      "raw": {
+        "bias": -0.9374805301163721,
+        "mae": 1.2788295453077632,
+        "max_abs": 10.063194653354117,
+        "minute_weighted_mae": 1.1680071325487187,
+        "rmse": 2.948803090493728,
+        "rows": 36,
+        "scored": 27,
+        "unscorable": 9,
+        "within_1": 22
+      }
+    }
+  },
+  "espn_nov2/overall/all": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.05380782118050242,
+        "mae": 0.6402419069982087,
+        "max_abs": 17.167526460706483,
+        "minute_weighted_mae": 0.5141223494218434,
+        "rmse": 1.3377495420429966,
+        "rows": 334,
+        "scored": 332,
+        "unscorable": 2,
+        "within_1": 286
+      },
+      "raw": {
+        "bias": -0.06751179021797127,
+        "mae": 0.5097147663942205,
+        "max_abs": 20.072764253133627,
+        "minute_weighted_mae": 0.3784979930912978,
+        "rmse": 1.3409122312984922,
+        "rows": 334,
+        "scored": 332,
+        "unscorable": 2,
+        "within_1": 309
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": 0.037201880724903096,
+        "mae": 0.41031008757162485,
+        "max_abs": 21.240241323511157,
+        "minute_weighted_mae": 0.31806096337375706,
+        "rmse": 1.381341721373992,
+        "rows": 334,
+        "scored": 318,
+        "unscorable": 16,
+        "within_1": 311
+      },
+      "raw": {
+        "bias": -0.14270061769599895,
+        "mae": 0.3903141321109973,
+        "max_abs": 21.42613511170029,
+        "minute_weighted_mae": 0.2968410166139309,
+        "rmse": 1.3883390483154496,
+        "rows": 334,
+        "scored": 318,
+        "unscorable": 16,
+        "within_1": 310
+      }
+    }
+  },
+  "espn_nov2/overall/gt8": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.11429684134360948,
+        "mae": 0.5089763538205081,
+        "max_abs": 2.4958827452950203,
+        "minute_weighted_mae": 0.49762671132091957,
+        "rmse": 0.6764394271460987,
+        "rows": 275,
+        "scored": 275,
+        "unscorable": 0,
+        "within_1": 244
+      },
+      "raw": {
+        "bias": 0.0022141668023154828,
+        "mae": 0.373956888310611,
+        "max_abs": 1.6799629951672586,
+        "minute_weighted_mae": 0.3647978147155376,
+        "rmse": 0.4771816537767917,
+        "rows": 275,
+        "scored": 275,
+        "unscorable": 0,
+        "within_1": 263
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": 0.11846176274169311,
+        "mae": 0.32068802539135827,
+        "max_abs": 8.244523000527721,
+        "minute_weighted_mae": 0.30625035789384714,
+        "rmse": 0.6312656351821511,
+        "rows": 275,
+        "scored": 274,
+        "unscorable": 1,
+        "within_1": 271
+      },
+      "raw": {
+        "bias": -0.062026643056232005,
+        "mae": 0.3039603660631476,
+        "max_abs": 8.428678465507204,
+        "minute_weighted_mae": 0.28499118525180567,
+        "rmse": 0.6230174414437586,
+        "rows": 275,
+        "scored": 274,
+        "unscorable": 1,
+        "within_1": 270
+      }
+    }
+  },
+  "espn_nov2/overall/le8": {
+    "q_defr": {
+      "calibrated": {
+        "bias": -0.2380251708344878,
+        "mae": 1.273540628469571,
+        "max_abs": 17.167526460706483,
+        "minute_weighted_mae": 0.9668144099326772,
+        "rmse": 2.8663402971539655,
+        "rows": 59,
+        "scored": 57,
+        "unscorable": 2,
+        "within_1": 42
+      },
+      "raw": {
+        "bias": -0.4039089512807582,
+        "mae": 1.1646869852186525,
+        "max_abs": 20.072764253133627,
+        "minute_weighted_mae": 0.7544738686739236,
+        "rmse": 3.061741856767335,
+        "rows": 59,
+        "scored": 57,
+        "unscorable": 2,
+        "within_1": 46
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": -0.4688255663796529,
+        "mae": 0.9684111111487393,
+        "max_abs": 21.240241323511157,
+        "minute_weighted_mae": 0.6783617925556328,
+        "rmse": 3.3628633216755928,
+        "rows": 59,
+        "scored": 44,
+        "unscorable": 15,
+        "within_1": 40
+      },
+      "raw": {
+        "bias": -0.6450794597709114,
+        "mae": 0.9280625843180617,
+        "max_abs": 21.42613511170029,
+        "minute_weighted_mae": 0.658338492141469,
+        "rmse": 3.3931315279299277,
+        "rows": 59,
+        "scored": 44,
+        "unscorable": 15,
+        "within_1": 40
+      }
+    }
+  },
+  "espn_nov2/test/all": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.1624017875629677,
+        "mae": 0.5210992312976046,
+        "max_abs": 5.052268368388255,
+        "minute_weighted_mae": 0.4469093908264726,
+        "rmse": 0.8818250525915741,
+        "rows": 112,
+        "scored": 110,
+        "unscorable": 2,
+        "within_1": 100
+      },
+      "raw": {
+        "bias": 0.05555844843972696,
+        "mae": 0.3499923614433316,
+        "max_abs": 3.2447076198744895,
+        "minute_weighted_mae": 0.27944019972496936,
+        "rmse": 0.5677269717269482,
+        "rows": 112,
+        "scored": 110,
+        "unscorable": 2,
+        "within_1": 106
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": 0.11160564217470144,
+        "mae": 0.37744535070431195,
+        "max_abs": 8.244523000527721,
+        "minute_weighted_mae": 0.34981871147956284,
+        "rmse": 0.8893520186198977,
+        "rows": 112,
+        "scored": 106,
+        "unscorable": 6,
+        "within_1": 104
+      },
+      "raw": {
+        "bias": -0.06800373558193347,
+        "mae": 0.3542874577822506,
+        "max_abs": 8.428678465507204,
+        "minute_weighted_mae": 0.32657317124703683,
+        "rmse": 0.885341170485186,
+        "rows": 112,
+        "scored": 106,
+        "unscorable": 6,
+        "within_1": 104
+      }
+    }
+  },
+  "espn_nov2/test/gt8": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.050951544223618625,
+        "mae": 0.4227263210951628,
+        "max_abs": 1.8504987218338016,
+        "minute_weighted_mae": 0.4201997254062849,
+        "rmse": 0.5433859033849924,
+        "rows": 93,
+        "scored": 93,
+        "unscorable": 0,
+        "within_1": 88
+      },
+      "raw": {
+        "bias": -0.004847669067579448,
+        "mae": 0.26774606485524255,
+        "max_abs": 0.8753803987443547,
+        "minute_weighted_mae": 0.25860434826234896,
+        "rmse": 0.3190499969812093,
+        "rows": 93,
+        "scored": 93,
+        "unscorable": 0,
+        "within_1": 93
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": 0.11724904550390121,
+        "mae": 0.4025913722500212,
+        "max_abs": 8.244523000527721,
+        "minute_weighted_mae": 0.3551339980883844,
+        "rmse": 0.9447495558964359,
+        "rows": 93,
+        "scored": 93,
+        "unscorable": 0,
+        "within_1": 91
+      },
+      "raw": {
+        "bias": -0.06343889122890495,
+        "mae": 0.37586344550276923,
+        "max_abs": 8.428678465507204,
+        "minute_weighted_mae": 0.3310755625695348,
+        "rmse": 0.9401972681648353,
+        "rows": 93,
+        "scored": 93,
+        "unscorable": 0,
+        "within_1": 91
+      }
+    }
+  },
+  "espn_nov2/test/le8": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.7721001775958773,
+        "mae": 1.0592569165227275,
+        "max_abs": 5.052268368388255,
+        "minute_weighted_mae": 1.1739035024931888,
+        "rmse": 1.8483339119616191,
+        "rows": 19,
+        "scored": 17,
+        "unscorable": 2,
+        "within_1": 12
+      },
+      "raw": {
+        "bias": 0.3860154442149914,
+        "mae": 0.7999279839546427,
+        "max_abs": 3.2447076198744895,
+        "minute_weighted_mae": 0.846558547581122,
+        "rmse": 1.23640348529236,
+        "rows": 19,
+        "scored": 17,
+        "unscorable": 2,
+        "within_1": 13
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": 0.07123360297350317,
+        "mae": 0.1975545811850075,
+        "max_abs": 0.6902608671330484,
+        "minute_weighted_mae": 0.1904946774328629,
+        "rmse": 0.25314530752464015,
+        "rows": 19,
+        "scored": 13,
+        "unscorable": 6,
+        "within_1": 13
+      },
+      "raw": {
+        "bias": -0.10065992979975281,
+        "mae": 0.1999361610123868,
+        "max_abs": 0.4790334161266401,
+        "minute_weighted_mae": 0.19161541616254193,
+        "rmse": 0.2596712062374887,
+        "rows": 19,
+        "scored": 13,
+        "unscorable": 6,
+        "within_1": 13
+      }
+    }
+  },
+  "espn_nov2/train/all": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 1.6003214769371626e-15,
+        "mae": 0.6992765661291386,
+        "max_abs": 17.167526460706483,
+        "minute_weighted_mae": 0.5485133067689951,
+        "rmse": 1.5136032085496216,
+        "rows": 222,
+        "scored": 222,
+        "unscorable": 0,
+        "within_1": 186
+      },
+      "raw": {
+        "bias": -0.12849253910241634,
+        "mae": 0.5888564985770934,
+        "max_abs": 20.072764253133627,
+        "minute_weighted_mae": 0.42918304576206384,
+        "rmse": 1.5903660021442734,
+        "rows": 222,
+        "scored": 222,
+        "unscorable": 0,
+        "within_1": 203
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": 3.921391513393006e-15,
+        "mae": 0.42674245600528127,
+        "max_abs": 21.240241323511157,
+        "minute_weighted_mae": 0.30176247142432194,
+        "rmse": 1.570568024728968,
+        "rows": 222,
+        "scored": 212,
+        "unscorable": 10,
+        "within_1": 207
+      },
+      "raw": {
+        "bias": -0.18004905875303173,
+        "mae": 0.4083274692753706,
+        "max_abs": 21.42613511170029,
+        "minute_weighted_mae": 0.28158208574413013,
+        "rmse": 1.5809217170809353,
+        "rows": 222,
+        "scored": 212,
+        "unscorable": 10,
+        "within_1": 206
+      }
+    }
+  },
+  "espn_nov2/train/gt8": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.14666559206975865,
+        "mae": 0.5530491727406022,
+        "max_abs": 2.4958827452950203,
+        "minute_weighted_mae": 0.5372265175079294,
+        "rmse": 0.7351903610653149,
+        "rows": 182,
+        "scored": 182,
+        "unscorable": 0,
+        "within_1": 156
+      },
+      "raw": {
+        "bias": 0.005822687329239815,
+        "mae": 0.4282294519443982,
+        "max_abs": 1.6799629951672586,
+        "minute_weighted_mae": 0.4191101534976436,
+        "rmse": 0.540407869924344,
+        "rows": 182,
+        "scored": 182,
+        "unscorable": 0,
+        "within_1": 170
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": 0.11908487159868011,
+        "mae": 0.27860509026508395,
+        "max_abs": 2.673359447478788,
+        "minute_weighted_mae": 0.281183995836536,
+        "rmse": 0.38032173439535344,
+        "rows": 182,
+        "scored": 181,
+        "unscorable": 1,
+        "within_1": 180
+      },
+      "raw": {
+        "bias": -0.061301012779665244,
+        "mae": 0.26701568988698837,
+        "max_abs": 2.850765972348242,
+        "minute_weighted_mae": 0.2613602182772751,
+        "rmse": 0.3652291090300897,
+        "rows": 182,
+        "scored": 181,
+        "unscorable": 1,
+        "within_1": 179
+      }
+    }
+  },
+  "espn_nov2/train/le8": {
+    "q_defr": {
+      "calibrated": {
+        "bias": -0.667328443917393,
+        "mae": 1.3646112060469793,
+        "max_abs": 17.167526460706483,
+        "minute_weighted_mae": 0.8595718441424124,
+        "rmse": 3.2024558216946186,
+        "rows": 40,
+        "scored": 40,
+        "unscorable": 0,
+        "within_1": 30
+      },
+      "raw": {
+        "bias": -0.7396268193664518,
+        "mae": 1.3197095607558567,
+        "max_abs": 20.072764253133627,
+        "minute_weighted_mae": 0.7067871599541244,
+        "rmse": 3.564916588866033,
+        "rows": 40,
+        "scored": 40,
+        "unscorable": 0,
+        "within_1": 33
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": -0.6953019922374281,
+        "mae": 1.2916735269399817,
+        "max_abs": 21.240241323511157,
+        "minute_weighted_mae": 0.935305139853625,
+        "rmse": 4.003048493918431,
+        "rows": 40,
+        "scored": 31,
+        "unscorable": 9,
+        "within_1": 27
+      },
+      "raw": {
+        "bias": -0.873384423952365,
+        "mae": 1.2334059231236671,
+        "max_abs": 21.42613511170029,
+        "minute_weighted_mae": 0.9041459788237044,
+        "rmse": 4.038965254493096,
+        "rows": 40,
+        "scored": 31,
+        "unscorable": 9,
+        "within_1": 27
+      }
+    }
+  },
+  "espn_nov4/external_test/all": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.2700260405124233,
+        "mae": 0.4427343728150473,
+        "max_abs": 1.3476613978022414,
+        "minute_weighted_mae": 0.524807242624253,
+        "rmse": 0.5860272821066392,
+        "rows": 12,
+        "scored": 12,
+        "unscorable": 0,
+        "within_1": 10
+      },
+      "raw": {
+        "bias": 0.33634388656839675,
+        "mae": 0.4164967912644985,
+        "max_abs": 0.8827848548797874,
+        "minute_weighted_mae": 0.3878878042403253,
+        "rmse": 0.49473400065910916,
+        "rows": 12,
+        "scored": 12,
+        "unscorable": 0,
+        "within_1": 12
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": -0.07707872701213861,
+        "mae": 0.2740470618342579,
+        "max_abs": 0.5441123157392695,
+        "minute_weighted_mae": 0.29078521866267004,
+        "rmse": 0.30435811875691626,
+        "rows": 12,
+        "scored": 11,
+        "unscorable": 1,
+        "within_1": 11
+      },
+      "raw": {
+        "bias": -0.253081859675723,
+        "mae": 0.3298713190519045,
+        "max_abs": 0.7180900650291591,
+        "minute_weighted_mae": 0.36641956927410074,
+        "rmse": 0.39082753037840345,
+        "rows": 12,
+        "scored": 11,
+        "unscorable": 1,
+        "within_1": 11
+      }
+    }
+  },
+  "espn_nov4/external_test/gt8": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.2793256113529182,
+        "mae": 0.48657561011606704,
+        "max_abs": 1.3476613978022414,
+        "minute_weighted_mae": 0.5285889881010016,
+        "rmse": 0.6341297977803522,
+        "rows": 10,
+        "scored": 10,
+        "unscorable": 0,
+        "within_1": 8
+      },
+      "raw": {
+        "bias": 0.2754472302361492,
+        "mae": 0.3716307158714713,
+        "max_abs": 0.8827848548797874,
+        "minute_weighted_mae": 0.38471283314422516,
+        "rmse": 0.45998063631152825,
+        "rows": 10,
+        "scored": 10,
+        "unscorable": 0,
+        "within_1": 10
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": -0.09883869491763875,
+        "mae": 0.28739967281339746,
+        "max_abs": 0.5441123157392695,
+        "minute_weighted_mae": 0.29204266022434205,
+        "rmse": 0.3161054208682142,
+        "rows": 10,
+        "scored": 10,
+        "unscorable": 0,
+        "within_1": 10
+      },
+      "raw": {
+        "bias": -0.2783900456432953,
+        "mae": 0.3628584509570949,
+        "max_abs": 0.7180900650291591,
+        "minute_weighted_mae": 0.36948584182032757,
+        "rmse": 0.4099033719693582,
+        "rows": 10,
+        "scored": 10,
+        "unscorable": 0,
+        "within_1": 10
+      }
+    }
+  },
+  "espn_nov4/external_test/le8": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.22352818630994875,
+        "mae": 0.22352818630994875,
+        "max_abs": 0.22352818630994875,
+        "minute_weighted_mae": 0.22352818630994875,
+        "rmse": 0.22352818630994875,
+        "rows": 2,
+        "scored": 2,
+        "unscorable": 0,
+        "within_1": 2
+      },
+      "raw": {
+        "bias": 0.6408271682296345,
+        "mae": 0.6408271682296345,
+        "max_abs": 0.6408271682296345,
+        "minute_weighted_mae": 0.6408271682296345,
+        "rmse": 0.6408271682296345,
+        "rows": 2,
+        "scored": 2,
+        "unscorable": 0,
+        "within_1": 2
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": 0.14052095204286275,
+        "mae": 0.14052095204286275,
+        "max_abs": 0.14052095204286275,
+        "minute_weighted_mae": 0.14052095204286275,
+        "rmse": 0.14052095204286275,
+        "rows": 2,
+        "scored": 1,
+        "unscorable": 1,
+        "within_1": 1
+      },
+      "raw": {
+        "bias": 0.0,
+        "mae": 0.0,
+        "max_abs": 0.0,
+        "minute_weighted_mae": 0.0,
+        "rmse": 0.0,
+        "rows": 2,
+        "scored": 1,
+        "unscorable": 1,
+        "within_1": 1
+      }
+    }
+  },
+  "espn_nov4/overall/all": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.2700260405124233,
+        "mae": 0.4427343728150473,
+        "max_abs": 1.3476613978022414,
+        "minute_weighted_mae": 0.524807242624253,
+        "rmse": 0.5860272821066392,
+        "rows": 12,
+        "scored": 12,
+        "unscorable": 0,
+        "within_1": 10
+      },
+      "raw": {
+        "bias": 0.33634388656839675,
+        "mae": 0.4164967912644985,
+        "max_abs": 0.8827848548797874,
+        "minute_weighted_mae": 0.3878878042403253,
+        "rmse": 0.49473400065910916,
+        "rows": 12,
+        "scored": 12,
+        "unscorable": 0,
+        "within_1": 12
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": -0.07707872701213861,
+        "mae": 0.2740470618342579,
+        "max_abs": 0.5441123157392695,
+        "minute_weighted_mae": 0.29078521866267004,
+        "rmse": 0.30435811875691626,
+        "rows": 12,
+        "scored": 11,
+        "unscorable": 1,
+        "within_1": 11
+      },
+      "raw": {
+        "bias": -0.253081859675723,
+        "mae": 0.3298713190519045,
+        "max_abs": 0.7180900650291591,
+        "minute_weighted_mae": 0.36641956927410074,
+        "rmse": 0.39082753037840345,
+        "rows": 12,
+        "scored": 11,
+        "unscorable": 1,
+        "within_1": 11
+      }
+    }
+  },
+  "espn_nov4/overall/gt8": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.2793256113529182,
+        "mae": 0.48657561011606704,
+        "max_abs": 1.3476613978022414,
+        "minute_weighted_mae": 0.5285889881010016,
+        "rmse": 0.6341297977803522,
+        "rows": 10,
+        "scored": 10,
+        "unscorable": 0,
+        "within_1": 8
+      },
+      "raw": {
+        "bias": 0.2754472302361492,
+        "mae": 0.3716307158714713,
+        "max_abs": 0.8827848548797874,
+        "minute_weighted_mae": 0.38471283314422516,
+        "rmse": 0.45998063631152825,
+        "rows": 10,
+        "scored": 10,
+        "unscorable": 0,
+        "within_1": 10
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": -0.09883869491763875,
+        "mae": 0.28739967281339746,
+        "max_abs": 0.5441123157392695,
+        "minute_weighted_mae": 0.29204266022434205,
+        "rmse": 0.3161054208682142,
+        "rows": 10,
+        "scored": 10,
+        "unscorable": 0,
+        "within_1": 10
+      },
+      "raw": {
+        "bias": -0.2783900456432953,
+        "mae": 0.3628584509570949,
+        "max_abs": 0.7180900650291591,
+        "minute_weighted_mae": 0.36948584182032757,
+        "rmse": 0.4099033719693582,
+        "rows": 10,
+        "scored": 10,
+        "unscorable": 0,
+        "within_1": 10
+      }
+    }
+  },
+  "espn_nov4/overall/le8": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.22352818630994875,
+        "mae": 0.22352818630994875,
+        "max_abs": 0.22352818630994875,
+        "minute_weighted_mae": 0.22352818630994875,
+        "rmse": 0.22352818630994875,
+        "rows": 2,
+        "scored": 2,
+        "unscorable": 0,
+        "within_1": 2
+      },
+      "raw": {
+        "bias": 0.6408271682296345,
+        "mae": 0.6408271682296345,
+        "max_abs": 0.6408271682296345,
+        "minute_weighted_mae": 0.6408271682296345,
+        "rmse": 0.6408271682296345,
+        "rows": 2,
+        "scored": 2,
+        "unscorable": 0,
+        "within_1": 2
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": 0.14052095204286275,
+        "mae": 0.14052095204286275,
+        "max_abs": 0.14052095204286275,
+        "minute_weighted_mae": 0.14052095204286275,
+        "rmse": 0.14052095204286275,
+        "rows": 2,
+        "scored": 1,
+        "unscorable": 1,
+        "within_1": 1
+      },
+      "raw": {
+        "bias": 0.0,
+        "mae": 0.0,
+        "max_abs": 0.0,
+        "minute_weighted_mae": 0.0,
+        "rmse": 0.0,
+        "rows": 2,
+        "scored": 1,
+        "unscorable": 1,
+        "within_1": 1
+      }
+    }
+  },
+  "nov4_exact_player_minutes/external_test/all": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.17924339812890486,
+        "mae": 0.3565185198169078,
+        "max_abs": 1.1432140446386256,
+        "minute_weighted_mae": 0.4277656136749742,
+        "rmse": 0.4621923034451137,
+        "rows": 12,
+        "scored": 12,
+        "unscorable": 0,
+        "within_1": 11
+      },
+      "raw": {
+        "bias": 0.24190030466803472,
+        "mae": 0.33433804698349096,
+        "max_abs": 0.6700928706428755,
+        "minute_weighted_mae": 0.2933650328075611,
+        "rmse": 0.39431532621834564,
+        "rows": 12,
+        "scored": 12,
+        "unscorable": 0,
+        "within_1": 12
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": -0.0738369468770747,
+        "mae": 0.27225403980023993,
+        "max_abs": 0.5021738679862722,
+        "minute_weighted_mae": 0.2944122885350892,
+        "rmse": 0.30311394204488656,
+        "rows": 12,
+        "scored": 11,
+        "unscorable": 1,
+        "within_1": 11
+      },
+      "raw": {
+        "bias": -0.2498412056286761,
+        "mae": 0.32946310062213124,
+        "max_abs": 0.6761661853164469,
+        "minute_weighted_mae": 0.3711599339803483,
+        "rmse": 0.38819341593395007,
+        "rows": 12,
+        "scored": 11,
+        "unscorable": 1,
+        "within_1": 11
+      }
+    }
+  },
+  "nov4_exact_player_minutes/external_test/gt8": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.17038644049269608,
+        "mae": 0.3831165865182996,
+        "max_abs": 1.1432140446386256,
+        "minute_weighted_mae": 0.43013296004063833,
+        "rmse": 0.4963397026449496,
+        "rows": 10,
+        "scored": 10,
+        "unscorable": 0,
+        "within_1": 9
+      },
+      "raw": {
+        "bias": 0.16211493195571477,
+        "mae": 0.27304022273426226,
+        "max_abs": 0.6700928706428755,
+        "minute_weighted_mae": 0.2893375475708458,
+        "rmse": 0.323186633202201,
+        "rows": 10,
+        "scored": 10,
+        "unscorable": 0,
+        "within_1": 10
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": -0.09527273676906844,
+        "mae": 0.2854273485759776,
+        "max_abs": 0.5021738679862722,
+        "minute_weighted_mae": 0.29547174417093314,
+        "rmse": 0.31478763357521955,
+        "rows": 10,
+        "scored": 10,
+        "unscorable": 0,
+        "within_1": 10
+      },
+      "raw": {
+        "bias": -0.2748253261915437,
+        "mae": 0.3624094106843444,
+        "max_abs": 0.6761661853164469,
+        "minute_weighted_mae": 0.37371516218758916,
+        "rmse": 0.4071406894329227,
+        "rows": 10,
+        "scored": 10,
+        "unscorable": 0,
+        "within_1": 10
+      }
+    }
+  },
+  "nov4_exact_player_minutes/external_test/le8": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.22352818630994875,
+        "mae": 0.22352818630994875,
+        "max_abs": 0.22352818630994875,
+        "minute_weighted_mae": 0.22352818630994875,
+        "rmse": 0.22352818630994875,
+        "rows": 2,
+        "scored": 2,
+        "unscorable": 0,
+        "within_1": 2
+      },
+      "raw": {
+        "bias": 0.6408271682296345,
+        "mae": 0.6408271682296345,
+        "max_abs": 0.6408271682296345,
+        "minute_weighted_mae": 0.6408271682296345,
+        "rmse": 0.6408271682296345,
+        "rows": 2,
+        "scored": 2,
+        "unscorable": 0,
+        "within_1": 2
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": 0.14052095204286275,
+        "mae": 0.14052095204286275,
+        "max_abs": 0.14052095204286275,
+        "minute_weighted_mae": 0.14052095204286275,
+        "rmse": 0.14052095204286275,
+        "rows": 2,
+        "scored": 1,
+        "unscorable": 1,
+        "within_1": 1
+      },
+      "raw": {
+        "bias": 0.0,
+        "mae": 0.0,
+        "max_abs": 0.0,
+        "minute_weighted_mae": 0.0,
+        "rmse": 0.0,
+        "rows": 2,
+        "scored": 1,
+        "unscorable": 1,
+        "within_1": 1
+      }
+    }
+  },
+  "nov4_exact_player_minutes/overall/all": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.17924339812890486,
+        "mae": 0.3565185198169078,
+        "max_abs": 1.1432140446386256,
+        "minute_weighted_mae": 0.4277656136749742,
+        "rmse": 0.4621923034451137,
+        "rows": 12,
+        "scored": 12,
+        "unscorable": 0,
+        "within_1": 11
+      },
+      "raw": {
+        "bias": 0.24190030466803472,
+        "mae": 0.33433804698349096,
+        "max_abs": 0.6700928706428755,
+        "minute_weighted_mae": 0.2933650328075611,
+        "rmse": 0.39431532621834564,
+        "rows": 12,
+        "scored": 12,
+        "unscorable": 0,
+        "within_1": 12
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": -0.0738369468770747,
+        "mae": 0.27225403980023993,
+        "max_abs": 0.5021738679862722,
+        "minute_weighted_mae": 0.2944122885350892,
+        "rmse": 0.30311394204488656,
+        "rows": 12,
+        "scored": 11,
+        "unscorable": 1,
+        "within_1": 11
+      },
+      "raw": {
+        "bias": -0.2498412056286761,
+        "mae": 0.32946310062213124,
+        "max_abs": 0.6761661853164469,
+        "minute_weighted_mae": 0.3711599339803483,
+        "rmse": 0.38819341593395007,
+        "rows": 12,
+        "scored": 11,
+        "unscorable": 1,
+        "within_1": 11
+      }
+    }
+  },
+  "nov4_exact_player_minutes/overall/gt8": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.17038644049269608,
+        "mae": 0.3831165865182996,
+        "max_abs": 1.1432140446386256,
+        "minute_weighted_mae": 0.43013296004063833,
+        "rmse": 0.4963397026449496,
+        "rows": 10,
+        "scored": 10,
+        "unscorable": 0,
+        "within_1": 9
+      },
+      "raw": {
+        "bias": 0.16211493195571477,
+        "mae": 0.27304022273426226,
+        "max_abs": 0.6700928706428755,
+        "minute_weighted_mae": 0.2893375475708458,
+        "rmse": 0.323186633202201,
+        "rows": 10,
+        "scored": 10,
+        "unscorable": 0,
+        "within_1": 10
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": -0.09527273676906844,
+        "mae": 0.2854273485759776,
+        "max_abs": 0.5021738679862722,
+        "minute_weighted_mae": 0.29547174417093314,
+        "rmse": 0.31478763357521955,
+        "rows": 10,
+        "scored": 10,
+        "unscorable": 0,
+        "within_1": 10
+      },
+      "raw": {
+        "bias": -0.2748253261915437,
+        "mae": 0.3624094106843444,
+        "max_abs": 0.6761661853164469,
+        "minute_weighted_mae": 0.37371516218758916,
+        "rmse": 0.4071406894329227,
+        "rows": 10,
+        "scored": 10,
+        "unscorable": 0,
+        "within_1": 10
+      }
+    }
+  },
+  "nov4_exact_player_minutes/overall/le8": {
+    "q_defr": {
+      "calibrated": {
+        "bias": 0.22352818630994875,
+        "mae": 0.22352818630994875,
+        "max_abs": 0.22352818630994875,
+        "minute_weighted_mae": 0.22352818630994875,
+        "rmse": 0.22352818630994875,
+        "rows": 2,
+        "scored": 2,
+        "unscorable": 0,
+        "within_1": 2
+      },
+      "raw": {
+        "bias": 0.6408271682296345,
+        "mae": 0.6408271682296345,
+        "max_abs": 0.6408271682296345,
+        "minute_weighted_mae": 0.6408271682296345,
+        "rmse": 0.6408271682296345,
+        "rows": 2,
+        "scored": 2,
+        "unscorable": 0,
+        "within_1": 2
+      }
+    },
+    "q_offr": {
+      "calibrated": {
+        "bias": 0.14052095204286275,
+        "mae": 0.14052095204286275,
+        "max_abs": 0.14052095204286275,
+        "minute_weighted_mae": 0.14052095204286275,
+        "rmse": 0.14052095204286275,
+        "rows": 2,
+        "scored": 1,
+        "unscorable": 1,
+        "within_1": 1
+      },
+      "raw": {
+        "bias": 0.0,
+        "mae": 0.0,
+        "max_abs": 0.0,
+        "minute_weighted_mae": 0.0,
+        "rmse": 0.0,
+        "rows": 2,
+        "scored": 1,
+        "unscorable": 1,
+        "within_1": 1
+      }
+    }
+  }
+}

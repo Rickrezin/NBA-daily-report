@@ -1,0 +1,25 @@
+name: QCore experimental offline validation
+on:
+  push:
+    branches: ['dev/qcore-independent-ratings-*']
+    paths: ['experiments/qcore/**', '.github/workflows/qcore-experimental-tests.yml']
+  pull_request:
+    paths: ['experiments/qcore/**', '.github/workflows/qcore-experimental-tests.yml']
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s experiments/qcore -p 'test_*.py' -v
+      - run: python experiments/qcore/evaluate.py
+      - name: Verify deterministic checked-in results
+        run: git diff --exit-code -- experiments/qcore/results
+      - uses: actions/upload-artifact@v4
+        with:
+          name: qcore-experimental-validation
+          path: experiments/qcore/results/

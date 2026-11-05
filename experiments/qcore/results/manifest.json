@@ -1,0 +1,191 @@
+{
+  "base_commit": "150492daaf846b131f915388bc3ea2f8617023a3",
+  "bbref_fixture_provenance": {
+    "advanced_original_name": "sportsref_download (1).xls",
+    "basic_original_name": "sportsref_download.xls",
+    "date_et": "2026-11-04",
+    "matchup": "MIL at BOS",
+    "opponent_context": "ESPN basic team/player counts; no Boston BBRef export provided",
+    "origin": "User supplied files from Downloads; referenced chat Daily QPIX Independent Run",
+    "source_url": "https://www.basketball-reference.com/boxscores/202611040BOS.html"
+  },
+  "coefficients_train_only": {
+    "q_defr": {
+      "intercept": 4.569236663841494,
+      "n": 222,
+      "slope": 0.9612367569804254
+    },
+    "q_offr": {
+      "intercept": 0.14052095204286275,
+      "n": 212,
+      "slope": 1.0003474878849996
+    }
+  },
+  "excluded_dnp_bbref_ids": [
+    "leverca01",
+    "markobo01",
+    "trentga02"
+  ],
+  "files": {
+    "data/daily/2026-11-02.json": "1ebbf69874b3204716fde93c10700096975c4f54111ee25f236f41ccd7c576b3",
+    "experiments/qcore/evaluate.py": "2f9aeec386cf7c7f5a3960e5dc4b09d9c646827303c3b860d19d7b64070beda6",
+    "experiments/qcore/fetch_fixtures.py": "d0627c307823a25e4bb6ce6c2b9792923fed4e96104ded5ec22cfcdadd64db98",
+    "experiments/qcore/fixtures/espn-401909907.json": "aa5ae1d7890a4cff3842695b0270a2eaf5a8ce161b60c6e6dfd2afd8bca200bd",
+    "experiments/qcore/fixtures/espn-401909907.provenance.json": "0d4d6d90bc344dcd1ff38e2dd5633262c9207d356b6ae93ae26f30d6a08e098c",
+    "experiments/qcore/fixtures/espn-401909908.json": "551950455c3e712ea9e8db4e8600557575e26bb161d85a8b76aa3b06ff7d900c",
+    "experiments/qcore/fixtures/espn-401909908.provenance.json": "57389d59774bce59def746caf9bb0b99e4b28ad5ff9dea56e31b2b4209425404",
+    "experiments/qcore/fixtures/espn-401909909.json": "fe4f3441af66b2da2d80863a4f214918d8ab6de0ba1bccbf7e28117f6cff77cc",
+    "experiments/qcore/fixtures/espn-401909909.provenance.json": "dabc03125f008b7d5ca4e1153ac2e444f8cc55132f649a4a598ae8545532ce6a",
+    "experiments/qcore/fixtures/espn-401909910.json": "837368a7e35e0cd395f2c89f210e9dd157e937d6f67880fdfcab674421760bb6",
+    "experiments/qcore/fixtures/espn-401909910.provenance.json": "70e0b358d1c38aa9ac43b2b715c8b4a2139d03d668d6cb0377610c4d5e38f1a8",
+    "experiments/qcore/fixtures/espn-401909911.json": "9c9f98e1afeae0d82f4f7894a42c8c6f270f4616de9db742ef259d6ac7ee7e73",
+    "experiments/qcore/fixtures/espn-401909911.provenance.json": "202b8936ed9bf0217c2e433878ac54add58b6a6957fa8fb8ed329cf2e7c42d98",
+    "experiments/qcore/fixtures/espn-401909912.json": "be5b7aeb7827217419151cf4012dddd1e20ea448d414cae8322d57d3057cdc48",
+    "experiments/qcore/fixtures/espn-401909912.provenance.json": "5e959a4aa3e073061272b4ded9ff19a13138d90b418c70532f08db681f0158d3",
+    "experiments/qcore/fixtures/espn-401909913.json": "e09594ee74c994cb5e8a389a9ea0f4508f662344382aeb37a0c384e0523111c5",
+    "experiments/qcore/fixtures/espn-401909913.provenance.json": "16dccd313bcf5d82ce61e47d5e7691648b1792483ca30d9ea40ca617ac6da84f",
+    "experiments/qcore/fixtures/espn-401909914.json": "88527fb6d2c165bf6e3d2672b5918fd11cff3058a6ef60f9d8065bddf2df9057",
+    "experiments/qcore/fixtures/espn-401909914.provenance.json": "07d8911332f939c56d35acdccb04d30da972403cd69be56e39ee2466c9caa88a",
+    "experiments/qcore/fixtures/espn-401909915.json": "ec913b364d789f8c3ad73baae4bd40763d26f9eb2517c5f128a01731d1d5cfc8",
+    "experiments/qcore/fixtures/espn-401909915.provenance.json": "872d9501df300f172c5a5159836845b8bcfedd1b61a55ff83f1f8f70a8a9397c",
+    "experiments/qcore/fixtures/espn-401909916.json": "671440c101a692e2e1d6d25afed979d0f40becdc5646420f0d763ae6b5f5a81d",
+    "experiments/qcore/fixtures/espn-401909916.provenance.json": "eeee269e70b54b22bb48d42e4a7c21fc64b69665323bebe4f1ce4f4433e6bd4f",
+    "experiments/qcore/fixtures/espn-401909917.json": "f1368648c2a556a54d0bb564ff23f3241695c094b35c3ea774be14943588145d",
+    "experiments/qcore/fixtures/espn-401909917.provenance.json": "f6be4e33a09da6029c7eb5ed98d3871c98fdb296fc855a40b818c49134a1af64",
+    "experiments/qcore/fixtures/espn-401909918.json": "ae310dc720f38cf9ee0fbac619e69e2423e0fbdf008d88ab9c07a2b6596247c9",
+    "experiments/qcore/fixtures/espn-401909918.provenance.json": "021aaaff944a5e1961d12730148dd0c1d62122935c826270eadd1eaa6ecabd1f",
+    "experiments/qcore/fixtures/espn-401909919.json": "b09faa863e966aacefd4066d4ed37bc9645b782e407758f4c43f480e7ca71cdd",
+    "experiments/qcore/fixtures/espn-401909919.provenance.json": "f5eafac820efc30a217fe7e4b7c1bd544a4a8675fb100d213ae42d8af67b6331",
+    "experiments/qcore/fixtures/espn-401909920.json": "c9084cc8a2f488220dbc8964d96cc77a122e87234432646fcff5ac92aa1adb6b",
+    "experiments/qcore/fixtures/espn-401909920.provenance.json": "a734b6addf2ee3621d16ab2ca48dd776ea160de4feb1e7b51feb744369111290",
+    "experiments/qcore/fixtures/espn-401909921.json": "fb9415cccb7ccf40b438d5ae4322705db7645052f69db4c71d4e7581cb57f207",
+    "experiments/qcore/fixtures/espn-401909921.provenance.json": "be47abca826e59d437e88d5e902a5be719416c41f5c9498a05da1b230dc922fb",
+    "experiments/qcore/fixtures/espn-401909924.json": "65b377ae739f36f83d54fef27692f47cf76ca7d8986e7899b0305c9137354b8c",
+    "experiments/qcore/fixtures/espn-401909924.provenance.json": "747cf92fd78dcde5ac070210c5b0aa07e8a9455a111468d2c34e87f271bf1aca",
+    "experiments/qcore/fixtures/espn-board-20261104.json": "fe5b819e6897a9c6d31fb267555b9e9387197468eb0b16a749c3c1795de6156c",
+    "experiments/qcore/fixtures/espn-board-20261104.provenance.json": "f7cf2fd1aa41c106177cca892b1fb80905ee5fdbe2667047cd27480a96a1bace",
+    "experiments/qcore/fixtures/mil-20261104-advanced.xls": "d56837dc5fcc27682f6cf3512d0a127c12daedda87c2e22c709e3043b67c7462",
+    "experiments/qcore/fixtures/mil-20261104-basic.xls": "2f01a0c6fe18ded8205fffa4434baf187c60d63d02b829955eeb1ba4bd91c73c",
+    "experiments/qcore/infer.py": "44ca6b2cd2fdfd74fab31596f0dc7369210b8d66ed3dd0766f446061d5ae0c3d",
+    "experiments/qcore/model.py": "7338d8ced48babef098cbf576f5b37dd5dc15328a04af856c067f67879e53193",
+    "experiments/qcore/sources.py": "0fa06398e79a25c376b0608900e17db72dbd93a670250b5ce12f93f56cd0c417",
+    "experiments/qcore/test_qcore.py": "486abf74623f6f83b49b1689b00e3ecbe8b467f46f5de8e2591ba69a9d212c4d"
+  },
+  "fixture_matches": [
+    {
+      "bbref_id": "turnemy01",
+      "bbref_minutes": 35.666666666666664,
+      "espn_id": "3133628",
+      "espn_minutes": 36.0,
+      "name": "Myles Turner"
+    },
+    {
+      "bbref_id": "herroty01",
+      "bbref_minutes": 32.666666666666664,
+      "espn_id": "4395725",
+      "espn_minutes": 33.0,
+      "name": "Tyler Herro"
+    },
+    {
+      "bbref_id": "jaqueja01",
+      "bbref_minutes": 30.716666666666665,
+      "espn_id": "4432848",
+      "espn_minutes": 31.0,
+      "name": "Jaime Jaquez Jr."
+    },
+    {
+      "bbref_id": "kuzmaky01",
+      "bbref_minutes": 27.0,
+      "espn_id": "3134907",
+      "espn_minutes": 27.0,
+      "name": "Kyle Kuzma"
+    },
+    {
+      "bbref_id": "burribr01",
+      "bbref_minutes": 21.85,
+      "espn_id": "5082206",
+      "espn_minutes": 22.0,
+      "name": "Brayden Burries"
+    },
+    {
+      "bbref_id": "rolliry01",
+      "bbref_minutes": 23.633333333333333,
+      "espn_id": "4591725",
+      "espn_minutes": 24.0,
+      "name": "Ryan Rollins"
+    },
+    {
+      "bbref_id": "greenaj01",
+      "bbref_minutes": 20.183333333333334,
+      "espn_id": "4397475",
+      "espn_minutes": 20.0,
+      "name": "AJ Green"
+    },
+    {
+      "bbref_id": "amentna01",
+      "bbref_minutes": 18.233333333333334,
+      "espn_id": "5164559",
+      "espn_minutes": 18.0,
+      "name": "Nate Ament"
+    },
+    {
+      "bbref_id": "wareke01",
+      "bbref_minutes": 15.633333333333333,
+      "espn_id": "5105623",
+      "espn_minutes": 16.0,
+      "name": "Kel'el Ware"
+    },
+    {
+      "bbref_id": "jakucka01",
+      "bbref_minutes": 11.666666666666666,
+      "espn_id": "5214640",
+      "espn_minutes": 12.0,
+      "name": "Kasparas Jakucionis"
+    },
+    {
+      "bbref_id": "diengou01",
+      "bbref_minutes": 1.6333333333333333,
+      "espn_id": "4997526",
+      "espn_minutes": 2.0,
+      "name": "Ousmane Dieng"
+    },
+    {
+      "bbref_id": "simsje01",
+      "bbref_minutes": 1.1166666666666667,
+      "espn_id": "4277922",
+      "espn_minutes": 1.0,
+      "name": "Jericho Sims"
+    }
+  ],
+  "hash_policy": "Raw captures and code byte-exact SHA-256; existing data/daily archive uses canonical LF bytes for cross-platform Git replay.",
+  "model_version": "qcore-oliver-box-v0.1",
+  "production_authorized": false,
+  "reviewed_source_branch_head": "7b1d7a2",
+  "sources": [
+    "https://www.basketball-reference.com/about/ratings.html",
+    "https://www.basketball-reference.com/about/glossary.html",
+    "https://www.nba.com/stats/help/glossary"
+  ],
+  "split": {
+    "test": [
+      "401909908",
+      "401909910",
+      "401909913",
+      "401909914",
+      "401909920"
+    ],
+    "train": [
+      "401909907",
+      "401909909",
+      "401909911",
+      "401909912",
+      "401909915",
+      "401909916",
+      "401909917",
+      "401909918",
+      "401909919",
+      "401909921"
+    ]
+  },
+  "split_policy": "sha256(qcore-v1:game_id), first floor(n/3) test; no player split"
+}
