@@ -34,6 +34,17 @@ class CrosswalkTests(unittest.TestCase):
         found,audit=resolve("2026-11-04",self.fixtures,fake)
         self.assertEqual(found,{})
         self.assertEqual(audit["resolved"],0)
+    def test_nba_stats_scoreboard_after_both_cdn_urls_blocked(self):
+        def fake(url,timeout=12):
+            if "cdn.nba.com" in url:raise OSError("403 Forbidden")
+            return {"resultSets":[{"name":"GameHeader",
+                "headers":["GAME_ID","GAMECODE","GAME_DATE_EST"],
+                "rowSet":[["0022600199","20261104/CHINYK","2026-11-04"],
+                          ["0022600200","20261104/BOSPHI","2026-11-04"]]}]}
+        found,audit=resolve("2026-11-04",self.fixtures,fake)
+        self.assertEqual(found["401909922"],"0022600199")
+        self.assertEqual(len(found),2)
+        self.assertEqual(audit["attempts"][-1]["status"],"ok")
     def test_duplicate_game_ids_abort(self):
         def fake(url,timeout=12):
             return {"leagueSchedule":{"gameDates":[{"gameDate":"2026-11-04","games":[
