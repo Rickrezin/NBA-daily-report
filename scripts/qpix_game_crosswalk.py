@@ -6,6 +6,27 @@ make it unsafe. Every ID is accepted only after exact team/date reconciliation.
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
+# Official NBA.com game-page URLs independently verified for November 4.
+# This is a historical cache, never an inference about future NBA ID sequences.
+VERIFIED_NBA_GAME_URLS={
+    "2026-11-04":{
+        ("PHI","DET"):("0022600173","https://www.nba.com/game/phi-vs-det-0022600173"),
+        ("ATL","WAS"):("0022600174","https://www.nba.com/game/atl-vs-was-0022600174"),
+        ("MIL","BOS"):("0022600175","https://www.nba.com/game/mil-vs-bos-0022600175"),
+        ("CHA","BKN"):("0022600176","https://www.nba.com/game/cha-vs-bkn-0022600176"),
+        ("CHI","NYK"):("0022600177","https://www.nba.com/game/chi-vs-nyk-0022600177"),
+        ("IND","MEM"):("0022600178","https://www.nba.com/game/ind-vs-mem-0022600178"),
+        ("UTA","NOP"):("0022600179","https://www.nba.com/game/uta-vs-nop-0022600179"),
+        ("CLE","OKC"):("0022600180","https://www.nba.com/game/cle-vs-okc-0022600180"),
+        ("MIN","HOU"):("0022600181","https://www.nba.com/game/min-vs-hou-0022600181"),
+        ("TOR","DEN"):("0022600182","https://www.nba.com/game/tor-vs-den-0022600182"),
+        ("POR","PHX"):("0022600183","https://www.nba.com/game/por-vs-phx-0022600183"),
+        ("DAL","SAS"):("0022600184","https://www.nba.com/game/dal-vs-sas-0022600184"),
+        ("LAL","SAC"):("0022600185","https://www.nba.com/game/lal-vs-sac-0022600185"),
+        ("MIA","LAC"):("0022600186","https://www.nba.com/game/mia-vs-lac-0022600186"),
+    }
+}
+
 SCHEDULE_URLS=(
     "https://cdn.nba.com/static/json/staticData/scheduleLeagueV2.json",
     "https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_1.json",
@@ -30,6 +51,17 @@ def resolve(date_et, fixtures, fetch_json, alias_normalize=lambda x:x):
         if eid in expected or matchup in expected.values():
             raise ValueError("Duplicate ESPN fixture in NBA crosswalk")
         expected[eid]=matchup
+    verified=VERIFIED_NBA_GAME_URLS.get(date_et)
+    if verified is not None:
+        if set(verified)!=set(expected.values()):
+            raise ValueError("NBA.com historical game-page map does not match ESPN slate")
+        crosswalk={eid:verified[matchup][0] for eid,matchup in expected.items()}
+        if len(set(crosswalk.values()))!=len(crosswalk):
+            raise ValueError("Duplicate NBA game IDs in verified historical links")
+        return crosswalk,{"attempts":[{"source":"NBA.com independently verified game pages",
+            "status":"ok","matched":len(crosswalk),
+            "links":[verified[matchup][1] for matchup in expected.values()]}],
+            "resolved":len(crosswalk),"expected":len(expected),"unresolved_espn_ids":[]}
     audit={"attempts":[],"resolved":0,"expected":len(expected)}
     by_matchup={v:k for k,v in expected.items()}
     crosswalk={}
