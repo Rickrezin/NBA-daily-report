@@ -7,7 +7,8 @@
     "file": "generate-report.js",
     "sha": "ef7b46da7c5dde2835424750119c483cdb705a6f",
     "method": "Authorized JavaScript C1-C12, QPIX-R and QPIX-SFA, original formulas and heuristics",
-    "rating_source": "Basketball-Reference individual ORtg/DRtg"
+    "rating_source": "Basketball-Reference individual ORtg/DRtg",
+    "audit_method": "Per-player original scoring-category functions replayed with original buildGameContext; no scoring engine modifications"
   },
   "data_quality": {
     "games": 2,
@@ -22,7 +23,8 @@
       "individual points_in_paint"
     ],
     "position_fallback": "Unknown position retained null; existing engine fallback used",
-    "source": "User-provided full basic and advanced box scores; game slate independently matched to Basketball-Reference and RealGM"
+    "source": "User-provided full basic and advanced box scores; game slate independently matched to Basketball-Reference and RealGM",
+    "category_breakdown": "C1-C12 calculated by original checked-in scoring functions for all 52 players; category sums reconcile to archived RAW"
   },
   "games": [
     {
@@ -111,7 +113,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 45.1,
+        "C2": 7.3516,
+        "C3": 11,
+        "C4": 9.5,
+        "C5": 1.5,
+        "C6": 0,
+        "C7": 1,
+        "C8": 4.8,
+        "C9": 6,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": 86.25159010600707,
+      "category_sum_raw_rounded": 86.3,
+      "context_audit": {
+        "team_avg_plus_minus": 5,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": false,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Wendell Carter Jr.",
@@ -165,7 +196,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 45.1,
+        "C2": 12.6639,
+        "C3": 7,
+        "C4": 3.5,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 4.7667,
+        "C9": 6,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": 79.03060109289618,
+      "category_sum_raw_rounded": 79,
+      "context_audit": {
+        "team_avg_plus_minus": -5.416666666666667,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": true,
+        "isolation_severity": 3.5,
+        "bench_classification_by_authorized_engine": false,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Devin Booker",
@@ -217,7 +277,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 46.2,
+        "C2": 2.4394,
+        "C3": 3.4,
+        "C4": 3,
+        "C5": 2.5,
+        "C6": 0,
+        "C7": 5,
+        "C8": 6.4,
+        "C9": 0,
+        "C10": 0,
+        "C11": 3,
+        "C12": 0
+      },
+      "category_unrounded_sum": 71.93939393939394,
+      "category_sum_raw_rounded": 71.9,
+      "context_audit": {
+        "team_avg_plus_minus": 5,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": true,
+        "isolation_severity": 4,
+        "bench_classification_by_authorized_engine": false,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Stephen Curry",
@@ -271,7 +360,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 39.2,
+        "C2": 5.5189,
+        "C3": 7,
+        "C4": 0,
+        "C5": 3.5,
+        "C6": 0,
+        "C7": 3,
+        "C8": 6.8,
+        "C9": 0,
+        "C10": 0,
+        "C11": 3,
+        "C12": 0
+      },
+      "category_unrounded_sum": 68.01886792452831,
+      "category_sum_raw_rounded": 68,
+      "context_audit": {
+        "team_avg_plus_minus": 7.142857142857143,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": true,
+        "isolation_severity": 4,
+        "bench_classification_by_authorized_engine": false,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Franz Wagner",
@@ -326,7 +444,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 47.1,
+        "C2": -1.2561,
+        "C3": -0.8,
+        "C4": 5,
+        "C5": 5,
+        "C6": 0,
+        "C7": 2,
+        "C8": 0.8667,
+        "C9": 10,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": 67.91056910569105,
+      "category_sum_raw_rounded": 67.9,
+      "context_audit": {
+        "team_avg_plus_minus": -5.416666666666667,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": false,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Al Horford",
@@ -381,7 +528,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 15.5,
+        "C2": 23.5,
+        "C3": 9.8,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 8.4,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 5
+      },
+      "category_unrounded_sum": 62.199999999999996,
+      "category_sum_raw_rounded": 62.2,
+      "context_audit": {
+        "team_avg_plus_minus": 7.142857142857143,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Yaxel Lendeborg",
@@ -435,7 +611,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 43.1,
+        "C2": 0.3245,
+        "C3": 4.2,
+        "C4": 11,
+        "C5": 2.5,
+        "C6": 0,
+        "C7": 1,
+        "C8": -0.4,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": 61.72451923076924,
+      "category_sum_raw_rounded": 61.7,
+      "context_audit": {
+        "team_avg_plus_minus": 7.142857142857143,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": false,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Dillon Brooks",
@@ -487,7 +692,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 33.2,
+        "C2": 4.827,
+        "C3": 4.2,
+        "C4": 3,
+        "C5": 0,
+        "C6": 0,
+        "C7": 1.5,
+        "C8": 4.8,
+        "C9": 0,
+        "C10": 0,
+        "C11": 3,
+        "C12": 0
+      },
+      "category_unrounded_sum": 54.527014218009484,
+      "category_sum_raw_rounded": 54.5,
+      "context_audit": {
+        "team_avg_plus_minus": 5,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": false,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Bam Adebayo",
@@ -540,7 +774,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 35.5,
+        "C2": 2.9045,
+        "C3": 2.2,
+        "C4": 1.5,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 0.9769,
+        "C9": 6,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": 49.08143236074271,
+      "category_sum_raw_rounded": 49.1,
+      "context_audit": {
+        "team_avg_plus_minus": -7.6923076923076925,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": false,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Khaman Maluach",
@@ -592,7 +855,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 22.2,
+        "C2": 3.5,
+        "C3": 5.6,
+        "C4": 3.5,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 5.2,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 8
+      },
+      "category_unrounded_sum": 48,
+      "category_sum_raw_rounded": 48,
+      "context_audit": {
+        "team_avg_plus_minus": 5,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Luke Kennard",
@@ -645,7 +937,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 20.7,
+        "C2": 3.7703,
+        "C3": 7,
+        "C4": 0,
+        "C5": 3.5,
+        "C6": 0,
+        "C7": 1,
+        "C8": 3.2,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 5
+      },
+      "category_unrounded_sum": 44.17027027027027,
+      "category_sum_raw_rounded": 44.2,
+      "context_audit": {
+        "team_avg_plus_minus": 5,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Giannis Antetokounmpo",
@@ -698,7 +1019,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 34.8,
+        "C2": 3.6567,
+        "C3": -1.8,
+        "C4": 2,
+        "C5": 0,
+        "C6": 0,
+        "C7": 1.5,
+        "C8": -4.2231,
+        "C9": 6,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": 41.93363949483352,
+      "category_sum_raw_rounded": 41.9,
+      "context_audit": {
+        "team_avg_plus_minus": -7.6923076923076925,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": false,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Ryan Dunn",
@@ -752,7 +1102,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 21.6,
+        "C2": 7.0714,
+        "C3": 8.2,
+        "C4": 0,
+        "C5": 3.5,
+        "C6": 0,
+        "C7": 0,
+        "C8": 1.2,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": 41.57142857142857,
+      "category_sum_raw_rounded": 41.6,
+      "context_audit": {
+        "team_avg_plus_minus": 5,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": false,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Gary Payton II",
@@ -804,7 +1183,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 10,
+        "C2": 18.2938,
+        "C3": 10.6,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 2,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": 40.89381443298969,
+      "category_sum_raw_rounded": 40.9,
+      "context_audit": {
+        "team_avg_plus_minus": 7.142857142857143,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Georges Niang",
@@ -856,7 +1264,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 21.3,
+        "C2": 5.4595,
+        "C3": 3.4,
+        "C4": 2,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 6.4,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": 38.559459459459454,
+      "category_sum_raw_rounded": 38.6,
+      "context_audit": {
+        "team_avg_plus_minus": 7.142857142857143,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": false,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Ryan Conwell",
@@ -909,7 +1346,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 26.2,
+        "C2": 3.2368,
+        "C3": 4.8,
+        "C4": 3,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 0.5769,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": 37.81376518218624,
+      "category_sum_raw_rounded": 37.8,
+      "context_audit": {
+        "team_avg_plus_minus": -7.6923076923076925,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": false,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Draymond Green",
@@ -961,7 +1427,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 24,
+        "C2": -6.5,
+        "C3": 3.4,
+        "C4": 3.5,
+        "C5": 5,
+        "C6": 0,
+        "C7": 2,
+        "C8": 5.2,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": 36.6,
+      "category_sum_raw_rounded": 36.6,
+      "context_audit": {
+        "team_avg_plus_minus": 7.142857142857143,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": false,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Charles Bassey",
@@ -1015,7 +1510,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 17.9,
+        "C2": 8.0902,
+        "C3": 4.4,
+        "C4": 3,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 2.8,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": 36.190163934426224,
+      "category_sum_raw_rounded": 36.2,
+      "context_audit": {
+        "team_avg_plus_minus": 7.142857142857143,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Brandon Williams",
@@ -1066,7 +1590,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 18.2,
+        "C2": 2.5355,
+        "C3": 2.8,
+        "C4": 1.5,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 2.8,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 5
+      },
+      "category_unrounded_sum": 32.83553299492386,
+      "category_sum_raw_rounded": 32.8,
+      "context_audit": {
+        "team_avg_plus_minus": 7.142857142857143,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Davion Mitchell",
@@ -1118,7 +1671,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 29.4,
+        "C2": 1.8333,
+        "C3": -4,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 3.5,
+        "C8": -1.8231,
+        "C9": 0,
+        "C10": 2,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": 30.910256410256412,
+      "category_sum_raw_rounded": 30.9,
+      "context_audit": {
+        "team_avg_plus_minus": -7.6923076923076925,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": false,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Brandin Podziemski",
@@ -1167,7 +1749,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 24.2,
+        "C2": -1.2973,
+        "C3": 0.8,
+        "C4": 3.5,
+        "C5": 1.5,
+        "C6": 0,
+        "C7": 0,
+        "C8": 2,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": 30.7027027027027,
+      "category_sum_raw_rounded": 30.7,
+      "context_audit": {
+        "team_avg_plus_minus": 7.142857142857143,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": false,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Will Richard",
@@ -1219,7 +1830,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 13.5,
+        "C2": 8.5,
+        "C3": 5,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -2,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": 25,
+      "category_sum_raw_rounded": 25,
+      "context_audit": {
+        "team_avg_plus_minus": 7.142857142857143,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Jase Richardson",
@@ -1271,7 +1911,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 21.9,
+        "C2": 0.1667,
+        "C3": -2.4,
+        "C4": 5,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -1.6,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": 23.066666666666666,
+      "category_sum_raw_rounded": 23.1,
+      "context_audit": {
+        "team_avg_plus_minus": -5.416666666666667,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "De'Anthony Melton",
@@ -1324,7 +1993,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 18.2,
+        "C2": -5.4053,
+        "C3": -2,
+        "C4": 3,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 3.6,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 5
+      },
+      "category_unrounded_sum": 22.39467455621302,
+      "category_sum_raw_rounded": 22.4,
+      "context_audit": {
+        "team_avg_plus_minus": 7.142857142857143,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Collin Gillespie",
@@ -1377,7 +2075,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 18.4,
+        "C2": -10.5,
+        "C3": -5.4,
+        "C4": 5,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 4.8,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 8
+      },
+      "category_unrounded_sum": 20.299999999999997,
+      "category_sum_raw_rounded": 20.3,
+      "context_audit": {
+        "team_avg_plus_minus": 5,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Pelle Larsson",
@@ -1429,7 +2156,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 19.2,
+        "C2": 3.2368,
+        "C3": -4.6,
+        "C4": 3,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -1.4231,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": 19.413765182186232,
+      "category_sum_raw_rounded": 19.4,
+      "context_audit": {
+        "team_avg_plus_minus": -7.6923076923076925,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": false,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Desmond Bane",
@@ -1480,7 +2236,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 18.2,
+        "C2": 0.3919,
+        "C3": -3.6,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 1.2667,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": 16.258558558558562,
+      "category_sum_raw_rounded": 16.3,
+      "context_audit": {
+        "team_avg_plus_minus": -5.416666666666667,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": false,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Anthony Black",
@@ -1529,7 +2314,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 20.4,
+        "C2": -1.1311,
+        "C3": -4.2,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 1,
+        "C8": -1.2,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": 14.868852459016392,
+      "category_sum_raw_rounded": 14.9,
+      "context_audit": {
+        "team_avg_plus_minus": -5.416666666666667,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": false,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Jalen Green",
@@ -1581,7 +2395,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 12.5,
+        "C2": -3.6429,
+        "C3": -4.8,
+        "C4": 1.5,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 0.4,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 5
+      },
+      "category_unrounded_sum": 10.957142857142856,
+      "category_sum_raw_rounded": 11,
+      "context_audit": {
+        "team_avg_plus_minus": 5,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Tristan da Silva",
@@ -1632,7 +2475,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 15.9,
+        "C2": 0.5025,
+        "C3": -4.2,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -2.3333,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": 9.869185558354324,
+      "category_sum_raw_rounded": 9.9,
+      "context_audit": {
+        "team_avg_plus_minus": -5.416666666666667,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": false,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Colin Castleton",
@@ -1684,7 +2556,36 @@
       "top10_eligible": false,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 1.5,
+        "C2": 0,
+        "C3": 5,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 1.6,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": 8.1,
+      "category_sum_raw_rounded": 8.1,
+      "context_audit": {
+        "team_avg_plus_minus": -5.416666666666667,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Klay Thompson",
@@ -1737,7 +2638,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 14.5,
+        "C2": -1.924,
+        "C3": -6.4,
+        "C4": 1.5,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 0.0394,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": 7.71539480837184,
+      "category_sum_raw_rounded": 7.7,
+      "context_audit": {
+        "team_avg_plus_minus": -7.6923076923076925,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": "former_team",
+        "venue_weight": 0.5,
+        "former_team_opponent": "GSW",
+        "former_team_weight": 0.25
+      }
     },
     {
       "name": "Goga Bitadze",
@@ -1786,7 +2716,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 8,
+        "C2": -0.3617,
+        "C3": -9.2,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 2.4,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": 0.8382978723404246,
+      "category_sum_raw_rounded": 0.8,
+      "context_audit": {
+        "team_avg_plus_minus": -5.416666666666667,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Oso Ighodaro",
@@ -1835,7 +2794,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 8,
+        "C2": -4.0556,
+        "C3": -6.8,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 2.8,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": -0.055555555555554914,
+      "category_sum_raw_rounded": -0.1,
+      "context_audit": {
+        "team_avg_plus_minus": 5,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": false,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Graham Ike",
@@ -1886,7 +2874,36 @@
       "top10_eligible": false,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 1.2,
+        "C2": 0,
+        "C3": -4.8,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 0.8,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": -2.8,
+      "category_sum_raw_rounded": -2.8,
+      "context_audit": {
+        "team_avg_plus_minus": 7.142857142857143,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Alex Morales",
@@ -1937,7 +2954,36 @@
       "top10_eligible": false,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 3,
+        "C2": 0,
+        "C3": -7.2,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -0.4,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": -4.6000000000000005,
+      "category_sum_raw_rounded": -4.6,
+      "context_audit": {
+        "team_avg_plus_minus": -5.416666666666667,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "LJ Cryer",
@@ -1988,7 +3034,36 @@
       "top10_eligible": false,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 0,
+        "C2": 0,
+        "C3": -7.6,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 0.8,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": -6.8,
+      "category_sum_raw_rounded": -6.8,
+      "context_audit": {
+        "team_avg_plus_minus": 7.142857142857143,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Malevy Leons",
@@ -2039,7 +3114,36 @@
       "top10_eligible": false,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 0,
+        "C2": 0,
+        "C3": -7.6,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 0.8,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": -6.8,
+      "category_sum_raw_rounded": -6.8,
+      "context_audit": {
+        "team_avg_plus_minus": 7.142857142857143,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Koa Peat",
@@ -2090,7 +3194,36 @@
       "top10_eligible": false,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 1.2,
+        "C2": 0,
+        "C3": -5,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -4.8,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": -8.600000000000001,
+      "category_sum_raw_rounded": -8.6,
+      "context_audit": {
+        "team_avg_plus_minus": 5,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Jevon Carter",
@@ -2142,7 +3275,36 @@
       "top10_eligible": false,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 0,
+        "C2": 0,
+        "C3": -11,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 0.4667,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": -10.533333333333333,
+      "category_sum_raw_rounded": -10.5,
+      "context_audit": {
+        "team_avg_plus_minus": -5.416666666666667,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Duop Reath",
@@ -2193,7 +3355,36 @@
       "top10_eligible": false,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 0,
+        "C2": 0,
+        "C3": -9.2,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -1.6,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": -10.799999999999999,
+      "category_sum_raw_rounded": -10.8,
+      "context_audit": {
+        "team_avg_plus_minus": 5,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Andrew Wiggins",
@@ -2244,7 +3435,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 13.7,
+        "C2": -15.5,
+        "C3": -9.2,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -0.4,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": -11.4,
+      "category_sum_raw_rounded": -11.4,
+      "context_audit": {
+        "team_avg_plus_minus": -7.6923076923076925,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Myron Gardner",
@@ -2295,7 +3515,36 @@
       "top10_eligible": false,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 0,
+        "C2": 0,
+        "C3": -10.8,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -0.8,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": -11.600000000000001,
+      "category_sum_raw_rounded": -11.6,
+      "context_audit": {
+        "team_avg_plus_minus": -7.6923076923076925,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Nick Richards",
@@ -2346,7 +3595,36 @@
       "top10_eligible": false,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 0,
+        "C2": 0,
+        "C3": -10.8,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -0.8,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": -11.600000000000001,
+      "category_sum_raw_rounded": -11.6,
+      "context_audit": {
+        "team_avg_plus_minus": -7.6923076923076925,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Jamaree Bouyea",
@@ -2397,7 +3675,36 @@
       "top10_eligible": false,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": -2,
+        "C2": 0,
+        "C3": -9.2,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -1.6,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": -12.799999999999999,
+      "category_sum_raw_rounded": -12.8,
+      "context_audit": {
+        "team_avg_plus_minus": 5,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Nikola Jovic",
@@ -2446,7 +3753,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 5,
+        "C2": -7.5278,
+        "C3": -9.6,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -1.6,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": -13.727777777777776,
+      "category_sum_raw_rounded": -13.7,
+      "context_audit": {
+        "team_avg_plus_minus": -7.6923076923076925,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Pat Spencer",
@@ -2497,7 +3833,36 @@
       "top10_eligible": false,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": -4,
+        "C2": 0,
+        "C3": -9.2,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -1.6,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": -14.799999999999999,
+      "category_sum_raw_rounded": -14.8,
+      "context_audit": {
+        "team_avg_plus_minus": 5,
+        "won_game": true,
+        "is_road": false,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Dru Smith",
@@ -2548,7 +3913,36 @@
       "top10_eligible": false,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 0,
+        "C2": -5.5,
+        "C3": -10.8,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -0.8,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": -17.1,
+      "category_sum_raw_rounded": -17.1,
+      "context_audit": {
+        "team_avg_plus_minus": -7.6923076923076925,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Nikola Vucevic",
@@ -2600,7 +3994,36 @@
       "top10_eligible": false,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 0,
+        "C2": -5.5,
+        "C3": -11,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -0.7333,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": -17.233333333333334,
+      "category_sum_raw_rounded": -17.2,
+      "context_audit": {
+        "team_avg_plus_minus": -5.416666666666667,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Jamal Cain",
@@ -2652,7 +4075,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 7,
+        "C2": -12.5551,
+        "C3": -10.4,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -1.9333,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": -17.888418079096045,
+      "category_sum_raw_rounded": -17.9,
+      "context_audit": {
+        "team_avg_plus_minus": -5.416666666666667,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Bobby Portis",
@@ -2703,7 +4155,36 @@
       "top10_eligible": true,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 6,
+        "C2": -16.5,
+        "C3": -9.6,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -2,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": -22.1,
+      "category_sum_raw_rounded": -22.1,
+      "context_audit": {
+        "team_avg_plus_minus": -7.6923076923076925,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     },
     {
       "name": "Tim Hardaway Jr.",
@@ -2754,7 +4235,36 @@
       "top10_eligible": false,
       "second_chance_points": null,
       "fast_break_points": null,
-      "points_in_paint": null
+      "points_in_paint": null,
+      "category_breakdown": {
+        "C1": 1.5,
+        "C2": -16.5,
+        "C3": -10.8,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -1.2,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "category_unrounded_sum": -27,
+      "category_sum_raw_rounded": -27,
+      "context_audit": {
+        "team_avg_plus_minus": -7.6923076923076925,
+        "won_game": false,
+        "is_road": true,
+        "opponent_strength_multiplier": 1,
+        "isolation_carrier": false,
+        "isolation_severity": 0,
+        "bench_classification_by_authorized_engine": true,
+        "venue_tier": null,
+        "venue_weight": 0,
+        "former_team_opponent": null,
+        "former_team_weight": 0
+      }
     }
   ]
 }
