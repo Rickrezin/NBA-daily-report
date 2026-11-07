@@ -9,6 +9,12 @@ from zoneinfo import ZoneInfo
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from html.parser import HTMLParser
 from c6_sources import read_c6_fields, apply_c6_rows, misc_v3_player_rows
+from qpix_verified_sources import populate_verified_ratings
+from qpix_source_archive import canonical_snapshot, write_snapshot
+from qpix_collection_checkpoint import CollectionCheckpoint
+from qpix_game_crosswalk import resolve as resolve_nba_crosswalk
+
+PROGRESS=None
 
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 os.chdir(ROOT)
@@ -317,9 +323,9 @@ def add_misc_c6(game_id, players):
     Never substitute on-court/team metrics or treat missing input as observed zero.
     A valid NBA game ID is required; ESPN event IDs cannot be substituted.
     """
-    if game_id.startswith("ESPN_"):
-        return {"status":"unavailable","source":"BoxScoreMiscV3","total":len(players),
-                "error":"No verified NBA game ID; ESPN event ID is not interchangeable"}
+    if not game_id:
+        return {"status":"missing_verified_nba_id","source":"BoxScoreMiscV3","total":len(players),
+                "error":"NBA game ID could not be resolved against NBA official schedule"}
     url=(f"https://stats.nba.com/stats/boxscoremiscv3?GameID={game_id}"
          "&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0")
     try:
@@ -334,40 +340,46 @@ def add_misc_c6(game_id, players):
     except Exception as exc:
         return {"status":"unavailable","source":url,"total":len(players),"error":str(exc)[:200]}
 
-def add_advanced(game_id, players):
-    """Try NBA Stats advanced v3; if blocked, legitimately mark missing (no inference)."""
-    if game_id.startswith("ESPN_"):
-        return {"source":"NBA Stats advanced (requires official game ID)","assigned":0,"total":len(players),"status":"unavailable","error":"NBA schedule could not resolve this ESPN event to a verified NBA game ID"}
-    url=f"https://stats.nba.com/stats/boxscoreadvancedv3?GameID={game_id}&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0"
+def audit_advanced(game_id, players):
+    """Probe NBA AdvancedV3 player rows without mislabeling on-court ratings.
+
+    NBA's offensiveRating/defensiveRating are on-court metrics; QPIX C3
+    expects Basketball-Reference Dean Oliver individual values. This audit
+    reports retrieval and identity coverage but never substitutes a rating.
+    """
+    if not game_id:
+        return {"source":"BoxScoreAdvancedV3","status":"missing_verified_nba_id",
+                "retrieved_players":0,"C3_compatible":False}
+    url=(f"https://stats.nba.com/stats/boxscoreadvancedv3?GameID={game_id}"
+         "&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0")
     try:
-        doc=fetch_json(url,timeout=9)
-        main=doc.get("boxScoreAdvanced",doc)
-        mapping={}
-        import unicodedata
-        def namekey(name):
-            return re.sub(r"[^a-z0-9]","",unicodedata.normalize("NFKD",str(name or "")).encode("ascii","ignore").decode().lower())
-        name_map={}
-        for team in (main.get("homeTeam",{}),main.get("awayTeam",{})):
-            for player in team.get("players",[]):
-                stats=player.get("statistics",{})
-                off=stats.get("offensiveRating")
-                de=stats.get("defensiveRating")
-                if off is None or de is None:continue
-                record=(float(off),float(de))
-                mapping[str(player.get("personId"))]=record
-                full_name=(player.get("name") or (str(player.get("firstName") or "")+" "+str(player.get("familyName") or ""))).strip()
-                if full_name:name_map.setdefault(namekey(full_name),[]).append(record)
-        assigned=0
-        for p in players:
-            record=mapping.get(str(p.get("player_id")))
-            if not record:
-                name_matches=name_map.get(namekey(p.get("name")),[])
-                if len(name_matches)==1:record=name_matches[0]
-            if record:
-                p["offensive_rating"],p["defensive_rating"]=record; assigned+=1
-        return {"source":url,"assigned":assigned,"total":len(players),"status":"ok" if assigned==len(players) else "partial"}
+        payload=fetch_json(url,timeout=10)
+        result_sets=payload.get("resultSets",[])
+        rows=[]
+        if result_sets:
+            sets=result_sets if isinstance(result_sets,list) else list(result_sets.values())
+            for section in sets:
+                if section.get("name")!="PlayerStats":continue
+                headers=section.get("headers",[])
+                rows=[dict(zip(headers,r)) for r in section.get("rowSet",[])]
+        if not rows:
+            main=payload.get("boxScoreAdvanced",payload)
+            rows=main.get("playerStats",[]) if isinstance(main,dict) else []
+            if not rows and isinstance(main,dict):
+                for side in ("homeTeam","awayTeam"):
+                    team=main.get(side,{})
+                    for row in team.get("players",[]):
+                        row=dict(row)
+                        row.update(row.get("statistics",{}))
+                        rows.append(row)
+        good=[r for r in rows if r.get("offensiveRating") is not None and
+                                     r.get("defensiveRating") is not None]
+        return {"source":url,"status":"received" if good else "no_advanced_player_rows",
+                "retrieved_players":len(good),"C3_compatible":False,
+                "note":"NBA on-court advanced ratings retained as audit only; not individual Dean Oliver C3"}
     except Exception as exc:
-        return {"source":url,"assigned":0,"total":len(players),"status":"unavailable","error":str(exc)[:200]}
+        return {"source":url,"status":"retrieval_failed","retrieved_players":0,
+                "C3_compatible":False,"error":str(exc)[:180]}
 
 def create_report(result, quality):
     players=result["players"]
@@ -431,33 +443,79 @@ def basketball_reference_audit():
         return "Date index inaccessible ("+str(exc)[:110]+"); individual Basketball-Reference basic and advanced validation unavailable; official NBA/ESPN used: "+url
 
 def main():
+    global PROGRESS
+    # Write-on-entry: even scoreboard failure leaves a durable partial artifact.
+    PROGRESS=CollectionCheckpoint(ROOT,RUN_DATE)
     ids=game_ids_for(RUN_DATE)
     if not ids:raise RuntimeError("No independently verified game ids for "+RUN_DATE)
+    PROGRESS.stage("schedule_verified",expected_game_ids=ids,source_audits={"schedule":dict(SCHEDULE_AUDIT)})
     print("NBA schedule date",RUN_DATE,"game IDs",ids,flush=True)
     results={}
     with ThreadPoolExecutor(max_workers=min(8,len(ids))) as pool:
         jobs={pool.submit(normalize_game,gid):gid for gid in ids}
         for job in as_completed(jobs):
             gid=jobs[job]
-            try:results[gid]=job.result();print("FINAL verified",gid,len(results[gid][1]),flush=True)
+            try:
+                results[gid]=job.result()
+                PROGRESS.game(results[gid][0],results[gid][1])
+                print("FINAL verified",gid,len(results[gid][1]),flush=True)
             except Exception as exc:raise RuntimeError("Required final game failed "+gid+": "+str(exc))
     games=[results[gid][0] for gid in ids]
     players=[p for gid in ids for p in results[gid][1]]
     assert len(games)==len(ids) and len({(p["game_id"],p["player_id"]) for p in players})==len(players)
-    adv=[]
+    # ESPN-to-NBA identity crosswalk is a distinct phase. ESPN event IDs must
+    # never be sent to NBA Stats as if they were 10-digit NBA game identifiers.
+    fixture_rows=[{"espn_event_id":g.get("espn_event_id") or str(g["game_id"]).removeprefix("ESPN_"),
+                   "away_alias":g["away_alias"],"home_alias":g["home_alias"]} for g in games]
+    nba_map,crosswalk_audit=resolve_nba_crosswalk(RUN_DATE,fixture_rows,fetch_json,normalize_alias)
+    for game in games:
+        eid=str(game.get("espn_event_id") or str(game["game_id"]).removeprefix("ESPN_"))
+        nba_id=nba_map.get(eid)
+        if nba_id:game["nba_game_id"]=nba_id
+    PROGRESS.state["source_audits"]["nba_crosswalk"]=crosswalk_audit
+    PROGRESS.stage("nba_crosswalk_resolved")
+    print("NBA_ID_CROSSWALK",json.dumps(crosswalk_audit,sort_keys=True),flush=True)
+    # C3 requires Basketball-Reference/Dean Oliver individual ratings,
+    # not NBA.com's different on-court ratings.
+    # Reuse date-matched verified historical ratings only after strict box-line checks.
+    c3archive=populate_verified_ratings(players,RUN_DATE,ROOT)
+    PROGRESS.state['source_audits']['C3']=c3archive
+    PROGRESS.stage('C3_reconciled')
+    print('C3 historical validation',c3archive['status'],c3archive['assigned'],'/',len(players),flush=True)
+    adv=[c3archive]
     with ThreadPoolExecutor(max_workers=8) as pool:
-        jobs={pool.submit(add_advanced,gid,results[gid][1]):gid for gid in ids}
-        for job in as_completed(jobs):
-            r=job.result();adv.append(r);print("Advanced",jobs[job],r["assigned"],"/",r["total"],r["status"],flush=True)
+        future_map={pool.submit(audit_advanced,g.get("nba_game_id"),results[g["game_id"]][1]):g["game_id"] for g in games}
+        for future in as_completed(future_map):
+            result=future.result()
+            adv.append({"game_id":future_map[future],**result})
+            PROGRESS.state["source_audits"].setdefault("NBA_AdvancedV3",[]).append({"game_id":future_map[future],**result})
+            PROGRESS.stage("checking_advanced_sources")
+            print("ADVANCED_V3",future_map[future],result["status"],flush=True)
     # Independently retrieve NBA Misc V3 player-level C6 values when available.
     # Leave all unavailable fields absent; report the true coverage.
     misc=[]
     with ThreadPoolExecutor(max_workers=8) as pool:
-        jobs={pool.submit(add_misc_c6,gid,results[gid][1]):gid for gid in ids}
+        jobs={pool.submit(add_misc_c6,g.get("nba_game_id"),results[g["game_id"]][1]):g["game_id"] for g in games}
         for job in as_completed(jobs):
             rec=job.result()
             misc.append(rec)
+            PROGRESS.state["source_audits"].setdefault("C6",[]).append({"game_id":jobs[job],**rec})
+            PROGRESS.stage("collecting_C6")
             print("C6 Misc V3",jobs[job],rec.get("status"),rec.get("coverage",{}),flush=True)
+    # Write a QCore-normalized archive BEFORE invoking the authorized engine.
+    # Incomplete inputs produce an audit snapshot, but cannot be published as a
+    # 'full category' report. Keep original scoring rules unchanged.
+    source_audits={"ESPN_and_LiveData":SCHEDULE_AUDIT,"nba_crosswalk":crosswalk_audit,"C3":c3archive,"AdvancedV3":adv,"C6":misc}
+    snapshot=canonical_snapshot(games,players,RUN_DATE,source_audits,require_complete=False)
+    archived_path=write_snapshot(snapshot,ROOT)
+    print("QCORE_INPUT_ARCHIVE",str(archived_path),"SHA256",snapshot["input_sha256"],flush=True)
+    PROGRESS.state["coverage"]=snapshot["coverage"]["fields"]
+    PROGRESS.stage("source_validation_complete",canonical_archive={"path":str(archived_path),"sha256":snapshot["input_sha256"]})
+    print("QCORE_FIELD_COVERAGE",json.dumps(snapshot["coverage"]["fields"],sort_keys=True),flush=True)
+    if not snapshot["coverage"]["complete"]:
+        counts={k:len(v) for k,v in snapshot["coverage"]["missing"].items() if v}
+        raise RuntimeError("Refusing incomplete full-category QPIX report; missing="+json.dumps(counts,sort_keys=True))
+    PROGRESS.done(archived_path,snapshot['input_sha256'])
     # Verified advanced and C6 values are attached to per-game player references.
     c6={field:sum(1 for p in players if field in p) for field in ("second_chance_points","fast_break_points","points_in_paint")}
     c3=sum(1 for p in players if "offensive_rating" in p and "defensive_rating" in p)
@@ -466,7 +524,7 @@ def main():
     quality={
       "Source":f"ESPN final scoreboard/box scores or official NBA LiveData where accessible; all {len(games)} FINAL fixtures and player-point totals reconciled; "+str(SCHEDULE_AUDIT),
       "Basketball-Reference":basketball_reference_audit(),
-      "C3 individual ORtg/DRtg": f"{c3}/{len(players)} verified; unavailable for others, engine C3=0 per existing fallback; NO team-rating substitute.",
+      "C3 individual ORtg/DRtg": f"{c3}/{len(players)} archived and validated individual Dean Oliver ORtg/DRtg; missing remain absent; no NBA on-court substitution.",
       "C6 second-chance points":f"{c6['second_chance_points']}/{len(players)} individual records available; rest omitted (engine zero fallback)",
       "C6 fast-break points":f"{c6['fast_break_points']}/{len(players)} individual records available; rest omitted (engine zero fallback)",
       "C6 paint points":f"{c6['points_in_paint']}/{len(players)} individual records available; rest omitted (engine zero fallback)",
@@ -520,7 +578,11 @@ def main():
 
 if __name__=="__main__":
     try:main()
-    except Exception as e:print("FATAL INPUT/SCORING AUDIT ERROR:",e,file=sys.stderr,flush=True);raise
+    except Exception as e:
+        if PROGRESS is not None:
+            PROGRESS.fail(e)
+        print("FATAL INPUT/SCORING AUDIT ERROR:",e,file=sys.stderr,flush=True)
+        raise
 
 # QPIX Oct 30, 2026 daily run trigger (scoring and ingestion logic unchanged).
 
