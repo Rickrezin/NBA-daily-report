@@ -1,0 +1,53 @@
+rank,name,team,game,minutes,starter,position,points,rebounds,assists,steals,blocks,turnovers,fgm,fga,fg3m,ftm,fta,plus_minus,offensive_rating,defensive_rating,score,qpixR,qpixSFA,sfaAdj,top10_eligible
+1,Miles Bridges,PHX,ORL @ PHX,30.55,true,F,18,13,5,2,0,1,6,10,3,3,3,12,157,95,86.3,86.3,86.3,0,true
+2,Wendell Carter Jr.,ORL,ORL @ PHX,34.2,true,C,27,13,2,1,1,3,10,12,2,5,6,-6,150,115,79,79,79,0,true
+3,Devin Booker,PHX,ORL @ PHX,33.6,true,G,30,1,8,3,0,3,11,22,4,4,4,16,123,106,71.9,71.9,71.9,0,true
+4,Stephen Curry,GSW,MIA @ GSW,27.95,true,G,29,1,4,1,0,0,9,19,6,5,5,17,138,103,68,65.8,68,0,true
+5,Franz Wagner,ORL,ORL @ PHX,37.833333333333336,true,F,15,8,15,4,0,6,7,13,0,1,4,-7,106,110,67.9,67.9,67.9,0,true
+6,Al Horford,GSW,MIA @ GSW,17.983333333333334,false,C,8,5,1,0,0,0,3,3,2,0,0,21,254,101,62.2,65.6,62.2,0,true
+7,Yaxel Lendeborg,GSW,MIA @ GSW,30.383333333333333,true,F,17,8,6,3,1,2,6,14,1,4,6,-1,110,89,61.7,60,61.7,0,true
+8,Dillon Brooks,PHX,ORL @ PHX,29.033333333333335,true,F,24,1,1,2,1,1,9,16,4,2,2,12,126,105,54.5,54.5,54.5,0,true
+9,Bam Adebayo,MIA,MIA @ GSW,33.43333333333333,true,C,18,10,0,1,1,0,7,12,0,4,7,-9,125,114,49.1,47.9,49.1,0,true
+10,Khaman Maluach,PHX,ORL @ PHX,21.883333333333333,false,C,8,6,2,2,0,1,4,6,0,0,0,13,124,96,48,51.4,48,0,true
+11,Luke Kennard,PHX,ORL @ PHX,20.866666666666667,false,G,12,1,5,0,0,0,4,8,3,1,2,8,148,113,44.2,44.2,44.2,0,true
+12,Giannis Antetokounmpo,MIA,MIA @ GSW,31,true,F,20,14,4,0,0,4,7,13,1,5,7,-22,108,117,41.9,43.2,41.9,0,true
+13,Ryan Dunn,PHX,ORL @ PHX,25.083333333333332,false,F,11,3,3,0,1,0,5,7,1,0,0,3,162,109,41.6,44.2,41.6,0,true
+14,Gary Payton II,GSW,MIA @ GSW,10.266666666666667,false,G,9,0,0,1,0,1,3,3,1,2,2,5,159,97,40.9,40.9,40.9,0,true
+15,Georges Niang,GSW,MIA @ GSW,22.383333333333333,false,F,13,4,3,1,0,2,5,8,2,1,2,16,115,98,38.6,38.6,38.6,0,true
+16,Ryan Conwell,MIA,MIA @ GSW,29.85,false,G,13,1,2,3,0,0,4,9,3,2,2,-10,137,113,37.8,37.8,37.8,0,true
+17,Draymond Green,GSW,MIA @ GSW,27.416666666666668,true,F,2,5,11,1,1,3,1,3,0,0,0,13,115,98,36.6,39.2,36.6,0,true
+18,Charles Bassey,GSW,MIA @ GSW,14.166666666666666,false,C,8,7,0,0,3,3,3,4,0,2,2,7,108,86,36.2,38.5,36.2,0,true
+19,Brandon Williams,GSW,MIA @ GSW,20.65,false,G,10,1,4,0,2,2,4,7,0,2,2,7,114,100,32.8,32.8,32.8,0,true
+20,Davion Mitchell,MIA,MIA @ GSW,37.8,true,G,22,2,8,1,0,5,9,18,4,0,0,-16,100,120,30.9,32.8,30.9,0,true
+21,Brandin Podziemski,GSW,MIA @ GSW,31.9,true,G,9,6,3,1,1,1,3,8,2,1,2,5,101,97,30.7,30.7,30.7,0,true
+22,Will Richard,GSW,MIA @ GSW,16.116666666666667,true,G,10,0,2,0,1,1,4,6,2,0,0,-5,129,104,25,26.9,25,0,true
+23,Jase Richardson,ORL,ORL @ PHX,26.333333333333332,true,G,10,2,3,2,2,3,4,9,2,0,0,-4,97,109,23.1,25,23.1,0,true
+24,De'Anthony Melton,GSW,MIA @ GSW,17.333333333333332,false,G,5,6,2,3,0,3,1,5,0,3,4,9,72,82,22.4,22.4,22.4,0,true
+25,Collin Gillespie,PHX,ORL @ PHX,23.583333333333332,false,G,6,2,2,3,0,1,2,9,2,0,0,12,71,98,20.3,22.2,20.3,0,true
+26,Pelle Larsson,MIA,MIA @ GSW,29.366666666666667,false,G,13,1,4,3,0,5,4,9,3,2,2,-15,89,112,19.4,19.4,19.4,0,true
+27,Desmond Bane,ORL,ORL @ PHX,32.416666666666664,true,G,15,6,0,0,0,2,5,12,3,2,3,-6,104,122,16.3,16.3,16.3,0,true
+28,Anthony Black,ORL,ORL @ PHX,30.95,true,G,10,7,6,1,0,5,3,8,1,3,4,-3,98,119,14.9,14.9,14.9,0,true
+29,Jalen Green,PHX,ORL @ PHX,24,true,G,6,0,3,2,0,2,3,7,0,0,0,1,82,106,11,12.9,11,0,true
+30,Tristan da Silva,ORL,ORL @ PHX,30.133333333333333,false,F,18,2,1,0,0,3,6,15,4,2,2,-15,103,124,9.9,9.9,9.9,0,true
+31,Colin Castleton,ORL,ORL @ PHX,1.8,false,,0,0,1,0,0,0,0,0,0,0,0,4,233,125,8.1,10,8.1,0,false
+32,Klay Thompson,MIA,MIA @ GSW,23.133333333333333,true,G,11,0,3,0,2,3,3,10,2,3,3,-9,85,117,7.7,7.7,7.7,0,true
+33,Goga Bitadze,ORL,ORL @ PHX,8.316666666666666,false,C,4,5,0,0,0,1,2,2,0,0,4,6,73,119,0.8,0.8,0.8,0,true
+34,Oso Ighodaro,PHX,ORL @ PHX,24.1,true,F,2,5,1,0,1,2,1,2,0,0,2,7,74,108,-0.1,-0.1,-0.1,0,true
+35,Graham Ike,GSW,MIA @ GSW,1.15,false,,0,1,0,0,0,0,0,0,0,0,0,2,84,108,-2.8,-0.9,-2.8,0,false
+36,Alex Morales,ORL,ORL @ PHX,6.016666666666667,false,G,0,0,0,1,0,0,0,0,0,0,0,-1,0,106,-4.6,-2.7,-4.6,0,false
+37,LJ Cryer,GSW,MIA @ GSW,1.15,false,,0,0,0,0,0,0,0,0,0,0,0,2,0,108,-6.8,-4.9,-6.8,0,false
+38,Malevy Leons,GSW,MIA @ GSW,1.15,false,,0,0,0,0,0,0,0,0,0,0,0,2,0,108,-6.8,-4.9,-6.8,0,false
+39,Koa Peat,PHX,ORL @ PHX,1.9,false,,0,1,0,0,0,0,0,0,0,0,0,-7,0,95,-8.6,-6.7,-8.6,0,false
+40,Jevon Carter,ORL,ORL @ PHX,2.9166666666666665,false,,0,0,0,0,0,0,0,0,0,0,0,-8,0,125,-10.5,-8.6,-10.5,0,false
+41,Duop Reath,PHX,ORL @ PHX,1.8,false,,0,0,0,0,0,0,0,0,0,0,0,-4,0,116,-10.8,-8.9,-10.8,0,false
+42,Andrew Wiggins,MIA,MIA @ GSW,21.4,true,F,2,6,4,0,1,2,1,6,0,0,0,-1,58,116,-11.4,-8.8,-11.4,0,true
+43,Myron Gardner,MIA,MIA @ GSW,1.15,false,F,0,0,0,0,0,0,0,0,0,0,0,-2,0,124,-11.6,-9,-11.6,0,false
+44,Nick Richards,MIA,MIA @ GSW,1.15,false,C,0,0,0,0,0,0,0,0,0,0,0,-2,0,124,-11.6,-8.2,-11.6,0,false
+45,Jamaree Bouyea,PHX,ORL @ PHX,1.8,false,,0,0,0,0,0,1,0,0,0,0,0,-4,0,116,-12.8,-10.9,-12.8,0,false
+46,Nikola Jovic,MIA,MIA @ GSW,12.433333333333334,false,F,1,0,1,0,1,0,0,2,0,1,2,-4,58,118,-13.7,-13.7,-13.7,0,true
+47,Pat Spencer,PHX,ORL @ PHX,1.8,false,,0,0,0,0,0,2,0,0,0,0,0,-4,0,116,-14.8,-12.9,-14.8,0,false
+48,Dru Smith,MIA,MIA @ GSW,1.15,false,G,0,0,0,0,0,0,0,1,0,0,0,-2,0,124,-17.1,-15.2,-17.1,0,false
+49,Nikola Vucevic,ORL,ORL @ PHX,4.366666666666666,false,C,0,0,0,0,0,0,0,1,0,0,0,-11,0,125,-17.2,-13.8,-17.2,0,false
+50,Jamal Cain,ORL,ORL @ PHX,24.716666666666665,false,F,5,5,0,0,0,2,2,9,1,0,1,-14,54,122,-17.9,-16,-17.9,0,true
+51,Bobby Portis,MIA,MIA @ GSW,14.066666666666666,false,F,0,5,0,0,0,0,0,3,0,0,0,-5,23,118,-22.1,-19.5,-22.1,0,true
+52,Tim Hardaway Jr.,MIA,MIA @ GSW,4.066666666666666,false,G,0,0,1,0,0,0,0,3,0,0,0,-3,21,124,-27,-25.1,-27,0,false
