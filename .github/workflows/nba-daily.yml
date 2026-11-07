@@ -2,7 +2,10 @@ name: NBA Daily Report
 
 on:
   schedule:
-    - cron: '0 13 * * *'
+    # Two UTC slots plus a timezone gate keep collection at 5:00 AM
+    # America/New_York through both EDT (09:00 UTC) and EST (10:00 UTC).
+    - cron: '0 9 * * *'
+    - cron: '0 10 * * *'
   workflow_dispatch:
 
 permissions:
@@ -22,36 +25,70 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
+      - name: Gate scheduled collection to 5 AM New York time
+        id: collection_window
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          SCHEDULE_CRON: ${{ github.event.schedule }}
+        shell: bash
+        run: |
+          if [[ "$EVENT_NAME" == "workflow_dispatch" ]]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # The scheduled UTC slot determines the intended local 5 AM.
+          # Check DST/standard offset rather than wall-clock hour because
+          # GitHub can start a scheduled job late.
+          ny_offset="$(TZ=America/New_York date +%z)"
+          if [[ "$ny_offset" == "-0400" && "$SCHEDULE_CRON" == "0 9 * * *" ]] ||
+             [[ "$ny_offset" == "-0500" && "$SCHEDULE_CRON" == "0 10 * * *" ]]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "Selected 5 AM New York collection slot ($ny_offset)"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "Skipping inactive UTC slot ($SCHEDULE_CRON; New York offset $ny_offset)"
+          fi
+
       - name: Checkout repo
+        if: steps.collection_window.outputs.run == 'true'
         uses: actions/checkout@v4
 
       - name: Create data directory
+        if: steps.collection_window.outputs.run == 'true'
         run: mkdir -p data
 
       - name: Fetch NBA data
+        if: steps.collection_window.outputs.run == 'true'
         run: python3 scripts/fetch_nba_data.py
 
       - name: Setup Node.js
+        if: steps.collection_window.outputs.run == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: '24'
 
       - name: Ensure dashboard directory exists with placeholder
+        if: steps.collection_window.outputs.run == 'true'
         run: |
           mkdir -p dashboard
           cp index.html dashboard/index.html
 
       - name: Run NBA report generator
+        if: steps.collection_window.outputs.run == 'true'
         run: node generate-report.js
 
       - name: Setup Pages
+        if: steps.collection_window.outputs.run == 'true'
         uses: actions/configure-pages@v5
 
       - name: Upload Pages artifact
+        if: steps.collection_window.outputs.run == 'true'
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dashboard
 
       - name: Deploy to GitHub Pages
+        if: steps.collection_window.outputs.run == 'true'
         id: deployment
         uses: actions/deploy-pages@v4
