@@ -1,0 +1,80 @@
+name: QPIX NBA V3 HTTP Diagnostic
+on:
+  push:
+    paths:
+      - '.github/workflows/qpix-http-diagnostic.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install diagnostic HTTP clients
+        run: python -m pip install --disable-pip-version-check 'httpx[http2]' requests
+      - name: Compare HTTP clients and V3 schema
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, time, urllib.request, urllib.error
+          import requests, httpx
+          GAME_ID = '0022600177' # known game ID, verified in repo for 2026-11-04
+          URL = f'https://stats.nba.com/stats/boxscoreadvancedv3?GameID={GAME_ID}&LeagueID=00&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0'
+          HEADERS = {
+              'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131 Safari/537.36',
+              'Accept': 'application/json, text/plain, */*',
+              'Accept-Language': 'en-US,en;q=0.9',
+              'Referer': 'https://www.nba.com/',
+              'Origin': 'https://www.nba.com'
+          }
+          def report(label, call):
+              ts=time.monotonic()
+              try:
+                  status, protocol, content_type, body, cookies=call()
+                  out={'test':label,'http_status':status,'http_version':protocol,'content_type':content_type,'elapsed_s':round(time.monotonic()-ts,2),'session_cookies':cookies}
+                  if status==200 and 'json' in content_type.lower():
+                      try:
+                          data=json.loads(body)
+                          out['top_level_keys']=list(data)[:12]
+                          adv=data.get('boxScoreAdvanced',{})
+                          if isinstance(adv,dict) and isinstance(adv.get('boxScoreAdvanced'),dict):
+                              adv=adv['boxScoreAdvanced']
+                          out['advanced_keys']=list(adv)[:10] if isinstance(adv,dict) else []
+                          out['home_player_count']=len(adv.get('homeTeam',{}).get('players',[])) if isinstance(adv,dict) else None
+                          out['away_player_count']=len(adv.get('awayTeam',{}).get('players',[])) if isinstance(adv,dict) else None
+                          pp=adv.get('homeTeam',{}).get('players',[]) if isinstance(adv,dict) else []
+                          out['first_player_stat_keys']=list(pp[0].get('statistics',{}))[:16] if pp else []
+                      except Exception as e:
+                          out['json_error']=str(e)[:100]
+                  print(json.dumps(out),flush=True)
+              except Exception as e:
+                  print(json.dumps({'test':label,'error_type':type(e).__name__,'error':str(e)[:160],'elapsed_s':round(time.monotonic()-ts,2)}),flush=True)
+          def urllib_test():
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(URL,headers=HEADERS),timeout=12) as r:
+                      return r.status,'HTTP/1.1',r.headers.get('Content-Type',''),r.read(1000000),0
+              except urllib.error.HTTPError as e:
+                  return e.code,'HTTP/1.1',e.headers.get('Content-Type',''),b'',0
+          def requests_test():
+              with requests.Session() as s:
+                  s.headers.update(HEADERS)
+                  try: s.get('https://www.nba.com/',timeout=8)
+                  except requests.RequestException: pass
+                  r=s.get(URL,timeout=12)
+                  return r.status_code,'HTTP/1.1',r.headers.get('Content-Type',''),r.content,len(s.cookies)
+          def httpx_test(h2):
+              with httpx.Client(http2=h2,headers=HEADERS,timeout=12,follow_redirects=True) as s:
+                  try: s.get('https://www.nba.com/',timeout=8)
+                  except httpx.HTTPError: pass
+                  r=s.get(URL)
+                  return r.status_code,r.http_version,r.headers.get('Content-Type',''),r.content,len(s.cookies)
+          report('urllib-http1-no-warmup',urllib_test)
+          report('requests-http1-session-warmup',requests_test)
+          report('httpx-http1-session-warmup',lambda:httpx_test(False))
+          report('httpx-http2-session-warmup',lambda:httpx_test(True))
+          PY
