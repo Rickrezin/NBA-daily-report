@@ -1,0 +1,287 @@
+{
+  "status": "PROVISIONAL_SHADOW_UNVALIDATED_C3_AND_MISSING_C6",
+  "date_et": "2026-11-07",
+  "engine": {
+    "authoritative_file": "generate-report.js",
+    "blob_sha": "ef7b46da7c5dde2835424750119c483cdb705a6f",
+    "mode": "regular",
+    "execution": "EXACT_CHECKED_IN_JS_SCORING_FUNCTIONS_EVALUATED_IN_V8_WITH_EXPERIMENTAL_QCORE_RATINGS",
+    "formulas_modified": false
+  },
+  "input_source": {
+    "provider": "ESPN",
+    "api": "site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=",
+    "snapshot_path": "data/historical/qpix_input/2026-11-07.partial.json",
+    "snapshot_sha": "b958a70bf98d3d187da70e90bd2f9f9bc555c361",
+    "nba_game_id_reconciliation": "ESPN event IDs kept separate; NBA.com NYK@CLE GameID 0022600191 independently verified"
+  },
+  "coverage": {
+    "final_games": 7,
+    "teams": 14,
+    "participating_players": 152,
+    "eligible_more_than_8_minutes": 142,
+    "observed_individual_ratings": 0,
+    "estimated_QCore_ratings": 152,
+    "verified_C6_players": 0,
+    "verified_fast_break_C11_players": 0,
+    "all_game_finals_verified": true
+  },
+  "games": [
+    {
+      "espn_event_id": "401909938",
+      "home_alias": "IND",
+      "away_alias": "DEN",
+      "home_points": 102,
+      "away_points": 114,
+      "final": true,
+      "overtime": false
+    },
+    {
+      "espn_event_id": "401909939",
+      "home_alias": "ATL",
+      "away_alias": "BKN",
+      "home_points": 124,
+      "away_points": 121,
+      "final": true,
+      "overtime": false
+    },
+    {
+      "espn_event_id": "401909940",
+      "home_alias": "CLE",
+      "away_alias": "NYK",
+      "home_points": 97,
+      "away_points": 109,
+      "final": true,
+      "overtime": false
+    },
+    {
+      "espn_event_id": "401909941",
+      "home_alias": "OKC",
+      "away_alias": "WAS",
+      "home_points": 114,
+      "away_points": 75,
+      "final": true,
+      "overtime": false
+    },
+    {
+      "espn_event_id": "401909942",
+      "home_alias": "GSW",
+      "away_alias": "ORL",
+      "home_points": 126,
+      "away_points": 119,
+      "final": true,
+      "overtime": true
+    },
+    {
+      "espn_event_id": "401909943",
+      "home_alias": "PHX",
+      "away_alias": "HOU",
+      "home_points": 102,
+      "away_points": 99,
+      "final": true,
+      "overtime": false
+    },
+    {
+      "espn_event_id": "401909944",
+      "home_alias": "POR",
+      "away_alias": "SAS",
+      "home_points": 103,
+      "away_points": 125,
+      "final": true,
+      "overtime": false
+    }
+  ],
+  "team_checks": [
+    {
+      "game": "401909938",
+      "team": "DEN",
+      "score": 114,
+      "points_sum": 114,
+      "minutes_sum": 240,
+      "expected_minutes": 240,
+      "plus_minus_sum": 60,
+      "expected_plus_minus": 60,
+      "participation_count": 11
+    },
+    {
+      "game": "401909938",
+      "team": "IND",
+      "score": 102,
+      "points_sum": 102,
+      "minutes_sum": 240,
+      "expected_minutes": 240,
+      "plus_minus_sum": -60,
+      "expected_plus_minus": -60,
+      "participation_count": 13
+    },
+    {
+      "game": "401909939",
+      "team": "BKN",
+      "score": 121,
+      "points_sum": 121,
+      "minutes_sum": 239,
+      "expected_minutes": 240,
+      "plus_minus_sum": -15,
+      "expected_plus_minus": -15,
+      "participation_count": 10
+    },
+    {
+      "game": "401909939",
+      "team": "ATL",
+      "score": 124,
+      "points_sum": 124,
+      "minutes_sum": 240,
+      "expected_minutes": 240,
+      "plus_minus_sum": 15,
+      "expected_plus_minus": 15,
+      "participation_count": 9
+    },
+    {
+      "game": "401909940",
+      "team": "NYK",
+      "score": 109,
+      "points_sum": 109,
+      "minutes_sum": 240,
+      "expected_minutes": 240,
+      "plus_minus_sum": 60,
+      "expected_plus_minus": 60,
+      "participation_count": 11
+    },
+    {
+      "game": "401909940",
+      "team": "CLE",
+      "score": 97,
+      "points_sum": 97,
+      "minutes_sum": 239,
+      "expected_minutes": 240,
+      "plus_minus_sum": -60,
+      "expected_plus_minus": -60,
+      "participation_count": 10
+    },
+    {
+      "game": "401909941",
+      "team": "WAS",
+      "score": 75,
+      "points_sum": 75,
+      "minutes_sum": 240,
+      "expected_minutes": 240,
+      "plus_minus_sum": -195,
+      "expected_plus_minus": -195,
+      "participation_count": 11
+    },
+    {
+      "game": "401909941",
+      "team": "OKC",
+      "score": 114,
+      "points_sum": 114,
+      "minutes_sum": 242,
+      "expected_minutes": 240,
+      "plus_minus_sum": 195,
+      "expected_plus_minus": 195,
+      "participation_count": 12
+    },
+    {
+      "game": "401909942",
+      "team": "ORL",
+      "score": 119,
+      "points_sum": 119,
+      "minutes_sum": 266,
+      "expected_minutes": 265,
+      "plus_minus_sum": -35,
+      "expected_plus_minus": -35,
+      "participation_count": 10
+    },
+    {
+      "game": "401909942",
+      "team": "GSW",
+      "score": 126,
+      "points_sum": 126,
+      "minutes_sum": 266,
+      "expected_minutes": 265,
+      "plus_minus_sum": 35,
+      "expected_plus_minus": 35,
+      "participation_count": 12
+    },
+    {
+      "game": "401909943",
+      "team": "HOU",
+      "score": 99,
+      "points_sum": 99,
+      "minutes_sum": 240,
+      "expected_minutes": 240,
+      "plus_minus_sum": -15,
+      "expected_plus_minus": -15,
+      "participation_count": 10
+    },
+    {
+      "game": "401909943",
+      "team": "PHX",
+      "score": 102,
+      "points_sum": 102,
+      "minutes_sum": 239,
+      "expected_minutes": 240,
+      "plus_minus_sum": 15,
+      "expected_plus_minus": 15,
+      "participation_count": 9
+    },
+    {
+      "game": "401909944",
+      "team": "SAS",
+      "score": 125,
+      "points_sum": 125,
+      "minutes_sum": 239,
+      "expected_minutes": 240,
+      "plus_minus_sum": 110,
+      "expected_plus_minus": 110,
+      "participation_count": 12
+    },
+    {
+      "game": "401909944",
+      "team": "POR",
+      "score": 103,
+      "points_sum": 103,
+      "minutes_sum": 241,
+      "expected_minutes": 240,
+      "plus_minus_sum": -110,
+      "expected_plus_minus": -110,
+      "participation_count": 12
+    }
+  ],
+  "validation": {
+    "score_mismatches": [],
+    "minute_mismatches": [],
+    "plus_minus_mismatches": [],
+    "breakdown_mismatches": [],
+    "invalid_stat_rows": [],
+    "excluded_zero_minutes": []
+  },
+  "qcore_prototype": {
+    "source": "User's Nov 5 2026 qcore_individual_ratings_prototype.py",
+    "status": "EXPERIMENTAL_NOT_VALIDATED",
+    "formula_QOffR": "110 + (1.5*36/(minutes+24))*(PTS - 1.1*(FGA+0.44*FTA)+0.7*AST-1.1*TOV+0.7*OREB)",
+    "formula_QDefR": "110 - (1.5*36/(minutes+24))*(1.65*STL+1.3*BLK+0.3*DREB-0.35*PF)",
+    "prior_comparison": {
+      "date": "2026-11-04",
+      "source": "User-supplied 14 Basketball-Reference basic and advanced box scores",
+      "players_more_than_8_minutes": 269,
+      "MAE_off_vs_BBRef_OrtG": 25.41,
+      "MAE_def_vs_BBRef_DrtG": 9.04,
+      "comment": "Different metrics; error magnitudes prohibit treating QCore scores as official BBRef ratings."
+    }
+  },
+  "unavailable": [
+    "Individual Basketball-Reference Dean Oliver ORtg/DRtg for Nov7",
+    "Player-level paint points",
+    "Player-level fast break points",
+    "Player-level second-chance points",
+    "Fractional/seconds-level ESPN minutes",
+    "Rolling 20-game individual FTA baselines"
+  ],
+  "api_attempts": {
+    "nba_advanced_v3": "Attempted for independently verified NYK@CLE NBA GameID 0022600191; endpoint timed out",
+    "nba_misc_v3": "Attempted; endpoint timed out",
+    "nba_liveData": "Attempted; unavailable",
+    "github_actions": "No correct-date pre-scoring archive (Nov7) in latest available runs; Nov7 shadow run stored Nov6 data"
+  },
+  "ranking": "RAW QPIX SHADOW (not officially certified), QPIX-R companion and QPIX-SFA separately, minutes >8"
+}
