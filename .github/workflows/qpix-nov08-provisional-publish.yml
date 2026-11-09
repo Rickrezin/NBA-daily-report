@@ -1,0 +1,86 @@
+name: QPIX November 8 provisional shadow publication
+on:
+  push:
+    branches: [dev/qpix-engine-export-main-20261108]
+    paths: ['.github/workflows/qpix-nov08-provisional-publish.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout original main scorer
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Load separate shadow scripts and November 5 QCore model without modifying main scorer
+        shell: bash
+        run: |
+          git fetch origin +refs/heads/dev/qpix-engine-export-main-20261108:refs/remotes/origin/dev/qpix-engine-export-main-20261108 +refs/heads/dev/qcore-independent-ratings-20261105:refs/remotes/origin/dev/qcore-independent-ratings-20261105
+          mkdir -p experiments/qcore
+          git show origin/dev/qpix-engine-export-main-20261108:tools/qpix_20261108_prepare_shadow.py > prepare_shadow.py
+          git show origin/dev/qpix-engine-export-main-20261108:tools/qpix_20261108_score_shadow.mjs > score_shadow.mjs
+          git show origin/dev/qpix-engine-export-main-20261108:tools/qpix_20261108_write_social.py > write_social.py
+          git show origin/dev/qcore-independent-ratings-20261105:experiments/qcore/model.py > experiments/qcore/model.py
+          git show origin/dev/qcore-independent-ratings-20261105:experiments/qcore/sources.py > experiments/qcore/sources.py
+          test "$(git hash-object generate-report.js)" = ef7b46da7c5dde2835424750119c483cdb705a6f
+      - name: Download November 8 canonical ESPN pre-scoring input, including failed original shadow
+        uses: actions/download-artifact@v4
+        with:
+          name: qpix-unified-shadow-2026-11-08
+          run-id: 42509986230
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: Rickrezin/NBA-daily-report
+          path: .
+      - name: Download raw ESPN validation and V3 source attempts
+        uses: actions/download-artifact@v4
+        with:
+          name: qpix-20261108-espn-raw-plus-nba-attempts
+          run-id: 42602455578
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: Rickrezin/NBA-daily-report
+          path: .
+      - name: Validate sources, infer exact experimental November 5 ratings, score unchanged JS and write report
+        env:
+          QPIX_PHASE: regular
+        run: |
+          python3 prepare_shadow.py
+          node score_shadow.mjs
+          python3 write_social.py
+          python3 - <<'PY'
+          import json,csv,pathlib
+          root=pathlib.Path(".")
+          j=json.loads((root/"data/daily/2026-11-08.provisional.json").read_text())
+          a=json.loads((root/"docs/reports/2026-11-08.audit.json").read_text())
+          rows=list(csv.DictReader((root/"data/daily/2026-11-08.provisional.csv").open()))
+          assert j["date_et"]=="2026-11-08"
+          assert len(j["games"])==7 and len(j["players"])==len(rows)==161
+          assert j["status"].startswith("PROVISIONAL_SHADOW")
+          assert a["eligible_more_than_8_minutes"]==141
+          assert a["quality"]["C6_observed_individual_context"]==0
+          assert a["quality"]["C3_observed_individual_ratings"]==0
+          assert all(p["eligibility_top_bottom"]==(p["minutes"]>8) for p in j["players"])
+          assert all(len(p["categories"])==12 for p in j["players"])
+          assert all(p["points_in_paint"] is None for p in j["players"])
+          assert len(set((p["game_id"],p["player_id"]) for p in j["players"]))==161
+          assert len((root/"docs/reports/2026-11-08.provisional.md").read_text())>4000
+          print("Valid provisional release: seven finals, 161 players, 141 eligible, all categories and artifacts.")
+          PY
+      - name: Commit labeled provisional only; preserve authoritative engine and historical outputs
+        run: |
+          git config user.name 'QCore QPIX Provisional Audit'
+          git config user.email 'actions@users.noreply.github.com'
+          git add data/daily/2026-11-08.provisional.json data/daily/2026-11-08.provisional.csv data/historical/qpix_input/2026-11-08.json docs/reports/2026-11-08.provisional.md docs/reports/2026-11-08.audit.json
+          git diff --cached --stat
+          if git diff --cached --quiet; then echo 'Already published correctly'; exit 0; fi
+          git commit -m 'Publish Nov 8 2026 QPIX 161-player provisional shadow and source audit'
+          git push origin HEAD:main
