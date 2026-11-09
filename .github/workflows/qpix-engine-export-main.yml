@@ -1,0 +1,22 @@
+name: QPIX main engine source export Nov08
+on:
+  push:
+    branches: [dev/qpix-engine-export-main-20261108]
+    paths: ['.github/workflows/qpix-engine-export-main.yml']
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: qpix-main-engine-source-20261108
+          path: |
+            generate-report.js
+            scripts/familiarity.js
+            data/venue_familiarity.json
+            data/former_team_familiarity.json
+            data/referee_history.json
+          retention-days: 1
