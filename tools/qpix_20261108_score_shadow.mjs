@@ -1,0 +1,43 @@
+import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+import {pathToFileURL} from 'node:url';
+import {join} from 'node:path';
+const root=process.cwd();
+const full=readFileSync(join(root,'generate-report.js'),'utf8');
+const chopped=full.replace(/\nmain\(\)\.catch\(err => \{[\s\S]*?\n\}\);\s*$/, '\n');
+if(chopped===full)throw Error('Cannot find unique engine invocation: refusing to run');
+// Extraction only: every scoring and context function is byte-for-byte as checked into main.
+const exposing='\nREPORT_SEASON_END = 2027;\nexport { computeQPIX, buildGameContext, computeC1, computeC2, computeC3, computeC4, computeC5, computeC6, computeC7, computeC8, computeC9, computeC10, computeC11, computeC12 };\n';
+const generated=join(root,'authorized_engine_exposed_only.mjs');
+writeFileSync(generated,chopped+exposing);
+const e=await import(pathToFileURL(generated).href+'?run=20261108');
+const input=JSON.parse(readFileSync(join(root,'data/nba_data.json'),'utf8'));
+const pre=JSON.parse(readFileSync(join(root,'shadow/preflight-audit.json'),'utf8'));
+const refs=JSON.parse(readFileSync(join(root,'source-raw/manifest.json'),'utf8'));
+const gamesByID=new Map(input.games.map(g=>[g.game_id,g]));
+const grouped=new Map(input.games.map(g=>[g.game_id,input.players.filter(p=>p.game_id===g.game_id)]));
+const categories_for=(p,c)=>({C1:e.computeC1(p),C2:e.computeC2(p).score,C3:e.computeC3(p).score,C4:e.computeC4(p).score,C5:e.computeC5(p).score,C6:e.computeC6(p).score,C7:e.computeC7(p),C8:e.computeC8(p,c).score,C9:e.computeC9(p).score,C10:e.computeC10(p),C11:e.computeC11(p,c),C12:e.computeC12(p,c).score});
+const scored=input.players.map(p=>{
+  const result=gamesByID.get(p.game_id); if(!result)throw Error('Unmatched game '+p.game_id);
+  const c=e.buildGameContext(p,grouped.get(p.game_id),result);
+  const s=e.computeQPIX(p,c);
+  const cats=categories_for(p,c);
+  const total=Object.values(cats).reduce((x,y)=>x+y,0);
+  if(Math.abs(Math.round(total*10)/10-s.score)>0.051)throw Error("Engine C1-C12 check failed "+p.name+" score="+s.score+" cats="+total);
+  const {rating_features,source,...publicFields}=p;
+  const availability={C1:true,C2:true,C3:p.offensive_rating!==null&&p.defensive_rating!==null,C4:false,C5:true,C6:false,C7:true,C8:true,C9:true,C10:true,C11:false,C12:true,C13:'companion_provisional_seasonal_fta_baseline'};
+  return {...publicFields,game_date_et:input.date_et,espn_athlete_id:p.player_id,source:'ESPN_BASIC_FINAL',qcore_model_version:pre.qcore_version,qcore_rating_features:rating_features,quality:{basic_stats:'ESPN_OBSERVED',C3:'QCORE_EXPERIMENTAL_ESTIMATE_NOT_VERIFIED_PROVIDER',C4_defensive_rating:'QCORE_EXPERIMENTAL_ESTIMATE',C6:'UNAVAILABLE_ENGINE_WILL_USE_ZERO_COMPUTATIONALLY_NOT_OBSERVED_ZERO',C11:'PARTIAL_NO_FAST_BREAK_POINTS',minutes:'ESPN_ROUNDED_WHOLE_MINUTES'},categories:cats,category_verified:availability,raw_qpix_shadow:s.score,qpix_r_shadow:s.qpixR,qpix_sfa_shadow:s.qpixSFA,sfa_adjustment:s.sfaAdj,ref_penalty:s.refPenalty,ref_bonus:s.refBonus,ts_pct:s.ts,score_notes:s.notes,offImpact:s.offImpact,defImpact:s.defImpact,scoring_engine_sum_check:Math.round(total*10)/10,eligibility_top_bottom:p.minutes>8,context:c};
+}).sort((a,b)=>b.raw_qpix_shadow-a.raw_qpix_shadow||a.name.localeCompare(b.name));
+if(scored.length!==161)throw Error('Expected 161 players');
+const eligible=scored.filter(p=>p.minutes>8);
+const top10=eligible.slice(0,10);
+const bottom10=[...eligible].sort((a,b)=>a.raw_qpix_shadow-b.raw_qpix_shadow||a.name.localeCompare(b.name)).slice(0,10);
+const audit={...pre,status:'PROVISIONAL_SHADOW_UNVALIDATED_QCORE_C3_MISSING_C6_AND_C11',engine:{authoritative_file:'generate-report.js',git_blob_sha:'ef7b46da7c5dde2835424750119c483cdb705a6f',source_function_execution:'NODE_JS_ESM_UNMODIFIED_FUNCTION_BODIES_WITH_MAIN_INVOCATION_EXCLUDED',formulas_modified:false,season:'regular',season_end:2027},source_provenance:refs,quality:{C3_observed_individual_ratings:0,C3_qcore_estimate_available:pre.qcore_estimate_available,C3_qcore_unscorable:pre.qcore_missing.length,C6_observed_individual_context:0,C11_observed_individual_fast_break:0,C13_named_player_2025_26_fta_baseline_or_positional_fallback:true,nba_v3_endpoint_status:'TIMEOUT_ALL_NBA_ADVANCED_AND_MISC_V3_CROSSWALKED_IDS',nba_livedata:'HTTP_403_ALL'},eligible_more_than_8_minutes:eligible.length,all_players_scored:scored.length};
+const doc={schema_version:1,date_et:'2026-11-08',status:audit.status,engine:audit.engine,source: {provider:'ESPN',provider_method:'scoreboard_and_per_event_summary_via_GitHub_Actions',snapshot:'data/historical/qpix_input/2026-11-08.json',nba_game_id_crosswalk:'Verified against NBA.com named-game pages 0022600196..0022600202; ESPN IDs kept separate'},coverage:{final_games:input.games.length,teams:14,participating_players:scored.length,eligible_more_than_8_minutes:eligible.length,observed_individual_ratings:0,estimated_QCore_ratings:pre.qcore_estimate_available,missing_qcore_offr:pre.qcore_missing.length,verified_C6_players:0,verified_fast_break_C11_players:0,all_game_finals_verified:true},games:input.games.map(g=>({...g,espn_event_id:g.game_id.replace('ESPN_',''),nba_game_id:refs.pairs.find(t=>t.espn===g.game_id.replace('ESPN_',''))?.nba})),players:scored,leaderboards:{top10:top10.map(x=>x.player_id),bottom10:bottom10.map(x=>x.player_id)},audit_path:'docs/reports/2026-11-08.audit.json'};
+const outdir=join(root,'data/daily');mkdirSync(outdir,{recursive:true});
+writeFileSync(join(outdir,'2026-11-08.provisional.json'),JSON.stringify(doc,null,2)+'\n');
+const csvcols=['date_et','game','team','name','player_id','position','minutes','points','rebounds','offensive_rebounds','defensive_rebounds','assists','steals','blocks','turnovers','personal_fouls','fgm','fga','fg3m','fg3a','ftm','fta','ft_pct','plus_minus','qcore_q_offr','qcore_q_defr','rating_source','raw_qpix_shadow','qpix_r_shadow','qpix_sfa_shadow','sfa_adjustment','ref_penalty','ref_bonus','ts_pct','eligibility_top_bottom',...Array.from({length:12},(_,i)=>'C'+(i+1)),'C3_source','C6_source','C11_source'];
+const quote=(x)=>{const s=String(x??'');return /[,\n"]/.test(s)?'"'+s.replaceAll('"','""')+'"':s};
+let lines=[csvcols.join(',')];for(const p of scored){const row=csvcols.map(k=>k in p?(p[k]):k in p.categories?p.categories[k]:k==='C3_source'?p.quality.C3:k==='C6_source'?p.quality.C6:k==='C11_source'?p.quality.C11:'');lines.push(row.map(quote).join(','));}
+writeFileSync(join(outdir,'2026-11-08.provisional.csv'),lines.join('\n')+'\n');
+mkdirSync(join(root,'docs/reports'),{recursive:true});writeFileSync(join(root,'docs/reports/2026-11-08.audit.json'),JSON.stringify(audit,null,2)+'\n');
+console.log(JSON.stringify({top10:top10.map(x=>({name:x.name,team:x.team,minutes:x.minutes,raw:x.raw_qpix_shadow,r:x.qpix_r_shadow,o:x.qcore_q_offr,d:x.qcore_q_defr,points:x.points,reb:x.rebounds,ast:x.assists,stl:x.steals,blk:x.blocks,to:x.turnovers})),bottom10:bottom10.map(x=>({name:x.name,team:x.team,minutes:x.minutes,raw:x.raw_qpix_shadow,r:x.qpix_r_shadow,points:x.points,reb:x.rebounds,ast:x.assists,stl:x.steals,blk:x.blocks,to:x.turnovers})),eligible:eligible.length,games:input.games},null,2));
