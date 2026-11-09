@@ -1,0 +1,26 @@
+name: QPIX read-only source export Nov08
+on:
+  push:
+    branches: [dev/qcore-independent-ratings-20261105]
+    paths:
+      - '.github/workflows/qpix-export-source-assets.yml'
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Archive unchanged scoring engine and experimental model
+        uses: actions/upload-artifact@v4
+        with:
+          name: qpix-source-assets-for-local-verification
+          path: |
+            generate-report.js
+            scripts/familiarity.js
+            data/venue_familiarity.json
+            data/former_team_familiarity.json
+            data/referee_history.json
+            experiments/qcore/model.py
+          retention-days: 1
+          if-no-files-found: error
