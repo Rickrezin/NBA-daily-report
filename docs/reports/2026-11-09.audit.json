@@ -554,5 +554,17 @@
     "nba_livedata": "HTTP_403_ALL"
   },
   "eligible_more_than_8_minutes": 158,
-  "all_players_scored": 185
+  "all_players_scored": 185,
+  "correction_review": {
+    "date": "2026-11-10",
+    "status": "PUBLIC_REPORT_CORRECTED_SCORING_RECALCULATION_NOT_COMPLETED",
+    "notes": [
+      "Added November 9 same-game Q-OffR and Q-DefR alongside QPIX-R for both provisional leaderboards; each copied from matching player row in data/daily/2026-11-09.provisional.json.",
+      "Previous narrative described 9 blocks as one short of conventional triple-double; C9 code treats 5+ blocks as category threshold and awards 15 even with only two conventional 10+ categories.",
+      "QCore rating model metadata indicates qcore-oliver-box-v0.1, which has not been reconciled with the separately discussed November 5 prototype; ratings remain experimental and C3 not independently verified.",
+      "Missing player-level paint, fast-break, second-chance points mean C6/C11 incomplete; do not certify official RAW rankings.",
+      "No scored player totals or unchanged scoring engine were modified by this report correction."
+    ],
+    "eligible_players": 158
+  }
 }
