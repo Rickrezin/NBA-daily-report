@@ -352,7 +352,7 @@ function computeC8(p, gameContext) {
 }
 
 // C9 — MULTI-CATEGORY BONUSES
-// DD (+6), TD (+15), near-TD (+4), 5×5 (+10)
+// DD (+6), TD (+15) across PTS/REB/AST/10+ STOCKS, near-TD (+4), 5×5 (+10)
 function computeC9(p) {
   let score = 0;
   const notes = [];
@@ -361,8 +361,9 @@ function computeC9(p) {
     p.points >= 10,
     p.rebounds >= 10,
     p.assists >= 10,
-    p.steals >= 5,
-    p.blocks >= 5
+    // Combined steals + blocks (STOCKS) count as ONE category at 10+.
+    // Individual steal/block totals below 10 cannot independently qualify.
+    ((p.steals || 0) + (p.blocks || 0)) >= 10
   ].filter(Boolean).length;
 
   if (ddCats >= 3)      { score += 15; notes.push("TRIPLE-DOUBLE (+15)"); }
