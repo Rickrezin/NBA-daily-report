@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "date_et": "2026-11-09",
-  "status": "PROVISIONAL_SHADOW_UNVALIDATED_QCORE_C3_MISSING_C6_AND_C11",
+  "status": "PROVISIONAL_SHADOW_C9_STOCKS_RULE_CORRECTED_UNVALIDATED_QCORE_C3_MISSING_C6_AND_C11",
   "engine": {
     "authoritative_file": "generate-report.js",
     "git_blob_sha": "ef7b46da7c5dde2835424750119c483cdb705a6f",
@@ -185,7 +185,7 @@
         "C6": 0,
         "C7": 3,
         "C8": 12,
-        "C9": 15,
+        "C9": 6,
         "C10": 0,
         "C11": 3,
         "C12": 8
@@ -205,9 +205,9 @@
         "C12": true,
         "C13": "companion_provisional_seasonal_fta_baseline"
       },
-      "raw_qpix_shadow": 162.6,
-      "qpix_r_shadow": 160.2,
-      "qpix_sfa_shadow": 162.6,
+      "raw_qpix_shadow": 153.6,
+      "qpix_r_shadow": 151.2,
+      "qpix_sfa_shadow": 153.6,
       "sfa_adjustment": 0,
       "ref_penalty": 2.4,
       "ref_bonus": 0,
@@ -219,13 +219,13 @@
         "9 stocks (elite)",
         "Elite anchor (DefRtg: 81.2)",
         "+30 net differential",
-        "TRIPLE-DOUBLE (+15)",
         "Dominant bench contribution (+8)",
-        "QPIX-R flag: Whistle inflation: +3.1 FTA above baseline"
+        "QPIX-R flag: Whistle inflation: +3.1 FTA above baseline",
+        "Double-double (+6)"
       ],
       "offImpact": 4,
       "defImpact": 2.9,
-      "scoring_engine_sum_check": 162.6,
+      "scoring_engine_sum_check": 153.6,
       "eligibility_top_bottom": true,
       "context": {
         "teamAvgPlusMinus": 10.833333333333334,
@@ -322,7 +322,7 @@
         "C6": 0,
         "C7": 5,
         "C8": 1.6,
-        "C9": 15,
+        "C9": 10,
         "C10": 2,
         "C11": 3,
         "C12": 0
@@ -342,21 +342,22 @@
         "C12": true,
         "C13": "companion_provisional_seasonal_fta_baseline"
       },
-      "raw_qpix_shadow": 110.6,
-      "qpix_r_shadow": 113.4,
-      "qpix_sfa_shadow": 110.6,
+      "raw_qpix_shadow": 105.6,
+      "qpix_r_shadow": 108.4,
+      "qpix_sfa_shadow": 105.6,
       "sfa_adjustment": 0,
       "ref_penalty": 0,
       "ref_bonus": 2.8,
       "ts_pct": 63.79585326953748,
       "score_notes": [
         "7 stocks (elite)",
-        "TRIPLE-DOUBLE (+15)",
-        "QPIX-R flag: Whistle suppression: -3.1 FTA below baseline"
+        "QPIX-R flag: Whistle suppression: -3.1 FTA below baseline",
+        "Double-double (+6)",
+        "Near triple-double (+4)"
       ],
       "offImpact": 0.7,
       "defImpact": 0.9,
-      "scoring_engine_sum_check": 110.6,
+      "scoring_engine_sum_check": 105.6,
       "eligibility_top_bottom": true,
       "context": {
         "teamAvgPlusMinus": 5,
@@ -24306,5 +24307,29 @@
       "5281370"
     ]
   },
-  "audit_path": "docs/reports/2026-11-09.audit.json"
+  "audit_path": "docs/reports/2026-11-09.audit.json",
+  "correction": {
+    "date": "2026-11-10",
+    "reason": "C9 requires 10+ combined steals + blocks (STOCKS) as one qualifying category; 5 steals and 5 blocks independently are not two categories",
+    "engine_file": "generate-report.js",
+    "changed_players": [
+      {
+        "name": "Victor Wembanyama",
+        "team": "SAS",
+        "delta": -9,
+        "old": 162.6,
+        "new": 153.6
+      },
+      {
+        "name": "Luka Doncic",
+        "team": "LAL",
+        "delta": -5,
+        "old": 110.6,
+        "new": 105.6
+      }
+    ],
+    "all_players_reconciled": 185,
+    "other_categories_unchanged": true,
+    "source_quality_unchanged": true
+  }
 }
