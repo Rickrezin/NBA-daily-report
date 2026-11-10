@@ -557,14 +557,156 @@
   "all_players_scored": 185,
   "correction_review": {
     "date": "2026-11-10",
-    "status": "PUBLIC_REPORT_CORRECTED_SCORING_RECALCULATION_NOT_COMPLETED",
-    "notes": [
-      "Added November 9 same-game Q-OffR and Q-DefR alongside QPIX-R for both provisional leaderboards; each copied from matching player row in data/daily/2026-11-09.provisional.json.",
-      "Previous narrative described 9 blocks as one short of conventional triple-double; C9 code treats 5+ blocks as category threshold and awards 15 even with only two conventional 10+ categories.",
-      "QCore rating model metadata indicates qcore-oliver-box-v0.1, which has not been reconciled with the separately discussed November 5 prototype; ratings remain experimental and C3 not independently verified.",
-      "Missing player-level paint, fast-break, second-chance points mean C6/C11 incomplete; do not certify official RAW rankings.",
-      "No scored player totals or unchanged scoring engine were modified by this report correction."
+    "status": "C9_STOCKS_RULE_CORRECTED_ALL_185_PLAYER_SCORES_RECONCILED_PROVISIONAL",
+    "rule": "10 combined steals and blocks qualify as ONE category for triple-double; PTS REB AST threshold each 10",
+    "changed_players": [
+      {
+        "name": "Victor Wembanyama",
+        "team": "SAS",
+        "delta": -9,
+        "old": 162.6,
+        "new": 153.6
+      },
+      {
+        "name": "Luka Doncic",
+        "team": "LAL",
+        "delta": -5,
+        "old": 110.6,
+        "new": 105.6
+      }
     ],
-    "eligible_players": 158
+    "source_status": "C6 and C11 remain unverified; experimental QCore ratings remain distinctly labeled",
+    "source_formulas": "Only C9 double-double / triple-double qualification corrected; other category functions unchanged",
+    "counts": {
+      "players": 185,
+      "eligible": 158,
+      "final_games": 8
+    },
+    "ranking": {
+      "top": [
+        {
+          "name": "Victor Wembanyama",
+          "team": "SAS",
+          "raw": 153.6,
+          "r": 151.2
+        },
+        {
+          "name": "Luka Doncic",
+          "team": "LAL",
+          "raw": 105.6,
+          "r": 108.4
+        },
+        {
+          "name": "Cooper Flagg",
+          "team": "DAL",
+          "raw": 98.1,
+          "r": 94.7
+        },
+        {
+          "name": "Anthony Davis",
+          "team": "WAS",
+          "raw": 90.9,
+          "r": 84.6
+        },
+        {
+          "name": "John Collins",
+          "team": "DET",
+          "raw": 87.1,
+          "r": 87.1
+        },
+        {
+          "name": "Pascal Siakam",
+          "team": "IND",
+          "raw": 86.8,
+          "r": 85.5
+        },
+        {
+          "name": "Nikola Jokic",
+          "team": "DEN",
+          "raw": 83.5,
+          "r": 88.6
+        },
+        {
+          "name": "Yaxel Lendeborg",
+          "team": "GSW",
+          "raw": 83.4,
+          "r": 83.4
+        },
+        {
+          "name": "Brandin Podziemski",
+          "team": "GSW",
+          "raw": 81.8,
+          "r": 83.7
+        },
+        {
+          "name": "Al Horford",
+          "team": "GSW",
+          "raw": 77,
+          "r": 80.4
+        }
+      ],
+      "bottom": [
+        {
+          "name": "Spencer Jones",
+          "team": "DEN",
+          "raw": -28,
+          "r": -25.4
+        },
+        {
+          "name": "Bennedict Mathurin",
+          "team": "NOP",
+          "raw": -21.4,
+          "r": -21.4
+        },
+        {
+          "name": "Luke Kennard",
+          "team": "PHX",
+          "raw": -21.1,
+          "r": -19.2
+        },
+        {
+          "name": "Julian Reese",
+          "team": "NOP",
+          "raw": -18.4,
+          "r": -15.8
+        },
+        {
+          "name": "Tre Johnson",
+          "team": "WAS",
+          "raw": -16.5,
+          "r": -14.6
+        },
+        {
+          "name": "Aaron Gordon",
+          "team": "DEN",
+          "raw": -16.4,
+          "r": -16.4
+        },
+        {
+          "name": "Jalen Green",
+          "team": "PHX",
+          "raw": -15.2,
+          "r": -15.2
+        },
+        {
+          "name": "Dillon Brooks",
+          "team": "PHX",
+          "raw": -15.1,
+          "r": -12.5
+        },
+        {
+          "name": "GG Jackson",
+          "team": "MEM",
+          "raw": -14.8,
+          "r": -14.8
+        },
+        {
+          "name": "Hannes Steinbach",
+          "team": "CHA",
+          "raw": -13.8,
+          "r": -11.2
+        }
+      ]
+    }
   }
 }
