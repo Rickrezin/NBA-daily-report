@@ -1,0 +1,164 @@
+name: QPIX November 10 provisional shadow publication
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/qpix-nov10-provisional-publish.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Recover exact unchanged model, engine wrappers, and source archive
+        shell: bash
+        run: |
+          git fetch origin +refs/heads/dev/qpix-engine-export-main-20261108:refs/remotes/origin/dev/qpix-engine-export-main-20261108 +refs/heads/dev/qcore-independent-ratings-20261105:refs/remotes/origin/dev/qcore-independent-ratings-20261105
+          mkdir -p experiments/qcore source-raw/espn shadow
+          git show origin/dev/qpix-engine-export-main-20261108:tools/qpix_20261108_prepare_shadow.py > prepare_shadow.py
+          git show origin/dev/qpix-engine-export-main-20261108:tools/qpix_20261108_score_shadow.mjs > score_shadow.mjs
+          git show origin/dev/qcore-independent-ratings-20261105:experiments/qcore/model.py > experiments/qcore/model.py
+          git show origin/dev/qcore-independent-ratings-20261105:experiments/qcore/sources.py > experiments/qcore/sources.py
+          test "$(git hash-object generate-report.js)" = 390833f45ee5191092813647f0735f1598cfeab1
+          python3 - <<'PY'
+          from pathlib import Path
+          for file in ['prepare_shadow.py','score_shadow.mjs']:
+              p=Path(file);t=p.read_text().replace('2026-11-08','2026-11-10').replace('20261108','20261110')
+              if file.endswith('.mjs'):
+                  t=t.replace("if(scored.length!==161)","if(scored.length!==input.players.length)")
+                  t=t.replace('teams:14','teams:input.games.length*2')
+                  t=t.replace('Verified against NBA.com named-game pages 0022600196..0022600202','Verified against NBA.com named-game pages 0022600211..0022600216')
+              p.write_text(t)
+          PY
+      - name: Download November 10 canonical pre-scoring data even from failed shadow workflow
+        uses: actions/download-artifact@v4
+        with:
+          name: qpix-unified-shadow-2026-11-10
+          run-id: 43017320978
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: Rickrezin/NBA-daily-report
+          path: .
+      - name: Independently collect raw per-game ESPN summaries and try official NBA endpoints
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json,urllib.request,datetime,concurrent.futures,hashlib,pathlib
+          from zoneinfo import ZoneInfo
+          root=pathlib.Path('.');src=json.loads((root/'data/historical/qpix_input/2026-11-10.json').read_text())
+          assert src['date_et']=='2026-11-10' and len(src['games'])==6 and len(src['players'])==141
+          cross={
+            '401909960':'0022600211','401909961':'0022600212','401909962':'0022600213',
+            '401909963':'0022600214','401909964':'0022600215','401909965':'0022600216'
+          }
+          headers={'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131 Safari/537.36','Accept':'application/json, text/html, */*','Referer':'https://www.nba.com/','Origin':'https://www.nba.com'}
+          pairs=[]
+          for g in src['games']:
+              eid=g['espn_event_id'];gid=cross[eid];away=g['away_alias'].lower();home=g['home_alias'].lower()
+              pairs.append({'espn':eid,'nba':gid,'away':g['away_alias'],'home':g['home_alias'],'nba_url':f'https://www.nba.com/game/{away}-vs-{home}-{gid}'})
+          def fetch_event(pair):
+              eid=pair['espn'];url='https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event='+eid
+              req=urllib.request.Request(url,headers=headers)
+              with urllib.request.urlopen(req,timeout=22) as r: raw=r.read()
+              doc=json.loads(raw)
+              out=root/'source-raw/espn'/f'{eid}.json';out.write_bytes(raw)
+              return {'url':url,'ok':True,'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()}
+          attempts=[]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
+              for future in concurrent.futures.as_completed([pool.submit(fetch_event,p) for p in pairs]):
+                  attempts.append(future.result())
+          def probe(pair,typ):
+              gid=pair['nba']
+              if typ=='advanced':url=f'https://stats.nba.com/stats/boxscoreadvancedv3?GameID={gid}&LeagueID=00'
+              elif typ=='misc':url=f'https://stats.nba.com/stats/boxscoremiscv3?GameID={gid}&LeagueID=00'
+              else:url=f'https://cdn.nba.com/static/json/liveData/boxscore/boxscore_{gid}.json'
+              try:
+                  req=urllib.request.Request(url,headers=headers)
+                  with urllib.request.urlopen(req,timeout=7) as r:raw=r.read()
+                  doc=json.loads(raw)
+                  dest=root/'source-raw'/f'{typ}_{gid}.json'
+                  dest.write_bytes(raw)
+                  return {'url':url,'ok':True,'bytes':len(raw),'source_file':str(dest)}
+              except Exception as exc:
+                  return {'url':url,'ok':False,'error':str(exc)[:240]}
+          with concurrent.futures.ThreadPoolExecutor(max_workers=24) as pool:
+              for future in concurrent.futures.as_completed([pool.submit(probe,p,t) for p in pairs for t in ['advanced','misc','live']]):
+                  attempts.append(future.result())
+          out={'date_et':'2026-11-10','pairs':pairs,'attempts':attempts,
+               'crosswalk_provenance':'Six matchup/date-specific NBA.com official game URLs independently verified against ESPN finals; ESPN event IDs never used for NBA stats requests'}
+          (root/'source-raw/manifest.json').write_text(json.dumps(out,indent=2)+'\n')
+          assert len([a for a in attempts if a['ok'] and 'site.api.espn.com' in a['url']])==6
+          print(json.dumps({'sources':len(attempts),'ESPN_successes':6,'NBA_v3_successes':sum(a['ok'] and 'stats.nba.com' in a['url'] for a in attempts),'NBA_live_successes':sum(a['ok'] and 'liveData' in a['url'] for a in attempts)},indent=2))
+          PY
+      - name: Compute exact Nov 5 QCore shadow ratings, score original JS engine, and audit
+        env:
+          QPIX_PHASE: regular
+        run: |
+          python3 prepare_shadow.py
+          node score_shadow.mjs > shadow/leaderboards.json
+          python3 - <<'PY'
+          import json,csv,pathlib
+          root=pathlib.Path('.')
+          doc=json.loads((root/'data/daily/2026-11-10.provisional.json').read_text())
+          aud=json.loads((root/'docs/reports/2026-11-10.audit.json').read_text())
+          rows=list(csv.DictReader((root/'data/daily/2026-11-10.provisional.csv').open()))
+          src=json.loads((root/'data/historical/qpix_input/2026-11-10.json').read_text())
+          assert len(doc['games'])==6 and len(doc['players'])==141==len(rows)
+          assert len(set((p['game_id'],p['player_id']) for p in doc['players']))==141
+          assert all(p['eligibility_top_bottom']==(p['minutes']>8) for p in doc['players'])
+          assert all(len(p['categories'])==12 for p in doc['players'])
+          assert all(p['points_in_paint'] is None and p['fast_break_points'] is None and p['second_chance_points'] is None for p in doc['players'])
+          for g in doc['games']:
+            for team,pts in [(g['away_alias'],g['away_points']),(g['home_alias'],g['home_points'])]:
+              pl=[p for p in doc['players'] if p['game_id']==g['game_id'] and p['team']==team]
+              assert sum(p['points'] for p in pl)==pts,(g,team)
+              assert abs(sum(p['minutes'] for p in pl)-240)<15,(g,team)
+              target=(g['home_points']-g['away_points'])*(5 if team==g['home_alias'] else -5)
+              assert abs(sum(p['plus_minus'] for p in pl)-target)<=10,(g,team)
+          top=[next(p for p in doc['players'] if p['player_id']==pid) for pid in doc['leaderboards']['top10']]
+          bottom=[next(p for p in doc['players'] if p['player_id']==pid) for pid in doc['leaderboards']['bottom10']]
+          assert all(p['minutes']>8 for p in top+bottom)
+          assert len(top)==len(bottom)==10
+          assert aud['quality']['C6_observed_individual_context']==0 and aud['quality']['C3_observed_individual_ratings']==0
+          name=lambda p:f"{p['name']} ({p['team']}) — {p['raw_qpix_shadow']:.1f} QPIX | {p['qpix_r_shadow']:.1f} QPIX-R"
+          scores=[f"{g['away_alias']} {g['away_points']} – {g['home_alias']} {g['home_points']}" for g in doc['games']]
+          lead=top[0]
+          lines=['QCORE LABS QPIX™ NBA DAILY PERFORMANCE INDEX','Tuesday, November 10, 2026',f"6 FINAL GAMES | {len(doc['players'])} PLAYERS EVALUATED",'','NBA FINAL SCORES',*scores,'',
+                 f"{lead['name'].upper()} LEADS THE NIGHT!",'',
+                 f"{lead['name']} ({lead['team']}) earned the highest provisional QPIX at {lead['raw_qpix_shadow']:.1f}, finishing with {lead['points']} points, {lead['rebounds']} rebounds, {lead['assists']} assists, {lead['steals']} steals and {lead['blocks']} blocks.",
+                 '','QPIX TOP 10 — PROVISIONAL RAW','']
+          lines.extend(f'{i}. {name(p)}' for i,p in enumerate(top,1))
+          lines.extend(['','THE PERFORMANCES BEHIND THE NUMBERS',''])
+          for p in top[:6]:
+              lines.append(f"{p['name']} ({p['team']}) posted {p['points']} points, {p['rebounds']} rebounds, {p['assists']} assists, {p['steals']} steals and {p['blocks']} blocks with {p['turnovers']} turnovers across {p['minutes']:g} minutes. QPIX: {p['raw_qpix_shadow']:.1f}.")
+              lines.append('')
+          lines.extend(['QPIX BOTTOM 10 — PROVISIONAL RAW',''])
+          lines.extend(f'{i}. {name(p)}' for i,p in enumerate(bottom,1))
+          lows=bottom[:2]
+          lines.extend(['','THE OTHER END OF THE INDEX','',f"{lows[0]['name']} and {lows[1]['name']} finished at the bottom of the eligible index on this night. These are single-game evaluations, not judgments about their careers.",'',
+                         "THE QPIX TAKEAWAY",'','The best performance is not necessarily the highest point total. Defense, playmaking, efficiency, rebounding and protecting possessions all contribute to a complete game.','',
+                         'REPORT STATUS: Provisional; some advanced and individual offensive-context statistics remain unavailable. Scores may change after source verification.','',
+                         'QCore Labs © 2026','QPIX™ — Because the box score never tells the whole story.'])
+          (root/'docs/reports/2026-11-10.provisional.md').write_text('\n'.join(lines)+'\n')
+          print(json.dumps({'games':scores,'players':len(doc['players']),'eligible':aud['eligible_more_than_8_minutes'],'top10':[(p['name'],p['raw_qpix_shadow']) for p in top]},indent=2))
+          PY
+      - name: Commit only provisional outputs, preserve all historical scores and scoring formulas
+        shell: bash
+        run: |
+          git config user.name 'QCore QPIX Provisional Audit'
+          git config user.email 'actions@users.noreply.github.com'
+          git add data/daily/2026-11-10.provisional.json data/daily/2026-11-10.provisional.csv data/historical/qpix_input/2026-11-10.json docs/reports/2026-11-10.provisional.md docs/reports/2026-11-10.audit.json
+          git diff --cached --stat
+          if git diff --cached --quiet; then echo 'Already published'; exit 0; fi
+          git commit -m 'Publish November 10 QPIX 141-player provisional shadow'
+          git push origin HEAD:main
