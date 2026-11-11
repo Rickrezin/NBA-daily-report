@@ -1,0 +1,345 @@
+{
+  "date_et": "2026-11-10",
+  "source": "ESPN prior-day GitHub Actions pre-scoring canonical archive; raw ESPN summary used to retrieve personal fouls and team turnovers",
+  "canonical_input_sha256": "8b174591241886f323ab0e3e67138b62edd649d4119fbb4269f853673ec69652",
+  "qcore_version": "qcore-oliver-box-v0.1",
+  "qcore_branch": "dev/qcore-independent-ratings-20261105",
+  "verified_provider_C3_players": 0,
+  "qcore_estimate_available": 140,
+  "qcore_missing": [
+    {
+      "player_id": "5217746",
+      "name": "Yang Hansen",
+      "team": "POR",
+      "flags": [
+        "short_minutes",
+        "no_positive_individual_possessions"
+      ]
+    }
+  ],
+  "source_missing_C6": 141,
+  "source_missing_fastbreak_C11": 141,
+  "outliers": [],
+  "raw_espn_minutes_precision": "whole_minutes",
+  "games": 6,
+  "players": 141,
+  "team_raw_audits": {
+    "401909960": [
+      {
+        "team": "MIL",
+        "player_minutes_sum": 240,
+        "game_minutes": 48,
+        "player_turnovers": 12,
+        "espn_total_turnovers": 14,
+        "espn_team_turnovers": 2,
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      },
+      {
+        "team": "NYK",
+        "player_minutes_sum": 239,
+        "game_minutes": 48,
+        "player_turnovers": 10,
+        "espn_total_turnovers": 11,
+        "espn_team_turnovers": 1,
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      }
+    ],
+    "401909961": [
+      {
+        "team": "BOS",
+        "player_minutes_sum": 240,
+        "game_minutes": 48,
+        "player_turnovers": 8,
+        "espn_total_turnovers": 9,
+        "espn_team_turnovers": 1,
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      },
+      {
+        "team": "PHI",
+        "player_minutes_sum": 242,
+        "game_minutes": 48,
+        "player_turnovers": 13,
+        "espn_total_turnovers": 14,
+        "espn_team_turnovers": 1,
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      }
+    ],
+    "401909962": [
+      {
+        "team": "LAC",
+        "player_minutes_sum": 240,
+        "game_minutes": 48,
+        "player_turnovers": 12,
+        "espn_total_turnovers": 13,
+        "espn_team_turnovers": 1,
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      },
+      {
+        "team": "PHX",
+        "player_minutes_sum": 241,
+        "game_minutes": 48,
+        "player_turnovers": 19,
+        "espn_total_turnovers": 19,
+        "espn_team_turnovers": 1,
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      }
+    ],
+    "401909963": [
+      {
+        "team": "MIA",
+        "player_minutes_sum": 241,
+        "game_minutes": 48,
+        "player_turnovers": 8,
+        "espn_total_turnovers": 8,
+        "espn_team_turnovers": 0,
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      },
+      {
+        "team": "UTA",
+        "player_minutes_sum": 239,
+        "game_minutes": 48,
+        "player_turnovers": 18,
+        "espn_total_turnovers": 19,
+        "espn_team_turnovers": 1,
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      }
+    ],
+    "401909964": [
+      {
+        "team": "ORL",
+        "player_minutes_sum": 241,
+        "game_minutes": 48,
+        "player_turnovers": 12,
+        "espn_total_turnovers": 14,
+        "espn_team_turnovers": 2,
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      },
+      {
+        "team": "SAC",
+        "player_minutes_sum": 240,
+        "game_minutes": 48,
+        "player_turnovers": 20,
+        "espn_total_turnovers": 21,
+        "espn_team_turnovers": 1,
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      }
+    ],
+    "401909965": [
+      {
+        "team": "OKC",
+        "player_minutes_sum": 240,
+        "game_minutes": 48,
+        "player_turnovers": 12,
+        "espn_total_turnovers": 12,
+        "espn_team_turnovers": 0,
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      },
+      {
+        "team": "POR",
+        "player_minutes_sum": 242,
+        "game_minutes": 48,
+        "player_turnovers": 8,
+        "espn_total_turnovers": 9,
+        "espn_team_turnovers": 1,
+        "team_totals_policy": "sum_player_counts_except_total_turnovers; duration_from_periods"
+      }
+    ]
+  },
+  "status": "PROVISIONAL_SHADOW_UNVALIDATED_QCORE_C3_MISSING_C6_AND_C11",
+  "engine": {
+    "authoritative_file": "generate-report.js",
+    "git_blob_sha": "ef7b46da7c5dde2835424750119c483cdb705a6f",
+    "source_function_execution": "NODE_JS_ESM_UNMODIFIED_FUNCTION_BODIES_WITH_MAIN_INVOCATION_EXCLUDED",
+    "formulas_modified": false,
+    "season": "regular",
+    "season_end": 2027
+  },
+  "source_provenance": {
+    "date_et": "2026-11-10",
+    "pairs": [
+      {
+        "espn": "401909960",
+        "nba": "0022600211",
+        "away": "MIL",
+        "home": "NYK",
+        "nba_url": "https://www.nba.com/game/mil-vs-nyk-0022600211"
+      },
+      {
+        "espn": "401909961",
+        "nba": "0022600212",
+        "away": "BOS",
+        "home": "PHI",
+        "nba_url": "https://www.nba.com/game/bos-vs-phi-0022600212"
+      },
+      {
+        "espn": "401909962",
+        "nba": "0022600213",
+        "away": "LAC",
+        "home": "PHX",
+        "nba_url": "https://www.nba.com/game/lac-vs-phx-0022600213"
+      },
+      {
+        "espn": "401909963",
+        "nba": "0022600214",
+        "away": "MIA",
+        "home": "UTA",
+        "nba_url": "https://www.nba.com/game/mia-vs-uta-0022600214"
+      },
+      {
+        "espn": "401909964",
+        "nba": "0022600215",
+        "away": "ORL",
+        "home": "SAC",
+        "nba_url": "https://www.nba.com/game/orl-vs-sac-0022600215"
+      },
+      {
+        "espn": "401909965",
+        "nba": "0022600216",
+        "away": "OKC",
+        "home": "POR",
+        "nba_url": "https://www.nba.com/game/okc-vs-por-0022600216"
+      }
+    ],
+    "attempts": [
+      {
+        "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909961",
+        "ok": true,
+        "bytes": 408815,
+        "sha256": "d9a07de702e1d1a67c3c44c6ed8ee2ca6b5b25ea76bee8938ec2f0e6efc49871"
+      },
+      {
+        "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909965",
+        "ok": true,
+        "bytes": 468053,
+        "sha256": "3fbebbb9f5221e152f7ee663c03c0da7b0fa68419dfe985ac82ce3d7340c93fc"
+      },
+      {
+        "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909962",
+        "ok": true,
+        "bytes": 436976,
+        "sha256": "71e37ee15f920547b4b327e8d247ade973f006a35546215a2b657aa2f341fae0"
+      },
+      {
+        "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909960",
+        "ok": true,
+        "bytes": 468630,
+        "sha256": "29ba2fb9bb4ca283253c941cd5678d2a99ca1b87f80f39b831f66fc7fc17dba3"
+      },
+      {
+        "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909964",
+        "ok": true,
+        "bytes": 433441,
+        "sha256": "bf90761c1c0b5a2bb6142864332b3e7b1c520b412d127e14a774ff8900fee967"
+      },
+      {
+        "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909963",
+        "ok": true,
+        "bytes": 499522,
+        "sha256": "46d8e08d92895d54f938342e9b95603ac423480cd308c770084dcd9e329095c4"
+      },
+      {
+        "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600216.json",
+        "ok": false,
+        "error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600214.json",
+        "ok": false,
+        "error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600213.json",
+        "ok": false,
+        "error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600212.json",
+        "ok": false,
+        "error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600215.json",
+        "ok": false,
+        "error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600211.json",
+        "ok": false,
+        "error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600215&LeagueID=00",
+        "ok": false,
+        "error": "The read operation timed out"
+      },
+      {
+        "url": "https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600212&LeagueID=00",
+        "ok": false,
+        "error": "The read operation timed out"
+      },
+      {
+        "url": "https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600211&LeagueID=00",
+        "ok": false,
+        "error": "The read operation timed out"
+      },
+      {
+        "url": "https://stats.nba.com/stats/boxscoremiscv3?GameID=0022600212&LeagueID=00",
+        "ok": false,
+        "error": "The read operation timed out"
+      },
+      {
+        "url": "https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600216&LeagueID=00",
+        "ok": false,
+        "error": "The read operation timed out"
+      },
+      {
+        "url": "https://stats.nba.com/stats/boxscoremiscv3?GameID=0022600215&LeagueID=00",
+        "ok": false,
+        "error": "The read operation timed out"
+      },
+      {
+        "url": "https://stats.nba.com/stats/boxscoremiscv3?GameID=0022600214&LeagueID=00",
+        "ok": false,
+        "error": "The read operation timed out"
+      },
+      {
+        "url": "https://stats.nba.com/stats/boxscoremiscv3?GameID=0022600211&LeagueID=00",
+        "ok": false,
+        "error": "The read operation timed out"
+      },
+      {
+        "url": "https://stats.nba.com/stats/boxscoremiscv3?GameID=0022600213&LeagueID=00",
+        "ok": false,
+        "error": "The read operation timed out"
+      },
+      {
+        "url": "https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600213&LeagueID=00",
+        "ok": false,
+        "error": "The read operation timed out"
+      },
+      {
+        "url": "https://stats.nba.com/stats/boxscoremiscv3?GameID=0022600216&LeagueID=00",
+        "ok": false,
+        "error": "The read operation timed out"
+      },
+      {
+        "url": "https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600214&LeagueID=00",
+        "ok": false,
+        "error": "The read operation timed out"
+      }
+    ],
+    "crosswalk_provenance": "Six matchup/date-specific NBA.com official game URLs independently verified against ESPN finals; ESPN event IDs never used for NBA stats requests"
+  },
+  "quality": {
+    "C3_observed_individual_ratings": 0,
+    "C3_qcore_estimate_available": 140,
+    "C3_qcore_unscorable": 1,
+    "C6_observed_individual_context": 0,
+    "C11_observed_individual_fast_break": 0,
+    "C13_named_player_2025_26_fta_baseline_or_positional_fallback": true,
+    "nba_v3_endpoint_status": "TIMEOUT_ALL_NBA_ADVANCED_AND_MISC_V3_CROSSWALKED_IDS",
+    "nba_livedata": "HTTP_403_ALL"
+  },
+  "eligible_more_than_8_minutes": 118,
+  "all_players_scored": 141
+}
