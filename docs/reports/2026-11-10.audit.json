@@ -341,5 +341,143 @@
     "nba_livedata": "HTTP_403_ALL"
   },
   "eligible_more_than_8_minutes": 118,
-  "all_players_scored": 141
+  "all_players_scored": 141,
+  "independent_readback_review": {
+    "date_et": "2026-11-10",
+    "main_branch_verified": true,
+    "teams": [
+      {
+        "game": "ESPN_401909960",
+        "team": "MIL",
+        "players": 13,
+        "points": 85,
+        "final_points": 85,
+        "minutes": 240,
+        "plus_minus_sum": -160,
+        "plus_minus_target": -160
+      },
+      {
+        "game": "ESPN_401909960",
+        "team": "NYK",
+        "players": 14,
+        "points": 117,
+        "final_points": 117,
+        "minutes": 239,
+        "plus_minus_sum": 160,
+        "plus_minus_target": 160
+      },
+      {
+        "game": "ESPN_401909961",
+        "team": "BOS",
+        "players": 12,
+        "points": 123,
+        "final_points": 123,
+        "minutes": 240,
+        "plus_minus_sum": 110,
+        "plus_minus_target": 110
+      },
+      {
+        "game": "ESPN_401909961",
+        "team": "PHI",
+        "players": 12,
+        "points": 101,
+        "final_points": 101,
+        "minutes": 242,
+        "plus_minus_sum": -110,
+        "plus_minus_target": -110
+      },
+      {
+        "game": "ESPN_401909962",
+        "team": "LAC",
+        "players": 12,
+        "points": 110,
+        "final_points": 110,
+        "minutes": 240,
+        "plus_minus_sum": -115,
+        "plus_minus_target": -115
+      },
+      {
+        "game": "ESPN_401909962",
+        "team": "PHX",
+        "players": 13,
+        "points": 133,
+        "final_points": 133,
+        "minutes": 241,
+        "plus_minus_sum": 115,
+        "plus_minus_target": 115
+      },
+      {
+        "game": "ESPN_401909963",
+        "team": "MIA",
+        "players": 10,
+        "points": 115,
+        "final_points": 115,
+        "minutes": 241,
+        "plus_minus_sum": 30,
+        "plus_minus_target": 30
+      },
+      {
+        "game": "ESPN_401909963",
+        "team": "UTA",
+        "players": 11,
+        "points": 109,
+        "final_points": 109,
+        "minutes": 239,
+        "plus_minus_sum": -30,
+        "plus_minus_target": -30
+      },
+      {
+        "game": "ESPN_401909964",
+        "team": "ORL",
+        "players": 10,
+        "points": 107,
+        "final_points": 107,
+        "minutes": 241,
+        "plus_minus_sum": 35,
+        "plus_minus_target": 35
+      },
+      {
+        "game": "ESPN_401909964",
+        "team": "SAC",
+        "players": 11,
+        "points": 100,
+        "final_points": 100,
+        "minutes": 240,
+        "plus_minus_sum": -35,
+        "plus_minus_target": -35
+      },
+      {
+        "game": "ESPN_401909965",
+        "team": "OKC",
+        "players": 11,
+        "points": 103,
+        "final_points": 103,
+        "minutes": 240,
+        "plus_minus_sum": -100,
+        "plus_minus_target": -100
+      },
+      {
+        "game": "ESPN_401909965",
+        "team": "POR",
+        "players": 12,
+        "points": 123,
+        "final_points": 123,
+        "minutes": 242,
+        "plus_minus_sum": 100,
+        "plus_minus_target": 100
+      }
+    ],
+    "duplicate_player_game_ids": 0,
+    "team_validation_failures": [],
+    "rankings_match_strict_more_than_8_minutes": true,
+    "provisional_only": true,
+    "scoring_formulas_unchanged": true
+  },
+  "external_validation": {
+    "basketball_reference_individual_oliver_or_dr_pairs": 0,
+    "mean_absolute_error_offr": null,
+    "mean_absolute_error_defr": null,
+    "method": "Unavailable: Basketball-Reference boxscore endpoints returned HTTP 403; NBA on-court Advanced V3 cannot substitute for the BBRef individual methodology. No invented validation error statistics.",
+    "historical_matchup_comparison_status": "Not established for November 10 shadow ratings; unvalidated provisional model."
+  }
 }
