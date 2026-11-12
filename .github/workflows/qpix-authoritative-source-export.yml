@@ -9,13 +9,37 @@ permissions:
 jobs:
   export:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - name: Capture exact authorized scoring sources and context
+      - name: Recover ESPN original November 11 final box-score summaries for QCore model input provenance
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import urllib.request,json,hashlib,datetime,time
+          dates='2026-11-11'
+          out=Path('data/espn_raw');out.mkdir(parents=True,exist_ok=True)
+          report=[]
+          for eid in range(401909966,401909976):
+              url=f'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event={eid}'
+              entry={'event_id':str(eid),'url':url,'captured_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat()}
+              try:
+                  req=urllib.request.Request(url,headers={'User-Agent':'QCoreResearch/1.0 (player data audit)','Accept':'application/json'})
+                  with urllib.request.urlopen(req,timeout=16) as res: raw=res.read()
+                  j=json.loads(raw)
+                  entry.update({'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw),'status':j.get('header',{}).get('competitions',[{}])[0].get('status',{}).get('type',{}).get('name')})
+                  (out/f'{eid}.json').write_bytes(raw)
+              except Exception as exc:
+                  entry['error']=str(exc)
+              report.append(entry)
+              time.sleep(.1)
+          (out/'provenance.json').write_text(json.dumps({'game_date_et':dates,'captures':report},indent=2))
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Capture exact authorized scoring sources and independent raw inputs
         uses: actions/upload-artifact@v4
         with:
-          name: qpix-authoritative-source-export
+          name: qpix-authoritative-source-and-espn-raw
           path: |
             generate-report.js
             scripts/familiarity.js
@@ -24,4 +48,5 @@ jobs:
             data/former_team_familiarity.json
             data/opponent_familiarity.json
             data/referee_history.json
+            data/espn_raw/
           retention-days: 7
