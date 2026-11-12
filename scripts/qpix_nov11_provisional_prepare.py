@@ -26,7 +26,7 @@ for g in games:
  assert hashlib.sha256(original).hexdigest()==pnext['sha256'], 'ESPN original bytes changed'
  obj=json.loads(original);header=obj['header']['competitions'][0]
  assert header['status']['type']['completed'] and header['status']['type']['name']=='STATUS_FINAL'
- periods=int(header['status']['period']);mp=240+25*max(0,periods-4)
+ periods=int(header['status'].get('period',4));mp=240+25*max(0,periods-4)
  totals={};team_extra={}
  for grp in obj['boxscore']['teams']:
   team=norm(grp['team']['abbreviation']);d={x['name']:x['displayValue'] for x in grp['statistics']}
