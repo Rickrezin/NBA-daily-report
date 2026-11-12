@@ -1,0 +1,27 @@
+name: QPIX Authoritative Read-Only Source Export
+on:
+  push:
+    paths:
+      - '.github/workflows/qpix-authoritative-source-export.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Capture exact authorized scoring sources and context
+        uses: actions/upload-artifact@v4
+        with:
+          name: qpix-authoritative-source-export
+          path: |
+            generate-report.js
+            scripts/familiarity.js
+            data/venue_familiarity.json
+            data/arena_familiarity.json
+            data/former_team_familiarity.json
+            data/opponent_familiarity.json
+            data/referee_history.json
+          retention-days: 7
