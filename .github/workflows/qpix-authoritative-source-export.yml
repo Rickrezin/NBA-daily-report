@@ -36,6 +36,42 @@ jobs:
           (out/'provenance.json').write_text(json.dumps({'game_date_et':dates,'captures':report},indent=2))
           print(json.dumps(report,indent=2))
           PY
+      - name: Attempt verified NBA Advanced V3, Misc V3 and LiveData using official NBA.com game identifiers
+        run: |
+          python3 - <<'PY'
+          import urllib.request,json,datetime,concurrent.futures,pathlib
+          d=pathlib.Path('data/nba_v3');d.mkdir(parents=True,exist_ok=True)
+          crosswalk={
+            '401909966':'0022600217','401909967':'0022600218',
+            '401909968':'0022600219','401909969':'0022600220',
+            '401909970':'0022600221','401909971':'0022600222',
+            '401909972':'0022600223','401909973':'0022600224',
+            '401909974':'0022600225','401909975':'0022600226'
+          }
+          (d/'crosswalk.json').write_text(json.dumps({'source':'Verified from independent official nba.com individual November 11 game detail pages; not inferred from ESPN event identifiers','map':crosswalk},indent=2))
+          tasks=[]
+          for e,n in crosswalk.items():
+              for kind,url in (
+                ('advanced',f'https://stats.nba.com/stats/boxscoreadvancedv3?GameID={n}&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0'),
+                ('misc',f'https://stats.nba.com/stats/boxscoremiscv3?GameID={n}&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0'),
+                ('livedata',f'https://cdn.nba.com/static/json/liveData/boxscore/boxscore_{n}.json'),
+              ):
+                  tasks.append((e,n,kind,url))
+          def fetch(t):
+              e,n,k,u=t;info={'espn_event':e,'nba_game':n,'type':k,'url':u,'time':datetime.datetime.now(datetime.timezone.utc).isoformat()}
+              try:
+                  req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36','Referer':'https://www.nba.com/','Origin':'https://www.nba.com','Accept':'application/json'})
+                  with urllib.request.urlopen(req,timeout=7) as r: b=r.read()
+                  obj=json.loads(b)
+                  (d/f'{n}-{k}.json').write_bytes(b)
+                  info.update({'status':'ok','bytes':len(b),'keys':list(obj.keys())[:10]})
+              except Exception as er: info.update({'status':'failed','error':str(er)})
+              return info
+          with concurrent.futures.ThreadPoolExecutor(max_workers=10) as pool:
+              res=list(pool.map(fetch,tasks))
+          (d/'audit.json').write_text(json.dumps(res,indent=2))
+          print(json.dumps(res,indent=2))
+          PY
       - name: Capture exact authorized scoring sources and independent raw inputs
         uses: actions/upload-artifact@v4
         with:
@@ -49,4 +85,5 @@ jobs:
             data/opponent_familiarity.json
             data/referee_history.json
             data/espn_raw/
+            data/nba_v3/
           retention-days: 7
