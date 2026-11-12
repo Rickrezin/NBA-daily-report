@@ -1,0 +1,79 @@
+name: QPIX November 11 provisional shadow publication
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/qpix-nov11-provisional-publish.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  score-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+      QPIX_PHASE: regular
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Fetch immutable previous-Eastern-day Action source archives, including failed shadow attempt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/qpix-source" "$RUNNER_TEMP/qpix-raw" "$RUNNER_TEMP/qpix-v3" data/espn_raw data/nba_v3 data/historical/qpix_input experiments/qcore
+          gh run download 43214136840 --repo Rickrezin/NBA-daily-report --name qpix-unified-shadow-2026-11-11 --dir "$RUNNER_TEMP/qpix-source"
+          gh run download 43215115797 --repo Rickrezin/NBA-daily-report --name qpix-authoritative-source-and-espn-raw --dir "$RUNNER_TEMP/qpix-raw"
+          gh run download 43215455954 --repo Rickrezin/NBA-daily-report --name qpix-authoritative-source-and-espn-raw --dir "$RUNNER_TEMP/qpix-v3"
+          cp "$RUNNER_TEMP/qpix-source/data/historical/qpix_input/2026-11-11.json" data/historical/qpix_input/2026-11-11.json
+          cp -r "$RUNNER_TEMP/qpix-raw/data/espn_raw/." data/espn_raw/
+          cp -r "$RUNNER_TEMP/qpix-v3/data/nba_v3/." data/nba_v3/
+          git fetch --depth=1 origin dev/qcore-independent-ratings-20261105
+          git show FETCH_HEAD:experiments/qcore/model.py > experiments/qcore/model.py
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib
+          f=Path('generate-report.js').read_bytes()
+          sha=hashlib.sha1(b'blob '+str(len(f)).encode()+b'\0'+f).hexdigest()
+          assert sha=='390833f45ee5191092813647f0735f1598cfeab1',f'Authoritative SHA drift {sha}'
+          assert len(list(Path('data/espn_raw').glob('401909*.json')))==10
+          print('Exact main engine source and original 10 ESPN box summaries confirmed.')
+          PY
+      - name: Validate source slate and estimate QCore offensive and defensive ratings without replacing official metrics
+        run: python3 scripts/qpix_nov11_provisional_prepare.py
+      - name: Execute unmodified main JS category functions across every participant
+        run: node scripts/qpix_nov11_provisional_score.cjs
+      - name: Produce Facebook-ready social narrative and complete quality audit
+        run: python3 scripts/qpix_nov11_provisional_publish.py
+      - name: Verify score output and only ever publish explicitly provisional files
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import csv,json
+          d=json.loads(Path('data/daily/2026-11-11.provisional.json').read_text())
+          rows=list(csv.DictReader(Path('data/daily/2026-11-11.provisional.csv').open()))
+          a=json.loads(Path('docs/reports/2026-11-11.audit.json').read_text())
+          m=Path('docs/reports/2026-11-11.provisional.md').read_text()
+          assert len(d['games'])==10 and len(d['players'])==223 and len(rows)==223
+          assert a['full_participant_records']==223 and d['coverage']['eligible_gt8']==192
+          assert len(d['leaderboards']['top10'])==len(d['leaderboards']['bottom10'])==10
+          assert 'PROVISIONAL' in d['status'] and 'PROVISIONAL' in m and 'NBA FINAL SCORES' in m
+          assert len(a['games'])==10 and a['score_engine']['formulas_modified'] is False
+          assert d['players'][0]['name']=='Victor Wembanyama' and d['players'][0]['raw_qpix_shadow']==104.2
+          print('Verified: 10 finals, 223 complete every-player JSON and CSV rows, source audits, provisional report.')
+          PY
+      - name: Preserve historical records and push only labeled shadow results
+        run: |
+          set -euo pipefail
+          git config user.name "QPIX Provisional Publisher"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/historical/qpix_input/2026-11-11.json data/daily/2026-11-11.provisional.json data/daily/2026-11-11.provisional.csv docs/reports/2026-11-11.provisional.md docs/reports/2026-11-11.audit.json
+          if git diff --cached --quiet; then echo 'No new provisional outputs'; exit 0; fi
+          git commit -m "Publish Nov 11 QPIX all-player provisional shadow report with source audit"
+          git pull --rebase origin main
+          git push origin HEAD:main
