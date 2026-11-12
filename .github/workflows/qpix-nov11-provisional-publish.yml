@@ -1,4 +1,5 @@
 name: QPIX November 11 provisional shadow publication
+# Resume corrected ESPN final status normalization
 on:
   push:
     branches: [main]
