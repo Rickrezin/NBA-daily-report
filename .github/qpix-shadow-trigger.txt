@@ -1,3 +1,4 @@
 QPIX unified shadow manual trigger
-Previous America/New_York game date for run started 2026-11-12: 2026-11-11.
+Previous America/New_York game date for run started 2026-11-13: 2026-11-12.
+Collect all Nov 12 final games and retain raw ESPN inputs and source audit even if quality gate fails.
 Read-only collection on the feature branch; do not modify the authorized scoring engine.
