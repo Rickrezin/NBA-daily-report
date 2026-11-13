@@ -1,0 +1,29 @@
+name: QPIX November 12 ESPN Gamelog Audit
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/qpix-nov12-gamelog-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inspect ESPN Trae Young regular season game log
+        run: |
+          python3 - <<'PY'
+          import urllib.request,json
+          url="https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4277905/gamelog?season=2027"
+          req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0","Accept":"application/json"})
+          with urllib.request.urlopen(req,timeout=25) as response:
+              data=json.load(response)
+          print("TOP_KEYS",list(data.keys()))
+          for k,v in data.items():
+              if isinstance(v,list):
+                  print("LIST",k,len(v),repr(v[:1])[:2500])
+              elif isinstance(v,dict):
+                  print("DICT",k,list(v.keys()),repr(v)[:2000])
+              else:print("VAL",k,repr(v)[:300])
+          PY
