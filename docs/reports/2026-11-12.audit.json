@@ -1,0 +1,485 @@
+{
+  "game_date_et": "2026-11-12",
+  "status": "PROVISIONAL",
+  "source_engine_git_blob_sha": "390833f45ee5191092813647f0735f1598cfeab1",
+  "qcore_model": "qcore-oliver-box-v0.1",
+  "provider_ratings_observed": 0,
+  "provider_ratings_error": "NBA Advanced V3 timed out; NBA LiveData HTTP 403",
+  "individual_C6_observed": 0,
+  "individual_fast_break_C11_observed": 0,
+  "games": [
+    {
+      "event_id": "401909976",
+      "home": "PHI",
+      "away": "TOR",
+      "team_checks": {
+        "TOR": {
+          "player_count": 12,
+          "points_reported": 112,
+          "points_from_players": 112,
+          "minutes_sum": 241.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": -55.0,
+          "plus_minus_expected": -55,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 12,
+          "reported_team_turnovers": 12
+        },
+        "PHI": {
+          "player_count": 12,
+          "points_reported": 123,
+          "points_from_players": 123,
+          "minutes_sum": 240.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": 55.0,
+          "plus_minus_expected": 55,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 10,
+          "reported_team_turnovers": 10
+        }
+      },
+      "status": "FINAL"
+    },
+    {
+      "event_id": "401909977",
+      "home": "WAS",
+      "away": "DET",
+      "team_checks": {
+        "DET": {
+          "player_count": 9,
+          "points_reported": 144,
+          "points_from_players": 144,
+          "minutes_sum": 290.0,
+          "minutes_expected": 290,
+          "plus_minus_sum": 20.0,
+          "plus_minus_expected": 20,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 12,
+          "reported_team_turnovers": 12
+        },
+        "WAS": {
+          "player_count": 10,
+          "points_reported": 140,
+          "points_from_players": 140,
+          "minutes_sum": 290.0,
+          "minutes_expected": 290,
+          "plus_minus_sum": -20.0,
+          "plus_minus_expected": -20,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 18,
+          "reported_team_turnovers": 18
+        }
+      },
+      "status": "FINAL"
+    },
+    {
+      "event_id": "401909978",
+      "home": "MIN",
+      "away": "DAL",
+      "team_checks": {
+        "DAL": {
+          "player_count": 15,
+          "points_reported": 94,
+          "points_from_players": 94,
+          "minutes_sum": 241.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": -195.0,
+          "plus_minus_expected": -195,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 19,
+          "reported_team_turnovers": 19
+        },
+        "MIN": {
+          "player_count": 12,
+          "points_reported": 133,
+          "points_from_players": 133,
+          "minutes_sum": 239.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": 195.0,
+          "plus_minus_expected": 195,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 17,
+          "reported_team_turnovers": 17
+        }
+      },
+      "status": "FINAL"
+    },
+    {
+      "event_id": "401909979",
+      "home": "PHX",
+      "away": "CHA",
+      "team_checks": {
+        "CHA": {
+          "player_count": 10,
+          "points_reported": 96,
+          "points_from_players": 96,
+          "minutes_sum": 240.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": -25.0,
+          "plus_minus_expected": -25,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 27,
+          "reported_team_turnovers": 27
+        },
+        "PHX": {
+          "player_count": 10,
+          "points_reported": 101,
+          "points_from_players": 101,
+          "minutes_sum": 241.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": 25.0,
+          "plus_minus_expected": 25,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 8,
+          "reported_team_turnovers": 8
+        }
+      },
+      "status": "FINAL"
+    }
+  ],
+  "model_errors": [],
+  "starter_conflicts": [],
+  "player_source_discrepancies": [],
+  "source_provenance": {
+    "date_et": "2026-11-12",
+    "captures": [
+      {
+        "event_id": "401909976",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909976",
+        "captured_utc": "2026-11-13T12:03:33.824919+00:00",
+        "sha256": "ca95d0a53a97f3f89d7a0b0c98a8c14d6ebfc5f2a87799c35febb0decc1d0cb2",
+        "bytes": 435633,
+        "status": "STATUS_FINAL"
+      },
+      {
+        "event_id": "401909977",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909977",
+        "captured_utc": "2026-11-13T12:03:34.115965+00:00",
+        "sha256": "a4035960754c97c6e0d8aad967b32d5c5d1ae64bc8710365e6b3bc074020a19a",
+        "bytes": 521235,
+        "status": "STATUS_FINAL"
+      },
+      {
+        "event_id": "401909978",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909978",
+        "captured_utc": "2026-11-13T12:03:34.321898+00:00",
+        "sha256": "af01d3d419aa6b82062e69341aa49ae08b11739108e86fd4165402b9610f7a58",
+        "bytes": 469652,
+        "status": "STATUS_FINAL"
+      },
+      {
+        "event_id": "401909979",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909979",
+        "captured_utc": "2026-11-13T12:03:34.437916+00:00",
+        "sha256": "d12f5130d7336277a919d6675cd8f0174f7c92c29ab5e75f0408bb5a0b0be2c4",
+        "bytes": 437603,
+        "status": "STATUS_FINAL"
+      }
+    ]
+  },
+  "participating_players": 90,
+  "eligible_strictly_gt8": 77,
+  "qcore_both": 88,
+  "qcore_missing_both": 2,
+  "nba_verified_crosswalk": {
+    "source": "Individual official NBA.com Nov 12 game pages, verified independent of ESPN IDs",
+    "map": {
+      "401909976": "0022600227",
+      "401909977": "0022600228",
+      "401909978": "0022600229",
+      "401909979": "0022600230"
+    }
+  },
+  "provider_probes": [
+    {
+      "espn_event": "401909976",
+      "nba_game": "0022600227",
+      "type": "advanced",
+      "url": "https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600227&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0",
+      "captured_utc": "2026-11-13T12:03:35.377257+00:00",
+      "status": "failed",
+      "error": "The read operation timed out"
+    },
+    {
+      "espn_event": "401909976",
+      "nba_game": "0022600227",
+      "type": "misc",
+      "url": "https://stats.nba.com/stats/boxscoremiscv3?GameID=0022600227&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0",
+      "captured_utc": "2026-11-13T12:03:35.377841+00:00",
+      "status": "failed",
+      "error": "The read operation timed out"
+    },
+    {
+      "espn_event": "401909976",
+      "nba_game": "0022600227",
+      "type": "livedata",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600227.json",
+      "captured_utc": "2026-11-13T12:03:35.378175+00:00",
+      "status": "failed",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "espn_event": "401909977",
+      "nba_game": "0022600228",
+      "type": "advanced",
+      "url": "https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600228&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0",
+      "captured_utc": "2026-11-13T12:03:35.378521+00:00",
+      "status": "failed",
+      "error": "The read operation timed out"
+    },
+    {
+      "espn_event": "401909977",
+      "nba_game": "0022600228",
+      "type": "misc",
+      "url": "https://stats.nba.com/stats/boxscoremiscv3?GameID=0022600228&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0",
+      "captured_utc": "2026-11-13T12:03:35.379001+00:00",
+      "status": "failed",
+      "error": "The read operation timed out"
+    },
+    {
+      "espn_event": "401909977",
+      "nba_game": "0022600228",
+      "type": "livedata",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600228.json",
+      "captured_utc": "2026-11-13T12:03:35.380844+00:00",
+      "status": "failed",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "espn_event": "401909978",
+      "nba_game": "0022600229",
+      "type": "advanced",
+      "url": "https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600229&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0",
+      "captured_utc": "2026-11-13T12:03:35.384537+00:00",
+      "status": "failed",
+      "error": "The read operation timed out"
+    },
+    {
+      "espn_event": "401909978",
+      "nba_game": "0022600229",
+      "type": "misc",
+      "url": "https://stats.nba.com/stats/boxscoremiscv3?GameID=0022600229&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0",
+      "captured_utc": "2026-11-13T12:03:35.386591+00:00",
+      "status": "failed",
+      "error": "The read operation timed out"
+    },
+    {
+      "espn_event": "401909978",
+      "nba_game": "0022600229",
+      "type": "livedata",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600229.json",
+      "captured_utc": "2026-11-13T12:03:35.478691+00:00",
+      "status": "failed",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "espn_event": "401909979",
+      "nba_game": "0022600230",
+      "type": "advanced",
+      "url": "https://stats.nba.com/stats/boxscoreadvancedv3?GameID=0022600230&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0",
+      "captured_utc": "2026-11-13T12:03:35.492482+00:00",
+      "status": "failed",
+      "error": "The read operation timed out"
+    },
+    {
+      "espn_event": "401909979",
+      "nba_game": "0022600230",
+      "type": "misc",
+      "url": "https://stats.nba.com/stats/boxscoremiscv3?GameID=0022600230&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0",
+      "captured_utc": "2026-11-13T12:03:35.505261+00:00",
+      "status": "failed",
+      "error": "The read operation timed out"
+    },
+    {
+      "espn_event": "401909979",
+      "nba_game": "0022600230",
+      "type": "livedata",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600230.json",
+      "captured_utc": "2026-11-13T12:03:43.497651+00:00",
+      "status": "failed",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "provider_validation": "No provider-compatible individual Dean Oliver ORtg/DRtg available; QCore predictions kept explicitly experimental, no provider-relative deviation claim.",
+  "score_coverage": {
+    "final_games": 4,
+    "participating_players": 90,
+    "eligible_gt8": 77,
+    "qcore_both": 88,
+    "observed_provider_individual_ratings": 0,
+    "verified_C6_players": 0,
+    "verified_fast_break_C11_players": 0,
+    "starter_context_mismatches": 16
+  },
+  "score_engine": {
+    "authoritative_file": "generate-report.js",
+    "git_blob_sha": "390833f45ee5191092813647f0735f1598cfeab1",
+    "phase": "regular",
+    "season_end": 2027,
+    "method": "unmodified_source_function_bodies_node_vm_without_main",
+    "formulas_modified": false
+  },
+  "missing_field_policy": {
+    "C3": "EXPERIMENTAL_QCORE_NOV05_NOT_PROVIDER_VERIFIED",
+    "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
+    "C11": "PARTIALLY_SOURCED_FASTBREAK_MISSING",
+    "minutes": "ESPN_WHOLE_MINUTE_ROUNDING",
+    "starter": "OBSERVED_STARTER_BUT_UNMODIFIED_ENGINE_CONTEXT_HEURISTIC",
+    "QPIXM": "EXPERIMENTAL_SEPARATE_NOT_OFFICIAL"
+  },
+  "full_participant_records": 90,
+  "starter_context_mismatches": [
+    {
+      "name": "Jamison Battle",
+      "team": "TOR",
+      "player_id": "4431893",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 25
+    },
+    {
+      "name": "John Collins",
+      "team": "DET",
+      "player_id": "3908845",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 25
+    },
+    {
+      "name": "Paul Reed",
+      "team": "DET",
+      "player_id": "4278562",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 38
+    },
+    {
+      "name": "Kyshawn George",
+      "team": "WAS",
+      "player_id": "5174563",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 26
+    },
+    {
+      "name": "Tre Johnson",
+      "team": "WAS",
+      "player_id": "5238230",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 30
+    },
+    {
+      "name": "Caleb Martin",
+      "team": "DAL",
+      "player_id": "3138160",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 21
+    },
+    {
+      "name": "Daniel Gafford",
+      "team": "DAL",
+      "player_id": "4278049",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 16
+    },
+    {
+      "name": "P.J. Washington",
+      "team": "DAL",
+      "player_id": "4278078",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 16
+    },
+    {
+      "name": "Naji Marshall",
+      "team": "DAL",
+      "player_id": "4278594",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 23
+    },
+    {
+      "name": "Zaccharie Risacher",
+      "team": "DAL",
+      "player_id": "5211175",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 25
+    },
+    {
+      "name": "Walter Clayton Jr.",
+      "team": "DAL",
+      "player_id": "4896372",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 22
+    },
+    {
+      "name": "Bones Hyland",
+      "team": "MIN",
+      "player_id": "4592492",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 23
+    },
+    {
+      "name": "Coby White",
+      "team": "CHA",
+      "player_id": "4395651",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 20
+    },
+    {
+      "name": "Royce O'Neale",
+      "team": "CHA",
+      "player_id": "2583632",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 22
+    },
+    {
+      "name": "Jalen Green",
+      "team": "PHX",
+      "player_id": "4437244",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 21
+    },
+    {
+      "name": "Collin Gillespie",
+      "team": "PHX",
+      "player_id": "4278585",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 27
+    }
+  ],
+  "top10_ids": [
+    "4432166",
+    "4592492",
+    "4684742",
+    "4431678",
+    "4277905",
+    "4432816",
+    "5279133",
+    "5124612",
+    "3136193",
+    "6583"
+  ],
+  "bottom10_ids": [
+    "4873153",
+    "4845374",
+    "5149115",
+    "4896372",
+    "4432107",
+    "4683771",
+    "4593125",
+    "5106040",
+    "4684272",
+    "4432241"
+  ]
+}
