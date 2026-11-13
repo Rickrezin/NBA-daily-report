@@ -1,0 +1,99 @@
+name: QPIX Nov 12 rolling FTA correction and provisional republication
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/qpix-nov12-fta-republish.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  repair-and-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify complete individual regular-season game logs and pregame FTA baselines
+        run: python3 scripts/qpix_nov12_fta_recheck.py
+      - name: Recalculate QPIX-R companion only, using unchanged main C13
+        run: node scripts/qpix_nov12_qpixr_recheck.cjs
+      - name: Reconcile CSV and public social report, preserve RAW and categories
+        run: |
+          python3 - <<'PY'
+          import csv,json,re
+          from pathlib import Path
+          root=Path('.');d='2026-11-12'
+          j=json.loads((root/f'data/daily/{d}.provisional.json').read_text())
+          baseline=json.loads((root/f'data/historical/qpix_fta/{d}.json').read_text())
+          pbyid={str(p['player_id']):p for p in j['players']}
+          assert len(pbyid)==90
+          path=root/f'data/daily/{d}.provisional.csv'
+          with path.open(newline='') as f:
+              reader=csv.DictReader(f);fields=reader.fieldnames;rows=list(reader)
+          assert fields and len(rows)==90
+          for row in rows:
+              p=pbyid[row['player_id']]
+              assert row['name']==p['name'] and float(row['raw_qpix_shadow'])==p['raw_qpix_shadow']
+              for name in ('qpix_r_shadow','referee_penalty','referee_bonus'):
+                  if name in row:row[name]=str(p[name])
+          with path.open('w',newline='') as f:
+              w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(rows)
+          report_path=root/f'docs/reports/{d}.provisional.md'
+          report=report_path.read_text()
+          old='PROVISIONAL / SHADOW — NOT OFFICIALLY CERTIFIED'
+          assert old in report
+          report=report.replace(old,'CORRECTED QPIX-R BASELINES — PROVISIONAL / SHADOW')
+          for p in j['players']:
+              rx=re.compile(r'(?m)^(\d+)\. '+re.escape(p['name'])+r' \('+re.escape(p['team'])+r'\) — RAW ([\d.-]+) \| QPIX-R [\d.-]+$')
+              report,n=rx.subn(lambda m: f"{m.group(1)}. {p['name']} ({p['team']}) — RAW {p['raw_qpix_shadow']:.1f} | QPIX-R {p['qpix_r_shadow']:.1f}\n   Q-OffR: {p['qcore_q_offr']:.2f} | Q-DefR: {p['qcore_q_defr']:.2f}" if p.get('qcore_q_offr') is not None and p.get('qcore_q_defr') is not None else f"{m.group(1)}. {p['name']} ({p['team']}) — RAW {p['raw_qpix_shadow']:.1f} | QPIX-R {p['qpix_r_shadow']:.1f}\n   Q-OffR: N/A | Q-DefR: N/A",report)
+              if n>1:raise RuntimeError('duplicate ranking '+p['name'])
+          trae=pbyid['4277905']
+          report=report.replace('his QPIX-R down to 67.5 from a 77.8 RAW',f'his QPIX-R to {trae["qpix_r_shadow"]:.1f} from a 77.8 RAW')
+          report=report.replace('his referee-adjusted companion QPIX-R was 111.0',f'his updated referee-adjusted companion QPIX-R was {pbyid["4432166"]["qpix_r_shadow"]:.1f}')
+          report+='\nNOVEMBER 13 QPIX-R BASELINE CORRECTION\n\nQPIX-R companions were recalculated using verified pregame individual season game logs where available; the baseline excludes the game being scored. RAW QPIX rankings and offensive/defensive estimates remain unchanged. These results are still provisional because some advanced and player-level offensive-context inputs remain unavailable.\n'
+          report_path.write_text(report)
+          audit_path=root/f'docs/reports/{d}.audit.json'
+          audit=json.loads(audit_path.read_text())
+          audit['qpix_r_recheck']=j['qpix_r_recheck']
+          audit['qpix_r_recheck']['source_archive_status_counts']=baseline['status_counts']
+          audit['qpix_r_recheck']['trae']={'legacy':trae['qpix_r_legacy_shadow'],'corrected':trae['qpix_r_shadow'],
+                                           'pregame_rolling20_fta':trae['qpix_r_baseline']['fta'],
+                                           'previous_games':trae['qpix_r_baseline']['prior_games']}
+          audit_path.write_text(json.dumps(audit,indent=2,ensure_ascii=False)+'\n')
+          print('Updated 90 QPIX-R CSV entries, ranking report and correction audit')
+          PY
+      - name: Validate final every-player dataset and strict leaderboard eligibility
+        run: |
+          python3 - <<'PY'
+          import json,csv
+          from pathlib import Path
+          d='2026-11-12';j=json.loads(Path(f'data/daily/{d}.provisional.json').read_text())
+          rows=list(csv.DictReader(Path(f'data/daily/{d}.provisional.csv').open()))
+          assert len(j['players'])==90 and len(rows)==90
+          pbyid={str(x['player_id']):x for x in j['players']}
+          for r in rows:
+              p=pbyid[r['player_id']]
+              assert float(r['raw_qpix_shadow'])==p['raw_qpix_shadow']
+              assert abs(float(r['qpix_r_shadow'])-p['qpix_r_shadow'])<.0001
+              assert abs(sum(p['category_contributions'].values())-p['raw_qpix_shadow'])<.06
+          assert all(pbyid[str(x)]['minutes']>8 for x in j['leaderboards']['top10']+j['leaderboards']['bottom10'])
+          assert j['coverage']['final_games']==4 and j['coverage']['participating_players']==90
+          print('PASSED 90 player scores, QPIX-R companion, C1-C12 RAW reconciliation and eligibility.')
+          PY
+      - name: Publish only corrected provisional files and new baseline audit
+        run: |
+          set -euo pipefail
+          git config user.name "QPIX Provisional Correction"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/daily/2026-11-12.provisional.json data/daily/2026-11-12.provisional.csv docs/reports/2026-11-12.provisional.md docs/reports/2026-11-12.audit.json data/historical/qpix_fta/2026-11-12.json
+          if git diff --cached --quiet; then
+            echo 'No changes to publish'
+            exit 0
+          fi
+          git commit -m "Correct Nov12 QPIX-R using independently verified pregame FTA histories"
+          git pull --rebase origin main
+          git push origin HEAD:main
