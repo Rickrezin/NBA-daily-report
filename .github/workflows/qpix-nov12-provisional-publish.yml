@@ -58,6 +58,7 @@ jobs:
           old="periods=int(header['status'].get('period',4));mp=240+25*max(0,periods-4)"
           new="detail=header['status']['type'].get('altDetail','');periods=4+(int(detail[:-2]) if detail.endswith('OT') and detail[:-2].isdigit() else (1 if detail=='OT' else 0));mp=240+25*max(0,periods-4)"
           assert old in s
+          s=s.replace(old,new)
           p=Path('/tmp/qpix_nov12_prepare.py');p.write_text(s)
           # The wrapper uses __file__ for repo root; run a disposable copy under scripts only on runner.
           Path('scripts/qpix_nov12_prepare_runner.py').write_text(s)
