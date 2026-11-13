@@ -160,6 +160,47 @@ def generate(season, start, through):
             "rolling20_observation_counts": rolling_counts,
             "games": prepared,
         }
+    # Overlay complete, individually verified ESPN FTA game logs where present.
+    # Keep partial daily-box averages intact and separately labeled; never claim
+    # the incomplete player-ledger window is a certified league-wide season.
+    fta_archives = []
+    fta_dir = ROOT / "data" / "historical" / "qpix_fta"
+    for fta_path in sorted(fta_dir.glob("*.json")):
+        date = fta_path.name[:10]
+        if not DATE_RE.fullmatch(date) or not (start <= date <= through):
+            continue
+        fta_archive = load(fta_path)
+        if fta_archive.get("date_et") != date:
+            raise ValueError("Incorrect archived FTA date " + str(fta_path))
+        for pid, observed in fta_archive.get("players", {}).items():
+            if observed.get("status") != "ESPN_GAMELOG_VERIFIED" or pid not in players:
+                continue
+            current = next((g for g in players[pid]["games"]
+                            if g["date_et"] == date and
+                            str(g["game_id"]).removeprefix("ESPN_") ==
+                            str(observed["current_game_id"])), None)
+            if current is None:
+                continue
+            if current["stats"].get("fta") != observed["current_fta"]:
+                raise ValueError("FTA archive current-game mismatch: " + pid)
+            historical = observed["prior_season_game_rows"]
+            if len(historical) != observed["previous_games"]:
+                raise ValueError("Missing preceding game log rows: " + pid)
+            all_fta = [x["fta"] for x in historical] + [observed["current_fta"]]
+            recent = all_fta[-20:]
+            players[pid]["verified_espn_fta"] = {
+                "as_of_date_et": date,
+                "source_file": str(fta_path.relative_to(ROOT)),
+                "complete_to_observed_game": True,
+                "game_count": len(all_fta),
+                "season_fta_total": sum(all_fta),
+                "season_fta_per_game": round(sum(all_fta) / len(all_fta), 4),
+                "rolling20_games": len(recent),
+                "rolling20_fta_per_game": round(sum(recent) / len(recent), 4),
+                "pregame_rolling20_fta": observed["pregame_rolling20_fta"],
+                "current_game_fta": observed["current_fta"],
+            }
+        fta_archives.append(str(fta_path.relative_to(ROOT)))
     checked = {a["date"] for a in sources}
     start_d, end_d = dt.date.fromisoformat(start), dt.date.fromisoformat(through)
     missing = [(start_d + dt.timedelta(days=i)).isoformat()
@@ -180,7 +221,8 @@ def generate(season, start, through):
         "coverage": {"source_dates": len(sources), "player_game_records": len(seen),
                      "unique_players": len(players),
                      "calendar_dates_without_selected_snapshot": missing,
-                     "source_audits": sources},
+                     "source_audits": sources,
+                     "verified_espn_fta_archives": fta_archives},
         "players": players,
     }
 
