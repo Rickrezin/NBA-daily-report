@@ -1,0 +1,74 @@
+name: QPIX November 12 read-only original source audit
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/qpix-nov12-source-export.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Preserve original ESPN November 12 FINAL game summaries and source SHA256
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, urllib.request, datetime, hashlib
+          d=pathlib.Path('data/espn_raw');d.mkdir(parents=True,exist_ok=True)
+          report=[]
+          for eid in range(401909976,401909980):
+              u=f'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event={eid}'
+              row={'event_id':str(eid),'url':u,'captured_utc':datetime.datetime.now(datetime.timezone.utc).isoformat()}
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':'QCoreResearch/1.0 (player source audit)','Accept':'application/json'}),timeout=18) as r:b=r.read()
+                  j=json.loads(b)
+                  row.update({'sha256':hashlib.sha256(b).hexdigest(),'bytes':len(b),'status':j['header']['competitions'][0]['status']['type']['name']})
+                  (d/f'{eid}.json').write_bytes(b)
+              except Exception as e: row['error']=str(e)
+              report.append(row)
+          (d/'provenance.json').write_text(json.dumps({'date_et':'2026-11-12','captures':report},indent=2))
+          assert len(report)==4 and all(x.get('status')=='STATUS_FINAL' for x in report),report
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Retrieve actual November 5 experimental QCore rating model
+        run: |
+          mkdir -p experiments/qcore
+          git fetch --depth=1 origin dev/qcore-independent-ratings-20261105
+          git show FETCH_HEAD:experiments/qcore/model.py > experiments/qcore/model.py
+      - name: Probe NBA Advanced V3 Misc V3 and LiveData with independently verified NBA game IDs
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,urllib.request,datetime,concurrent.futures
+          d=pathlib.Path('data/nba_v3');d.mkdir(parents=True,exist_ok=True)
+          crosswalk={'401909976':'0022600227','401909977':'0022600228','401909978':'0022600229','401909979':'0022600230'}
+          (d/'crosswalk.json').write_text(json.dumps({'source':'Individual official NBA.com Nov 12 game pages, verified independent of ESPN IDs','map':crosswalk},indent=2))
+          tasks=[(e,n,k,u) for e,n in crosswalk.items() for k,u in [('advanced',f'https://stats.nba.com/stats/boxscoreadvancedv3?GameID={n}&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0'),('misc',f'https://stats.nba.com/stats/boxscoremiscv3?GameID={n}&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0'),('livedata',f'https://cdn.nba.com/static/json/liveData/boxscore/boxscore_{n}.json')]]
+          def fetch(t):
+              e,n,k,u=t;info={'espn_event':e,'nba_game':n,'type':k,'url':u,'captured_utc':datetime.datetime.now(datetime.timezone.utc).isoformat()}
+              try:
+                  req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/125.0.0.0 Safari/537.36','Referer':'https://www.nba.com/','Origin':'https://www.nba.com','Accept':'application/json'})
+                  with urllib.request.urlopen(req,timeout=8) as r:b=r.read()
+                  j=json.loads(b);(d/f'{n}-{k}.json').write_bytes(b)
+                  info.update({'status':'ok','bytes':len(b),'keys':list(j)[:12]})
+              except Exception as x:info.update({'status':'failed','error':str(x)})
+              return info
+          with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:results=list(pool.map(fetch,tasks))
+          (d/'audit.json').write_text(json.dumps(results,indent=2))
+          print(json.dumps(results,indent=2))
+          PY
+      - name: Save the immutable sources for independent local score audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qpix-nov12-source-originals
+          path: |
+            generate-report.js
+            scripts/familiarity.js
+            experiments/qcore/model.py
+            data/espn_raw/
+            data/nba_v3/
+          if-no-files-found: error
+          retention-days: 14
