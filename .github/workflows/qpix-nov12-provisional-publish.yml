@@ -1,0 +1,119 @@
+name: QPIX Nov 12 provisional shadow publication
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/qpix-nov12-provisional-publish.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  score-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+      QPIX_PHASE: regular
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Restore correct-date original ESPN audit and exact Nov 5 QCore model from source artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/nov12-archive" "$RUNNER_TEMP/nov12-originals" data/espn_raw data/nba_v3 data/historical/qpix_input experiments/qcore
+          gh run download 43421635175 --repo Rickrezin/NBA-daily-report --name qpix-unified-shadow-2026-11-12 --dir "$RUNNER_TEMP/nov12-archive"
+          gh run download 43421975290 --repo Rickrezin/NBA-daily-report --name qpix-nov12-source-originals --dir "$RUNNER_TEMP/nov12-originals"
+          cp "$RUNNER_TEMP/nov12-archive/data/historical/qpix_input/2026-11-12.json" data/historical/qpix_input/2026-11-12.json
+          cp -r "$RUNNER_TEMP/nov12-originals/data/espn_raw/." data/espn_raw/
+          cp -r "$RUNNER_TEMP/nov12-originals/data/nba_v3/." data/nba_v3/
+          cp "$RUNNER_TEMP/nov12-originals/experiments/qcore/model.py" experiments/qcore/model.py
+          python3 - <<'PY'
+          import json,hashlib,pathlib
+          root=pathlib.Path('.')
+          source=(root/'generate-report.js').read_bytes()
+          sha=hashlib.sha1(b'blob '+str(len(source)).encode()+b'\0'+source).hexdigest()
+          assert sha=='390833f45ee5191092813647f0735f1598cfeab1',sha
+          data=json.loads((root/'data/historical/qpix_input/2026-11-12.json').read_text())
+          assert data['date_et']=='2026-11-12' and len(data['games'])==4 and len(data['players'])==90
+          assert len(list((root/'data/espn_raw').glob('40190997*.json')))==4
+          print('Originals and scoring authority verified: four finals, 90 original participants, authorized unchanged JavaScript.')
+          PY
+      - name: Adapt input-only November 11 scoring wrappers for November 12 (never edit scoring formulas)
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('scripts/qpix_nov11_provisional_prepare.py')
+          s=p.read_text()
+          assert 'len(games)==10 and len(players)==223' in s
+          s=s.replace('2026-11-11','2026-11-12')
+          s=s.replace('len(games)==10 and len(players)==223','len(games)==4 and len(players)==90')
+          s=s.replace("len(prov['captures'])==10","len(prov['captures'])==4")
+          s=s.replace("len(audit['games'])==10","len(audit['games'])==4")
+          old="periods=int(header['status'].get('period',4));mp=240+25*max(0,periods-4)"
+          new="detail=header['status']['type'].get('altDetail','');periods=4+(int(detail[:-2]) if detail.endswith('OT') and detail[:-2].isdigit() else (1 if detail=='OT' else 0));mp=240+25*max(0,periods-4)"
+          assert old in s
+          p=Path('/tmp/qpix_nov12_prepare.py');p.write_text(s)
+          # The wrapper uses __file__ for repo root; run a disposable copy under scripts only on runner.
+          Path('scripts/qpix_nov12_prepare_runner.py').write_text(s)
+          p=Path('scripts/qpix_nov11_provisional_score.cjs')
+          s=p.read_text();assert 'games.length!==10||players.length!==223' in s
+          s=s.replace('2026-11-11','2026-11-12').replace('games.length!==10||players.length!==223','games.length!==4||players.length!==90')
+          Path('scripts/qpix_nov12_score_runner.cjs').write_text(s)
+          PY
+      - name: Reconcile original ESPN boxes, including two overtime periods, and compute exact QCore November 5 fallback
+        run: python3 scripts/qpix_nov12_prepare_runner.py
+      - name: Execute unchanged main JavaScript category functions for all 90 participants
+        run: node scripts/qpix_nov12_score_runner.cjs
+      - name: Record official game IDs and unsuccessful provider probes in the source audit
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          a=Path('docs/reports/2026-11-12.audit.json')
+          j=json.loads(a.read_text())
+          j['nba_verified_crosswalk']=json.loads(Path('data/nba_v3/crosswalk.json').read_text())
+          j['provider_probes']=json.loads(Path('data/nba_v3/audit.json').read_text())
+          j['provider_validation']='No provider-compatible individual Dean Oliver ORtg/DRtg available; QCore predictions kept explicitly experimental, no provider-relative deviation claim.'
+          a.write_text(json.dumps(j,indent=2)+'\n')
+          PY
+      - name: Write branded social narrative and final provisional audit
+        run: python3 scripts/qpix_nov12_provisional_report.py
+      - name: Read-back quality checks before publishing any file
+        run: |
+          python3 - <<'PY'
+          import csv,json
+          from pathlib import Path
+          path=Path('data/daily/2026-11-12.provisional.json')
+          j=json.loads(path.read_text())
+          audit=json.loads(Path('docs/reports/2026-11-12.audit.json').read_text())
+          csvrows=list(csv.DictReader(Path('data/daily/2026-11-12.provisional.csv').open()))
+          narrative=Path('docs/reports/2026-11-12.provisional.md').read_text()
+          assert len(j['games'])==4 and len(j['players'])==90 and len(csvrows)==90
+          assert j['coverage']['eligible_gt8']==77 and j['coverage']['qcore_both']==88
+          assert j['coverage']['observed_provider_individual_ratings']==0 and j['coverage']['verified_C6_players']==0
+          assert j['engine']['formulas_modified']==False
+          assert len(audit['games'])==4 and len(audit['nba_verified_crosswalk']['map'])==4
+          assert len(audit['provider_probes'])==12
+          assert j['players'][0]['name']=='Cade Cunningham' and j['players'][0]['raw_qpix_shadow']==124.4
+          assert len(j['leaderboards']['top10'])==10 and len(j['leaderboards']['bottom10'])==10
+          assert all(next(p for p in j['players'] if str(p['player_id'])==str(k))['minutes']>8 for k in j['leaderboards']['top10']+j['leaderboards']['bottom10'])
+          assert 'NBA FINAL SCORES' in narrative and 'PROVISIONAL' in narrative
+          print('Verified complete 90-player provisional shadow JSON and CSV, report and audit.')
+          PY
+      - name: Publish only source-flagged provisional output and preserve historical files
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "QPIX Provisional Publisher"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/historical/qpix_input/2026-11-12.json data/daily/2026-11-12.provisional.json data/daily/2026-11-12.provisional.csv docs/reports/2026-11-12.provisional.md docs/reports/2026-11-12.audit.json
+          if git diff --cached --quiet; then echo 'No new provisional files to commit'; exit 0; fi
+          git commit -m "Publish Nov 12 QPIX 90-player provisional shadow report with original ESPN audit"
+          git pull --rebase origin main
+          git push origin HEAD:main
