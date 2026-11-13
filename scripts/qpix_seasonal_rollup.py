@@ -67,6 +67,10 @@ def extract(date, path):
             continue
         player_id = str(p.get("player_id") or p.get("espn_athlete_id") or "")
         game_id = str(p.get("game_id") or "")
+        # Older shadow exports store the verified ESPN event ID as "game".
+        # Preserve its provider namespace rather than treating it as an NBA ID.
+        if not game_id and re.fullmatch(r"\d{9}", str(p.get("game") or "")):
+            game_id = "ESPN_" + str(p["game"])
         if not player_id or not game_id or not p.get("name") or not p.get("team"):
             skipped["missing_stable_player_or_game_id"] += 1
             continue
