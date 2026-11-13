@@ -1,0 +1,49 @@
+name: QPIX Seasonal Player Ledger
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/daily/*.json'
+      - 'data/historical/qpix_input/*.json'
+      - 'data/shadow/*.json'
+      - 'scripts/qpix_seasonal_rollup.py'
+      - '.github/workflows/qpix-seasonal-ledger.yml'
+  schedule:
+    # Safety-net refresh; the push trigger handles normal daily publications.
+    - cron: '15 14 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: qpix-seasonal-ledger
+  cancel-in-progress: false
+jobs:
+  update-ledger:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Rebuild seasonal player history from daily snapshots
+        run: |
+          set -euo pipefail
+          python3 scripts/qpix_seasonal_rollup.py --season 2026-27 --start 2026-10-20 --through "$(TZ=America/New_York date -d yesterday +%F)"
+          python3 scripts/qpix_seasonal_rollup.py --season 2026-27 --start 2026-10-20 --through "$(TZ=America/New_York date -d yesterday +%F)" --check
+      - name: Commit seasonal JSON without changing scoring engine
+        run: |
+          set -euo pipefail
+          git config user.name "QPIX Seasonal Ledger"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/seasonal/2026-27/players.json
+          if git diff --cached --quiet; then
+            echo 'Seasonal ledger already current'
+            exit 0
+          fi
+          git commit -m "Update QPIX seasonal player ledger"
+          git pull --rebase origin main
+          git push origin HEAD:main
