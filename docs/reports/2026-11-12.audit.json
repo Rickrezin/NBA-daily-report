@@ -507,5 +507,23 @@
       "defensive_mae": 0.416
     },
     "limitations": "Historical exploratory validation is not evidence that November 12 values match provider metrics. November 12 individual Basketball-Reference ratings were unavailable. No calibration or fitted coefficients were changed; 16 starter classification differences and incomplete C6/C11 input remain."
+  },
+  "qpix_r_recheck": {
+    "date_et": "2026-11-12",
+    "engine": "UNCHANGED_CHECKED_IN_C13",
+    "baseline_source": "ESPN_PLAYER_2026_27_GAMELOG_PREGAME_20",
+    "count_verified": 89,
+    "count_legacy_unverified": 1,
+    "audit_path": "data/historical/qpix_fta/2026-11-12.json",
+    "quality": "PROVISIONAL_QPIXR_RECALIBRATED_SEASON_LOG_NOT_FULL_QPIX_CERTIFICATION",
+    "source_archive_status_counts": {
+      "ESPN_GAMELOG_VERIFIED": 90
+    },
+    "trae": {
+      "legacy": 67.5,
+      "corrected": 69,
+      "pregame_rolling20_fta": 7.166666666666667,
+      "previous_games": 12
+    }
   }
 }

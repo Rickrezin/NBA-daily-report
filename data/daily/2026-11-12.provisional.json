@@ -327,7 +327,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 174.15,
       "defensive_rating": 124.6,
@@ -346,10 +347,10 @@
         "C12": 0
       },
       "raw_qpix_shadow": 124.4,
-      "qpix_r_shadow": 111,
+      "qpix_r_shadow": 113.6,
       "qpix_sfa_shadow": 124.4,
       "sfa_adjustment": 0,
-      "referee_penalty": 13.4,
+      "referee_penalty": 10.8,
       "referee_bonus": 0,
       "ts": 78.9793438639125,
       "score_notes": [
@@ -358,7 +359,7 @@
         "Elite playmaking (11ast/0TO)",
         "Zero turnovers",
         "Double-double (+6)",
-        "QPIX-R flag: Whistle inflation: +15.5 FTA above baseline"
+        "QPIX-R flag: Whistle inflation: +12.5 FTA above baseline"
       ],
       "context": {
         "teamAvgPlusMinus": 2.2222222222222223,
@@ -377,7 +378,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 124.4,
       "qpix_m_minutes_shadow": 2.592,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 111,
+      "referee_penalty_legacy": 13.4,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 5.5,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Bones Hyland",
@@ -450,7 +460,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 184.11,
       "defensive_rating": 89.64,
@@ -469,10 +480,10 @@
         "C12": 0
       },
       "raw_qpix_shadow": 92.7,
-      "qpix_r_shadow": 89.9,
+      "qpix_r_shadow": 89,
       "qpix_sfa_shadow": 92.7,
       "sfa_adjustment": 0,
-      "referee_penalty": 2.8,
+      "referee_penalty": 3.7,
       "referee_bonus": 0,
       "ts": 94.9367088607595,
       "score_notes": [
@@ -482,7 +493,7 @@
         "Elite anchor (DefRtg: 89.6)",
         "AST/TO 8.0",
         "+15 net differential",
-        "QPIX-R flag: Whistle inflation: +3.5 FTA above baseline"
+        "QPIX-R flag: Whistle inflation: +4.6 FTA above baseline"
       ],
       "context": {
         "teamAvgPlusMinus": 16.25,
@@ -501,7 +512,16 @@
       "starter_context_mismatch": true,
       "qpix_with_verified_starter_context_sensitivity": 100.7,
       "qpix_m_minutes_shadow": 4.03,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 89.9,
+      "referee_penalty_legacy": 2.8,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.3636363636363635,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "Ausar Thompson",
@@ -574,7 +594,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 124.37,
       "defensive_rating": 114.96,
@@ -621,7 +642,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 88.2,
       "qpix_m_minutes_shadow": 2.051,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 88.2,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 2.5555555555555554,
+        "prior_games": 9,
+        "window_games": 9
+      }
     },
     {
       "name": "Tyrese Maxey",
@@ -694,7 +724,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 148.64,
       "defensive_rating": 114.68,
@@ -713,10 +744,10 @@
         "C12": 0
       },
       "raw_qpix_shadow": 78.2,
-      "qpix_r_shadow": 73.5,
+      "qpix_r_shadow": 74.1,
       "qpix_sfa_shadow": 78.2,
       "sfa_adjustment": 0,
-      "referee_penalty": 4.7,
+      "referee_penalty": 4.1,
       "referee_bonus": 0,
       "ts": 73.85120350109409,
       "score_notes": [
@@ -724,7 +755,7 @@
         "Dominant off presence (OffRtg: 148.6)",
         "3 stocks",
         "AST/TO 4.0",
-        "QPIX-R flag: Whistle inflation: +5.9 FTA above baseline"
+        "QPIX-R flag: Whistle inflation: +5.2 FTA above baseline"
       ],
       "context": {
         "teamAvgPlusMinus": 4.583333333333333,
@@ -743,7 +774,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 78.2,
       "qpix_m_minutes_shadow": 2.234,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 73.5,
+      "referee_penalty_legacy": 4.7,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 6.833333333333333,
+        "prior_games": 12,
+        "window_games": 12
+      }
     },
     {
       "name": "Trae Young",
@@ -816,7 +856,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 133.11,
       "defensive_rating": 133.81,
@@ -835,17 +876,17 @@
         "C12": 0
       },
       "raw_qpix_shadow": 77.8,
-      "qpix_r_shadow": 67.5,
+      "qpix_r_shadow": 69,
       "qpix_sfa_shadow": 77.8,
       "sfa_adjustment": 0,
-      "referee_penalty": 10.3,
+      "referee_penalty": 8.9,
       "referee_bonus": 0,
       "ts": 60.69553805774278,
       "score_notes": [
         "Dominant off presence (OffRtg: 133.1)",
         "Strong playmaking (14ast/4TO)",
         "Double-double (+6)",
-        "QPIX-R flag: Whistle inflation: +11.4 FTA above baseline"
+        "QPIX-R flag: Whistle inflation: +9.8 FTA above baseline"
       ],
       "context": {
         "teamAvgPlusMinus": -2,
@@ -864,7 +905,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 77.8,
       "qpix_m_minutes_shadow": 1.729,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 67.5,
+      "referee_penalty_legacy": 10.3,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 7.166666666666667,
+        "prior_games": 12,
+        "window_games": 12
+      }
     },
     {
       "name": "LaMelo Ball",
@@ -937,7 +987,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 132.66,
       "defensive_rating": 90.8,
@@ -956,11 +1007,11 @@
         "C12": 0
       },
       "raw_qpix_shadow": 77.1,
-      "qpix_r_shadow": 81,
+      "qpix_r_shadow": 79.1,
       "qpix_sfa_shadow": 77.1,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 3.9,
+      "referee_bonus": 2,
       "ts": 78.57142857142857,
       "score_notes": [
         "Elite TS% (78.6%)",
@@ -968,7 +1019,7 @@
         "Strong def impact (DefRtg: 90.8)",
         "Elite anchor (DefRtg: 90.8)",
         "+24 net differential",
-        "QPIX-R flag: Whistle suppression: -5.2 FTA below baseline"
+        "QPIX-R flag: Whistle suppression: -2.7 FTA below baseline"
       ],
       "context": {
         "teamAvgPlusMinus": 16.25,
@@ -987,7 +1038,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 77.1,
       "qpix_m_minutes_shadow": 3.084,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 81,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 3.9,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 2.727272727272727,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "Joan Beringer",
@@ -1060,7 +1120,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 139.53,
       "defensive_rating": 83,
@@ -1079,10 +1140,10 @@
         "C12": 8
       },
       "raw_qpix_shadow": 75,
-      "qpix_r_shadow": 72,
+      "qpix_r_shadow": 70.6,
       "qpix_sfa_shadow": 75,
       "sfa_adjustment": 0,
-      "referee_penalty": 3,
+      "referee_penalty": 4.4,
       "referee_bonus": 0,
       "ts": 76.29107981220658,
       "score_notes": [
@@ -1093,7 +1154,7 @@
         "Elite anchor (DefRtg: 83.0)",
         "+15 net differential",
         "Dominant bench contribution (+8)",
-        "QPIX-R flag: Whistle inflation: +4.5 FTA above baseline"
+        "QPIX-R flag: Whistle inflation: +6.5 FTA above baseline"
       ],
       "context": {
         "teamAvgPlusMinus": 16.25,
@@ -1112,7 +1173,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 75,
       "qpix_m_minutes_shadow": 3.409,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 72,
+      "referee_penalty_legacy": 3,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.4545454545454546,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "VJ Edgecombe",
@@ -1185,7 +1255,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 151.09,
       "defensive_rating": 108.75,
@@ -1204,18 +1275,17 @@
         "C12": 0
       },
       "raw_qpix_shadow": 73.4,
-      "qpix_r_shadow": 75.3,
+      "qpix_r_shadow": 73.4,
       "qpix_sfa_shadow": 73.4,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 1.9,
+      "referee_bonus": 0,
       "ts": 62.5,
       "score_notes": [
         "Dominant off presence (OffRtg: 151.1)",
         "4 stocks",
         "AST/TO 8.0",
-        "Zero turnovers",
-        "QPIX-R flag: Whistle suppression: -2.5 FTA below baseline"
+        "Zero turnovers"
       ],
       "context": {
         "teamAvgPlusMinus": 4.583333333333333,
@@ -1234,7 +1304,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 73.4,
       "qpix_m_minutes_shadow": 2.039,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 75.3,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 1.9,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.1818181818181819,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "Devin Booker",
@@ -1307,7 +1386,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 135.29,
       "defensive_rating": 101.22,
@@ -1326,17 +1406,18 @@
         "C12": 0
       },
       "raw_qpix_shadow": 73,
-      "qpix_r_shadow": 73,
+      "qpix_r_shadow": 76.9,
       "qpix_sfa_shadow": 73,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 0,
+      "referee_bonus": 3.9,
       "ts": 71.83908045977012,
       "score_notes": [
         "Elite TS% (71.8%)",
         "Dominant off presence (OffRtg: 135.3)",
         "4 stocks",
-        "Environment bonus +3.0"
+        "Environment bonus +3.0",
+        "QPIX-R flag: Whistle suppression: -4.3 FTA below baseline"
       ],
       "context": {
         "teamAvgPlusMinus": 2.5,
@@ -1355,7 +1436,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 73,
       "qpix_m_minutes_shadow": 2.086,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 73,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 6.3,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Anthony Davis",
@@ -1428,7 +1518,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 131.66,
       "defensive_rating": 122.68,
@@ -1447,15 +1538,16 @@
         "C12": 0
       },
       "raw_qpix_shadow": 72.3,
-      "qpix_r_shadow": 72.3,
+      "qpix_r_shadow": 74.2,
       "qpix_sfa_shadow": 72.3,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 0,
+      "referee_bonus": 1.9,
       "ts": 65.90509666080843,
       "score_notes": [
         "Dominant off presence (OffRtg: 131.7)",
-        "Double-double (+6)"
+        "Double-double (+6)",
+        "QPIX-R flag: Whistle suppression: -2.1 FTA below baseline"
       ],
       "context": {
         "teamAvgPlusMinus": -2,
@@ -1474,7 +1566,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 72.3,
       "qpix_m_minutes_shadow": 1.643,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 72.3,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 6.1,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Alex Sarr",
@@ -1547,7 +1648,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 160.59,
       "defensive_rating": 123.72,
@@ -1566,16 +1668,17 @@
         "C12": 0
       },
       "raw_qpix_shadow": 72.1,
-      "qpix_r_shadow": 72.1,
+      "qpix_r_shadow": 70.7,
       "qpix_sfa_shadow": 72.1,
       "sfa_adjustment": 0,
-      "referee_penalty": 0,
+      "referee_penalty": 1.4,
       "referee_bonus": 0,
       "ts": 95.17766497461929,
       "score_notes": [
         "Elite TS% (95.2%)",
         "Dominant off presence (OffRtg: 160.6)",
-        "3 stocks"
+        "3 stocks",
+        "QPIX-R flag: Whistle inflation: +2.3 FTA above baseline"
       ],
       "context": {
         "teamAvgPlusMinus": -2,
@@ -1594,7 +1697,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 72.1,
       "qpix_m_minutes_shadow": 1.639,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 72.1,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.7272727272727273,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "Immanuel Quickley",
@@ -1667,7 +1779,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 144.81,
       "defensive_rating": 126.48,
@@ -1686,10 +1799,10 @@
         "C12": 0
       },
       "raw_qpix_shadow": 69,
-      "qpix_r_shadow": 65.4,
+      "qpix_r_shadow": 65.8,
       "qpix_sfa_shadow": 69,
       "sfa_adjustment": 0,
-      "referee_penalty": 3.6,
+      "referee_penalty": 3.2,
       "referee_bonus": 0,
       "ts": 66.59836065573771,
       "score_notes": [
@@ -1697,7 +1810,7 @@
         "AST/TO 6.0",
         "Zero turnovers",
         "Environment bonus +5.5",
-        "QPIX-R flag: Whistle inflation: +4.4 FTA above baseline"
+        "QPIX-R flag: Whistle inflation: +3.9 FTA above baseline"
       ],
       "context": {
         "teamAvgPlusMinus": -4.583333333333333,
@@ -1716,7 +1829,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 69,
       "qpix_m_minutes_shadow": 2.464,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 65.4,
+      "referee_penalty_legacy": 3.6,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 4.111111111111111,
+        "prior_games": 9,
+        "window_games": 9
+      }
     },
     {
       "name": "RJ Barrett",
@@ -1789,7 +1911,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 126.4,
       "defensive_rating": 126.12,
@@ -1808,15 +1931,16 @@
         "C12": 0
       },
       "raw_qpix_shadow": 67.1,
-      "qpix_r_shadow": 67.1,
+      "qpix_r_shadow": 69.4,
       "qpix_sfa_shadow": 67.1,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 0,
+      "referee_bonus": 2.3,
       "ts": 74.23371647509579,
       "score_notes": [
         "Elite TS% (74.2%)",
-        "Double-double (+6)"
+        "Double-double (+6)",
+        "QPIX-R flag: Whistle suppression: -3.8 FTA below baseline"
       ],
       "context": {
         "teamAvgPlusMinus": -4.583333333333333,
@@ -1835,7 +1959,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 67.1,
       "qpix_m_minutes_shadow": 1.814,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 67.1,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 5.818181818181818,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "Kentavious Caldwell-Pope",
@@ -1908,7 +2041,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 173.61,
       "defensive_rating": 115.01,
@@ -1927,19 +2061,18 @@
         "C12": 8
       },
       "raw_qpix_shadow": 65.3,
-      "qpix_r_shadow": 67.2,
+      "qpix_r_shadow": 65.3,
       "qpix_sfa_shadow": 65.3,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 1.9,
+      "referee_bonus": 0,
       "ts": 78.57142857142857,
       "score_notes": [
         "Elite TS% (78.6%)",
         "Dominant off presence (OffRtg: 173.6)",
         "Zero turnovers",
         "+21 net differential",
-        "Dominant bench contribution (+8)",
-        "QPIX-R flag: Whistle suppression: -2.5 FTA below baseline"
+        "Dominant bench contribution (+8)"
       ],
       "context": {
         "teamAvgPlusMinus": 4.583333333333333,
@@ -1958,7 +2091,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 65.3,
       "qpix_m_minutes_shadow": 2.419,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 67.2,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 1.9,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0.5,
+        "prior_games": 12,
+        "window_games": 12
+      }
     },
     {
       "name": "Zaccharie Risacher",
@@ -2031,7 +2173,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 137,
       "defensive_rating": 121.03,
@@ -2050,19 +2193,18 @@
         "C12": 0
       },
       "raw_qpix_shadow": 59.3,
-      "qpix_r_shadow": 61.9,
+      "qpix_r_shadow": 59.3,
       "qpix_sfa_shadow": 59.3,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2.6,
+      "referee_bonus": 0,
       "ts": 78.57142857142857,
       "score_notes": [
         "Elite TS% (78.6%)",
         "Dominant off presence (OffRtg: 137.0)",
         "3 stocks",
         "Context gate: team avg -13.0 +/−",
-        "Environment bonus +1.5",
-        "QPIX-R flag: Whistle suppression: -3.5 FTA below baseline"
+        "Environment bonus +1.5"
       ],
       "context": {
         "teamAvgPlusMinus": -13,
@@ -2081,7 +2223,16 @@
       "starter_context_mismatch": true,
       "qpix_with_verified_starter_context_sensitivity": 59.3,
       "qpix_m_minutes_shadow": 2.372,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 61.9,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2.6,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.0909090909090908,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "Anfernee Simons",
@@ -2154,7 +2305,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 180.39,
       "defensive_rating": 121.91,
@@ -2173,18 +2325,17 @@
         "C12": 8
       },
       "raw_qpix_shadow": 57.9,
-      "qpix_r_shadow": 59.8,
+      "qpix_r_shadow": 57.9,
       "qpix_sfa_shadow": 57.9,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 1.9,
+      "referee_bonus": 0,
       "ts": 94.44444444444444,
       "score_notes": [
         "Elite TS% (94.4%)",
         "Dominant off presence (OffRtg: 180.4)",
         "+22 net differential",
-        "Dominant bench contribution (+8)",
-        "QPIX-R flag: Whistle suppression: -2.5 FTA below baseline"
+        "Dominant bench contribution (+8)"
       ],
       "context": {
         "teamAvgPlusMinus": 4.583333333333333,
@@ -2203,7 +2354,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 57.9,
       "qpix_m_minutes_shadow": 2.517,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 59.8,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 1.9,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.0833333333333333,
+        "prior_games": 12,
+        "window_games": 12
+      }
     },
     {
       "name": "Daniss Jenkins",
@@ -2276,7 +2436,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 165.66,
       "defensive_rating": 122.91,
@@ -2295,7 +2456,7 @@
         "C12": 0
       },
       "raw_qpix_shadow": 56.6,
-      "qpix_r_shadow": 53.5,
+      "qpix_r_shadow": 53.4,
       "qpix_sfa_shadow": 56.6,
       "sfa_adjustment": 0,
       "referee_penalty": 3.2,
@@ -2304,7 +2465,7 @@
       "score_notes": [
         "Elite TS% (77.0%)",
         "Dominant off presence (OffRtg: 165.7)",
-        "QPIX-R flag: Whistle inflation: +3.5 FTA above baseline"
+        "QPIX-R flag: Whistle inflation: +3.6 FTA above baseline"
       ],
       "context": {
         "teamAvgPlusMinus": 2.2222222222222223,
@@ -2323,7 +2484,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 56.6,
       "qpix_m_minutes_shadow": 1.348,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 53.5,
+      "referee_penalty_legacy": 3.2,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 2.4,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Jonathan Kuminga",
@@ -2396,7 +2566,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 107.67,
       "defensive_rating": 82.1,
@@ -2443,7 +2614,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 55.5,
       "qpix_m_minutes_shadow": 2.313,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 55.5,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 3.272727272727273,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "Rudy Gobert",
@@ -2516,7 +2696,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 135,
       "defensive_rating": 88.18,
@@ -2535,11 +2716,11 @@
         "C12": 0
       },
       "raw_qpix_shadow": 53.7,
-      "qpix_r_shadow": 55.7,
+      "qpix_r_shadow": 57.6,
       "qpix_sfa_shadow": 53.7,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2,
+      "referee_bonus": 3.9,
       "ts": 69.87577639751552,
       "score_notes": [
         "Dominant off presence (OffRtg: 135.0)",
@@ -2547,7 +2728,7 @@
         "3 stocks",
         "Elite anchor (DefRtg: 88.2)",
         "+18 net differential",
-        "QPIX-R flag: Whistle suppression: -2.2 FTA below baseline"
+        "QPIX-R flag: Whistle suppression: -4.3 FTA below baseline"
       ],
       "context": {
         "teamAvgPlusMinus": 16.25,
@@ -2566,7 +2747,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 53.7,
       "qpix_m_minutes_shadow": 2.335,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 55.7,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 5.3,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Kyshawn George",
@@ -2639,7 +2829,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 160.83,
       "defensive_rating": 130.73,
@@ -2686,7 +2877,16 @@
       "starter_context_mismatch": true,
       "qpix_with_verified_starter_context_sensitivity": 44.1,
       "qpix_m_minutes_shadow": 2.004,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 52.1,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 3,
+        "prior_games": 12,
+        "window_games": 12
+      }
     },
     {
       "name": "Jaden McDaniels",
@@ -2759,7 +2959,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 119.82,
       "defensive_rating": 94.25,
@@ -2806,7 +3007,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 51.4,
       "qpix_m_minutes_shadow": 2.056,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 51.4,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.9090909090909092,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "Ayo Dosunmu",
@@ -2879,7 +3089,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 113.05,
       "defensive_rating": 95.35,
@@ -2898,16 +3109,16 @@
         "C12": 0
       },
       "raw_qpix_shadow": 48.7,
-      "qpix_r_shadow": 50.6,
+      "qpix_r_shadow": 50.7,
       "qpix_sfa_shadow": 48.7,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 1.9,
+      "referee_bonus": 2,
       "ts": 60,
       "score_notes": [
         "Elite anchor (DefRtg: 95.3)",
         "+27 net differential",
-        "QPIX-R flag: Whistle suppression: -2.5 FTA below baseline"
+        "QPIX-R flag: Whistle suppression: -2.6 FTA below baseline"
       ],
       "context": {
         "teamAvgPlusMinus": 16.25,
@@ -2926,7 +3137,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 48.7,
       "qpix_m_minutes_shadow": 1.804,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 50.6,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 1.9,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 2.6363636363636362,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "Grant Williams",
@@ -2999,7 +3219,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "LEGACY_BASELINE_UNVERIFIED"
       },
       "offensive_rating": 194.62,
       "defensive_rating": 110.86,
@@ -3046,7 +3267,15 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 44.2,
       "qpix_m_minutes_shadow": 2.763,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 44.2,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "LEGACY_BASELINE_NOT_REVERIFIED",
+        "fta": null,
+        "prior_games": 0
+      }
     },
     {
       "name": "Paul Reed",
@@ -3119,7 +3348,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 120.96,
       "defensive_rating": 126.29,
@@ -3138,16 +3368,16 @@
         "C12": 0
       },
       "raw_qpix_shadow": 43.4,
-      "qpix_r_shadow": 41.9,
+      "qpix_r_shadow": 40.9,
       "qpix_sfa_shadow": 43.4,
       "sfa_adjustment": 0,
-      "referee_penalty": 1.5,
+      "referee_penalty": 2.5,
       "referee_bonus": 0,
       "ts": 55.84192439862543,
       "score_notes": [
         "+25 net differential",
         "Double-double (+6)",
-        "QPIX-R flag: Whistle inflation: +2.5 FTA above baseline"
+        "QPIX-R flag: Whistle inflation: +4.1 FTA above baseline"
       ],
       "context": {
         "teamAvgPlusMinus": 2.2222222222222223,
@@ -3166,7 +3396,16 @@
       "starter_context_mismatch": true,
       "qpix_with_verified_starter_context_sensitivity": 51.4,
       "qpix_m_minutes_shadow": 1.142,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 41.9,
+      "referee_penalty_legacy": 1.5,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.9,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Jaylen Clark",
@@ -3239,7 +3478,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 130.92,
       "defensive_rating": 88.1,
@@ -3258,19 +3498,18 @@
         "C12": 5
       },
       "raw_qpix_shadow": 43.1,
-      "qpix_r_shadow": 45,
+      "qpix_r_shadow": 43.1,
       "qpix_sfa_shadow": 43.1,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 1.9,
+      "referee_bonus": 0,
       "ts": 70,
       "score_notes": [
         "Elite TS% (70.0%)",
         "Dominant off presence (OffRtg: 130.9)",
         "Strong def impact (DefRtg: 88.1)",
         "+17 net differential",
-        "Second unit anchor (+5)",
-        "QPIX-R flag: Whistle suppression: -2.5 FTA below baseline"
+        "Second unit anchor (+5)"
       ],
       "context": {
         "teamAvgPlusMinus": 16.25,
@@ -3289,7 +3528,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 43.1,
       "qpix_m_minutes_shadow": 2.268,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 45,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 1.9,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.4,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Joel Embiid",
@@ -3362,7 +3610,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 105.33,
       "defensive_rating": 115.36,
@@ -3381,15 +3630,13 @@
         "C12": 0
       },
       "raw_qpix_shadow": 39.1,
-      "qpix_r_shadow": 37.1,
+      "qpix_r_shadow": 39.1,
       "qpix_sfa_shadow": 39.1,
       "sfa_adjustment": 0,
-      "referee_penalty": 2,
+      "referee_penalty": 0,
       "referee_bonus": 0,
       "ts": 49.80079681274901,
-      "score_notes": [
-        "QPIX-R flag: Whistle inflation: +2.5 FTA above baseline"
-      ],
+      "score_notes": [],
       "context": {
         "teamAvgPlusMinus": 4.583333333333333,
         "wonGame": true,
@@ -3407,7 +3654,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 39.1,
       "qpix_m_minutes_shadow": 1.396,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 37.1,
+      "referee_penalty_legacy": 2,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 7.3,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Collin Murray-Boyles",
@@ -3480,7 +3736,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 118.11,
       "defensive_rating": 123.82,
@@ -3499,15 +3756,16 @@
         "C12": 0
       },
       "raw_qpix_shadow": 38.7,
-      "qpix_r_shadow": 38.7,
+      "qpix_r_shadow": 37.4,
       "qpix_sfa_shadow": 38.7,
       "sfa_adjustment": 0,
-      "referee_penalty": 0,
+      "referee_penalty": 1.3,
       "referee_bonus": 0,
       "ts": 65.05576208178438,
       "score_notes": [
         "6 stocks (elite)",
-        "Environment bonus +1.5"
+        "Environment bonus +1.5",
+        "QPIX-R flag: Whistle inflation: +1.7 FTA above baseline"
       ],
       "context": {
         "teamAvgPlusMinus": -4.583333333333333,
@@ -3526,7 +3784,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 38.7,
       "qpix_m_minutes_shadow": 1.209,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 38.7,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 2.3,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Miles Bridges",
@@ -3599,7 +3866,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 119.43,
       "defensive_rating": 97.39,
@@ -3618,16 +3886,17 @@
         "C12": 0
       },
       "raw_qpix_shadow": 35.7,
-      "qpix_r_shadow": 35.7,
+      "qpix_r_shadow": 33.2,
       "qpix_sfa_shadow": 34.1,
       "sfa_adjustment": 1.6,
-      "referee_penalty": 0,
+      "referee_penalty": 2.5,
       "referee_bonus": 0,
       "ts": 49.10714285714286,
       "score_notes": [
         "Zero turnovers",
         "Former-team knowledge (CHA, 1y): flagged, no score change (C8 gate not fired)",
-        "QPIX-SFA: −1.6 (big night vs former team CHA, 1y)"
+        "QPIX-SFA: −1.6 (big night vs former team CHA, 1y)",
+        "QPIX-R flag: Whistle inflation: +2.8 FTA above baseline"
       ],
       "context": {
         "teamAvgPlusMinus": 2.5,
@@ -3646,7 +3915,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 35.7,
       "qpix_m_minutes_shadow": 1.428,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 35.7,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 2.2,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Oso Ighodaro",
@@ -3719,7 +3997,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 134.57,
       "defensive_rating": 107.3,
@@ -3766,7 +4045,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 33.6,
       "qpix_m_minutes_shadow": 1.05,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 33.6,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.625,
+        "prior_games": 8,
+        "window_games": 8
+      }
     },
     {
       "name": "Trey Lyles",
@@ -3839,7 +4127,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 200,
       "defensive_rating": 103.96,
@@ -3858,18 +4147,18 @@
         "C12": 5
       },
       "raw_qpix_shadow": 31.1,
-      "qpix_r_shadow": 33.7,
+      "qpix_r_shadow": 32.3,
       "qpix_sfa_shadow": 31.1,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2.6,
+      "referee_bonus": 1.2,
       "ts": 100,
       "score_notes": [
         "Elite TS% (100.0%)",
         "Dominant off presence (OffRtg: 200.0)",
         "+26 net differential",
         "Second unit anchor (+5)",
-        "QPIX-R flag: Whistle suppression: -3.5 FTA below baseline"
+        "QPIX-R flag: Whistle suppression: -1.6 FTA below baseline"
       ],
       "context": {
         "teamAvgPlusMinus": 16.25,
@@ -3888,7 +4177,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 31.1,
       "qpix_m_minutes_shadow": 2.073,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 33.7,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2.6,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.6363636363636365,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "Naz Reid",
@@ -3961,7 +4259,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 83.44,
       "defensive_rating": 99.13,
@@ -3980,15 +4279,16 @@
         "C12": 0
       },
       "raw_qpix_shadow": 29.8,
-      "qpix_r_shadow": 29.8,
+      "qpix_r_shadow": 28,
       "qpix_sfa_shadow": 29.8,
       "sfa_adjustment": 0,
-      "referee_penalty": 0,
+      "referee_penalty": 1.8,
       "referee_bonus": 0,
       "ts": 39.603960396039604,
       "score_notes": [
         "3 stocks",
-        "Environment bonus +1.5"
+        "Environment bonus +1.5",
+        "QPIX-R flag: Whistle inflation: +2.7 FTA above baseline"
       ],
       "context": {
         "teamAvgPlusMinus": -2.5,
@@ -4007,7 +4307,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 29.8,
       "qpix_m_minutes_shadow": 0.876,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 29.8,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 2.272727272727273,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "Jamison Battle",
@@ -4080,7 +4389,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 141.89,
       "defensive_rating": 129.73,
@@ -4099,16 +4409,15 @@
         "C12": 0
       },
       "raw_qpix_shadow": 28.3,
-      "qpix_r_shadow": 30.9,
+      "qpix_r_shadow": 28.3,
       "qpix_sfa_shadow": 28.3,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2.6,
+      "referee_bonus": 0,
       "ts": 72.22222222222221,
       "score_notes": [
         "Elite TS% (72.2%)",
-        "Dominant off presence (OffRtg: 141.9)",
-        "QPIX-R flag: Whistle suppression: -3.5 FTA below baseline"
+        "Dominant off presence (OffRtg: 141.9)"
       ],
       "context": {
         "teamAvgPlusMinus": -4.583333333333333,
@@ -4127,7 +4436,16 @@
       "starter_context_mismatch": true,
       "qpix_with_verified_starter_context_sensitivity": 28.3,
       "qpix_m_minutes_shadow": 1.132,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 30.9,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2.6,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.3636363636363635,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "Jaylen Brown",
@@ -4200,7 +4518,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 86.45,
       "defensive_rating": 113.35,
@@ -4219,15 +4538,14 @@
         "C12": 0
       },
       "raw_qpix_shadow": 27.5,
-      "qpix_r_shadow": 29.5,
+      "qpix_r_shadow": 27.5,
       "qpix_sfa_shadow": 27.5,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2,
+      "referee_bonus": 0,
       "ts": 53.69928400954653,
       "score_notes": [
-        "3 stocks",
-        "QPIX-R flag: Whistle suppression: -3.3 FTA below baseline"
+        "3 stocks"
       ],
       "context": {
         "teamAvgPlusMinus": 4.583333333333333,
@@ -4246,7 +4564,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 27.5,
       "qpix_m_minutes_shadow": 0.764,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 29.5,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 5,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "Jakob Poeltl",
@@ -4319,7 +4646,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 125.14,
       "defensive_rating": 127.54,
@@ -4338,14 +4666,15 @@
         "C12": 0
       },
       "raw_qpix_shadow": 27.2,
-      "qpix_r_shadow": 27.2,
+      "qpix_r_shadow": 25,
       "qpix_sfa_shadow": 27.2,
       "sfa_adjustment": 0,
-      "referee_penalty": 0,
+      "referee_penalty": 2.2,
       "referee_bonus": 0,
       "ts": 51.369863013698634,
       "score_notes": [
-        "Zero turnovers"
+        "Zero turnovers",
+        "QPIX-R flag: Whistle inflation: +2.9 FTA above baseline"
       ],
       "context": {
         "teamAvgPlusMinus": -4.583333333333333,
@@ -4364,7 +4693,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 27.2,
       "qpix_m_minutes_shadow": 1.088,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 27.2,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.1111111111111112,
+        "prior_games": 9,
+        "window_games": 9
+      }
     },
     {
       "name": "Kevin Huerter",
@@ -4437,7 +4775,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 113.21,
       "defensive_rating": 125.52,
@@ -4456,15 +4795,15 @@
         "C12": 8
       },
       "raw_qpix_shadow": 25.7,
-      "qpix_r_shadow": 23.8,
+      "qpix_r_shadow": 22.6,
       "qpix_sfa_shadow": 25.7,
       "sfa_adjustment": 0,
-      "referee_penalty": 2,
+      "referee_penalty": 3.1,
       "referee_bonus": 0,
       "ts": 59.782608695652186,
       "score_notes": [
         "Dominant bench contribution (+8)",
-        "QPIX-R flag: Whistle inflation: +2.5 FTA above baseline"
+        "QPIX-R flag: Whistle inflation: +4.0 FTA above baseline"
       ],
       "context": {
         "teamAvgPlusMinus": 2.2222222222222223,
@@ -4483,7 +4822,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 25.7,
       "qpix_m_minutes_shadow": 1.071,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 23.8,
+      "referee_penalty_legacy": 2,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Grayson Allen",
@@ -4556,7 +4904,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 110.01,
       "defensive_rating": 108.18,
@@ -4575,16 +4924,16 @@
         "C12": 0
       },
       "raw_qpix_shadow": 25.2,
-      "qpix_r_shadow": 27.1,
+      "qpix_r_shadow": 27.7,
       "qpix_sfa_shadow": 25.2,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 1.9,
+      "referee_bonus": 2.5,
       "ts": 63.63636363636363,
       "score_notes": [
         "Familiar venue (former_team): flagged, no score change (C8 gate not fired)",
         "Former-team knowledge (PHX, 1y): flagged, no score change (C8 gate not fired)",
-        "QPIX-R flag: Whistle suppression: -2.5 FTA below baseline"
+        "QPIX-R flag: Whistle suppression: -3.4 FTA below baseline"
       ],
       "context": {
         "teamAvgPlusMinus": -2.5,
@@ -4603,7 +4952,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 25.2,
       "qpix_m_minutes_shadow": 0.741,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 27.1,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 1.9,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 3.3636363636363638,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "Caleb Martin",
@@ -4676,7 +5034,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 119.28,
       "defensive_rating": 124.3,
@@ -4695,16 +5054,15 @@
         "C12": 0
       },
       "raw_qpix_shadow": 24.4,
-      "qpix_r_shadow": 27,
+      "qpix_r_shadow": 24.4,
       "qpix_sfa_shadow": 24.4,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2.6,
+      "referee_bonus": 0,
       "ts": 58.333333333333336,
       "score_notes": [
         "Context gate: team avg -13.0 +/−",
-        "Environment bonus +1.5",
-        "QPIX-R flag: Whistle suppression: -3.5 FTA below baseline"
+        "Environment bonus +1.5"
       ],
       "context": {
         "teamAvgPlusMinus": -13,
@@ -4723,7 +5081,16 @@
       "starter_context_mismatch": true,
       "qpix_with_verified_starter_context_sensitivity": 24.4,
       "qpix_m_minutes_shadow": 1.162,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 27,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2.6,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0.2857142857142857,
+        "prior_games": 7,
+        "window_games": 7
+      }
     },
     {
       "name": "Javonte Green",
@@ -4796,7 +5163,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 126.21,
       "defensive_rating": 113.97,
@@ -4815,15 +5183,14 @@
         "C12": 5
       },
       "raw_qpix_shadow": 23.8,
-      "qpix_r_shadow": 25.7,
+      "qpix_r_shadow": 23.8,
       "qpix_sfa_shadow": 23.8,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 1.9,
+      "referee_bonus": 0,
       "ts": 62.5,
       "score_notes": [
-        "Second unit anchor (+5)",
-        "QPIX-R flag: Whistle suppression: -2.5 FTA below baseline"
+        "Second unit anchor (+5)"
       ],
       "context": {
         "teamAvgPlusMinus": 2.2222222222222223,
@@ -4842,7 +5209,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 23.8,
       "qpix_m_minutes_shadow": 1.587,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 25.7,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 1.9,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.4,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Jabari Walker",
@@ -4915,7 +5291,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 139.6,
       "defensive_rating": 119.39,
@@ -4934,15 +5311,14 @@
         "C12": 0
       },
       "raw_qpix_shadow": 23.7,
-      "qpix_r_shadow": 26.3,
+      "qpix_r_shadow": 23.7,
       "qpix_sfa_shadow": 23.7,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2.6,
+      "referee_bonus": 0,
       "ts": 56.25,
       "score_notes": [
-        "Dominant off presence (OffRtg: 139.6)",
-        "QPIX-R flag: Whistle suppression: -3.5 FTA below baseline"
+        "Dominant off presence (OffRtg: 139.6)"
       ],
       "context": {
         "teamAvgPlusMinus": 4.583333333333333,
@@ -4961,7 +5337,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 23.7,
       "qpix_m_minutes_shadow": 1.481,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 26.3,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2.6,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.5,
+        "prior_games": 8,
+        "window_games": 8
+      }
     },
     {
       "name": "Coby White",
@@ -5036,7 +5421,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 107.11,
       "defensive_rating": 112.17,
@@ -5079,7 +5465,16 @@
       "starter_context_mismatch": true,
       "qpix_with_verified_starter_context_sensitivity": 22.5,
       "qpix_m_minutes_shadow": 1.125,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 22.5,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 2.25,
+        "prior_games": 4,
+        "window_games": 4
+      }
     },
     {
       "name": "Jordan Goodwin",
@@ -5152,7 +5547,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 86.34,
       "defensive_rating": 101.53,
@@ -5171,16 +5567,15 @@
         "C12": 8
       },
       "raw_qpix_shadow": 22.3,
-      "qpix_r_shadow": 24.2,
+      "qpix_r_shadow": 22.3,
       "qpix_sfa_shadow": 22.3,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 1.9,
+      "referee_bonus": 0,
       "ts": 27.27272727272727,
       "score_notes": [
         "+18 net differential",
-        "Dominant bench contribution (+8)",
-        "QPIX-R flag: Whistle suppression: -2.5 FTA below baseline"
+        "Dominant bench contribution (+8)"
       ],
       "context": {
         "teamAvgPlusMinus": 2.5,
@@ -5199,7 +5594,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 22.3,
       "qpix_m_minutes_shadow": 0.929,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 24.2,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 1.9,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0,
+        "prior_games": 6,
+        "window_games": 6
+      }
     },
     {
       "name": "Ryan Kalkbrenner",
@@ -5272,7 +5676,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 176.15,
       "defensive_rating": 105.31,
@@ -5291,16 +5696,15 @@
         "C12": 0
       },
       "raw_qpix_shadow": 20.9,
-      "qpix_r_shadow": 23.2,
+      "qpix_r_shadow": 20.9,
       "qpix_sfa_shadow": 20.9,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2.3,
+      "referee_bonus": 0,
       "ts": 53.191489361702125,
       "score_notes": [
         "Dominant off presence (OffRtg: 176.2)",
-        "Environment bonus +1.5",
-        "QPIX-R flag: Whistle suppression: -2.5 FTA below baseline"
+        "Environment bonus +1.5"
       ],
       "context": {
         "teamAvgPlusMinus": -2.5,
@@ -5319,7 +5723,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 20.9,
       "qpix_m_minutes_shadow": 1.306,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 23.2,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2.3,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.0909090909090908,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "Collin Gillespie",
@@ -5392,7 +5805,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 85.28,
       "defensive_rating": 100.9,
@@ -5411,15 +5825,13 @@
         "C12": 0
       },
       "raw_qpix_shadow": 20.6,
-      "qpix_r_shadow": 22.5,
+      "qpix_r_shadow": 20.6,
       "qpix_sfa_shadow": 20.6,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 1.9,
+      "referee_bonus": 0,
       "ts": 50,
-      "score_notes": [
-        "QPIX-R flag: Whistle suppression: -2.5 FTA below baseline"
-      ],
+      "score_notes": [],
       "context": {
         "teamAvgPlusMinus": 2.5,
         "wonGame": true,
@@ -5437,7 +5849,16 @@
       "starter_context_mismatch": true,
       "qpix_with_verified_starter_context_sensitivity": 28.6,
       "qpix_m_minutes_shadow": 0.763,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 22.5,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 1.9,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0.4,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Terrence Shannon Jr.",
@@ -5510,7 +5931,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 95.01,
       "defensive_rating": 95.18,
@@ -5529,16 +5951,16 @@
         "C12": 5
       },
       "raw_qpix_shadow": 20.6,
-      "qpix_r_shadow": 22.5,
+      "qpix_r_shadow": 23.7,
       "qpix_sfa_shadow": 20.6,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 1.9,
+      "referee_bonus": 3.1,
       "ts": 37.5,
       "score_notes": [
         "Elite anchor (DefRtg: 95.2)",
         "Second unit anchor (+5)",
-        "QPIX-R flag: Whistle suppression: -2.5 FTA below baseline"
+        "QPIX-R flag: Whistle suppression: -4.1 FTA below baseline"
       ],
       "context": {
         "teamAvgPlusMinus": 16.25,
@@ -5557,7 +5979,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 20.6,
       "qpix_m_minutes_shadow": 0.981,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 22.5,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 1.9,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 4.125,
+        "prior_games": 8,
+        "window_games": 8
+      }
     },
     {
       "name": "Dillon Brooks",
@@ -5630,7 +6061,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 114.59,
       "defensive_rating": 104.19,
@@ -5649,14 +6081,14 @@
         "C12": 0
       },
       "raw_qpix_shadow": 19.8,
-      "qpix_r_shadow": 22.4,
+      "qpix_r_shadow": 21.8,
       "qpix_sfa_shadow": 19.8,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2.6,
+      "referee_bonus": 2,
       "ts": 57.692307692307686,
       "score_notes": [
-        "QPIX-R flag: Whistle suppression: -3.5 FTA below baseline"
+        "QPIX-R flag: Whistle suppression: -2.7 FTA below baseline"
       ],
       "context": {
         "teamAvgPlusMinus": 2.5,
@@ -5675,7 +6107,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 19.8,
       "qpix_m_minutes_shadow": 0.66,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 22.4,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2.6,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 2.7,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Luke Kennard",
@@ -5748,7 +6189,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 93.66,
       "defensive_rating": 111.39,
@@ -5767,16 +6209,15 @@
         "C12": 8
       },
       "raw_qpix_shadow": 18.4,
-      "qpix_r_shadow": 20.3,
+      "qpix_r_shadow": 18.4,
       "qpix_sfa_shadow": 18.4,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 1.9,
+      "referee_bonus": 0,
       "ts": 44.44444444444444,
       "score_notes": [
         "+16 net differential",
-        "Dominant bench contribution (+8)",
-        "QPIX-R flag: Whistle suppression: -2.5 FTA below baseline"
+        "Dominant bench contribution (+8)"
       ],
       "context": {
         "teamAvgPlusMinus": 2.5,
@@ -5795,7 +6236,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 18.4,
       "qpix_m_minutes_shadow": 0.876,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 20.3,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 1.9,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1,
+        "prior_games": 9,
+        "window_games": 9
+      }
     },
     {
       "name": "Deandre Ayton",
@@ -5868,7 +6318,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 214.54,
       "defensive_rating": 121.09,
@@ -5887,16 +6338,15 @@
         "C12": 0
       },
       "raw_qpix_shadow": 18,
-      "qpix_r_shadow": 21.4,
+      "qpix_r_shadow": 18,
       "qpix_sfa_shadow": 18,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 3.4,
+      "referee_bonus": 0,
       "ts": 100,
       "score_notes": [
         "Elite TS% (100.0%)",
-        "Dominant off presence (OffRtg: 214.5)",
-        "QPIX-R flag: Whistle suppression: -4.5 FTA below baseline"
+        "Dominant off presence (OffRtg: 214.5)"
       ],
       "context": {
         "teamAvgPlusMinus": -2,
@@ -5915,7 +6365,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 18,
       "qpix_m_minutes_shadow": 2,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 21.4,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 3.4,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0.5,
+        "prior_games": 12,
+        "window_games": 12
+      }
     },
     {
       "name": "Cooper Flagg",
@@ -5988,7 +6447,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 92.45,
       "defensive_rating": 124.7,
@@ -6007,16 +6467,16 @@
         "C12": 0
       },
       "raw_qpix_shadow": 17.7,
-      "qpix_r_shadow": 19,
+      "qpix_r_shadow": 20.8,
       "qpix_sfa_shadow": 17.7,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 1.3,
+      "referee_bonus": 3.1,
       "ts": 46.58385093167702,
       "score_notes": [
         "Context gate: team avg -13.0 +/−",
         "Environment bonus +1.5",
-        "QPIX-R flag: Whistle suppression: -2.2 FTA below baseline"
+        "QPIX-R flag: Whistle suppression: -5.2 FTA below baseline"
       ],
       "context": {
         "teamAvgPlusMinus": -13,
@@ -6035,7 +6495,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 17.7,
       "qpix_m_minutes_shadow": 0.656,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 19,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 1.3,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 7.2,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Dean Wade",
@@ -6108,7 +6577,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 138.04,
       "defensive_rating": 123.22,
@@ -6127,15 +6597,14 @@
         "C12": 0
       },
       "raw_qpix_shadow": 17.3,
-      "qpix_r_shadow": 19.9,
+      "qpix_r_shadow": 17.3,
       "qpix_sfa_shadow": 17.3,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2.6,
+      "referee_bonus": 0,
       "ts": 50,
       "score_notes": [
-        "Dominant off presence (OffRtg: 138.0)",
-        "QPIX-R flag: Whistle suppression: -3.5 FTA below baseline"
+        "Dominant off presence (OffRtg: 138.0)"
       ],
       "context": {
         "teamAvgPlusMinus": 4.583333333333333,
@@ -6154,7 +6623,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 17.3,
       "qpix_m_minutes_shadow": 0.509,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 19.9,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2.6,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0.7,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Naji Marshall",
@@ -6227,7 +6705,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 109.67,
       "defensive_rating": 126.81,
@@ -6246,15 +6725,16 @@
         "C12": 0
       },
       "raw_qpix_shadow": 16.7,
-      "qpix_r_shadow": 16.7,
+      "qpix_r_shadow": 14.9,
       "qpix_sfa_shadow": 16.7,
       "sfa_adjustment": 0,
-      "referee_penalty": 0,
+      "referee_penalty": 1.8,
       "referee_bonus": 0,
       "ts": 55.27210884353742,
       "score_notes": [
         "Context gate: team avg -13.0 +/−",
-        "Environment bonus +1.5"
+        "Environment bonus +1.5",
+        "QPIX-R flag: Whistle inflation: +2.0 FTA above baseline"
       ],
       "context": {
         "teamAvgPlusMinus": -13,
@@ -6273,7 +6753,16 @@
       "starter_context_mismatch": true,
       "qpix_with_verified_starter_context_sensitivity": 16.7,
       "qpix_m_minutes_shadow": 0.726,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 16.7,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 2,
+        "prior_games": 8,
+        "window_games": 8
+      }
     },
     {
       "name": "Will Riley",
@@ -6349,7 +6838,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 300,
       "defensive_rating": 134.56,
@@ -6368,16 +6858,15 @@
         "C12": 0
       },
       "raw_qpix_shadow": 16,
-      "qpix_r_shadow": 17.9,
+      "qpix_r_shadow": 16,
       "qpix_sfa_shadow": 16,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 1.9,
+      "referee_bonus": 0,
       "ts": 150,
       "score_notes": [
         "Elite TS% (150.0%)",
-        "Dominant off presence (OffRtg: 300.0)",
-        "QPIX-R flag: Whistle suppression: -2.5 FTA below baseline"
+        "Dominant off presence (OffRtg: 300.0)"
       ],
       "context": {
         "teamAvgPlusMinus": -2,
@@ -6396,7 +6885,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 16,
       "qpix_m_minutes_shadow": 5.333,
-      "raw_rank_eligible": false
+      "raw_rank_eligible": false,
+      "qpix_r_legacy_shadow": 17.9,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 1.9,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0.4444444444444444,
+        "prior_games": 9,
+        "window_games": 9
+      }
     },
     {
       "name": "Christian Anderson",
@@ -6469,7 +6967,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 121.37,
       "defensive_rating": 115,
@@ -6488,13 +6987,15 @@
         "C12": 0
       },
       "raw_qpix_shadow": 14.5,
-      "qpix_r_shadow": 14.5,
+      "qpix_r_shadow": 12.8,
       "qpix_sfa_shadow": 14.5,
       "sfa_adjustment": 0,
-      "referee_penalty": 0,
+      "referee_penalty": 1.7,
       "referee_bonus": 0,
       "ts": 65.78947368421052,
-      "score_notes": [],
+      "score_notes": [
+        "QPIX-R flag: Whistle inflation: +1.9 FTA above baseline"
+      ],
       "context": {
         "teamAvgPlusMinus": -2.5,
         "wonGame": false,
@@ -6512,7 +7013,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 14.5,
       "qpix_m_minutes_shadow": 0.806,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 14.5,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0.1,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Max Christie",
@@ -6587,7 +7097,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 136.39,
       "defensive_rating": 121.68,
@@ -6606,16 +7117,15 @@
         "C12": 0
       },
       "raw_qpix_shadow": 14,
-      "qpix_r_shadow": 15.9,
+      "qpix_r_shadow": 14,
       "qpix_sfa_shadow": 14,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 1.9,
+      "referee_bonus": 0,
       "ts": 75,
       "score_notes": [
         "Elite TS% (75.0%)",
-        "Dominant off presence (OffRtg: 136.4)",
-        "QPIX-R flag: Whistle suppression: -2.5 FTA below baseline"
+        "Dominant off presence (OffRtg: 136.4)"
       ],
       "context": {
         "teamAvgPlusMinus": -13,
@@ -6634,7 +7144,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 14,
       "qpix_m_minutes_shadow": 2,
-      "raw_rank_eligible": false
+      "raw_rank_eligible": false,
+      "qpix_r_legacy_shadow": 15.9,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 1.9,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0.4,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Moussa Diabate",
@@ -6707,7 +7226,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 88.29,
       "defensive_rating": 108.35,
@@ -6750,7 +7270,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 12.9,
       "qpix_m_minutes_shadow": 0.403,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 12.9,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 2.111111111111111,
+        "prior_games": 9,
+        "window_games": 9
+      }
     },
     {
       "name": "Duncan Robinson",
@@ -6823,7 +7352,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 93.07,
       "defensive_rating": 126.44,
@@ -6842,14 +7372,14 @@
         "C12": 0
       },
       "raw_qpix_shadow": 10.3,
-      "qpix_r_shadow": 12.9,
+      "qpix_r_shadow": 13.4,
       "qpix_sfa_shadow": 10.3,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2.6,
+      "referee_bonus": 3.1,
       "ts": 46.42857142857143,
       "score_notes": [
-        "QPIX-R flag: Whistle suppression: -3.5 FTA below baseline"
+        "QPIX-R flag: Whistle suppression: -4.1 FTA below baseline"
       ],
       "context": {
         "teamAvgPlusMinus": 2.2222222222222223,
@@ -6868,7 +7398,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 10.3,
       "qpix_m_minutes_shadow": 0.251,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 12.9,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2.6,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 4.1,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Jalen Green",
@@ -6941,7 +7480,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 94.15,
       "defensive_rating": 99.99,
@@ -6960,14 +7500,14 @@
         "C12": 0
       },
       "raw_qpix_shadow": 9.7,
-      "qpix_r_shadow": 6.9,
+      "qpix_r_shadow": 7.1,
       "qpix_sfa_shadow": 9.7,
       "sfa_adjustment": 0,
-      "referee_penalty": 2.8,
+      "referee_penalty": 2.6,
       "referee_bonus": 0,
       "ts": 51.546391752577314,
       "score_notes": [
-        "QPIX-R flag: Whistle inflation: +3.5 FTA above baseline"
+        "QPIX-R flag: Whistle inflation: +3.3 FTA above baseline"
       ],
       "context": {
         "teamAvgPlusMinus": 2.5,
@@ -6986,7 +7526,16 @@
       "starter_context_mismatch": true,
       "qpix_with_verified_starter_context_sensitivity": 9.7,
       "qpix_m_minutes_shadow": 0.462,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 6.9,
+      "referee_penalty_legacy": 2.8,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 2.7,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Alijah Martin",
@@ -7059,7 +7608,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 106.13,
       "defensive_rating": 125.84,
@@ -7078,15 +7628,14 @@
         "C12": 0
       },
       "raw_qpix_shadow": 9.1,
-      "qpix_r_shadow": 11,
+      "qpix_r_shadow": 9.1,
       "qpix_sfa_shadow": 9.1,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 1.9,
+      "referee_bonus": 0,
       "ts": 58.333333333333336,
       "score_notes": [
-        "Environment bonus +1.5",
-        "QPIX-R flag: Whistle suppression: -2.5 FTA below baseline"
+        "Environment bonus +1.5"
       ],
       "context": {
         "teamAvgPlusMinus": -4.583333333333333,
@@ -7105,7 +7654,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 9.1,
       "qpix_m_minutes_shadow": 0.506,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 11,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 1.9,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0.8,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Royce O'Neale",
@@ -7178,7 +7736,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 94.38,
       "defensive_rating": 109.65,
@@ -7197,16 +7756,15 @@
         "C12": 0
       },
       "raw_qpix_shadow": 7.1,
-      "qpix_r_shadow": 9.4,
+      "qpix_r_shadow": 7.1,
       "qpix_sfa_shadow": 7.1,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2.3,
+      "referee_bonus": 0,
       "ts": 64.33823529411764,
       "score_notes": [
         "Familiar venue (former_team): flagged, no score change (C8 gate not fired)",
-        "Former-team knowledge (PHX, 1y): flagged, no score change (C8 gate not fired)",
-        "QPIX-R flag: Whistle suppression: -2.5 FTA below baseline"
+        "Former-team knowledge (PHX, 1y): flagged, no score change (C8 gate not fired)"
       ],
       "context": {
         "teamAvgPlusMinus": -2.5,
@@ -7225,7 +7783,16 @@
       "starter_context_mismatch": true,
       "qpix_with_verified_starter_context_sensitivity": 7.1,
       "qpix_m_minutes_shadow": 0.323,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 9.4,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2.3,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0.5454545454545454,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "Bilal Coulibaly",
@@ -7298,7 +7865,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 107.73,
       "defensive_rating": 121.1,
@@ -7317,15 +7885,15 @@
         "C12": 0
       },
       "raw_qpix_shadow": 7,
-      "qpix_r_shadow": 8.9,
+      "qpix_r_shadow": 8.2,
       "qpix_sfa_shadow": 7,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 1.9,
+      "referee_bonus": 1.2,
       "ts": 40,
       "score_notes": [
         "3 stocks",
-        "QPIX-R flag: Whistle suppression: -2.5 FTA below baseline"
+        "QPIX-R flag: Whistle suppression: -1.6 FTA below baseline"
       ],
       "context": {
         "teamAvgPlusMinus": -2,
@@ -7344,7 +7912,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 7,
       "qpix_m_minutes_shadow": 0.241,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 8.9,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 1.9,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.6363636363636365,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "P.J. Washington",
@@ -7419,7 +7996,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 92.27,
       "defensive_rating": 131.87,
@@ -7438,16 +8016,16 @@
         "C12": 0
       },
       "raw_qpix_shadow": 6.4,
-      "qpix_r_shadow": 8.7,
+      "qpix_r_shadow": 9,
       "qpix_sfa_shadow": 6.4,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2.3,
+      "referee_bonus": 2.6,
       "ts": 67.20430107526882,
       "score_notes": [
         "Context gate: team avg -13.0 +/−",
         "Environment bonus +1.5",
-        "QPIX-R flag: Whistle suppression: -2.6 FTA below baseline"
+        "QPIX-R flag: Whistle suppression: -2.9 FTA below baseline"
       ],
       "context": {
         "teamAvgPlusMinus": -13,
@@ -7466,7 +8044,16 @@
       "starter_context_mismatch": true,
       "qpix_with_verified_starter_context_sensitivity": 6.4,
       "qpix_m_minutes_shadow": 0.4,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 8.7,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2.3,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 3.909090909090909,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "Daniel Gafford",
@@ -7539,7 +8126,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 93.16,
       "defensive_rating": 125.76,
@@ -7585,7 +8173,16 @@
       "starter_context_mismatch": true,
       "qpix_with_verified_starter_context_sensitivity": 5.4,
       "qpix_m_minutes_shadow": 0.338,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 5.4,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 2.727272727272727,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "Khaman Maluach",
@@ -7658,7 +8255,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 93.68,
       "defensive_rating": 105.86,
@@ -7677,14 +8275,14 @@
         "C12": 0
       },
       "raw_qpix_shadow": 4.7,
-      "qpix_r_shadow": 8.1,
+      "qpix_r_shadow": 6.1,
       "qpix_sfa_shadow": 4.7,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 3.4,
+      "referee_bonus": 1.4,
       "ts": 50,
       "score_notes": [
-        "QPIX-R flag: Whistle suppression: -4.5 FTA below baseline"
+        "QPIX-R flag: Whistle suppression: -1.9 FTA below baseline"
       ],
       "context": {
         "teamAvgPlusMinus": 2.5,
@@ -7703,7 +8301,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 4.7,
       "qpix_m_minutes_shadow": 0.294,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 8.1,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 3.4,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.9,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Kyrie Irving",
@@ -7776,7 +8383,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 99.4,
       "defensive_rating": 132.42,
@@ -7795,16 +8403,16 @@
         "C12": 0
       },
       "raw_qpix_shadow": 4.4,
-      "qpix_r_shadow": 6.3,
+      "qpix_r_shadow": 6.8,
       "qpix_sfa_shadow": 4.4,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 1.9,
+      "referee_bonus": 2.4,
       "ts": 45.45454545454545,
       "score_notes": [
         "Context gate: team avg -13.0 +/−",
         "Environment bonus +1.5",
-        "QPIX-R flag: Whistle suppression: -2.5 FTA below baseline"
+        "QPIX-R flag: Whistle suppression: -3.2 FTA below baseline"
       ],
       "context": {
         "teamAvgPlusMinus": -13,
@@ -7823,7 +8431,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 4.4,
       "qpix_m_minutes_shadow": 0.163,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 6.3,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 1.9,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 3.2222222222222223,
+        "prior_games": 9,
+        "window_games": 9
+      }
     },
     {
       "name": "Sion James",
@@ -7896,7 +8513,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 60.64,
       "defensive_rating": 103.98,
@@ -7939,7 +8557,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": 2.8,
       "qpix_m_minutes_shadow": 0.087,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 2.8,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0.8181818181818182,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "Tre Johnson",
@@ -8012,7 +8639,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 97.39,
       "defensive_rating": 129.58,
@@ -8055,7 +8683,16 @@
       "starter_context_mismatch": true,
       "qpix_with_verified_starter_context_sensitivity": 2.8,
       "qpix_m_minutes_shadow": 0.093,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 2.8,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0.9090909090909091,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "Caleb Love",
@@ -8131,7 +8768,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "defensive_rating": 124.74,
       "category_contributions": {
@@ -8149,15 +8787,14 @@
         "C12": 0
       },
       "raw_qpix_shadow": -0.4,
-      "qpix_r_shadow": 1.5,
+      "qpix_r_shadow": -0.4,
       "qpix_sfa_shadow": -0.4,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 1.9,
+      "referee_bonus": 0,
       "ts": 0,
       "score_notes": [
-        "C3 unavailable: individual ORtg/DRtg missing",
-        "QPIX-R flag: Whistle suppression: -2.5 FTA below baseline"
+        "C3 unavailable: individual ORtg/DRtg missing"
       ],
       "context": {
         "teamAvgPlusMinus": 4.583333333333333,
@@ -8176,7 +8813,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": -0.4,
       "qpix_m_minutes_shadow": -0.4,
-      "raw_rank_eligible": false
+      "raw_rank_eligible": false,
+      "qpix_r_legacy_shadow": 1.5,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 1.9,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0,
+        "prior_games": 1,
+        "window_games": 1
+      }
     },
     {
       "name": "Tacko Fall",
@@ -8252,7 +8898,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "defensive_rating": 121.15,
       "category_contributions": {
@@ -8270,15 +8917,14 @@
         "C12": 0
       },
       "raw_qpix_shadow": -0.4,
-      "qpix_r_shadow": 3,
+      "qpix_r_shadow": -0.4,
       "qpix_sfa_shadow": -0.4,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 3.4,
+      "referee_bonus": 0,
       "ts": 0,
       "score_notes": [
-        "C3 unavailable: individual ORtg/DRtg missing",
-        "QPIX-R flag: Whistle suppression: -4.5 FTA below baseline"
+        "C3 unavailable: individual ORtg/DRtg missing"
       ],
       "context": {
         "teamAvgPlusMinus": 4.583333333333333,
@@ -8297,7 +8943,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": -0.4,
       "qpix_m_minutes_shadow": -0.4,
-      "raw_rank_eligible": false
+      "raw_rank_eligible": false,
+      "qpix_r_legacy_shadow": 3,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 3.4,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0,
+        "prior_games": 1,
+        "window_games": 1
+      }
     },
     {
       "name": "AJ Dybantsa",
@@ -8370,7 +9025,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 59.28,
       "defensive_rating": 125.58,
@@ -8389,14 +9045,14 @@
         "C12": 0
       },
       "raw_qpix_shadow": -1.3,
-      "qpix_r_shadow": 1.3,
+      "qpix_r_shadow": 2.4,
       "qpix_sfa_shadow": -1.3,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2.6,
+      "referee_bonus": 3.7,
       "ts": 25,
       "score_notes": [
-        "QPIX-R flag: Whistle suppression: -3.5 FTA below baseline"
+        "QPIX-R flag: Whistle suppression: -4.9 FTA below baseline"
       ],
       "context": {
         "teamAvgPlusMinus": -2,
@@ -8415,7 +9071,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": -1.3,
       "qpix_m_minutes_shadow": -0.03,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": 1.3,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2.6,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 4.875,
+        "prior_games": 8,
+        "window_games": 8
+      }
     },
     {
       "name": "Jaden Bradley",
@@ -8490,7 +9155,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 123.51,
       "defensive_rating": 136.84,
@@ -8533,7 +9199,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": -1.3,
       "qpix_m_minutes_shadow": -0.65,
-      "raw_rank_eligible": false
+      "raw_rank_eligible": false,
+      "qpix_r_legacy_shadow": -1.3,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.125,
+        "prior_games": 8,
+        "window_games": 8
+      }
     },
     {
       "name": "Tidjane Salaun",
@@ -8606,7 +9281,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 95.09,
       "defensive_rating": 109.24,
@@ -8625,15 +9301,14 @@
         "C12": 0
       },
       "raw_qpix_shadow": -2.8,
-      "qpix_r_shadow": -0.2,
+      "qpix_r_shadow": -2.8,
       "qpix_sfa_shadow": -2.8,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2.6,
+      "referee_bonus": 0,
       "ts": 33.33333333333333,
       "score_notes": [
-        "Environment bonus +1.5",
-        "QPIX-R flag: Whistle suppression: -3.5 FTA below baseline"
+        "Environment bonus +1.5"
       ],
       "context": {
         "teamAvgPlusMinus": -2.5,
@@ -8652,7 +9327,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": -2.8,
       "qpix_m_minutes_shadow": -0.175,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": -0.2,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2.6,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.3,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "John Collins",
@@ -8725,7 +9409,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 83.25,
       "defensive_rating": 123.91,
@@ -8770,7 +9455,16 @@
       "starter_context_mismatch": true,
       "qpix_with_verified_starter_context_sensitivity": -3,
       "qpix_m_minutes_shadow": -0.12,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": -3,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.3,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Ryan Dunn",
@@ -8843,7 +9537,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 64.51,
       "defensive_rating": 90.25,
@@ -8862,15 +9557,14 @@
         "C12": 0
       },
       "raw_qpix_shadow": -3.6,
-      "qpix_r_shadow": -1,
+      "qpix_r_shadow": -3.6,
       "qpix_sfa_shadow": -3.6,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2.6,
+      "referee_bonus": 0,
       "ts": 0,
       "score_notes": [
-        "Strong def impact (DefRtg: 90.3)",
-        "QPIX-R flag: Whistle suppression: -3.5 FTA below baseline"
+        "Strong def impact (DefRtg: 90.3)"
       ],
       "context": {
         "teamAvgPlusMinus": 2.5,
@@ -8889,7 +9583,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": -3.6,
       "qpix_m_minutes_shadow": -0.36,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": -1,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2.6,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0.8,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Jamal Shead",
@@ -8962,7 +9665,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 85.6,
       "defensive_rating": 130.2,
@@ -9005,7 +9709,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": -5.6,
       "qpix_m_minutes_shadow": -0.255,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": -5.6,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.9090909090909092,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "Cody Williams",
@@ -9080,7 +9793,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 0,
       "defensive_rating": 98.19,
@@ -9099,15 +9813,13 @@
         "C12": 0
       },
       "raw_qpix_shadow": -6,
-      "qpix_r_shadow": -3.4,
+      "qpix_r_shadow": -6,
       "qpix_sfa_shadow": -6,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2.6,
+      "referee_bonus": 0,
       "ts": 0,
-      "score_notes": [
-        "QPIX-R flag: Whistle suppression: -3.5 FTA below baseline"
-      ],
+      "score_notes": [],
       "context": {
         "teamAvgPlusMinus": 16.25,
         "wonGame": true,
@@ -9125,7 +9837,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": -6,
       "qpix_m_minutes_shadow": -0.857,
-      "raw_rank_eligible": false
+      "raw_rank_eligible": false,
+      "qpix_r_legacy_shadow": -3.4,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2.6,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0,
+        "prior_games": 6,
+        "window_games": 6
+      }
     },
     {
       "name": "Ja'Kobe Walter",
@@ -9198,7 +9919,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 68.04,
       "defensive_rating": 130.59,
@@ -9241,7 +9963,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": -7.5,
       "qpix_m_minutes_shadow": -0.234,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": -7.5,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 2.5454545454545454,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "Isaiah Evans",
@@ -9316,7 +10047,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 72.52,
       "defensive_rating": 99.3,
@@ -9335,15 +10067,13 @@
         "C12": 0
       },
       "raw_qpix_shadow": -7.9,
-      "qpix_r_shadow": -5.3,
+      "qpix_r_shadow": -7.9,
       "qpix_sfa_shadow": -7.9,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2.6,
+      "referee_bonus": 0,
       "ts": 33.33333333333333,
-      "score_notes": [
-        "QPIX-R flag: Whistle suppression: -3.5 FTA below baseline"
-      ],
+      "score_notes": [],
       "context": {
         "teamAvgPlusMinus": 16.25,
         "wonGame": true,
@@ -9361,7 +10091,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": -7.9,
       "qpix_m_minutes_shadow": -0.988,
-      "raw_rank_eligible": false
+      "raw_rank_eligible": false,
+      "qpix_r_legacy_shadow": -5.3,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2.6,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0,
+        "prior_games": 5,
+        "window_games": 5
+      }
     },
     {
       "name": "Justin Edwards",
@@ -9436,7 +10175,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 0,
       "defensive_rating": 104.23,
@@ -9455,15 +10195,13 @@
         "C12": 0
       },
       "raw_qpix_shadow": -8,
-      "qpix_r_shadow": -5.4,
+      "qpix_r_shadow": -8,
       "qpix_sfa_shadow": -8,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2.6,
+      "referee_bonus": 0,
       "ts": 0,
-      "score_notes": [
-        "QPIX-R flag: Whistle suppression: -3.5 FTA below baseline"
-      ],
+      "score_notes": [],
       "context": {
         "teamAvgPlusMinus": 4.583333333333333,
         "wonGame": true,
@@ -9481,7 +10219,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": -8,
       "qpix_m_minutes_shadow": -8,
-      "raw_rank_eligible": false
+      "raw_rank_eligible": false,
+      "qpix_r_legacy_shadow": -5.4,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2.6,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0,
+        "prior_games": 5,
+        "window_games": 5
+      }
     },
     {
       "name": "Tobi Lawal",
@@ -9554,7 +10301,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 107.24,
       "defensive_rating": 134,
@@ -9573,15 +10321,13 @@
         "C12": 0
       },
       "raw_qpix_shadow": -9.7,
-      "qpix_r_shadow": -7.1,
+      "qpix_r_shadow": -9.7,
       "qpix_sfa_shadow": -9.7,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2.6,
+      "referee_bonus": 0,
       "ts": 0,
-      "score_notes": [
-        "QPIX-R flag: Whistle suppression: -3.5 FTA below baseline"
-      ],
+      "score_notes": [],
       "context": {
         "teamAvgPlusMinus": -13,
         "wonGame": false,
@@ -9599,7 +10345,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": -9.7,
       "qpix_m_minutes_shadow": -0.808,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": -7.1,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2.6,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0,
+        "prior_games": 6,
+        "window_games": 6
+      }
     },
     {
       "name": "Santi Aldama",
@@ -9672,7 +10427,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 59.25,
       "defensive_rating": 119.72,
@@ -9691,16 +10447,16 @@
         "C12": 0
       },
       "raw_qpix_shadow": -11.9,
-      "qpix_r_shadow": -9.3,
+      "qpix_r_shadow": -10.4,
       "qpix_sfa_shadow": -11.9,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2.6,
+      "referee_bonus": 1.5,
       "ts": 25,
       "score_notes": [
         "Context gate: team avg -13.0 +/−",
         "Environment bonus +1.5",
-        "QPIX-R flag: Whistle suppression: -3.5 FTA below baseline"
+        "QPIX-R flag: Whistle suppression: -2.0 FTA below baseline"
       ],
       "context": {
         "teamAvgPlusMinus": -13,
@@ -9719,7 +10475,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": -11.9,
       "qpix_m_minutes_shadow": -1.19,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": -9.3,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2.6,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 2,
+        "prior_games": 3,
+        "window_games": 3
+      }
     },
     {
       "name": "Jett Howard",
@@ -9795,7 +10560,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 76.59,
       "defensive_rating": 136.29,
@@ -9814,15 +10580,13 @@
         "C12": 0
       },
       "raw_qpix_shadow": -12.6,
-      "qpix_r_shadow": -10.7,
+      "qpix_r_shadow": -12.6,
       "qpix_sfa_shadow": -12.6,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 1.9,
+      "referee_bonus": 0,
       "ts": 37.5,
-      "score_notes": [
-        "QPIX-R flag: Whistle suppression: -2.5 FTA below baseline"
-      ],
+      "score_notes": [],
       "context": {
         "teamAvgPlusMinus": -13,
         "wonGame": false,
@@ -9840,7 +10604,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": -12.6,
       "qpix_m_minutes_shadow": -2.52,
-      "raw_rank_eligible": false
+      "raw_rank_eligible": false,
+      "qpix_r_legacy_shadow": -10.7,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 1.9,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0.4,
+        "prior_games": 5,
+        "window_games": 5
+      }
     },
     {
       "name": "Kyle Anderson",
@@ -9915,7 +10688,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 49.5,
       "defensive_rating": 135.99,
@@ -9934,15 +10708,14 @@
         "C12": 0
       },
       "raw_qpix_shadow": -13.6,
-      "qpix_r_shadow": -11,
+      "qpix_r_shadow": -13.6,
       "qpix_sfa_shadow": -13.6,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2.6,
+      "referee_bonus": 0,
       "ts": 0,
       "score_notes": [
-        "Environment bonus +1.5",
-        "QPIX-R flag: Whistle suppression: -3.5 FTA below baseline"
+        "Environment bonus +1.5"
       ],
       "context": {
         "teamAvgPlusMinus": -4.583333333333333,
@@ -9961,7 +10734,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": -13.6,
       "qpix_m_minutes_shadow": -2.72,
-      "raw_rank_eligible": false
+      "raw_rank_eligible": false,
+      "qpix_r_legacy_shadow": -11,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2.6,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0.25,
+        "prior_games": 8,
+        "window_games": 8
+      }
     },
     {
       "name": "Moussa Cisse",
@@ -10036,7 +10818,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 0,
       "defensive_rating": 128.02,
@@ -10055,15 +10838,13 @@
         "C12": 0
       },
       "raw_qpix_shadow": -15.4,
-      "qpix_r_shadow": -12,
+      "qpix_r_shadow": -15.4,
       "qpix_sfa_shadow": -15.4,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 3.4,
+      "referee_bonus": 0,
       "ts": 0,
-      "score_notes": [
-        "QPIX-R flag: Whistle suppression: -4.5 FTA below baseline"
-      ],
+      "score_notes": [],
       "context": {
         "teamAvgPlusMinus": -13,
         "wonGame": false,
@@ -10081,7 +10862,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": -15.4,
       "qpix_m_minutes_shadow": -1.925,
-      "raw_rank_eligible": false
+      "raw_rank_eligible": false,
+      "qpix_r_legacy_shadow": -12,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 3.4,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0.8571428571428571,
+        "prior_games": 7,
+        "window_games": 7
+      }
     },
     {
       "name": "Ronald Holland II",
@@ -10154,7 +10944,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 60.23,
       "defensive_rating": 117.78,
@@ -10173,15 +10964,14 @@
         "C12": 0
       },
       "raw_qpix_shadow": -16.1,
-      "qpix_r_shadow": -13.5,
+      "qpix_r_shadow": -16.1,
       "qpix_sfa_shadow": -16.1,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2.6,
+      "referee_bonus": 0,
       "ts": 16.666666666666664,
       "score_notes": [
-        "Environment bonus +1.5",
-        "QPIX-R flag: Whistle suppression: -3.5 FTA below baseline"
+        "Environment bonus +1.5"
       ],
       "context": {
         "teamAvgPlusMinus": 2.2222222222222223,
@@ -10200,7 +10990,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": -16.1,
       "qpix_m_minutes_shadow": -1.15,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": -13.5,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2.6,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.3,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Marcus Sasser",
@@ -10273,7 +11072,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 47.4,
       "defensive_rating": 133.76,
@@ -10292,15 +11092,16 @@
         "C12": 0
       },
       "raw_qpix_shadow": -16.3,
-      "qpix_r_shadow": -16.3,
+      "qpix_r_shadow": -17.2,
       "qpix_sfa_shadow": -16.3,
       "sfa_adjustment": 0,
-      "referee_penalty": 0,
+      "referee_penalty": 0.9,
       "referee_bonus": 0,
       "ts": 25.510204081632654,
       "score_notes": [
         "Context gate: team avg -13.0 +/−",
-        "Environment bonus +1.5"
+        "Environment bonus +1.5",
+        "QPIX-R flag: Whistle inflation: +1.6 FTA above baseline"
       ],
       "context": {
         "teamAvgPlusMinus": -13,
@@ -10319,7 +11120,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": -16.3,
       "qpix_m_minutes_shadow": -1.811,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": -16.3,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0.4444444444444444,
+        "prior_games": 9,
+        "window_games": 9
+      }
     },
     {
       "name": "Labaron Philon Jr.",
@@ -10394,7 +11204,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 0,
       "defensive_rating": 124.74,
@@ -10413,15 +11224,13 @@
         "C12": 0
       },
       "raw_qpix_shadow": -17.6,
-      "qpix_r_shadow": -15.7,
+      "qpix_r_shadow": -17.6,
       "qpix_sfa_shadow": -17.6,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 1.9,
+      "referee_bonus": 0,
       "ts": 0,
-      "score_notes": [
-        "QPIX-R flag: Whistle suppression: -2.5 FTA below baseline"
-      ],
+      "score_notes": [],
       "context": {
         "teamAvgPlusMinus": 4.583333333333333,
         "wonGame": true,
@@ -10439,7 +11248,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": -17.6,
       "qpix_m_minutes_shadow": -8.8,
-      "raw_rank_eligible": false
+      "raw_rank_eligible": false,
+      "qpix_r_legacy_shadow": -15.7,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 1.9,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0.8571428571428571,
+        "prior_games": 7,
+        "window_games": 7
+      }
     },
     {
       "name": "Malachi Smith",
@@ -10514,7 +11332,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 0,
       "defensive_rating": 136.84,
@@ -10533,15 +11352,13 @@
         "C12": 0
       },
       "raw_qpix_shadow": -18.5,
-      "qpix_r_shadow": -16.6,
+      "qpix_r_shadow": -18.5,
       "qpix_sfa_shadow": -18.5,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 1.9,
+      "referee_bonus": 0,
       "ts": 0,
-      "score_notes": [
-        "QPIX-R flag: Whistle suppression: -2.5 FTA below baseline"
-      ],
+      "score_notes": [],
       "context": {
         "teamAvgPlusMinus": -4.583333333333333,
         "wonGame": false,
@@ -10559,7 +11376,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": -18.5,
       "qpix_m_minutes_shadow": -9.25,
-      "raw_rank_eligible": false
+      "raw_rank_eligible": false,
+      "qpix_r_legacy_shadow": -16.6,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 1.9,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0,
+        "prior_games": 1,
+        "window_games": 1
+      }
     },
     {
       "name": "Walter Clayton Jr.",
@@ -10632,7 +11458,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 53.99,
       "defensive_rating": 136.29,
@@ -10651,15 +11478,16 @@
         "C12": 0
       },
       "raw_qpix_shadow": -22.8,
-      "qpix_r_shadow": -22.8,
+      "qpix_r_shadow": -24.3,
       "qpix_sfa_shadow": -22.8,
       "sfa_adjustment": 0,
-      "referee_penalty": 0,
+      "referee_penalty": 1.5,
       "referee_bonus": 0,
       "ts": 26.824034334763947,
       "score_notes": [
         "Context gate: team avg -13.0 +/−",
-        "Environment bonus +1.5"
+        "Environment bonus +1.5",
+        "QPIX-R flag: Whistle inflation: +1.7 FTA above baseline"
       ],
       "context": {
         "teamAvgPlusMinus": -13,
@@ -10678,7 +11506,16 @@
       "starter_context_mismatch": true,
       "qpix_with_verified_starter_context_sensitivity": -22.8,
       "qpix_m_minutes_shadow": -1.036,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": -22.8,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 0,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.3,
+        "prior_games": 10,
+        "window_games": 10
+      }
     },
     {
       "name": "Allen Graves",
@@ -10751,7 +11588,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 28.53,
       "defensive_rating": 134.68,
@@ -10770,15 +11608,14 @@
         "C12": 0
       },
       "raw_qpix_shadow": -25.4,
-      "qpix_r_shadow": -22.8,
+      "qpix_r_shadow": -25.4,
       "qpix_sfa_shadow": -25.4,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2.6,
+      "referee_bonus": 0,
       "ts": 0,
       "score_notes": [
-        "Environment bonus +1.5",
-        "QPIX-R flag: Whistle suppression: -3.5 FTA below baseline"
+        "Environment bonus +1.5"
       ],
       "context": {
         "teamAvgPlusMinus": -4.583333333333333,
@@ -10797,7 +11634,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": -25.4,
       "qpix_m_minutes_shadow": -1.954,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": -22.8,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2.6,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 1.0909090909090908,
+        "prior_games": 11,
+        "window_games": 11
+      }
     },
     {
       "name": "Bub Carrington",
@@ -10870,7 +11716,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 51.17,
       "defensive_rating": 134.37,
@@ -10889,15 +11736,13 @@
         "C12": 0
       },
       "raw_qpix_shadow": -27,
-      "qpix_r_shadow": -25.1,
+      "qpix_r_shadow": -27,
       "qpix_sfa_shadow": -27,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 1.9,
+      "referee_bonus": 0,
       "ts": 16.666666666666664,
-      "score_notes": [
-        "QPIX-R flag: Whistle suppression: -2.5 FTA below baseline"
-      ],
+      "score_notes": [],
       "context": {
         "teamAvgPlusMinus": -2,
         "wonGame": false,
@@ -10915,7 +11760,16 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": -27,
       "qpix_m_minutes_shadow": -1.688,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": -25.1,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 1.9,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 0.5833333333333334,
+        "prior_games": 12,
+        "window_games": 12
+      }
     },
     {
       "name": "Morez Johnson Jr.",
@@ -10988,7 +11842,8 @@
         "C4_defensive_rating": "QCORE_EXPERIMENTAL_ESTIMATE",
         "C6": "UNAVAILABLE_NOT_OBSERVED_ZERO",
         "C11": "PARTIAL_MISSING_FAST_BREAK_POINTS",
-        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES"
+        "minutes": "ESPN_ROUNDED_WHOLE_MINUTES",
+        "QPIXR": "ESPN_VERIFIED_PREGAME_ROLLING20_FTA"
       },
       "offensive_rating": 9.37,
       "defensive_rating": 134.72,
@@ -11007,16 +11862,16 @@
         "C12": 0
       },
       "raw_qpix_shadow": -29.1,
-      "qpix_r_shadow": -26.5,
+      "qpix_r_shadow": -27.4,
       "qpix_sfa_shadow": -29.1,
       "sfa_adjustment": 0,
       "referee_penalty": 0,
-      "referee_bonus": 2.6,
+      "referee_bonus": 1.7,
       "ts": 0,
       "score_notes": [
         "Context gate: team avg -13.0 +/−",
         "Environment bonus +1.5",
-        "QPIX-R flag: Whistle suppression: -3.5 FTA below baseline"
+        "QPIX-R flag: Whistle suppression: -2.2 FTA below baseline"
       ],
       "context": {
         "teamAvgPlusMinus": -13,
@@ -11035,7 +11890,25 @@
       "starter_context_mismatch": false,
       "qpix_with_verified_starter_context_sensitivity": -29.1,
       "qpix_m_minutes_shadow": -2.238,
-      "raw_rank_eligible": true
+      "raw_rank_eligible": true,
+      "qpix_r_legacy_shadow": -26.5,
+      "referee_penalty_legacy": 0,
+      "referee_bonus_legacy": 2.6,
+      "qpix_r_baseline": {
+        "source": "ESPN_VERIFIED_PREGAME_ROLLING20",
+        "fta": 2.2,
+        "prior_games": 10,
+        "window_games": 10
+      }
     }
-  ]
+  ],
+  "qpix_r_recheck": {
+    "date_et": "2026-11-12",
+    "engine": "UNCHANGED_CHECKED_IN_C13",
+    "baseline_source": "ESPN_PLAYER_2026_27_GAMELOG_PREGAME_20",
+    "count_verified": 89,
+    "count_legacy_unverified": 1,
+    "audit_path": "data/historical/qpix_fta/2026-11-12.json",
+    "quality": "PROVISIONAL_QPIXR_RECALIBRATED_SEASON_LOG_NOT_FULL_QPIX_CERTIFICATION"
+  }
 }
