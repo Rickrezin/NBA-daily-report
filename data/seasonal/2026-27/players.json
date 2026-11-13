@@ -195,6 +195,9 @@
         "players_accepted": 90,
         "skipped_by_reason": {}
       }
+    ],
+    "verified_espn_fta_archives": [
+      "data/historical/qpix_fta/2026-11-12.json"
     ]
   },
   "players": {
@@ -1878,7 +1881,19 @@
           "pregame_rolling20_fta": 0.2857,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 13,
+        "season_fta_total": 6,
+        "season_fta_per_game": 0.4615,
+        "rolling20_games": 13,
+        "rolling20_fta_per_game": 0.4615,
+        "pregame_rolling20_fta": 0.5,
+        "current_game_fta": 0
+      }
     },
     "2581184": {
       "player_id": "2581184",
@@ -2286,7 +2301,19 @@
           "pregame_rolling20_fta": 0.7143,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 7,
+        "season_fta_per_game": 0.5833,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 0.5833,
+        "pregame_rolling20_fta": 0.5454545454545454,
+        "current_game_fta": 1
+      }
     },
     "2595516": {
       "player_id": "2595516",
@@ -2744,7 +2771,19 @@
           "pregame_rolling20_fta": 1.0,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 14,
+        "season_fta_per_game": 1.2727,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 1.2727,
+        "pregame_rolling20_fta": 1.4,
+        "current_game_fta": 0
+      }
     },
     "2990962": {
       "player_id": "2990962",
@@ -4630,7 +4669,19 @@
           "pregame_rolling20_fta": 0.5,
           "pregame_observed_games": 4
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 9,
+        "season_fta_total": 2,
+        "season_fta_per_game": 0.2222,
+        "rolling20_games": 9,
+        "rolling20_fta_per_game": 0.2222,
+        "pregame_rolling20_fta": 0.25,
+        "current_game_fta": 0
+      }
     },
     "2995706": {
       "player_id": "2995706",
@@ -5138,7 +5189,19 @@
           "pregame_rolling20_fta": 5.8,
           "pregame_observed_games": 5
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 54,
+        "season_fta_per_game": 4.9091,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 4.9091,
+        "pregame_rolling20_fta": 5.3,
+        "current_game_fta": 1
+      }
     },
     "3032977": {
       "player_id": "3032977",
@@ -6179,7 +6242,19 @@
           "pregame_rolling20_fta": 7.3333,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 80,
+        "season_fta_per_game": 7.2727,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 7.2727,
+        "pregame_rolling20_fta": 7.3,
+        "current_game_fta": 7
+      }
     },
     "3059319": {
       "player_id": "3059319",
@@ -10551,7 +10626,19 @@
           "pregame_rolling20_fta": 1.0,
           "pregame_observed_games": 4
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 10,
+        "season_fta_total": 14,
+        "season_fta_per_game": 1.4,
+        "rolling20_games": 10,
+        "rolling20_fta_per_game": 1.4,
+        "pregame_rolling20_fta": 1.1111111111111112,
+        "current_game_fta": 4
+      }
     },
     "3134916": {
       "player_id": "3134916",
@@ -11059,7 +11146,19 @@
           "pregame_rolling20_fta": 3.7143,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 37,
+        "season_fta_per_game": 3.0833,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 3.0833,
+        "pregame_rolling20_fta": 3.3636363636363638,
+        "current_game_fta": 0
+      }
     },
     "3135046": {
       "player_id": "3135046",
@@ -11617,7 +11716,19 @@
           "pregame_rolling20_fta": 5.2857,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 65,
+        "season_fta_per_game": 5.9091,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 5.9091,
+        "pregame_rolling20_fta": 6.3,
+        "current_game_fta": 2
+      }
     },
     "3136195": {
       "player_id": "3136195",
@@ -12125,7 +12236,19 @@
           "pregame_rolling20_fta": 1.8333,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 18,
+        "season_fta_per_game": 1.5,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 1.5,
+        "pregame_rolling20_fta": 1.6363636363636365,
+        "current_game_fta": 0
+      }
     },
     "3136777": {
       "player_id": "3136777",
@@ -12583,7 +12706,19 @@
           "pregame_rolling20_fta": 0.4,
           "pregame_observed_games": 5
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 8,
+        "season_fta_total": 2,
+        "season_fta_per_game": 0.25,
+        "rolling20_games": 8,
+        "rolling20_fta_per_game": 0.25,
+        "pregame_rolling20_fta": 0.2857142857142857,
+        "current_game_fta": 0
+      }
     },
     "3138196": {
       "player_id": "3138196",
@@ -14007,7 +14142,19 @@
           "pregame_rolling20_fta": 3.0,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 27,
+        "season_fta_per_game": 2.4545,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 2.4545,
+        "pregame_rolling20_fta": 2.7,
+        "current_game_fta": 0
+      }
     },
     "3155535": {
       "player_id": "3155535",
@@ -14569,7 +14716,19 @@
           "pregame_rolling20_fta": 3.3333,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 41,
+        "season_fta_per_game": 3.7273,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 3.7273,
+        "pregame_rolling20_fta": 4.1,
+        "current_game_fta": 0
+      }
     },
     "3195": {
       "player_id": "3195",
@@ -15847,7 +16006,19 @@
           "pregame_rolling20_fta": null,
           "pregame_observed_games": 0
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 2,
+        "season_fta_total": 0,
+        "season_fta_per_game": 0.0,
+        "rolling20_games": 2,
+        "rolling20_fta_per_game": 0.0,
+        "pregame_rolling20_fta": 0.0,
+        "current_game_fta": 0
+      }
     },
     "3907497": {
       "player_id": "3907497",
@@ -17017,7 +17188,19 @@
           "pregame_rolling20_fta": 1.6667,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 15,
+        "season_fta_per_game": 1.3636,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 1.3636,
+        "pregame_rolling20_fta": 1.3,
+        "current_game_fta": 2
+      }
     },
     "3912848": {
       "player_id": "3912848",
@@ -17296,7 +17479,19 @@
           "pregame_rolling20_fta": 0.4286,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 7,
+        "season_fta_per_game": 0.6364,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 0.6364,
+        "pregame_rolling20_fta": 0.7,
+        "current_game_fta": 0
+      }
     },
     "3913174": {
       "player_id": "3913174",
@@ -17575,7 +17770,19 @@
           "pregame_rolling20_fta": 1.0,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 10,
+        "season_fta_total": 9,
+        "season_fta_per_game": 0.9,
+        "rolling20_games": 10,
+        "rolling20_fta_per_game": 0.9,
+        "pregame_rolling20_fta": 1.0,
+        "current_game_fta": 0
+      }
     },
     "3914044": {
       "player_id": "3914044",
@@ -18083,7 +18290,19 @@
           "pregame_rolling20_fta": 6.0,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 59,
+        "season_fta_per_game": 4.9167,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 4.9167,
+        "pregame_rolling20_fta": 5.0,
+        "current_game_fta": 4
+      }
     },
     "3934672": {
       "player_id": "3934672",
@@ -22771,7 +22990,19 @@
           "pregame_rolling20_fta": null,
           "pregame_observed_games": 0
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 1,
+        "season_fta_total": 3,
+        "season_fta_per_game": 3.0,
+        "rolling20_games": 1,
+        "rolling20_fta_per_game": 3.0,
+        "pregame_rolling20_fta": null,
+        "current_game_fta": 3
+      }
     },
     "4066259": {
       "player_id": "4066259",
@@ -24782,7 +25013,19 @@
           "pregame_rolling20_fta": 1.6667,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 15,
+        "season_fta_per_game": 1.3636,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 1.3636,
+        "pregame_rolling20_fta": 1.0,
+        "current_game_fta": 5
+      }
     },
     "4066383": {
       "player_id": "4066383",
@@ -25061,7 +25304,19 @@
           "pregame_rolling20_fta": 2.0,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 27,
+        "season_fta_per_game": 2.4545,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 2.4545,
+        "pregame_rolling20_fta": 2.2,
+        "current_game_fta": 5
+      }
     },
     "4066399": {
       "player_id": "4066399",
@@ -28550,7 +28805,19 @@
           "pregame_rolling20_fta": 6.25,
           "pregame_observed_games": 8
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 13,
+        "season_fta_total": 103,
+        "season_fta_per_game": 7.9231,
+        "rolling20_games": 13,
+        "rolling20_fta_per_game": 7.9231,
+        "pregame_rolling20_fta": 7.166666666666667,
+        "current_game_fta": 17
+      }
     },
     "4277919": {
       "player_id": "4277919",
@@ -30078,7 +30345,19 @@
           "pregame_rolling20_fta": 3.1429,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 32,
+        "season_fta_per_game": 2.6667,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 2.6667,
+        "pregame_rolling20_fta": 2.727272727272727,
+        "current_game_fta": 2
+      }
     },
     "4278053": {
       "player_id": "4278053",
@@ -31352,7 +31631,19 @@
           "pregame_rolling20_fta": 3.0,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 44,
+        "season_fta_per_game": 3.6667,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 3.6667,
+        "pregame_rolling20_fta": 3.909090909090909,
+        "current_game_fta": 1
+      }
     },
     "4278104": {
       "player_id": "4278104",
@@ -31910,7 +32201,19 @@
           "pregame_rolling20_fta": 0.25,
           "pregame_observed_games": 8
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 13,
+        "season_fta_total": 6,
+        "season_fta_per_game": 0.4615,
+        "rolling20_games": 13,
+        "rolling20_fta_per_game": 0.4615,
+        "pregame_rolling20_fta": 0.5,
+        "current_game_fta": 0
+      }
     },
     "4278355": {
       "player_id": "4278355",
@@ -32343,7 +32646,19 @@
           "pregame_rolling20_fta": 0.0,
           "pregame_observed_games": 5
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 7,
+        "season_fta_total": 0,
+        "season_fta_per_game": 0.0,
+        "rolling20_games": 7,
+        "rolling20_fta_per_game": 0.0,
+        "pregame_rolling20_fta": 0.0,
+        "current_game_fta": 0
+      }
     },
     "4278562": {
       "player_id": "4278562",
@@ -32597,7 +32912,19 @@
           "pregame_rolling20_fta": 2.3333,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 25,
+        "season_fta_per_game": 2.2727,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 2.2727,
+        "pregame_rolling20_fta": 1.9,
+        "current_game_fta": 6
+      }
     },
     "4278572": {
       "player_id": "4278572",
@@ -33334,7 +33661,19 @@
           "pregame_rolling20_fta": 0.4286,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 4,
+        "season_fta_per_game": 0.3636,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 0.3636,
+        "pregame_rolling20_fta": 0.4,
+        "current_game_fta": 0
+      }
     },
     "4278594": {
       "player_id": "4278594",
@@ -33538,7 +33877,19 @@
           "pregame_rolling20_fta": 2.75,
           "pregame_observed_games": 4
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 9,
+        "season_fta_total": 20,
+        "season_fta_per_game": 2.2222,
+        "rolling20_games": 9,
+        "rolling20_fta_per_game": 2.2222,
+        "pregame_rolling20_fta": 2.0,
+        "current_game_fta": 4
+      }
     },
     "4279318": {
       "player_id": "4279318",
@@ -34637,7 +34988,19 @@
           "pregame_rolling20_fta": 1.0,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 13,
+        "season_fta_total": 13,
+        "season_fta_per_game": 1.0,
+        "rolling20_games": 13,
+        "rolling20_fta_per_game": 1.0,
+        "pregame_rolling20_fta": 1.0833333333333333,
+        "current_game_fta": 0
+      }
     },
     "4351852": {
       "player_id": "4351852",
@@ -35120,7 +35483,19 @@
           "pregame_rolling20_fta": 5.6,
           "pregame_observed_games": 5
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 66,
+        "season_fta_per_game": 5.5,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 5.5,
+        "pregame_rolling20_fta": 5.818181818181818,
+        "current_game_fta": 2
+      }
     },
     "4395626": {
       "player_id": "4395626",
@@ -36165,7 +36540,19 @@
           "pregame_rolling20_fta": 2.5,
           "pregame_observed_games": 2
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 5,
+        "season_fta_total": 12,
+        "season_fta_per_game": 2.4,
+        "rolling20_games": 5,
+        "rolling20_fta_per_game": 2.4,
+        "pregame_rolling20_fta": 2.25,
+        "current_game_fta": 3
+      }
     },
     "4395712": {
       "player_id": "4395712",
@@ -36852,7 +37239,19 @@
           "pregame_rolling20_fta": 4.75,
           "pregame_observed_games": 4
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 10,
+        "season_fta_total": 45,
+        "season_fta_per_game": 4.5,
+        "rolling20_games": 10,
+        "rolling20_fta_per_game": 4.5,
+        "pregame_rolling20_fta": 4.111111111111111,
+        "current_game_fta": 8
+      }
     },
     "4395725": {
       "player_id": "4395725",
@@ -37818,7 +38217,19 @@
           "pregame_rolling20_fta": 2.7143,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 30,
+        "season_fta_per_game": 2.5,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 2.5,
+        "pregame_rolling20_fta": 2.272727272727273,
+        "current_game_fta": 5
+      }
     },
     "4396993": {
       "player_id": "4396993",
@@ -38176,7 +38587,19 @@
           "pregame_rolling20_fta": 2.5,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 29,
+        "season_fta_per_game": 2.4167,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 2.4167,
+        "pregame_rolling20_fta": 2.6363636363636362,
+        "current_game_fta": 0
+      }
     },
     "4397014": {
       "player_id": "4397014",
@@ -41261,7 +41684,19 @@
           "pregame_rolling20_fta": 0.0,
           "pregame_observed_games": 1
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 2,
+        "season_fta_total": 0,
+        "season_fta_per_game": 0.0,
+        "rolling20_games": 2,
+        "rolling20_fta_per_game": 0.0,
+        "pregame_rolling20_fta": 0.0,
+        "current_game_fta": 0
+      }
     },
     "4397882": {
       "player_id": "4397882",
@@ -42356,7 +42791,19 @@
           "pregame_rolling20_fta": 2.3333,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 23,
+        "season_fta_per_game": 1.9167,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 1.9167,
+        "pregame_rolling20_fta": 1.9090909090909092,
+        "current_game_fta": 2
+      }
     },
     "4431675": {
       "player_id": "4431675",
@@ -42789,7 +43236,19 @@
           "pregame_rolling20_fta": 6.5714,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 13,
+        "season_fta_total": 94,
+        "season_fta_per_game": 7.2308,
+        "rolling20_games": 13,
+        "rolling20_fta_per_game": 7.2308,
+        "pregame_rolling20_fta": 6.833333333333333,
+        "current_game_fta": 12
+      }
     },
     "4431679": {
       "player_id": "4431679",
@@ -45141,7 +45600,19 @@
           "pregame_rolling20_fta": 1.8,
           "pregame_observed_games": 5
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 15,
+        "season_fta_per_game": 1.25,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 1.25,
+        "pregame_rolling20_fta": 1.3636363636363635,
+        "current_game_fta": 0
+      }
     },
     "4431941": {
       "player_id": "4431941",
@@ -45499,7 +45970,19 @@
           "pregame_rolling20_fta": 0.5,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 10,
+        "season_fta_total": 6,
+        "season_fta_per_game": 0.6,
+        "rolling20_games": 10,
+        "rolling20_fta_per_game": 0.6,
+        "pregame_rolling20_fta": 0.4444444444444444,
+        "current_game_fta": 2
+      }
     },
     "4432158": {
       "player_id": "4432158",
@@ -46032,7 +46515,19 @@
           "pregame_rolling20_fta": 4.8333,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 73,
+        "season_fta_per_game": 6.6364,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 6.6364,
+        "pregame_rolling20_fta": 5.5,
+        "current_game_fta": 18
+      }
     },
     "4432170": {
       "player_id": "4432170",
@@ -46923,7 +47418,19 @@
           "pregame_rolling20_fta": 2.4,
           "pregame_observed_games": 5
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 23,
+        "season_fta_per_game": 1.9167,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 1.9167,
+        "pregame_rolling20_fta": 1.9090909090909092,
+        "current_game_fta": 2
+      }
     },
     "4432247": {
       "player_id": "4432247",
@@ -47152,7 +47659,19 @@
           "pregame_rolling20_fta": 1.4,
           "pregame_observed_games": 5
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 14,
+        "season_fta_per_game": 1.2727,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 1.2727,
+        "pregame_rolling20_fta": 1.4,
+        "current_game_fta": 0
+      }
     },
     "4432446": {
       "player_id": "4432446",
@@ -47381,7 +47900,19 @@
           "pregame_rolling20_fta": 0.8,
           "pregame_observed_games": 5
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 9,
+        "season_fta_total": 12,
+        "season_fta_per_game": 1.3333,
+        "rolling20_games": 9,
+        "rolling20_fta_per_game": 1.3333,
+        "pregame_rolling20_fta": 1.5,
+        "current_game_fta": 0
+      }
     },
     "4432582": {
       "player_id": "4432582",
@@ -47660,7 +48191,19 @@
           "pregame_rolling20_fta": 0.5714,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 4,
+        "season_fta_per_game": 0.3636,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 0.3636,
+        "pregame_rolling20_fta": 0.4,
+        "current_game_fta": 0
+      }
     },
     "4432639": {
       "player_id": "4432639",
@@ -48118,7 +48661,19 @@
           "pregame_rolling20_fta": 0.0,
           "pregame_observed_games": 2
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 9,
+        "season_fta_total": 11,
+        "season_fta_per_game": 1.2222,
+        "rolling20_games": 9,
+        "rolling20_fta_per_game": 1.2222,
+        "pregame_rolling20_fta": 1.125,
+        "current_game_fta": 2
+      }
     },
     "4432808": {
       "player_id": "4432808",
@@ -48934,7 +49489,19 @@
           "pregame_rolling20_fta": 2.1667,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 30,
+        "season_fta_per_game": 2.5,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 2.5,
+        "pregame_rolling20_fta": 2.727272727272727,
+        "current_game_fta": 0
+      }
     },
     "4432819": {
       "player_id": "4432819",
@@ -49979,7 +50546,19 @@
           "pregame_rolling20_fta": 4.4,
           "pregame_observed_games": 5
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 9,
+        "season_fta_total": 33,
+        "season_fta_per_game": 3.6667,
+        "rolling20_games": 9,
+        "rolling20_fta_per_game": 3.6667,
+        "pregame_rolling20_fta": 4.125,
+        "current_game_fta": 0
+      }
     },
     "4432848": {
       "player_id": "4432848",
@@ -51332,7 +51911,19 @@
           "pregame_rolling20_fta": 0.0,
           "pregame_observed_games": 1
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 2,
+        "season_fta_total": 0,
+        "season_fta_per_game": 0.0,
+        "rolling20_games": 2,
+        "rolling20_fta_per_game": 0.0,
+        "pregame_rolling20_fta": 0.0,
+        "current_game_fta": 0
+      }
     },
     "4433149": {
       "player_id": "4433149",
@@ -52581,7 +53172,19 @@
           "pregame_rolling20_fta": 1.6667,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 38,
+        "season_fta_per_game": 3.1667,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 3.1667,
+        "pregame_rolling20_fta": 3.272727272727273,
+        "current_game_fta": 2
+      }
     },
     "4433249": {
       "player_id": "4433249",
@@ -52835,7 +53438,19 @@
           "pregame_rolling20_fta": 1.5,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 10,
+        "season_fta_total": 21,
+        "season_fta_per_game": 2.1,
+        "rolling20_games": 10,
+        "rolling20_fta_per_game": 2.1,
+        "pregame_rolling20_fta": 2.111111111111111,
+        "current_game_fta": 2
+      }
     },
     "4433287": {
       "player_id": "4433287",
@@ -53805,7 +54420,19 @@
           "pregame_rolling20_fta": 2.7143,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 33,
+        "season_fta_per_game": 3.0,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 3.0,
+        "pregame_rolling20_fta": 2.7,
+        "current_game_fta": 6
+      }
     },
     "4565698": {
       "player_id": "4565698",
@@ -54517,7 +55144,19 @@
           "pregame_rolling20_fta": 0.8571,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 14,
+        "season_fta_per_game": 1.1667,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 1.1667,
+        "pregame_rolling20_fta": 1.0909090909090908,
+        "current_game_fta": 2
+      }
     },
     "4576086": {
       "player_id": "4576086",
@@ -56299,7 +56938,19 @@
           "pregame_rolling20_fta": 1.3333,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 21,
+        "season_fta_per_game": 1.75,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 1.75,
+        "pregame_rolling20_fta": 1.3636363636363635,
+        "current_game_fta": 6
+      }
     },
     "4592691": {
       "player_id": "4592691",
@@ -57781,7 +58432,19 @@
           "pregame_rolling20_fta": 0.5,
           "pregame_observed_games": 2
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 4,
+        "season_fta_total": 6,
+        "season_fta_per_game": 1.5,
+        "rolling20_games": 4,
+        "rolling20_fta_per_game": 1.5,
+        "pregame_rolling20_fta": 2.0,
+        "current_game_fta": 0
+      }
     },
     "4593841": {
       "player_id": "4593841",
@@ -59088,7 +59751,19 @@
           "pregame_rolling20_fta": 1.2,
           "pregame_observed_games": 5
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 9,
+        "season_fta_total": 15,
+        "season_fta_per_game": 1.6667,
+        "rolling20_games": 9,
+        "rolling20_fta_per_game": 1.6667,
+        "pregame_rolling20_fta": 1.625,
+        "current_game_fta": 2
+      }
     },
     "4601025": {
       "player_id": "4601025",
@@ -59621,7 +60296,19 @@
           "pregame_rolling20_fta": 0.5714,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 11,
+        "season_fta_per_game": 0.9167,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 0.9167,
+        "pregame_rolling20_fta": 0.8181818181818182,
+        "current_game_fta": 2
+      }
     },
     "4683021": {
       "player_id": "4683021",
@@ -61736,7 +62423,19 @@
           "pregame_rolling20_fta": 1.8333,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 13,
+        "season_fta_per_game": 1.1818,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 1.1818,
+        "pregame_rolling20_fta": 1.3,
+        "current_game_fta": 0
+      }
     },
     "4683774": {
       "player_id": "4683774",
@@ -62810,7 +63509,19 @@
           "pregame_rolling20_fta": 3.0,
           "pregame_observed_games": 5
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 30,
+        "season_fta_per_game": 2.5,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 2.5,
+        "pregame_rolling20_fta": 2.5454545454545454,
+        "current_game_fta": 2
+      }
     },
     "4684740": {
       "player_id": "4684740",
@@ -63368,7 +64079,19 @@
           "pregame_rolling20_fta": 2.6667,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 10,
+        "season_fta_total": 25,
+        "season_fta_per_game": 2.5,
+        "rolling20_games": 10,
+        "rolling20_fta_per_game": 2.5,
+        "pregame_rolling20_fta": 2.5555555555555554,
+        "current_game_fta": 2
+      }
     },
     "4684793": {
       "player_id": "4684793",
@@ -64592,7 +65315,19 @@
           "pregame_rolling20_fta": 0.5,
           "pregame_observed_games": 4
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 8,
+        "season_fta_total": 6,
+        "season_fta_per_game": 0.75,
+        "rolling20_games": 8,
+        "rolling20_fta_per_game": 0.75,
+        "pregame_rolling20_fta": 0.8571428571428571,
+        "current_game_fta": 0
+      }
     },
     "4701225": {
       "player_id": "4701225",
@@ -66253,7 +66988,19 @@
           "pregame_rolling20_fta": 0.0,
           "pregame_observed_games": 4
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 8,
+        "season_fta_per_game": 0.7273,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 0.7273,
+        "pregame_rolling20_fta": 0.8,
+        "current_game_fta": 0
+      }
     },
     "4702972": {
       "player_id": "4702972",
@@ -67914,7 +68661,19 @@
           "pregame_rolling20_fta": 0.0,
           "pregame_observed_games": 4
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 6,
+        "season_fta_total": 0,
+        "season_fta_per_game": 0.0,
+        "rolling20_games": 6,
+        "rolling20_fta_per_game": 0.0,
+        "pregame_rolling20_fta": 0.0,
+        "current_game_fta": 0
+      }
     },
     "4712849": {
       "player_id": "4712849",
@@ -69392,7 +70151,19 @@
           "pregame_rolling20_fta": 0.625,
           "pregame_observed_games": 8
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 13,
+        "season_fta_total": 7,
+        "season_fta_per_game": 0.5385,
+        "rolling20_games": 13,
+        "rolling20_fta_per_game": 0.5385,
+        "pregame_rolling20_fta": 0.5833333333333334,
+        "current_game_fta": 0
+      }
     },
     "4848625": {
       "player_id": "4848625",
@@ -70920,7 +71691,19 @@
           "pregame_rolling20_fta": 0.8,
           "pregame_observed_games": 5
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 8,
+        "season_fta_total": 6,
+        "season_fta_per_game": 0.75,
+        "rolling20_games": 8,
+        "rolling20_fta_per_game": 0.75,
+        "pregame_rolling20_fta": 0.8571428571428571,
+        "current_game_fta": 0
+      }
     },
     "4873138": {
       "player_id": "4873138",
@@ -71428,7 +72211,19 @@
           "pregame_rolling20_fta": 2.0,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 22,
+        "season_fta_per_game": 2.0,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 2.0,
+        "pregame_rolling20_fta": 2.2,
+        "current_game_fta": 0
+      }
     },
     "4873201": {
       "player_id": "4873201",
@@ -71861,7 +72656,19 @@
           "pregame_rolling20_fta": 0.5714,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 8,
+        "season_fta_per_game": 0.7273,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 0.7273,
+        "pregame_rolling20_fta": 0.8,
+        "current_game_fta": 0
+      }
     },
     "4895758": {
       "player_id": "4895758",
@@ -72040,7 +72847,19 @@
           "pregame_rolling20_fta": 0.0,
           "pregame_observed_games": 3
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 7,
+        "season_fta_total": 0,
+        "season_fta_per_game": 0.0,
+        "rolling20_games": 7,
+        "rolling20_fta_per_game": 0.0,
+        "pregame_rolling20_fta": 0.0,
+        "current_game_fta": 0
+      }
     },
     "4896372": {
       "player_id": "4896372",
@@ -72319,7 +73138,19 @@
           "pregame_rolling20_fta": 1.2857,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 16,
+        "season_fta_per_game": 1.4545,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 1.4545,
+        "pregame_rolling20_fta": 1.3,
+        "current_game_fta": 3
+      }
     },
     "4897262": {
       "player_id": "4897262",
@@ -75658,7 +76489,19 @@
           "pregame_rolling20_fta": 7.0,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 74,
+        "season_fta_per_game": 6.7273,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 6.7273,
+        "pregame_rolling20_fta": 7.2,
+        "current_game_fta": 2
+      }
     },
     "5041951": {
       "player_id": "5041951",
@@ -76982,7 +77825,19 @@
           "pregame_rolling20_fta": 0.1429,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 3,
+        "season_fta_per_game": 0.2727,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 0.2727,
+        "pregame_rolling20_fta": 0.1,
+        "current_game_fta": 2
+      }
     },
     "5061568": {
       "player_id": "5061568",
@@ -77415,7 +78270,19 @@
           "pregame_rolling20_fta": 0.0,
           "pregame_observed_games": 2
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 6,
+        "season_fta_total": 0,
+        "season_fta_per_game": 0.0,
+        "rolling20_games": 6,
+        "rolling20_fta_per_game": 0.0,
+        "pregame_rolling20_fta": 0.0,
+        "current_game_fta": 0
+      }
     },
     "5075626": {
       "player_id": "5075626",
@@ -78331,7 +79198,19 @@
           "pregame_rolling20_fta": 2.5,
           "pregame_observed_games": 4
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 27,
+        "season_fta_per_game": 2.4545,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 2.4545,
+        "pregame_rolling20_fta": 2.3,
+        "current_game_fta": 4
+      }
     },
     "5095151": {
       "player_id": "5095151",
@@ -79197,7 +80076,19 @@
           "pregame_rolling20_fta": 1.2857,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 18,
+        "season_fta_per_game": 1.5,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 1.5,
+        "pregame_rolling20_fta": 1.6363636363636365,
+        "current_game_fta": 0
+      }
     },
     "5104157": {
       "player_id": "5104157",
@@ -81083,7 +81974,19 @@
           "pregame_rolling20_fta": 0.5,
           "pregame_observed_games": 4
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 6,
+        "season_fta_total": 2,
+        "season_fta_per_game": 0.3333,
+        "rolling20_games": 6,
+        "rolling20_fta_per_game": 0.3333,
+        "pregame_rolling20_fta": 0.4,
+        "current_game_fta": 0
+      }
     },
     "5105809": {
       "player_id": "5105809",
@@ -82744,7 +83647,19 @@
           "pregame_rolling20_fta": 0.0,
           "pregame_observed_games": 4
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 7,
+        "season_fta_total": 0,
+        "season_fta_per_game": 0.0,
+        "rolling20_games": 7,
+        "rolling20_fta_per_game": 0.0,
+        "pregame_rolling20_fta": 0.0,
+        "current_game_fta": 0
+      }
     },
     "5106058": {
       "player_id": "5106058",
@@ -84326,7 +85241,19 @@
           "pregame_rolling20_fta": 2.5,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 30,
+        "season_fta_per_game": 2.7273,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 2.7273,
+        "pregame_rolling20_fta": 2.4,
+        "current_game_fta": 6
+      }
     },
     "5107818": {
       "player_id": "5107818",
@@ -85400,7 +86327,19 @@
           "pregame_rolling20_fta": 1.1429,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 13,
+        "season_fta_per_game": 1.0833,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 1.0833,
+        "pregame_rolling20_fta": 1.1818181818181819,
+        "current_game_fta": 0
+      }
     },
     "5142620": {
       "player_id": "5142620",
@@ -86012,7 +86951,19 @@
           "pregame_rolling20_fta": 5.1667,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 9,
+        "season_fta_total": 39,
+        "season_fta_per_game": 4.3333,
+        "rolling20_games": 9,
+        "rolling20_fta_per_game": 4.3333,
+        "pregame_rolling20_fta": 4.875,
+        "current_game_fta": 0
+      }
     },
     "5144091": {
       "player_id": "5144091",
@@ -86520,7 +87471,19 @@
           "pregame_rolling20_fta": 0.6667,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 10,
+        "season_fta_total": 4,
+        "season_fta_per_game": 0.4,
+        "rolling20_games": 10,
+        "rolling20_fta_per_game": 0.4,
+        "pregame_rolling20_fta": 0.4444444444444444,
+        "current_game_fta": 0
+      }
     },
     "5149077": {
       "player_id": "5149077",
@@ -86978,7 +87941,19 @@
           "pregame_rolling20_fta": 1.2,
           "pregame_observed_games": 5
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 12,
+        "season_fta_per_game": 1.0,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 1.0,
+        "pregame_rolling20_fta": 1.0909090909090908,
+        "current_game_fta": 0
+      }
     },
     "5157587": {
       "player_id": "5157587",
@@ -87361,7 +88336,19 @@
           "pregame_rolling20_fta": 1.2857,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 23,
+        "season_fta_per_game": 1.9167,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 1.9167,
+        "pregame_rolling20_fta": 1.7272727272727273,
+        "current_game_fta": 4
+      }
     },
     "5164559": {
       "player_id": "5164559",
@@ -88123,7 +89110,19 @@
           "pregame_rolling20_fta": 1.875,
           "pregame_observed_games": 8
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 13,
+        "season_fta_total": 38,
+        "season_fta_per_game": 2.9231,
+        "rolling20_games": 13,
+        "rolling20_fta_per_game": 2.9231,
+        "pregame_rolling20_fta": 3.0,
+        "current_game_fta": 2
+      }
     },
     "5174655": {
       "player_id": "5174655",
@@ -89751,7 +90750,19 @@
           "pregame_rolling20_fta": 2.7143,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 19,
+        "season_fta_per_game": 1.7273,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 1.7273,
+        "pregame_rolling20_fta": 1.9,
+        "current_game_fta": 0
+      }
     },
     "5211175": {
       "player_id": "5211175",
@@ -90030,7 +91041,19 @@
           "pregame_rolling20_fta": 1.1429,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 12,
+        "season_fta_per_game": 1.0,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 1.0,
+        "pregame_rolling20_fta": 1.0909090909090908,
+        "current_game_fta": 0
+      }
     },
     "5211176": {
       "player_id": "5211176",
@@ -90309,7 +91332,19 @@
           "pregame_rolling20_fta": 0.7143,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 13,
+        "season_fta_per_game": 1.1818,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 1.1818,
+        "pregame_rolling20_fta": 1.3,
+        "current_game_fta": 0
+      }
     },
     "5211983": {
       "player_id": "5211983",
@@ -91408,7 +92443,19 @@
           "pregame_rolling20_fta": 0.8571,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 12,
+        "season_fta_per_game": 1.0,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 1.0,
+        "pregame_rolling20_fta": 0.9090909090909091,
+        "current_game_fta": 2
+      }
     },
     "5239561": {
       "player_id": "5239561",
@@ -93269,7 +94316,19 @@
           "pregame_rolling20_fta": 1.6667,
           "pregame_observed_games": 6
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 12,
+        "season_fta_total": 24,
+        "season_fta_per_game": 2.0,
+        "rolling20_games": 12,
+        "rolling20_fta_per_game": 2.0,
+        "pregame_rolling20_fta": 1.4545454545454546,
+        "current_game_fta": 8
+      }
     },
     "5281370": {
       "player_id": "5281370",
@@ -93856,7 +94915,19 @@
           "pregame_rolling20_fta": 3.2,
           "pregame_observed_games": 5
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 10,
+        "season_fta_total": 29,
+        "season_fta_per_game": 2.9,
+        "rolling20_games": 10,
+        "rolling20_fta_per_game": 2.9,
+        "pregame_rolling20_fta": 3.2222222222222223,
+        "current_game_fta": 0
+      }
     },
     "6475": {
       "player_id": "6475",
@@ -94847,7 +95918,19 @@
           "pregame_rolling20_fta": 5.8571,
           "pregame_observed_games": 7
         }
-      ]
+      ],
+      "verified_espn_fta": {
+        "as_of_date_et": "2026-11-12",
+        "source_file": "data/historical/qpix_fta/2026-11-12.json",
+        "complete_to_observed_game": true,
+        "game_count": 11,
+        "season_fta_total": 65,
+        "season_fta_per_game": 5.9091,
+        "rolling20_games": 11,
+        "rolling20_fta_per_game": 5.9091,
+        "pregame_rolling20_fta": 6.1,
+        "current_game_fta": 4
+      }
     },
     "6585": {
       "player_id": "6585",
