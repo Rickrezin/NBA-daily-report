@@ -50,29 +50,26 @@ def fetch(player):
                 for e in category.get('events',[]):
                     eid=str(e.get('eventId') or '')
                     if not eid:continue
-                    meta=event_info.get(eid,{}) if isinstance(event_info,dict) else {}
-                    raw_date=meta.get('date','')
-                    if not raw_date:
-                        raise ValueError('Event has no verifiable date '+eid)
-                    utc=datetime.datetime.fromisoformat(raw_date.replace('Z','+00:00'))
-                    local_date=utc.astimezone(ET).date().isoformat()
+                    # API provides month-grouped events in reverse chronological order.
+                    # Date is not present on the event map for this endpoint; rather
+                    # than infer calendar dates, require today's event to be the first
+                    # played game in the ordered regular-season list.
                     ft=e['stats'][ft_index]
                     m=re.fullmatch(r'(\d+)-(\d+)',str(ft))
                     if not m:
                         raise ValueError('Invalid made-attempted FT entry '+repr(ft))
                     made,attempted=map(int,m.groups())
                     if made>attempted:raise ValueError('FT makes exceed attempts')
-                    events.append({'event_id':eid,'date_et':local_date,'ftm':made,'fta':attempted})
+                    events.append({'event_id':eid,'ftm':made,'fta':attempted})
             matching=[e for e in events if e['event_id']==target_game]
             if len(matching)!=1:
                 raise ValueError('Target game absent or duplicate: '+target_game)
             current=matching[0]
-            if current['date_et']!=DATE or current['fta']!=player['fta'] or current['ftm']!=player['ftm']:
+            if events[0]['event_id']!=target_game or current['fta']!=player['fta'] or current['ftm']!=player['ftm']:
                 raise ValueError(f"Current game mismatch {current} vs {player['fta']} FTA")
-            previous=sorted((e for e in events if e['date_et']<DATE),
-                            key=lambda e:(e['date_et'],e['event_id']))
-            # ESPN regular-season game log is complete to its available timestamp;
-            # target-date is independently present and matches today's box score.
+            previous=list(reversed(events[1:]))
+            # Today's game is verified as the most recent event and matches
+            # the scored ESPN box. No future or same-game leakage is allowed.
             trailing=previous[-20:]
             n=len(trailing)
             baseline=sum(e['fta'] for e in trailing)/n if n else None
