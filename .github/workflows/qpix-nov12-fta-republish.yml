@@ -2,7 +2,9 @@ name: QPIX Nov 12 rolling FTA correction and provisional republication
 on:
   push:
     branches: [main]
-    paths: ['.github/workflows/qpix-nov12-fta-republish.yml']
+    paths:
+      - '.github/workflows/qpix-nov12-fta-republish.yml'
+      - 'scripts/qpix_nov12_fta_recheck.py'
   workflow_dispatch:
 permissions:
   contents: write
