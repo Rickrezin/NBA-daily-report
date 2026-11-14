@@ -215,6 +215,74 @@ jobs:
           report_path.write_text('\n'.join(lines))
           print('SOCIAL REPORT WRITTEN',report_path)
           PY
+      - name: Correct QPIX-R with verified pregame season game logs and synchronize published narrative and CSV
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/qpix_nov13_fta_runner.py
+          python3 - <<'PY'
+          from pathlib import Path
+          s=Path('scripts/qpix_nov12_qpixr_recheck.cjs').read_text()
+          assert "date='2026-11-12'" in s
+          s=s.replace('2026-11-12','2026-11-13')
+          Path('scripts/qpix_nov13_qpixr_recheck_runner.cjs').write_text(s)
+          PY
+          node scripts/qpix_nov13_qpixr_recheck_runner.cjs
+          python3 - <<'PY'
+          import csv,json,re
+          from pathlib import Path
+          d='2026-11-13';root=Path('.')
+          path=root/f'data/daily/{d}.provisional.json'
+          j=json.loads(path.read_text())
+          archive=json.loads((root/f'data/historical/qpix_fta/{d}.json').read_text())
+          byid={str(p['player_id']):p for p in j['players']}
+          byname={(p['name'],p['team']):p for p in j['players']}
+          for p in j['players']:
+              p['qpix_r_fta_source']=p['qpix_r_baseline']['source']
+          path.write_text(json.dumps(j,indent=2,ensure_ascii=False)+'\n')
+          csv_path=root/f'data/daily/{d}.provisional.csv'
+          with csv_path.open(newline='') as f:
+              reader=csv.DictReader(f);fields=reader.fieldnames;rows=list(reader)
+          assert fields and len(rows)==len(j['players'])
+          for row in rows:
+              p=byid[row['player_id']]
+              assert row['name']==p['name'] and float(row['raw_qpix_shadow'])==p['raw_qpix_shadow']
+              row['qpix_r_shadow']=str(p['qpix_r_shadow'])
+          with csv_path.open('w',newline='') as f:
+              wr=csv.DictWriter(f,fieldnames=fields);wr.writeheader();wr.writerows(rows)
+          report_path=root/f'docs/reports/{d}.provisional.md'
+          report=report_path.read_text()
+          report=report.replace('PROVISIONAL / SHADOW — NOT FULLY CERTIFIED',
+                                'CORRECTED PREGAME QPIX-R — PROVISIONAL / SHADOW')
+          leader=byid[str(j['leaderboards']['top10'][0])]
+          assert f"QPIX-R was {leader['qpix_r_legacy_shadow']:.1f}." in report
+          report=report.replace(f"QPIX-R was {leader['qpix_r_legacy_shadow']:.1f}.",
+                                f"QPIX-R was {leader['qpix_r_shadow']:.1f}.")
+          top=[byid[str(pid)] for pid in j['leaderboards']['top10']]
+          for p in top:
+              target=f"{p['name']} ({p['team']}) — RAW {p['raw_qpix_shadow']:.1f} | QPIX-R {p['qpix_r_legacy_shadow']:.1f}"
+              assert target in report,target
+              report=report.replace(target,f"{p['name']} ({p['team']}) — RAW {p['raw_qpix_shadow']:.1f} | QPIX-R {p['qpix_r_shadow']:.1f}")
+          for p in top[1:7]:
+              target=f"earned {p['raw_qpix_shadow']:.1f} provisional RAW QPIX and {p['qpix_r_legacy_shadow']:.1f} QPIX-R"
+              assert target in report,target
+              report=report.replace(target,f"earned {p['raw_qpix_shadow']:.1f} provisional RAW QPIX and {p['qpix_r_shadow']:.1f} QPIX-R")
+          insert="ESPN season game logs verified pregame rolling-20 FTA where available, using the unmodified C13 engine; games with no prior qualifying history retain a separately flagged legacy/authorized fallback. "
+          report=report.replace('Official full-category certification is withheld.',insert+'Official full-category certification is withheld.')
+          report_path.write_text(report)
+          audit_path=root/f'docs/reports/{d}.audit.json'
+          audit=json.loads(audit_path.read_text())
+          audit['qpix_r_recheck']=j['qpix_r_recheck']
+          audit['qpix_r_recheck']['source_archive_status_counts']=archive['status_counts']
+          audit['QPIXR_baseline_sources']={
+              'verified_pregame_season_roll20':j['qpix_r_recheck']['count_verified'],
+              'authorized_or_legacy_fallback':j['qpix_r_recheck']['count_legacy_unverified']}
+          audit_path.write_text(json.dumps(audit,indent=2,ensure_ascii=False)+'\n')
+          assert len(rows)==193
+          print('C13 corrected using verified logs',archive['status_counts'],
+                'score pairs',j['qpix_r_recheck']['count_verified'],
+                'flagged fallback',j['qpix_r_recheck']['count_legacy_unverified'])
+          PY
       - name: Read-back every original, score, leaderboard, C13 source, CSV and narrative
         run: |
           python3 - <<'PY'
