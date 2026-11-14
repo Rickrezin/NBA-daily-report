@@ -5,6 +5,7 @@ on:
     paths:
       - 'data/daily/*.json'
       - 'data/historical/qpix_input/*.json'
+      - 'data/historical/qpix_fta/*.json'
       - 'data/shadow/*.json'
       - 'scripts/qpix_seasonal_rollup.py'
       - '.github/workflows/qpix-seasonal-ledger.yml'
