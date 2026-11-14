@@ -306,73 +306,73 @@
       {
         "event_id": "401909296",
         "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909296",
-        "captured_utc": "2026-11-14T12:00:52.496066+00:00",
-        "sha256": "d5eefbdba9f2fea0a27c65ebd3e9b94abd4a23487dcd55be87be9c0a2a6e45c7",
-        "bytes": 499633,
+        "captured_utc": "2026-11-14T12:02:56.922046+00:00",
+        "sha256": "6b069f51c0ecc94d44145c8a4cb94ecb63b3d81f18a9dbb122a3bbb40c23046e",
+        "bytes": 499630,
         "status": "STATUS_FINAL"
       },
       {
         "event_id": "401909297",
         "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909297",
-        "captured_utc": "2026-11-14T12:00:52.564271+00:00",
-        "sha256": "06a966e1e17a70b8343bce474f6b5c609ac68d187f411f39e7ecb397c64e0e28",
-        "bytes": 436059,
+        "captured_utc": "2026-11-14T12:02:56.960704+00:00",
+        "sha256": "eee90f18286ece3fb4f0e2645b1366675297eb4726f32095fa772fc1562b16b3",
+        "bytes": 436056,
         "status": "STATUS_FINAL"
       },
       {
         "event_id": "401909298",
         "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909298",
-        "captured_utc": "2026-11-14T12:00:52.646027+00:00",
-        "sha256": "131e269df138c8f9f5e6cbce0b31f24b08c676d998a113d1d6c62fc1766f4130",
-        "bytes": 467225,
+        "captured_utc": "2026-11-14T12:02:56.913099+00:00",
+        "sha256": "7b54ea5416e11cb5a4028d41f095a5a8f03ffaafc50b49a0884e82415b94f302",
+        "bytes": 467222,
         "status": "STATUS_FINAL"
       },
       {
         "event_id": "401909299",
         "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909299",
-        "captured_utc": "2026-11-14T12:00:52.564463+00:00",
-        "sha256": "f363ee358425ef1d13737ae2d8c8af370d27bc7a5c283aa1af5120ae18e36c40",
-        "bytes": 493572,
+        "captured_utc": "2026-11-14T12:02:56.905328+00:00",
+        "sha256": "5061b1edb90524bfc97609369879ff4a40ef9f31d8107cc78d8f8b452f9ef9c0",
+        "bytes": 493569,
         "status": "STATUS_FINAL"
       },
       {
         "event_id": "401909300",
         "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909300",
-        "captured_utc": "2026-11-14T12:00:53.235364+00:00",
-        "sha256": "596e2c1a765b479d2ff0e6f2ecb7d86b4490756492eac87b2fe589ee7b060aec",
-        "bytes": 465844,
+        "captured_utc": "2026-11-14T12:02:56.948870+00:00",
+        "sha256": "063893e151867f230139ec959630b40bc36d523159b04f37f9206b0d90394c68",
+        "bytes": 465841,
         "status": "STATUS_FINAL"
       },
       {
         "event_id": "401909301",
         "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909301",
-        "captured_utc": "2026-11-14T12:00:52.824964+00:00",
-        "sha256": "59744f248f2e153baf418db1673a714652eda4ce0d1bbc901bc1f06ca4869758",
-        "bytes": 476713,
+        "captured_utc": "2026-11-14T12:02:57.121087+00:00",
+        "sha256": "a1e26aa20936fd3ec7798727834e52621c3dd3cbb4dc1199eb36a6aaa33cd150",
+        "bytes": 476710,
         "status": "STATUS_FINAL"
       },
       {
         "event_id": "401909302",
         "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909302",
-        "captured_utc": "2026-11-14T12:00:52.714737+00:00",
-        "sha256": "eeccc189663828297653942f5d01a37dbd166b28fec1bc35bd0b03b87dca1f51",
-        "bytes": 457648,
+        "captured_utc": "2026-11-14T12:02:57.048193+00:00",
+        "sha256": "94047232495194c2da6cd7ed0c303f697c9c676c77c1279405622d49cb18421f",
+        "bytes": 457645,
         "status": "STATUS_FINAL"
       },
       {
         "event_id": "401909303",
         "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909303",
-        "captured_utc": "2026-11-14T12:00:53.182158+00:00",
-        "sha256": "f7d2daa29afdfcac7babb81a8c5c71e32e390a07638cf944829a16488d6762df",
-        "bytes": 433214,
+        "captured_utc": "2026-11-14T12:02:57.048097+00:00",
+        "sha256": "86d6fc7ccd865bf8ff8d57037d13e8d4436ff04b290ebfa124f02c3eb0d8e504",
+        "bytes": 433211,
         "status": "STATUS_FINAL"
       },
       {
         "event_id": "401909304",
         "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909304",
-        "captured_utc": "2026-11-14T12:00:52.763374+00:00",
-        "sha256": "bbf7f2af682a3e7672a40d36f3003c7cde37a5d2f722b08830ed5bd8293e4895",
-        "bytes": 463128,
+        "captured_utc": "2026-11-14T12:02:57.056296+00:00",
+        "sha256": "110256c5893998d768c6d48b9cb5e781f44a64a7fda429892774520c0d798e4a",
+        "bytes": 463125,
         "status": "STATUS_FINAL"
       }
     ]
@@ -691,8 +691,8 @@
     }
   ],
   "QPIXR_baseline_sources": {
-    "verified_pregame_season_roll20": 0,
-    "authorized_engine_fallback": 193
+    "verified_pregame_season_roll20": 191,
+    "authorized_or_legacy_fallback": 2
   },
   "provider_metric_methodology": "NBA Advanced V3 on-court offensive/defensive ratings cannot replace Basketball-Reference individual Dean Oliver ORtg/DRtg; QCore model is exploratory, not certified as compatible.",
   "current_date_provider_validation": "No verified provider individual rating pairs; current-date paired QCore vs BRef deviation cannot be calculated.",
@@ -721,5 +721,17 @@
       "defensive_mae": 0.416
     },
     "limitations": "Historical exploratory validation is not evidence that November 12 values match provider metrics. November 12 individual Basketball-Reference ratings were unavailable. No calibration or fitted coefficients were changed; 16 starter classification differences and incomplete C6/C11 input remain."
+  },
+  "qpix_r_recheck": {
+    "date_et": "2026-11-13",
+    "engine": "UNCHANGED_CHECKED_IN_C13",
+    "baseline_source": "ESPN_PLAYER_2026_27_GAMELOG_PREGAME_20",
+    "count_verified": 191,
+    "count_legacy_unverified": 2,
+    "audit_path": "data/historical/qpix_fta/2026-11-13.json",
+    "quality": "PROVISIONAL_QPIXR_RECALIBRATED_SEASON_LOG_NOT_FULL_QPIX_CERTIFICATION",
+    "source_archive_status_counts": {
+      "ESPN_GAMELOG_VERIFIED": 193
+    }
   }
 }
