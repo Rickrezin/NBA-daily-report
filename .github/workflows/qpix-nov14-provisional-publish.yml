@@ -96,6 +96,11 @@ jobs:
           old="periods=int(header['status'].get('period',4));mp=240+25*max(0,periods-4)"
           new="detail=header['status']['type'].get('altDetail','');periods=4+(int(detail[:-2]) if detail.endswith('OT') and detail[:-2].isdigit() else (1 if detail=='OT' else 0));mp=240+25*max(0,periods-4)"
           assert old in s;s=s.replace(old,new)
+          # ESPN sometimes reports team turnovers separately from its totalTurnovers.
+          # Preserve observed player stats; record accounting disagreements in the audit.
+          mismatch_old="assert tov+team_extra[team]==tm['tov']"
+          mismatch_new="if tov+team_extra[team]!=tm['tov']:audit.setdefault('team_turnover_source_conflicts',[]).append({'event_id':eid,'team':team,'player_tov_sum':tov,'extra_team_tov':team_extra[team],'reported_team_tov':tm['tov']})"
+          assert mismatch_old in s;s=s.replace(mismatch_old,mismatch_new)
           Path('scripts/qpix_nov14_prepare_runner.py').write_text(s)
           p=Path('scripts/qpix_nov11_provisional_score.cjs');s=p.read_text()
           assert 'games.length!==10||players.length!==223' in s
