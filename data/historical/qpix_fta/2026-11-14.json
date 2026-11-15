@@ -1,0 +1,6349 @@
+{
+  "date_et": "2026-11-14",
+  "season": "2026-27",
+  "provider": "ESPN_ATHLETE_GAMELOG",
+  "source": "site.web.api.espn.com",
+  "current_game_excluded": true,
+  "status_counts": {
+    "ESPN_GAMELOG_VERIFIED": 107
+  },
+  "player_count": 107,
+  "players": {
+    "3032977": {
+      "player_id": "3032977",
+      "name": "Giannis Antetokounmpo",
+      "team": "MIA",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/3032977/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 9,
+      "previous_games": 12,
+      "rolling20_games": 12,
+      "pregame_rolling20_fta": 9.166666666666666,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909091",
+          "ftm": 9,
+          "fta": 14
+        },
+        {
+          "event_id": "401909847",
+          "ftm": 5,
+          "fta": 8
+        },
+        {
+          "event_id": "401909853",
+          "ftm": 6,
+          "fta": 8
+        },
+        {
+          "event_id": "401909871",
+          "ftm": 3,
+          "fta": 7
+        },
+        {
+          "event_id": "401909881",
+          "ftm": 2,
+          "fta": 5
+        },
+        {
+          "event_id": "401909282",
+          "ftm": 4,
+          "fta": 6
+        },
+        {
+          "event_id": "401909921",
+          "ftm": 10,
+          "fta": 15
+        },
+        {
+          "event_id": "401909935",
+          "ftm": 11,
+          "fta": 13
+        },
+        {
+          "event_id": "401909937",
+          "ftm": 5,
+          "fta": 7
+        },
+        {
+          "event_id": "401909951",
+          "ftm": 1,
+          "fta": 7
+        },
+        {
+          "event_id": "401909963",
+          "ftm": 5,
+          "fta": 9
+        },
+        {
+          "event_id": "401909298",
+          "ftm": 6,
+          "fta": 11
+        }
+      ]
+    },
+    "5023693": {
+      "player_id": "5023693",
+      "name": "Tyrese Proctor",
+      "team": "CLE",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/5023693/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909981",
+      "current_fta": 0,
+      "previous_games": 12,
+      "rolling20_games": 12,
+      "pregame_rolling20_fta": 1.0833333333333333,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909093",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909854",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909882",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909893",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909900",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909907",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909929",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909289",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909940",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909953",
+          "ftm": 2,
+          "fta": 3
+        },
+        {
+          "event_id": "401909967",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909298",
+          "ftm": 3,
+          "fta": 4
+        }
+      ]
+    },
+    "3112335": {
+      "player_id": "3112335",
+      "name": "Nikola Jokic",
+      "team": "DEN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/3112335/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909980",
+      "current_fta": 7,
+      "previous_games": 10,
+      "rolling20_games": 10,
+      "pregame_rolling20_fta": 4.7,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909094",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909859",
+          "ftm": 8,
+          "fta": 8
+        },
+        {
+          "event_id": "401909876",
+          "ftm": 2,
+          "fta": 3
+        },
+        {
+          "event_id": "401909889",
+          "ftm": 5,
+          "fta": 5
+        },
+        {
+          "event_id": "401909286",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909918",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909931",
+          "ftm": 6,
+          "fta": 7
+        },
+        {
+          "event_id": "401909938",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909957",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909970",
+          "ftm": 6,
+          "fta": 8
+        }
+      ]
+    },
+    "4903027": {
+      "player_id": "4903027",
+      "name": "Cedric Coward",
+      "team": "MEM",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4903027/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 6,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 1.6363636363636365,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909838",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909867",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909875",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909895",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909899",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909914",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909927",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909291",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909955",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909970",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909300",
+          "ftm": 4,
+          "fta": 4
+        }
+      ]
+    },
+    "4066261": {
+      "player_id": "4066261",
+      "name": "Bam Adebayo",
+      "team": "MIA",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4066261/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 13,
+      "previous_games": 12,
+      "rolling20_games": 12,
+      "pregame_rolling20_fta": 6.166666666666667,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909091",
+          "ftm": 2,
+          "fta": 3
+        },
+        {
+          "event_id": "401909847",
+          "ftm": 0,
+          "fta": 2
+        },
+        {
+          "event_id": "401909853",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909871",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909881",
+          "ftm": 8,
+          "fta": 9
+        },
+        {
+          "event_id": "401909282",
+          "ftm": 5,
+          "fta": 5
+        },
+        {
+          "event_id": "401909921",
+          "ftm": 5,
+          "fta": 7
+        },
+        {
+          "event_id": "401909935",
+          "ftm": 6,
+          "fta": 8
+        },
+        {
+          "event_id": "401909937",
+          "ftm": 4,
+          "fta": 7
+        },
+        {
+          "event_id": "401909951",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909963",
+          "ftm": 9,
+          "fta": 12
+        },
+        {
+          "event_id": "401909298",
+          "ftm": 9,
+          "fta": 10
+        }
+      ]
+    },
+    "6442": {
+      "player_id": "6442",
+      "name": "Kyrie Irving",
+      "team": "DAL",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/6442/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909981",
+      "current_fta": 7,
+      "previous_games": 10,
+      "rolling20_games": 10,
+      "pregame_rolling20_fta": 2.9,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909840",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909844",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909871",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909891",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909283",
+          "ftm": 6,
+          "fta": 6
+        },
+        {
+          "event_id": "401909933",
+          "ftm": 6,
+          "fta": 8
+        },
+        {
+          "event_id": "401909290",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909948",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909956",
+          "ftm": 6,
+          "fta": 7
+        },
+        {
+          "event_id": "401909978",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "4432166": {
+      "player_id": "4432166",
+      "name": "Cade Cunningham",
+      "team": "DET",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4432166/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 14,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 6.636363636363637,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909088",
+          "ftm": 5,
+          "fta": 5
+        },
+        {
+          "event_id": "401909847",
+          "ftm": 4,
+          "fta": 6
+        },
+        {
+          "event_id": "401909866",
+          "ftm": 5,
+          "fta": 8
+        },
+        {
+          "event_id": "401909878",
+          "ftm": 3,
+          "fta": 5
+        },
+        {
+          "event_id": "401909883",
+          "ftm": 6,
+          "fta": 8
+        },
+        {
+          "event_id": "401909279",
+          "ftm": 7,
+          "fta": 7
+        },
+        {
+          "event_id": "401909908",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909922",
+          "ftm": 7,
+          "fta": 7
+        },
+        {
+          "event_id": "401909946",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909954",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909977",
+          "ftm": 17,
+          "fta": 18
+        }
+      ]
+    },
+    "6475": {
+      "player_id": "6475",
+      "name": "Klay Thompson",
+      "team": "MIA",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/6475/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 0,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 0.7272727272727273,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909091",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909847",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909853",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909871",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909881",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909282",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909921",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909935",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909937",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909951",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909963",
+          "ftm": 3,
+          "fta": 3
+        }
+      ]
+    },
+    "4278053": {
+      "player_id": "4278053",
+      "name": "Davion Mitchell",
+      "team": "MIA",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4278053/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 4,
+      "previous_games": 12,
+      "rolling20_games": 12,
+      "pregame_rolling20_fta": 2.9166666666666665,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909091",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909847",
+          "ftm": 3,
+          "fta": 5
+        },
+        {
+          "event_id": "401909853",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909871",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909881",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909282",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909921",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909935",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909937",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909951",
+          "ftm": 3,
+          "fta": 6
+        },
+        {
+          "event_id": "401909963",
+          "ftm": 6,
+          "fta": 8
+        },
+        {
+          "event_id": "401909298",
+          "ftm": 5,
+          "fta": 6
+        }
+      ]
+    },
+    "3936299": {
+      "player_id": "3936299",
+      "name": "Jamal Murray",
+      "team": "DEN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/3936299/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909980",
+      "current_fta": 6,
+      "previous_games": 10,
+      "rolling20_games": 10,
+      "pregame_rolling20_fta": 5.7,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909094",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909859",
+          "ftm": 10,
+          "fta": 13
+        },
+        {
+          "event_id": "401909876",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909889",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909286",
+          "ftm": 12,
+          "fta": 15
+        },
+        {
+          "event_id": "401909918",
+          "ftm": 11,
+          "fta": 11
+        },
+        {
+          "event_id": "401909931",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909938",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909957",
+          "ftm": 5,
+          "fta": 5
+        },
+        {
+          "event_id": "401909970",
+          "ftm": 2,
+          "fta": 3
+        }
+      ]
+    },
+    "4702134": {
+      "player_id": "4702134",
+      "name": "Norchad Omier",
+      "team": "CLE",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4702134/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909981",
+      "current_fta": 2,
+      "previous_games": 2,
+      "rolling20_games": 2,
+      "pregame_rolling20_fta": 0.0,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909289",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909953",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "3934723": {
+      "player_id": "3934723",
+      "name": "Thomas Bryant",
+      "team": "CLE",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/3934723/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909981",
+      "current_fta": 4,
+      "previous_games": 7,
+      "rolling20_games": 7,
+      "pregame_rolling20_fta": 3.142857142857143,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909900",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909907",
+          "ftm": 0,
+          "fta": 1
+        },
+        {
+          "event_id": "401909929",
+          "ftm": 5,
+          "fta": 6
+        },
+        {
+          "event_id": "401909289",
+          "ftm": 4,
+          "fta": 5
+        },
+        {
+          "event_id": "401909940",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909953",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909298",
+          "ftm": 3,
+          "fta": 5
+        }
+      ]
+    },
+    "4431767": {
+      "player_id": "4431767",
+      "name": "Christian Braun",
+      "team": "DEN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4431767/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909980",
+      "current_fta": 5,
+      "previous_games": 10,
+      "rolling20_games": 10,
+      "pregame_rolling20_fta": 1.6,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909094",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909859",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909876",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909889",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909286",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909918",
+          "ftm": 5,
+          "fta": 6
+        },
+        {
+          "event_id": "401909931",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909938",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909957",
+          "ftm": 0,
+          "fta": 2
+        },
+        {
+          "event_id": "401909970",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "4431687": {
+      "player_id": "4431687",
+      "name": "Patrick Williams",
+      "team": "CHI",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4431687/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909984",
+      "current_fta": 2,
+      "previous_games": 4,
+      "rolling20_games": 4,
+      "pregame_rolling20_fta": 1.25,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909926",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909945",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909969",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909299",
+          "ftm": 1,
+          "fta": 2
+        }
+      ]
+    },
+    "4433083": {
+      "player_id": "4433083",
+      "name": "Cam Spencer",
+      "team": "MEM",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4433083/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 2,
+      "previous_games": 12,
+      "rolling20_games": 12,
+      "pregame_rolling20_fta": 1.0833333333333333,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909838",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909850",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909867",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909875",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909895",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909899",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909914",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909927",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909291",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909955",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909970",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909300",
+          "ftm": 5,
+          "fta": 5
+        }
+      ]
+    },
+    "4431671": {
+      "player_id": "4431671",
+      "name": "Jaden McDaniels",
+      "team": "MIN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4431671/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909984",
+      "current_fta": 2,
+      "previous_games": 12,
+      "rolling20_games": 12,
+      "pregame_rolling20_fta": 1.9166666666666667,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909091",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909845",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909864",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909869",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909888",
+          "ftm": 2,
+          "fta": 3
+        },
+        {
+          "event_id": "401909284",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909901",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909915",
+          "ftm": 1,
+          "fta": 3
+        },
+        {
+          "event_id": "401909930",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909293",
+          "ftm": 5,
+          "fta": 5
+        },
+        {
+          "event_id": "401909947",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909978",
+          "ftm": 2,
+          "fta": 2
+        }
+      ]
+    },
+    "2995706": {
+      "player_id": "2995706",
+      "name": "Mario Hezonja",
+      "team": "CLE",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/2995706/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909981",
+      "current_fta": 2,
+      "previous_games": 13,
+      "rolling20_games": 13,
+      "pregame_rolling20_fta": 0.6153846153846154,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909093",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909854",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909869",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909882",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909893",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909900",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909907",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909929",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909289",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909940",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909953",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909967",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909298",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "5041935": {
+      "player_id": "5041935",
+      "name": "Cameron Boozer",
+      "team": "MEM",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/5041935/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 3,
+      "previous_games": 12,
+      "rolling20_games": 12,
+      "pregame_rolling20_fta": 4.25,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909838",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909850",
+          "ftm": 9,
+          "fta": 9
+        },
+        {
+          "event_id": "401909867",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909875",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909895",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909899",
+          "ftm": 8,
+          "fta": 8
+        },
+        {
+          "event_id": "401909914",
+          "ftm": 6,
+          "fta": 7
+        },
+        {
+          "event_id": "401909927",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909291",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909955",
+          "ftm": 4,
+          "fta": 5
+        },
+        {
+          "event_id": "401909970",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909300",
+          "ftm": 3,
+          "fta": 4
+        }
+      ]
+    },
+    "4684742": {
+      "player_id": "4684742",
+      "name": "Ausar Thompson",
+      "team": "DET",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4684742/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 0,
+      "previous_games": 10,
+      "rolling20_games": 10,
+      "pregame_rolling20_fta": 2.5,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909088",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909847",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909878",
+          "ftm": 1,
+          "fta": 3
+        },
+        {
+          "event_id": "401909883",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909279",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909908",
+          "ftm": 4,
+          "fta": 5
+        },
+        {
+          "event_id": "401909922",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909946",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909954",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909977",
+          "ftm": 1,
+          "fta": 2
+        }
+      ]
+    },
+    "4066372": {
+      "player_id": "4066372",
+      "name": "Kevin Huerter",
+      "team": "DET",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4066372/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 0,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 1.3636363636363635,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909088",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909847",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909866",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909878",
+          "ftm": 0,
+          "fta": 2
+        },
+        {
+          "event_id": "401909883",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909279",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909908",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909922",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909946",
+          "ftm": 2,
+          "fta": 3
+        },
+        {
+          "event_id": "401909954",
+          "ftm": 2,
+          "fta": 3
+        },
+        {
+          "event_id": "401909977",
+          "ftm": 4,
+          "fta": 5
+        }
+      ]
+    },
+    "3138160": {
+      "player_id": "3138160",
+      "name": "Caleb Martin",
+      "team": "DAL",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/3138160/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909981",
+      "current_fta": 2,
+      "previous_games": 8,
+      "rolling20_games": 8,
+      "pregame_rolling20_fta": 0.25,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909891",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909283",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909913",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909933",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909290",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909948",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909956",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909978",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "4684806": {
+      "player_id": "4684806",
+      "name": "Taylor Hendricks",
+      "team": "MEM",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4684806/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 6,
+      "previous_games": 7,
+      "rolling20_games": 7,
+      "pregame_rolling20_fta": 1.2857142857142858,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909867",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909895",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909899",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909291",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909955",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909970",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909300",
+          "ftm": 2,
+          "fta": 3
+        }
+      ]
+    },
+    "2990984": {
+      "player_id": "2990984",
+      "name": "Buddy Hield",
+      "team": "CHI",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/2990984/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909984",
+      "current_fta": 0,
+      "previous_games": 9,
+      "rolling20_games": 9,
+      "pregame_rolling20_fta": 0.2222222222222222,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909837",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909848",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909857",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909870",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909886",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909278",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909912",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909926",
+          "ftm": 0,
+          "fta": 1
+        },
+        {
+          "event_id": "401909299",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "4395626": {
+      "player_id": "4395626",
+      "name": "Tre Jones",
+      "team": "CHI",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4395626/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909984",
+      "current_fta": 1,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 3.4545454545454546,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909837",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909848",
+          "ftm": 5,
+          "fta": 5
+        },
+        {
+          "event_id": "401909857",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909870",
+          "ftm": 6,
+          "fta": 8
+        },
+        {
+          "event_id": "401909886",
+          "ftm": 2,
+          "fta": 3
+        },
+        {
+          "event_id": "401909278",
+          "ftm": 4,
+          "fta": 6
+        },
+        {
+          "event_id": "401909912",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909926",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909945",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909969",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909299",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "2595516": {
+      "player_id": "2595516",
+      "name": "Norman Powell",
+      "team": "CHI",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/2595516/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909984",
+      "current_fta": 2,
+      "previous_games": 9,
+      "rolling20_games": 9,
+      "pregame_rolling20_fta": 8.333333333333334,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909837",
+          "ftm": 7,
+          "fta": 11
+        },
+        {
+          "event_id": "401909848",
+          "ftm": 9,
+          "fta": 9
+        },
+        {
+          "event_id": "401909857",
+          "ftm": 7,
+          "fta": 7
+        },
+        {
+          "event_id": "401909870",
+          "ftm": 6,
+          "fta": 7
+        },
+        {
+          "event_id": "401909886",
+          "ftm": 6,
+          "fta": 9
+        },
+        {
+          "event_id": "401909278",
+          "ftm": 7,
+          "fta": 8
+        },
+        {
+          "event_id": "401909912",
+          "ftm": 7,
+          "fta": 11
+        },
+        {
+          "event_id": "401909926",
+          "ftm": 6,
+          "fta": 7
+        },
+        {
+          "event_id": "401909299",
+          "ftm": 5,
+          "fta": 6
+        }
+      ]
+    },
+    "4432816": {
+      "player_id": "4432816",
+      "name": "LaMelo Ball",
+      "team": "MIN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4432816/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909984",
+      "current_fta": 2,
+      "previous_games": 12,
+      "rolling20_games": 12,
+      "pregame_rolling20_fta": 2.5,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909091",
+          "ftm": 2,
+          "fta": 3
+        },
+        {
+          "event_id": "401909845",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909864",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909869",
+          "ftm": 0,
+          "fta": 2
+        },
+        {
+          "event_id": "401909888",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909284",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909901",
+          "ftm": 6,
+          "fta": 6
+        },
+        {
+          "event_id": "401909915",
+          "ftm": 4,
+          "fta": 5
+        },
+        {
+          "event_id": "401909930",
+          "ftm": 4,
+          "fta": 5
+        },
+        {
+          "event_id": "401909293",
+          "ftm": 5,
+          "fta": 5
+        },
+        {
+          "event_id": "401909947",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909978",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "4781746": {
+      "player_id": "4781746",
+      "name": "Javon Small",
+      "team": "MEM",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4781746/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 6,
+      "previous_games": 5,
+      "rolling20_games": 5,
+      "pregame_rolling20_fta": 2.0,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909899",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909291",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909955",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909970",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909300",
+          "ftm": 2,
+          "fta": 2
+        }
+      ]
+    },
+    "4711294": {
+      "player_id": "4711294",
+      "name": "Matas Buzelis",
+      "team": "CHI",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4711294/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909984",
+      "current_fta": 6,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 4.0,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909837",
+          "ftm": 13,
+          "fta": 16
+        },
+        {
+          "event_id": "401909848",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909857",
+          "ftm": 5,
+          "fta": 5
+        },
+        {
+          "event_id": "401909870",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909886",
+          "ftm": 4,
+          "fta": 6
+        },
+        {
+          "event_id": "401909278",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909912",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909926",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909945",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909969",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909299",
+          "ftm": 2,
+          "fta": 2
+        }
+      ]
+    },
+    "4595400": {
+      "player_id": "4595400",
+      "name": "Olivier-Maxence Prosper",
+      "team": "MEM",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4595400/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 1,
+      "previous_games": 6,
+      "rolling20_games": 6,
+      "pregame_rolling20_fta": 1.0,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909895",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909899",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909927",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909291",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909955",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909300",
+          "ftm": 4,
+          "fta": 6
+        }
+      ]
+    },
+    "4432194": {
+      "player_id": "4432194",
+      "name": "Day'Ron Sharpe",
+      "team": "BKN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4432194/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 2,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 2.6363636363636362,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909836",
+          "ftm": 0,
+          "fta": 1
+        },
+        {
+          "event_id": "401909854",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909862",
+          "ftm": 4,
+          "fta": 7
+        },
+        {
+          "event_id": "401909877",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909279",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909904",
+          "ftm": 4,
+          "fta": 5
+        },
+        {
+          "event_id": "401909910",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909925",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909939",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909948",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909972",
+          "ftm": 3,
+          "fta": 4
+        }
+      ]
+    },
+    "4277956": {
+      "player_id": "4277956",
+      "name": "Jordan Poole",
+      "team": "NOP",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4277956/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909980",
+      "current_fta": 7,
+      "previous_games": 7,
+      "rolling20_games": 7,
+      "pregame_rolling20_fta": 4.571428571428571,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909839",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909849",
+          "ftm": 9,
+          "fta": 10
+        },
+        {
+          "event_id": "401909859",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909889",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909959",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909972",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909300",
+          "ftm": 10,
+          "fta": 10
+        }
+      ]
+    },
+    "4397002": {
+      "player_id": "4397002",
+      "name": "Ayo Dosunmu",
+      "team": "MIN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4397002/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909984",
+      "current_fta": 4,
+      "previous_games": 12,
+      "rolling20_games": 12,
+      "pregame_rolling20_fta": 2.4166666666666665,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909091",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909845",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909864",
+          "ftm": 0,
+          "fta": 1
+        },
+        {
+          "event_id": "401909869",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909888",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909284",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909901",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909915",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909930",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909293",
+          "ftm": 6,
+          "fta": 6
+        },
+        {
+          "event_id": "401909947",
+          "ftm": 8,
+          "fta": 8
+        },
+        {
+          "event_id": "401909978",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "3064290": {
+      "player_id": "3064290",
+      "name": "Aaron Gordon",
+      "team": "DEN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/3064290/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909980",
+      "current_fta": 5,
+      "previous_games": 10,
+      "rolling20_games": 10,
+      "pregame_rolling20_fta": 3.6,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909094",
+          "ftm": 5,
+          "fta": 6
+        },
+        {
+          "event_id": "401909859",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909876",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909889",
+          "ftm": 7,
+          "fta": 8
+        },
+        {
+          "event_id": "401909286",
+          "ftm": 5,
+          "fta": 5
+        },
+        {
+          "event_id": "401909918",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909931",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909938",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909957",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909970",
+          "ftm": 2,
+          "fta": 2
+        }
+      ]
+    },
+    "4395628": {
+      "player_id": "4395628",
+      "name": "Zion Williamson",
+      "team": "NOP",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4395628/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909980",
+      "current_fta": 8,
+      "previous_games": 12,
+      "rolling20_games": 12,
+      "pregame_rolling20_fta": 7.833333333333333,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909839",
+          "ftm": 6,
+          "fta": 6
+        },
+        {
+          "event_id": "401909849",
+          "ftm": 7,
+          "fta": 8
+        },
+        {
+          "event_id": "401909859",
+          "ftm": 3,
+          "fta": 5
+        },
+        {
+          "event_id": "401909889",
+          "ftm": 4,
+          "fta": 6
+        },
+        {
+          "event_id": "401909894",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909898",
+          "ftm": 5,
+          "fta": 8
+        },
+        {
+          "event_id": "401909914",
+          "ftm": 7,
+          "fta": 9
+        },
+        {
+          "event_id": "401909928",
+          "ftm": 11,
+          "fta": 13
+        },
+        {
+          "event_id": "401909293",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909950",
+          "ftm": 7,
+          "fta": 9
+        },
+        {
+          "event_id": "401909972",
+          "ftm": 12,
+          "fta": 14
+        },
+        {
+          "event_id": "401909300",
+          "ftm": 8,
+          "fta": 8
+        }
+      ]
+    },
+    "3064514": {
+      "player_id": "3064514",
+      "name": "Julius Randle",
+      "team": "BKN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/3064514/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 6,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 7.090909090909091,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909836",
+          "ftm": 8,
+          "fta": 11
+        },
+        {
+          "event_id": "401909854",
+          "ftm": 7,
+          "fta": 8
+        },
+        {
+          "event_id": "401909862",
+          "ftm": 6,
+          "fta": 8
+        },
+        {
+          "event_id": "401909877",
+          "ftm": 4,
+          "fta": 5
+        },
+        {
+          "event_id": "401909279",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909904",
+          "ftm": 6,
+          "fta": 6
+        },
+        {
+          "event_id": "401909910",
+          "ftm": 11,
+          "fta": 15
+        },
+        {
+          "event_id": "401909925",
+          "ftm": 6,
+          "fta": 7
+        },
+        {
+          "event_id": "401909939",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909948",
+          "ftm": 3,
+          "fta": 6
+        },
+        {
+          "event_id": "401909972",
+          "ftm": 5,
+          "fta": 6
+        }
+      ]
+    },
+    "3150844": {
+      "player_id": "3150844",
+      "name": "Moritz Wagner",
+      "team": "BKN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/3150844/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 2,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 2.6363636363636362,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909836",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909854",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909862",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909877",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909279",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909904",
+          "ftm": 5,
+          "fta": 6
+        },
+        {
+          "event_id": "401909910",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909925",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909939",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909948",
+          "ftm": 3,
+          "fta": 5
+        },
+        {
+          "event_id": "401909972",
+          "ftm": 2,
+          "fta": 2
+        }
+      ]
+    },
+    "5044385": {
+      "player_id": "5044385",
+      "name": "Leonard Miller",
+      "team": "CHI",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/5044385/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909984",
+      "current_fta": 2,
+      "previous_games": 9,
+      "rolling20_games": 9,
+      "pregame_rolling20_fta": 0.8888888888888888,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909837",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909848",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909857",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909870",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909886",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909278",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909912",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909926",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909969",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "4594326": {
+      "player_id": "4594326",
+      "name": "Kris Murray",
+      "team": "MEM",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4594326/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 0,
+      "previous_games": 8,
+      "rolling20_games": 8,
+      "pregame_rolling20_fta": 0.25,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909850",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909895",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909899",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909914",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909927",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909291",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909955",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909300",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "5041939": {
+      "player_id": "5041939",
+      "name": "Cooper Flagg",
+      "team": "DAL",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/5041939/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909981",
+      "current_fta": 8,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 6.7272727272727275,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909840",
+          "ftm": 11,
+          "fta": 13
+        },
+        {
+          "event_id": "401909844",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909871",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909891",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909283",
+          "ftm": 7,
+          "fta": 10
+        },
+        {
+          "event_id": "401909913",
+          "ftm": 11,
+          "fta": 11
+        },
+        {
+          "event_id": "401909933",
+          "ftm": 5,
+          "fta": 7
+        },
+        {
+          "event_id": "401909290",
+          "ftm": 6,
+          "fta": 6
+        },
+        {
+          "event_id": "401909948",
+          "ftm": 6,
+          "fta": 6
+        },
+        {
+          "event_id": "401909956",
+          "ftm": 8,
+          "fta": 8
+        },
+        {
+          "event_id": "401909978",
+          "ftm": 1,
+          "fta": 2
+        }
+      ]
+    },
+    "4683747": {
+      "player_id": "4683747",
+      "name": "Jaylon Tyson",
+      "team": "CLE",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4683747/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909981",
+      "current_fta": 5,
+      "previous_games": 7,
+      "rolling20_games": 7,
+      "pregame_rolling20_fta": 0.5714285714285714,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909093",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909854",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909869",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909882",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909893",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909967",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909298",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "4712896": {
+      "player_id": "4712896",
+      "name": "Noah Clowney",
+      "team": "BKN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4712896/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 0,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 2.0,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909836",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909854",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909862",
+          "ftm": 6,
+          "fta": 8
+        },
+        {
+          "event_id": "401909877",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909279",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909904",
+          "ftm": 2,
+          "fta": 3
+        },
+        {
+          "event_id": "401909910",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909925",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909939",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909948",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909972",
+          "ftm": 4,
+          "fta": 5
+        }
+      ]
+    },
+    "4397136": {
+      "player_id": "4397136",
+      "name": "Saddiq Bey",
+      "team": "NOP",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4397136/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909980",
+      "current_fta": 6,
+      "previous_games": 13,
+      "rolling20_games": 13,
+      "pregame_rolling20_fta": 3.6153846153846154,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909839",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909849",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909859",
+          "ftm": 6,
+          "fta": 8
+        },
+        {
+          "event_id": "401909889",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909894",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909898",
+          "ftm": 6,
+          "fta": 7
+        },
+        {
+          "event_id": "401909914",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909928",
+          "ftm": 2,
+          "fta": 3
+        },
+        {
+          "event_id": "401909293",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909950",
+          "ftm": 6,
+          "fta": 6
+        },
+        {
+          "event_id": "401909959",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909972",
+          "ftm": 2,
+          "fta": 3
+        },
+        {
+          "event_id": "401909300",
+          "ftm": 2,
+          "fta": 3
+        }
+      ]
+    },
+    "4701233": {
+      "player_id": "4701233",
+      "name": "Craig Porter Jr.",
+      "team": "CLE",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4701233/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909981",
+      "current_fta": 3,
+      "previous_games": 10,
+      "rolling20_games": 10,
+      "pregame_rolling20_fta": 0.1,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909093",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909854",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909893",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909900",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909907",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909929",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909289",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909940",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909953",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909298",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "3059319": {
+      "player_id": "3059319",
+      "name": "Andrew Wiggins",
+      "team": "MIA",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/3059319/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 4,
+      "previous_games": 12,
+      "rolling20_games": 12,
+      "pregame_rolling20_fta": 0.9166666666666666,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909091",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909847",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909853",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909871",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909881",
+          "ftm": 2,
+          "fta": 3
+        },
+        {
+          "event_id": "401909282",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909921",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909935",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909937",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909951",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909963",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909298",
+          "ftm": 3,
+          "fta": 4
+        }
+      ]
+    },
+    "5144091": {
+      "player_id": "5144091",
+      "name": "Jeremiah Fears",
+      "team": "NOP",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/5144091/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909980",
+      "current_fta": 1,
+      "previous_games": 13,
+      "rolling20_games": 13,
+      "pregame_rolling20_fta": 2.923076923076923,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909839",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909849",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909859",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909889",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909894",
+          "ftm": 1,
+          "fta": 3
+        },
+        {
+          "event_id": "401909898",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909914",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909928",
+          "ftm": 6,
+          "fta": 6
+        },
+        {
+          "event_id": "401909293",
+          "ftm": 6,
+          "fta": 7
+        },
+        {
+          "event_id": "401909950",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909959",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909972",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909300",
+          "ftm": 6,
+          "fta": 6
+        }
+      ]
+    },
+    "4997538": {
+      "player_id": "4997538",
+      "name": "Karlo Matkovic",
+      "team": "NOP",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4997538/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909980",
+      "current_fta": 0,
+      "previous_games": 12,
+      "rolling20_games": 12,
+      "pregame_rolling20_fta": 1.0,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909849",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909859",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909889",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909894",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909898",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909914",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909928",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909293",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909950",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909959",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909972",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909300",
+          "ftm": 1,
+          "fta": 2
+        }
+      ]
+    },
+    "4432822": {
+      "player_id": "4432822",
+      "name": "Isaac Okoro",
+      "team": "CHI",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4432822/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909984",
+      "current_fta": 5,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 2.6363636363636362,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909837",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909848",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909857",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909870",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909886",
+          "ftm": 4,
+          "fta": 6
+        },
+        {
+          "event_id": "401909278",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909912",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909926",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909945",
+          "ftm": 4,
+          "fta": 5
+        },
+        {
+          "event_id": "401909969",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909299",
+          "ftm": 3,
+          "fta": 4
+        }
+      ]
+    },
+    "4871145": {
+      "player_id": "4871145",
+      "name": "Josh Giddey",
+      "team": "CHI",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4871145/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909984",
+      "current_fta": 0,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 2.272727272727273,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909837",
+          "ftm": 0,
+          "fta": 2
+        },
+        {
+          "event_id": "401909848",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909857",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909870",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909886",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909278",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909912",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909926",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909945",
+          "ftm": 4,
+          "fta": 5
+        },
+        {
+          "event_id": "401909969",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909299",
+          "ftm": 2,
+          "fta": 5
+        }
+      ]
+    },
+    "4277848": {
+      "player_id": "4277848",
+      "name": "Marvin Bagley III",
+      "team": "DEN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4277848/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909980",
+      "current_fta": 2,
+      "previous_games": 10,
+      "rolling20_games": 10,
+      "pregame_rolling20_fta": 2.2,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909094",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909859",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909876",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909889",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909286",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909918",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909931",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909938",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909957",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909970",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "3138196": {
+      "player_id": "3138196",
+      "name": "Cameron Johnson",
+      "team": "DEN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/3138196/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909980",
+      "current_fta": 6,
+      "previous_games": 7,
+      "rolling20_games": 7,
+      "pregame_rolling20_fta": 1.1428571428571428,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909094",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909286",
+          "ftm": 0,
+          "fta": 2
+        },
+        {
+          "event_id": "401909918",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909931",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909938",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909957",
+          "ftm": 2,
+          "fta": 3
+        },
+        {
+          "event_id": "401909970",
+          "ftm": 1,
+          "fta": 1
+        }
+      ]
+    },
+    "4278049": {
+      "player_id": "4278049",
+      "name": "Daniel Gafford",
+      "team": "DAL",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4278049/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909981",
+      "current_fta": 2,
+      "previous_games": 12,
+      "rolling20_games": 12,
+      "pregame_rolling20_fta": 2.6666666666666665,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909840",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909844",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909858",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909871",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909891",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909283",
+          "ftm": 6,
+          "fta": 9
+        },
+        {
+          "event_id": "401909913",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909933",
+          "ftm": 0,
+          "fta": 1
+        },
+        {
+          "event_id": "401909290",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909948",
+          "ftm": 4,
+          "fta": 6
+        },
+        {
+          "event_id": "401909956",
+          "ftm": 4,
+          "fta": 5
+        },
+        {
+          "event_id": "401909978",
+          "ftm": 1,
+          "fta": 2
+        }
+      ]
+    },
+    "3899664": {
+      "player_id": "3899664",
+      "name": "Simone Fontecchio",
+      "team": "MIA",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/3899664/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 2,
+      "previous_games": 6,
+      "rolling20_games": 6,
+      "pregame_rolling20_fta": 0.5,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909091",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909847",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909282",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909935",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909963",
+          "ftm": 1,
+          "fta": 3
+        },
+        {
+          "event_id": "401909298",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "3064482": {
+      "player_id": "3064482",
+      "name": "Bobby Portis",
+      "team": "MIA",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/3064482/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 2,
+      "previous_games": 12,
+      "rolling20_games": 12,
+      "pregame_rolling20_fta": 0.5833333333333334,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909091",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909847",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909853",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909871",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909881",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909282",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909921",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909935",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909937",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909951",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909963",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909298",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "4593125": {
+      "player_id": "4593125",
+      "name": "Santi Aldama",
+      "team": "DAL",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4593125/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909981",
+      "current_fta": 2,
+      "previous_games": 4,
+      "rolling20_games": 4,
+      "pregame_rolling20_fta": 1.5,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909290",
+          "ftm": 4,
+          "fta": 5
+        },
+        {
+          "event_id": "401909948",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909956",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909978",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "5041951": {
+      "player_id": "5041951",
+      "name": "Meleek Thomas",
+      "team": "CLE",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/5041951/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909981",
+      "current_fta": 2,
+      "previous_games": 10,
+      "rolling20_games": 10,
+      "pregame_rolling20_fta": 0.4,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909869",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909882",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909900",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909907",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909929",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909289",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909940",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909953",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909967",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909298",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "4278562": {
+      "player_id": "4278562",
+      "name": "Paul Reed",
+      "team": "DET",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4278562/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 4,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 2.272727272727273,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909088",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909847",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909866",
+          "ftm": 0,
+          "fta": 2
+        },
+        {
+          "event_id": "401909878",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909883",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909279",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909908",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909922",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909946",
+          "ftm": 0,
+          "fta": 2
+        },
+        {
+          "event_id": "401909954",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909977",
+          "ftm": 3,
+          "fta": 6
+        }
+      ]
+    },
+    "4703115": {
+      "player_id": "4703115",
+      "name": "Jaron Pierre Jr.",
+      "team": "NOP",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4703115/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909980",
+      "current_fta": 2,
+      "previous_games": 2,
+      "rolling20_games": 2,
+      "pregame_rolling20_fta": 1.0,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909972",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909300",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "5112087": {
+      "player_id": "5112087",
+      "name": "Jaylen Wells",
+      "team": "MEM",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/5112087/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 3,
+      "previous_games": 12,
+      "rolling20_games": 12,
+      "pregame_rolling20_fta": 1.9166666666666667,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909838",
+          "ftm": 1,
+          "fta": 3
+        },
+        {
+          "event_id": "401909850",
+          "ftm": 3,
+          "fta": 5
+        },
+        {
+          "event_id": "401909867",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909875",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909895",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909899",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909914",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909927",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909291",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909955",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909970",
+          "ftm": 5,
+          "fta": 5
+        },
+        {
+          "event_id": "401909300",
+          "ftm": 3,
+          "fta": 3
+        }
+      ]
+    },
+    "5107173": {
+      "player_id": "5107173",
+      "name": "Danny Wolf",
+      "team": "BKN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/5107173/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 0,
+      "previous_games": 6,
+      "rolling20_games": 6,
+      "pregame_rolling20_fta": 2.8333333333333335,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909862",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909279",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909925",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909939",
+          "ftm": 1,
+          "fta": 4
+        },
+        {
+          "event_id": "401909948",
+          "ftm": 5,
+          "fta": 6
+        },
+        {
+          "event_id": "401909972",
+          "ftm": 3,
+          "fta": 4
+        }
+      ]
+    },
+    "4869780": {
+      "player_id": "4869780",
+      "name": "Derik Queen",
+      "team": "NOP",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4869780/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909980",
+      "current_fta": 2,
+      "previous_games": 13,
+      "rolling20_games": 13,
+      "pregame_rolling20_fta": 4.6923076923076925,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909839",
+          "ftm": 6,
+          "fta": 6
+        },
+        {
+          "event_id": "401909849",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909859",
+          "ftm": 5,
+          "fta": 5
+        },
+        {
+          "event_id": "401909889",
+          "ftm": 5,
+          "fta": 7
+        },
+        {
+          "event_id": "401909894",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909898",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909914",
+          "ftm": 5,
+          "fta": 6
+        },
+        {
+          "event_id": "401909928",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909293",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909950",
+          "ftm": 6,
+          "fta": 6
+        },
+        {
+          "event_id": "401909959",
+          "ftm": 8,
+          "fta": 10
+        },
+        {
+          "event_id": "401909972",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909300",
+          "ftm": 2,
+          "fta": 3
+        }
+      ]
+    },
+    "4431772": {
+      "player_id": "4431772",
+      "name": "Myron Gardner",
+      "team": "MIA",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4431772/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 0,
+      "previous_games": 7,
+      "rolling20_games": 7,
+      "pregame_rolling20_fta": 0.8571428571428571,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909091",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909847",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909282",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909921",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909937",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909963",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909298",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "5105550": {
+      "player_id": "5105550",
+      "name": "GG Jackson",
+      "team": "MEM",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/5105550/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 0,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 1.6363636363636365,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909838",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909850",
+          "ftm": 0,
+          "fta": 1
+        },
+        {
+          "event_id": "401909867",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909875",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909895",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909899",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909914",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909927",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909955",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909970",
+          "ftm": 0,
+          "fta": 1
+        },
+        {
+          "event_id": "401909300",
+          "ftm": 3,
+          "fta": 4
+        }
+      ]
+    },
+    "4592427": {
+      "player_id": "4592427",
+      "name": "Spencer Jones",
+      "team": "DEN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4592427/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909980",
+      "current_fta": 0,
+      "previous_games": 3,
+      "rolling20_games": 3,
+      "pregame_rolling20_fta": 0.0,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909938",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909957",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909970",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "4432810": {
+      "player_id": "4432810",
+      "name": "Isaiah Stewart",
+      "team": "MEM",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4432810/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 2,
+      "previous_games": 9,
+      "rolling20_games": 9,
+      "pregame_rolling20_fta": 1.4444444444444444,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909850",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909867",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909875",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909895",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909899",
+          "ftm": 6,
+          "fta": 6
+        },
+        {
+          "event_id": "401909914",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909927",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909970",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909300",
+          "ftm": 2,
+          "fta": 2
+        }
+      ]
+    },
+    "3978": {
+      "player_id": "3978",
+      "name": "DeMar DeRozan",
+      "team": "DEN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/3978/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909980",
+      "current_fta": 4,
+      "previous_games": 9,
+      "rolling20_games": 9,
+      "pregame_rolling20_fta": 3.4444444444444446,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909094",
+          "ftm": 3,
+          "fta": 6
+        },
+        {
+          "event_id": "401909859",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909876",
+          "ftm": 5,
+          "fta": 5
+        },
+        {
+          "event_id": "401909889",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909286",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909918",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909938",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909957",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909970",
+          "ftm": 0,
+          "fta": 2
+        }
+      ]
+    },
+    "4683771": {
+      "player_id": "4683771",
+      "name": "Ronald Holland II",
+      "team": "DET",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4683771/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 0,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 1.1818181818181819,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909088",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909847",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909866",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909878",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909883",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909279",
+          "ftm": 4,
+          "fta": 7
+        },
+        {
+          "event_id": "401909908",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909922",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909946",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909954",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909977",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "5101761": {
+      "player_id": "5101761",
+      "name": "Mikel Brown Jr.",
+      "team": "BKN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/5101761/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 0,
+      "previous_games": 7,
+      "rolling20_games": 7,
+      "pregame_rolling20_fta": 3.5714285714285716,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909836",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909854",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909877",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909279",
+          "ftm": 6,
+          "fta": 8
+        },
+        {
+          "event_id": "401909910",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909925",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909939",
+          "ftm": 5,
+          "fta": 7
+        }
+      ]
+    },
+    "4592492": {
+      "player_id": "4592492",
+      "name": "Bones Hyland",
+      "team": "MIN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4592492/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909984",
+      "current_fta": 3,
+      "previous_games": 12,
+      "rolling20_games": 12,
+      "pregame_rolling20_fta": 1.75,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909091",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909845",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909864",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909869",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909888",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909284",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909901",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909915",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909930",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909293",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909947",
+          "ftm": 5,
+          "fta": 6
+        },
+        {
+          "event_id": "401909978",
+          "ftm": 5,
+          "fta": 6
+        }
+      ]
+    },
+    "4278594": {
+      "player_id": "4278594",
+      "name": "Naji Marshall",
+      "team": "DAL",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4278594/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909981",
+      "current_fta": 4,
+      "previous_games": 9,
+      "rolling20_games": 9,
+      "pregame_rolling20_fta": 2.2222222222222223,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909840",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909844",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909858",
+          "ftm": 1,
+          "fta": 3
+        },
+        {
+          "event_id": "401909913",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909933",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909290",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909948",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909956",
+          "ftm": 2,
+          "fta": 5
+        },
+        {
+          "event_id": "401909978",
+          "ftm": 4,
+          "fta": 4
+        }
+      ]
+    },
+    "4997528": {
+      "player_id": "4997528",
+      "name": "Nikola Jovic",
+      "team": "MIA",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4997528/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 2,
+      "previous_games": 7,
+      "rolling20_games": 7,
+      "pregame_rolling20_fta": 0.8571428571428571,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909091",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909847",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909853",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909881",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909282",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909921",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909937",
+          "ftm": 1,
+          "fta": 2
+        }
+      ]
+    },
+    "4433247": {
+      "player_id": "4433247",
+      "name": "Jonathan Kuminga",
+      "team": "MIN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4433247/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909984",
+      "current_fta": 6,
+      "previous_games": 12,
+      "rolling20_games": 12,
+      "pregame_rolling20_fta": 3.1666666666666665,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909091",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909845",
+          "ftm": 3,
+          "fta": 8
+        },
+        {
+          "event_id": "401909864",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909869",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909888",
+          "ftm": 3,
+          "fta": 5
+        },
+        {
+          "event_id": "401909284",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909901",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909915",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909930",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909293",
+          "ftm": 6,
+          "fta": 12
+        },
+        {
+          "event_id": "401909947",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909978",
+          "ftm": 1,
+          "fta": 2
+        }
+      ]
+    },
+    "4702177": {
+      "player_id": "4702177",
+      "name": "Keon Ellis",
+      "team": "BKN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4702177/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 0,
+      "previous_games": 10,
+      "rolling20_games": 10,
+      "pregame_rolling20_fta": 0.7,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909836",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909854",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909862",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909877",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909279",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909904",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909910",
+          "ftm": 0,
+          "fta": 2
+        },
+        {
+          "event_id": "401909925",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909948",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909972",
+          "ftm": 3,
+          "fta": 3
+        }
+      ]
+    },
+    "5231919": {
+      "player_id": "5231919",
+      "name": "Karim Lopez",
+      "team": "MEM",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/5231919/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 0,
+      "previous_games": 3,
+      "rolling20_games": 3,
+      "pregame_rolling20_fta": 0.6666666666666666,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909895",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909899",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909291",
+          "ftm": 2,
+          "fta": 2
+        }
+      ]
+    },
+    "5107157": {
+      "player_id": "5107157",
+      "name": "Ryan Conwell",
+      "team": "MIA",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/5107157/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 2,
+      "previous_games": 10,
+      "rolling20_games": 10,
+      "pregame_rolling20_fta": 1.0,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909091",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909847",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909853",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909282",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909921",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909935",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909937",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909951",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909963",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909298",
+          "ftm": 4,
+          "fta": 4
+        }
+      ]
+    },
+    "4432847": {
+      "player_id": "4432847",
+      "name": "Terrence Shannon Jr.",
+      "team": "MIN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4432847/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909984",
+      "current_fta": 3,
+      "previous_games": 9,
+      "rolling20_games": 9,
+      "pregame_rolling20_fta": 3.6666666666666665,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909091",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909845",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909864",
+          "ftm": 2,
+          "fta": 3
+        },
+        {
+          "event_id": "401909869",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909888",
+          "ftm": 8,
+          "fta": 10
+        },
+        {
+          "event_id": "401909284",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909901",
+          "ftm": 0,
+          "fta": 1
+        },
+        {
+          "event_id": "401909947",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909978",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "4873153": {
+      "player_id": "4873153",
+      "name": "Morez Johnson Jr.",
+      "team": "DAL",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4873153/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909981",
+      "current_fta": 4,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 2.0,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909840",
+          "ftm": 0,
+          "fta": 2
+        },
+        {
+          "event_id": "401909844",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909858",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909871",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909891",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909283",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909913",
+          "ftm": 3,
+          "fta": 6
+        },
+        {
+          "event_id": "401909933",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909290",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909948",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909978",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "5279133": {
+      "player_id": "5279133",
+      "name": "Joan Beringer",
+      "team": "MIN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/5279133/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909984",
+      "current_fta": 2,
+      "previous_games": 12,
+      "rolling20_games": 12,
+      "pregame_rolling20_fta": 2.0,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909091",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909845",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909864",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909869",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909888",
+          "ftm": 1,
+          "fta": 3
+        },
+        {
+          "event_id": "401909284",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909901",
+          "ftm": 4,
+          "fta": 5
+        },
+        {
+          "event_id": "401909915",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909930",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909293",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909947",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909978",
+          "ftm": 5,
+          "fta": 8
+        }
+      ]
+    },
+    "3157465": {
+      "player_id": "3157465",
+      "name": "Duncan Robinson",
+      "team": "DET",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/3157465/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 2,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 3.727272727272727,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909088",
+          "ftm": 6,
+          "fta": 8
+        },
+        {
+          "event_id": "401909847",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909866",
+          "ftm": 4,
+          "fta": 5
+        },
+        {
+          "event_id": "401909878",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909883",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909279",
+          "ftm": 5,
+          "fta": 5
+        },
+        {
+          "event_id": "401909908",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909922",
+          "ftm": 4,
+          "fta": 6
+        },
+        {
+          "event_id": "401909946",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909954",
+          "ftm": 6,
+          "fta": 7
+        },
+        {
+          "event_id": "401909977",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "5061589": {
+      "player_id": "5061589",
+      "name": "Yves Missi",
+      "team": "NOP",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/5061589/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909980",
+      "current_fta": 4,
+      "previous_games": 2,
+      "rolling20_games": 2,
+      "pregame_rolling20_fta": 2.0,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909839",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909849",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "2596112": {
+      "player_id": "2596112",
+      "name": "Javonte Green",
+      "team": "DET",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/2596112/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 5,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 1.2727272727272727,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909088",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909847",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909866",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909878",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909883",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909279",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909908",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909922",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909946",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909954",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909977",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "5037873": {
+      "player_id": "5037873",
+      "name": "Drake Powell",
+      "team": "BKN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/5037873/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 0,
+      "previous_games": 4,
+      "rolling20_games": 4,
+      "pregame_rolling20_fta": 1.0,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909862",
+          "ftm": 0,
+          "fta": 2
+        },
+        {
+          "event_id": "401909279",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909948",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909972",
+          "ftm": 1,
+          "fta": 2
+        }
+      ]
+    },
+    "4397882": {
+      "player_id": "4397882",
+      "name": "Tolu Smith",
+      "team": "DET",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4397882/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 3,
+      "previous_games": 7,
+      "rolling20_games": 7,
+      "pregame_rolling20_fta": 0.8571428571428571,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909847",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909866",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909878",
+          "ftm": 1,
+          "fta": 4
+        },
+        {
+          "event_id": "401909883",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909279",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909908",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909922",
+          "ftm": 1,
+          "fta": 2
+        }
+      ]
+    },
+    "4066650": {
+      "player_id": "4066650",
+      "name": "Zach Collins",
+      "team": "CHI",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4066650/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909984",
+      "current_fta": 0,
+      "previous_games": 7,
+      "rolling20_games": 7,
+      "pregame_rolling20_fta": 0.14285714285714285,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909837",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909857",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909870",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909278",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909912",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909926",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909969",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "5211175": {
+      "player_id": "5211175",
+      "name": "Zaccharie Risacher",
+      "team": "DAL",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/5211175/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909981",
+      "current_fta": 0,
+      "previous_games": 12,
+      "rolling20_games": 12,
+      "pregame_rolling20_fta": 1.0,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909840",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909844",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909858",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909871",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909891",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909283",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909913",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909933",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909290",
+          "ftm": 0,
+          "fta": 2
+        },
+        {
+          "event_id": "401909948",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909956",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909978",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "4278078": {
+      "player_id": "4278078",
+      "name": "P.J. Washington",
+      "team": "DAL",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4278078/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909981",
+      "current_fta": 2,
+      "previous_games": 12,
+      "rolling20_games": 12,
+      "pregame_rolling20_fta": 3.6666666666666665,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909840",
+          "ftm": 0,
+          "fta": 2
+        },
+        {
+          "event_id": "401909844",
+          "ftm": 6,
+          "fta": 8
+        },
+        {
+          "event_id": "401909858",
+          "ftm": 0,
+          "fta": 1
+        },
+        {
+          "event_id": "401909871",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909891",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909283",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909913",
+          "ftm": 6,
+          "fta": 8
+        },
+        {
+          "event_id": "401909933",
+          "ftm": 4,
+          "fta": 5
+        },
+        {
+          "event_id": "401909290",
+          "ftm": 6,
+          "fta": 7
+        },
+        {
+          "event_id": "401909948",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909956",
+          "ftm": 3,
+          "fta": 6
+        },
+        {
+          "event_id": "401909978",
+          "ftm": 1,
+          "fta": 1
+        }
+      ]
+    },
+    "5175643": {
+      "player_id": "5175643",
+      "name": "Egor Demin",
+      "team": "BKN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/5175643/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 3,
+      "previous_games": 5,
+      "rolling20_games": 5,
+      "pregame_rolling20_fta": 3.4,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909836",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909854",
+          "ftm": 7,
+          "fta": 7
+        },
+        {
+          "event_id": "401909862",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909877",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909972",
+          "ftm": 8,
+          "fta": 10
+        }
+      ]
+    },
+    "3136196": {
+      "player_id": "3136196",
+      "name": "Trey Lyles",
+      "team": "MIN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/3136196/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909984",
+      "current_fta": 4,
+      "previous_games": 12,
+      "rolling20_games": 12,
+      "pregame_rolling20_fta": 1.5,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909091",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909845",
+          "ftm": 1,
+          "fta": 3
+        },
+        {
+          "event_id": "401909864",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909869",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909888",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909284",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909901",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909915",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909930",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909293",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909947",
+          "ftm": 2,
+          "fta": 3
+        },
+        {
+          "event_id": "401909978",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "4431786": {
+      "player_id": "4431786",
+      "name": "Keshad Johnson",
+      "team": "MIA",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4431786/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 0,
+      "previous_games": 0,
+      "rolling20_games": 0,
+      "pregame_rolling20_fta": null,
+      "prior_season_game_rows": []
+    },
+    "5174655": {
+      "player_id": "5174655",
+      "name": "Chaney Johnson",
+      "team": "BKN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/5174655/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 2,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 1.0909090909090908,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909836",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909854",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909862",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909877",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909279",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909904",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909910",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909925",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909939",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909948",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909972",
+          "ftm": 2,
+          "fta": 2
+        }
+      ]
+    },
+    "4277813": {
+      "player_id": "4277813",
+      "name": "Herbert Jones",
+      "team": "NOP",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4277813/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909980",
+      "current_fta": 3,
+      "previous_games": 13,
+      "rolling20_games": 13,
+      "pregame_rolling20_fta": 0.46153846153846156,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909839",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909849",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909859",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909889",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909894",
+          "ftm": 2,
+          "fta": 3
+        },
+        {
+          "event_id": "401909898",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909914",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909928",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909293",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909950",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909959",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909972",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909300",
+          "ftm": 0,
+          "fta": 1
+        }
+      ]
+    },
+    "5279130": {
+      "player_id": "5279130",
+      "name": "Nolan Traore",
+      "team": "BKN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/5279130/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 2,
+      "previous_games": 10,
+      "rolling20_games": 10,
+      "pregame_rolling20_fta": 1.9,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909836",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909854",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909862",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909877",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909279",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909904",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909910",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909925",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909939",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909948",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "5107199": {
+      "player_id": "5107199",
+      "name": "Daniss Jenkins",
+      "team": "DET",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/5107199/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 2,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 2.727272727272727,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909088",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909847",
+          "ftm": 4,
+          "fta": 5
+        },
+        {
+          "event_id": "401909866",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909878",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909883",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909279",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909908",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909922",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909946",
+          "ftm": 5,
+          "fta": 5
+        },
+        {
+          "event_id": "401909954",
+          "ftm": 6,
+          "fta": 6
+        },
+        {
+          "event_id": "401909977",
+          "ftm": 6,
+          "fta": 6
+        }
+      ]
+    },
+    "4683934": {
+      "player_id": "4683934",
+      "name": "Jahmai Mashack",
+      "team": "MEM",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4683934/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 0,
+      "previous_games": 3,
+      "rolling20_games": 3,
+      "pregame_rolling20_fta": 0.0,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909899",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909914",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909291",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "4698719": {
+      "player_id": "4698719",
+      "name": "Trevon Brazile",
+      "team": "DEN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4698719/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909980",
+      "current_fta": 2,
+      "previous_games": 10,
+      "rolling20_games": 10,
+      "pregame_rolling20_fta": 1.3,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909094",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909859",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909876",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909889",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909286",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909918",
+          "ftm": 0,
+          "fta": 2
+        },
+        {
+          "event_id": "401909931",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909938",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909957",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909970",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "3135046": {
+      "player_id": "3135046",
+      "name": "Tyus Jones",
+      "team": "DEN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/3135046/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909980",
+      "current_fta": 0,
+      "previous_games": 10,
+      "rolling20_games": 10,
+      "pregame_rolling20_fta": 0.6,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909094",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909859",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909876",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909889",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909286",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909918",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909931",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909938",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909957",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909970",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "4837356": {
+      "player_id": "4837356",
+      "name": "Tre Donaldson",
+      "team": "MIA",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4837356/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 2,
+      "previous_games": 0,
+      "rolling20_games": 0,
+      "pregame_rolling20_fta": null,
+      "prior_season_game_rows": []
+    },
+    "3907823": {
+      "player_id": "3907823",
+      "name": "Terance Mann",
+      "team": "BKN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/3907823/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 0,
+      "previous_games": 6,
+      "rolling20_games": 6,
+      "pregame_rolling20_fta": 0.0,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909279",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909904",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909925",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909939",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909948",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909972",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "4432247": {
+      "player_id": "4432247",
+      "name": "Jaylen Clark",
+      "team": "MIN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4432247/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909984",
+      "current_fta": 0,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 1.2727272727272727,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909091",
+          "ftm": 1,
+          "fta": 4
+        },
+        {
+          "event_id": "401909845",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909864",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909888",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909284",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909901",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909915",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909930",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909293",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909947",
+          "ftm": 3,
+          "fta": 3
+        },
+        {
+          "event_id": "401909978",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "3032976": {
+      "player_id": "3032976",
+      "name": "Rudy Gobert",
+      "team": "MIN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/3032976/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909984",
+      "current_fta": 2,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 4.909090909090909,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909091",
+          "ftm": 5,
+          "fta": 8
+        },
+        {
+          "event_id": "401909845",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909864",
+          "ftm": 0,
+          "fta": 4
+        },
+        {
+          "event_id": "401909869",
+          "ftm": 5,
+          "fta": 8
+        },
+        {
+          "event_id": "401909888",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909284",
+          "ftm": 1,
+          "fta": 3
+        },
+        {
+          "event_id": "401909915",
+          "ftm": 4,
+          "fta": 12
+        },
+        {
+          "event_id": "401909930",
+          "ftm": 2,
+          "fta": 6
+        },
+        {
+          "event_id": "401909293",
+          "ftm": 0,
+          "fta": 2
+        },
+        {
+          "event_id": "401909947",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909978",
+          "ftm": 1,
+          "fta": 1
+        }
+      ]
+    },
+    "5242496": {
+      "player_id": "5242496",
+      "name": "Noa Essengue",
+      "team": "CHI",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/5242496/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909984",
+      "current_fta": 0,
+      "previous_games": 10,
+      "rolling20_games": 10,
+      "pregame_rolling20_fta": 2.1,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909837",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909848",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909870",
+          "ftm": 0,
+          "fta": 2
+        },
+        {
+          "event_id": "401909886",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909278",
+          "ftm": 3,
+          "fta": 5
+        },
+        {
+          "event_id": "401909912",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909926",
+          "ftm": 2,
+          "fta": 4
+        },
+        {
+          "event_id": "401909945",
+          "ftm": 4,
+          "fta": 5
+        },
+        {
+          "event_id": "401909969",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909299",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "3908845": {
+      "player_id": "3908845",
+      "name": "John Collins",
+      "team": "DET",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/3908845/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 0,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 1.3636363636363635,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909088",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909847",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909866",
+          "ftm": 0,
+          "fta": 1
+        },
+        {
+          "event_id": "401909878",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909883",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909279",
+          "ftm": 0,
+          "fta": 2
+        },
+        {
+          "event_id": "401909908",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909922",
+          "ftm": 2,
+          "fta": 2
+        },
+        {
+          "event_id": "401909946",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909954",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909977",
+          "ftm": 2,
+          "fta": 2
+        }
+      ]
+    },
+    "2990962": {
+      "player_id": "2990962",
+      "name": "Taurean Prince",
+      "team": "DET",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/2990962/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 0,
+      "previous_games": 2,
+      "rolling20_games": 2,
+      "pregame_rolling20_fta": 1.0,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909878",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909883",
+          "ftm": 1,
+          "fta": 2
+        }
+      ]
+    },
+    "4397449": {
+      "player_id": "4397449",
+      "name": "Elijah Harkless",
+      "team": "DET",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4397449/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 2,
+      "previous_games": 1,
+      "rolling20_games": 1,
+      "pregame_rolling20_fta": 0.0,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909878",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "4896372": {
+      "player_id": "4896372",
+      "name": "Walter Clayton Jr.",
+      "team": "DAL",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4896372/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909981",
+      "current_fta": 0,
+      "previous_games": 11,
+      "rolling20_games": 11,
+      "pregame_rolling20_fta": 1.4545454545454546,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909844",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909858",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909871",
+          "ftm": 1,
+          "fta": 1
+        },
+        {
+          "event_id": "401909891",
+          "ftm": 0,
+          "fta": 2
+        },
+        {
+          "event_id": "401909283",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909913",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909933",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909290",
+          "ftm": 3,
+          "fta": 4
+        },
+        {
+          "event_id": "401909948",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909956",
+          "ftm": 1,
+          "fta": 2
+        },
+        {
+          "event_id": "401909978",
+          "ftm": 3,
+          "fta": 3
+        }
+      ]
+    },
+    "5177362": {
+      "player_id": "5177362",
+      "name": "Riley Minix",
+      "team": "CLE",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/5177362/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909981",
+      "current_fta": 0,
+      "previous_games": 3,
+      "rolling20_games": 3,
+      "pregame_rolling20_fta": 0.0,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909900",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909940",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909953",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "5107818": {
+      "player_id": "5107818",
+      "name": "Isaac Jones",
+      "team": "DET",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/5107818/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909982",
+      "current_fta": 0,
+      "previous_games": 4,
+      "rolling20_games": 4,
+      "pregame_rolling20_fta": 0.0,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909878",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909279",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909908",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909954",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    },
+    "4687718": {
+      "player_id": "4687718",
+      "name": "Josh Minott",
+      "team": "BKN",
+      "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/4687718/gamelog?season=2027",
+      "status": "ESPN_GAMELOG_VERIFIED",
+      "current_game_id": "401909983",
+      "current_fta": 0,
+      "previous_games": 6,
+      "rolling20_games": 6,
+      "pregame_rolling20_fta": 0.6666666666666666,
+      "prior_season_game_rows": [
+        {
+          "event_id": "401909854",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909862",
+          "ftm": 4,
+          "fta": 4
+        },
+        {
+          "event_id": "401909279",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909925",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909948",
+          "ftm": 0,
+          "fta": 0
+        },
+        {
+          "event_id": "401909972",
+          "ftm": 0,
+          "fta": 0
+        }
+      ]
+    }
+  }
+}
