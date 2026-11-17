@@ -101,6 +101,12 @@ jobs:
           mismatch_old="assert tov+team_extra[team]==tm['tov']"
           mismatch_new="if tov+team_extra[team]!=tm['tov']:audit.setdefault('team_turnover_source_conflicts',[]).append({'event_id':eid,'team':team,'player_tov_sum':tov,'extra_team_tov':team_extra[team],'reported_team_tov':tm['tov']})"
           assert mismatch_old in s;s=s.replace(mismatch_old,mismatch_new)
+          # Ignore ESPN entries with no playing time that are excluded from the canonical participant archive.
+          # Any unmatched positive-minute player still fails loudly with identifying evidence.
+          old="   assert key in BY and key not in matched,'unmatched or duplicate player'"
+          new="   if key not in BY and str(st.get('MIN','')).strip() in ('0','0.0','0:00','0:00.0','--',''):\\n    audit.setdefault('excluded_zero_minute_box_entries',[]).append({'event_id':eid,'player_id':key[1],'name':athlete['athlete'].get('displayName')})\\n    continue\\n   assert key in BY and key not in matched,f'unmatched or duplicate player: {key} name={athlete[\"athlete\"].get(\"displayName\")} MIN={st.get(\"MIN\")}'"
+          assert old in s
+          s=s.replace(old,new.replace('\\n','\n'))
           Path('scripts/qpix_nov16_prepare_runner.py').write_text(s)
           p=Path('scripts/qpix_nov11_provisional_score.cjs');s=p.read_text()
           assert 'games.length!==10||players.length!==223' in s
