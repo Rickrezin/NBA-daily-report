@@ -1,4 +1,4 @@
-QPIX unified shadow manual trigger
-Previous America/New_York game date for run started 2026-11-13: 2026-11-12.
-Collect all Nov 12 final games and retain raw ESPN inputs and source audit even if quality gate fails.
-Read-only collection on the feature branch; do not modify the authorized scoring engine.
+QPIX unified shadow read-only source extraction triggered 2026-11-17.
+Intended game date America/New_York: 2026-11-16.
+Preserve ESPN source archive, partial results and coverage audit even if scoring fails.
+No modifications to generate-report.js scoring formulas. No official RAW publication from this shadow workflow.
