@@ -1,4 +1,4 @@
-# Re-run from newly published 2026-11-15 provisional QPIX data; formulas unchanged.
+# Re-run from newly published 2026-11-16 provisional QPIX data; formulas unchanged.
 name: QPIX Seasonal Player Ledger
 on:
   push:
