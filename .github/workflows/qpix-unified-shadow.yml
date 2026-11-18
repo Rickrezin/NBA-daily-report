@@ -26,6 +26,8 @@ jobs:
   source-shadow:
     name: Independently test unified-source feature branch
     runs-on: ubuntu-latest
+    env:
+      ENABLE_NBA_V3: 'false'
     timeout-minutes: 20
     steps:
       - name: Checkout unified-source branch (not production)
