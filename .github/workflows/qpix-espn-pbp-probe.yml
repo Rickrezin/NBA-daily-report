@@ -25,137 +25,137 @@ jobs:
         shell: bash
         run: |
           python3 - <<'PY'
-            import json
-            import os
-            import sys
-            import urllib.error
-            import urllib.parse
-            import urllib.request
-            from pathlib import Path
-            
-            event_id = os.getenv("ESPN_EVENT_ID", "401909296").strip()
-            if not event_id.isdigit():
-                raise SystemExit("ESPN_EVENT_ID must be numeric")
-            out = Path("pbp-probe-output")
-            out.mkdir(exist_ok=True)
-            user_agent = "QCoreLabs-QPIX-PBP-Diagnostic/1.0"
-            
-            def fetch(url):
-                req = urllib.request.Request(url, headers={
-                    "User-Agent": user_agent,
-                    "Accept": "application/json",
-                })
-                try:
-                    with urllib.request.urlopen(req, timeout=30) as response:
-                        payload = response.read()
-                        return json.loads(payload), response.status, None
-                except Exception as exc:
-                    return None, None, str(exc)
-            
-            def save(name, obj):
-                (out / name).write_text(json.dumps(obj, indent=2, ensure_ascii=False) + "\n")
-            
-            summary_url = ("https://site.api.espn.com/apis/site/v2/sports/"
-                           "basketball/nba/summary?event=" + event_id)
-            summary, status, err = fetch(summary_url)
-            diagnostics = {
-                "espn_event_id": event_id, "summary_url": summary_url,
-                "summary_http_status": status, "summary_error": err,
-                "sources": [], "selected_source": None,
-                "event_count": 0, "periods": [], "sample_events": [],
-                "validation": "NOT_PROVEN",
-            }
-            events = []
-            if isinstance(summary, dict):
-                save("summary.json", summary)
-                summary_plays = summary.get("plays", [])
-                if not isinstance(summary_plays, list):
-                    summary_plays = []
-                diagnostics["sources"].append({
-                    "source": "ESPN summary plays", "event_count": len(summary_plays)
-                })
-                competition = ((summary.get("header") or {}).get("competitions") or [{}])[0]
-                competition_id = str(competition.get("id") or event_id)
-                # Try the Core API even if the summary contains abbreviated highlights.
-                core_base = ("https://sports.core.api.espn.com/v2/sports/"
-                             "basketball/leagues/nba/events/" + event_id +
-                             "/competitions/" + competition_id + "/plays")
-                core_events = []
-                page = 1
-                while page <= 30:
-                    url = core_base + "?" + urllib.parse.urlencode({
-                        "limit": 100, "page": page
-                    })
-                    body, code, core_err = fetch(url)
-                    if not isinstance(body, dict):
-                        diagnostics["sources"].append({
-                            "source": "ESPN Core", "page": page,
-                            "http_status": code, "error": core_err
-                        })
-                        break
-                    if page == 1:
-                        save("core_page_1.json", body)
-                    items = body.get("items", [])
-                    if not isinstance(items, list):
-                        break
-                    # Core may return references; preserve them without claiming event fields.
-                    core_events.extend(items)
-                    page_count = int(body.get("pageCount") or 1)
-                    if page >= page_count or not items:
-                        break
-                    page += 1
-                diagnostics["sources"].append({
-                    "source": "ESPN Core plays", "event_count": len(core_events),
-                    "pages_attempted": page
-                })
-                candidates = [
-                    ("ESPN summary", summary_plays),
-                    ("ESPN Core", core_events)
-                ]
-                # Prefer whichever provides the most complete embedded event records.
-                source, events = max(candidates, key=lambda pair: sum(
-                    isinstance(x, dict) and (
-                        "text" in x or "type" in x or "period" in x
-                    ) for x in pair[1]
-                ))
-                diagnostics["selected_source"] = source
-            
-            save("selected_events.json", events)
-            periods = set()
-            has_event_fields = 0
-            references_only = 0
-            for item in events:
-                if not isinstance(item, dict):
-                    continue
-                if "$ref" in item and not any(k in item for k in ("text", "period", "type")):
-                    references_only += 1
-                if any(k in item for k in ("text", "period", "type")):
-                    has_event_fields += 1
-                period = item.get("period")
-                if isinstance(period, dict):
-                    period = period.get("number")
-                if period is not None:
-                    try:
-                        periods.add(int(period))
-                    except (TypeError, ValueError):
-                        pass
-            
-            diagnostics["event_count"] = len(events)
-            diagnostics["events_with_fields"] = has_event_fields
-            diagnostics["reference_only_items"] = references_only
-            diagnostics["periods"] = sorted(periods)
-            diagnostics["sample_events"] = events[:5]
-            # Full-game extraction requires actual events in all four regulation periods.
-            if len(events) >= 100 and has_event_fields >= 100 and set(range(1, 5)).issubset(periods):
-                diagnostics["validation"] = "FULL_GAME_EVENT_EXTRACTION_PROVEN"
-            elif has_event_fields > 0:
-                diagnostics["validation"] = "PARTIAL_EXTRACTION_ONLY"
-            else:
-                diagnostics["validation"] = "NOT_PROVEN"
-            save("diagnostics.json", diagnostics)
-            print(json.dumps(diagnostics, indent=2, ensure_ascii=False)[:12000])
-            if diagnostics["validation"] != "FULL_GAME_EVENT_EXTRACTION_PROVEN":
-                sys.exit("Full four-quarter ESPN play-by-play extraction not yet proven")
+          import json
+          import os
+          import sys
+          import urllib.error
+          import urllib.parse
+          import urllib.request
+          from pathlib import Path
+          
+          event_id = os.getenv("ESPN_EVENT_ID", "401909296").strip()
+          if not event_id.isdigit():
+              raise SystemExit("ESPN_EVENT_ID must be numeric")
+          out = Path("pbp-probe-output")
+          out.mkdir(exist_ok=True)
+          user_agent = "QCoreLabs-QPIX-PBP-Diagnostic/1.0"
+          
+          def fetch(url):
+              req = urllib.request.Request(url, headers={
+                  "User-Agent": user_agent,
+                  "Accept": "application/json",
+              })
+              try:
+                  with urllib.request.urlopen(req, timeout=30) as response:
+                      payload = response.read()
+                      return json.loads(payload), response.status, None
+              except Exception as exc:
+                  return None, None, str(exc)
+          
+          def save(name, obj):
+              (out / name).write_text(json.dumps(obj, indent=2, ensure_ascii=False) + "\n")
+          
+          summary_url = ("https://site.api.espn.com/apis/site/v2/sports/"
+                         "basketball/nba/summary?event=" + event_id)
+          summary, status, err = fetch(summary_url)
+          diagnostics = {
+              "espn_event_id": event_id, "summary_url": summary_url,
+              "summary_http_status": status, "summary_error": err,
+              "sources": [], "selected_source": None,
+              "event_count": 0, "periods": [], "sample_events": [],
+              "validation": "NOT_PROVEN",
+          }
+          events = []
+          if isinstance(summary, dict):
+              save("summary.json", summary)
+              summary_plays = summary.get("plays", [])
+              if not isinstance(summary_plays, list):
+                  summary_plays = []
+              diagnostics["sources"].append({
+                  "source": "ESPN summary plays", "event_count": len(summary_plays)
+              })
+              competition = ((summary.get("header") or {}).get("competitions") or [{}])[0]
+              competition_id = str(competition.get("id") or event_id)
+              # Try the Core API even if the summary contains abbreviated highlights.
+              core_base = ("https://sports.core.api.espn.com/v2/sports/"
+                           "basketball/leagues/nba/events/" + event_id +
+                           "/competitions/" + competition_id + "/plays")
+              core_events = []
+              page = 1
+              while page <= 30:
+                  url = core_base + "?" + urllib.parse.urlencode({
+                      "limit": 100, "page": page
+                  })
+                  body, code, core_err = fetch(url)
+                  if not isinstance(body, dict):
+                      diagnostics["sources"].append({
+                          "source": "ESPN Core", "page": page,
+                          "http_status": code, "error": core_err
+                      })
+                      break
+                  if page == 1:
+                      save("core_page_1.json", body)
+                  items = body.get("items", [])
+                  if not isinstance(items, list):
+                      break
+                  # Core may return references; preserve them without claiming event fields.
+                  core_events.extend(items)
+                  page_count = int(body.get("pageCount") or 1)
+                  if page >= page_count or not items:
+                      break
+                  page += 1
+              diagnostics["sources"].append({
+                  "source": "ESPN Core plays", "event_count": len(core_events),
+                  "pages_attempted": page
+              })
+              candidates = [
+                  ("ESPN summary", summary_plays),
+                  ("ESPN Core", core_events)
+              ]
+              # Prefer whichever provides the most complete embedded event records.
+              source, events = max(candidates, key=lambda pair: sum(
+                  isinstance(x, dict) and (
+                      "text" in x or "type" in x or "period" in x
+                  ) for x in pair[1]
+              ))
+              diagnostics["selected_source"] = source
+          
+          save("selected_events.json", events)
+          periods = set()
+          has_event_fields = 0
+          references_only = 0
+          for item in events:
+              if not isinstance(item, dict):
+                  continue
+              if "$ref" in item and not any(k in item for k in ("text", "period", "type")):
+                  references_only += 1
+              if any(k in item for k in ("text", "period", "type")):
+                  has_event_fields += 1
+              period = item.get("period")
+              if isinstance(period, dict):
+                  period = period.get("number")
+              if period is not None:
+                  try:
+                      periods.add(int(period))
+                  except (TypeError, ValueError):
+                      pass
+          
+          diagnostics["event_count"] = len(events)
+          diagnostics["events_with_fields"] = has_event_fields
+          diagnostics["reference_only_items"] = references_only
+          diagnostics["periods"] = sorted(periods)
+          diagnostics["sample_events"] = events[:5]
+          # Full-game extraction requires actual events in all four regulation periods.
+          if len(events) >= 100 and has_event_fields >= 100 and set(range(1, 5)).issubset(periods):
+              diagnostics["validation"] = "FULL_GAME_EVENT_EXTRACTION_PROVEN"
+          elif has_event_fields > 0:
+              diagnostics["validation"] = "PARTIAL_EXTRACTION_ONLY"
+          else:
+              diagnostics["validation"] = "NOT_PROVEN"
+          save("diagnostics.json", diagnostics)
+          print(json.dumps(diagnostics, indent=2, ensure_ascii=False)[:12000])
+          if diagnostics["validation"] != "FULL_GAME_EVENT_EXTRACTION_PROVEN":
+              sys.exit("Full four-quarter ESPN play-by-play extraction not yet proven")
           PY
       - name: Preserve raw diagnostic artifacts even on failure
         if: always()
