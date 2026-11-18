@@ -1,0 +1,173 @@
+{
+  "schema": "qpix_espn_pbp_raw_v1",
+  "date_et": "2026-11-17",
+  "created_utc": "2026-11-18T12:08:45.361454+00:00",
+  "source": "ESPN scoreboard and game summary JSON",
+  "final_games": 5,
+  "reconciled_games": 5,
+  "games": [
+    {
+      "espn_event_id": "401910002",
+      "game_date_et": "2026-11-17",
+      "status": "FINAL",
+      "home": {
+        "team_id": "28",
+        "alias": "TOR",
+        "points": 102
+      },
+      "away": {
+        "team_id": "18",
+        "alias": "NY",
+        "points": 111
+      },
+      "events": 444,
+      "periods": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "terminal_score": {
+        "away": 111,
+        "home": 102
+      },
+      "terminal_score_matches": true,
+      "event_ids_unique": true,
+      "coverage": "FOUR_PERIOD_SCORE_RECONCILED",
+      "raw_summary": "games/401910002/summary.json",
+      "raw_plays": "games/401910002/plays.json",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910002"
+    },
+    {
+      "espn_event_id": "401910003",
+      "game_date_et": "2026-11-17",
+      "status": "FINAL",
+      "home": {
+        "team_id": "16",
+        "alias": "MIN",
+        "points": 106
+      },
+      "away": {
+        "team_id": "22",
+        "alias": "POR",
+        "points": 105
+      },
+      "events": 520,
+      "periods": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "terminal_score": {
+        "away": 105,
+        "home": 106
+      },
+      "terminal_score_matches": true,
+      "event_ids_unique": true,
+      "coverage": "FOUR_PERIOD_SCORE_RECONCILED",
+      "raw_summary": "games/401910003/summary.json",
+      "raw_plays": "games/401910003/plays.json",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910003"
+    },
+    {
+      "espn_event_id": "401910004",
+      "game_date_et": "2026-11-17",
+      "status": "FINAL",
+      "home": {
+        "team_id": "24",
+        "alias": "SA",
+        "points": 93
+      },
+      "away": {
+        "team_id": "8",
+        "alias": "DET",
+        "points": 105
+      },
+      "events": 467,
+      "periods": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "terminal_score": {
+        "away": 105,
+        "home": 93
+      },
+      "terminal_score_matches": true,
+      "event_ids_unique": true,
+      "coverage": "FOUR_PERIOD_SCORE_RECONCILED",
+      "raw_summary": "games/401910004/summary.json",
+      "raw_plays": "games/401910004/plays.json",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910004"
+    },
+    {
+      "espn_event_id": "401910006",
+      "game_date_et": "2026-11-17",
+      "status": "FINAL",
+      "home": {
+        "team_id": "12",
+        "alias": "LAC",
+        "points": 107
+      },
+      "away": {
+        "team_id": "26",
+        "alias": "UTAH",
+        "points": 132
+      },
+      "events": 443,
+      "periods": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "terminal_score": {
+        "away": 132,
+        "home": 107
+      },
+      "terminal_score_matches": true,
+      "event_ids_unique": true,
+      "coverage": "FOUR_PERIOD_SCORE_RECONCILED",
+      "raw_summary": "games/401910006/summary.json",
+      "raw_plays": "games/401910006/plays.json",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006"
+    },
+    {
+      "espn_event_id": "401910005",
+      "game_date_et": "2026-11-17",
+      "status": "FINAL",
+      "home": {
+        "team_id": "13",
+        "alias": "LAL",
+        "points": 118
+      },
+      "away": {
+        "team_id": "30",
+        "alias": "CHA",
+        "points": 114
+      },
+      "events": 550,
+      "periods": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "terminal_score": {
+        "away": 114,
+        "home": 118
+      },
+      "terminal_score_matches": true,
+      "event_ids_unique": true,
+      "coverage": "FOUR_PERIOD_SCORE_RECONCILED",
+      "raw_summary": "games/401910005/summary.json",
+      "raw_plays": "games/401910005/plays.json",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910005"
+    }
+  ],
+  "errors": [],
+  "note": "Raw source only; no player-level C6/C11 or advanced ratings inferred."
+}

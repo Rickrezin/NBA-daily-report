@@ -1,0 +1,5953 @@
+{
+  "schema_version": 1,
+  "date_et": "2026-11-17",
+  "generated_at_utc": "2026-11-18T12:19:41.908261+00:00",
+  "purpose": "Canonical QCore Labs QPIX input before authorized engine execution",
+  "methodology": {
+    "C3": "Individual Basketball-Reference/Dean Oliver ORtg/DRtg ONLY; NBA.com on-court ratings are not substituted",
+    "C6": "Individual player-level paint, fast-break and second-chance points; absent is not zero"
+  },
+  "source_audit": {
+    "ESPN_and_LiveData": {
+      "ESPN_final_fixtures": 5,
+      "NBA_schedule": "Retrieval failed: HTTP Error 403: Forbidden"
+    },
+    "nba_crosswalk": {
+      "attempts": [
+        {
+          "source": "https://cdn.nba.com/static/json/staticData/scheduleLeagueV2.json",
+          "status": "failed",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "source": "https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_1.json",
+          "status": "failed",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "source": "https://stats.nba.com/stats/scoreboardv2?GameDate=2026-11-17&LeagueID=00&DayOffset=0",
+          "status": "failed",
+          "error": "The read operation timed out"
+        }
+      ],
+      "resolved": 0,
+      "expected": 5,
+      "unresolved_espn_ids": [
+        "401910002",
+        "401910003",
+        "401910004",
+        "401910005",
+        "401910006"
+      ]
+    },
+    "C3": {
+      "source": "/home/runner/work/NBA-daily-report/NBA-daily-report/data/daily/2026-11-17.json",
+      "status": "absent",
+      "assigned": 0,
+      "players": 102,
+      "mismatches": []
+    },
+    "AdvancedV3": [
+      {
+        "source": "/home/runner/work/NBA-daily-report/NBA-daily-report/data/daily/2026-11-17.json",
+        "status": "absent",
+        "assigned": 0,
+        "players": 102,
+        "mismatches": []
+      },
+      {
+        "game_id": "ESPN_401910004",
+        "source": "BoxScoreAdvancedV3",
+        "status": "missing_verified_nba_id",
+        "retrieved_players": 0,
+        "C3_compatible": false
+      },
+      {
+        "game_id": "ESPN_401910002",
+        "source": "BoxScoreAdvancedV3",
+        "status": "missing_verified_nba_id",
+        "retrieved_players": 0,
+        "C3_compatible": false
+      },
+      {
+        "game_id": "ESPN_401910003",
+        "source": "BoxScoreAdvancedV3",
+        "status": "missing_verified_nba_id",
+        "retrieved_players": 0,
+        "C3_compatible": false
+      },
+      {
+        "game_id": "ESPN_401910006",
+        "source": "BoxScoreAdvancedV3",
+        "status": "missing_verified_nba_id",
+        "retrieved_players": 0,
+        "C3_compatible": false
+      },
+      {
+        "game_id": "ESPN_401910005",
+        "source": "BoxScoreAdvancedV3",
+        "status": "missing_verified_nba_id",
+        "retrieved_players": 0,
+        "C3_compatible": false
+      }
+    ],
+    "C6": [
+      {
+        "status": "missing_verified_nba_id",
+        "source": "BoxScoreMiscV3",
+        "total": 21,
+        "error": "NBA game ID could not be resolved against NBA official schedule"
+      },
+      {
+        "status": "missing_verified_nba_id",
+        "source": "BoxScoreMiscV3",
+        "total": 19,
+        "error": "NBA game ID could not be resolved against NBA official schedule"
+      },
+      {
+        "status": "missing_verified_nba_id",
+        "source": "BoxScoreMiscV3",
+        "total": 19,
+        "error": "NBA game ID could not be resolved against NBA official schedule"
+      },
+      {
+        "status": "missing_verified_nba_id",
+        "source": "BoxScoreMiscV3",
+        "total": 22,
+        "error": "NBA game ID could not be resolved against NBA official schedule"
+      },
+      {
+        "status": "missing_verified_nba_id",
+        "source": "BoxScoreMiscV3",
+        "total": 21,
+        "error": "NBA game ID could not be resolved against NBA official schedule"
+      }
+    ]
+  },
+  "coverage": {
+    "players": 102,
+    "games": 5,
+    "fields": {
+      "offensive_rating": 0,
+      "defensive_rating": 0,
+      "points_in_paint": 0,
+      "fast_break_points": 0,
+      "second_chance_points": 0
+    },
+    "complete": false,
+    "missing": {
+      "offensive_rating": [
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3934719",
+          "name": "OG Anunoby"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3136195",
+          "name": "Karl-Anthony Towns"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3062679",
+          "name": "Josh Hart"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3147657",
+          "name": "Mikal Bridges"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3934672",
+          "name": "Jalen Brunson"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "6585",
+          "name": "Andre Drummond"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "2528426",
+          "name": "Jordan Clarkson"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3914044",
+          "name": "Landry Shamet"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4277869",
+          "name": "Jose Alvarado"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4431823",
+          "name": "Miles McBride"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4433225",
+          "name": "Tyler Kolek"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4395625",
+          "name": "RJ Barrett"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4433134",
+          "name": "Scottie Barnes"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "5093267",
+          "name": "Collin Murray-Boyles"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4395724",
+          "name": "Immanuel Quickley"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4684272",
+          "name": "Ja'Kobe Walter"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4431893",
+          "name": "Jamison Battle"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "5149115",
+          "name": "Allen Graves"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3134908",
+          "name": "Jakob Poeltl"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4432241",
+          "name": "Jamal Shead"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4702656",
+          "name": "Alijah Martin"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4431736",
+          "name": "Toumani Camara"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "5105565",
+          "name": "Donovan Clingan"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "6606",
+          "name": "Damian Lillard"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4703889",
+          "name": "Jayson Kent"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "5081727",
+          "name": "Sidy Cissoko"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4066211",
+          "name": "Robert Williams III"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4066399",
+          "name": "Micah Potter"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4592435",
+          "name": "Branden Carlson"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "3995",
+          "name": "Jrue Holiday"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4683678",
+          "name": "Scoot Henderson"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4431671",
+          "name": "Jaden McDaniels"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4895758",
+          "name": "Cody Williams"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "3032976",
+          "name": "Rudy Gobert"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4397002",
+          "name": "Ayo Dosunmu"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4432816",
+          "name": "LaMelo Ball"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "3136196",
+          "name": "Trey Lyles"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "5279133",
+          "name": "Joan Beringer"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4432847",
+          "name": "Terrence Shannon Jr."
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4592492",
+          "name": "Bones Hyland"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "3908845",
+          "name": "John Collins"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4066372",
+          "name": "Kevin Huerter"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4432166",
+          "name": "Cade Cunningham"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4684742",
+          "name": "Ausar Thompson"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "5107199",
+          "name": "Daniss Jenkins"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4278562",
+          "name": "Paul Reed"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "2596112",
+          "name": "Javonte Green"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4397449",
+          "name": "Elijah Harkless"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4700852",
+          "name": "Chaz Lanier"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "5104157",
+          "name": "Victor Wembanyama"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4066259",
+          "name": "De'Aaron Fox"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4395630",
+          "name": "Devin Vassell"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4845367",
+          "name": "Stephon Castle"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "5037871",
+          "name": "Dylan Harper"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "6578",
+          "name": "Harrison Barnes"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4395723",
+          "name": "Keldon Johnson"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4592479",
+          "name": "Julian Champagnie"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "5061568",
+          "name": "Carter Bryant"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "3064560",
+          "name": "Luke Kornet"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4277919",
+          "name": "Mo Bamba"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4432811",
+          "name": "Josh Green"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4433627",
+          "name": "Keyonte George"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4873138",
+          "name": "Ace Bailey"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5041955",
+          "name": "Darryn Peterson"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5105839",
+          "name": "Brice Sensabaugh"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4065673",
+          "name": "Tony Bradley"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "3133602",
+          "name": "Svi Mykhailiuk"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4065663",
+          "name": "Josh Okogie"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "3936099",
+          "name": "Derrick Jones Jr."
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4066648",
+          "name": "Rui Hachimura"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "3448",
+          "name": "Brook Lopez"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "2991139",
+          "name": "Kris Dunn"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4396907",
+          "name": "Darius Garland"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4432170",
+          "name": "Isaiah Jackson"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5075626",
+          "name": "Baba Miller"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5105832",
+          "name": "Nick Martinelli"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4065778",
+          "name": "Max Strus"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4702352",
+          "name": "Kobe Sanders"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4845363",
+          "name": "Cam Christie"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5106258",
+          "name": "Gradey Dick"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5254165",
+          "name": "Keaton Wagler"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4066218",
+          "name": "Grant Williams"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4433249",
+          "name": "Moussa Diabate"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4433287",
+          "name": "Brandon Miller"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4396971",
+          "name": "Naz Reid"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4395651",
+          "name": "Coby White"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "2583632",
+          "name": "Royce O'Neale"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "5211176",
+          "name": "Tidjane Salaun"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4576060",
+          "name": "Ryan Kalkbrenner"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4602025",
+          "name": "Sion James"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "5060701",
+          "name": "Christian Anderson"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "3155535",
+          "name": "Kevon Looney"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4592691",
+          "name": "Jake LaRavia"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "3907498",
+          "name": "Matisse Thybulle"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "3945274",
+          "name": "Luka Doncic"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4397014",
+          "name": "Quentin Grimes"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4278077",
+          "name": "Jarred Vanderbilt"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4278580",
+          "name": "Sandro Mamukelashvili"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4433137",
+          "name": "Ziaire Williams"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "5060631",
+          "name": "Adou Thiero"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "5105817",
+          "name": "Carson Cooper"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4277811",
+          "name": "Collin Sexton"
+        }
+      ],
+      "defensive_rating": [
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3934719",
+          "name": "OG Anunoby"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3136195",
+          "name": "Karl-Anthony Towns"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3062679",
+          "name": "Josh Hart"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3147657",
+          "name": "Mikal Bridges"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3934672",
+          "name": "Jalen Brunson"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "6585",
+          "name": "Andre Drummond"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "2528426",
+          "name": "Jordan Clarkson"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3914044",
+          "name": "Landry Shamet"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4277869",
+          "name": "Jose Alvarado"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4431823",
+          "name": "Miles McBride"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4433225",
+          "name": "Tyler Kolek"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4395625",
+          "name": "RJ Barrett"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4433134",
+          "name": "Scottie Barnes"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "5093267",
+          "name": "Collin Murray-Boyles"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4395724",
+          "name": "Immanuel Quickley"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4684272",
+          "name": "Ja'Kobe Walter"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4431893",
+          "name": "Jamison Battle"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "5149115",
+          "name": "Allen Graves"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3134908",
+          "name": "Jakob Poeltl"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4432241",
+          "name": "Jamal Shead"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4702656",
+          "name": "Alijah Martin"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4431736",
+          "name": "Toumani Camara"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "5105565",
+          "name": "Donovan Clingan"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "6606",
+          "name": "Damian Lillard"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4703889",
+          "name": "Jayson Kent"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "5081727",
+          "name": "Sidy Cissoko"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4066211",
+          "name": "Robert Williams III"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4066399",
+          "name": "Micah Potter"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4592435",
+          "name": "Branden Carlson"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "3995",
+          "name": "Jrue Holiday"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4683678",
+          "name": "Scoot Henderson"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4431671",
+          "name": "Jaden McDaniels"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4895758",
+          "name": "Cody Williams"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "3032976",
+          "name": "Rudy Gobert"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4397002",
+          "name": "Ayo Dosunmu"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4432816",
+          "name": "LaMelo Ball"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "3136196",
+          "name": "Trey Lyles"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "5279133",
+          "name": "Joan Beringer"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4432847",
+          "name": "Terrence Shannon Jr."
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4592492",
+          "name": "Bones Hyland"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "3908845",
+          "name": "John Collins"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4066372",
+          "name": "Kevin Huerter"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4432166",
+          "name": "Cade Cunningham"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4684742",
+          "name": "Ausar Thompson"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "5107199",
+          "name": "Daniss Jenkins"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4278562",
+          "name": "Paul Reed"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "2596112",
+          "name": "Javonte Green"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4397449",
+          "name": "Elijah Harkless"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4700852",
+          "name": "Chaz Lanier"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "5104157",
+          "name": "Victor Wembanyama"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4066259",
+          "name": "De'Aaron Fox"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4395630",
+          "name": "Devin Vassell"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4845367",
+          "name": "Stephon Castle"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "5037871",
+          "name": "Dylan Harper"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "6578",
+          "name": "Harrison Barnes"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4395723",
+          "name": "Keldon Johnson"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4592479",
+          "name": "Julian Champagnie"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "5061568",
+          "name": "Carter Bryant"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "3064560",
+          "name": "Luke Kornet"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4277919",
+          "name": "Mo Bamba"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4432811",
+          "name": "Josh Green"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4433627",
+          "name": "Keyonte George"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4873138",
+          "name": "Ace Bailey"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5041955",
+          "name": "Darryn Peterson"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5105839",
+          "name": "Brice Sensabaugh"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4065673",
+          "name": "Tony Bradley"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "3133602",
+          "name": "Svi Mykhailiuk"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4065663",
+          "name": "Josh Okogie"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "3936099",
+          "name": "Derrick Jones Jr."
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4066648",
+          "name": "Rui Hachimura"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "3448",
+          "name": "Brook Lopez"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "2991139",
+          "name": "Kris Dunn"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4396907",
+          "name": "Darius Garland"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4432170",
+          "name": "Isaiah Jackson"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5075626",
+          "name": "Baba Miller"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5105832",
+          "name": "Nick Martinelli"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4065778",
+          "name": "Max Strus"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4702352",
+          "name": "Kobe Sanders"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4845363",
+          "name": "Cam Christie"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5106258",
+          "name": "Gradey Dick"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5254165",
+          "name": "Keaton Wagler"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4066218",
+          "name": "Grant Williams"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4433249",
+          "name": "Moussa Diabate"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4433287",
+          "name": "Brandon Miller"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4396971",
+          "name": "Naz Reid"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4395651",
+          "name": "Coby White"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "2583632",
+          "name": "Royce O'Neale"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "5211176",
+          "name": "Tidjane Salaun"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4576060",
+          "name": "Ryan Kalkbrenner"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4602025",
+          "name": "Sion James"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "5060701",
+          "name": "Christian Anderson"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "3155535",
+          "name": "Kevon Looney"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4592691",
+          "name": "Jake LaRavia"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "3907498",
+          "name": "Matisse Thybulle"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "3945274",
+          "name": "Luka Doncic"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4397014",
+          "name": "Quentin Grimes"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4278077",
+          "name": "Jarred Vanderbilt"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4278580",
+          "name": "Sandro Mamukelashvili"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4433137",
+          "name": "Ziaire Williams"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "5060631",
+          "name": "Adou Thiero"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "5105817",
+          "name": "Carson Cooper"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4277811",
+          "name": "Collin Sexton"
+        }
+      ],
+      "points_in_paint": [
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3934719",
+          "name": "OG Anunoby"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3136195",
+          "name": "Karl-Anthony Towns"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3062679",
+          "name": "Josh Hart"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3147657",
+          "name": "Mikal Bridges"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3934672",
+          "name": "Jalen Brunson"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "6585",
+          "name": "Andre Drummond"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "2528426",
+          "name": "Jordan Clarkson"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3914044",
+          "name": "Landry Shamet"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4277869",
+          "name": "Jose Alvarado"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4431823",
+          "name": "Miles McBride"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4433225",
+          "name": "Tyler Kolek"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4395625",
+          "name": "RJ Barrett"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4433134",
+          "name": "Scottie Barnes"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "5093267",
+          "name": "Collin Murray-Boyles"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4395724",
+          "name": "Immanuel Quickley"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4684272",
+          "name": "Ja'Kobe Walter"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4431893",
+          "name": "Jamison Battle"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "5149115",
+          "name": "Allen Graves"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3134908",
+          "name": "Jakob Poeltl"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4432241",
+          "name": "Jamal Shead"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4702656",
+          "name": "Alijah Martin"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4431736",
+          "name": "Toumani Camara"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "5105565",
+          "name": "Donovan Clingan"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "6606",
+          "name": "Damian Lillard"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4703889",
+          "name": "Jayson Kent"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "5081727",
+          "name": "Sidy Cissoko"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4066211",
+          "name": "Robert Williams III"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4066399",
+          "name": "Micah Potter"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4592435",
+          "name": "Branden Carlson"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "3995",
+          "name": "Jrue Holiday"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4683678",
+          "name": "Scoot Henderson"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4431671",
+          "name": "Jaden McDaniels"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4895758",
+          "name": "Cody Williams"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "3032976",
+          "name": "Rudy Gobert"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4397002",
+          "name": "Ayo Dosunmu"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4432816",
+          "name": "LaMelo Ball"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "3136196",
+          "name": "Trey Lyles"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "5279133",
+          "name": "Joan Beringer"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4432847",
+          "name": "Terrence Shannon Jr."
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4592492",
+          "name": "Bones Hyland"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "3908845",
+          "name": "John Collins"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4066372",
+          "name": "Kevin Huerter"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4432166",
+          "name": "Cade Cunningham"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4684742",
+          "name": "Ausar Thompson"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "5107199",
+          "name": "Daniss Jenkins"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4278562",
+          "name": "Paul Reed"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "2596112",
+          "name": "Javonte Green"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4397449",
+          "name": "Elijah Harkless"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4700852",
+          "name": "Chaz Lanier"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "5104157",
+          "name": "Victor Wembanyama"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4066259",
+          "name": "De'Aaron Fox"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4395630",
+          "name": "Devin Vassell"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4845367",
+          "name": "Stephon Castle"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "5037871",
+          "name": "Dylan Harper"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "6578",
+          "name": "Harrison Barnes"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4395723",
+          "name": "Keldon Johnson"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4592479",
+          "name": "Julian Champagnie"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "5061568",
+          "name": "Carter Bryant"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "3064560",
+          "name": "Luke Kornet"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4277919",
+          "name": "Mo Bamba"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4432811",
+          "name": "Josh Green"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4433627",
+          "name": "Keyonte George"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4873138",
+          "name": "Ace Bailey"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5041955",
+          "name": "Darryn Peterson"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5105839",
+          "name": "Brice Sensabaugh"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4065673",
+          "name": "Tony Bradley"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "3133602",
+          "name": "Svi Mykhailiuk"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4065663",
+          "name": "Josh Okogie"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "3936099",
+          "name": "Derrick Jones Jr."
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4066648",
+          "name": "Rui Hachimura"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "3448",
+          "name": "Brook Lopez"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "2991139",
+          "name": "Kris Dunn"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4396907",
+          "name": "Darius Garland"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4432170",
+          "name": "Isaiah Jackson"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5075626",
+          "name": "Baba Miller"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5105832",
+          "name": "Nick Martinelli"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4065778",
+          "name": "Max Strus"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4702352",
+          "name": "Kobe Sanders"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4845363",
+          "name": "Cam Christie"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5106258",
+          "name": "Gradey Dick"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5254165",
+          "name": "Keaton Wagler"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4066218",
+          "name": "Grant Williams"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4433249",
+          "name": "Moussa Diabate"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4433287",
+          "name": "Brandon Miller"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4396971",
+          "name": "Naz Reid"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4395651",
+          "name": "Coby White"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "2583632",
+          "name": "Royce O'Neale"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "5211176",
+          "name": "Tidjane Salaun"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4576060",
+          "name": "Ryan Kalkbrenner"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4602025",
+          "name": "Sion James"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "5060701",
+          "name": "Christian Anderson"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "3155535",
+          "name": "Kevon Looney"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4592691",
+          "name": "Jake LaRavia"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "3907498",
+          "name": "Matisse Thybulle"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "3945274",
+          "name": "Luka Doncic"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4397014",
+          "name": "Quentin Grimes"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4278077",
+          "name": "Jarred Vanderbilt"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4278580",
+          "name": "Sandro Mamukelashvili"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4433137",
+          "name": "Ziaire Williams"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "5060631",
+          "name": "Adou Thiero"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "5105817",
+          "name": "Carson Cooper"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4277811",
+          "name": "Collin Sexton"
+        }
+      ],
+      "fast_break_points": [
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3934719",
+          "name": "OG Anunoby"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3136195",
+          "name": "Karl-Anthony Towns"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3062679",
+          "name": "Josh Hart"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3147657",
+          "name": "Mikal Bridges"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3934672",
+          "name": "Jalen Brunson"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "6585",
+          "name": "Andre Drummond"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "2528426",
+          "name": "Jordan Clarkson"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3914044",
+          "name": "Landry Shamet"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4277869",
+          "name": "Jose Alvarado"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4431823",
+          "name": "Miles McBride"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4433225",
+          "name": "Tyler Kolek"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4395625",
+          "name": "RJ Barrett"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4433134",
+          "name": "Scottie Barnes"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "5093267",
+          "name": "Collin Murray-Boyles"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4395724",
+          "name": "Immanuel Quickley"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4684272",
+          "name": "Ja'Kobe Walter"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4431893",
+          "name": "Jamison Battle"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "5149115",
+          "name": "Allen Graves"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3134908",
+          "name": "Jakob Poeltl"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4432241",
+          "name": "Jamal Shead"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4702656",
+          "name": "Alijah Martin"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4431736",
+          "name": "Toumani Camara"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "5105565",
+          "name": "Donovan Clingan"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "6606",
+          "name": "Damian Lillard"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4703889",
+          "name": "Jayson Kent"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "5081727",
+          "name": "Sidy Cissoko"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4066211",
+          "name": "Robert Williams III"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4066399",
+          "name": "Micah Potter"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4592435",
+          "name": "Branden Carlson"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "3995",
+          "name": "Jrue Holiday"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4683678",
+          "name": "Scoot Henderson"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4431671",
+          "name": "Jaden McDaniels"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4895758",
+          "name": "Cody Williams"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "3032976",
+          "name": "Rudy Gobert"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4397002",
+          "name": "Ayo Dosunmu"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4432816",
+          "name": "LaMelo Ball"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "3136196",
+          "name": "Trey Lyles"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "5279133",
+          "name": "Joan Beringer"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4432847",
+          "name": "Terrence Shannon Jr."
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4592492",
+          "name": "Bones Hyland"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "3908845",
+          "name": "John Collins"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4066372",
+          "name": "Kevin Huerter"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4432166",
+          "name": "Cade Cunningham"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4684742",
+          "name": "Ausar Thompson"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "5107199",
+          "name": "Daniss Jenkins"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4278562",
+          "name": "Paul Reed"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "2596112",
+          "name": "Javonte Green"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4397449",
+          "name": "Elijah Harkless"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4700852",
+          "name": "Chaz Lanier"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "5104157",
+          "name": "Victor Wembanyama"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4066259",
+          "name": "De'Aaron Fox"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4395630",
+          "name": "Devin Vassell"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4845367",
+          "name": "Stephon Castle"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "5037871",
+          "name": "Dylan Harper"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "6578",
+          "name": "Harrison Barnes"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4395723",
+          "name": "Keldon Johnson"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4592479",
+          "name": "Julian Champagnie"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "5061568",
+          "name": "Carter Bryant"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "3064560",
+          "name": "Luke Kornet"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4277919",
+          "name": "Mo Bamba"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4432811",
+          "name": "Josh Green"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4433627",
+          "name": "Keyonte George"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4873138",
+          "name": "Ace Bailey"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5041955",
+          "name": "Darryn Peterson"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5105839",
+          "name": "Brice Sensabaugh"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4065673",
+          "name": "Tony Bradley"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "3133602",
+          "name": "Svi Mykhailiuk"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4065663",
+          "name": "Josh Okogie"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "3936099",
+          "name": "Derrick Jones Jr."
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4066648",
+          "name": "Rui Hachimura"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "3448",
+          "name": "Brook Lopez"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "2991139",
+          "name": "Kris Dunn"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4396907",
+          "name": "Darius Garland"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4432170",
+          "name": "Isaiah Jackson"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5075626",
+          "name": "Baba Miller"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5105832",
+          "name": "Nick Martinelli"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4065778",
+          "name": "Max Strus"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4702352",
+          "name": "Kobe Sanders"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4845363",
+          "name": "Cam Christie"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5106258",
+          "name": "Gradey Dick"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5254165",
+          "name": "Keaton Wagler"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4066218",
+          "name": "Grant Williams"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4433249",
+          "name": "Moussa Diabate"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4433287",
+          "name": "Brandon Miller"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4396971",
+          "name": "Naz Reid"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4395651",
+          "name": "Coby White"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "2583632",
+          "name": "Royce O'Neale"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "5211176",
+          "name": "Tidjane Salaun"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4576060",
+          "name": "Ryan Kalkbrenner"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4602025",
+          "name": "Sion James"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "5060701",
+          "name": "Christian Anderson"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "3155535",
+          "name": "Kevon Looney"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4592691",
+          "name": "Jake LaRavia"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "3907498",
+          "name": "Matisse Thybulle"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "3945274",
+          "name": "Luka Doncic"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4397014",
+          "name": "Quentin Grimes"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4278077",
+          "name": "Jarred Vanderbilt"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4278580",
+          "name": "Sandro Mamukelashvili"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4433137",
+          "name": "Ziaire Williams"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "5060631",
+          "name": "Adou Thiero"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "5105817",
+          "name": "Carson Cooper"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4277811",
+          "name": "Collin Sexton"
+        }
+      ],
+      "second_chance_points": [
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3934719",
+          "name": "OG Anunoby"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3136195",
+          "name": "Karl-Anthony Towns"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3062679",
+          "name": "Josh Hart"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3147657",
+          "name": "Mikal Bridges"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3934672",
+          "name": "Jalen Brunson"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "6585",
+          "name": "Andre Drummond"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "2528426",
+          "name": "Jordan Clarkson"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3914044",
+          "name": "Landry Shamet"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4277869",
+          "name": "Jose Alvarado"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4431823",
+          "name": "Miles McBride"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4433225",
+          "name": "Tyler Kolek"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4395625",
+          "name": "RJ Barrett"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4433134",
+          "name": "Scottie Barnes"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "5093267",
+          "name": "Collin Murray-Boyles"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4395724",
+          "name": "Immanuel Quickley"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4684272",
+          "name": "Ja'Kobe Walter"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4431893",
+          "name": "Jamison Battle"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "5149115",
+          "name": "Allen Graves"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "3134908",
+          "name": "Jakob Poeltl"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4432241",
+          "name": "Jamal Shead"
+        },
+        {
+          "game_id": "ESPN_401910002",
+          "player_id": "4702656",
+          "name": "Alijah Martin"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4431736",
+          "name": "Toumani Camara"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "5105565",
+          "name": "Donovan Clingan"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "6606",
+          "name": "Damian Lillard"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4703889",
+          "name": "Jayson Kent"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "5081727",
+          "name": "Sidy Cissoko"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4066211",
+          "name": "Robert Williams III"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4066399",
+          "name": "Micah Potter"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4592435",
+          "name": "Branden Carlson"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "3995",
+          "name": "Jrue Holiday"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4683678",
+          "name": "Scoot Henderson"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4431671",
+          "name": "Jaden McDaniels"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4895758",
+          "name": "Cody Williams"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "3032976",
+          "name": "Rudy Gobert"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4397002",
+          "name": "Ayo Dosunmu"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4432816",
+          "name": "LaMelo Ball"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "3136196",
+          "name": "Trey Lyles"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "5279133",
+          "name": "Joan Beringer"
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4432847",
+          "name": "Terrence Shannon Jr."
+        },
+        {
+          "game_id": "ESPN_401910003",
+          "player_id": "4592492",
+          "name": "Bones Hyland"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "3908845",
+          "name": "John Collins"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4066372",
+          "name": "Kevin Huerter"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4432166",
+          "name": "Cade Cunningham"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4684742",
+          "name": "Ausar Thompson"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "5107199",
+          "name": "Daniss Jenkins"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4278562",
+          "name": "Paul Reed"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "2596112",
+          "name": "Javonte Green"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4397449",
+          "name": "Elijah Harkless"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4700852",
+          "name": "Chaz Lanier"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "5104157",
+          "name": "Victor Wembanyama"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4066259",
+          "name": "De'Aaron Fox"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4395630",
+          "name": "Devin Vassell"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4845367",
+          "name": "Stephon Castle"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "5037871",
+          "name": "Dylan Harper"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "6578",
+          "name": "Harrison Barnes"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4395723",
+          "name": "Keldon Johnson"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "4592479",
+          "name": "Julian Champagnie"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "5061568",
+          "name": "Carter Bryant"
+        },
+        {
+          "game_id": "ESPN_401910004",
+          "player_id": "3064560",
+          "name": "Luke Kornet"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4277919",
+          "name": "Mo Bamba"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4432811",
+          "name": "Josh Green"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4433627",
+          "name": "Keyonte George"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4873138",
+          "name": "Ace Bailey"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5041955",
+          "name": "Darryn Peterson"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5105839",
+          "name": "Brice Sensabaugh"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4065673",
+          "name": "Tony Bradley"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "3133602",
+          "name": "Svi Mykhailiuk"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4065663",
+          "name": "Josh Okogie"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "3936099",
+          "name": "Derrick Jones Jr."
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4066648",
+          "name": "Rui Hachimura"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "3448",
+          "name": "Brook Lopez"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "2991139",
+          "name": "Kris Dunn"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4396907",
+          "name": "Darius Garland"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4432170",
+          "name": "Isaiah Jackson"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5075626",
+          "name": "Baba Miller"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5105832",
+          "name": "Nick Martinelli"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4065778",
+          "name": "Max Strus"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4702352",
+          "name": "Kobe Sanders"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "4845363",
+          "name": "Cam Christie"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5106258",
+          "name": "Gradey Dick"
+        },
+        {
+          "game_id": "ESPN_401910006",
+          "player_id": "5254165",
+          "name": "Keaton Wagler"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4066218",
+          "name": "Grant Williams"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4433249",
+          "name": "Moussa Diabate"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4433287",
+          "name": "Brandon Miller"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4396971",
+          "name": "Naz Reid"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4395651",
+          "name": "Coby White"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "2583632",
+          "name": "Royce O'Neale"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "5211176",
+          "name": "Tidjane Salaun"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4576060",
+          "name": "Ryan Kalkbrenner"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4602025",
+          "name": "Sion James"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "5060701",
+          "name": "Christian Anderson"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "3155535",
+          "name": "Kevon Looney"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4592691",
+          "name": "Jake LaRavia"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "3907498",
+          "name": "Matisse Thybulle"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "3945274",
+          "name": "Luka Doncic"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4397014",
+          "name": "Quentin Grimes"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4278077",
+          "name": "Jarred Vanderbilt"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4278580",
+          "name": "Sandro Mamukelashvili"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4433137",
+          "name": "Ziaire Williams"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "5060631",
+          "name": "Adou Thiero"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "5105817",
+          "name": "Carson Cooper"
+        },
+        {
+          "game_id": "ESPN_401910005",
+          "player_id": "4277811",
+          "name": "Collin Sexton"
+        }
+      ]
+    }
+  },
+  "games": [
+    {
+      "game_id": "ESPN_401910002",
+      "espn_event_id": "401910002",
+      "home_alias": "TOR",
+      "away_alias": "NYK",
+      "home_points": 102,
+      "away_points": 111,
+      "date_et": "2026-11-17",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910002",
+      "status": "FINAL",
+      "officials": [
+        "Eric Lewis",
+        "Mitchell Ervin",
+        "Evan Scott"
+      ],
+      "attendance": 19800
+    },
+    {
+      "game_id": "ESPN_401910003",
+      "espn_event_id": "401910003",
+      "home_alias": "MIN",
+      "away_alias": "POR",
+      "home_points": 106,
+      "away_points": 105,
+      "date_et": "2026-11-17",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910003",
+      "status": "FINAL",
+      "officials": [
+        "Derrick Collins",
+        "Brent Barnaky",
+        "Josh Tiven"
+      ],
+      "attendance": 18281
+    },
+    {
+      "game_id": "ESPN_401910004",
+      "espn_event_id": "401910004",
+      "home_alias": "SAS",
+      "away_alias": "DET",
+      "home_points": 93,
+      "away_points": 105,
+      "date_et": "2026-11-17",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910004",
+      "status": "FINAL",
+      "officials": [
+        "James Capers",
+        "Che Flores",
+        "Biniam Maru"
+      ],
+      "attendance": 18412
+    },
+    {
+      "game_id": "ESPN_401910006",
+      "espn_event_id": "401910006",
+      "home_alias": "LAC",
+      "away_alias": "UTA",
+      "home_points": 107,
+      "away_points": 132,
+      "date_et": "2026-11-17",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006",
+      "status": "FINAL",
+      "officials": [
+        "James Williams",
+        "Andy Nagy",
+        "Agon Abazi"
+      ],
+      "attendance": 14716
+    },
+    {
+      "game_id": "ESPN_401910005",
+      "espn_event_id": "401910005",
+      "home_alias": "LAL",
+      "away_alias": "CHA",
+      "home_points": 118,
+      "away_points": 114,
+      "date_et": "2026-11-17",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910005",
+      "status": "FINAL",
+      "officials": [
+        "Zach Zarba",
+        "Nick Buchert",
+        "Jonathan Sterling"
+      ],
+      "attendance": 19057
+    }
+  ],
+  "players": [
+    {
+      "name": "OG Anunoby",
+      "player_id": "3934719",
+      "team": "NYK",
+      "position": "F",
+      "minutes": 36.0,
+      "game": "NYK @ TOR",
+      "game_id": "ESPN_401910002",
+      "home_alias": "TOR",
+      "away_alias": "NYK",
+      "home_points": 102,
+      "away_points": 111,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910002",
+      "points": 16,
+      "rebounds": 4,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 3,
+      "assists": 0,
+      "steals": 1,
+      "blocks": 2,
+      "turnovers": 1,
+      "fgm": 5,
+      "fga": 11,
+      "fg3m": 1,
+      "fg3a": 4,
+      "ftm": 5,
+      "fta": 6,
+      "ft_pct": 0.8333333333333334,
+      "plus_minus": 7.0
+    },
+    {
+      "name": "Karl-Anthony Towns",
+      "player_id": "3136195",
+      "team": "NYK",
+      "position": "C",
+      "minutes": 36.0,
+      "game": "NYK @ TOR",
+      "game_id": "ESPN_401910002",
+      "home_alias": "TOR",
+      "away_alias": "NYK",
+      "home_points": 102,
+      "away_points": 111,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910002",
+      "points": 16,
+      "rebounds": 16,
+      "offensive_rebounds": 6,
+      "defensive_rebounds": 10,
+      "assists": 8,
+      "steals": 1,
+      "blocks": 0,
+      "turnovers": 2,
+      "fgm": 7,
+      "fga": 9,
+      "fg3m": 1,
+      "fg3a": 2,
+      "ftm": 1,
+      "fta": 1,
+      "ft_pct": 1.0,
+      "plus_minus": 23.0
+    },
+    {
+      "name": "Josh Hart",
+      "player_id": "3062679",
+      "team": "NYK",
+      "position": "G",
+      "minutes": 31.0,
+      "game": "NYK @ TOR",
+      "game_id": "ESPN_401910002",
+      "home_alias": "TOR",
+      "away_alias": "NYK",
+      "home_points": 102,
+      "away_points": 111,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910002",
+      "points": 5,
+      "rebounds": 4,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 4,
+      "assists": 2,
+      "steals": 1,
+      "blocks": 1,
+      "turnovers": 1,
+      "fgm": 2,
+      "fga": 5,
+      "fg3m": 1,
+      "fg3a": 4,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": 7.0
+    },
+    {
+      "name": "Mikal Bridges",
+      "player_id": "3147657",
+      "team": "NYK",
+      "position": "G",
+      "minutes": 30.0,
+      "game": "NYK @ TOR",
+      "game_id": "ESPN_401910002",
+      "home_alias": "TOR",
+      "away_alias": "NYK",
+      "home_points": 102,
+      "away_points": 111,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910002",
+      "points": 17,
+      "rebounds": 5,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 5,
+      "assists": 1,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 2,
+      "fgm": 7,
+      "fga": 11,
+      "fg3m": 2,
+      "fg3a": 5,
+      "ftm": 1,
+      "fta": 2,
+      "ft_pct": 0.5,
+      "plus_minus": -14.0
+    },
+    {
+      "name": "Jalen Brunson",
+      "player_id": "3934672",
+      "team": "NYK",
+      "position": "G",
+      "minutes": 34.0,
+      "game": "NYK @ TOR",
+      "game_id": "ESPN_401910002",
+      "home_alias": "TOR",
+      "away_alias": "NYK",
+      "home_points": 102,
+      "away_points": 111,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910002",
+      "points": 31,
+      "rebounds": 5,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 4,
+      "assists": 5,
+      "steals": 0,
+      "blocks": 1,
+      "turnovers": 2,
+      "fgm": 10,
+      "fga": 22,
+      "fg3m": 4,
+      "fg3a": 11,
+      "ftm": 7,
+      "fta": 7,
+      "ft_pct": 1.0,
+      "plus_minus": 4.0
+    },
+    {
+      "name": "Andre Drummond",
+      "player_id": "6585",
+      "team": "NYK",
+      "position": "C",
+      "minutes": 11.0,
+      "game": "NYK @ TOR",
+      "game_id": "ESPN_401910002",
+      "home_alias": "TOR",
+      "away_alias": "NYK",
+      "home_points": 102,
+      "away_points": 111,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910002",
+      "points": 2,
+      "rebounds": 8,
+      "offensive_rebounds": 3,
+      "defensive_rebounds": 5,
+      "assists": 0,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 1,
+      "fgm": 1,
+      "fga": 2,
+      "fg3m": 0,
+      "fg3a": 0,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -14.0
+    },
+    {
+      "name": "Jordan Clarkson",
+      "player_id": "2528426",
+      "team": "NYK",
+      "position": "G",
+      "minutes": 8.0,
+      "game": "NYK @ TOR",
+      "game_id": "ESPN_401910002",
+      "home_alias": "TOR",
+      "away_alias": "NYK",
+      "home_points": 102,
+      "away_points": 111,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910002",
+      "points": 3,
+      "rebounds": 0,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 0,
+      "assists": 0,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 1,
+      "fgm": 1,
+      "fga": 3,
+      "fg3m": 0,
+      "fg3a": 1,
+      "ftm": 1,
+      "fta": 1,
+      "ft_pct": 1.0,
+      "plus_minus": 4.0
+    },
+    {
+      "name": "Landry Shamet",
+      "player_id": "3914044",
+      "team": "NYK",
+      "position": "G",
+      "minutes": 24.0,
+      "game": "NYK @ TOR",
+      "game_id": "ESPN_401910002",
+      "home_alias": "TOR",
+      "away_alias": "NYK",
+      "home_points": 102,
+      "away_points": 111,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910002",
+      "points": 12,
+      "rebounds": 1,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 1,
+      "assists": 1,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 4,
+      "fga": 7,
+      "fg3m": 2,
+      "fg3a": 4,
+      "ftm": 2,
+      "fta": 2,
+      "ft_pct": 1.0,
+      "plus_minus": 26.0
+    },
+    {
+      "name": "Jose Alvarado",
+      "player_id": "4277869",
+      "team": "NYK",
+      "position": "G",
+      "minutes": 7.0,
+      "game": "NYK @ TOR",
+      "game_id": "ESPN_401910002",
+      "home_alias": "TOR",
+      "away_alias": "NYK",
+      "home_points": 102,
+      "away_points": 111,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910002",
+      "points": 2,
+      "rebounds": 0,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 0,
+      "assists": 4,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 1,
+      "fga": 2,
+      "fg3m": 0,
+      "fg3a": 0,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": 4.0
+    },
+    {
+      "name": "Miles McBride",
+      "player_id": "4431823",
+      "team": "NYK",
+      "position": "G",
+      "minutes": 9.0,
+      "game": "NYK @ TOR",
+      "game_id": "ESPN_401910002",
+      "home_alias": "TOR",
+      "away_alias": "NYK",
+      "home_points": 102,
+      "away_points": 111,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910002",
+      "points": 3,
+      "rebounds": 0,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 0,
+      "assists": 1,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 1,
+      "fgm": 1,
+      "fga": 1,
+      "fg3m": 1,
+      "fg3a": 1,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -9.0
+    },
+    {
+      "name": "Tyler Kolek",
+      "player_id": "4433225",
+      "team": "NYK",
+      "position": "G",
+      "minutes": 13.0,
+      "game": "NYK @ TOR",
+      "game_id": "ESPN_401910002",
+      "home_alias": "TOR",
+      "away_alias": "NYK",
+      "home_points": 102,
+      "away_points": 111,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910002",
+      "points": 4,
+      "rebounds": 1,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 0,
+      "assists": 3,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 1,
+      "fgm": 2,
+      "fga": 5,
+      "fg3m": 0,
+      "fg3a": 3,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": 7.0
+    },
+    {
+      "name": "RJ Barrett",
+      "player_id": "4395625",
+      "team": "TOR",
+      "position": "F",
+      "minutes": 39.0,
+      "game": "NYK @ TOR",
+      "game_id": "ESPN_401910002",
+      "home_alias": "TOR",
+      "away_alias": "NYK",
+      "home_points": 102,
+      "away_points": 111,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910002",
+      "points": 22,
+      "rebounds": 5,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 5,
+      "assists": 5,
+      "steals": 0,
+      "blocks": 1,
+      "turnovers": 0,
+      "fgm": 9,
+      "fga": 17,
+      "fg3m": 2,
+      "fg3a": 8,
+      "ftm": 2,
+      "fta": 6,
+      "ft_pct": 0.3333333333333333,
+      "plus_minus": -13.0
+    },
+    {
+      "name": "Scottie Barnes",
+      "player_id": "4433134",
+      "team": "TOR",
+      "position": "F",
+      "minutes": 34.0,
+      "game": "NYK @ TOR",
+      "game_id": "ESPN_401910002",
+      "home_alias": "TOR",
+      "away_alias": "NYK",
+      "home_points": 102,
+      "away_points": 111,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910002",
+      "points": 20,
+      "rebounds": 4,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 3,
+      "assists": 2,
+      "steals": 0,
+      "blocks": 2,
+      "turnovers": 0,
+      "fgm": 7,
+      "fga": 14,
+      "fg3m": 1,
+      "fg3a": 2,
+      "ftm": 5,
+      "fta": 6,
+      "ft_pct": 0.8333333333333334,
+      "plus_minus": -8.0
+    },
+    {
+      "name": "Collin Murray-Boyles",
+      "player_id": "5093267",
+      "team": "TOR",
+      "position": "F",
+      "minutes": 33.0,
+      "game": "NYK @ TOR",
+      "game_id": "ESPN_401910002",
+      "home_alias": "TOR",
+      "away_alias": "NYK",
+      "home_points": 102,
+      "away_points": 111,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910002",
+      "points": 8,
+      "rebounds": 1,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 0,
+      "assists": 3,
+      "steals": 1,
+      "blocks": 3,
+      "turnovers": 1,
+      "fgm": 4,
+      "fga": 6,
+      "fg3m": 0,
+      "fg3a": 0,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -18.0
+    },
+    {
+      "name": "Immanuel Quickley",
+      "player_id": "4395724",
+      "team": "TOR",
+      "position": "G",
+      "minutes": 34.0,
+      "game": "NYK @ TOR",
+      "game_id": "ESPN_401910002",
+      "home_alias": "TOR",
+      "away_alias": "NYK",
+      "home_points": 102,
+      "away_points": 111,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910002",
+      "points": 14,
+      "rebounds": 1,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 0,
+      "assists": 7,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 1,
+      "fgm": 6,
+      "fga": 11,
+      "fg3m": 2,
+      "fg3a": 5,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -19.0
+    },
+    {
+      "name": "Ja'Kobe Walter",
+      "player_id": "4684272",
+      "team": "TOR",
+      "position": "G",
+      "minutes": 33.0,
+      "game": "NYK @ TOR",
+      "game_id": "ESPN_401910002",
+      "home_alias": "TOR",
+      "away_alias": "NYK",
+      "home_points": 102,
+      "away_points": 111,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910002",
+      "points": 25,
+      "rebounds": 1,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 1,
+      "assists": 2,
+      "steals": 2,
+      "blocks": 0,
+      "turnovers": 1,
+      "fgm": 9,
+      "fga": 15,
+      "fg3m": 7,
+      "fg3a": 12,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -2.0
+    },
+    {
+      "name": "Jamison Battle",
+      "player_id": "4431893",
+      "team": "TOR",
+      "position": "F",
+      "minutes": 7.0,
+      "game": "NYK @ TOR",
+      "game_id": "ESPN_401910002",
+      "home_alias": "TOR",
+      "away_alias": "NYK",
+      "home_points": 102,
+      "away_points": 111,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910002",
+      "points": 0,
+      "rebounds": 1,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 1,
+      "assists": 0,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 0,
+      "fga": 2,
+      "fg3m": 0,
+      "fg3a": 2,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -4.0
+    },
+    {
+      "name": "Allen Graves",
+      "player_id": "5149115",
+      "team": "TOR",
+      "position": "F",
+      "minutes": 13.0,
+      "game": "NYK @ TOR",
+      "game_id": "ESPN_401910002",
+      "home_alias": "TOR",
+      "away_alias": "NYK",
+      "home_points": 102,
+      "away_points": 111,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910002",
+      "points": 3,
+      "rebounds": 2,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 1,
+      "assists": 1,
+      "steals": 1,
+      "blocks": 0,
+      "turnovers": 1,
+      "fgm": 1,
+      "fga": 3,
+      "fg3m": 1,
+      "fg3a": 3,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": 7.0
+    },
+    {
+      "name": "Jakob Poeltl",
+      "player_id": "3134908",
+      "team": "TOR",
+      "position": "C",
+      "minutes": 18.0,
+      "game": "NYK @ TOR",
+      "game_id": "ESPN_401910002",
+      "home_alias": "TOR",
+      "away_alias": "NYK",
+      "home_points": 102,
+      "away_points": 111,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910002",
+      "points": 3,
+      "rebounds": 6,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 5,
+      "assists": 1,
+      "steals": 1,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 1,
+      "fga": 3,
+      "fg3m": 0,
+      "fg3a": 0,
+      "ftm": 1,
+      "fta": 2,
+      "ft_pct": 0.5,
+      "plus_minus": 6.0
+    },
+    {
+      "name": "Jamal Shead",
+      "player_id": "4432241",
+      "team": "TOR",
+      "position": "G",
+      "minutes": 20.0,
+      "game": "NYK @ TOR",
+      "game_id": "ESPN_401910002",
+      "home_alias": "TOR",
+      "away_alias": "NYK",
+      "home_points": 102,
+      "away_points": 111,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910002",
+      "points": 7,
+      "rebounds": 0,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 0,
+      "assists": 6,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 1,
+      "fgm": 2,
+      "fga": 7,
+      "fg3m": 1,
+      "fg3a": 3,
+      "ftm": 2,
+      "fta": 4,
+      "ft_pct": 0.5,
+      "plus_minus": 4.0
+    },
+    {
+      "name": "Alijah Martin",
+      "player_id": "4702656",
+      "team": "TOR",
+      "position": "G",
+      "minutes": 8.0,
+      "game": "NYK @ TOR",
+      "game_id": "ESPN_401910002",
+      "home_alias": "TOR",
+      "away_alias": "NYK",
+      "home_points": 102,
+      "away_points": 111,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910002",
+      "points": 0,
+      "rebounds": 2,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 2,
+      "assists": 0,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 0,
+      "fga": 0,
+      "fg3m": 0,
+      "fg3a": 0,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": 2.0
+    },
+    {
+      "name": "Toumani Camara",
+      "player_id": "4431736",
+      "team": "POR",
+      "position": "F",
+      "minutes": 33.0,
+      "game": "POR @ MIN",
+      "game_id": "ESPN_401910003",
+      "home_alias": "MIN",
+      "away_alias": "POR",
+      "home_points": 106,
+      "away_points": 105,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910003",
+      "points": 10,
+      "rebounds": 8,
+      "offensive_rebounds": 2,
+      "defensive_rebounds": 6,
+      "assists": 1,
+      "steals": 1,
+      "blocks": 0,
+      "turnovers": 2,
+      "fgm": 4,
+      "fga": 16,
+      "fg3m": 2,
+      "fg3a": 8,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": 11.0
+    },
+    {
+      "name": "Donovan Clingan",
+      "player_id": "5105565",
+      "team": "POR",
+      "position": "C",
+      "minutes": 32.0,
+      "game": "POR @ MIN",
+      "game_id": "ESPN_401910003",
+      "home_alias": "MIN",
+      "away_alias": "POR",
+      "home_points": 106,
+      "away_points": 105,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910003",
+      "points": 12,
+      "rebounds": 12,
+      "offensive_rebounds": 3,
+      "defensive_rebounds": 9,
+      "assists": 5,
+      "steals": 1,
+      "blocks": 1,
+      "turnovers": 3,
+      "fgm": 6,
+      "fga": 14,
+      "fg3m": 0,
+      "fg3a": 5,
+      "ftm": 0,
+      "fta": 3,
+      "ft_pct": 0.0,
+      "plus_minus": 17.0
+    },
+    {
+      "name": "Damian Lillard",
+      "player_id": "6606",
+      "team": "POR",
+      "position": "G",
+      "minutes": 31.0,
+      "game": "POR @ MIN",
+      "game_id": "ESPN_401910003",
+      "home_alias": "MIN",
+      "away_alias": "POR",
+      "home_points": 106,
+      "away_points": 105,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910003",
+      "points": 25,
+      "rebounds": 3,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 3,
+      "assists": 5,
+      "steals": 1,
+      "blocks": 0,
+      "turnovers": 4,
+      "fgm": 8,
+      "fga": 19,
+      "fg3m": 5,
+      "fg3a": 11,
+      "ftm": 4,
+      "fta": 5,
+      "ft_pct": 0.8,
+      "plus_minus": 11.0
+    },
+    {
+      "name": "Jayson Kent",
+      "player_id": "4703889",
+      "team": "POR",
+      "position": "G",
+      "minutes": 27.0,
+      "game": "POR @ MIN",
+      "game_id": "ESPN_401910003",
+      "home_alias": "MIN",
+      "away_alias": "POR",
+      "home_points": 106,
+      "away_points": 105,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910003",
+      "points": 8,
+      "rebounds": 3,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 2,
+      "assists": 0,
+      "steals": 2,
+      "blocks": 0,
+      "turnovers": 1,
+      "fgm": 3,
+      "fga": 6,
+      "fg3m": 2,
+      "fg3a": 3,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": 2.0
+    },
+    {
+      "name": "Sidy Cissoko",
+      "player_id": "5081727",
+      "team": "POR",
+      "position": "G",
+      "minutes": 32.0,
+      "game": "POR @ MIN",
+      "game_id": "ESPN_401910003",
+      "home_alias": "MIN",
+      "away_alias": "POR",
+      "home_points": 106,
+      "away_points": 105,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910003",
+      "points": 6,
+      "rebounds": 5,
+      "offensive_rebounds": 2,
+      "defensive_rebounds": 3,
+      "assists": 1,
+      "steals": 1,
+      "blocks": 1,
+      "turnovers": 1,
+      "fgm": 2,
+      "fga": 4,
+      "fg3m": 2,
+      "fg3a": 3,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -3.0
+    },
+    {
+      "name": "Robert Williams III",
+      "player_id": "4066211",
+      "team": "POR",
+      "position": "C",
+      "minutes": 16.0,
+      "game": "POR @ MIN",
+      "game_id": "ESPN_401910003",
+      "home_alias": "MIN",
+      "away_alias": "POR",
+      "home_points": 106,
+      "away_points": 105,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910003",
+      "points": 6,
+      "rebounds": 8,
+      "offensive_rebounds": 2,
+      "defensive_rebounds": 6,
+      "assists": 4,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 2,
+      "fgm": 2,
+      "fga": 2,
+      "fg3m": 0,
+      "fg3a": 0,
+      "ftm": 2,
+      "fta": 2,
+      "ft_pct": 1.0,
+      "plus_minus": -18.0
+    },
+    {
+      "name": "Micah Potter",
+      "player_id": "4066399",
+      "team": "POR",
+      "position": "C",
+      "minutes": 1.0,
+      "game": "POR @ MIN",
+      "game_id": "ESPN_401910003",
+      "home_alias": "MIN",
+      "away_alias": "POR",
+      "home_points": 106,
+      "away_points": 105,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910003",
+      "points": 0,
+      "rebounds": 0,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 0,
+      "assists": 0,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 0,
+      "fga": 0,
+      "fg3m": 0,
+      "fg3a": 0,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -6.0
+    },
+    {
+      "name": "Branden Carlson",
+      "player_id": "4592435",
+      "team": "POR",
+      "position": "C",
+      "minutes": 14.0,
+      "game": "POR @ MIN",
+      "game_id": "ESPN_401910003",
+      "home_alias": "MIN",
+      "away_alias": "POR",
+      "home_points": 106,
+      "away_points": 105,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910003",
+      "points": 6,
+      "rebounds": 1,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 0,
+      "assists": 0,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 2,
+      "fga": 3,
+      "fg3m": 0,
+      "fg3a": 1,
+      "ftm": 2,
+      "fta": 2,
+      "ft_pct": 1.0,
+      "plus_minus": -10.0
+    },
+    {
+      "name": "Jrue Holiday",
+      "player_id": "3995",
+      "team": "POR",
+      "position": "G",
+      "minutes": 31.0,
+      "game": "POR @ MIN",
+      "game_id": "ESPN_401910003",
+      "home_alias": "MIN",
+      "away_alias": "POR",
+      "home_points": 106,
+      "away_points": 105,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910003",
+      "points": 23,
+      "rebounds": 5,
+      "offensive_rebounds": 2,
+      "defensive_rebounds": 3,
+      "assists": 6,
+      "steals": 2,
+      "blocks": 1,
+      "turnovers": 2,
+      "fgm": 7,
+      "fga": 19,
+      "fg3m": 5,
+      "fg3a": 9,
+      "ftm": 4,
+      "fta": 6,
+      "ft_pct": 0.6666666666666666,
+      "plus_minus": -8.0
+    },
+    {
+      "name": "Scoot Henderson",
+      "player_id": "4683678",
+      "team": "POR",
+      "position": "G",
+      "minutes": 21.0,
+      "game": "POR @ MIN",
+      "game_id": "ESPN_401910003",
+      "home_alias": "MIN",
+      "away_alias": "POR",
+      "home_points": 106,
+      "away_points": 105,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910003",
+      "points": 9,
+      "rebounds": 1,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 0,
+      "assists": 1,
+      "steals": 1,
+      "blocks": 1,
+      "turnovers": 1,
+      "fgm": 4,
+      "fga": 13,
+      "fg3m": 0,
+      "fg3a": 4,
+      "ftm": 1,
+      "fta": 2,
+      "ft_pct": 0.5,
+      "plus_minus": -1.0
+    },
+    {
+      "name": "Jaden McDaniels",
+      "player_id": "4431671",
+      "team": "MIN",
+      "position": "F",
+      "minutes": 37.0,
+      "game": "POR @ MIN",
+      "game_id": "ESPN_401910003",
+      "home_alias": "MIN",
+      "away_alias": "POR",
+      "home_points": 106,
+      "away_points": 105,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910003",
+      "points": 22,
+      "rebounds": 5,
+      "offensive_rebounds": 2,
+      "defensive_rebounds": 3,
+      "assists": 4,
+      "steals": 3,
+      "blocks": 1,
+      "turnovers": 2,
+      "fgm": 10,
+      "fga": 16,
+      "fg3m": 2,
+      "fg3a": 5,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -4.0
+    },
+    {
+      "name": "Cody Williams",
+      "player_id": "4895758",
+      "team": "MIN",
+      "position": "F",
+      "minutes": 13.0,
+      "game": "POR @ MIN",
+      "game_id": "ESPN_401910003",
+      "home_alias": "MIN",
+      "away_alias": "POR",
+      "home_points": 106,
+      "away_points": 105,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910003",
+      "points": 0,
+      "rebounds": 1,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 1,
+      "assists": 0,
+      "steals": 1,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 0,
+      "fga": 3,
+      "fg3m": 0,
+      "fg3a": 2,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -1.0
+    },
+    {
+      "name": "Rudy Gobert",
+      "player_id": "3032976",
+      "team": "MIN",
+      "position": "C",
+      "minutes": 22.0,
+      "game": "POR @ MIN",
+      "game_id": "ESPN_401910003",
+      "home_alias": "MIN",
+      "away_alias": "POR",
+      "home_points": 106,
+      "away_points": 105,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910003",
+      "points": 0,
+      "rebounds": 4,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 4,
+      "assists": 2,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 3,
+      "fgm": 0,
+      "fga": 3,
+      "fg3m": 0,
+      "fg3a": 0,
+      "ftm": 0,
+      "fta": 2,
+      "ft_pct": 0.0,
+      "plus_minus": -7.0
+    },
+    {
+      "name": "Ayo Dosunmu",
+      "player_id": "4397002",
+      "team": "MIN",
+      "position": "G",
+      "minutes": 39.0,
+      "game": "POR @ MIN",
+      "game_id": "ESPN_401910003",
+      "home_alias": "MIN",
+      "away_alias": "POR",
+      "home_points": 106,
+      "away_points": 105,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910003",
+      "points": 30,
+      "rebounds": 4,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 4,
+      "assists": 5,
+      "steals": 1,
+      "blocks": 0,
+      "turnovers": 4,
+      "fgm": 11,
+      "fga": 19,
+      "fg3m": 7,
+      "fg3a": 11,
+      "ftm": 1,
+      "fta": 2,
+      "ft_pct": 0.5,
+      "plus_minus": 11.0
+    },
+    {
+      "name": "LaMelo Ball",
+      "player_id": "4432816",
+      "team": "MIN",
+      "position": "G",
+      "minutes": 31.0,
+      "game": "POR @ MIN",
+      "game_id": "ESPN_401910003",
+      "home_alias": "MIN",
+      "away_alias": "POR",
+      "home_points": 106,
+      "away_points": 105,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910003",
+      "points": 18,
+      "rebounds": 9,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 9,
+      "assists": 2,
+      "steals": 1,
+      "blocks": 0,
+      "turnovers": 5,
+      "fgm": 7,
+      "fga": 17,
+      "fg3m": 3,
+      "fg3a": 8,
+      "ftm": 1,
+      "fta": 1,
+      "ft_pct": 1.0,
+      "plus_minus": -13.0
+    },
+    {
+      "name": "Trey Lyles",
+      "player_id": "3136196",
+      "team": "MIN",
+      "position": "F",
+      "minutes": 31.0,
+      "game": "POR @ MIN",
+      "game_id": "ESPN_401910003",
+      "home_alias": "MIN",
+      "away_alias": "POR",
+      "home_points": 106,
+      "away_points": 105,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910003",
+      "points": 8,
+      "rebounds": 7,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 7,
+      "assists": 4,
+      "steals": 0,
+      "blocks": 1,
+      "turnovers": 1,
+      "fgm": 2,
+      "fga": 5,
+      "fg3m": 2,
+      "fg3a": 5,
+      "ftm": 2,
+      "fta": 4,
+      "ft_pct": 0.5,
+      "plus_minus": 4.0
+    },
+    {
+      "name": "Joan Beringer",
+      "player_id": "5279133",
+      "team": "MIN",
+      "position": "F",
+      "minutes": 26.0,
+      "game": "POR @ MIN",
+      "game_id": "ESPN_401910003",
+      "home_alias": "MIN",
+      "away_alias": "POR",
+      "home_points": 106,
+      "away_points": 105,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910003",
+      "points": 3,
+      "rebounds": 13,
+      "offensive_rebounds": 6,
+      "defensive_rebounds": 7,
+      "assists": 0,
+      "steals": 1,
+      "blocks": 4,
+      "turnovers": 1,
+      "fgm": 1,
+      "fga": 3,
+      "fg3m": 0,
+      "fg3a": 0,
+      "ftm": 1,
+      "fta": 6,
+      "ft_pct": 0.16666666666666666,
+      "plus_minus": 6.0
+    },
+    {
+      "name": "Terrence Shannon Jr.",
+      "player_id": "4432847",
+      "team": "MIN",
+      "position": "G",
+      "minutes": 24.0,
+      "game": "POR @ MIN",
+      "game_id": "ESPN_401910003",
+      "home_alias": "MIN",
+      "away_alias": "POR",
+      "home_points": 106,
+      "away_points": 105,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910003",
+      "points": 12,
+      "rebounds": 1,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 1,
+      "assists": 4,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 1,
+      "fgm": 3,
+      "fga": 7,
+      "fg3m": 1,
+      "fg3a": 3,
+      "ftm": 5,
+      "fta": 6,
+      "ft_pct": 0.8333333333333334,
+      "plus_minus": -5.0
+    },
+    {
+      "name": "Bones Hyland",
+      "player_id": "4592492",
+      "team": "MIN",
+      "position": "G",
+      "minutes": 17.0,
+      "game": "POR @ MIN",
+      "game_id": "ESPN_401910003",
+      "home_alias": "MIN",
+      "away_alias": "POR",
+      "home_points": 106,
+      "away_points": 105,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910003",
+      "points": 13,
+      "rebounds": 2,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 2,
+      "assists": 1,
+      "steals": 2,
+      "blocks": 0,
+      "turnovers": 3,
+      "fgm": 4,
+      "fga": 9,
+      "fg3m": 3,
+      "fg3a": 6,
+      "ftm": 2,
+      "fta": 3,
+      "ft_pct": 0.6666666666666666,
+      "plus_minus": 14.0
+    },
+    {
+      "name": "John Collins",
+      "player_id": "3908845",
+      "team": "DET",
+      "position": "F",
+      "minutes": 23.0,
+      "game": "DET @ SAS",
+      "game_id": "ESPN_401910004",
+      "home_alias": "SAS",
+      "away_alias": "DET",
+      "home_points": 93,
+      "away_points": 105,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910004",
+      "points": 11,
+      "rebounds": 1,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 0,
+      "assists": 0,
+      "steals": 1,
+      "blocks": 1,
+      "turnovers": 0,
+      "fgm": 3,
+      "fga": 5,
+      "fg3m": 1,
+      "fg3a": 1,
+      "ftm": 4,
+      "fta": 4,
+      "ft_pct": 1.0,
+      "plus_minus": -8.0
+    },
+    {
+      "name": "Kevin Huerter",
+      "player_id": "4066372",
+      "team": "DET",
+      "position": "G",
+      "minutes": 36.0,
+      "game": "DET @ SAS",
+      "game_id": "ESPN_401910004",
+      "home_alias": "SAS",
+      "away_alias": "DET",
+      "home_points": 93,
+      "away_points": 105,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910004",
+      "points": 9,
+      "rebounds": 7,
+      "offensive_rebounds": 2,
+      "defensive_rebounds": 5,
+      "assists": 1,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 4,
+      "fgm": 4,
+      "fga": 9,
+      "fg3m": 0,
+      "fg3a": 3,
+      "ftm": 1,
+      "fta": 1,
+      "ft_pct": 1.0,
+      "plus_minus": 1.0
+    },
+    {
+      "name": "Cade Cunningham",
+      "player_id": "4432166",
+      "team": "DET",
+      "position": "G",
+      "minutes": 38.0,
+      "game": "DET @ SAS",
+      "game_id": "ESPN_401910004",
+      "home_alias": "SAS",
+      "away_alias": "DET",
+      "home_points": 93,
+      "away_points": 105,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910004",
+      "points": 27,
+      "rebounds": 5,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 4,
+      "assists": 6,
+      "steals": 0,
+      "blocks": 1,
+      "turnovers": 2,
+      "fgm": 12,
+      "fga": 25,
+      "fg3m": 1,
+      "fg3a": 4,
+      "ftm": 2,
+      "fta": 3,
+      "ft_pct": 0.6666666666666666,
+      "plus_minus": 16.0
+    },
+    {
+      "name": "Ausar Thompson",
+      "player_id": "4684742",
+      "team": "DET",
+      "position": "G",
+      "minutes": 29.0,
+      "game": "DET @ SAS",
+      "game_id": "ESPN_401910004",
+      "home_alias": "SAS",
+      "away_alias": "DET",
+      "home_points": 93,
+      "away_points": 105,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910004",
+      "points": 14,
+      "rebounds": 9,
+      "offensive_rebounds": 5,
+      "defensive_rebounds": 4,
+      "assists": 12,
+      "steals": 5,
+      "blocks": 0,
+      "turnovers": 2,
+      "fgm": 7,
+      "fga": 13,
+      "fg3m": 0,
+      "fg3a": 1,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": 7.0
+    },
+    {
+      "name": "Daniss Jenkins",
+      "player_id": "5107199",
+      "team": "DET",
+      "position": "G",
+      "minutes": 38.0,
+      "game": "DET @ SAS",
+      "game_id": "ESPN_401910004",
+      "home_alias": "SAS",
+      "away_alias": "DET",
+      "home_points": 93,
+      "away_points": 105,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910004",
+      "points": 25,
+      "rebounds": 5,
+      "offensive_rebounds": 2,
+      "defensive_rebounds": 3,
+      "assists": 5,
+      "steals": 1,
+      "blocks": 0,
+      "turnovers": 1,
+      "fgm": 11,
+      "fga": 21,
+      "fg3m": 3,
+      "fg3a": 7,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": 9.0
+    },
+    {
+      "name": "Paul Reed",
+      "player_id": "4278562",
+      "team": "DET",
+      "position": "F",
+      "minutes": 25.0,
+      "game": "DET @ SAS",
+      "game_id": "ESPN_401910004",
+      "home_alias": "SAS",
+      "away_alias": "DET",
+      "home_points": 93,
+      "away_points": 105,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910004",
+      "points": 10,
+      "rebounds": 6,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 6,
+      "assists": 5,
+      "steals": 3,
+      "blocks": 1,
+      "turnovers": 0,
+      "fgm": 5,
+      "fga": 8,
+      "fg3m": 0,
+      "fg3a": 1,
+      "ftm": 0,
+      "fta": 1,
+      "ft_pct": 0.0,
+      "plus_minus": 20.0
+    },
+    {
+      "name": "Javonte Green",
+      "player_id": "2596112",
+      "team": "DET",
+      "position": "G",
+      "minutes": 23.0,
+      "game": "DET @ SAS",
+      "game_id": "ESPN_401910004",
+      "home_alias": "SAS",
+      "away_alias": "DET",
+      "home_points": 93,
+      "away_points": 105,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910004",
+      "points": 6,
+      "rebounds": 6,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 5,
+      "assists": 0,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 2,
+      "fga": 6,
+      "fg3m": 0,
+      "fg3a": 4,
+      "ftm": 2,
+      "fta": 3,
+      "ft_pct": 0.6666666666666666,
+      "plus_minus": -1.0
+    },
+    {
+      "name": "Elijah Harkless",
+      "player_id": "4397449",
+      "team": "DET",
+      "position": "G",
+      "minutes": 4.0,
+      "game": "DET @ SAS",
+      "game_id": "ESPN_401910004",
+      "home_alias": "SAS",
+      "away_alias": "DET",
+      "home_points": 93,
+      "away_points": 105,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910004",
+      "points": 0,
+      "rebounds": 1,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 0,
+      "assists": 1,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 0,
+      "fga": 0,
+      "fg3m": 0,
+      "fg3a": 0,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": 1.0
+    },
+    {
+      "name": "Chaz Lanier",
+      "player_id": "4700852",
+      "team": "DET",
+      "position": "G",
+      "minutes": 25.0,
+      "game": "DET @ SAS",
+      "game_id": "ESPN_401910004",
+      "home_alias": "SAS",
+      "away_alias": "DET",
+      "home_points": 93,
+      "away_points": 105,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910004",
+      "points": 3,
+      "rebounds": 3,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 3,
+      "assists": 1,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 1,
+      "fga": 4,
+      "fg3m": 1,
+      "fg3a": 4,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": 15.0
+    },
+    {
+      "name": "Victor Wembanyama",
+      "player_id": "5104157",
+      "team": "SAS",
+      "position": "F",
+      "minutes": 34.0,
+      "game": "DET @ SAS",
+      "game_id": "ESPN_401910004",
+      "home_alias": "SAS",
+      "away_alias": "DET",
+      "home_points": 93,
+      "away_points": 105,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910004",
+      "points": 25,
+      "rebounds": 18,
+      "offensive_rebounds": 5,
+      "defensive_rebounds": 13,
+      "assists": 4,
+      "steals": 1,
+      "blocks": 1,
+      "turnovers": 3,
+      "fgm": 11,
+      "fga": 23,
+      "fg3m": 1,
+      "fg3a": 8,
+      "ftm": 2,
+      "fta": 2,
+      "ft_pct": 1.0,
+      "plus_minus": 6.0
+    },
+    {
+      "name": "De'Aaron Fox",
+      "player_id": "4066259",
+      "team": "SAS",
+      "position": "G",
+      "minutes": 34.0,
+      "game": "DET @ SAS",
+      "game_id": "ESPN_401910004",
+      "home_alias": "SAS",
+      "away_alias": "DET",
+      "home_points": 93,
+      "away_points": 105,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910004",
+      "points": 6,
+      "rebounds": 2,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 2,
+      "assists": 2,
+      "steals": 2,
+      "blocks": 0,
+      "turnovers": 3,
+      "fgm": 3,
+      "fga": 10,
+      "fg3m": 0,
+      "fg3a": 5,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -11.0
+    },
+    {
+      "name": "Devin Vassell",
+      "player_id": "4395630",
+      "team": "SAS",
+      "position": "G",
+      "minutes": 36.0,
+      "game": "DET @ SAS",
+      "game_id": "ESPN_401910004",
+      "home_alias": "SAS",
+      "away_alias": "DET",
+      "home_points": 93,
+      "away_points": 105,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910004",
+      "points": 12,
+      "rebounds": 5,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 4,
+      "assists": 4,
+      "steals": 1,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 4,
+      "fga": 10,
+      "fg3m": 2,
+      "fg3a": 6,
+      "ftm": 2,
+      "fta": 3,
+      "ft_pct": 0.6666666666666666,
+      "plus_minus": -8.0
+    },
+    {
+      "name": "Stephon Castle",
+      "player_id": "4845367",
+      "team": "SAS",
+      "position": "G",
+      "minutes": 31.0,
+      "game": "DET @ SAS",
+      "game_id": "ESPN_401910004",
+      "home_alias": "SAS",
+      "away_alias": "DET",
+      "home_points": 93,
+      "away_points": 105,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910004",
+      "points": 10,
+      "rebounds": 2,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 1,
+      "assists": 7,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 3,
+      "fgm": 3,
+      "fga": 11,
+      "fg3m": 2,
+      "fg3a": 5,
+      "ftm": 2,
+      "fta": 4,
+      "ft_pct": 0.5,
+      "plus_minus": -4.0
+    },
+    {
+      "name": "Dylan Harper",
+      "player_id": "5037871",
+      "team": "SAS",
+      "position": "G",
+      "minutes": 35.0,
+      "game": "DET @ SAS",
+      "game_id": "ESPN_401910004",
+      "home_alias": "SAS",
+      "away_alias": "DET",
+      "home_points": 93,
+      "away_points": 105,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910004",
+      "points": 20,
+      "rebounds": 4,
+      "offensive_rebounds": 2,
+      "defensive_rebounds": 2,
+      "assists": 2,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 2,
+      "fgm": 8,
+      "fga": 14,
+      "fg3m": 0,
+      "fg3a": 4,
+      "ftm": 4,
+      "fta": 5,
+      "ft_pct": 0.8,
+      "plus_minus": 7.0
+    },
+    {
+      "name": "Harrison Barnes",
+      "player_id": "6578",
+      "team": "SAS",
+      "position": "F",
+      "minutes": 10.0,
+      "game": "DET @ SAS",
+      "game_id": "ESPN_401910004",
+      "home_alias": "SAS",
+      "away_alias": "DET",
+      "home_points": 93,
+      "away_points": 105,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910004",
+      "points": 0,
+      "rebounds": 3,
+      "offensive_rebounds": 2,
+      "defensive_rebounds": 1,
+      "assists": 4,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 0,
+      "fga": 3,
+      "fg3m": 0,
+      "fg3a": 1,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": 3.0
+    },
+    {
+      "name": "Keldon Johnson",
+      "player_id": "4395723",
+      "team": "SAS",
+      "position": "F",
+      "minutes": 15.0,
+      "game": "DET @ SAS",
+      "game_id": "ESPN_401910004",
+      "home_alias": "SAS",
+      "away_alias": "DET",
+      "home_points": 93,
+      "away_points": 105,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910004",
+      "points": 4,
+      "rebounds": 2,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 1,
+      "assists": 1,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 2,
+      "fgm": 2,
+      "fga": 5,
+      "fg3m": 0,
+      "fg3a": 1,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -17.0
+    },
+    {
+      "name": "Julian Champagnie",
+      "player_id": "4592479",
+      "team": "SAS",
+      "position": "F",
+      "minutes": 30.0,
+      "game": "DET @ SAS",
+      "game_id": "ESPN_401910004",
+      "home_alias": "SAS",
+      "away_alias": "DET",
+      "home_points": 93,
+      "away_points": 105,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910004",
+      "points": 14,
+      "rebounds": 6,
+      "offensive_rebounds": 2,
+      "defensive_rebounds": 4,
+      "assists": 0,
+      "steals": 0,
+      "blocks": 1,
+      "turnovers": 0,
+      "fgm": 5,
+      "fga": 10,
+      "fg3m": 4,
+      "fg3a": 9,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -11.0
+    },
+    {
+      "name": "Carter Bryant",
+      "player_id": "5061568",
+      "team": "SAS",
+      "position": "F",
+      "minutes": 2.0,
+      "game": "DET @ SAS",
+      "game_id": "ESPN_401910004",
+      "home_alias": "SAS",
+      "away_alias": "DET",
+      "home_points": 93,
+      "away_points": 105,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910004",
+      "points": 0,
+      "rebounds": 0,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 0,
+      "assists": 0,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 0,
+      "fga": 1,
+      "fg3m": 0,
+      "fg3a": 1,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -7.0
+    },
+    {
+      "name": "Luke Kornet",
+      "player_id": "3064560",
+      "team": "SAS",
+      "position": "C",
+      "minutes": 14.0,
+      "game": "DET @ SAS",
+      "game_id": "ESPN_401910004",
+      "home_alias": "SAS",
+      "away_alias": "DET",
+      "home_points": 93,
+      "away_points": 105,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910004",
+      "points": 2,
+      "rebounds": 1,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 0,
+      "assists": 1,
+      "steals": 0,
+      "blocks": 2,
+      "turnovers": 0,
+      "fgm": 1,
+      "fga": 2,
+      "fg3m": 0,
+      "fg3a": 0,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -18.0
+    },
+    {
+      "name": "Mo Bamba",
+      "player_id": "4277919",
+      "team": "UTA",
+      "position": "C",
+      "minutes": 31.0,
+      "game": "UTA @ LAC",
+      "game_id": "ESPN_401910006",
+      "home_alias": "LAC",
+      "away_alias": "UTA",
+      "home_points": 107,
+      "away_points": 132,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006",
+      "points": 15,
+      "rebounds": 10,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 9,
+      "assists": 3,
+      "steals": 0,
+      "blocks": 1,
+      "turnovers": 1,
+      "fgm": 6,
+      "fga": 7,
+      "fg3m": 1,
+      "fg3a": 2,
+      "ftm": 2,
+      "fta": 2,
+      "ft_pct": 1.0,
+      "plus_minus": 11.0
+    },
+    {
+      "name": "Josh Green",
+      "player_id": "4432811",
+      "team": "UTA",
+      "position": "G",
+      "minutes": 13.0,
+      "game": "UTA @ LAC",
+      "game_id": "ESPN_401910006",
+      "home_alias": "LAC",
+      "away_alias": "UTA",
+      "home_points": 107,
+      "away_points": 132,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006",
+      "points": 9,
+      "rebounds": 1,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 1,
+      "assists": 0,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 2,
+      "fgm": 4,
+      "fga": 5,
+      "fg3m": 1,
+      "fg3a": 1,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": 0.0
+    },
+    {
+      "name": "Keyonte George",
+      "player_id": "4433627",
+      "team": "UTA",
+      "position": "G",
+      "minutes": 35.0,
+      "game": "UTA @ LAC",
+      "game_id": "ESPN_401910006",
+      "home_alias": "LAC",
+      "away_alias": "UTA",
+      "home_points": 107,
+      "away_points": 132,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006",
+      "points": 30,
+      "rebounds": 2,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 2,
+      "assists": 11,
+      "steals": 0,
+      "blocks": 2,
+      "turnovers": 2,
+      "fgm": 10,
+      "fga": 17,
+      "fg3m": 4,
+      "fg3a": 8,
+      "ftm": 6,
+      "fta": 6,
+      "ft_pct": 1.0,
+      "plus_minus": 10.0
+    },
+    {
+      "name": "Ace Bailey",
+      "player_id": "4873138",
+      "team": "UTA",
+      "position": "G",
+      "minutes": 23.0,
+      "game": "UTA @ LAC",
+      "game_id": "ESPN_401910006",
+      "home_alias": "LAC",
+      "away_alias": "UTA",
+      "home_points": 107,
+      "away_points": 132,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006",
+      "points": 5,
+      "rebounds": 1,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 1,
+      "assists": 4,
+      "steals": 3,
+      "blocks": 0,
+      "turnovers": 1,
+      "fgm": 2,
+      "fga": 8,
+      "fg3m": 1,
+      "fg3a": 4,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": 3.0
+    },
+    {
+      "name": "Darryn Peterson",
+      "player_id": "5041955",
+      "team": "UTA",
+      "position": "G",
+      "minutes": 31.0,
+      "game": "UTA @ LAC",
+      "game_id": "ESPN_401910006",
+      "home_alias": "LAC",
+      "away_alias": "UTA",
+      "home_points": 107,
+      "away_points": 132,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006",
+      "points": 13,
+      "rebounds": 5,
+      "offensive_rebounds": 2,
+      "defensive_rebounds": 3,
+      "assists": 2,
+      "steals": 1,
+      "blocks": 0,
+      "turnovers": 3,
+      "fgm": 3,
+      "fga": 10,
+      "fg3m": 2,
+      "fg3a": 4,
+      "ftm": 5,
+      "fta": 7,
+      "ft_pct": 0.7142857142857143,
+      "plus_minus": 14.0
+    },
+    {
+      "name": "Brice Sensabaugh",
+      "player_id": "5105839",
+      "team": "UTA",
+      "position": "F",
+      "minutes": 35.0,
+      "game": "UTA @ LAC",
+      "game_id": "ESPN_401910006",
+      "home_alias": "LAC",
+      "away_alias": "UTA",
+      "home_points": 107,
+      "away_points": 132,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006",
+      "points": 40,
+      "rebounds": 11,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 10,
+      "assists": 5,
+      "steals": 0,
+      "blocks": 1,
+      "turnovers": 2,
+      "fgm": 16,
+      "fga": 21,
+      "fg3m": 8,
+      "fg3a": 11,
+      "ftm": 0,
+      "fta": 1,
+      "ft_pct": 0.0,
+      "plus_minus": 24.0
+    },
+    {
+      "name": "Tony Bradley",
+      "player_id": "4065673",
+      "team": "UTA",
+      "position": "C",
+      "minutes": 17.0,
+      "game": "UTA @ LAC",
+      "game_id": "ESPN_401910006",
+      "home_alias": "LAC",
+      "away_alias": "UTA",
+      "home_points": 107,
+      "away_points": 132,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006",
+      "points": 3,
+      "rebounds": 7,
+      "offensive_rebounds": 2,
+      "defensive_rebounds": 5,
+      "assists": 1,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 2,
+      "fgm": 1,
+      "fga": 3,
+      "fg3m": 0,
+      "fg3a": 0,
+      "ftm": 1,
+      "fta": 2,
+      "ft_pct": 0.5,
+      "plus_minus": 14.0
+    },
+    {
+      "name": "Svi Mykhailiuk",
+      "player_id": "3133602",
+      "team": "UTA",
+      "position": "G",
+      "minutes": 33.0,
+      "game": "UTA @ LAC",
+      "game_id": "ESPN_401910006",
+      "home_alias": "LAC",
+      "away_alias": "UTA",
+      "home_points": 107,
+      "away_points": 132,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006",
+      "points": 8,
+      "rebounds": 7,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 6,
+      "assists": 5,
+      "steals": 1,
+      "blocks": 0,
+      "turnovers": 1,
+      "fgm": 3,
+      "fga": 7,
+      "fg3m": 2,
+      "fg3a": 5,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": 18.0
+    },
+    {
+      "name": "Josh Okogie",
+      "player_id": "4065663",
+      "team": "UTA",
+      "position": "G",
+      "minutes": 22.0,
+      "game": "UTA @ LAC",
+      "game_id": "ESPN_401910006",
+      "home_alias": "LAC",
+      "away_alias": "UTA",
+      "home_points": 107,
+      "away_points": 132,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006",
+      "points": 9,
+      "rebounds": 2,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 1,
+      "assists": 4,
+      "steals": 2,
+      "blocks": 0,
+      "turnovers": 1,
+      "fgm": 4,
+      "fga": 6,
+      "fg3m": 1,
+      "fg3a": 3,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": 31.0
+    },
+    {
+      "name": "Derrick Jones Jr.",
+      "player_id": "3936099",
+      "team": "LAC",
+      "position": "F",
+      "minutes": 28.0,
+      "game": "UTA @ LAC",
+      "game_id": "ESPN_401910006",
+      "home_alias": "LAC",
+      "away_alias": "UTA",
+      "home_points": 107,
+      "away_points": 132,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006",
+      "points": 5,
+      "rebounds": 1,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 1,
+      "assists": 1,
+      "steals": 0,
+      "blocks": 1,
+      "turnovers": 0,
+      "fgm": 1,
+      "fga": 3,
+      "fg3m": 0,
+      "fg3a": 1,
+      "ftm": 3,
+      "fta": 6,
+      "ft_pct": 0.5,
+      "plus_minus": -8.0
+    },
+    {
+      "name": "Rui Hachimura",
+      "player_id": "4066648",
+      "team": "LAC",
+      "position": "F",
+      "minutes": 27.0,
+      "game": "UTA @ LAC",
+      "game_id": "ESPN_401910006",
+      "home_alias": "LAC",
+      "away_alias": "UTA",
+      "home_points": 107,
+      "away_points": 132,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006",
+      "points": 20,
+      "rebounds": 5,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 5,
+      "assists": 1,
+      "steals": 1,
+      "blocks": 1,
+      "turnovers": 1,
+      "fgm": 7,
+      "fga": 10,
+      "fg3m": 4,
+      "fg3a": 4,
+      "ftm": 2,
+      "fta": 4,
+      "ft_pct": 0.5,
+      "plus_minus": -6.0
+    },
+    {
+      "name": "Brook Lopez",
+      "player_id": "3448",
+      "team": "LAC",
+      "position": "C",
+      "minutes": 23.0,
+      "game": "UTA @ LAC",
+      "game_id": "ESPN_401910006",
+      "home_alias": "LAC",
+      "away_alias": "UTA",
+      "home_points": 107,
+      "away_points": 132,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006",
+      "points": 23,
+      "rebounds": 6,
+      "offensive_rebounds": 3,
+      "defensive_rebounds": 3,
+      "assists": 2,
+      "steals": 1,
+      "blocks": 1,
+      "turnovers": 1,
+      "fgm": 8,
+      "fga": 16,
+      "fg3m": 4,
+      "fg3a": 9,
+      "ftm": 3,
+      "fta": 3,
+      "ft_pct": 1.0,
+      "plus_minus": -1.0
+    },
+    {
+      "name": "Kris Dunn",
+      "player_id": "2991139",
+      "team": "LAC",
+      "position": "G",
+      "minutes": 26.0,
+      "game": "UTA @ LAC",
+      "game_id": "ESPN_401910006",
+      "home_alias": "LAC",
+      "away_alias": "UTA",
+      "home_points": 107,
+      "away_points": 132,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006",
+      "points": 2,
+      "rebounds": 5,
+      "offensive_rebounds": 3,
+      "defensive_rebounds": 2,
+      "assists": 5,
+      "steals": 3,
+      "blocks": 1,
+      "turnovers": 2,
+      "fgm": 1,
+      "fga": 5,
+      "fg3m": 0,
+      "fg3a": 2,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -7.0
+    },
+    {
+      "name": "Darius Garland",
+      "player_id": "4396907",
+      "team": "LAC",
+      "position": "G",
+      "minutes": 30.0,
+      "game": "UTA @ LAC",
+      "game_id": "ESPN_401910006",
+      "home_alias": "LAC",
+      "away_alias": "UTA",
+      "home_points": 107,
+      "away_points": 132,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006",
+      "points": 20,
+      "rebounds": 3,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 3,
+      "assists": 7,
+      "steals": 1,
+      "blocks": 1,
+      "turnovers": 1,
+      "fgm": 5,
+      "fga": 15,
+      "fg3m": 2,
+      "fg3a": 5,
+      "ftm": 8,
+      "fta": 8,
+      "ft_pct": 1.0,
+      "plus_minus": -11.0
+    },
+    {
+      "name": "Isaiah Jackson",
+      "player_id": "4432170",
+      "team": "LAC",
+      "position": "F",
+      "minutes": 19.0,
+      "game": "UTA @ LAC",
+      "game_id": "ESPN_401910006",
+      "home_alias": "LAC",
+      "away_alias": "UTA",
+      "home_points": 107,
+      "away_points": 132,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006",
+      "points": 8,
+      "rebounds": 5,
+      "offensive_rebounds": 2,
+      "defensive_rebounds": 3,
+      "assists": 0,
+      "steals": 0,
+      "blocks": 2,
+      "turnovers": 1,
+      "fgm": 4,
+      "fga": 6,
+      "fg3m": 0,
+      "fg3a": 0,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -17.0
+    },
+    {
+      "name": "Baba Miller",
+      "player_id": "5075626",
+      "team": "LAC",
+      "position": "F",
+      "minutes": 4.0,
+      "game": "UTA @ LAC",
+      "game_id": "ESPN_401910006",
+      "home_alias": "LAC",
+      "away_alias": "UTA",
+      "home_points": 107,
+      "away_points": 132,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006",
+      "points": 3,
+      "rebounds": 0,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 0,
+      "assists": 0,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 2,
+      "fgm": 1,
+      "fga": 2,
+      "fg3m": 1,
+      "fg3a": 2,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -5.0
+    },
+    {
+      "name": "Nick Martinelli",
+      "player_id": "5105832",
+      "team": "LAC",
+      "position": "F",
+      "minutes": 4.0,
+      "game": "UTA @ LAC",
+      "game_id": "ESPN_401910006",
+      "home_alias": "LAC",
+      "away_alias": "UTA",
+      "home_points": 107,
+      "away_points": 132,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006",
+      "points": 0,
+      "rebounds": 1,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 1,
+      "assists": 0,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 0,
+      "fga": 0,
+      "fg3m": 0,
+      "fg3a": 0,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -5.0
+    },
+    {
+      "name": "Max Strus",
+      "player_id": "4065778",
+      "team": "LAC",
+      "position": "G",
+      "minutes": 21.0,
+      "game": "UTA @ LAC",
+      "game_id": "ESPN_401910006",
+      "home_alias": "LAC",
+      "away_alias": "UTA",
+      "home_points": 107,
+      "away_points": 132,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006",
+      "points": 3,
+      "rebounds": 2,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 2,
+      "assists": 1,
+      "steals": 3,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 1,
+      "fga": 6,
+      "fg3m": 1,
+      "fg3a": 5,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -21.0
+    },
+    {
+      "name": "Kobe Sanders",
+      "player_id": "4702352",
+      "team": "LAC",
+      "position": "G",
+      "minutes": 18.0,
+      "game": "UTA @ LAC",
+      "game_id": "ESPN_401910006",
+      "home_alias": "LAC",
+      "away_alias": "UTA",
+      "home_points": 107,
+      "away_points": 132,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006",
+      "points": 5,
+      "rebounds": 1,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 0,
+      "assists": 3,
+      "steals": 2,
+      "blocks": 0,
+      "turnovers": 2,
+      "fgm": 2,
+      "fga": 6,
+      "fg3m": 0,
+      "fg3a": 3,
+      "ftm": 1,
+      "fta": 1,
+      "ft_pct": 1.0,
+      "plus_minus": -17.0
+    },
+    {
+      "name": "Cam Christie",
+      "player_id": "4845363",
+      "team": "LAC",
+      "position": "G",
+      "minutes": 4.0,
+      "game": "UTA @ LAC",
+      "game_id": "ESPN_401910006",
+      "home_alias": "LAC",
+      "away_alias": "UTA",
+      "home_points": 107,
+      "away_points": 132,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006",
+      "points": 3,
+      "rebounds": 0,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 0,
+      "assists": 0,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 1,
+      "fga": 3,
+      "fg3m": 1,
+      "fg3a": 3,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -5.0
+    },
+    {
+      "name": "Gradey Dick",
+      "player_id": "5106258",
+      "team": "LAC",
+      "position": "G",
+      "minutes": 17.0,
+      "game": "UTA @ LAC",
+      "game_id": "ESPN_401910006",
+      "home_alias": "LAC",
+      "away_alias": "UTA",
+      "home_points": 107,
+      "away_points": 132,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006",
+      "points": 0,
+      "rebounds": 0,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 0,
+      "assists": 1,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 0,
+      "fga": 2,
+      "fg3m": 0,
+      "fg3a": 0,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -8.0
+    },
+    {
+      "name": "Keaton Wagler",
+      "player_id": "5254165",
+      "team": "LAC",
+      "position": "G",
+      "minutes": 18.0,
+      "game": "UTA @ LAC",
+      "game_id": "ESPN_401910006",
+      "home_alias": "LAC",
+      "away_alias": "UTA",
+      "home_points": 107,
+      "away_points": 132,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910006",
+      "points": 15,
+      "rebounds": 2,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 1,
+      "assists": 0,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 1,
+      "fgm": 5,
+      "fga": 9,
+      "fg3m": 1,
+      "fg3a": 3,
+      "ftm": 4,
+      "fta": 5,
+      "ft_pct": 0.8,
+      "plus_minus": -14.0
+    },
+    {
+      "name": "Grant Williams",
+      "player_id": "4066218",
+      "team": "CHA",
+      "position": "F",
+      "minutes": 30.0,
+      "game": "CHA @ LAL",
+      "game_id": "ESPN_401910005",
+      "home_alias": "LAL",
+      "away_alias": "CHA",
+      "home_points": 118,
+      "away_points": 114,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910005",
+      "points": 12,
+      "rebounds": 4,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 3,
+      "assists": 0,
+      "steals": 1,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 5,
+      "fga": 14,
+      "fg3m": 2,
+      "fg3a": 9,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -14.0
+    },
+    {
+      "name": "Moussa Diabate",
+      "player_id": "4433249",
+      "team": "CHA",
+      "position": "F",
+      "minutes": 38.0,
+      "game": "CHA @ LAL",
+      "game_id": "ESPN_401910005",
+      "home_alias": "LAL",
+      "away_alias": "CHA",
+      "home_points": 118,
+      "away_points": 114,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910005",
+      "points": 5,
+      "rebounds": 16,
+      "offensive_rebounds": 4,
+      "defensive_rebounds": 12,
+      "assists": 2,
+      "steals": 0,
+      "blocks": 1,
+      "turnovers": 2,
+      "fgm": 2,
+      "fga": 2,
+      "fg3m": 0,
+      "fg3a": 0,
+      "ftm": 1,
+      "fta": 2,
+      "ft_pct": 0.5,
+      "plus_minus": -4.0
+    },
+    {
+      "name": "Brandon Miller",
+      "player_id": "4433287",
+      "team": "CHA",
+      "position": "F",
+      "minutes": 32.0,
+      "game": "CHA @ LAL",
+      "game_id": "ESPN_401910005",
+      "home_alias": "LAL",
+      "away_alias": "CHA",
+      "home_points": 118,
+      "away_points": 114,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910005",
+      "points": 28,
+      "rebounds": 2,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 2,
+      "assists": 4,
+      "steals": 0,
+      "blocks": 1,
+      "turnovers": 5,
+      "fgm": 10,
+      "fga": 19,
+      "fg3m": 5,
+      "fg3a": 12,
+      "ftm": 3,
+      "fta": 3,
+      "ft_pct": 1.0,
+      "plus_minus": 10.0
+    },
+    {
+      "name": "Naz Reid",
+      "player_id": "4396971",
+      "team": "CHA",
+      "position": "C",
+      "minutes": 42.0,
+      "game": "CHA @ LAL",
+      "game_id": "ESPN_401910005",
+      "home_alias": "LAL",
+      "away_alias": "CHA",
+      "home_points": 118,
+      "away_points": 114,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910005",
+      "points": 23,
+      "rebounds": 11,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 10,
+      "assists": 4,
+      "steals": 2,
+      "blocks": 2,
+      "turnovers": 0,
+      "fgm": 8,
+      "fga": 18,
+      "fg3m": 4,
+      "fg3a": 10,
+      "ftm": 3,
+      "fta": 4,
+      "ft_pct": 0.75,
+      "plus_minus": 2.0
+    },
+    {
+      "name": "Coby White",
+      "player_id": "4395651",
+      "team": "CHA",
+      "position": "G",
+      "minutes": 26.0,
+      "game": "CHA @ LAL",
+      "game_id": "ESPN_401910005",
+      "home_alias": "LAL",
+      "away_alias": "CHA",
+      "home_points": 118,
+      "away_points": 114,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910005",
+      "points": 19,
+      "rebounds": 3,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 3,
+      "assists": 4,
+      "steals": 3,
+      "blocks": 0,
+      "turnovers": 4,
+      "fgm": 6,
+      "fga": 12,
+      "fg3m": 2,
+      "fg3a": 6,
+      "ftm": 5,
+      "fta": 7,
+      "ft_pct": 0.7142857142857143,
+      "plus_minus": 6.0
+    },
+    {
+      "name": "Royce O'Neale",
+      "player_id": "2583632",
+      "team": "CHA",
+      "position": "F",
+      "minutes": 34.0,
+      "game": "CHA @ LAL",
+      "game_id": "ESPN_401910005",
+      "home_alias": "LAL",
+      "away_alias": "CHA",
+      "home_points": 118,
+      "away_points": 114,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910005",
+      "points": 13,
+      "rebounds": 4,
+      "offensive_rebounds": 2,
+      "defensive_rebounds": 2,
+      "assists": 1,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 2,
+      "fgm": 4,
+      "fga": 9,
+      "fg3m": 4,
+      "fg3a": 9,
+      "ftm": 1,
+      "fta": 1,
+      "ft_pct": 1.0,
+      "plus_minus": -18.0
+    },
+    {
+      "name": "Tidjane Salaun",
+      "player_id": "5211176",
+      "team": "CHA",
+      "position": "F",
+      "minutes": 5.0,
+      "game": "CHA @ LAL",
+      "game_id": "ESPN_401910005",
+      "home_alias": "LAL",
+      "away_alias": "CHA",
+      "home_points": 118,
+      "away_points": 114,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910005",
+      "points": 0,
+      "rebounds": 1,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 1,
+      "assists": 0,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 0,
+      "fga": 0,
+      "fg3m": 0,
+      "fg3a": 0,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -6.0
+    },
+    {
+      "name": "Ryan Kalkbrenner",
+      "player_id": "4576060",
+      "team": "CHA",
+      "position": "C",
+      "minutes": 14.0,
+      "game": "CHA @ LAL",
+      "game_id": "ESPN_401910005",
+      "home_alias": "LAL",
+      "away_alias": "CHA",
+      "home_points": 118,
+      "away_points": 114,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910005",
+      "points": 6,
+      "rebounds": 3,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 2,
+      "assists": 1,
+      "steals": 1,
+      "blocks": 0,
+      "turnovers": 1,
+      "fgm": 2,
+      "fga": 2,
+      "fg3m": 0,
+      "fg3a": 0,
+      "ftm": 2,
+      "fta": 2,
+      "ft_pct": 1.0,
+      "plus_minus": 4.0
+    },
+    {
+      "name": "Sion James",
+      "player_id": "4602025",
+      "team": "CHA",
+      "position": "G",
+      "minutes": 30.0,
+      "game": "CHA @ LAL",
+      "game_id": "ESPN_401910005",
+      "home_alias": "LAL",
+      "away_alias": "CHA",
+      "home_points": 118,
+      "away_points": 114,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910005",
+      "points": 3,
+      "rebounds": 6,
+      "offensive_rebounds": 2,
+      "defensive_rebounds": 4,
+      "assists": 4,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 3,
+      "fgm": 1,
+      "fga": 3,
+      "fg3m": 0,
+      "fg3a": 2,
+      "ftm": 1,
+      "fta": 1,
+      "ft_pct": 1.0,
+      "plus_minus": -9.0
+    },
+    {
+      "name": "Christian Anderson",
+      "player_id": "5060701",
+      "team": "CHA",
+      "position": "G",
+      "minutes": 14.0,
+      "game": "CHA @ LAL",
+      "game_id": "ESPN_401910005",
+      "home_alias": "LAL",
+      "away_alias": "CHA",
+      "home_points": 118,
+      "away_points": 114,
+      "is_home": false,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910005",
+      "points": 5,
+      "rebounds": 1,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 0,
+      "assists": 4,
+      "steals": 1,
+      "blocks": 0,
+      "turnovers": 1,
+      "fgm": 2,
+      "fga": 7,
+      "fg3m": 1,
+      "fg3a": 5,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": 10.0
+    },
+    {
+      "name": "Kevon Looney",
+      "player_id": "3155535",
+      "team": "LAL",
+      "position": "F",
+      "minutes": 17.0,
+      "game": "CHA @ LAL",
+      "game_id": "ESPN_401910005",
+      "home_alias": "LAL",
+      "away_alias": "CHA",
+      "home_points": 118,
+      "away_points": 114,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910005",
+      "points": 4,
+      "rebounds": 8,
+      "offensive_rebounds": 5,
+      "defensive_rebounds": 3,
+      "assists": 0,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 2,
+      "fga": 3,
+      "fg3m": 0,
+      "fg3a": 0,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -7.0
+    },
+    {
+      "name": "Jake LaRavia",
+      "player_id": "4592691",
+      "team": "LAL",
+      "position": "F",
+      "minutes": 23.0,
+      "game": "CHA @ LAL",
+      "game_id": "ESPN_401910005",
+      "home_alias": "LAL",
+      "away_alias": "CHA",
+      "home_points": 118,
+      "away_points": 114,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910005",
+      "points": 4,
+      "rebounds": 5,
+      "offensive_rebounds": 2,
+      "defensive_rebounds": 3,
+      "assists": 2,
+      "steals": 0,
+      "blocks": 1,
+      "turnovers": 1,
+      "fgm": 2,
+      "fga": 5,
+      "fg3m": 0,
+      "fg3a": 1,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": 11.0
+    },
+    {
+      "name": "Matisse Thybulle",
+      "player_id": "3907498",
+      "team": "LAL",
+      "position": "G",
+      "minutes": 31.0,
+      "game": "CHA @ LAL",
+      "game_id": "ESPN_401910005",
+      "home_alias": "LAL",
+      "away_alias": "CHA",
+      "home_points": 118,
+      "away_points": 114,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910005",
+      "points": 7,
+      "rebounds": 6,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 6,
+      "assists": 0,
+      "steals": 3,
+      "blocks": 1,
+      "turnovers": 1,
+      "fgm": 2,
+      "fga": 6,
+      "fg3m": 2,
+      "fg3a": 6,
+      "ftm": 1,
+      "fta": 2,
+      "ft_pct": 0.5,
+      "plus_minus": 8.0
+    },
+    {
+      "name": "Luka Doncic",
+      "player_id": "3945274",
+      "team": "LAL",
+      "position": "G",
+      "minutes": 42.0,
+      "game": "CHA @ LAL",
+      "game_id": "ESPN_401910005",
+      "home_alias": "LAL",
+      "away_alias": "CHA",
+      "home_points": 118,
+      "away_points": 114,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910005",
+      "points": 36,
+      "rebounds": 6,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 6,
+      "assists": 7,
+      "steals": 1,
+      "blocks": 1,
+      "turnovers": 5,
+      "fgm": 13,
+      "fga": 34,
+      "fg3m": 5,
+      "fg3a": 16,
+      "ftm": 5,
+      "fta": 7,
+      "ft_pct": 0.7142857142857143,
+      "plus_minus": 2.0
+    },
+    {
+      "name": "Quentin Grimes",
+      "player_id": "4397014",
+      "team": "LAL",
+      "position": "G",
+      "minutes": 42.0,
+      "game": "CHA @ LAL",
+      "game_id": "ESPN_401910005",
+      "home_alias": "LAL",
+      "away_alias": "CHA",
+      "home_points": 118,
+      "away_points": 114,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910005",
+      "points": 47,
+      "rebounds": 6,
+      "offensive_rebounds": 2,
+      "defensive_rebounds": 4,
+      "assists": 3,
+      "steals": 1,
+      "blocks": 0,
+      "turnovers": 3,
+      "fgm": 16,
+      "fga": 24,
+      "fg3m": 10,
+      "fg3a": 14,
+      "ftm": 5,
+      "fta": 6,
+      "ft_pct": 0.8333333333333334,
+      "plus_minus": 5.0
+    },
+    {
+      "name": "Jarred Vanderbilt",
+      "player_id": "4278077",
+      "team": "LAL",
+      "position": "F",
+      "minutes": 14.0,
+      "game": "CHA @ LAL",
+      "game_id": "ESPN_401910005",
+      "home_alias": "LAL",
+      "away_alias": "CHA",
+      "home_points": 118,
+      "away_points": 114,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910005",
+      "points": 4,
+      "rebounds": 7,
+      "offensive_rebounds": 6,
+      "defensive_rebounds": 1,
+      "assists": 0,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 2,
+      "fga": 3,
+      "fg3m": 0,
+      "fg3a": 0,
+      "ftm": 0,
+      "fta": 2,
+      "ft_pct": 0.0,
+      "plus_minus": -5.0
+    },
+    {
+      "name": "Sandro Mamukelashvili",
+      "player_id": "4278580",
+      "team": "LAL",
+      "position": "F",
+      "minutes": 23.0,
+      "game": "CHA @ LAL",
+      "game_id": "ESPN_401910005",
+      "home_alias": "LAL",
+      "away_alias": "CHA",
+      "home_points": 118,
+      "away_points": 114,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910005",
+      "points": 3,
+      "rebounds": 3,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 2,
+      "assists": 2,
+      "steals": 1,
+      "blocks": 0,
+      "turnovers": 1,
+      "fgm": 1,
+      "fga": 8,
+      "fg3m": 0,
+      "fg3a": 4,
+      "ftm": 1,
+      "fta": 2,
+      "ft_pct": 0.5,
+      "plus_minus": -1.0
+    },
+    {
+      "name": "Ziaire Williams",
+      "player_id": "4433137",
+      "team": "LAL",
+      "position": "F",
+      "minutes": 24.0,
+      "game": "CHA @ LAL",
+      "game_id": "ESPN_401910005",
+      "home_alias": "LAL",
+      "away_alias": "CHA",
+      "home_points": 118,
+      "away_points": 114,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910005",
+      "points": 0,
+      "rebounds": 1,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 1,
+      "assists": 1,
+      "steals": 1,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 0,
+      "fga": 1,
+      "fg3m": 0,
+      "fg3a": 1,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": 6.0
+    },
+    {
+      "name": "Adou Thiero",
+      "player_id": "5060631",
+      "team": "LAL",
+      "position": "F",
+      "minutes": 6.0,
+      "game": "CHA @ LAL",
+      "game_id": "ESPN_401910005",
+      "home_alias": "LAL",
+      "away_alias": "CHA",
+      "home_points": 118,
+      "away_points": 114,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910005",
+      "points": 0,
+      "rebounds": 0,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 0,
+      "assists": 1,
+      "steals": 1,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 0,
+      "fga": 2,
+      "fg3m": 0,
+      "fg3a": 1,
+      "ftm": 0,
+      "fta": 0,
+      "ft_pct": 0.75,
+      "plus_minus": -7.0
+    },
+    {
+      "name": "Carson Cooper",
+      "player_id": "5105817",
+      "team": "LAL",
+      "position": "C",
+      "minutes": 18.0,
+      "game": "CHA @ LAL",
+      "game_id": "ESPN_401910005",
+      "home_alias": "LAL",
+      "away_alias": "CHA",
+      "home_points": 118,
+      "away_points": 114,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910005",
+      "points": 3,
+      "rebounds": 4,
+      "offensive_rebounds": 2,
+      "defensive_rebounds": 2,
+      "assists": 2,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 0,
+      "fgm": 0,
+      "fga": 1,
+      "fg3m": 0,
+      "fg3a": 0,
+      "ftm": 3,
+      "fta": 6,
+      "ft_pct": 0.5,
+      "plus_minus": 6.0
+    },
+    {
+      "name": "Collin Sexton",
+      "player_id": "4277811",
+      "team": "LAL",
+      "position": "G",
+      "minutes": 25.0,
+      "game": "CHA @ LAL",
+      "game_id": "ESPN_401910005",
+      "home_alias": "LAL",
+      "away_alias": "CHA",
+      "home_points": 118,
+      "away_points": 114,
+      "is_home": true,
+      "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910005",
+      "points": 10,
+      "rebounds": 4,
+      "offensive_rebounds": 1,
+      "defensive_rebounds": 3,
+      "assists": 3,
+      "steals": 0,
+      "blocks": 0,
+      "turnovers": 2,
+      "fgm": 3,
+      "fga": 12,
+      "fg3m": 1,
+      "fg3a": 7,
+      "ftm": 3,
+      "fta": 4,
+      "ft_pct": 0.75,
+      "plus_minus": 2.0
+    }
+  ],
+  "input_sha256": "511c454e789288d1403713ab37dfba44de999ac135c15cc0f05ac9223ddb00b0"
+}
