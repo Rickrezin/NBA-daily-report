@@ -1,0 +1,46 @@
+name: QPIX November 17 Source and Scored Output Export
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/qpix-nov17-output-export.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Nov17 full provisional score set before export
+        run: |
+          python3 - <<'PY'
+          import csv,json,pathlib
+          d='2026-11-17';root=pathlib.Path('.')
+          j=json.loads((root/f'data/daily/{d}.provisional.json').read_text())
+          input=json.loads((root/f'data/historical/qpix_input/{d}.json').read_text())
+          manifest=json.loads((root/f'data/historical/qpix_pbp_raw/{d}/manifest.json').read_text())
+          derived=json.loads((root/f'data/historical/qpix_pbp_derived/{d}.json').read_text())
+          lines=list(csv.DictReader((root/f'data/daily/{d}.provisional.csv').open()))
+          assert j['date_et']==d and len(j['games'])==5 and len(j['players'])==102 and len(lines)==102
+          assert len(input['players'])==102 and manifest['final_games']==5 and manifest['reconciled_games']==5
+          assert sum(len(x['events']) for x in derived['games'])==2424
+          assert j['engine']['formulas_modified'] is False
+          assert j['quality']['C6']=='UNAVAILABLE_NOT_OBSERVED_ZERO'
+          assert len(j['leaderboards']['top10'])==len(j['leaderboards']['bottom10'])==10
+          assert all(next(p for p in j['players'] if str(p['player_id'])==str(pid))['minutes']>8 for pid in j['leaderboards']['top10']+j['leaderboards']['bottom10'])
+          print('FULL_ARCHIVE_EXPORT_VERIFIED',len(j['players']),'players',manifest['final_games'],'finals',derived['source']['events'],'events')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: qpix-2026-11-17-full-provisional-data
+          retention-days: 30
+          if-no-files-found: error
+          path: |
+            data/daily/2026-11-17.provisional.json
+            data/daily/2026-11-17.provisional.csv
+            docs/reports/2026-11-17.provisional.md
+            docs/reports/2026-11-17.audit.json
+            data/historical/qpix_input/2026-11-17.json
+            data/historical/qpix_pbp_derived/2026-11-17.json
+            data/historical/qpix_pbp_raw/2026-11-17/
