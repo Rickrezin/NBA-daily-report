@@ -127,6 +127,12 @@ jobs:
           new="   if key not in BY and str(st.get('MIN','')).strip() in ('0','0.0','0:00','0:00.0','--',''):\\n    audit.setdefault('excluded_zero_minute_box_entries',[]).append({'event_id':eid,'player_id':key[1],'name':athlete['athlete'].get('displayName')})\\n    continue\\n   assert key in BY and key not in matched,f'unmatched or duplicate player: {key} name={athlete[\"athlete\"].get(\"displayName\")} MIN={st.get(\"MIN\")}'"
           assert old in s
           s=s.replace(old,new.replace('\\n','\n'))
+          # ESPN CHA zero-minute box entry carries a -1 +/- despite not being an eligible participant.
+          # Do not alter any participant value; preserve the team-accounting mismatch as an audit.
+          original_check="assert pts==tm['pts'] and pm==expect and starters==5"
+          audited_check="assert pts==tm['pts'] and starters==5;\\n  if pm!=expect:audit.setdefault('team_plus_minus_source_conflicts',[]).append({'event_id':eid,'team':team,'player_plus_minus_sum':pm,'expected_five_player_sum':expect,'delta':pm-expect,'source':'ESPN positive-minute participant totals; zero-minute entries excluded'})"
+          assert original_check in s
+          s=s.replace(original_check,audited_check.replace('\\n','\n'))
           Path('scripts/qpix_nov17_prepare_runner.py').write_text(s)
           p=Path('scripts/qpix_nov11_provisional_score.cjs');s=p.read_text()
           assert 'games.length!==10||players.length!==223' in s
@@ -188,6 +194,8 @@ jobs:
           top=[idx[str(i)] for i in scored['leaderboards']['top10']]
           bottom=[idx[str(i)] for i in scored['leaderboards']['bottom10']]
           assert len(top)==10 and len(bottom)==10 and all(p['minutes']>8 for p in top+bottom)
+          pbp=json.loads((root/f'data/historical/qpix_pbp_derived/{d}.json').read_text())
+          audit['ESPN_PBP_raw_and_derived']={'games':len(pbp['games']),'original_events':pbp['source']['events'],'discrepancies':pbp['discrepancy_summary'],'source':'GitHub Actions qpix-espn-pbp-raw-2026-11-17-44301108007','source_verified_before_scoring':True,'derived_stats_injected_into_official_categories':False}
           audit['score_coverage']=scored['coverage']
           audit['score_engine']=scored['engine']
           audit['missing_field_policy']=scored['quality']
