@@ -22,6 +22,7 @@ ET=ZoneInfo("America/New_York")
 RUN_DATE=(datetime.now(ET)-timedelta(days=1)).strftime("%Y-%m-%d")
 if len(sys.argv)>1: RUN_DATE=sys.argv[1]
 PHASE="preseason" if (RUN_DATE<"2026-10-20") else "regular"
+ENABLE_NBA_V3=os.getenv("ENABLE_NBA_V3","false").strip().lower() in ("1","true","yes","on")
 USER_AGENT="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131 Safari/537.36"
 EXPECTED_20261024=["0022600104","0022600105","0022600106","0022600107","0022600108","0022600109","0022600110","0022600111"]
 
@@ -351,7 +352,7 @@ def audit_advanced(game_id, players):
         return {"source":"BoxScoreAdvancedV3","status":"missing_verified_nba_id",
                 "retrieved_players":0,"C3_compatible":False}
     url=(f"https://stats.nba.com/stats/boxscoreadvancedv3?GameID={game_id}"
-         "&StartPeriod=0&EndPeriod=0&StartRange=0&RangeType=0")
+         "&StartPeriod=0&EndPeriod=0&StartRange=0&EndRange=0&RangeType=0")
     try:
         payload=fetch_json(url,timeout=10)
         result_sets=payload.get("resultSets",[])
@@ -467,11 +468,14 @@ def main():
     # never be sent to NBA Stats as if they were 10-digit NBA game identifiers.
     fixture_rows=[{"espn_event_id":g.get("espn_event_id") or str(g["game_id"]).removeprefix("ESPN_"),
                    "away_alias":g["away_alias"],"home_alias":g["home_alias"]} for g in games]
-    nba_map,crosswalk_audit=resolve_nba_crosswalk(RUN_DATE,fixture_rows,fetch_json,normalize_alias)
-    for game in games:
-        eid=str(game.get("espn_event_id") or str(game["game_id"]).removeprefix("ESPN_"))
-        nba_id=nba_map.get(eid)
-        if nba_id:game["nba_game_id"]=nba_id
+    if ENABLE_NBA_V3:
+        nba_map,crosswalk_audit=resolve_nba_crosswalk(RUN_DATE,fixture_rows,fetch_json,normalize_alias)
+        for game in games:
+            eid=str(game.get("espn_event_id") or str(game["game_id"]).removeprefix("ESPN_"))
+            nba_id=nba_map.get(eid)
+            if nba_id:game["nba_game_id"]=nba_id
+    else:
+        crosswalk_audit={"status":"skipped_v3_disabled","reason":"ENABLE_NBA_V3=false","expected":len(games),"resolved":0}
     PROGRESS.state["source_audits"]["nba_crosswalk"]=crosswalk_audit
     PROGRESS.stage("nba_crosswalk_resolved")
     print("NBA_ID_CROSSWALK",json.dumps(crosswalk_audit,sort_keys=True),flush=True)
@@ -483,25 +487,31 @@ def main():
     PROGRESS.stage('C3_reconciled')
     print('C3 historical validation',c3archive['status'],c3archive['assigned'],'/',len(players),flush=True)
     adv=[c3archive]
-    with ThreadPoolExecutor(max_workers=8) as pool:
-        future_map={pool.submit(audit_advanced,g.get("nba_game_id"),results[g["game_id"]][1]):g["game_id"] for g in games}
-        for future in as_completed(future_map):
-            result=future.result()
-            adv.append({"game_id":future_map[future],**result})
-            PROGRESS.state["source_audits"].setdefault("NBA_AdvancedV3",[]).append({"game_id":future_map[future],**result})
-            PROGRESS.stage("checking_advanced_sources")
-            print("ADVANCED_V3",future_map[future],result["status"],flush=True)
-    # Independently retrieve NBA Misc V3 player-level C6 values when available.
-    # Leave all unavailable fields absent; report the true coverage.
     misc=[]
-    with ThreadPoolExecutor(max_workers=8) as pool:
-        jobs={pool.submit(add_misc_c6,g.get("nba_game_id"),results[g["game_id"]][1]):g["game_id"] for g in games}
-        for job in as_completed(jobs):
-            rec=job.result()
-            misc.append(rec)
-            PROGRESS.state["source_audits"].setdefault("C6",[]).append({"game_id":jobs[job],**rec})
-            PROGRESS.stage("collecting_C6")
-            print("C6 Misc V3",jobs[job],rec.get("status"),rec.get("coverage",{}),flush=True)
+    if ENABLE_NBA_V3:
+        with ThreadPoolExecutor(max_workers=8) as pool:
+            future_map={pool.submit(audit_advanced,g.get("nba_game_id"),results[g["game_id"]][1]):g["game_id"] for g in games}
+            for future in as_completed(future_map):
+                result=future.result()
+                adv.append({"game_id":future_map[future],**result})
+                PROGRESS.state["source_audits"].setdefault("NBA_AdvancedV3",[]).append({"game_id":future_map[future],**result})
+                PROGRESS.stage("checking_advanced_sources")
+                print("ADVANCED_V3",future_map[future],result["status"],flush=True)
+        # Independently retrieve NBA Misc V3 player-level C6 values when available.
+        with ThreadPoolExecutor(max_workers=8) as pool:
+            jobs={pool.submit(add_misc_c6,g.get("nba_game_id"),results[g["game_id"]][1]):g["game_id"] for g in games}
+            for job in as_completed(jobs):
+                rec=job.result()
+                misc.append(rec)
+                PROGRESS.state["source_audits"].setdefault("C6",[]).append({"game_id":jobs[job],**rec})
+                PROGRESS.stage("collecting_C6")
+                print("C6 Misc V3",jobs[job],rec.get("status"),rec.get("coverage",{}),flush=True)
+    else:
+        adv.append({"status":"skipped_v3_disabled","reason":"ENABLE_NBA_V3=false","C3_compatible":False})
+        misc.append({"status":"skipped_v3_disabled","reason":"ENABLE_NBA_V3=false"})
+        PROGRESS.state["source_audits"]["NBA_AdvancedV3"]=[adv[-1]]
+        PROGRESS.state["source_audits"]["C6"]=[misc[-1]]
+        print("NBA_V3_DISABLED: crosswalk, AdvancedV3 and MiscV3 skipped",flush=True)
     # Write a QCore-normalized archive BEFORE invoking the authorized engine.
     # Incomplete inputs produce an audit snapshot, but cannot be published as a
     # 'full category' report. Keep original scoring rules unchanged.
