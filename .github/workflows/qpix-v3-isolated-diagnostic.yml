@@ -1,0 +1,100 @@
+name: QPIX NBA V3 Isolated Diagnostic
+
+on:
+  workflow_dispatch:
+    inputs:
+      nba_game_id:
+        description: Verified 10-digit NBA game ID (default Nov 4 historical crosswalk)
+        required: false
+        default: '0022600173'
+  push:
+    paths:
+      - '.github/workflows/qpix-v3-isolated-diagnostic.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Test schedule crosswalk and V3 directly using a known verified NBA ID
+        env:
+          NBA_GAME_ID: ${{ inputs.nba_game_id || '0022600173' }}
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, os, time, urllib.request, urllib.error
+          from pathlib import Path
+          from urllib.parse import urlencode
+          
+          out = Path("v3-diagnostic-output")
+          out.mkdir(exist_ok=True)
+          game_id = os.getenv("NBA_GAME_ID", "0022600173")
+          if len(game_id) != 10 or not game_id.isdigit():
+              raise SystemExit("NBA_GAME_ID must be 10 digits, preserving leading zeros")
+          params = urlencode({
+              "GameID": game_id, "StartPeriod": 0, "EndPeriod": 0,
+              "StartRange": 0, "EndRange": 0, "RangeType": 0
+          })
+          headers = {
+              "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131 Safari/537.36",
+              "Accept": "application/json, text/plain, */*",
+              "Accept-Language": "en-US,en;q=0.9",
+              "Referer": "https://www.nba.com/",
+              "Origin": "https://www.nba.com",
+              "x-nba-stats-origin": "stats",
+              "x-nba-stats-token": "true"
+          }
+          urls = {
+              "nba_schedule_cdn": "https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_1.json",
+              "nba_boxscore_livedata": f"https://cdn.nba.com/static/json/liveData/boxscore/boxscore_{game_id}.json",
+              "advanced_v3": "https://stats.nba.com/stats/boxscoreadvancedv3?" + params,
+              "misc_v3": "https://stats.nba.com/stats/boxscoremiscv3?" + params
+          }
+          result = {"nba_game_id": game_id, "source": "known NBA.com game-page crosswalk archived in qpix_game_crosswalk.py", "probes": {}}
+          for name, url in urls.items():
+              print("PROBE", name, url, flush=True)
+              record = {"url": url}
+              start = time.monotonic()
+              try:
+                  request = urllib.request.Request(url, headers=headers)
+                  with urllib.request.urlopen(request, timeout=12) as response:
+                      payload = response.read()
+                      record["http_status"] = response.status
+                      record["content_type"] = response.headers.get("Content-Type")
+                      record["byte_count"] = len(payload)
+                  try:
+                      doc = json.loads(payload)
+                      record["json_valid"] = True
+                      record["root_keys"] = list(doc.keys())[:30] if isinstance(doc, dict) else []
+                      if isinstance(doc, dict):
+                          for key in ("boxScoreAdvanced", "boxScoreMisc"):
+                              box = doc.get(key)
+                              if isinstance(box, dict):
+                                  record[key + "_keys"] = list(box.keys())[:20]
+                                  record[key + "_player_count"] = sum(len((box.get(side) or {}).get("players", [])) for side in ("homeTeam", "awayTeam"))
+                  except (ValueError, UnicodeDecodeError):
+                      record["json_valid"] = False
+                      record["body_prefix"] = payload[:300].decode("utf8", "replace")
+              except urllib.error.HTTPError as e:
+                  record["http_status"] = e.code
+                  record["error"] = str(e)
+                  record["body_prefix"] = e.read(250).decode("utf8", "replace")
+              except Exception as e:
+                  record["error_type"] = type(e).__name__
+                  record["error"] = str(e)
+              record["elapsed_s"] = round(time.monotonic() - start, 2)
+              result["probes"][name] = record
+              print(json.dumps({name: record}, indent=2), flush=True)
+          (out / "diagnostics.json").write_text(json.dumps(result, indent=2) + "\n")
+          PY
+      - name: Upload all diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qpix-v3-isolated-diagnostics-${{ github.run_id }}
+          path: v3-diagnostic-output/
+          if-no-files-found: warn
+          retention-days: 14
