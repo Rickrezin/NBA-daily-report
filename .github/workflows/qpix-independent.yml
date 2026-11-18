@@ -12,6 +12,8 @@ permissions:
 jobs:
   score-and-publish:
     runs-on: ubuntu-latest
+    env:
+      ENABLE_NBA_V3: 'false'
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
