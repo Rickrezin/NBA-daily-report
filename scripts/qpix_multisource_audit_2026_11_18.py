@@ -62,7 +62,7 @@ assert len(sourcegames)==12,('Crosswalk extraction error',len(sourcegames))
 pbpbase='https://api.pbpstats.com'
 matches=[]
 for g in ESPN['games']:
-    teams=g['teams'];aliases={v['alias'] for v in teams.values()}
+    teams=g['teams'];alias_map={'WSH':'WAS','NO':'NOP','GS':'GSW','UTAH':'UTA'};aliases={alias_map.get(v['alias'],v['alias']) for v in teams.values()}
     away,home=g['final_scores']['away'],g['final_scores']['home']
     m=[x for x in sourcegames if {x['AwayTeamAbbreviation'],x['HomeTeamAbbreviation']}==aliases and x['AwayPoints']==away and x['HomePoints']==home]
     assert len(m)==1,('Ambiguous game join',g['espn_event_id'],m)
@@ -98,7 +98,7 @@ for idx,(g,ng) in enumerate(matches,1):
         brn[(p['team'],norm(p.get('player','')))].append(p)
     used_pbp=set();used_bref=set()
     for ep in eps_players(g):
-        e_team=g['teams'].get(str(ep.get('team_id')),{}) .get('alias')
+        e_team=alias_map.get(g['teams'].get(str(ep.get('team_id')),{}) .get('alias'),g['teams'].get(str(ep.get('team_id')),{}) .get('alias'))
         key=norm(ep['name'])
         candidates=pbn.get(key,[])
         b_candidates=brn.get((e_team,key),[])
