@@ -1,0 +1,868 @@
+{
+  "game_date_et": "2026-11-18",
+  "status": "PROVISIONAL",
+  "source_engine_git_blob_sha": "390833f45ee5191092813647f0735f1598cfeab1",
+  "qcore_model": "qcore-oliver-box-v0.1",
+  "provider_ratings_observed": 0,
+  "provider_ratings_error": "NBA Advanced V3 timed out; NBA LiveData HTTP 403",
+  "individual_C6_observed": 0,
+  "individual_fast_break_C11_observed": 0,
+  "games": [
+    {
+      "event_id": "401910007",
+      "home": "CLE",
+      "away": "MEM",
+      "team_checks": {
+        "MEM": {
+          "player_count": 12,
+          "points_reported": 124,
+          "points_from_players": 124,
+          "minutes_sum": 240.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": 15.0,
+          "plus_minus_expected": 15,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 13,
+          "reported_team_turnovers": 13
+        },
+        "CLE": {
+          "player_count": 10,
+          "points_reported": 121,
+          "points_from_players": 121,
+          "minutes_sum": 240.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": -15.0,
+          "plus_minus_expected": -15,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 11,
+          "reported_team_turnovers": 11
+        }
+      },
+      "status": "FINAL"
+    },
+    {
+      "event_id": "401910008",
+      "home": "IND",
+      "away": "HOU",
+      "team_checks": {
+        "HOU": {
+          "player_count": 14,
+          "points_reported": 119,
+          "points_from_players": 119,
+          "minutes_sum": 240.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": 75.0,
+          "plus_minus_expected": 75,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 17,
+          "reported_team_turnovers": 17
+        },
+        "IND": {
+          "player_count": 13,
+          "points_reported": 104,
+          "points_from_players": 104,
+          "minutes_sum": 239.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": -75.0,
+          "plus_minus_expected": -75,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 13,
+          "reported_team_turnovers": 13
+        }
+      },
+      "status": "FINAL"
+    },
+    {
+      "event_id": "401910009",
+      "home": "MIA",
+      "away": "MIL",
+      "team_checks": {
+        "MIL": {
+          "player_count": 12,
+          "points_reported": 130,
+          "points_from_players": 130,
+          "minutes_sum": 239.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": -35.0,
+          "plus_minus_expected": -35,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 18,
+          "reported_team_turnovers": 18
+        },
+        "MIA": {
+          "player_count": 12,
+          "points_reported": 137,
+          "points_from_players": 137,
+          "minutes_sum": 239.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": 35.0,
+          "plus_minus_expected": 35,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 20,
+          "reported_team_turnovers": 20
+        }
+      },
+      "status": "FINAL"
+    },
+    {
+      "event_id": "401910010",
+      "home": "ORL",
+      "away": "PHI",
+      "team_checks": {
+        "PHI": {
+          "player_count": 10,
+          "points_reported": 121,
+          "points_from_players": 121,
+          "minutes_sum": 239.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": 25.0,
+          "plus_minus_expected": 25,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 12,
+          "reported_team_turnovers": 12
+        },
+        "ORL": {
+          "player_count": 9,
+          "points_reported": 116,
+          "points_from_players": 116,
+          "minutes_sum": 241.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": -25.0,
+          "plus_minus_expected": -25,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 11,
+          "reported_team_turnovers": 11
+        }
+      },
+      "status": "FINAL"
+    },
+    {
+      "event_id": "401910011",
+      "home": "BKN",
+      "away": "CHI",
+      "team_checks": {
+        "CHI": {
+          "player_count": 13,
+          "points_reported": 137,
+          "points_from_players": 137,
+          "minutes_sum": 239.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": 150.0,
+          "plus_minus_expected": 150,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 16,
+          "reported_team_turnovers": 16
+        },
+        "BKN": {
+          "player_count": 13,
+          "points_reported": 107,
+          "points_from_players": 107,
+          "minutes_sum": 240.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": -150.0,
+          "plus_minus_expected": -150,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 22,
+          "reported_team_turnovers": 22
+        }
+      },
+      "status": "FINAL"
+    },
+    {
+      "event_id": "401910012",
+      "home": "TOR",
+      "away": "WAS",
+      "team_checks": {
+        "WAS": {
+          "player_count": 10,
+          "points_reported": 103,
+          "points_from_players": 103,
+          "minutes_sum": 239.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": 20.0,
+          "plus_minus_expected": 20,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 15,
+          "reported_team_turnovers": 15
+        },
+        "TOR": {
+          "player_count": 11,
+          "points_reported": 99,
+          "points_from_players": 99,
+          "minutes_sum": 240.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": -20.0,
+          "plus_minus_expected": -20,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 8,
+          "reported_team_turnovers": 8
+        }
+      },
+      "status": "FINAL"
+    },
+    {
+      "event_id": "401910013",
+      "home": "NOP",
+      "away": "DET",
+      "team_checks": {
+        "DET": {
+          "player_count": 10,
+          "points_reported": 122,
+          "points_from_players": 122,
+          "minutes_sum": 240.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": 65.0,
+          "plus_minus_expected": 65,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 17,
+          "reported_team_turnovers": 17
+        },
+        "NOP": {
+          "player_count": 10,
+          "points_reported": 109,
+          "points_from_players": 109,
+          "minutes_sum": 240.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": -65.0,
+          "plus_minus_expected": -65,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 16,
+          "reported_team_turnovers": 16
+        }
+      },
+      "status": "FINAL"
+    },
+    {
+      "event_id": "401910014",
+      "home": "OKC",
+      "away": "ATL",
+      "team_checks": {
+        "ATL": {
+          "player_count": 10,
+          "points_reported": 117,
+          "points_from_players": 117,
+          "minutes_sum": 240.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": 25.0,
+          "plus_minus_expected": 25,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 14,
+          "reported_team_turnovers": 14
+        },
+        "OKC": {
+          "player_count": 11,
+          "points_reported": 112,
+          "points_from_players": 112,
+          "minutes_sum": 240.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": -25.0,
+          "plus_minus_expected": -25,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 14,
+          "reported_team_turnovers": 14
+        }
+      },
+      "status": "FINAL"
+    },
+    {
+      "event_id": "401910016",
+      "home": "DAL",
+      "away": "GSW",
+      "team_checks": {
+        "GSW": {
+          "player_count": 12,
+          "points_reported": 94,
+          "points_from_players": 94,
+          "minutes_sum": 238.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": -110.0,
+          "plus_minus_expected": -110,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 19,
+          "reported_team_turnovers": 19
+        },
+        "DAL": {
+          "player_count": 13,
+          "points_reported": 116,
+          "points_from_players": 116,
+          "minutes_sum": 241.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": 110.0,
+          "plus_minus_expected": 110,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 20,
+          "reported_team_turnovers": 20
+        }
+      },
+      "status": "FINAL"
+    },
+    {
+      "event_id": "401910015",
+      "home": "DEN",
+      "away": "BOS",
+      "team_checks": {
+        "BOS": {
+          "player_count": 12,
+          "points_reported": 101,
+          "points_from_players": 101,
+          "minutes_sum": 240.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": -20.0,
+          "plus_minus_expected": -20,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 16,
+          "reported_team_turnovers": 16
+        },
+        "DEN": {
+          "player_count": 10,
+          "points_reported": 105,
+          "points_from_players": 105,
+          "minutes_sum": 240.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": 20.0,
+          "plus_minus_expected": 20,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 18,
+          "reported_team_turnovers": 18
+        }
+      },
+      "status": "FINAL"
+    },
+    {
+      "event_id": "401910017",
+      "home": "LAL",
+      "away": "UTA",
+      "team_checks": {
+        "UTA": {
+          "player_count": 11,
+          "points_reported": 109,
+          "points_from_players": 109,
+          "minutes_sum": 240.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": 60.0,
+          "plus_minus_expected": 60,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 23,
+          "reported_team_turnovers": 23
+        },
+        "LAL": {
+          "player_count": 14,
+          "points_reported": 97,
+          "points_from_players": 97,
+          "minutes_sum": 239.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": -60.0,
+          "plus_minus_expected": -60,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 18,
+          "reported_team_turnovers": 18
+        }
+      },
+      "status": "FINAL"
+    },
+    {
+      "event_id": "401910018",
+      "home": "SAC",
+      "away": "PHX",
+      "team_checks": {
+        "PHX": {
+          "player_count": 13,
+          "points_reported": 128,
+          "points_from_players": 128,
+          "minutes_sum": 241.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": 105.0,
+          "plus_minus_expected": 105,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 12,
+          "reported_team_turnovers": 12
+        },
+        "SAC": {
+          "player_count": 13,
+          "points_reported": 107,
+          "points_from_players": 107,
+          "minutes_sum": 240.0,
+          "minutes_expected": 240,
+          "plus_minus_sum": -105.0,
+          "plus_minus_expected": -105,
+          "starter_count": 5,
+          "player_plus_team_turnovers": 16,
+          "reported_team_turnovers": 16
+        }
+      },
+      "status": "FINAL"
+    }
+  ],
+  "model_errors": [],
+  "starter_conflicts": [],
+  "player_source_discrepancies": [],
+  "source_provenance": {
+    "captures": [
+      {
+        "event_id": "401910007",
+        "sha256": "d2b385c37c5ed403bbd945a1fc930f2d0df265683e9e1eb3e751854279ab9487",
+        "status": "STATUS_FINAL"
+      },
+      {
+        "event_id": "401910008",
+        "sha256": "6c6c62bb891e48c242cb5819030e20bdfc95a2ea1c7192d1049ec2147c16e596",
+        "status": "STATUS_FINAL"
+      },
+      {
+        "event_id": "401910009",
+        "sha256": "eb136324d4495161f39f827cfdf7021345500090fbec23299089817270934464",
+        "status": "STATUS_FINAL"
+      },
+      {
+        "event_id": "401910010",
+        "sha256": "63fac76b1979121c9c921f8a3b844335c4fd951f0e079145737e4ca99c9bc6ae",
+        "status": "STATUS_FINAL"
+      },
+      {
+        "event_id": "401910011",
+        "sha256": "ef57116ea4bd081ebb2f2075018a7eb961b6e7101d3497b13228948da2928b3d",
+        "status": "STATUS_FINAL"
+      },
+      {
+        "event_id": "401910012",
+        "sha256": "33c47cb6a8a22f8f31f3f0316e13c4aa863aaac70434268b576142f8cb0a684b",
+        "status": "STATUS_FINAL"
+      },
+      {
+        "event_id": "401910013",
+        "sha256": "d165cdb8ef32b34fa9e619b7396fb0418a6b04ab7d632a113ff78877442574fa",
+        "status": "STATUS_FINAL"
+      },
+      {
+        "event_id": "401910014",
+        "sha256": "b8b70d371e92d58d04af87e9873c7fcfb5970fec2b2828b69b6dc60dbf1abc1b",
+        "status": "STATUS_FINAL"
+      },
+      {
+        "event_id": "401910016",
+        "sha256": "5852daa895c60578b3cf811829207eb7c90e57c76a0bb2b0c6fdc10232e9f6bf",
+        "status": "STATUS_FINAL"
+      },
+      {
+        "event_id": "401910015",
+        "sha256": "685d4a2cb4865fed87f3087e61abdc826724da9835e8122ed57d17c06e166d59",
+        "status": "STATUS_FINAL"
+      },
+      {
+        "event_id": "401910017",
+        "sha256": "36b79c2f660c375bd9ca6a9258331b712650726c3083be8bf654639f2b3c36f0",
+        "status": "STATUS_FINAL"
+      },
+      {
+        "event_id": "401910018",
+        "sha256": "d3ef795d9d7cd1c8fffac8e05b300915f8592c024aa098ecf0e0cdc6dd0d7b3d",
+        "status": "STATUS_FINAL"
+      }
+    ],
+    "date_et": "2026-11-18"
+  },
+  "participating_players": 278,
+  "eligible_strictly_gt8": 234,
+  "qcore_both": 270,
+  "qcore_missing_both": 8,
+  "nba_game_id_source_check": {
+    "error": "HTTP Error 403: Forbidden",
+    "status": "NBA schedule crosswalk unavailable"
+  },
+  "NBA_AdvancedV3": "unavailable on shared runner; no independently verified current-game NBA ID crosswalk",
+  "NBA_MiscV3": "unavailable on shared runner; no independently verified current-game NBA ID crosswalk",
+  "pbp_event_count": 5754,
+  "pbp_discrepancy_summary": {
+    "event_vs_ESPN_box": 41,
+    "lineup_plus_minus_vs_box": 53,
+    "score_correction_or_rollback": 5,
+    "substitution_lineup_inconsistency": 1
+  },
+  "raw_original_pbp_archive": "GitHub Actions artifact qpix-espn-pbp-raw-2026-11-18-44520417606",
+  "derived_pbp_json": "data/historical/qpix_pbp_derived/2026-11-18.json",
+  "scoring_input": "ESPN official boxes; experimental Nov 5 QCore individual ratings",
+  "scoring_certified": false,
+  "score_publication_status": "PROVISIONAL_SHADOW_NOT_OFFICIAL",
+  "score_coverage": {
+    "final_games": 12,
+    "participating_players": 278,
+    "eligible_gt8": 234,
+    "qcore_both": 270,
+    "observed_provider_individual_ratings": 0,
+    "verified_C6_players": 0,
+    "verified_fast_break_C11_players": 0,
+    "starter_context_mismatches": 42
+  },
+  "score_engine": {
+    "authoritative_file": "generate-report.js",
+    "git_blob_sha": "390833f45ee5191092813647f0735f1598cfeab1",
+    "phase": "regular",
+    "season_end": 2027,
+    "method": "unmodified_source_function_bodies_node_vm_without_main",
+    "formulas_modified": false
+  },
+  "top10_ids": [
+    "5041939",
+    "3032977",
+    "4566434",
+    "4278078",
+    "4433627",
+    "4871145",
+    "3936299",
+    "3136193",
+    "5041935",
+    "3112335"
+  ],
+  "bottom10_ids": [
+    "3135046",
+    "4997538",
+    "4873153",
+    "4277843",
+    "5106060",
+    "4278104",
+    "4711297",
+    "4065732",
+    "5144126",
+    "3037789"
+  ],
+  "starter_context_mismatches": [
+    {
+      "name": "Taylor Hendricks",
+      "team": "MEM",
+      "player_id": "4684806",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 21
+    },
+    {
+      "name": "Javon Small",
+      "team": "MEM",
+      "player_id": "4781746",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 21
+    },
+    {
+      "name": "Alperen Sengun",
+      "team": "HOU",
+      "player_id": "4871144",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 14
+    },
+    {
+      "name": "Tari Eason",
+      "team": "HOU",
+      "player_id": "4433192",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 25
+    },
+    {
+      "name": "Reed Sheppard",
+      "team": "HOU",
+      "player_id": "4711272",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 25
+    },
+    {
+      "name": "Myles Turner",
+      "team": "MIL",
+      "player_id": "3133628",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 21
+    },
+    {
+      "name": "Jericho Sims",
+      "team": "MIL",
+      "player_id": "4277922",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 18
+    },
+    {
+      "name": "Jaime Jaquez Jr.",
+      "team": "MIL",
+      "player_id": "4432848",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 23
+    },
+    {
+      "name": "Kasparas Jakucionis",
+      "team": "MIL",
+      "player_id": "5214640",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 26
+    },
+    {
+      "name": "Klay Thompson",
+      "team": "MIA",
+      "player_id": "6475",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 23
+    },
+    {
+      "name": "Pelle Larsson",
+      "team": "MIA",
+      "player_id": "4601025",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 15
+    },
+    {
+      "name": "Andrew Wiggins",
+      "team": "MIA",
+      "player_id": "3059319",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 26
+    },
+    {
+      "name": "Ryan Conwell",
+      "team": "MIA",
+      "player_id": "5107157",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 26
+    },
+    {
+      "name": "Jalen Smith",
+      "team": "CHI",
+      "player_id": "4397189",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 21
+    },
+    {
+      "name": "Nic Claxton",
+      "team": "CHI",
+      "player_id": "4278067",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 22
+    },
+    {
+      "name": "Day'Ron Sharpe",
+      "team": "BKN",
+      "player_id": "4432194",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 22
+    },
+    {
+      "name": "Danny Wolf",
+      "team": "BKN",
+      "player_id": "5107173",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 23
+    },
+    {
+      "name": "Mikel Brown Jr.",
+      "team": "BKN",
+      "player_id": "5101761",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 27
+    },
+    {
+      "name": "Alex Sarr",
+      "team": "WAS",
+      "player_id": "5160992",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 22
+    },
+    {
+      "name": "Bilal Coulibaly",
+      "team": "WAS",
+      "player_id": "5104155",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 26
+    },
+    {
+      "name": "Collin Murray-Boyles",
+      "team": "TOR",
+      "player_id": "5093267",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 5
+    },
+    {
+      "name": "Allen Graves",
+      "team": "TOR",
+      "player_id": "5149115",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 31
+    },
+    {
+      "name": "Yves Missi",
+      "team": "NOP",
+      "player_id": "5061589",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 17
+    },
+    {
+      "name": "Jordan Poole",
+      "team": "NOP",
+      "player_id": "4277956",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 30
+    },
+    {
+      "name": "Aaron Wiggins",
+      "team": "ATL",
+      "player_id": "4397183",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 26
+    },
+    {
+      "name": "Luguentz Dort",
+      "team": "ATL",
+      "player_id": "4397020",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 31
+    },
+    {
+      "name": "LJ Cryer",
+      "team": "GSW",
+      "player_id": "4433149",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 19
+    },
+    {
+      "name": "Will Richard",
+      "team": "GSW",
+      "player_id": "4897262",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 27
+    },
+    {
+      "name": "Caleb Martin",
+      "team": "DAL",
+      "player_id": "3138160",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 20
+    },
+    {
+      "name": "Daniel Gafford",
+      "team": "DAL",
+      "player_id": "4278049",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 24
+    },
+    {
+      "name": "Naji Marshall",
+      "team": "DAL",
+      "player_id": "4278594",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 27
+    },
+    {
+      "name": "Walter Clayton Jr.",
+      "team": "DAL",
+      "player_id": "4896372",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 27
+    },
+    {
+      "name": "Jordan Walsh",
+      "team": "BOS",
+      "player_id": "4683689",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 4
+    },
+    {
+      "name": "Payton Pritchard",
+      "team": "BOS",
+      "player_id": "4066354",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 30
+    },
+    {
+      "name": "Mo Bamba",
+      "team": "UTA",
+      "player_id": "4277919",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 23
+    },
+    {
+      "name": "Darryn Peterson",
+      "team": "UTA",
+      "player_id": "5041955",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 19
+    },
+    {
+      "name": "Jaxson Hayes",
+      "team": "UTA",
+      "player_id": "4397077",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 25
+    },
+    {
+      "name": "Svi Mykhailiuk",
+      "team": "UTA",
+      "player_id": "3133602",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 34
+    },
+    {
+      "name": "Ziaire Williams",
+      "team": "LAL",
+      "player_id": "4433137",
+      "observed_starter": true,
+      "engine_bench": true,
+      "minutes": 18
+    },
+    {
+      "name": "Sandro Mamukelashvili",
+      "team": "LAL",
+      "player_id": "4278580",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 21
+    },
+    {
+      "name": "Jake LaRavia",
+      "team": "LAL",
+      "player_id": "4592691",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 30
+    },
+    {
+      "name": "Khaman Maluach",
+      "team": "PHX",
+      "player_id": "5203685",
+      "observed_starter": false,
+      "engine_bench": false,
+      "minutes": 21
+    }
+  ],
+  "full_participant_records": 278,
+  "public_report": "docs/reports/2026-11-18.provisional.md"
+}
