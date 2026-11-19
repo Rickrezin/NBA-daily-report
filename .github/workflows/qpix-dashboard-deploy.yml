@@ -1,0 +1,60 @@
+name: QPIX HTML Dashboard Deploy
+on:
+  workflow_run:
+    workflows:
+      - QPIX November 18 Source-First Provisional Publication
+      - NBA Daily Report
+      - QPIX Independent Verified Report
+    types: [completed]
+  push:
+    branches: [main]
+    paths:
+      - 'data/daily/**'
+      - 'scripts/render_qpix_dashboard.py'
+      - '.github/workflows/qpix-dashboard-deploy.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: qpix-dashboard-pages
+  cancel-in-progress: false
+
+jobs:
+  publish-dashboard:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout most recent main report
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Build QPIX dashboard from latest dated report
+        run: python3 scripts/render_qpix_dashboard.py
+      - name: Validate generated HTML and data freshness
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          s=Path('dashboard/index.html').read_text()
+          assert '<!doctype html>' in s.lower()
+          assert 'Awaiting First Run' not in s
+          assert 'RAW QPIX Top 10' in s
+          assert 'RAW QPIX Bottom 10' in s
+          assert 'Every Player' in s
+          print('Dashboard HTML verified:',len(s),'bytes')
+          PY
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload HTML dashboard
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dashboard
+      - name: Deploy HTML dashboard
+        id: deployment
+        uses: actions/deploy-pages@v4
