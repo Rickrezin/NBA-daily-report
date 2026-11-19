@@ -1,0 +1,60 @@
+name: QPIX Player Fast-Break Schema Enrichment
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/daily/*.json'
+      - 'data/daily/*.csv'
+      - 'scripts/qpix_fastbreak_output_fields.py'
+      - '.github/workflows/qpix-fastbreak-schema.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: qpix-fastbreak-output-schema
+  cancel-in-progress: false
+
+jobs:
+  enrich-daily-player-outputs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - name: Enrich latest published date without scoring changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          DATE=$(python3 - <<'PY'
+          from pathlib import Path
+          import re
+          dates=[p.name[:10] for p in Path('data/daily').glob('*.json') if re.match(r'^\d{4}-\d{2}-\d{2}(?:\.provisional)?\.json$',p.name)]
+          if not dates: raise SystemExit('No dated published JSON found')
+          print(max(dates))
+          PY
+          )
+          echo "Using QPIX date: $DATE"
+          python3 scripts/qpix_fastbreak_output_fields.py --date-et "$DATE"
+      - name: Publish output schema extension without altering QPIX scoring
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'QPIX schema archive'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -f data/daily/*.provisional.json data/daily/*.provisional.csv 2>/dev/null || true
+          git add -u data/daily
+          if git diff --cached --quiet; then
+            echo 'Schema already current'
+            exit 0
+          fi
+          git commit -m "Expose source-labeled fast-break fields in daily QPIX output"
+          git pull --rebase origin main
+          git push origin HEAD:main
+          for file in $(git diff-tree --no-commit-id --name-only -r HEAD | grep '^data/daily/'); do
+            git show HEAD:"$file" > /tmp/qpix-schema-readback
+            cmp "$file" /tmp/qpix-schema-readback
+          done
+          echo 'Fast-break output schema committed and locally read-back verified.'
