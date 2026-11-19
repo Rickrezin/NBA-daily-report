@@ -1,0 +1,197 @@
+name: QPIX November 18 Source-First Provisional Publication
+on:
+  push:
+    paths:
+      - '.github/workflows/qpix-2026-11-18-provisional.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  derive-score-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Retrieve independently archived original ESPN sources and source-shadow input
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p data/historical/qpix_pbp_raw/2026-11-18
+          gh run download 44520417606 -R Rickrezin/NBA-daily-report -n qpix-espn-pbp-raw-2026-11-18-44520417606 -D data/historical/qpix_pbp_raw/2026-11-18
+          gh run download 44520421636 -R Rickrezin/NBA-daily-report -n qpix-unified-shadow-2026-11-18 -D .
+          test -s data/historical/qpix_input/2026-11-18.json
+          test -s data/historical/qpix_pbp_raw/2026-11-18/manifest.json
+      - name: Parse and reconcile every original ESPN event before scoring
+        run: python3 scripts/qpix_pbp_derive.py --date-et 2026-11-18
+      - name: Fetch exact QCore experimental Nov 5 model from research branch
+        run: |
+          mkdir -p experiments/qcore
+          git fetch --depth=1 origin dev/qcore-independent-ratings-20261105
+          git show FETCH_HEAD:experiments/qcore/model.py > experiments/qcore/model.py
+      - name: Validate every source box, four-way team accounting and run original QCore fallback
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,hashlib
+          date='2026-11-18'
+          root=Path('data/historical/qpix_pbp_raw')/date
+          manifest=json.loads((root/'manifest.json').read_text())
+          assert manifest['date_et']==date and manifest['reconciled_games']==manifest['final_games']==12 and not manifest['errors']
+          out=Path('data/espn_raw')
+          out.mkdir(exist_ok=True)
+          captures=[]
+          for game in manifest['games']:
+              event=game['espn_event_id']
+              content=(root/'games'/event/'summary.json').read_bytes()
+              (out/(event+'.json')).write_bytes(content)
+              captures.append({'event_id':event,'sha256':hashlib.sha256(content).hexdigest(),'status':'STATUS_FINAL'})
+          (out/'provenance.json').write_text(json.dumps({'captures':captures,'date_et':date}))
+          source=Path('scripts/qpix_nov11_provisional_prepare.py').read_text()
+          source=source.replace('2026-11-11',date)
+          source=source.replace('len(games)==10 and len(players)==223','len(games)==12 and len(players)==278')
+          source=source.replace("len(prov['captures'])==10","len(prov['captures'])==12")
+          source=source.replace("len(audit['games'])==10","len(audit['games'])==12")
+          source=source.replace("if athlete.get('didNotPlay') or not athlete.get('stats'):continue","if athlete.get('didNotPlay') or not athlete.get('stats') or float(athlete['stats'][0])<=0:continue")
+          assert 'len(games)==12 and len(players)==278' in source
+          Path('scripts/qpix_daily_prepare_2026-11-18.py').write_text(source)
+          PY
+          python3 scripts/qpix_daily_prepare_2026-11-18.py
+      - name: Run unchanged authoritative main QPIX C1-C13 for EVERY player
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          s=Path('scripts/qpix_nov11_provisional_score.cjs').read_text()
+          s=s.replace('2026-11-11','2026-11-18').replace('games.length!==10||players.length!==223','games.length!==12||players.length!==278')
+          assert "inp.date_et!=='2026-11-18'" in s
+          Path('scripts/qpix_daily_score_2026-11-18.cjs').write_text(s)
+          PY
+          node scripts/qpix_daily_score_2026-11-18.cjs
+      - name: Try ESPN verified pregame 20-game FTA and unchanged QPIX-R C13
+        continue-on-error: true
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          s=Path('scripts/qpix_nov12_fta_recheck.py').read_text().replace("DATE='2026-11-12'","DATE='2026-11-18'")
+          s=s.replace("max_workers=10","max_workers=18")
+          s=s.replace("if status_counts.get('ESPN_GAMELOG_VERIFIED',0)<68:","if status_counts.get('ESPN_GAMELOG_VERIFIED',0)<.75*len(PLAYERS):")
+          Path('scripts/qpix_daily_fta_2026-11-18.py').write_text(s)
+          PY
+          python3 scripts/qpix_daily_fta_2026-11-18.py || true
+          if [[ -s data/historical/qpix_fta/2026-11-18.json ]]; then
+            python3 - <<'PY'
+          from pathlib import Path
+          s=Path('scripts/qpix_nov12_qpixr_recheck.cjs').read_text().replace('2026-11-12','2026-11-18')
+          Path('scripts/qpix_daily_qpixr_2026-11-18.cjs').write_text(s)
+          PY
+            node scripts/qpix_daily_qpixr_2026-11-18.cjs
+          fi
+      - name: Capture upstream source restrictions without supplying ESPN IDs as NBA IDs
+        continue-on-error: true
+        run: |
+          python3 - <<'PY'
+          import json,urllib.request,urllib.error
+          from pathlib import Path
+          path=Path('docs/reports/2026-11-18.audit.json')
+          audit=json.loads(path.read_text())
+          url='https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_1.json'
+          req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0','Referer':'https://www.nba.com/'})
+          try:
+              with urllib.request.urlopen(req,timeout=4) as r: rec={'status':r.status}
+          except Exception as e:
+              rec={'error':str(e),'status':'NBA schedule crosswalk unavailable'}
+          audit['nba_game_id_source_check']=rec
+          audit['NBA_AdvancedV3']='unavailable on shared runner; no independently verified current-game NBA ID crosswalk'
+          audit['NBA_MiscV3']='unavailable on shared runner; no independently verified current-game NBA ID crosswalk'
+          audit['raw_original_pbp_archive']='GitHub Actions artifact qpix-espn-pbp-raw-2026-11-18-44520417606'
+          audit['derived_pbp_json']='data/historical/qpix_pbp_derived/2026-11-18.json'
+          audit['scoring_input']='ESPN official boxes; experimental Nov 5 QCore individual ratings'
+          audit['scoring_certified']=False
+          audit['score_publication_status']='PROVISIONAL_SHADOW_NOT_OFFICIAL'
+          path.write_text(json.dumps(audit,indent=2)+'\n')
+          print('NBA SOURCE CHECK',rec)
+          PY
+      - name: Produce date-correct provisional social report and original source ZIP
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,datetime,zipfile
+          d='2026-11-18'
+          r=Path('.')
+          j=json.loads((r/f'data/daily/{d}.provisional.json').read_text())
+          a=json.loads((r/f'docs/reports/{d}.audit.json').read_text())
+          assert len(j['games'])==12 and len(j['players'])==278
+          byid={str(p['player_id']):p for p in j['players']}
+          top=[byid[str(x)] for x in j['leaderboards']['top10']]
+          bottom=[byid[str(x)] for x in j['leaderboards']['bottom10']]
+          assert len(top)==len(bottom)==10 and all(p['minutes']>8 for p in top+bottom)
+          teams={'MEM':'Memphis Grizzlies','CLE':'Cleveland Cavaliers','HOU':'Houston Rockets','IND':'Indiana Pacers','MIL':'Milwaukee Bucks','MIA':'Miami Heat','PHI':'Philadelphia 76ers','ORL':'Orlando Magic','CHI':'Chicago Bulls','BKN':'Brooklyn Nets','WAS':'Washington Wizards','TOR':'Toronto Raptors','DET':'Detroit Pistons','NOP':'New Orleans Pelicans','ATL':'Atlanta Hawks','OKC':'Oklahoma City Thunder','GSW':'Golden State Warriors','DAL':'Dallas Mavericks','BOS':'Boston Celtics','DEN':'Denver Nuggets','UTA':'Utah Jazz','LAL':'Los Angeles Lakers','PHX':'Phoenix Suns','SAC':'Sacramento Kings'}
+          fmt=lambda n:f"{n:.1f}"
+          p=top[0]
+          head=f"{p['name'].upper()} LEADS A 12-GAME NBA NIGHT"
+          box=lambda x:f"{x['points']} points, {x['rebounds']} rebounds, {x['assists']} assists, {x['steals']} steals, {x['blocks']} blocks, {x['turnovers']} turnovers in {x['minutes']:.0f} minutes"
+          lines=["QCORE LABS QPIX™ NBA DAILY PERFORMANCE INDEX","","Wednesday, November 18, 2026",f"12 FINAL GAMES | {len(j['players'])} PLAYERS EVALUATED | {j['coverage']['eligible_gt8']} LEADERBOARD-ELIGIBLE","PROVISIONAL / SHADOW — NOT AN OFFICIALLY CERTIFIED RANKING","","NBA FINAL SCORES",""]
+          for g in j['games']:lines.append(f"{teams.get(g['away_alias'],g['away_alias'])} {g['away_points']} — {teams.get(g['home_alias'],g['home_alias'])} {g['home_points']}")
+          lines+=["",head,"",f"{p['name']} ({p['team']}) paced the night's provisional RAW index at {fmt(p['raw_qpix_shadow'])} (QPIX-R {fmt(p['qpix_r_shadow'])}). His line: {box(p)}. He shot {p['fgm']}-for-{p['fga']} overall and {p['fg3m']}-for-{p['fg3a']} from three, with a {p['plus_minus']:+.0f} on-court differential.","","QPIX TOP 10 — PROVISIONAL RAW | QPIX-R COMPANION",""]
+          for i,x in enumerate(top,1):lines.append(f"{i}. {x['name']} ({x['team']}) — RAW {fmt(x['raw_qpix_shadow'])} | QPIX-R {fmt(x['qpix_r_shadow'])}")
+          lines+=["","THE PERFORMANCES BEHIND THE NUMBERS",""]
+          for x in top[:6]:
+              v=f"{x['name']} ({x['team']}) contributed {box(x)} and shot {x['fgm']}-for-{x['fga']} from the floor ({x['fg3m']}-for-{x['fg3a']} on threes)."
+              v+=f" His on-court differential was {x['plus_minus']:+.0f}; {x['steals']+x['blocks']} combined steals and blocks complement the scoring and passing contribution."
+              if x.get('qcore_q_offr') is not None and x.get('qcore_q_defr') is not None:
+                  v+=f" Experimental Q-OffR {x['qcore_q_offr']:.2f}, Q-DefR {x['qcore_q_defr']:.2f} (not provider-certified)."
+              lines.extend([v,""])
+          lines+=["QPIX BOTTOM 10 — PROVISIONAL RAW",""]
+          for i,x in enumerate(bottom,1):lines.append(f"{i}. {x['name']} ({x['team']}) — RAW {fmt(x['raw_qpix_shadow'])}")
+          lines+=["","THE OTHER END OF THE INDEX",""]
+          for x in bottom[:3]:lines.append(f"{x['name']} ({x['team']}): {box(x)}; {x['fgm']}-for-{x['fga']} shooting, {x['plus_minus']:+.0f} on court. This measures one game, not overall player value.")
+          lines+=["","THE QPIX TAKEAWAY","",f"{p['name']} leads not simply by counting points: efficiency, passing, turnovers, rebounding, stocks and game context can change the order. RAW QPIX determines this provisional ranking; QPIX-R is the separate referee-normalized companion. An outstanding scoring total need not imply the best all-around game.","","DATA QUALITY / PUBLICATION","",f"PROVISIONAL ONLY. All 12 Eastern-date finals, 278 participating players, and {a['pbp_event_count']} original ESPN play-by-play events were obtained. Full ESPN box-score reconciliation passed. The event-level derivation identified {a['pbp_discrepancy_summary'].get('event_vs_ESPN_box',0)} event-versus-box discrepancies and {a['pbp_discrepancy_summary'].get('lineup_plus_minus_vs_box',0)} experimental lineup discrepancies; event-inferred fields were not substituted for the official box stats. QCore's November 5 model supplied {a['qcore_both']} experimental rating pairs; independent compatible individual ratings and player-level paint, fast-break and second-chance totals remain unverified, so C3/C4 sensitivity, C6 and C11 prevent official certification. All leaderboard players exceed eight minutes; QPIX-SFA is only a separately tagged companion when eligible.","","QCore Labs © 2026","QPIX™ — Because the box score never tells the whole story.",""]
+          out=r/f'docs/reports/{d}.provisional.md';out.parent.mkdir(parents=True,exist_ok=True);out.write_text('\n'.join(lines))
+          a['score_coverage']=j['coverage'];a['score_engine']=j['engine'];a['top10_ids']=j['leaderboards']['top10'];a['bottom10_ids']=j['leaderboards']['bottom10'];a['starter_context_mismatches']=j['starter_context_mismatches'];a['full_participant_records']=len(j['players'])
+          a['public_report']=str(out)
+          (r/f'docs/reports/{d}.audit.json').write_text(json.dumps(a,indent=2)+'\n')
+          raw=r/f'data/historical/qpix_pbp_raw/{d}'
+          archive=r/f'data/historical/qpix_pbp_raw_archives/{d}.zip'
+          archive.parent.mkdir(parents=True,exist_ok=True)
+          with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=8) as z:
+              for file in sorted(raw.rglob('*.json')):z.write(file,file.relative_to(raw))
+          readback=json.loads((r/f'data/historical/qpix_pbp_derived/{d}.json').read_text())
+          assert sum(len(g['events']) for g in readback['games'])==a['pbp_event_count']
+          print('REPORT GENERATED',out,archive, 'players',len(j['players']))
+          PY
+      - name: Store all provisional and source outputs in a downloadable run artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qpix-2026-11-18-full-provisional
+          path: |
+            data/daily/2026-11-18.provisional.json
+            data/daily/2026-11-18.provisional.csv
+            docs/reports/2026-11-18.audit.json
+            docs/reports/2026-11-18.provisional.md
+            data/historical/qpix_input/2026-11-18.json
+            data/historical/qpix_pbp_derived/2026-11-18.json
+            data/historical/qpix_pbp_raw_archives/2026-11-18.zip
+            data/historical/qpix_fta/2026-11-18.json
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Safely publish explicitly PROVISIONAL files to main
+        run: |
+          git config user.name 'QPIX Independent Provisional Archive'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -f data/daily/2026-11-18.provisional.json data/daily/2026-11-18.provisional.csv docs/reports/2026-11-18.audit.json docs/reports/2026-11-18.provisional.md data/historical/qpix_input/2026-11-18.json data/historical/qpix_pbp_derived/2026-11-18.json data/historical/qpix_pbp_raw_archives/2026-11-18.zip
+          if [[ -f data/historical/qpix_fta/2026-11-18.json ]]; then git add -f data/historical/qpix_fta/2026-11-18.json; fi
+          git diff --cached --quiet && { echo 'No provisional change'; exit 0; }
+          git commit -m 'Archive Nov 18 source-first, all-player PROVISIONAL QPIX shadow'
+          git push origin HEAD:main
+          for f in data/daily/2026-11-18.provisional.json data/daily/2026-11-18.provisional.csv docs/reports/2026-11-18.audit.json docs/reports/2026-11-18.provisional.md data/historical/qpix_pbp_derived/2026-11-18.json; do
+            git show HEAD:"$f" > /tmp/qpix_readback
+            cmp -s "$f" /tmp/qpix_readback || { echo "Readback failed: $f"; exit 1; }
+          done
+          echo 'Provisional publication committed, readback verified locally; never labeled official.' >> "$GITHUB_STEP_SUMMARY"
