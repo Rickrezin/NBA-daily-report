@@ -1,0 +1,66 @@
+name: QPIX PBPStats Contract-Based Data Probe
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/qpix-pbpstats-contract-probe.yml']
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Fetch OpenAPI and make schema-valid low-volume requests
+        shell: bash
+        run: |
+          mkdir -p audit
+          python3 - <<'PY'
+          import urllib.request,urllib.error,urllib.parse,json,time
+          base='https://api.pbpstats.com'
+          hdr={'User-Agent':'QCoreLabs-QPIX-SourceAudit/1.0 (https://github.com/Rickrezin/NBA-daily-report)','Accept':'application/json'}
+          def fetch(path,params=None,timeout=16):
+            url=base+path
+            if params:url+='?'+urllib.parse.urlencode(params)
+            rec={'path':path,'params':params}
+            try:
+              with urllib.request.urlopen(urllib.request.Request(url,headers=hdr),timeout=timeout) as r:
+                body=r.read(450000)
+                rec.update({'http':r.status,'bytes':len(body)})
+                try:
+                  obj=json.loads(body)
+                  rec['keys']=list(obj)[:35] if isinstance(obj,dict) else ['array']
+                  rec['sample']=str(obj)[:2500]
+                except ValueError:rec['sample']=body[:300].decode('utf-8','replace')
+            except urllib.error.HTTPError as e:
+              rec.update({'http':e.code,'error':e.read(300).decode('utf-8','replace')})
+            except Exception as e:
+              rec.update({'error':type(e).__name__+': '+str(e)})
+            print('PROBE',json.dumps(rec),flush=True)
+            return rec
+          with urllib.request.urlopen(urllib.request.Request(base+'/openapi.json',headers=hdr),timeout=20) as r:
+            spec=json.load(r)
+          components=spec.get('components',{}).get('schemas',{})
+          for key in ['LeagueEnum','SeasonTypeEnum','NonTeamEntityTypeEnum','EntityTypeEnum']:
+            print('ENUM',key,json.dumps(components.get(key,{})),flush=True)
+          season=components.get('SeasonTypeEnum',{}).get('enum',['Regular Season'])[0]
+          vals=components.get('SeasonTypeEnum',{}).get('enum',[])
+          season=next((v for v in vals if 'regular' in str(v).lower()),season)
+          typevals=components.get('NonTeamEntityTypeEnum',{}).get('enum',[])
+          typ=next((v for v in typevals if 'player' in str(v).lower()),typevals[0] if typevals else 'Player')
+          print('SELECTED',json.dumps({'SeasonType':season,'Type':typ}),flush=True)
+          results=[]
+          results.append(fetch('/get-teams/nba'))
+          time.sleep(2)
+          results.append(fetch('/get-games/nba',{'Season':'2026-27','SeasonType':season}))
+          time.sleep(2)
+          # Deliberately avoid guessing a GameId. Request validation response with contract-correct Type, no ID.
+          results.append(fetch('/get-game-stats',{'Type':typ}))
+          with open('audit/probe.json','w') as f:json.dump({'enum_values':{k:components.get(k,{}) for k in ['LeagueEnum','SeasonTypeEnum','NonTeamEntityTypeEnum']},'results':results},f,indent=2)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qpix-pbpstats-contract-probe
+          path: audit/
+          retention-days: 14
