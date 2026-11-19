@@ -1,0 +1,98 @@
+name: QPIX PBPStats Source Probe
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/qpix-pbpstats-probe.yml'
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe hosted PBPStats from GitHub cloud IP
+        shell: bash
+        run: |
+          mkdir -p qpix-pbpstats-probe
+          python3 - <<'PY'
+          import json, urllib.request, urllib.error, urllib.parse, time, re, os
+          from datetime import datetime, timezone
+          root='https://api.pbpstats.com'
+          output={'probe_utc':datetime.now(timezone.utc).isoformat(),'requested_date_et':'2026-11-18','tests':[],'discoveries':[]}
+          headers={'User-Agent':'QCoreLabs-QPIX-Research/1.0 (+https://github.com/Rickrezin/NBA-daily-report; courteous rate-limited source diagnostic)','Accept':'application/json'}
+          def get(path,params=None):
+              url=root+path
+              if params: url+='?'+urllib.parse.urlencode(params)
+              rec={'endpoint':path,'params':params,'status':None,'content_type':None}
+              try:
+                  req=urllib.request.Request(url,headers=headers)
+                  with urllib.request.urlopen(req,timeout=12) as resp:
+                      body=resp.read(2_000_000)
+                      rec['status']=resp.status
+                      rec['content_type']=resp.headers.get('Content-Type')
+                      rec['byte_count']=len(body)
+                      try:
+                          j=json.loads(body)
+                          rec['top_level_keys']=list(j)[:35] if isinstance(j,dict) else ['array']
+                          rec['preview']=str(j)[:1800]
+                          return rec,j
+                      except ValueError:
+                          rec['preview']=body[:400].decode('utf-8','replace')
+              except urllib.error.HTTPError as e:
+                  rec['status']=e.code
+                  rec['error']=str(e)
+                  rec['preview']=e.read(300).decode('utf-8','replace')
+              except Exception as e:
+                  rec['error']=type(e).__name__+': '+str(e)
+              return rec,None
+          tasks=[
+              ('/openapi.json',None),
+              ('/get-games/nba',{'season':'2026-27','season_type':'Regular Season'}),
+              ('/get-game-stats',{'game_id':'0022600001'}),
+              ('/get-game-logs/nba',{'season':'2026-27','season_type':'Regular Season','entity_type':'Player'}),
+          ]
+          for path,params in tasks:
+              rec,data=get(path,params)
+              if path=='/openapi.json' and isinstance(data,dict):
+                  specs=data.get('paths',{})
+                  for key in ['/get-game-stats','/get-games/{league}','/get-game-logs/{league}','/get-possessions/{league}']:
+                      item=specs.get(key,{})
+                      get_method=item.get('get',{})
+                      rec.setdefault('api_spec',{})[key]={'parameters':[{'name':p.get('name'),'required':p.get('required'),'schema':p.get('schema')} for p in get_method.get('parameters',[])],'response_schema':str(get_method.get('responses',{}).get('200',{}))[:1100]}
+                  schema=data.get('components',{}).get('schemas',{})
+                  rec['relevant_schema_fields']={}
+                  for key,info in schema.items():
+                      fields=info.get('properties',{})
+                      hits=[k for k in fields if any(t in k.lower() for t in ['fast','second','paint','transition','rebound','possess'])]
+                      if hits:
+                          rec['relevant_schema_fields'][key]=hits[:45]
+              if path=='/get-games/nba' and isinstance(data,dict):
+                  rec['date_matches_2026_11_18']=[]
+                  def visit(v,depth=0):
+                      if depth>5: return
+                      if isinstance(v,dict):
+                          if any('2026-11-18' in str(x) for x in v.values() if isinstance(x,(str,int))):
+                              rec['date_matches_2026_11_18'].append(str(v)[:700])
+                          for x in v.values():
+                              if isinstance(x,(dict,list)):visit(x,depth+1)
+                      elif isinstance(v,list):
+                          for x in v[:3000]:visit(x,depth+1)
+                  visit(data)
+                  rec['date_matches_2026_11_18']=rec['date_matches_2026_11_18'][:14]
+              output['tests'].append(rec)
+              print(json.dumps({'endpoint':path,'status':rec.get('status'),'error':rec.get('error'),'keys':rec.get('top_level_keys'),'date_matches':len(rec.get('date_matches_2026_11_18',[]))}),flush=True)
+              time.sleep(1.5)
+          with open('qpix-pbpstats-probe/2026-11-18.json','w') as f: json.dump(output,f,indent=2)
+          print('PBPSTATS PROBE SUMMARY',json.dumps({'tests':len(output['tests']),'statuses':[x.get('status') for x in output['tests']],'date_matches':sum(len(x.get('date_matches_2026_11_18',[])) for x in output['tests'])}))
+          PY
+      - name: Upload reproducible source diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qpix-pbpstats-cloud-probe-2026-11-18
+          path: qpix-pbpstats-probe/
+          retention-days: 14
+          if-no-files-found: warn
