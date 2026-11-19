@@ -1,0 +1,51 @@
+name: QPIX PBPStats Possession Context Test
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/qpix-pbpstats-possession-check.yml']
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Discover enums and request Dallas November 18 possessions
+        shell: bash
+        run: |
+          mkdir -p audit
+          python3 - <<'PY'
+          import json,urllib.request,urllib.parse,time
+          url='https://api.pbpstats.com'
+          headers={'User-Agent':'QCoreLabs-QPIX-Research/1.0 (https://github.com/Rickrezin/NBA-daily-report)','Accept':'application/json'}
+          def fetch(path,params=None,timeout=26):
+            u=url+path+('?' + urllib.parse.urlencode(params) if params else '')
+            with urllib.request.urlopen(urllib.request.Request(u,headers=headers),timeout=timeout) as r: return json.load(r)
+          spec=fetch('/openapi.json',timeout=20)
+          schema=spec.get('components',{}).get('schemas',{})
+          types=schema.get('PossessionTypeEnum',{}).get('enum',[])
+          print('OFFDEF_ENUM',json.dumps(types),flush=True)
+          off=next((v for v in types if str(v).lower() in ('offense','offensive','off')),types[0] if types else None)
+          if not off: raise SystemExit('No documented offense enum; not guessing')
+          p={'Season':'2026-27','SeasonType':'Regular Season','TeamId':'1610612742','FromDate':'2026-11-18','ToDate':'2026-11-18','OffDef':off}
+          print('VERIFIED_PARAMS',json.dumps(p),flush=True)
+          try:
+            result=fetch('/get-possessions/nba',p,timeout=30)
+            print('RESPONSE_KEYS',list(result),flush=True)
+            items=result.get('possessions',[])
+            print('POSSESSION_COUNT',len(items),flush=True)
+            if items:
+              print('POSSESSION_KEYS',list(items[0]),flush=True)
+              print('SAMPLE_POSSESSION',json.dumps(items[0],default=str)[:3000],flush=True)
+            with open('audit/dallas_nov18_possessions.json','w') as f:json.dump({'params':p,'response':result},f,indent=2)
+          except Exception as e:
+            print('POSSESSION_REQUEST_ERROR',repr(e),flush=True)
+            with open('audit/error.json','w') as f:json.dump({'params':p,'error':repr(e)},f,indent=2)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qpix-pbpstats-nov18-possession-check
+          path: audit/
+          retention-days: 14
