@@ -1,0 +1,26 @@
+name: QPIX Authoritative Code Bundle For Independent Audit
+on:
+  push:
+    paths:
+      - '.github/workflows/qpix-source-bundle.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Archive exact checked-in scoring engine and research implementations
+        uses: actions/upload-artifact@v4
+        with:
+          name: qpix-authoritative-code-${{ github.sha }}
+          path: |
+            generate-report.js
+            scripts/
+            experiments/qcore/
+            package.json
+            data/venue_familiarity.json
+            data/familiarity.json
+          retention-days: 7
+          if-no-files-found: warn
