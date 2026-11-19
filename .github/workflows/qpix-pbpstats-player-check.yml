@@ -1,0 +1,61 @@
+name: QPIX PBPStats Verified Player Game Check
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/qpix-pbpstats-player-check.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Resolve real November 18 NBA game ID and inspect player fields
+        shell: bash
+        run: |
+          mkdir -p audit
+          python3 - <<'PY'
+          import urllib.request,urllib.parse,urllib.error,json,time
+          root='https://api.pbpstats.com'
+          h={'User-Agent':'QCoreLabs-QPIX-Research/1.0 (https://github.com/Rickrezin/NBA-daily-report)','Accept':'application/json'}
+          def get(path,params):
+            u=root+path+'?'+urllib.parse.urlencode(params)
+            with urllib.request.urlopen(urllib.request.Request(u,headers=h),timeout=22) as response:return json.load(response)
+          games=get('/get-games/nba',{'Season':'2026-27','SeasonType':'Regular Season'}).get('results',[])
+          matches=[g for g in games if g.get('Date')=='2026-11-18']
+          print('NOV18_MATCH_COUNT',len(matches),flush=True)
+          print('NOV18_MATCHES',json.dumps(matches),flush=True)
+          assert matches, 'PBPStats 2026-11-18 game coverage missing'
+          chosen=next((g for g in matches if {'DAL','GSW'}=={g.get('HomeTeamAbbreviation'),g.get('AwayTeamAbbreviation')}),matches[0])
+          print('VERIFIED_GAME',json.dumps(chosen),flush=True)
+          time.sleep(1.5)
+          try:
+            obj=get('/get-game-stats',{'GameId':chosen['GameId'],'Type':'Player'})
+            print('PLAYER_RESPONSE_KEYS',list(obj) if isinstance(obj,dict) else 'array',flush=True)
+            def find(x):
+              if isinstance(x,list):
+                for v in x:
+                  if isinstance(v,dict) and ('SecondChancePoints' in v or 'LiveBallTurnovers' in v):
+                    return v
+                  a=find(v)
+                  if a:return a
+              elif isinstance(x,dict):
+                for v in x.values():
+                  a=find(v)
+                  if a:return a
+              return None
+            p=find(obj)
+            print('PLAYER_STAT_RECORD',json.dumps(p,default=str)[:10000] if p else 'NOT_FOUND',flush=True)
+            print('PLAYER_STAT_RECORDS_PRESENT',p is not None,flush=True)
+            with open('audit/2026-11-18-player-stats.json','w') as f:json.dump({'verified_game':chosen,'response':obj},f,indent=2)
+          except Exception as e:
+            print('PLAYER_GAME_REQUEST_ERROR',repr(e),flush=True)
+            with open('audit/error.json','w') as f:json.dump({'verified_game':chosen,'error':repr(e)},f,indent=2)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qpix-pbpstats-nov18-player-game-check
+          path: audit/
+          retention-days: 14
