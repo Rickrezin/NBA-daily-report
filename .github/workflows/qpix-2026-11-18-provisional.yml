@@ -109,6 +109,9 @@ jobs:
           audit['nba_game_id_source_check']=rec
           audit['NBA_AdvancedV3']='unavailable on shared runner; no independently verified current-game NBA ID crosswalk'
           audit['NBA_MiscV3']='unavailable on shared runner; no independently verified current-game NBA ID crosswalk'
+          derived=json.loads(Path('data/historical/qpix_pbp_derived/2026-11-18.json').read_text())
+          audit['pbp_event_count']=derived['source']['events']
+          audit['pbp_discrepancy_summary']=derived['discrepancy_summary']
           audit['raw_original_pbp_archive']='GitHub Actions artifact qpix-espn-pbp-raw-2026-11-18-44520417606'
           audit['derived_pbp_json']='data/historical/qpix_pbp_derived/2026-11-18.json'
           audit['scoring_input']='ESPN official boxes; experimental Nov 5 QCore individual ratings'
