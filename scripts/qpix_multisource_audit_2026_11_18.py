@@ -90,7 +90,13 @@ for idx,(g,ng) in enumerate(matches,1):
         rec['bref_sha256']=hashlib.sha256(raw).hexdigest()
     except Exception as e:rec['errors'].append('BRef '+repr(e))
     time.sleep(3.5)
-    ps=(pbp or {}).get('stats',[])\n    if isinstance(ps,dict):\n        rec['pbpstats_collection_type']='object'\n        ps=[dict(v,EntityId=str(k)) if isinstance(v,dict) and not v.get('EntityId') else v for k,v in ps.items()]\n    else:rec['pbpstats_collection_type']='array'\n    ps=[p for p in ps if isinstance(p,dict)]
+    ps=(pbp or {}).get('stats',[])
+    if isinstance(ps,dict):
+        rec['pbpstats_collection_type']='object'
+        ps=[dict(v,EntityId=str(k)) if isinstance(v,dict) and not v.get('EntityId') else v for k,v in ps.items()]
+    else:
+        rec['pbpstats_collection_type']='array'
+    ps=[p for p in ps if isinstance(p,dict)]
     pbn=collections.defaultdict(list);brn=collections.defaultdict(list)
     for p in ps:
         pbn[norm(p.get('Name',''))].append(p)
