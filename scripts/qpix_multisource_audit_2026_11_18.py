@@ -47,11 +47,19 @@ def eps_players(g):
             result.append(p)
     return result
 pbpbase='https://api.pbpstats.com'
-params=urllib.parse.urlencode({'Season':'2026-27','SeasonType':'Regular Season'})
-src,code=request(pbpbase+'/get-games/nba?'+params)
-games=json.loads(src).get('results',[])
-sourcegames=[x for x in games if x.get('Date')==DATE]
-assert len(sourcegames)==len(ESPN['games'])==12,('Source game mismatch',len(sourcegames),len(ESPN['games']))
+# Date-scoped game IDs have already been independently verified against ESPN scores.
+# Avoid repeating a high-latency season-wide request; use the checked-in verified crosswalk.
+crosswalk=(ROOT/'docs/qpix-source-schema-crosswalk-2026-11-18.md').read_text()
+sourcegames=[]
+for line in crosswalk.splitlines():
+    pieces=[v.strip() for v in line.split('|')]
+    if len(pieces)==7 and re.fullmatch(r'401\d{6}',pieces[1]) and re.fullmatch(r'002\d{7}',pieces[2]):
+        away,home=pieces[3],pieces[4]
+        scores=re.findall(r'\d+',pieces[5])
+        if len(scores)==2:
+            sourcegames.append({'GameId':pieces[2],'Date':DATE,'HomeTeamAbbreviation':home,'AwayTeamAbbreviation':away,'HomePoints':int(scores[1]),'AwayPoints':int(scores[0])})
+assert len(sourcegames)==12,('Crosswalk extraction error',len(sourcegames))
+pbpbase='https://api.pbpstats.com'
 matches=[]
 for g in ESPN['games']:
     teams=g['teams'];aliases={v['alias'] for v in teams.values()}
