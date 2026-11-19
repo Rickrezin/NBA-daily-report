@@ -1,0 +1,61 @@
+name: QPIX Basketball Reference Advanced Source Probe
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/qpix-bref-source-probe.yml']
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Test one advanced box with polite requests and source verification
+        shell: bash
+        run: |
+          mkdir -p audit
+          python3 - <<'PY'
+          import json,urllib.request,urllib.error,re,time,html
+          from html.parser import HTMLParser
+          urls=['https://www.basketball-reference.com/boxscores/202611180DAL.html','https://www.basketball-reference.com/boxscores/202606100NYK.html']
+          class TableAudit(HTMLParser):
+            def __init__(self):super().__init__();self.tables=[];self.active=None
+            def handle_starttag(self,t,a):
+              if t=='table':
+                attrs=dict(a); self.active={'id':attrs.get('id',''),'cols':set(),'rows':0}
+              if self.active is not None:
+                if t=='td':
+                  attrs=dict(a); self.active['cols'].add(attrs.get('data-stat',''));self.active['rows']+=1
+                if t=='th':
+                  attrs=dict(a);self.active['cols'].add(attrs.get('data-stat',''))
+            def handle_endtag(self,t):
+              if t=='table' and self.active is not None:self.tables.append({'id':self.active['id'],'columns':sorted(self.active['cols']),'cells':self.active['rows']});self.active=None
+          report={'purpose':'test availability and player-level advanced column names, never calculate scores','checks':[]}
+          for url in urls:
+            rec={'url':url}
+            try:
+              req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0 (compatible; QCoreLabs research audit; contact github.com/Rickrezin/NBA-daily-report)','Accept':'text/html'})
+              with urllib.request.urlopen(req,timeout=16) as r:
+                data=r.read(1800000).decode('utf-8','replace')
+                rec['http']=r.status;rec['bytes']=len(data)
+                audit=TableAudit();audit.feed(data)
+                rec['advanced_tables']=[t for t in audit.tables if 'advanced' in t['id'].lower()]
+                rec['titles']=re.findall(r'<title>(.*?)</title>',data,re.I|re.S)[:2]
+                rec['has_ortg']=any('off_rtg' in t['columns'] or 'offensive_rtg' in t['columns'] for t in rec['advanced_tables'])
+                rec['has_drtg']=any('def_rtg' in t['columns'] or 'defensive_rtg' in t['columns'] for t in rec['advanced_tables'])
+                rec['tables_count']=len(audit.tables)
+            except urllib.error.HTTPError as e:
+              rec['http']=e.code;rec['error']=str(e);rec['preview']=e.read(140).decode('utf-8','replace')
+            except Exception as e:rec['error']=repr(e)
+            report['checks'].append(rec)
+            print('BREF PROBE',json.dumps(rec),flush=True)
+            time.sleep(4)
+          with open('audit/bref_probe.json','w') as f:json.dump(report,f,indent=2)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qpix-bref-advanced-probe
+          path: audit
+          retention-days: 14
