@@ -1,0 +1,55 @@
+name: QPIX PBPStats OpenAPI Capability Audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/qpix-pbpstats-openapi-audit.yml']
+permissions:
+  contents: read
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Read actual API contract, no guessing
+        run: |
+          mkdir -p audit
+          python3 - <<'PY'
+          import urllib.request,json,collections
+          req=urllib.request.Request('https://api.pbpstats.com/openapi.json',headers={'User-Agent':'QCoreLabs-QPIX-Research/1.0 (API schema validation; contact via GitHub Rickrezin/NBA-daily-report)','Accept':'application/json'})
+          with urllib.request.urlopen(req,timeout=25) as r:
+              assert r.status==200
+              j=json.load(r)
+          with open('audit/openapi.json','w') as f:json.dump(j,f,indent=2)
+          paths=j.get('paths',{})
+          print('API INFO:',json.dumps(j.get('info',{})),flush=True)
+          print('TOTAL PATHS:',len(paths),flush=True)
+          all_data=[]
+          for path,operations in paths.items():
+              for method,op in operations.items():
+                  if method.lower() not in ('get','post','put','delete','patch'):continue
+                  ps=list(operations.get('parameters',[]))+list(op.get('parameters',[]))
+                  parms=[]
+                  for p in ps:
+                      if '$ref' in p:
+                          p=j.get('components',{}).get('parameters',{}).get(p['$ref'].split('/')[-1],p)
+                      parms.append({'name':p.get('name'),'in':p.get('in'),'required':p.get('required',False),'schema':p.get('schema',{}),'description':str(p.get('description',''))[:160]})
+                  entry={'path':path,'method':method,'operationId':op.get('operationId'),'summary':op.get('summary'),'parameters':parms,'response_codes':list(op.get('responses',{}))}
+                  all_data.append(entry)
+                  print('ENDPOINT',json.dumps(entry,ensure_ascii=False),flush=True)
+          print('SCHEMAS MATCHING QPIX METRICS',flush=True)
+          relevant={}
+          for name,s in j.get('components',{}).get('schemas',{}).items():
+              props=s.get('properties',{})
+              matches=[k for k in props if any(term in k.lower() for term in ['fastbreak','fast_break','secondchance','second_chance','paint','possess','turnover','rebound','rating','transition'])]
+              if matches:
+                  relevant[name]=matches
+                  print('SCHEMA',name,json.dumps(matches),flush=True)
+          with open('audit/capabilities.json','w') as f:json.dump({'info':j.get('info',{}),'endpoints':all_data,'relevant_schema_fields':relevant},f,indent=2)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qpix-pbpstats-openapi-capability-audit
+          path: audit/
+          retention-days: 14
