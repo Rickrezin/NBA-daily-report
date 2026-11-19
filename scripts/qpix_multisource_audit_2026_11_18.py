@@ -74,18 +74,27 @@ for idx,(g,ng) in enumerate(matches,1):
     rec={'nba_game_id':nbaid,'espn_event_id':g['espn_event_id'],'teams':home+'/'+ng['AwayTeamAbbreviation'],'errors':[]}
     pbp=None;bres=[]
     try:
-        raw,status=request(pbpbase+'/get-game-stats?'+urllib.parse.urlencode({'GameId':nbaid,'Type':'Player'}),sec=28)
+        cache=OUT/f'{nbaid}_pbpstats.json'
+        if cache.is_file():
+            raw=cache.read_bytes();status=200;rec['pbpstats_cache_reused']=True
+        else:
+            raw,status=request(pbpbase+'/get-game-stats?'+urllib.parse.urlencode({'GameId':nbaid,'Type':'Player'}),sec=15)
+            cache.write_bytes(raw)
         pbp=json.loads(raw)
-        (OUT/f'{nbaid}_pbpstats.json').write_bytes(raw)
         rec['pbpstats_http']=status;rec['pbpstats_records']=len(pbp.get('stats',[]))
         rec['pbpstats_stats_shape']=type(pbp.get('stats')).__name__
         rec['pbpstats_sha256']=hashlib.sha256(raw).hexdigest()
     except Exception as e:rec['errors'].append('PBPStats '+repr(e))
     time.sleep(1.25)
-    brefurl=f'https://www.basketball-reference.com/boxscores/{DATE.replace("-","")}0{home}.html'
+    home_bref={'BKN':'BRK','PHX':'PHO'}.get(home,home)
+    brefurl=f'https://www.basketball-reference.com/boxscores/{DATE.replace("-","")}0{home_bref}.html'
     try:
-        raw,status=request(brefurl,sec=26)
-        (OUT/f'{nbaid}_bref.html').write_bytes(raw)
+        cache=OUT/f'{nbaid}_bref.html'
+        if cache.is_file():
+            raw=cache.read_bytes();status=200;rec['bref_cache_reused']=True
+        else:
+            raw,status=request(brefurl,sec=18)
+            cache.write_bytes(raw)
         p=BRefParser();p.feed(raw.decode('utf-8','replace'));bres=p.entries
         rec['bref_http']=status;rec['bref_records']=len(bres)
         rec['bref_sha256']=hashlib.sha256(raw).hexdigest()
