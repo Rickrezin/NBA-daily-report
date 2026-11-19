@@ -73,3 +73,5 @@ jobs:
           echo "This job archives raw ESPN source data only." >> "$GITHUB_STEP_SUMMARY"
           echo "It does not call or modify generate-report.js, update daily rankings, or push commits." >> "$GITHUB_STEP_SUMMARY"
 # ET 2026-11-17 collection trigger: QPIX daily independent run, scoring engine unchanged.
+
+# Independent previous-ET-date collection recheck for 2026-11-18. No scoring changes.
