@@ -11,6 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Fetch original Nov 5 QCore model from research branch without changing source code
+        shell: bash
+        run: |
+          mkdir -p experiments/qcore
+          git fetch --depth=1 origin dev/qcore-independent-ratings-20261105
+          git show FETCH_HEAD:experiments/qcore/model.py > experiments/qcore/model.py
+          git show FETCH_HEAD:experiments/qcore/README.md > experiments/qcore/README.md
       - name: Archive exact checked-in scoring engine and research implementations
         uses: actions/upload-artifact@v4
         with:
