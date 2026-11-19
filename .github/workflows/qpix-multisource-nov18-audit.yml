@@ -8,12 +8,19 @@ on:
       - '.github/workflows/qpix-multisource-nov18-audit.yml'
 permissions:
   contents: read
+  actions: read
 jobs:
   collect-and-reconcile:
     runs-on: ubuntu-latest
     timeout-minutes: 18
     steps:
       - uses: actions/checkout@v4
+      - name: Reuse already archived verified source responses
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p data/historical/qpix_multisource_audit/2026-11-18
+          gh run download 44562334448 -R Rickrezin/NBA-daily-report -n qpix-nov18-multisource-audit -D data/historical/qpix_multisource_audit/2026-11-18
       - name: Check Python syntax
         run: python3 -m py_compile scripts/qpix_multisource_audit_2026_11_18.py
       - name: Collect and audit ESPN PBPStats Basketball-Reference all November 18 games
