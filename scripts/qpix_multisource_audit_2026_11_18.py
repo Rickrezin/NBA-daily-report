@@ -77,7 +77,8 @@ for idx,(g,ng) in enumerate(matches,1):
         raw,status=request(pbpbase+'/get-game-stats?'+urllib.parse.urlencode({'GameId':nbaid,'Type':'Player'}),sec=28)
         pbp=json.loads(raw)
         (OUT/f'{nbaid}_pbpstats.json').write_bytes(raw)
-        rec['pbpstats_http']=status;rec['pbpstats_records']=len(pbp.get('stats',[]))\n        rec['pbpstats_stats_shape']=type(pbp.get('stats')).__name__
+        rec['pbpstats_http']=status;rec['pbpstats_records']=len(pbp.get('stats',[]))
+        rec['pbpstats_stats_shape']=type(pbp.get('stats')).__name__
         rec['pbpstats_sha256']=hashlib.sha256(raw).hexdigest()
     except Exception as e:rec['errors'].append('PBPStats '+repr(e))
     time.sleep(1.25)
