@@ -1,0 +1,28 @@
+name: QPIX Multi-Source November 18 Full Slate Audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/qpix_multisource_audit_2026_11_18.py'
+      - '.github/workflows/qpix-multisource-nov18-audit.yml'
+permissions:
+  contents: read
+jobs:
+  collect-and-reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check Python syntax
+        run: python3 -m py_compile scripts/qpix_multisource_audit_2026_11_18.py
+      - name: Collect and audit ESPN PBPStats Basketball-Reference all November 18 games
+        run: python3 -u scripts/qpix_multisource_audit_2026_11_18.py
+      - name: Upload full sources and reconciliation report even if incomplete
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qpix-nov18-multisource-audit
+          path: data/historical/qpix_multisource_audit/2026-11-18/
+          retention-days: 14
+          if-no-files-found: warn
