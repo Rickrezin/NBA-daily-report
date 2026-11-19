@@ -78,6 +78,14 @@ jobs:
         if: steps.collection_window.outputs.run == 'true'
         run: node generate-report.js
 
+      - name: Prefer latest published date-scoped QPIX dashboard
+        run: |
+          if ls data/daily/????-??-??*.json >/dev/null 2>&1; then
+            python3 scripts/render_qpix_dashboard.py
+          else
+            echo "No dated published report; keeping original generated dashboard."
+          fi
+
       - name: Setup Pages
         if: steps.collection_window.outputs.run == 'true'
         uses: actions/configure-pages@v5
