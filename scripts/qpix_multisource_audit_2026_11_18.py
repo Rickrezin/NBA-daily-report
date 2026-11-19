@@ -91,23 +91,30 @@ for idx,(g,ng) in enumerate(matches,1):
         rec['bref_sha256']=hashlib.sha256(raw).hexdigest()
     except Exception as e:rec['errors'].append('BRef '+repr(e))
     time.sleep(3.5)
-    ps=(pbp or {}).get('stats',[])
-    if isinstance(ps,dict):
-        rec['pbpstats_collection_type']='object'
-        ps=[dict(v,EntityId=str(k)) if isinstance(v,dict) and not v.get('EntityId') else v for k,v in ps.items()]
-    else:
+    raw_stats=(pbp or {}).get('stats',{})
+    ps=[]
+    if isinstance(raw_stats,dict) and 'Away' in raw_stats and 'Home' in raw_stats:
+        rec['pbpstats_collection_type']='team_period_fullgame'
+        for side,team_alias in [('Away',ng['AwayTeamAbbreviation']),('Home',ng['HomeTeamAbbreviation'])]:
+            for item in raw_stats.get(side,{}).get('FullGame',[]):
+                if isinstance(item,dict) and item.get('Name')!='Team':
+                    ps.append(dict(item,source_team_alias=team_alias))
+    elif isinstance(raw_stats,list):
         rec['pbpstats_collection_type']='array'
-    ps=[p for p in ps if isinstance(p,dict)]
+        ps=[p for p in raw_stats if isinstance(p,dict)]
+    else:
+        rec['pbpstats_collection_type']='UNSUPPORTED'
+
     pbn=collections.defaultdict(list);brn=collections.defaultdict(list)
     for p in ps:
-        pbn[norm(p.get('Name',''))].append(p)
+        pbn[(p.get('source_team_alias'),norm(p.get('Name','')))].append(p)
     for p in bres:
-        brn[(p['team'],norm(p.get('player','')))].append(p)
+        brn[({'BRK':'BKN','PHO':'PHX'}.get(p['team'],p['team']),norm(p.get('player','')))].append(p)
     used_pbp=set();used_bref=set()
     for ep in eps_players(g):
         e_team=alias_map.get(g['teams'].get(str(ep.get('team_id')),{}) .get('alias'),g['teams'].get(str(ep.get('team_id')),{}) .get('alias'))
         key=norm(ep['name'])
-        candidates=pbn.get(key,[])
+        candidates=pbn.get((e_team,key),[])
         b_candidates=brn.get((e_team,key),[])
         pbm=candidates[0] if len(candidates)==1 else None
         brm=b_candidates[0] if len(b_candidates)==1 else None
