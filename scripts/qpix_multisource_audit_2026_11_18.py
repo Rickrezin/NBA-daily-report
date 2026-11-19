@@ -77,7 +77,7 @@ for idx,(g,ng) in enumerate(matches,1):
         raw,status=request(pbpbase+'/get-game-stats?'+urllib.parse.urlencode({'GameId':nbaid,'Type':'Player'}),sec=28)
         pbp=json.loads(raw)
         (OUT/f'{nbaid}_pbpstats.json').write_bytes(raw)
-        rec['pbpstats_http']=status;rec['pbpstats_records']=len(pbp.get('stats',[]))
+        rec['pbpstats_http']=status;rec['pbpstats_records']=len(pbp.get('stats',[]))\n        rec['pbpstats_stats_shape']=type(pbp.get('stats')).__name__
         rec['pbpstats_sha256']=hashlib.sha256(raw).hexdigest()
     except Exception as e:rec['errors'].append('PBPStats '+repr(e))
     time.sleep(1.25)
@@ -90,7 +90,7 @@ for idx,(g,ng) in enumerate(matches,1):
         rec['bref_sha256']=hashlib.sha256(raw).hexdigest()
     except Exception as e:rec['errors'].append('BRef '+repr(e))
     time.sleep(3.5)
-    ps=(pbp or {}).get('stats',[])
+    ps=(pbp or {}).get('stats',[])\n    if isinstance(ps,dict):\n        rec['pbpstats_collection_type']='object'\n        ps=[dict(v,EntityId=str(k)) if isinstance(v,dict) and not v.get('EntityId') else v for k,v in ps.items()]\n    else:rec['pbpstats_collection_type']='array'\n    ps=[p for p in ps if isinstance(p,dict)]
     pbn=collections.defaultdict(list);brn=collections.defaultdict(list)
     for p in ps:
         pbn[norm(p.get('Name',''))].append(p)
