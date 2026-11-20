@@ -126,6 +126,10 @@ def main(date):
    if px and px.get('Points') is not None and int(px['Points'])!=b.get('points'):
     q['issues'].append('PBP_PLAYER_POINTS_MISMATCH_'+b['name']);px=None
    rows.append({'date_et':date,'espn_event_id':eid,'nba_game_id':nbi,'espn_player_id':b['player_id'],'nba_player_id':px.get('EntityId') if px else None,'team':team,'name':b['name'],'espn_points':b.get('points'),'espn_minutes':b.get('minutes'),'bref_player':bx.get('profile') if bx else None,'bref_off_rtg':bx.get('off_rtg') if bx else None,'bref_def_rtg':bx.get('def_rtg') if bx else None,'pbpstats_second_chance_points':px.get('SecondChancePoints') if px else None,'second_chance_quality':'PBPSTATS_REPORTED' if px and 'SecondChancePoints' in px else 'MISSING_OR_ZERO_SUPPRESSED','fast_break_points':None,'points_in_paint':None,'context_quality':'EXPERIMENTAL_NOT_SCORED'})
+  # Coordinate coverage is measurable, but physical paint geometry remains uncalibrated.
+  shot_events=[e for e in g.get('events',[]) if e.get('class')=='field_goal_attempt']
+  made_shots=[e for e in shot_events if e.get('original',{}).get('scoringPlay')]
+  q['paint_coordinate_audit']={'field_goal_attempts':len(shot_events),'attempts_with_coordinates':sum(e.get('original',{}).get('coordinate') is not None for e in shot_events),'made_field_goals':len(made_shots),'made_with_coordinates':sum(e.get('original',{}).get('coordinate') is not None for e in made_shots),'quality':'COORDINATES_OBSERVED_PAINT_BOUNDARIES_NOT_CALIBRATED'}
   candidate=transitions(g.get('events',[]));dump(out/f'{eid}_fastbreak_timing.json',candidate)
   q['fastbreak_candidate_bands']=candidate['point_bands']
   q['players_espn']=len(g.get('official_ESPN_box_players',{}))
