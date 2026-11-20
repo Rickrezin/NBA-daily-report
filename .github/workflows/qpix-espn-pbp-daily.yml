@@ -75,3 +75,4 @@ jobs:
 # ET 2026-11-17 collection trigger: QPIX daily independent run, scoring engine unchanged.
 
 # Independent previous-ET-date collection recheck for 2026-11-18. No scoring changes.
+# 2026-11-20 independent daily verification: collect previous Eastern date 2026-11-19; unchanged scoring engine.
