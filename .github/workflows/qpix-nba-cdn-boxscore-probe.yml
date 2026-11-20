@@ -1,0 +1,56 @@
+name: QPIX Official NBA CDN Live Boxscore Probe
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/qpix-nba-cdn-boxscore-probe.yml'
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test exact NBA CDN URLs from GitHub Actions
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json,urllib.request,urllib.error,time,pathlib
+          game_ids=['0022600270','0022600271','0022600272','0022600273','0022600267']
+          out=pathlib.Path('data/qpix_nba_cdn_probe');out.mkdir(parents=True,exist_ok=True)
+          report=[]
+          for gid in game_ids:
+              url=f'https://cdn.nba.com/static/json/liveData/boxscore/boxscore_{gid}.json'
+              rec={'game_id':gid,'url':url}
+              for attempt in range(2):
+                  req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131.0.0.0 Safari/537.36','Accept':'application/json','Origin':'https://www.nba.com','Referer':'https://www.nba.com/'})
+                  try:
+                      with urllib.request.urlopen(req,timeout=10) as resp:
+                          data=resp.read(3000000);rec['http_status']=resp.status;rec['bytes']=len(data)
+                      obj=json.loads(data)
+                      game=obj.get('game',{})
+                      rec['game_status']=game.get('gameStatusText')
+                      rec['teams']={}
+                      for side in ('homeTeam','awayTeam'):
+                          t=game.get(side,{})
+                          players=t.get('players',[])
+                          rec['teams'][side]={'tricode':t.get('teamTricode'),'player_count':len(players),'sample':[{'name':p.get('name'),'id':p.get('personId'),'pointsFastBreak':p.get('statistics',{}).get('pointsFastBreak'),'pointsInThePaint':p.get('statistics',{}).get('pointsInThePaint'),'pointsSecondChance':p.get('statistics',{}).get('pointsSecondChance')} for p in players[:3]],'available_field_counts':{k:sum(k in (p.get('statistics') or {}) for p in players) for k in ('pointsFastBreak','pointsInThePaint','pointsSecondChance')},'stat_keys':list((players[0].get('statistics') or {}).keys()) if players else []}
+                      (out/f'{gid}.json').write_bytes(data)
+                      break
+                  except Exception as e:
+                      rec['error']=str(e)
+                      if attempt==0:time.sleep(1)
+              report.append(rec)
+              print('NBA_CDN_PROBE '+json.dumps(rec),flush=True)
+          (out/'summary.json').write_text(json.dumps(report,indent=2)+'\n')
+          PY
+      - name: Upload successful raw official NBA CDN responses and access audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qpix-nba-cdn-liveboxscore-probe
+          path: data/qpix_nba_cdn_probe/
+          if-no-files-found: warn
+          retention-days: 14
