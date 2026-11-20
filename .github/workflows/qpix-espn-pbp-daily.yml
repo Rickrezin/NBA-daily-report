@@ -2,8 +2,9 @@ name: QPIX ESPN Play-by-Play Daily Raw Archive
 
 on:
   schedule:
-    - cron: '30 9 * * *'
-    - cron: '30 10 * * *'
+    # 8:30 AM New York, adjusted for daylight saving time.
+    - cron: '30 12 * * *'
+    - cron: '30 13 * * *'
   workflow_dispatch:
     inputs:
       date_et:
@@ -35,8 +36,8 @@ jobs:
         run: |
           if [[ "$EVENT_NAME" == "schedule" ]]; then
             offset="$(TZ=America/New_York date +%z)"
-            if [[ "$offset" == "-0400" && "$SCHEDULE_CRON" != "30 9 * * *" ]] ||
-               [[ "$offset" == "-0500" && "$SCHEDULE_CRON" != "30 10 * * *" ]]; then
+            if [[ "$offset" == "-0400" && "$SCHEDULE_CRON" != "30 12 * * *" ]] ||
+               [[ "$offset" == "-0500" && "$SCHEDULE_CRON" != "30 13 * * *" ]]; then
               echo "run=false" >> "$GITHUB_OUTPUT"
               exit 0
             fi
