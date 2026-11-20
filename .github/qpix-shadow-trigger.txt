@@ -1,4 +1,4 @@
-QPIX unified shadow read-only source extraction triggered 2026-11-19.
-Intended game date America/New_York: 2026-11-18.
+QPIX unified shadow read-only source extraction triggered 2026-11-20.
+Intended game date America/New_York: 2026-11-19.
 Preserve ESPN source archive, partial results and coverage audit even if scoring fails.
 No modifications to generate-report.js scoring formulas. No official RAW publication from this shadow workflow.
