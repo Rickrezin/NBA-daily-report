@@ -100,7 +100,7 @@ def main(date):
   home=c.get('HomeTeamAbbreviation') if c else None
   if not home:
    for game in published.get('games',[]):
-    if {alias(game.get('home_alias')),alias(game.get('away_alias'))}==teamset and game.get('home_points')==final['home']:home=alias(game['home_alias']);break
+    if str(game.get('espn_event_id'))==eid or ({alias(game.get('home_alias')),alias(game.get('away_alias'))}==teamset and game.get('home_points')==final['home']):home=alias(game['home_alias']);break
   pstat={};br={}
   if nbi:
    url='https://api.pbpstats.com/get-game-stats?'+urllib.parse.urlencode({'GameId':nbi,'Type':'Player'})
