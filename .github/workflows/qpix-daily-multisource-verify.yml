@@ -4,6 +4,9 @@ on:
     # 09:00 New York: 13:00 UTC in EDT, 14:00 UTC in EST.
     - cron: '0 13 * * *'
     - cron: '0 14 * * *'
+    # Afternoon retry when provider advanced box pages may become available.
+    - cron: '0 17 * * *'
+    - cron: '0 18 * * *'
   workflow_run:
     workflows:
       - QPIX ESPN Play-by-Play Daily Raw Archive
@@ -19,6 +22,8 @@ on:
     branches: [main]
     paths:
       - 'scripts/qpix_daily_multisource_verify.py'
+      - 'data/daily/*.provisional.json'
+      - 'data/historical/qpix_pbp_derived/*.json'
       - '.github/workflows/qpix-daily-multisource-verify.yml'
 permissions:
   contents: read
@@ -45,7 +50,7 @@ jobs:
           set -euo pipefail
           if [[ "$EVENT" == "schedule" ]]; then
             offset="$(TZ=America/New_York date +%z)"
-            if [[ "$offset" == "-0400" && "$SCHEDULE_SLOT" != "0 13 * * *" ]] || [[ "$offset" == "-0500" && "$SCHEDULE_SLOT" != "0 14 * * *" ]]; then
+            if [[ "$offset" == "-0400" && "$SCHEDULE_SLOT" != "0 13 * * *" && "$SCHEDULE_SLOT" != "0 17 * * *" ]] || [[ "$offset" == "-0500" && "$SCHEDULE_SLOT" != "0 14 * * *" && "$SCHEDULE_SLOT" != "0 18 * * *" ]]; then
               echo "run=false" >> "$GITHUB_OUTPUT"
               exit 0
             fi
