@@ -2,10 +2,10 @@ name: NBA Daily Report
 
 on:
   schedule:
-    # Two UTC slots plus a timezone gate keep collection at 5:00 AM
-    # America/New_York through both EDT (09:00 UTC) and EST (10:00 UTC).
-    - cron: '0 9 * * *'
-    - cron: '0 10 * * *'
+    # Two UTC slots plus a timezone gate keep collection at 9:00 AM
+    # America/New_York through both EDT (13:00 UTC) and EST (14:00 UTC).
+    - cron: '0 13 * * *'
+    - cron: '0 14 * * *'
   workflow_dispatch:
 
 permissions:
@@ -25,7 +25,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Gate scheduled collection to 5 AM New York time
+      - name: Gate scheduled collection to 9 AM New York time
         id: collection_window
         env:
           EVENT_NAME: ${{ github.event_name }}
@@ -37,14 +37,14 @@ jobs:
             exit 0
           fi
 
-          # The scheduled UTC slot determines the intended local 5 AM.
+          # The scheduled UTC slot determines the intended local 9 AM.
           # Check DST/standard offset rather than wall-clock hour because
           # GitHub can start a scheduled job late.
           ny_offset="$(TZ=America/New_York date +%z)"
-          if [[ "$ny_offset" == "-0400" && "$SCHEDULE_CRON" == "0 9 * * *" ]] ||
-             [[ "$ny_offset" == "-0500" && "$SCHEDULE_CRON" == "0 10 * * *" ]]; then
+          if [[ "$ny_offset" == "-0400" && "$SCHEDULE_CRON" == "0 13 * * *" ]] ||
+             [[ "$ny_offset" == "-0500" && "$SCHEDULE_CRON" == "0 14 * * *" ]]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
-            echo "Selected 5 AM New York collection slot ($ny_offset)"
+            echo "Selected 9 AM New York collection slot ($ny_offset)"
           else
             echo "run=false" >> "$GITHUB_OUTPUT"
             echo "Skipping inactive UTC slot ($SCHEDULE_CRON; New York offset $ny_offset)"
