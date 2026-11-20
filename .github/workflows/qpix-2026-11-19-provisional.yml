@@ -142,7 +142,7 @@ jobs:
           p=top[0]
           head=f"{p['name'].upper()} LEADS A 4-GAME NBA NIGHT"
           box=lambda x:f"{x['points']} points, {x['rebounds']} rebounds, {x['assists']} assists, {x['steals']} steals, {x['blocks']} blocks, {x['turnovers']} turnovers in {x['minutes']:.0f} minutes"
-          lines=["QCORE LABS QPIX™ NBA DAILY PERFORMANCE INDEX","","Wednesday, November 19, 2026",f"4 FINAL GAMES | {len(j['players'])} PLAYERS EVALUATED | {j['coverage']['eligible_gt8']} LEADERBOARD-ELIGIBLE","PROVISIONAL / SHADOW — NOT AN OFFICIALLY CERTIFIED RANKING","","NBA FINAL SCORES",""]
+          lines=["QCORE LABS QPIX™ NBA DAILY PERFORMANCE INDEX","","Thursday, November 19, 2026",f"4 FINAL GAMES | {len(j['players'])} PLAYERS EVALUATED | {j['coverage']['eligible_gt8']} LEADERBOARD-ELIGIBLE","PROVISIONAL / SHADOW — NOT AN OFFICIALLY CERTIFIED RANKING","","NBA FINAL SCORES",""]
           for g in j['games']:lines.append(f"{teams.get(g['away_alias'],g['away_alias'])} {g['away_points']} — {teams.get(g['home_alias'],g['home_alias'])} {g['home_points']}")
           lines+=["",head,"",f"{p['name']} ({p['team']}) paced the night's provisional RAW index at {fmt(p['raw_qpix_shadow'])} (QPIX-R {fmt(p['qpix_r_shadow'])}). His line: {box(p)}. He shot {p['fgm']}-for-{p['fga']} overall and {p['fg3m']}-for-{p['fg3a']} from three, with a {p['plus_minus']:+.0f} on-court differential.","","QPIX TOP 10 — PROVISIONAL RAW | QPIX-R COMPANION",""]
           for i,x in enumerate(top,1):lines.append(f"{i}. {x['name']} ({x['team']}) — RAW {fmt(x['raw_qpix_shadow'])} | QPIX-R {fmt(x['qpix_r_shadow'])}")
