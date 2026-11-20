@@ -1,0 +1,93 @@
+name: QPIX Daily Multi-Source Verification
+on:
+  schedule:
+    # 09:00 New York: 13:00 UTC in EDT, 14:00 UTC in EST.
+    - cron: '0 13 * * *'
+    - cron: '0 14 * * *'
+  workflow_run:
+    workflows:
+      - QPIX ESPN Play-by-Play Daily Raw Archive
+      - QPIX Independent Verified Report
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      date_et:
+        description: 'Eastern game date YYYY-MM-DD (blank = previous ET day)'
+        required: false
+        type: string
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/qpix_daily_multisource_verify.py'
+      - '.github/workflows/qpix-daily-multisource-verify.yml'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: qpix-daily-multisource-${{ github.event.inputs.date_et || github.event.workflow_run.id || github.run_id }}
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Select previous Eastern game date
+        id: date
+        env:
+          REQUESTED: ${{ inputs.date_et }}
+          EVENT: ${{ github.event_name }}
+          SCHEDULE_SLOT: ${{ github.event.schedule }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$EVENT" == "schedule" ]]; then
+            offset="$(TZ=America/New_York date +%z)"
+            if [[ "$offset" == "-0400" && "$SCHEDULE_SLOT" != "0 13 * * *" ]] || [[ "$offset" == "-0500" && "$SCHEDULE_SLOT" != "0 14 * * *" ]]; then
+              echo "run=false" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+          fi
+          DATE="${REQUESTED:-$(TZ=America/New_York date -d yesterday +%F)}"
+          [[ "$DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || exit 2
+          echo "date_et=$DATE" >> "$GITHUB_OUTPUT"
+          echo "run=true" >> "$GITHUB_OUTPUT"
+          echo "## QPIX research-only source check: $DATE" >> "$GITHUB_STEP_SUMMARY"
+      - name: Verify script compiles
+        if: steps.date.outputs.run == 'true'
+        run: python3 -m py_compile scripts/qpix_daily_multisource_verify.py
+      - name: Recover original ESPN derived data from archive artifact if missing on main
+        if: steps.date.outputs.run == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DATE_ET: ${{ steps.date.outputs.date_et }}
+        shell: bash
+        run: |
+          if [[ -s "data/historical/qpix_pbp_derived/$DATE_ET.json" ]]; then
+            echo "Using checked-in full-detail ESPN archive"
+          else
+            echo "ESPN archive not committed. Inspect Actions artifacts; no invented event data."
+            gh run list --workflow qpix-espn-pbp-daily.yml --limit 12
+          fi
+      - name: Audit BRef ratings PBPStats second chance ESPN transition timing and identity
+        if: steps.date.outputs.run == 'true'
+        env:
+          DATE_ET: ${{ steps.date.outputs.date_et }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -u scripts/qpix_daily_multisource_verify.py --date-et "$DATE_ET"
+      - name: Upload every available source and audit even on provider failure
+        if: always() && steps.date.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: qpix-multisource-daily-${{ steps.date.outputs.date_et }}
+          path: data/historical/qpix_multisource_daily/${{ steps.date.outputs.date_et }}/
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Publication guard
+        if: always() && steps.date.outputs.run == 'true'
+        run: |
+          echo 'Research-only source coverage; no official score or ranking publication and no generate-report.js changes.' >> "$GITHUB_STEP_SUMMARY"
