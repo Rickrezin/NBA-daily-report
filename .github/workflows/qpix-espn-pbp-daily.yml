@@ -15,7 +15,7 @@ on:
       - '.github/workflows/qpix-espn-pbp-daily.yml'
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: qpix-espn-pbp-source
@@ -66,6 +66,36 @@ jobs:
           path: data/historical/qpix_pbp_raw/${{ steps.gate.outputs.date_et }}/
           retention-days: 30
           if-no-files-found: warn
+
+      - name: Derive lossless event JSON and preserve raw archive, even on collector validation failure
+        if: always() && steps.gate.outputs.run == 'true'
+        shell: bash
+        run: |
+          set -e
+          DATE="${{ steps.gate.outputs.date_et }}"
+          test -s "data/historical/qpix_pbp_raw/$DATE/manifest.json"
+          python3 scripts/qpix_pbp_derive.py --date-et "$DATE"
+          mkdir -p data/historical/qpix_pbp_raw_archives
+          (cd "data/historical/qpix_pbp_raw/$DATE" && zip -q -r "../../qpix_pbp_raw_archives/$DATE.zip" .)
+          test -s "data/historical/qpix_pbp_derived/$DATE.json"
+          test -s "data/historical/qpix_pbp_raw_archives/$DATE.zip"
+          echo "Event derivation archived; unreconciled classifications remain experimental." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Publish original source and research-only derivation to main
+        if: always() && steps.gate.outputs.run == 'true'
+        shell: bash
+        run: |
+          set -e
+          DATE="${{ steps.gate.outputs.date_et }}"
+          test -s "data/historical/qpix_pbp_derived/$DATE.json"
+          git config user.name "QPIX Source Archive"
+          git config user.email "actions@users.noreply.github.com"
+          git add "data/historical/qpix_pbp_raw/$DATE/" "data/historical/qpix_pbp_raw_archives/$DATE.zip" "data/historical/qpix_pbp_derived/$DATE.json"
+          if git diff --cached --quiet; then echo "Source already archived"; exit 0; fi
+          git commit -m "Archive ESPN Nov 19 source and experimental PBP derivation: $DATE"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
 
       - name: Explain independence from QPIX scoring
         if: always() && steps.gate.outputs.run == 'true'
