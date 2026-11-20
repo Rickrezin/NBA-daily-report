@@ -173,8 +173,8 @@
     "error": "HTTP Error 403: Forbidden",
     "status": "NBA schedule crosswalk unavailable"
   },
-  "NBA_AdvancedV3": "unavailable on shared runner; no independently verified current-game NBA ID crosswalk",
-  "NBA_MiscV3": "unavailable on shared runner; no independently verified current-game NBA ID crosswalk",
+  "NBA_AdvancedV3": "not retrieved; independently matched official NBA IDs known; do not substitute on-court NBA ratings for Basketball-Reference individual ratings",
+  "NBA_MiscV3": "not retrieved; individual paint, fast-break and second-chance totals are unavailable",
   "pbp_event_count": 1941,
   "pbp_discrepancy_summary": {
     "lineup_plus_minus_vs_box": 42,
@@ -187,6 +187,12 @@
   "scoring_certified": false,
   "score_publication_status": "PROVISIONAL_SHADOW_NOT_OFFICIAL",
   "raw_pbp_partial_flag": "NYK at MIN event progression ends Minnesota 97 vs official 99; all boxes independently reconciled; no event-derived C6/C11 used",
+  "verified_nba_id_crosswalk": {
+    "401910019": "0022600270",
+    "401910020": "0022600271",
+    "401910021": "0022600272",
+    "401910022": "0022600273"
+  },
   "raw_pbp_score_reconciliation": {
     "final_games": 4,
     "PBP_terminal_score_matching": 3,
