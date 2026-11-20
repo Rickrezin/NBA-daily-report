@@ -26,7 +26,9 @@ jobs:
           mkdir -p data/historical/qpix_pbp_raw/2026-11-19
           # Raw ESPN JSON already checked into main after full PBP event derivation; never assume artifact is committed before this check.
           test -s data/historical/qpix_pbp_raw/2026-11-19/manifest.json
-          gh run download 44732649747 -R Rickrezin/NBA-daily-report -n qpix-unified-shadow-2026-11-19 -D .
+          # Nov 19 shadow input was archived to main by the first verified provisional publication.
+          # Do not re-extract the artifact onto existing files: gh refuses to overwrite.
+          test -s data/historical/qpix_input/2026-11-19.json
           test -s data/historical/qpix_input/2026-11-19.json
           test -s data/historical/qpix_pbp_raw/2026-11-19/manifest.json
       - name: Parse and reconcile every original ESPN event before scoring
@@ -119,6 +121,9 @@ jobs:
           audit['scoring_certified']=False
           audit['score_publication_status']='PROVISIONAL_SHADOW_NOT_OFFICIAL'
           audit['raw_pbp_partial_flag']='NYK at MIN event progression ends Minnesota 97 vs official 99; all boxes independently reconciled; no event-derived C6/C11 used'
+          audit['verified_nba_id_crosswalk']={'401910019':'0022600270','401910020':'0022600271','401910021':'0022600272','401910022':'0022600273'}
+          audit['NBA_AdvancedV3']='not retrieved; independently matched official NBA IDs known; do not substitute on-court NBA ratings for Basketball-Reference individual ratings'
+          audit['NBA_MiscV3']='not retrieved; individual paint, fast-break and second-chance totals are unavailable'
           audit['raw_pbp_score_reconciliation']={'final_games':4,'PBP_terminal_score_matching':3,'PBP_terminal_score_mismatching':1,'unmatched_event_id':'401910021','provider_box_final':'NYK 102 MIN 99','pbp_terminal_final':'NYK 102 MIN 97'}
           path.write_text(json.dumps(audit,indent=2)+'\n')
           print('NBA SOURCE CHECK',rec)
