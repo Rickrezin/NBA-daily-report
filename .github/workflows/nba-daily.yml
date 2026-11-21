@@ -2,28 +2,32 @@ name: NBA Daily Report
 
 on:
   schedule:
-    # Two UTC slots plus a timezone gate keep collection at 9:00 AM
-    # America/New_York through both EDT (13:00 UTC) and EST (14:00 UTC).
+    # 9:00 AM America/New_York in both EDT and EST; the gate selects one slot.
     - cron: '0 13 * * *'
     - cron: '0 14 * * *'
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
   generate-report:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
+    env:
+      ENABLE_NBA_CDN: 'true'
+      ENABLE_NBA_V3: 'false'
+      QPIX_ENGINE_REVISION: ${{ github.sha }}
     steps:
       - name: Gate scheduled collection to 9 AM New York time
         id: collection_window
@@ -36,10 +40,6 @@ jobs:
             echo "run=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-
-          # The scheduled UTC slot determines the intended local 9 AM.
-          # Check DST/standard offset rather than wall-clock hour because
-          # GitHub can start a scheduled job late.
           ny_offset="$(TZ=America/New_York date +%z)"
           if [[ "$ny_offset" == "-0400" && "$SCHEDULE_CRON" == "0 13 * * *" ]] ||
              [[ "$ny_offset" == "-0500" && "$SCHEDULE_CRON" == "0 14 * * *" ]]; then
@@ -54,13 +54,11 @@ jobs:
         if: steps.collection_window.outputs.run == 'true'
         uses: actions/checkout@v4
 
-      - name: Create data directory
+      - name: Setup Python
         if: steps.collection_window.outputs.run == 'true'
-        run: mkdir -p data
-
-      - name: Fetch NBA data
-        if: steps.collection_window.outputs.run == 'true'
-        run: python3 scripts/fetch_nba_data.py
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
       - name: Setup Node.js
         if: steps.collection_window.outputs.run == 'true'
@@ -68,23 +66,96 @@ jobs:
         with:
           node-version: '24'
 
-      - name: Ensure dashboard directory exists with placeholder
+      - name: Install verified NBA live CDN client
         if: steps.collection_window.outputs.run == 'true'
-        run: |
-          mkdir -p dashboard
-          cp index.html dashboard/index.html
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
 
-      - name: Run NBA report generator
+      - name: Select previous Eastern game date
         if: steps.collection_window.outputs.run == 'true'
-        run: node generate-report.js
-
-      - name: Prefer latest published date-scoped QPIX dashboard
+        id: game_date
+        shell: bash
         run: |
-          if ls data/daily/????-??-??*.json >/dev/null 2>&1; then
-            python3 scripts/render_qpix_dashboard.py
-          else
-            echo "No dated published report; keeping original generated dashboard."
+          RUN_DATE="$(TZ=America/New_York date -d 'yesterday' +%F)"
+          echo "date_et=$RUN_DATE" >> "$GITHUB_OUTPUT"
+          echo "Collecting verified QPIX inputs for ET game date: $RUN_DATE" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Collect sources, validate every player, and run authorized QPIX
+        if: steps.collection_window.outputs.run == 'true'
+        id: collect
+        env:
+          RUN_DATE: ${{ steps.game_date.outputs.date_et }}
+        run: python3 scripts/qpix_independent_run.py "$RUN_DATE"
+
+      - name: Summarize coverage from this run's exact input archive
+        if: ${{ always() && steps.collection_window.outputs.run == 'true' && steps.collect.outputs.input_archive != '' }}
+        env:
+          RUN_DATE: ${{ steps.game_date.outputs.date_et }}
+          INPUT_ARCHIVE: ${{ steps.collect.outputs.input_archive }}
+        run: python3 scripts/qpix_coverage_audit.py "$RUN_DATE" --source "$INPUT_ARCHIVE"
+
+      - name: Render the verified report for the selected date
+        if: steps.collection_window.outputs.run == 'true'
+        env:
+          RUN_DATE: ${{ steps.game_date.outputs.date_et }}
+        run: python3 scripts/qpix_render_verified.py "$RUN_DATE"
+
+      - name: Preserve source bodies, input archives, audits, and reports
+        if: ${{ always() && steps.collection_window.outputs.run == 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: qpix-verified-daily-${{ steps.game_date.outputs.date_et || 'unknown' }}-${{ github.run_id }}
+          path: |
+            ${{ steps.collect.outputs.input_archive }}
+            data/historical/qpix_input/${{ steps.game_date.outputs.date_et }}*
+            data/historical/qpix_audits/${{ steps.game_date.outputs.date_et }}*
+            data/historical/qpix_raw/${{ steps.game_date.outputs.date_et }}/
+            data/historical/qpix_bref_raw/${{ steps.game_date.outputs.date_et }}/
+            data/nba_data.json
+            data/daily/${{ steps.game_date.outputs.date_et }}.json
+            data/daily/${{ steps.game_date.outputs.date_et }}.csv
+            docs/reports/${{ steps.game_date.outputs.date_et }}.md
+            docs/reports/${{ steps.game_date.outputs.date_et }}.audit.json
+            dashboard/index.html
+            dashboard/familiarity.json
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Commit only the validated report and its source records
+        if: steps.collection_window.outputs.run == 'true'
+        env:
+          RUN_DATE: ${{ steps.game_date.outputs.date_et }}
+          INPUT_ARCHIVE: ${{ steps.collect.outputs.input_archive }}
+        shell: bash
+        run: |
+          git config user.name "QPIX Independent Run"
+          git config user.email "actions@users.noreply.github.com"
+          paths=(
+            "data/daily/$RUN_DATE.json"
+            "data/daily/$RUN_DATE.csv"
+            "docs/reports/$RUN_DATE.md"
+            "docs/reports/$RUN_DATE.audit.json"
+            "$INPUT_ARCHIVE"
+            "data/historical/qpix_input/$RUN_DATE.json"
+            "data/historical/qpix_input/$RUN_DATE.partial.json"
+            "data/historical/qpix_audits/$RUN_DATE.coverage.json"
+            "data/historical/qpix_raw/$RUN_DATE"
+            "data/historical/qpix_bref_raw/$RUN_DATE"
+            "data/nba_data.json"
+          )
+          for path in "${paths[@]}"; do
+            if [[ -n "$path" && -e "$path" ]]; then
+              git add -- "$path"
+            fi
+          done
+          for path in dashboard/index.html dashboard/familiarity.json; do
+            if [[ -f "$path" ]]; then git add -f -- "$path"; fi
+          done
+          if git diff --cached --quiet; then
+            echo 'No new verified report artifacts'
+            exit 0
           fi
+          git commit -m "QPIX verified NBA report for $RUN_DATE"
+          git push origin HEAD:main
 
       - name: Setup Pages
         if: steps.collection_window.outputs.run == 'true'

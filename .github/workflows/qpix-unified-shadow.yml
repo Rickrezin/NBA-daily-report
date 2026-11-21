@@ -1,4 +1,4 @@
-name: QPIX Unified Source Branch - Daily Shadow Test
+name: QPIX Unified Sources - Daily Shadow Test
 
 on:
   push:
@@ -6,6 +6,13 @@ on:
     paths:
       - '.github/qpix-shadow-trigger.txt'
       - '.github/workflows/qpix-unified-shadow.yml'
+      - 'requirements.txt'
+      - 'scripts/qpix_independent_run.py'
+      - 'scripts/qpix_nba_live.py'
+      - 'scripts/qpix_bref_ratings.py'
+      - 'scripts/qpix_game_crosswalk.py'
+      - 'scripts/qpix_source_archive.py'
+      - 'scripts/qpix_render_verified.py'
   schedule:
     # 9:30 AM Eastern, scheduled in both DST and standard time UTC slots.
     - cron: '30 13 * * *'
@@ -26,11 +33,12 @@ concurrency:
 
 jobs:
   source-shadow:
-    name: Independently test unified-source feature branch
+    name: Independently test verified sources and production scoring
     runs-on: ubuntu-latest
     env:
       ENABLE_NBA_CDN: 'true'
       ENABLE_NBA_V3: 'false'
+      QPIX_ENGINE_REVISION: ${{ github.sha }}
     timeout-minutes: 20
     steps:
       - name: Gate to 9:30 AM New York schedule slot
@@ -49,11 +57,10 @@ jobs:
           fi
           echo "run=true" >> "$GITHUB_OUTPUT"
 
-      - name: Checkout unified-source branch (not production)
+      - name: Checkout verified-source collector (read-only)
         if: steps.schedule_gate.outputs.run == 'true'
         uses: actions/checkout@v4
         with:
-          ref: feature/qpix-multi-source-ingestion-20261104
           persist-credentials: false
 
       - name: Setup Python
@@ -61,32 +68,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
-      - name: Checkout current authorized production scoring
-        if: steps.schedule_gate.outputs.run == 'true'
-        uses: actions/checkout@v4
-        with:
-          ref: main
-          path: .qpix-production
-          persist-credentials: false
-          sparse-checkout-cone-mode: false
-          sparse-checkout: |
-            /generate-report.js
-            /scripts/familiarity.js
-            /data/venue_familiarity.json
-            /data/former_team_familiarity.json
-
-      - name: Use the unchanged production scoring engine and configuration
-        if: steps.schedule_gate.outputs.run == 'true'
-        shell: bash
-        run: |
-          cp .qpix-production/generate-report.js generate-report.js
-          cp .qpix-production/scripts/familiarity.js scripts/familiarity.js
-          cp .qpix-production/data/venue_familiarity.json data/venue_familiarity.json
-          cp .qpix-production/data/former_team_familiarity.json data/former_team_familiarity.json
-          engine_revision="$(git -C .qpix-production rev-parse HEAD)"
-          echo "QPIX_ENGINE_REVISION=$engine_revision" >> "$GITHUB_ENV"
-          echo "Production scoring commit: $engine_revision" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Setup Node.js
         if: steps.schedule_gate.outputs.run == 'true'
@@ -115,7 +96,7 @@ jobs:
             RUN_DATE="$(TZ=America/New_York date -d 'yesterday' +%F)"
           fi
           echo "date_et=$RUN_DATE" >> "$GITHUB_OUTPUT"
-          echo "Testing feature branch for ET game date: $RUN_DATE" >> "$GITHUB_STEP_SUMMARY"
+          echo "Testing main collector for ET game date: $RUN_DATE" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Collect sources, archive inputs, validate and test QPIX locally
         if: steps.schedule_gate.outputs.run == 'true'
@@ -124,10 +105,17 @@ jobs:
           QPIX_PHASE: regular
         run: python3 scripts/qpix_independent_run.py "${{ steps.game_date.outputs.date_et }}"
 
+      - name: Render the exact verified report for validation
+        if: steps.schedule_gate.outputs.run == 'true'
+        run: python3 scripts/qpix_render_verified.py "${{ steps.game_date.outputs.date_et }}"
+
       - name: Summarize per-category and per-game field coverage
-        if: ${{ always() && steps.schedule_gate.outputs.run == 'true' }}
+        if: ${{ always() && steps.schedule_gate.outputs.run == 'true' && steps.shadow_run.outputs.input_archive != '' }}
         shell: bash
-        run: python3 scripts/qpix_coverage_audit.py "${{ steps.game_date.outputs.date_et }}" || true
+        env:
+          INPUT_ARCHIVE: ${{ steps.shadow_run.outputs.input_archive }}
+          DATE_ET: ${{ steps.game_date.outputs.date_et }}
+        run: python3 scripts/qpix_coverage_audit.py "$DATE_ET" --source "$INPUT_ARCHIVE"
 
       - name: Upload pre-scoring source archive and audit (including failures)
         if: ${{ always() && steps.schedule_gate.outputs.run == 'true' }}
@@ -143,6 +131,8 @@ jobs:
             data/daily/${{ steps.game_date.outputs.date_et }}.json
             data/daily/${{ steps.game_date.outputs.date_et }}.csv
             docs/reports/${{ steps.game_date.outputs.date_et }}.audit.json
+            docs/reports/${{ steps.game_date.outputs.date_et }}.md
+            dashboard/index.html
           if-no-files-found: error
           retention-days: 7
 

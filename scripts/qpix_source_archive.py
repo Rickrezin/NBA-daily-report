@@ -77,8 +77,24 @@ def canonical_snapshot(games, players, date_et, audits, require_complete=True):
         raise ValueError("Incomplete QPIX inputs: "+json.dumps(counts,sort_keys=True))
     return doc
 
-def write_snapshot(snapshot, root):
+def _input_hash(snapshot):
+    canonical=json.dumps({"games":snapshot["games"],"players":snapshot["players"]},
+                         sort_keys=True,ensure_ascii=False,separators=(",",":"),
+                         allow_nan=False).encode("utf-8")
+    return hashlib.sha256(canonical).hexdigest()
+
+def _validate_existing(path, snapshot):
+    existing=json.loads(path.read_text(encoding="utf-8"))
+    if (existing.get("date_et")!=snapshot["date_et"] or
+            existing.get("input_sha256")!=snapshot["input_sha256"] or
+            _input_hash(existing)!=snapshot["input_sha256"]):
+        raise ValueError("Historical archive content conflict; refuse overwrite "+str(path))
+
+def write_snapshot(snapshot, root, allow_revision=False):
+    """Preserve the original date archive; optionally add a content-addressed revision."""
     date=snapshot["date_et"]
+    if _input_hash(snapshot)!=snapshot["input_sha256"]:
+        raise ValueError("Snapshot input hash does not match its games and players")
     output=Path(root)/"data"/"historical"/"qpix_input"/(date+".json")
     output.parent.mkdir(parents=True,exist_ok=True)
     # Existing historical inputs must not silently be overwritten.
@@ -86,7 +102,20 @@ def write_snapshot(snapshot, root):
     if output.exists():
         existing=json.loads(output.read_text(encoding="utf-8"))
         if existing.get("input_sha256")!=snapshot["input_sha256"]:
-            raise ValueError("Historical archive conflict; refuse overwrite "+str(output))
+            if not allow_revision:
+                raise ValueError("Historical archive conflict; refuse overwrite "+str(output))
+            output=output.with_name(date+"."+snapshot["input_sha256"]+".json")
+        else:
+            _validate_existing(output,snapshot)
+            return output
+    if output.exists():
+        _validate_existing(output,snapshot)
         return output
-    output.write_text(new,encoding="utf-8")
+    try:
+        with output.open("x",encoding="utf-8") as stream:
+            stream.write(new)
+    except FileExistsError:
+        # Another writer must never turn a repeated run into an overwrite.
+        _validate_existing(output,snapshot)
     return output
+

@@ -63,9 +63,19 @@ def main():
     parser=argparse.ArgumentParser()
     parser.add_argument("date")
     parser.add_argument("--root",default=".")
+    parser.add_argument("--source",help="Exact input snapshot for this run; relative paths use --root")
     args=parser.parse_args()
     root=Path(args.root)
-    source=root/"data"/"historical"/"qpix_input"/(args.date+".json")
+    if args.source is not None:
+        if not args.source:
+            parser.error("--source must name an input snapshot")
+        source=Path(args.source)
+        if not source.is_absolute():
+            source=root/source
+        if not source.is_file():
+            raise ValueError("Explicit input archive is unavailable: "+str(source))
+    else:
+        source=root/"data"/"historical"/"qpix_input"/(args.date+".json")
     if not source.exists():
         partial_path=root/"data"/"historical"/"qpix_input"/(args.date+".partial.json")
         partial=json.loads(partial_path.read_text(encoding="utf-8")) if partial_path.exists() else {}
@@ -92,7 +102,12 @@ def main():
             with open(os.environ["GITHUB_STEP_SUMMARY"],"a",encoding="utf-8") as stream:
                 stream.write("\n"+summary)
         return 0
-    report=coverage(json.loads(source.read_text(encoding="utf-8")))
+    snapshot=json.loads(source.read_text(encoding="utf-8"))
+    if snapshot.get("date_et")!=args.date:
+        raise ValueError("Input archive date does not match requested coverage date")
+    report=coverage(snapshot)
+    report["input_archive"]=str(source)
+    report["input_sha256"]=snapshot.get("input_sha256")
     audit=root/"data"/"historical"/"qpix_audits"/(args.date+".coverage.json")
     audit.parent.mkdir(parents=True,exist_ok=True)
     audit.write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
@@ -105,3 +120,4 @@ def main():
     return 0
 
 if __name__=="__main__":raise SystemExit(main())
+

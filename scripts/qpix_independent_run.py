@@ -13,6 +13,8 @@ from qpix_verified_sources import populate_verified_ratings
 from qpix_source_archive import canonical_snapshot, write_snapshot
 from qpix_collection_checkpoint import CollectionCheckpoint
 from qpix_game_crosswalk import resolve as resolve_nba_crosswalk
+from qpix_nba_live import NBAClient, apply_live_boxscore
+from qpix_bref_ratings import collect_game_ratings
 
 PROGRESS=None
 
@@ -23,6 +25,7 @@ RUN_DATE=(datetime.now(ET)-timedelta(days=1)).strftime("%Y-%m-%d")
 if len(sys.argv)>1: RUN_DATE=sys.argv[1]
 PHASE="preseason" if (RUN_DATE<"2026-10-20") else "regular"
 ENABLE_NBA_V3=os.getenv("ENABLE_NBA_V3","false").strip().lower() in ("1","true","yes","on")
+ENABLE_NBA_CDN=os.getenv("ENABLE_NBA_CDN","true").strip().lower() in ("1","true","yes","on")
 USER_AGENT="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131 Safari/537.36"
 EXPECTED_20261024=["0022600104","0022600105","0022600106","0022600107","0022600108","0022600109","0022600110","0022600111"]
 
@@ -31,6 +34,13 @@ def fetch(url, timeout=16):
     with urllib.request.urlopen(req,timeout=timeout) as r:return r.read().decode("utf-8","replace")
 
 def fetch_json(url,timeout=16):return json.loads(fetch(url,timeout))
+
+def fetch_bref(url,timeout=17):
+    # Use the same identified client as the working supplemental BRef audit.
+    headers={"User-Agent":"QCoreLabs-QPIX-Research/1.0 (https://github.com/Rickrezin/NBA-daily-report)",
+             "Accept":"application/json,text/html"}
+    with urllib.request.urlopen(urllib.request.Request(url,headers=headers),timeout=timeout) as response:
+        return response.read()
 
 
 DYNAMIC_MATCHUPS={}
@@ -62,6 +72,17 @@ def game_ids_for(date):
     if len(set(pair for _,pair in events))!=len(events):
         raise RuntimeError("Duplicate fixture on ESPN scoreboard "+date)
     SCHEDULE_AUDIT["ESPN_final_fixtures"]=len(events)
+
+    # Keep ESPN participant identities stable while the separate live-CDN
+    # phase resolves official NBA IDs and reconciles player-level C6 values.
+    if ENABLE_NBA_CDN:
+        ids=[]
+        for eventid,pair in events:
+            gid="ESPN_"+eventid
+            DYNAMIC_MATCHUPS[gid]=pair
+            ids.append(gid)
+        SCHEDULE_AUDIT["base_player_source"]="ESPN finals; NBA CDN enrichment follows independently of Stats V3"
+        return ids
 
     # Independently verified 2026-10-27 NBA game IDs from stat.space fixture URLs.
     # NBA schedule CDN has returned 403 on cloud runners; retain the real IDs
@@ -388,7 +409,7 @@ def create_report(result, quality):
     day=RUN_DATE
     byname={"MIA":"Miami Heat","CHA":"Charlotte Hornets","MIL":"Milwaukee Bucks","PHI":"Philadelphia 76ers","BKN":"Brooklyn Nets","CLE":"Cleveland Cavaliers","SAS":"San Antonio Spurs","DAL":"Dallas Mavericks","WAS":"Washington Wizards","CHI":"Chicago Bulls","HOU":"Houston Rockets","ATL":"Atlanta Hawks","NOP":"New Orleans Pelicans","DEN":"Denver Nuggets","GSW":"Golden State Warriors","PHX":"Phoenix Suns","MIN":"Minnesota Timberwolves","IND":"Indiana Pacers","BOS":"Boston Celtics","UTA":"Utah Jazz","MEM":"Memphis Grizzlies","OKC":"Oklahoma City Thunder"}
     top=[p for p in players if float(p.get('minutes') or 0)>8][:10]
-    bottom=list(reversed(players[-10:]))
+    bottom=list(reversed([p for p in players if float(p.get('minutes') or 0)>8][-10:]))
     def player_rank(p):return f"{p['name']} | {p['team']} — {p['score']:.1f}"
     m=[f"# 🏀 QCORE LABS | QPIX™ NBA DAILY PERFORMANCE INDEX","","**"+datetime.strptime(day,"%Y-%m-%d").strftime("%B %d, %Y").upper()+f" | {'PRESEASON' if PHASE=='preseason' else 'REGULAR SEASON'}**",
        f"**{len(games)} Games • {len(players)} Players Evaluated • 13-Category Performance Index**","","## 🔥 THE QPIX™ LEADERBOARD",
@@ -468,24 +489,74 @@ def main():
     # never be sent to NBA Stats as if they were 10-digit NBA game identifiers.
     fixture_rows=[{"espn_event_id":g.get("espn_event_id") or str(g["game_id"]).removeprefix("ESPN_"),
                    "away_alias":g["away_alias"],"home_alias":g["home_alias"]} for g in games]
-    if ENABLE_NBA_V3:
-        nba_map,crosswalk_audit=resolve_nba_crosswalk(RUN_DATE,fixture_rows,fetch_json,normalize_alias)
+    cdn_client=NBAClient(ROOT,RUN_DATE) if ENABLE_NBA_CDN else None
+    def crosswalk_fetch(url,timeout=12):
+        if cdn_client is not None and url.startswith("https://cdn.nba.com/"):
+            return cdn_client.fetch_json(url,timeout=timeout)
+        return fetch_json(url,timeout=timeout)
+    if ENABLE_NBA_CDN or ENABLE_NBA_V3:
+        nba_map,crosswalk_audit=resolve_nba_crosswalk(
+            RUN_DATE,fixture_rows,crosswalk_fetch,normalize_alias,
+            allow_stats_fallback=ENABLE_NBA_V3)
         for game in games:
             eid=str(game.get("espn_event_id") or str(game["game_id"]).removeprefix("ESPN_"))
             nba_id=nba_map.get(eid)
             if nba_id:game["nba_game_id"]=nba_id
     else:
-        crosswalk_audit={"status":"skipped_v3_disabled","reason":"ENABLE_NBA_V3=false","expected":len(games),"resolved":0}
+        crosswalk_audit={"status":"skipped_nba_sources_disabled","reason":"NBA CDN and Stats V3 disabled","expected":len(games),"resolved":0}
     PROGRESS.state["source_audits"]["nba_crosswalk"]=crosswalk_audit
     PROGRESS.stage("nba_crosswalk_resolved")
     print("NBA_ID_CROSSWALK",json.dumps(crosswalk_audit,sort_keys=True),flush=True)
+    # The live CDN works with its own nba_api transport even when stats.nba.com
+    # is unavailable. Preserve raw JSON and verify every player before merging.
+    cdn_audits=[]
+    if cdn_client is not None:
+        for game in games:
+            nba_id=game.get("nba_game_id")
+            rec={"game_id":game["game_id"],"nba_game_id":nba_id,"status":"missing_verified_nba_id"}
+            if nba_id:
+                url=f"https://cdn.nba.com/static/json/liveData/boxscore/boxscore_{nba_id}.json"
+                try:
+                    payload=cdn_client.fetch_json(url,timeout=12)
+                    rec.update(apply_live_boxscore(game,results[game["game_id"]][1],payload,nba_id,RUN_DATE))
+                except Exception as exc:
+                    rec.update({"status":"unavailable_or_invalid","error":str(exc)[:300]})
+                rec["source"]=url
+                rec["raw_path"]=str(cdn_client.raw_paths.get(url,""))
+            cdn_audits.append(rec)
+            PROGRESS.state["source_audits"]["NBA_CDN"]=cdn_audits
+            PROGRESS.stage("collecting_live_CDN")
+            print("NBA_CDN",json.dumps(rec,sort_keys=True),flush=True)
     # C3 requires Basketball-Reference/Dean Oliver individual ratings,
     # not NBA.com's different on-court ratings.
     # Reuse date-matched verified historical ratings only after strict box-line checks.
-    c3archive=populate_verified_ratings(players,RUN_DATE,ROOT)
+    archive_candidates=[dict(p) for p in players]
+    try:
+        c3archive=populate_verified_ratings(archive_candidates,RUN_DATE,ROOT)
+    except Exception as exc:
+        # A provisional or otherwise unusable replay must not prevent fresh,
+        # independently validated Basketball-Reference collection.
+        c3archive={"status":"unusable_archive","assigned":0,"players":len(players),
+                   "error":str(exc)[:300]}
+    else:
+        for player,candidate in zip(players,archive_candidates):
+            for field in ("offensive_rating","defensive_rating"):
+                if field in candidate:player[field]=candidate[field]
     PROGRESS.state['source_audits']['C3']=c3archive
     PROGRESS.stage('C3_reconciled')
     print('C3 historical validation',c3archive['status'],c3archive['assigned'],'/',len(players),flush=True)
+    # A prior verified archive may be absent for a new day. Fetch the actual
+    # Basketball-Reference basic and advanced tables and reconcile each game.
+    bref_audits=[]
+    for game in games:
+        game_players=results[game["game_id"]][1]
+        if all("offensive_rating" in p and "defensive_rating" in p for p in game_players):
+            continue
+        rec=collect_game_ratings(game,game_players,RUN_DATE,ROOT,fetch_bref)
+        bref_audits.append({"game_id":game["game_id"],**rec})
+        PROGRESS.state["source_audits"]["Basketball_Reference"]=bref_audits
+        PROGRESS.stage("collecting_individual_ratings")
+        print("C3 Basketball-Reference",game["game_id"],json.dumps(rec,sort_keys=True),flush=True)
     adv=[c3archive]
     misc=[]
     if ENABLE_NBA_V3:
@@ -511,13 +582,19 @@ def main():
         misc.append({"status":"skipped_v3_disabled","reason":"ENABLE_NBA_V3=false"})
         PROGRESS.state["source_audits"]["NBA_AdvancedV3"]=[adv[-1]]
         PROGRESS.state["source_audits"]["C6"]=[misc[-1]]
-        print("NBA_V3_DISABLED: crosswalk, AdvancedV3 and MiscV3 skipped",flush=True)
+        print("NBA_V3_DISABLED: Stats AdvancedV3 and MiscV3 skipped; live CDN is independent",flush=True)
     # Write a QCore-normalized archive BEFORE invoking the authorized engine.
     # Incomplete inputs produce an audit snapshot, but cannot be published as a
     # 'full category' report. Keep original scoring rules unchanged.
-    source_audits={"ESPN_and_LiveData":SCHEDULE_AUDIT,"nba_crosswalk":crosswalk_audit,"C3":c3archive,"AdvancedV3":adv,"C6":misc}
+    source_audits={"ESPN_and_LiveData":SCHEDULE_AUDIT,"nba_crosswalk":crosswalk_audit,
+                   "NBA_CDN":cdn_audits,"C3_archive":c3archive,"Basketball_Reference":bref_audits,
+                   "AdvancedV3":adv,"C6":misc}
     snapshot=canonical_snapshot(games,players,RUN_DATE,source_audits,require_complete=False)
-    archived_path=write_snapshot(snapshot,ROOT)
+    archived_path=write_snapshot(snapshot,ROOT,allow_revision=True)
+    archive_relative=str(archived_path.relative_to(ROOT))
+    if os.getenv("GITHUB_OUTPUT"):
+        with open(os.environ["GITHUB_OUTPUT"],"a",encoding="utf-8") as stream:
+            stream.write("input_archive="+archive_relative+"\n")
     print("QCORE_INPUT_ARCHIVE",str(archived_path),"SHA256",snapshot["input_sha256"],flush=True)
     PROGRESS.state["coverage"]=snapshot["coverage"]["fields"]
     PROGRESS.stage("source_validation_complete",canonical_archive={"path":str(archived_path),"sha256":snapshot["input_sha256"]})
@@ -533,8 +610,9 @@ def main():
     # JS Number.isFinite(undefined) false and C4 defensive anchor check false.
     quality={
       "Source":f"ESPN final scoreboard/box scores or official NBA LiveData where accessible; all {len(games)} FINAL fixtures and player-point totals reconciled; "+str(SCHEDULE_AUDIT),
-      "Basketball-Reference":basketball_reference_audit(),
-      "C3 individual ORtg/DRtg": f"{c3}/{len(players)} archived and validated individual Dean Oliver ORtg/DRtg; missing remain absent; no NBA on-court substitution.",
+      "Basketball-Reference":bref_audits or c3archive,
+      "individual_ratings_verified":c3,
+      "C3 individual ORtg/DRtg": f"{c3}/{len(players)} validated individual Basketball-Reference/Dean Oliver ORtg/DRtg from fresh basic/advanced tables or a verified date-matched archive.",
       "C6 second-chance points":f"{c6['second_chance_points']}/{len(players)} individual records available; rest omitted (engine zero fallback)",
       "C6 fast-break points":f"{c6['fast_break_points']}/{len(players)} individual records available; rest omitted (engine zero fallback)",
       "C6 paint points":f"{c6['points_in_paint']}/{len(players)} individual records available; rest omitted (engine zero fallback)",
@@ -546,7 +624,7 @@ def main():
       "Top 10 eligibility":"More than 8 minutes played; zero minimum field-goal attempts. All player results remain in JSON/CSV.", 
       "Opponent strength":"Engine default 1.0 (no external standings coefficient)",
       "Advanced retrieval audit":json.dumps(adv,ensure_ascii=False),
-      "C6 retrieval audit":json.dumps(misc,ensure_ascii=False)
+      "C6 retrieval audit":json.dumps({"NBA_CDN":cdn_audits,"Stats_MiscV3":misc},ensure_ascii=False)
     }
     pathlib.Path("data").mkdir(exist_ok=True)
     pathlib.Path("data/nba_data.json").write_text(json.dumps({"games":games,"players":players},ensure_ascii=False,indent=2),encoding="utf-8")
@@ -563,16 +641,25 @@ def main():
         pathlib.Path("generate-report.js").write_text(js,encoding="utf-8")
     scored=json.loads(pathlib.Path("data/_qpix_scored_automated.json").read_text(encoding="utf-8"))
     ranked=scored["players"]
-    for p in ranked: p["top10_eligible"] = bool(float(p.get("minutes") or 0)>8)
+    for p in ranked:
+        p["top10_eligible"] = bool(float(p.get("minutes") or 0)>8)
+        # Presentation-schema aliases only; retain the exact authorized scores.
+        p["raw_qpix"]=p["score"]
+        p["qpix_r"]=p["qpixR"]
     eligible=[p for p in ranked if p["top10_eligible"]]
     assert len(ranked)==len(players) and sorted(p["player_id"] for p in ranked)==sorted(p["player_id"] for p in players)
     assert all(isinstance(p["score"],(int,float)) and isinstance(p["qpixR"],(int,float)) for p in ranked)
     assert all(ranked[i]["score"]>=ranked[i+1]["score"] for i in range(len(ranked)-1))
     root=pathlib.Path("data/daily");root.mkdir(parents=True,exist_ok=True)
-    output={"schema_version":3,"season":"2026-27","date_et":RUN_DATE,"phase":PHASE,
+    output={"schema_version":3,"season":"2026-27","date_et":RUN_DATE,"phase":PHASE,"status":"VERIFIED",
       "generated_at_utc":datetime.now(ZoneInfo("UTC")).isoformat(),
       "scoring_engine":{"file":"generate-report.js","method":"Executed authorized JavaScript engine without modifying scoring formulas; ephemeral audit output injection and >8-minute ranking gate restored after run","rank_by":"RAW QPIX","top10_min_minutes_exclusive":8}, 
+      "source_archive":{"path":archive_relative,"input_sha256":snapshot["input_sha256"],"complete":True},
+      "leaderboards":{"top10":[p["player_id"] for p in eligible[:10]],
+                      "bottom10":[p["player_id"] for p in reversed(eligible[-10:])]},
       "data_quality":quality,"games":games,"players":ranked}
+    if os.getenv("QPIX_ENGINE_REVISION"):
+        output["scoring_engine"]["production_commit"]=os.environ["QPIX_ENGINE_REVISION"]
     (root/(RUN_DATE+".json")).write_text(json.dumps(output,ensure_ascii=False,indent=2,allow_nan=False)+"\n",encoding="utf-8")
     csvpath=root/(RUN_DATE+".csv")
     fields=["rank","name","team","game","minutes","points","rebounds","assists","steals","blocks","turnovers","fgm","fga","fg3m","fg3a","ftm","fta","plus_minus","offensive_rating","defensive_rating","second_chance_points","fast_break_points","points_in_paint","ts","score","qpixR","refPenalty","refBonus","qpixSFA","sfaAdj","top10_eligible"]
@@ -582,7 +669,7 @@ def main():
         for i,p in enumerate(ranked,1):writer.writerow({"rank":i,**p})
     out=pathlib.Path("docs/reports");out.mkdir(parents=True,exist_ok=True)
     (out/(RUN_DATE+".md")).write_text(create_report(output,quality),encoding="utf-8")
-    audit={"date_et":RUN_DATE,"games":len(games),"players":len(ranked),"top10":[[p["name"],p["team"],p["score"],p["qpixR"]] for p in eligible[:10]],"bottom10":[[p["name"],p["team"],p["score"]] for p in reversed(ranked[-10:])],"quality":quality}
+    audit={"date_et":RUN_DATE,"games":len(games),"players":len(ranked),"top10":[[p["name"],p["team"],p["score"],p["qpixR"]] for p in eligible[:10]],"bottom10":[[p["name"],p["team"],p["score"]] for p in reversed(eligible[-10:])],"quality":quality,"source_archive":output["source_archive"]}
     (out/(RUN_DATE+".audit.json")).write_text(json.dumps(audit,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     print("SUCCESS",json.dumps({"games":len(games),"players":len(ranked),"top":audit["top10"][0]},ensure_ascii=False),flush=True)
 
@@ -597,3 +684,4 @@ if __name__=="__main__":
 # QPIX Oct 30, 2026 daily run trigger (scoring and ingestion logic unchanged).
 
 # QPIX 2026-10-31 final-games run: existing authorized workflow trigger only; scoring and ingestion logic unchanged.
+

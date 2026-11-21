@@ -1,47 +1,121 @@
 name: QPIX Independent Verified Report
+
+# Publication is explicit; automatic branch validation belongs to the shadow job.
 on:
-  push:
-    paths:
-      - 'scripts/qpix_independent_run.py'
-      - '.github/workflows/qpix-independent.yml'
   workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   score-and-publish:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     env:
+      ENABLE_NBA_CDN: 'true'
       ENABLE_NBA_V3: 'false'
-    timeout-minutes: 10
+      QPIX_ENGINE_REVISION: ${{ github.sha }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          persist-credentials: true
-      - name: Setup Node
+          python-version: '3.12'
+
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Download and validate final NBA player box scores; run authorized QPIX JS
-        run: python3 scripts/qpix_independent_run.py
-      - name: Preserve normalized preflight JSON and source audit for failed runs
+
+      - name: Install verified NBA live CDN client
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+
+      - name: Select previous Eastern game date
+        id: game_date
+        shell: bash
+        run: |
+          RUN_DATE="$(TZ=America/New_York date -d 'yesterday' +%F)"
+          echo "date_et=$RUN_DATE" >> "$GITHUB_OUTPUT"
+          echo "Collecting verified QPIX inputs for ET game date: $RUN_DATE" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Collect sources, validate every player, and run authorized QPIX
+        id: collect
+        env:
+          RUN_DATE: ${{ steps.game_date.outputs.date_et }}
+        run: python3 scripts/qpix_independent_run.py "$RUN_DATE"
+
+      - name: Summarize coverage from this run's exact input archive
+        if: ${{ always() && steps.collect.outputs.input_archive != '' }}
+        env:
+          RUN_DATE: ${{ steps.game_date.outputs.date_et }}
+          INPUT_ARCHIVE: ${{ steps.collect.outputs.input_archive }}
+        run: python3 scripts/qpix_coverage_audit.py "$RUN_DATE" --source "$INPUT_ARCHIVE"
+
+      - name: Render the verified report for the selected date
+        env:
+          RUN_DATE: ${{ steps.game_date.outputs.date_et }}
+        run: python3 scripts/qpix_render_verified.py "$RUN_DATE"
+
+      - name: Preserve source bodies, input archives, audits, and reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: qpix-source-audit
+          name: qpix-independent-${{ steps.game_date.outputs.date_et || 'unknown' }}-${{ github.run_id }}
           path: |
-            data/historical/qpix_input/
+            ${{ steps.collect.outputs.input_archive }}
+            data/historical/qpix_input/${{ steps.game_date.outputs.date_et }}*
+            data/historical/qpix_audits/${{ steps.game_date.outputs.date_et }}*
+            data/historical/qpix_raw/${{ steps.game_date.outputs.date_et }}/
+            data/historical/qpix_bref_raw/${{ steps.game_date.outputs.date_et }}/
             data/nba_data.json
-          if-no-files-found: ignore
+            data/daily/${{ steps.game_date.outputs.date_et }}.json
+            data/daily/${{ steps.game_date.outputs.date_et }}.csv
+            docs/reports/${{ steps.game_date.outputs.date_et }}.md
+            docs/reports/${{ steps.game_date.outputs.date_et }}.audit.json
+            dashboard/index.html
+            dashboard/familiarity.json
+          if-no-files-found: error
           retention-days: 30
 
-      - name: Commit report JSON CSV and formatted public report
+      - name: Commit only the validated report and its source records
+        env:
+          RUN_DATE: ${{ steps.game_date.outputs.date_et }}
+          INPUT_ARCHIVE: ${{ steps.collect.outputs.input_archive }}
+        shell: bash
         run: |
           git config user.name "QPIX Independent Run"
           git config user.email "actions@users.noreply.github.com"
-          git add data/daily/ docs/reports/ data/historical/qpix_input/
-          git add -f dashboard/index.html dashboard/familiarity.json
-          if git diff --cached --quiet; then echo 'No new report artifacts'; exit 1; fi
-          git commit -m "QPIX independent verified NBA run: previous Eastern day" 
+          paths=(
+            "data/daily/$RUN_DATE.json"
+            "data/daily/$RUN_DATE.csv"
+            "docs/reports/$RUN_DATE.md"
+            "docs/reports/$RUN_DATE.audit.json"
+            "$INPUT_ARCHIVE"
+            "data/historical/qpix_input/$RUN_DATE.json"
+            "data/historical/qpix_input/$RUN_DATE.partial.json"
+            "data/historical/qpix_audits/$RUN_DATE.coverage.json"
+            "data/historical/qpix_raw/$RUN_DATE"
+            "data/historical/qpix_bref_raw/$RUN_DATE"
+            "data/nba_data.json"
+          )
+          for path in "${paths[@]}"; do
+            if [[ -n "$path" && -e "$path" ]]; then
+              git add -- "$path"
+            fi
+          done
+          for path in dashboard/index.html dashboard/familiarity.json; do
+            if [[ -f "$path" ]]; then git add -f -- "$path"; fi
+          done
+          if git diff --cached --quiet; then
+            echo 'No new verified report artifacts'
+            exit 0
+          fi
+          git commit -m "QPIX verified NBA report for $RUN_DATE"
           git push origin HEAD:main

@@ -42,7 +42,7 @@ def _date(value):
         except ValueError:pass
     return None
 
-def resolve(date_et, fixtures, fetch_json, alias_normalize=lambda x:x):
+def resolve(date_et, fixtures, fetch_json, alias_normalize=lambda x:x, *, allow_stats_fallback=True):
     """Return (ESPN event id -> NBA ID, provenance audit) from exact date/teams."""
     expected={}
     for f in fixtures:
@@ -85,13 +85,16 @@ def resolve(date_et, fixtures, fetch_json, alias_normalize=lambda x:x):
                         raise ValueError("Conflicting NBA game IDs for "+eid)
                     observed[eid]=gid
             audit["attempts"].append({"source":url,"status":"ok","matched":len(observed)})
+            for eid,gid in observed.items():
+                if eid in crosswalk and crosswalk[eid]!=gid:
+                    raise ValueError("Conflicting NBA IDs between official schedules for "+eid)
             crosswalk.update(observed)
             if len(crosswalk)==len(expected):break
         except Exception as exc:
             audit["attempts"].append({"source":url,"status":"failed","error":str(exc)[:180]})
     # Independent official NBA Stats scoreboard endpoint. It provides GAMECODE
     # (YYYYMMDD/AWAYHOME) and GAME_ID; do not depend on the blocked CDN.
-    if len(crosswalk)<len(expected):
+    if allow_stats_fallback and len(crosswalk)<len(expected):
         from urllib.parse import urlencode
         query=urlencode({"GameDate":date_et,"LeagueID":"00","DayOffset":"0"})
         url="https://stats.nba.com/stats/scoreboardv2?"+query
@@ -123,6 +126,8 @@ def resolve(date_et, fixtures, fetch_json, alias_normalize=lambda x:x):
             audit["attempts"].append({"source":url,"status":"failed","error":str(exc)[:180]})
     if len(set(crosswalk.values()))!=len(crosswalk):
         raise ValueError("Duplicate NBA IDs for distinct ESPN fixtures")
+    audit["stats_fallback_enabled"]=allow_stats_fallback
     audit["resolved"]=len(crosswalk)
     audit["unresolved_espn_ids"]=sorted(set(expected)-set(crosswalk))
     return crosswalk,audit
+
