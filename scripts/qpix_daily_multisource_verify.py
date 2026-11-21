@@ -3,7 +3,7 @@
 import argparse,collections,csv,datetime,hashlib,html.parser,json,pathlib,re,time,unicodedata,urllib.parse,urllib.request
 P=pathlib.Path
 HEAD={'User-Agent':'QCoreLabs-QPIX-Research/1.0 (https://github.com/Rickrezin/NBA-daily-report)','Accept':'application/json,text/html'}
-ALIASES={'WSH':'WAS','NO':'NOP','GS':'GSW','UTAH':'UTA','BRK':'BKN','PHO':'PHX'}
+ALIASES={'WSH':'WAS','NO':'NOP','GS':'GSW','UTAH':'UTA','BRK':'BKN','PHO':'PHX','NY':'NYK','SA':'SAS','CHO':'CHA'}
 def alias(s):return ALIASES.get(s,s)
 def norm(s):
  s=unicodedata.normalize('NFKD',str(s)).encode('ascii','ignore').decode().lower()
@@ -146,3 +146,4 @@ def main(date):
  print('QPIX_MULTI_SOURCE_DAILY_AUDIT',json.dumps(summary),flush=True)
 if __name__=='__main__':
  ap=argparse.ArgumentParser();ap.add_argument('--date-et',required=True);args=ap.parse_args();datetime.date.fromisoformat(args.date_et);main(args.date_et)
+

@@ -29,6 +29,7 @@ jobs:
     name: Independently test unified-source feature branch
     runs-on: ubuntu-latest
     env:
+      ENABLE_NBA_CDN: 'true'
       ENABLE_NBA_V3: 'false'
     timeout-minutes: 20
     steps:
@@ -61,11 +62,41 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Checkout current authorized production scoring
+        if: steps.schedule_gate.outputs.run == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: .qpix-production
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /generate-report.js
+            /scripts/familiarity.js
+            /data/venue_familiarity.json
+            /data/former_team_familiarity.json
+
+      - name: Use the unchanged production scoring engine and configuration
+        if: steps.schedule_gate.outputs.run == 'true'
+        shell: bash
+        run: |
+          cp .qpix-production/generate-report.js generate-report.js
+          cp .qpix-production/scripts/familiarity.js scripts/familiarity.js
+          cp .qpix-production/data/venue_familiarity.json data/venue_familiarity.json
+          cp .qpix-production/data/former_team_familiarity.json data/former_team_familiarity.json
+          engine_revision="$(git -C .qpix-production rev-parse HEAD)"
+          echo "QPIX_ENGINE_REVISION=$engine_revision" >> "$GITHUB_ENV"
+          echo "Production scoring commit: $engine_revision" >> "$GITHUB_STEP_SUMMARY"
+
       - name: Setup Node.js
         if: steps.schedule_gate.outputs.run == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: '24'
+
+      - name: Install verified NBA live CDN client
+        if: steps.schedule_gate.outputs.run == 'true'
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
 
       - name: Select game date
         if: steps.schedule_gate.outputs.run == 'true'
@@ -106,6 +137,8 @@ jobs:
           path: |
             data/historical/qpix_input/
             data/historical/qpix_audits/
+            data/historical/qpix_raw/
+            data/historical/qpix_bref_raw/
             data/nba_data.json
             data/daily/${{ steps.game_date.outputs.date_et }}.json
             data/daily/${{ steps.game_date.outputs.date_et }}.csv
@@ -121,3 +154,4 @@ jobs:
         run: |
           echo "Shadow test result: $OUTCOME" >> "$GITHUB_STEP_SUMMARY"
           echo 'No commits, pushes, or publication to main are performed by this workflow.' >> "$GITHUB_STEP_SUMMARY"
+
