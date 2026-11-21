@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - '.github/qpix-shadow-trigger.txt'
+      - '.github/workflows/qpix-unified-shadow.yml'
   schedule:
     # 9:30 AM Eastern, scheduled in both DST and standard time UTC slots.
     - cron: '30 13 * * *'
