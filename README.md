@@ -55,6 +55,12 @@ The scored JSON exposes `raw_qpix = score` and `qpix_r = qpixR` for the dashboar
 
 ## GitHub Actions and schedules
 
+### Facebook Page publication
+
+The optional Facebook publisher prepares a dedicated plain-text social post for the [QPIX Page](https://www.facebook.com/people/QPIX-NBA-player-performance-index/61583650594496/) after successful dashboard publication. It uses the exact deployed, verified report and a durable Page/date receipt to prevent automatic duplicate attempts. Publishing stays disabled until a Page access token is stored in Actions secrets and `QPIX_FACEBOOK_ENABLED=true` is set. Manual operations preview text, check the connection, or reconcile an existing receipt; they never create a post. See [Facebook setup, previews, and recovery](docs/FACEBOOK.md).
+
+### Report workflows
+
 Times below are **America/New_York**. The scheduled collectors use paired UTC entries and a daylight-saving offset gate to select the intended Eastern slot. GitHub may start a scheduled run late.
 
 | Workflow | Schedule or trigger | Effect |

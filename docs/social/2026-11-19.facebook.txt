@@ -1,0 +1,89 @@
+QCORE LABS | QPIX™ NBA DAILY PERFORMANCE INDEX
+November 19, 2026 | Regular season
+4 games | 89 players evaluated
+
+FINAL SCORES
+Memphis Grizzlies 126 — Golden State Warriors 98
+Portland Trail Blazers 124 — Milwaukee Bucks 114
+New York Knicks 102 — Minnesota Timberwolves 99
+San Antonio Spurs 124 — Los Angeles Clippers 112
+
+TOP 10 — RAW QPIX
+
+1. Scoot Henderson (POR)
+Raw QPIX: 77.4 | QPIX-R: 75.0 | Q-OffR: N/A | Q-DefR: N/A
+27 PTS | 7 REB | 3 AST | 1 STL | 1 BLK | 3 TO | 35 MIN
+FG 8/12 | 3PT 5/6 | FT 6/7
+
+2. Jaylen Wells (MEM)
+Raw QPIX: 76.4 | QPIX-R: 76.4 | Q-OffR: N/A | Q-DefR: N/A
+22 PTS | 7 REB | 0 AST | 0 STL | 0 BLK | 1 TO | 24 MIN
+FG 8/10 | 3PT 4/5 | FT 2/2
+
+3. Jrue Holiday (POR)
+Raw QPIX: 74.7 | QPIX-R: 73.0 | Q-OffR: N/A | Q-DefR: N/A
+22 PTS | 2 REB | 7 AST | 4 STL | 0 BLK | 4 TO | 31 MIN
+FG 8/14 | 3PT 2/6 | FT 4/5
+
+4. Victor Wembanyama (SAS)
+Raw QPIX: 73.7 | QPIX-R: 76.3 | Q-OffR: N/A | Q-DefR: N/A
+32 PTS | 11 REB | 3 AST | 1 STL | 1 BLK | 3 TO | 33 MIN
+FG 13/26 | 3PT 2/7 | FT 4/4
+
+5. Stephon Castle (SAS)
+Raw QPIX: 73.6 | QPIX-R: 71.4 | Q-OffR: N/A | Q-DefR: N/A
+21 PTS | 6 REB | 12 AST | 4 STL | 0 BLK | 8 TO | 33 MIN
+FG 7/12 | 3PT 2/4 | FT 5/5
+
+6. Karl-Anthony Towns (NYK)
+Raw QPIX: 70.1 | QPIX-R: 72.6 | Q-OffR: N/A | Q-DefR: N/A
+22 PTS | 12 REB | 4 AST | 0 STL | 3 BLK | 4 TO | 33 MIN
+FG 9/20 | 3PT 2/8 | FT 2/2
+
+7. Charles Bassey (GSW)
+Raw QPIX: 69.4 | QPIX-R: 69.4 | Q-OffR: N/A | Q-DefR: N/A
+16 PTS | 13 REB | 1 AST | 1 STL | 2 BLK | 2 TO | 25 MIN
+FG 6/7 | 3PT 0/0 | FT 4/5
+
+8. Toumani Camara (POR)
+Raw QPIX: 65.3 | QPIX-R: 65.3 | Q-OffR: N/A | Q-DefR: N/A
+18 PTS | 6 REB | 4 AST | 2 STL | 3 BLK | 2 TO | 37 MIN
+FG 6/11 | 3PT 4/8 | FT 2/2
+
+9. Keldon Johnson (SAS)
+Raw QPIX: 62.7 | QPIX-R: 62.7 | Q-OffR: N/A | Q-DefR: N/A
+10 PTS | 5 REB | 3 AST | 2 STL | 0 BLK | 0 TO | 27 MIN
+FG 4/7 | 3PT 0/1 | FT 2/2
+
+10. Sidy Cissoko (POR)
+Raw QPIX: 61.8 | QPIX-R: 61.8 | Q-OffR: N/A | Q-DefR: N/A
+13 PTS | 5 REB | 3 AST | 3 STL | 0 BLK | 0 TO | 31 MIN
+FG 5/8 | 3PT 1/4 | FT 2/3
+
+PERFORMANCE NOTES
+Scoot Henderson leads the slate with 77.4 Raw QPIX after 27 points, 7 rebounds and 3 assists.
+Toumani Camara added 2 steals and 3 blocks to his Top 10 performance.
+Stephon Castle paired 12 assists with 8 turnovers.
+
+BOTTOM 10 — RAW QPIX
+1. Kobe Sanders (LAC) — Raw QPIX: -17.0 | QPIX-R: -15.1
+2. Jayson Kent (POR) — Raw QPIX: -16.2 | QPIX-R: -14.3
+3. Yanic Konan Niederhauser (LAC) — Raw QPIX: -14.6 | QPIX-R: -11.2
+4. Yang Hansen (POR) — Raw QPIX: -14.4 | QPIX-R: -12.5
+5. Gui Santos (GSW) — Raw QPIX: -14.1 | QPIX-R: -14.1
+6. Branden Carlson (POR) — Raw QPIX: -13.9 | QPIX-R: -10.5
+7. Georges Niang (GSW) — Raw QPIX: -13.6 | QPIX-R: -11.0
+8. Gradey Dick (LAC) — Raw QPIX: -12.8 | QPIX-R: -10.9
+9. Keaton Wagler (LAC) — Raw QPIX: -12.6 | QPIX-R: -10.7
+10. Al Horford (GSW) — Raw QPIX: -5.3 | QPIX-R: -2.1
+
+THE QPIX TAKEAWAY
+Scoot Henderson finishes first in Raw QPIX. The complete results include every player who logged minutes; Top 10 and Bottom 10 eligibility requires more than eight minutes.
+
+Raw QPIX determines the official ranking.
+QPIX-R is the companion score adjusted for referee and free-throw context.
+Q-OffR and Q-DefR are QCore offensive and defensive ratings. N/A means unavailable for this report.
+
+Full results: https://rickrezin.github.io/NBA-daily-report/
+© 2026 QCore Labs | QPIX™ NBA Daily Performance Index
+#QPIX #QCoreLabs #NBA #BasketballAnalytics
