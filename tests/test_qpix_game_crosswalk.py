@@ -64,4 +64,30 @@ class CrosswalkTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"Duplicate NBA IDs"):
             resolve("2026-11-10",self.fixtures,fake)
 
+    def test_cdn_mode_never_requests_stats_fallback(self):
+        calls=[]
+        def blocked(url,timeout=12):
+            calls.append(url)
+            raise OSError("Schedule unavailable")
+        found,audit=resolve("2026-11-10",self.fixtures,blocked,allow_stats_fallback=False)
+        self.assertEqual(found,{})
+        self.assertEqual(len(calls),2)
+        self.assertTrue(all(url.startswith("https://cdn.nba.com/") for url in calls))
+        self.assertFalse(audit["stats_fallback_enabled"])
+
+    def test_conflicting_partial_schedules_do_not_replace_verified_id(self):
+        def fake(url,timeout=12):
+            first=url.endswith("scheduleLeagueV2.json")
+            games=[{"gameId":"0022600159" if first else "0022600999",
+                    "awayTeam":{"teamTricode":"CHI"},"homeTeam":{"teamTricode":"NYK"}}]
+            if not first:
+                games.append({"gameId":"0022600160","awayTeam":{"teamTricode":"BOS"},
+                              "homeTeam":{"teamTricode":"PHI"}})
+            return {"leagueSchedule":{"gameDates":[{"gameDate":"2026-11-10","games":games}]}}
+        found,audit=resolve("2026-11-10",self.fixtures,fake,allow_stats_fallback=False)
+        self.assertEqual(found,{"401909922":"0022600159"})
+        self.assertEqual(audit["attempts"][-1]["status"],"failed")
+        self.assertIn("Conflicting",audit["attempts"][-1]["error"])
+
 if __name__=="__main__":unittest.main()
+
