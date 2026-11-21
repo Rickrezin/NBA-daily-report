@@ -353,7 +353,16 @@
         "fta": 2.9285714285714284,
         "prior_games": 14,
         "window_games": 14
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Jrue Holiday",
@@ -483,7 +492,16 @@
         "fta": 2.5714285714285716,
         "prior_games": 14,
         "window_games": 14
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Stephon Castle",
@@ -614,7 +632,16 @@
         "fta": 2.466666666666667,
         "prior_games": 15,
         "window_games": 15
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Jaylen Wells",
@@ -745,7 +772,16 @@
         "fta": 1.7333333333333334,
         "prior_games": 15,
         "window_games": 15
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Victor Wembanyama",
@@ -874,7 +910,16 @@
         "fta": 7.066666666666666,
         "prior_games": 15,
         "window_games": 15
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Toumani Camara",
@@ -1004,7 +1049,16 @@
         "fta": 1.3571428571428572,
         "prior_games": 14,
         "window_games": 14
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Charles Bassey",
@@ -1138,7 +1192,16 @@
         "fta": 1.9230769230769231,
         "prior_games": 13,
         "window_games": 13
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Karl-Anthony Towns",
@@ -1268,7 +1331,16 @@
         "fta": 4.928571428571429,
         "prior_games": 14,
         "window_games": 14
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Cameron Boozer",
@@ -1398,7 +1470,16 @@
         "fta": 4.2,
         "prior_games": 15,
         "window_games": 15
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Taylor Hendricks",
@@ -1530,7 +1611,16 @@
         "fta": 2.1,
         "prior_games": 10,
         "window_games": 10
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Keldon Johnson",
@@ -1661,7 +1751,16 @@
         "fta": 2.466666666666667,
         "prior_games": 15,
         "window_games": 15
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Damian Lillard",
@@ -1792,7 +1891,16 @@
         "fta": 6.214285714285714,
         "prior_games": 14,
         "window_games": 14
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Sidy Cissoko",
@@ -1922,7 +2030,16 @@
         "fta": 2,
         "prior_games": 14,
         "window_games": 14
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Cedric Coward",
@@ -2052,7 +2169,16 @@
         "fta": 2.2857142857142856,
         "prior_games": 14,
         "window_games": 14
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Isaiah Jackson",
@@ -2183,7 +2309,16 @@
         "fta": 1.6666666666666667,
         "prior_games": 12,
         "window_games": 12
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Cam Spencer",
@@ -2313,7 +2448,16 @@
         "fta": 1.4666666666666666,
         "prior_games": 15,
         "window_games": 15
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Ryan Rollins",
@@ -2443,7 +2587,16 @@
         "fta": 1.5384615384615385,
         "prior_games": 13,
         "window_games": 13
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Brook Lopez",
@@ -2573,7 +2726,16 @@
         "fta": 2.5384615384615383,
         "prior_games": 13,
         "window_games": 13
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Jalen Brunson",
@@ -2702,7 +2864,16 @@
         "fta": 7.214285714285714,
         "prior_games": 14,
         "window_games": 14
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Darius Garland",
@@ -2830,7 +3001,16 @@
         "fta": 5,
         "prior_games": 13,
         "window_games": 13
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "OG Anunoby",
@@ -2959,7 +3139,16 @@
         "fta": 5.714285714285714,
         "prior_games": 14,
         "window_games": 14
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Jonathan Kuminga",
@@ -3089,7 +3278,16 @@
         "fta": 3.2857142857142856,
         "prior_games": 14,
         "window_games": 14
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Jaden McDaniels",
@@ -3218,7 +3416,16 @@
         "fta": 1.8666666666666667,
         "prior_games": 15,
         "window_games": 15
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Olivier-Maxence Prosper",
@@ -3348,7 +3555,16 @@
         "fta": 1.3333333333333333,
         "prior_games": 9,
         "window_games": 9
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Devin Vassell",
@@ -3476,7 +3692,16 @@
         "fta": 2.3846153846153846,
         "prior_games": 13,
         "window_games": 13
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Landry Shamet",
@@ -3606,7 +3831,16 @@
         "fta": 1.3571428571428572,
         "prior_games": 14,
         "window_games": 14
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Nate Ament",
@@ -3736,7 +3970,16 @@
         "fta": 1.5384615384615385,
         "prior_games": 13,
         "window_games": 13
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Donovan Clingan",
@@ -3865,7 +4108,16 @@
         "fta": 1.6428571428571428,
         "prior_games": 14,
         "window_games": 14
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Jordan McLaughlin",
@@ -3997,7 +4249,16 @@
         "fta": 0.4444444444444444,
         "prior_games": 9,
         "window_games": 9
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Rui Hachimura",
@@ -4125,7 +4386,16 @@
         "fta": 2.909090909090909,
         "prior_games": 11,
         "window_games": 11
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Javon Small",
@@ -4253,7 +4523,16 @@
         "fta": 2.125,
         "prior_games": 8,
         "window_games": 8
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Julian Champagnie",
@@ -4379,7 +4658,16 @@
         "fta": 0.7333333333333333,
         "prior_games": 15,
         "window_games": 15
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Luke Kornet",
@@ -4510,7 +4798,16 @@
         "fta": 1.1333333333333333,
         "prior_games": 15,
         "window_games": 15
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Mikal Bridges",
@@ -4638,7 +4935,16 @@
         "fta": 0.5714285714285714,
         "prior_games": 14,
         "window_games": 14
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Max Strus",
@@ -4767,7 +5073,16 @@
         "fta": 0.8571428571428571,
         "prior_games": 7,
         "window_games": 7
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Kasparas Jakucionis",
@@ -4895,7 +5210,16 @@
         "fta": 2.642857142857143,
         "prior_games": 14,
         "window_games": 14
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Terrence Shannon Jr.",
@@ -5024,7 +5348,16 @@
         "fta": 4.833333333333333,
         "prior_games": 12,
         "window_games": 12
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Derrick Jones Jr.",
@@ -5153,7 +5486,16 @@
         "fta": 1.6666666666666667,
         "prior_games": 12,
         "window_games": 12
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Rudy Gobert",
@@ -5281,7 +5623,16 @@
         "fta": 5.142857142857143,
         "prior_games": 14,
         "window_games": 14
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Yaxel Lendeborg",
@@ -5412,7 +5763,16 @@
         "fta": 5.733333333333333,
         "prior_games": 15,
         "window_games": 15
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "LaMelo Ball",
@@ -5541,7 +5901,16 @@
         "fta": 2.2666666666666666,
         "prior_games": 15,
         "window_games": 15
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Trey Lyles",
@@ -5670,7 +6039,16 @@
         "fta": 1.8666666666666667,
         "prior_games": 15,
         "window_games": 15
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Will Richard",
@@ -5802,7 +6180,16 @@
         "fta": 0.8571428571428571,
         "prior_games": 14,
         "window_games": 14
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Tyler Kolek",
@@ -5931,7 +6318,16 @@
         "fta": 0.16666666666666666,
         "prior_games": 12,
         "window_games": 12
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "De'Aaron Fox",
@@ -6059,7 +6455,16 @@
         "fta": 4.142857142857143,
         "prior_games": 14,
         "window_games": 14
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "De'Anthony Melton",
@@ -6189,7 +6594,16 @@
         "fta": 1.6,
         "prior_games": 15,
         "window_games": 15
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Isaiah Stewart",
@@ -6317,7 +6731,16 @@
         "fta": 1.5,
         "prior_games": 10,
         "window_games": 10
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Pete Nance",
@@ -6446,7 +6869,16 @@
         "fta": 2,
         "prior_games": 1,
         "window_games": 1
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Joan Beringer",
@@ -6576,7 +7008,16 @@
         "fta": 2.1333333333333333,
         "prior_games": 15,
         "window_games": 15
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Caris LeVert",
@@ -6704,7 +7145,16 @@
         "fta": 1,
         "prior_games": 1,
         "window_games": 1
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Tyler Herro",
@@ -6830,7 +7280,16 @@
         "fta": 4.214285714285714,
         "prior_games": 14,
         "window_games": 14
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Karim Lopez",
@@ -6961,7 +7420,16 @@
         "fta": 0.4,
         "prior_games": 5,
         "window_games": 5
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Carter Bryant",
@@ -7090,7 +7558,16 @@
         "fta": 0.2857142857142857,
         "prior_games": 14,
         "window_games": 14
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Harrison Barnes",
@@ -7218,7 +7695,16 @@
         "fta": 1.1538461538461537,
         "prior_games": 13,
         "window_games": 13
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Josh Hart",
@@ -7346,7 +7832,16 @@
         "fta": 0.45454545454545453,
         "prior_games": 11,
         "window_games": 11
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Brayden Burries",
@@ -7472,7 +7967,16 @@
         "fta": 3.2,
         "prior_games": 15,
         "window_games": 15
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "LJ Cryer",
@@ -7600,7 +8104,16 @@
         "fta": 0.5,
         "prior_games": 12,
         "window_games": 12
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Jahmai Mashack",
@@ -7728,7 +8241,16 @@
         "fta": 0,
         "prior_games": 6,
         "window_games": 6
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Brandin Podziemski",
@@ -7858,7 +8380,16 @@
         "fta": 3.076923076923077,
         "prior_games": 13,
         "window_games": 13
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Kel'el Ware",
@@ -7984,7 +8515,16 @@
         "fta": 1.9333333333333333,
         "prior_games": 15,
         "window_games": 15
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Gary Payton II",
@@ -8113,7 +8653,16 @@
         "fta": 0.15384615384615385,
         "prior_games": 13,
         "window_games": 13
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Graham Ike",
@@ -8244,7 +8793,16 @@
         "fta": 1,
         "prior_games": 12,
         "window_games": 12
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Bones Hyland",
@@ -8370,7 +8928,16 @@
         "fta": 1.8666666666666667,
         "prior_games": 15,
         "window_games": 15
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Andre Drummond",
@@ -8498,7 +9065,16 @@
         "fta": 0.8571428571428571,
         "prior_games": 14,
         "window_games": 14
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Quinten Post",
@@ -8627,7 +9203,16 @@
         "fta": 0.6,
         "prior_games": 10,
         "window_games": 10
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Baba Miller",
@@ -8757,7 +9342,16 @@
         "fta": 1.4545454545454546,
         "prior_games": 11,
         "window_games": 11
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Cam Christie",
@@ -8887,7 +9481,16 @@
         "fta": 0.3333333333333333,
         "prior_games": 6,
         "window_games": 6
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Jalen Pickett",
@@ -9017,7 +9620,16 @@
         "fta": 0,
         "prior_games": 5,
         "window_games": 5
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Jerami Grant",
@@ -9148,7 +9760,16 @@
         "fta": 2.142857142857143,
         "prior_games": 14,
         "window_games": 14
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Kris Dunn",
@@ -9276,7 +9897,16 @@
         "fta": 1.3846153846153846,
         "prior_games": 13,
         "window_games": 13
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Jose Alvarado",
@@ -9402,7 +10032,16 @@
         "fta": 0,
         "prior_games": 7,
         "window_games": 7
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Ayo Dosunmu",
@@ -9530,7 +10169,16 @@
         "fta": 2.3333333333333335,
         "prior_games": 15,
         "window_games": 15
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Jaime Jaquez Jr.",
@@ -9656,7 +10304,16 @@
         "fta": 3.3333333333333335,
         "prior_games": 15,
         "window_games": 15
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Jericho Sims",
@@ -9782,7 +10439,16 @@
         "fta": 0.2,
         "prior_games": 10,
         "window_games": 10
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Al Horford",
@@ -9911,7 +10577,16 @@
         "fta": 0.08333333333333333,
         "prior_games": 12,
         "window_games": 12
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Miles McBride",
@@ -10041,7 +10716,16 @@
         "fta": 0.35714285714285715,
         "prior_games": 14,
         "window_games": 14
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Malevy Leons",
@@ -10169,7 +10853,16 @@
         "fta": 0.4444444444444444,
         "prior_games": 9,
         "window_games": 9
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Kris Murray",
@@ -10297,7 +10990,16 @@
         "fta": 0.18181818181818182,
         "prior_games": 11,
         "window_games": 11
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Keaton Wagler",
@@ -10426,7 +11128,16 @@
         "fta": 5.461538461538462,
         "prior_games": 13,
         "window_games": 13
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Branden Carlson",
@@ -10552,7 +11263,16 @@
         "fta": 0.4444444444444444,
         "prior_games": 9,
         "window_games": 9
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Gradey Dick",
@@ -10680,7 +11400,16 @@
         "fta": 1.2307692307692308,
         "prior_games": 13,
         "window_games": 13
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Yang Hansen",
@@ -10806,7 +11535,16 @@
         "fta": 1,
         "prior_games": 8,
         "window_games": 8
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Yanic Konan Niederhauser",
@@ -10934,7 +11672,16 @@
         "source": "LEGACY_BASELINE_NOT_REVERIFIED",
         "fta": null,
         "prior_games": 0
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Jayson Kent",
@@ -11062,7 +11809,16 @@
         "fta": 0.2,
         "prior_games": 5,
         "window_games": 5
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Gui Santos",
@@ -11191,7 +11947,16 @@
         "fta": 2.75,
         "prior_games": 12,
         "window_games": 12
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Kobe Sanders",
@@ -11319,7 +12084,16 @@
         "fta": 1.3846153846153846,
         "prior_games": 13,
         "window_games": 13
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Georges Niang",
@@ -11448,7 +12222,16 @@
         "fta": 0.6666666666666666,
         "prior_games": 15,
         "window_games": 15
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "Gary Trent Jr.",
@@ -11576,7 +12359,16 @@
         "fta": 0.8571428571428571,
         "prior_games": 7,
         "window_games": 7
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     },
     {
       "name": "John Tonje",
@@ -11707,7 +12499,16 @@
         "fta": 2,
         "prior_games": 2,
         "window_games": 2
-      }
+      },
+      "fast_break_points": null,
+      "fast_break_assists": null,
+      "fast_break_initiations": null,
+      "fast_break_scoring_opportunities": null,
+      "fast_break_turnovers": null,
+      "fast_break_conversion_rate": null,
+      "fast_break_source": null,
+      "fast_break_quality": "UNVERIFIED_NOT_OBSERVED_ZERO",
+      "fast_break_event_ids": []
     }
   ],
   "qpix_r_recheck": {
@@ -11718,5 +12519,18 @@
     "count_legacy_unverified": 1,
     "audit_path": "data/historical/qpix_fta/2026-11-19.json",
     "quality": "PROVISIONAL_QPIXR_RECALIBRATED_SEASON_LOG_NOT_FULL_QPIX_CERTIFICATION"
+  },
+  "metric_definitions": {
+    "fast_break": {
+      "status": "EXPERIMENTAL_PENDING_EVENT_RECONCILIATION",
+      "points": "Individual points officially attributed to transition scoring (not yet available)",
+      "assists": "Assists on qualifying transition baskets",
+      "initiations": "Documented plays initiating a qualifying transition",
+      "scoring_opportunities": "Documented transition scoring opportunities",
+      "turnovers": "Documented turnovers during a qualifying transition",
+      "conversion_rate": "Converted qualifying opportunities / qualifying opportunities",
+      "null_policy": "null means missing or unverified; never observed zero",
+      "source_policy": "Unverified ESPN play-by-play inference may be stored separately, never as certified values"
+    }
   }
 }
