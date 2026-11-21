@@ -9,7 +9,6 @@ on:
       - 'requirements.txt'
       - 'scripts/qpix_independent_run.py'
       - 'scripts/qpix_nba_live.py'
-      - 'scripts/qpix_bref_ratings.py'
       - 'scripts/qpix_game_crosswalk.py'
       - 'scripts/qpix_source_archive.py'
       - 'scripts/qpix_render_verified.py'
@@ -126,7 +125,6 @@ jobs:
             data/historical/qpix_input/
             data/historical/qpix_audits/
             data/historical/qpix_raw/
-            data/historical/qpix_bref_raw/
             data/nba_data.json
             data/daily/${{ steps.game_date.outputs.date_et }}.json
             data/daily/${{ steps.game_date.outputs.date_et }}.csv
