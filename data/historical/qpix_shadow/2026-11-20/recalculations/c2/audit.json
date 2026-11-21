@@ -1,0 +1,32 @@
+{
+  "date_et": "2026-11-20",
+  "status": "VERIFIED_RECALCULATION",
+  "generated_at_utc": "2026-11-21T18:22:54.530684+00:00",
+  "source_run": "qpix-shadow-2026-11-20-20261121T172932Z",
+  "source_git_commit": "f701833fead85179033a520d980ab3911464573f",
+  "original_engine_sha256": "67a6e8b9b782fb58a92954a67aa06a607c0c09432770452be997df3f3b83d99d",
+  "engine_sha256": "aeea90a48126bf97d35723edb671c9b93f80d06da8e49440bb9ac98ebc635019",
+  "verified": {
+    "games": 9,
+    "players": 181,
+    "eligible": 169,
+    "engine_sha256": "aeea90a48126bf97d35723edb671c9b93f80d06da8e49440bb9ac98ebc635019",
+    "matchups": 1654,
+    "leader": {
+      "game_id": "0022600045",
+      "player_id": "201935",
+      "name": "James Harden",
+      "team": "CLE",
+      "minutes_seconds": 2407,
+      "raw_qpix": 113.7,
+      "qpix_r": 108.1
+    }
+  },
+  "c2": {
+    "efficiency_coefficient": 0.4,
+    "full_weight_at_fga": 3,
+    "score_changed_count": 26
+  },
+  "counting_discrepancies": [],
+  "c6_zeroed": []
+}
