@@ -1,0 +1,14 @@
+{
+  "source": "https://www.basketball-reference.com/boxscores/202611190MEM.html",
+  "date_et": "2026-11-19",
+  "game_id": "ESPN_401910019",
+  "provider": "Basketball-Reference",
+  "methodology": "individual Dean Oliver ORtg/DRtg",
+  "players": 25,
+  "assigned": 25,
+  "status": "fully_reconciled",
+  "issues": [],
+  "fetched_at_utc": "2026-11-21T04:38:45.118541+00:00",
+  "raw_path": "data/historical/qpix_bref_raw/2026-11-19/202611190MEM.html",
+  "raw_sha256": "ee586a19ad3831d4323da26e7e1f8699cfbcf8a37c7f4a72f6b59e9459459804"
+}

@@ -1,144 +1,179 @@
 # QCore Labs — QPIX™ NBA Daily Performance Index
 
-**QPIX™** is QCore Labs' player-performance index for NBA games. It scores the players who actually appeared in each game, using a checked-in 13-category scoring engine. **Raw QPIX** is the primary ranking; **QPIX-R** provides an accompanying referee/free-throw normalization, and **QPIX-SFA** is a separately displayed former-team familiarity adjustment where eligible.
+**QPIX™** is QCore Labs' player-performance index for NBA games. The repository collects final-game player statistics, reconciles the required inputs across providers, runs the checked-in scoring engine, and produces a dated report and HTML dashboard.
 
-This repository is an active research and engineering project. **The production dashboard, independent verified-report workflow, and experimental multi-source collector are distinct.** A successful box-score fetch does **not** mean that all advanced and context statistics have been retrieved.
+**Raw QPIX determines the ranking.** QPIX-R is the referee/free-throw normalization companion, and QPIX-SFA records the former-team familiarity adjustment where eligible. The authoritative coefficients and scoring rules live in [`generate-report.js`](generate-report.js).
 
-> **Project status — November 5, 2026:** ESPN final-game/player collection succeeded on the 14-game November 4 slate (314 recorded participants). The experimental pipeline still lacks reliable live coverage for the individual offensive/defensive ratings and paint, fast-break, and second-chance inputs required to certify a full-category report. The shadow workflow correctly preserves its audit and refuses to publish incomplete scoring as complete. Do not treat an experimental run as a verified QPIX leaderboard.
+**Live dashboard:** [Open QPIX](https://rickrezin.github.io/NBA-daily-report/)
 
-## Current architecture
+**Generated HTML:** [`dashboard/index.html`](dashboard/index.html)
 
-```text
-Final games and complete participant identities
-     └── ESPN scoreboard + per-game summary (primary collector)
-              │
-Supplemental individual statistics, independently verified
-     ├── Basketball-Reference-style individual ORtg/DRtg (C3/C4)
-     ├── NBA Stats Advanced V3 (separate on-court methodology; audit only)
-     ├── NBA Stats Misc V3 / NBA LiveData (C6/C11)
-     └── Other individually validated providers when adapters are implemented
-              │
-Reconcile games, dates, teams, player identities, box lines, field coverage
-              │
-Write QCore input JSON + source-provenance and failure checkpoints
-              │
-Full-category validation gate
-              │
-Checked-in generate-report.js (authorized QPIX scoring logic)
-              │
-Raw QPIX rankings + QPIX-R / eligible QPIX-SFA
-              │
-Public report, CSV, scored JSON and dashboard (production only)
+## Current production path
+
+The daily workflow on `main` now uses [`scripts/qpix_independent_run.py`](scripts/qpix_independent_run.py) for verified collection and scoring, followed by [`scripts/qpix_render_verified.py`](scripts/qpix_render_verified.py) for the selected date's HTML. It saves the report and source records to the repository before deploying `dashboard/` to GitHub Pages.
+
+**Verified milestone — November 20, 2026, Eastern:** the repaired collector processed the November 19 slate of **4 final games and 89 minute-positive players** on a GitHub-hosted runner. All 89 players had reconciled individual offensive/defensive ratings and NBA player-level paint, fast-break, and second-chance points. Scoring and HTML rendering both completed on `main`, and all 52 regression tests passed. See the [successful source/scoring/HTML run](https://github.com/Rickrezin/NBA-daily-report/actions/runs/44867096900) and [regression run](https://github.com/Rickrezin/NBA-daily-report/actions/runs/44867096859).
+
+That milestone establishes a working collection path for the tested slate. Every subsequent run still validates its own sources and completeness. A shadow run produces reviewable artifacts; publication is a separate workflow action.
+
+### Sources and reconciliation
+
+| Source | Role in the verified collector |
+|---|---|
+| ESPN scoreboard and game summaries | Final fixtures, complete minute-positive participant set, final scores, and base player box scores. ESPN player IDs remain the primary participant identifiers. |
+| NBA live CDN through `nba_api` | Official schedule data resolves NBA game IDs by date and matchup. Live box scores supply individual `pointsFastBreak`, `pointsInThePaint`, and `pointsSecondChance`. NBA player IDs are retained separately. |
+| Basketball Reference | Fresh basic and advanced box-score tables supply individual Dean Oliver ORtg/DRtg after participant identities, final scores, basic statistics, and minutes reconcile. A fully verified same-date historical report can also supply matching ratings. |
+| ESPN play-by-play and PBPStats supplemental audits | Separate source archives and research checks. Experimental transition estimates or supplemental coverage do not replace the verified collector's individual input requirements. |
+
+[`requirements.txt`](requirements.txt) pins **`nba_api==1.12.0`**, the client version verified against the live NBA CDN in GitHub Actions. The active workflows set `ENABLE_NBA_CDN=true` and `ENABLE_NBA_V3=false`. CDN collection is independent of the `stats.nba.com` AdvancedV3/MiscV3 path, whose separate diagnostic requests timed out during the repair. Endpoint availability must be assessed from the actual response; an earlier failure in a different client is not proof that every NBA endpoint is inaccessible.
+
+The `nba_api` package is a third-party client for NBA endpoints, not a repository of continuously updated game responses. NBA Stats on-court offensive/defensive ratings are **not interchangeable** with the individual Basketball Reference ratings used by QPIX C3.
+
+The collector follows this sequence:
+
+1. Verify the requested Eastern-calendar slate and every final game's participants and point totals.
+2. Resolve official NBA game IDs using exact date and away/home matchups; never substitute an ESPN event ID or guess a numeric sequence.
+3. Archive received NBA JSON and Basketball Reference HTML, then reconcile identities and box-score lines before merging supplementary fields.
+4. Save the normalized pre-scoring input snapshot and field-coverage audit. **Absent values remain absent; an observed zero is a separate value.**
+5. Require all five critical fields for every participant: individual offensive rating, individual defensive rating, paint points, fast-break points, and second-chance points.
+6. Execute the authorized JavaScript scoring engine, write the dated outputs, and render that exact verified report.
+
+A source failure that leaves required inputs missing, a nonfinal game, an identity conflict, or an incomplete required field set stops verified report publication. The job preserves available diagnostics so the source failure can be investigated.
+
+## HTML dashboard
+
+**Generated HTML:** [`dashboard/index.html`](dashboard/index.html). The dashboard contains final game scores, the Raw QPIX Top 10 and Bottom 10, every minute-positive participant, and source/report links. Both leaderboards require **more than eight minutes played**; lower-minute players remain in the complete results.
+
+The production renderer is a two-part path:
+
+- [`scripts/qpix_render_verified.py`](scripts/qpix_render_verified.py) selects `data/daily/YYYY-MM-DD.json`, requires its `VERIFIED` status, and checks its date, complete source archive, input digest, participant count, and score aliases.
+- [`scripts/render_qpix_dashboard.py`](scripts/render_qpix_dashboard.py) supplies the HTML presentation. The verified wrapper selects the exact collected date so an older or differently dated report cannot replace it during that render.
+
+The scored JSON exposes `raw_qpix = score` and `qpix_r = qpixR` for the dashboard, plus `leaderboards.top10` and `leaderboards.bottom10` player IDs. These are presentation fields derived from the engine's existing output, not new scoring formulas.
+
+**Generation and deployment are distinct checks.** A successful render creates HTML in the runner or local checkout. A successful publishing workflow saves the report and generated files and completes GitHub Pages deployment. For a live-site issue, inspect the deployment result and displayed game date as well as the source/HTML job.
+
+## GitHub Actions and schedules
+
+Times below are **America/New_York**. The scheduled collectors use paired UTC entries and a daylight-saving offset gate to select the intended Eastern slot. GitHub may start a scheduled run late.
+
+| Workflow | Schedule or trigger | Effect |
+|---|---|---|
+| [NBA Daily Report](.github/workflows/nba-daily.yml) | **9:00 a.m. Eastern** daily; manual dispatch on `main` | Collects and validates the previous Eastern date, scores, renders its HTML, preserves artifacts, commits verified outputs and source records, and deploys GitHub Pages. |
+| [QPIX Independent Verified Report](.github/workflows/qpix-independent.yml) | **Manual dispatch only** on `main` | Runs the same verified collection and exact-date rendering path, then commits successful outputs. Its completion can trigger the HTML deployment workflow. Code changes do not automatically publish through this workflow. |
+| [QPIX Unified Sources — Daily Shadow Test](.github/workflows/qpix-unified-shadow.yml) | **9:30 a.m. Eastern**; manual dispatch; selected collector/control-file pushes | Tests the current collector and production engine on `main`, including HTML rendering. Repository access is read-only and results are uploaded as artifacts. It does not publish reports or rankings. |
+| [QPIX HTML Dashboard Deploy](.github/workflows/qpix-dashboard-deploy.yml) | Selected report/renderer pushes, successful configured publication workflows, or manual dispatch | Renders the latest stored dated report, validates the generated HTML, and deploys `dashboard/` to GitHub Pages. This workflow does not collect missing source statistics. |
+| [QPIX ESPN Play-by-Play Daily Raw Archive](.github/workflows/qpix-espn-pbp-daily.yml) | **8:30 a.m. Eastern**; manual dispatch; workflow-file pushes | Preserves ESPN event feeds and research-only derivations. It does not calculate the verified QPIX leaderboard. |
+| [QPIX Daily Multi-Source Verification](.github/workflows/qpix-daily-multisource-verify.yml) | **9:00 a.m. and 10:30 a.m. Eastern**, plus configured source events/manual dispatch | Supplemental Basketball Reference, PBPStats, and ESPN coverage audits; no official score publication. |
+| [QPIX multi-source regression tests](.github/workflows/qpix-multi-source-tests.yml) | Relevant pushes to `main` or the ingestion feature branch; manual dispatch | Exercises source adapters, reconciliation, missing-value behavior, archive protection, and historical fixtures without publishing. |
+
+The shadow workflow now checks `main`; it no longer checks out the historical `feature/qpix-multi-source-ingestion-20261104` branch. That branch and older dated probes remain development/history references. [`scripts/fetch_nba_data.py`](scripts/fetch_nba_data.py), which reads the older Elias text feed, is not the active daily report entry point. The HTTP and V3 diagnostic workflows are troubleshooting tools rather than publication gates.
+
+### Run through GitHub
+
+- To collect and publish the normal previous-day report, open **Actions → NBA Daily Report → Run workflow** on `main`.
+- To inspect source collection, scoring, and HTML without publishing, open **Actions → QPIX Unified Sources - Daily Shadow Test → Run workflow**. Its optional `date_et` selects an Eastern game date; leaving it blank selects the previous Eastern date.
+- To publish a verified report manually through the independent workflow, choose **Actions → QPIX Independent Verified Report → Run workflow** on `main`.
+
+Normal publishing workflows select the previous Eastern date. A dated shadow run is useful for source replay; historical backfills also need their scoring-date and season assumptions checked before publication.
+
+## Run locally
+
+Use **Python 3.12** and **Node.js 24**, matching the Actions workflows. From the repository root, the following Bash commands collect the previous Eastern date and render its verified HTML:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+
+export ENABLE_NBA_CDN=true
+export ENABLE_NBA_V3=false
+RUN_DATE="$(python -c 'from datetime import datetime, timedelta; from zoneinfo import ZoneInfo; print((datetime.now(ZoneInfo("America/New_York")) - timedelta(days=1)).date().isoformat())')"
+
+python scripts/qpix_independent_run.py "$RUN_DATE"
+python scripts/qpix_render_verified.py "$RUN_DATE"
+python -m http.server 8000 --directory dashboard
 ```
 
-**Source policy.** ESPN is the verified source of complete game/participant coverage in the recent large-slate tests. Each supplementary field must be tied to an actual player record; neither a team-level number nor a guessed/absent zero is an observed individual statistic. The collector must not confuse ESPN event IDs (such as `401909922`) with NBA game IDs (such as `0022600177`). An NBA ID is only accepted after reconciliation against the date and matchup.
+Open `http://localhost:8000/` for the generated dashboard. These local commands create files; they do not commit or deploy them. If collection fails, examine the source audit before attempting to render or publish a complete report.
 
-`swar/nba_api` is a **third-party Python client** describing NBA Stats endpoints. Its `BoxScoreAdvancedV3` and `BoxScoreMiscV3` modules define parameter and result schemas; the GitHub source code is **not** a continuously updated archive of per-game response JSON. In particular, NBA Stats `offensiveRating`/`defensiveRating` denote NBA on-court advanced metrics and are **not interchangeable** with Basketball-Reference's Dean Oliver individual offensive and defensive ratings used by QPIX C3.
+Run the regression suite with:
 
-### QPIX engine: 13 components
+```bash
+python -m unittest discover -s tests -v
+```
 
-The **authoritative scoring rules are in [`generate-report.js`](generate-report.js)**. The following is an input/feature overview, not a replacement implementation or a guarantee that every input is available every day.
+For coverage of a particular run, use the exact archive path recorded in its report's `source_archive.path` or the collector's `input_archive` Actions output:
+
+```bash
+python scripts/qpix_coverage_audit.py YYYY-MM-DD --source data/historical/qpix_input/EXACT-ARCHIVE.json
+```
+
+An explicit missing or wrong-date archive is rejected. This prevents an older incomplete base snapshot from being mistaken for the newest collection.
+
+## Reports, raw sources, and archives
+
+| Path | Role |
+|---|---|
+| `data/nba_data.json` | Normalized input consumed by the authorized scoring engine. |
+| `data/daily/YYYY-MM-DD.json` | Verified scored player records, source/quality metadata, exact source-archive reference, and leaderboard IDs. |
+| `data/daily/YYYY-MM-DD.csv` | Complete scored-player CSV, including participants below the leaderboard minute threshold. |
+| `docs/reports/YYYY-MM-DD.md` | Human-readable daily QPIX report. |
+| `docs/reports/YYYY-MM-DD.audit.json` | Run summary, quality audit, and source-archive reference. |
+| `data/historical/qpix_raw/YYYY-MM-DD/nba_live/` | Received official schedule and live box-score JSON; filenames include content hashes. |
+| `data/historical/qpix_bref_raw/YYYY-MM-DD/` | Basketball Reference HTML plus retrieval/reconciliation audits and source digests. |
+| `data/historical/qpix_input/YYYY-MM-DD.json` | Original normalized pre-scoring snapshot for the date. Inspect its completeness; its existence alone does not certify a report. |
+| `data/historical/qpix_input/YYYY-MM-DD.<input_sha256>.json` | A changed input revision, preserving the original snapshot. The run/report identifies the exact revision used. |
+| `data/historical/qpix_input/YYYY-MM-DD.partial.json` | Collection checkpoint, completed games, source stages, and failure information. |
+| `data/historical/qpix_audits/YYYY-MM-DD.coverage.json` | Per-category/per-game coverage and the input archive inspected. |
+| `dashboard/index.html` | Generated dashboard HTML. |
+| `dashboard/familiarity.json` | Auxiliary familiarity output from the authorized engine. |
+
+The canonical input digest covers the game/player payload. Existing snapshots are not silently overwritten: changed input can create a content-addressed revision, and repeated revisions are checked against their actual content. Missing fields are preserved in partial diagnostics rather than manufactured as zeros.
+
+Successful publishing workflows commit the selected date's reports and source records. Actions also retain available artifacts after failures: the daily and independent workflows currently retain them for **30 days**, and the shadow workflow for **7 days**. Artifact retention is not a substitute for the committed source history of a published report.
+
+## QPIX engine: 13 components
+
+This is an input overview. [`generate-report.js`](generate-report.js) owns the exact formulas, thresholds, contextual modifiers, and companion-score rules.
 
 | Category | Purpose / principal inputs |
 |---|---|
 | C1 | Base production: points, rebounds, assists, steals, blocks, turnovers |
 | C2 | Shooting efficiency, including true shooting |
-| C3 | Individual offensive and defensive rating impact; correct methodology required |
-| C4 | Defensive activity, including defensive-rating context |
+| C3 | Individual offensive and defensive rating impact |
+| C4 | Defensive activity, including individual defensive-rating context |
 | C5 | Playmaking quality and turnovers |
-| C6 | Offensive context: points in paint, fast-break points and second-chance points |
+| C6 | Offensive context: paint, fast-break, and second-chance points |
 | C7 | Scoring gravity and shot/usage context |
 | C8 | Environment-gated, context-weighted plus/minus |
 | C9 | Multi-category production bonuses |
 | C10 | Fatigue/minutes-curve effects |
 | C11 | Momentum and fast-break context |
 | C12 | Second-unit/bench anchor context |
-| C13 | **QPIX-R** referee/whistle normalization; separate from Raw QPIX |
+| C13 | QPIX-R referee/whistle normalization, separate from Raw QPIX |
 
-**Raw QPIX** ranks the daily leaderboard. **QPIX-R** and eligible **QPIX-SFA** are presented alongside it rather than replacing Raw QPIX. The checked-in `generate-report.js` owns the exact coefficients, threshold gates, contextual modifiers and presentation logic. The familiarity reference lives in `former_team_familiarity.json` (or its checked-in equivalent referenced by the engine). Do not derive new formulas from the simplified, obsolete weights previously shown in this README.
+Raw QPIX determines official rank; companion scores do not reorder it. The familiarity references used by the engine include [`data/venue_familiarity.json`](data/venue_familiarity.json) and [`data/former_team_familiarity.json`](data/former_team_familiarity.json). Collection and rendering fixes must not silently change scoring mathematics.
 
-**Participation policy:** score all recorded players who played positive minutes; the daily Top 10 requires **more than eight minutes**. Do not exclude a participant simply because of low field-goal attempts. Players below the Top 10 minute threshold must remain eligible for the full results and bottom-of-report analysis.
+Every recorded player with positive minutes belongs in the full results. Both displayed leaderboards require **minutes > 8**, with no minimum field-goal-attempt filter.
 
-## Active GitHub Actions workflows
+## Troubleshooting
 
-| Workflow | Definition on `main` | Trigger and effect |
-|---|---|---|
-| **NBA Daily Report** | [`.github/workflows/nba-daily.yml`](.github/workflows/nba-daily.yml) | Scheduled `0 13 * * *` **UTC** and manual dispatch. Fetches data using `scripts/fetch_nba_data.py`, executes `generate-report.js`, deploys GitHub Pages. This is the existing dashboard workflow; it is **not** proof of full C3/C6 source coverage. |
-| **QPIX Independent Verified Report** | [`.github/workflows/qpix-independent.yml`](.github/workflows/qpix-independent.yml) | Manual dispatch or qualifying code push. Runs `scripts/qpix_independent_run.py`, writes `data/daily/` and `docs/reports/` and pushes scored output to `main` only if the job succeeds. **There is currently no daily cron schedule in this workflow.** |
-| **QPIX Unified Source Branch — Daily Shadow Test** | [`.github/workflows/qpix-unified-shadow.yml`](.github/workflows/qpix-unified-shadow.yml) | Scheduled `30 13 * * *` UTC, manual dispatch, or a control-file push. The workflow on `main` checks out the **feature branch** and tests its source collector. It has read-only repository permissions, does not push scoring results to production and always attempts to upload collection diagnostics. |
-
-**Timezone:** GitHub cron values above are UTC. At present, `13:00 UTC` is 8:00 a.m. EST and `13:30 UTC` is 8:30 a.m. EST. During daylight saving time, fixed UTC schedules shift to 9:00/9:30 a.m. EDT; update the schedule if an unchanged Eastern local time is required. GitHub's scheduled starts can also be delayed.
-
-### Experimental shadow branch
-
-Branch: `feature/qpix-multi-source-ingestion-20261104`
-
-Review: [draft PR #36](https://github.com/Rickrezin/NBA-daily-report/pull/36)
-
-The experimental branch currently contains these building blocks:
-
-- `scripts/qpix_independent_run.py` — ESPN/game collection, reconciliation, advanced/misc attempts, completeness gate and scoring entrypoint.
-- `scripts/qpix_game_crosswalk.py` — game-ID resolution, including independently verified date-specific NBA.com links and tested fallbacks.
-- `scripts/c6_sources.py` — C6 field aliases and strict player matching across source identities.
-- `scripts/qpix_verified_sources.py` — historical replay of previously verified *individual* ratings when the date and player box-score line match; **not** a live advanced-rating feed.
-- `scripts/qpix_source_archive.py` — canonical pre-scoring JSON, coverage audit, input digest and conflict protection.
-- `scripts/qpix_collection_checkpoint.py` — atomic, **write-on-entry** `.partial.json` diagnostics, updated as each game and data stage completes.
-- `scripts/qpix_coverage_audit.py` — C1–C13 availability summary and per-game C3/C6 coverage.
-
-The shadow workflow uses `if: always()` for its coverage step and artifact upload. Even an early failure should leave a diagnostic JSON and upload artifact. **Absence of a field is recorded as unavailable, not converted to an asserted zero.** The archive is retained as an Actions artifact, not committed to `main` by the shadow workflow.
-
-**Known limitation (Nov 5):** GitHub-hosted runners returned HTTP 403 from NBA schedule CDN URLs; an NBA Stats scoreboard alternative timed out in testing. Exact, independently verified NBA.com game IDs allowed the November 4 replay to attempt supplemental endpoints, but endpoint availability and a complete fresh C3/C6 run must still be demonstrated. The advanced NBA on-court ratings remain a separate audit, **not** substitutes for the index's individual-rating formula.
-
-## Reports and JSON archives
-
-| Path | Role |
+| Symptom | Check |
 |---|---|
-| `data/nba_data.json` | Normalized pre-scoring data consumed by `generate-report.js`. |
-| `data/daily/YYYY-MM-DD.json` | Published daily scored player records with source/quality metadata when an independent report succeeds. |
-| `data/daily/YYYY-MM-DD.csv` | CSV counterpart of the complete scored-player data. |
-| `docs/reports/YYYY-MM-DD.md` | Human-readable QPIX report. |
-| `docs/reports/YYYY-MM-DD.audit.json` | Independent-run summary and quality audit. |
-| `data/historical/qpix_input/YYYY-MM-DD.json` | Canonical, verified pre-scoring input JSON created by the experimental collector; a shadow-run copy is uploaded as an artifact. |
-| `data/historical/qpix_input/YYYY-MM-DD.partial.json` | Write-on-entry partial progress, including completed games, player rows, source audit steps, timestamps and any failure. |
-| `data/historical/qpix_audits/YYYY-MM-DD.coverage.json` | Per-category and per-game availability diagnostics. |
-| `dashboard/index.html` | Rendered dashboard output. |
+| No games or a nonfinal game | Requested Eastern date, ESPN scoreboard, and the partial collection checkpoint. An empty or unfinished slate is not a complete scored report. |
+| NBA ID unresolved | Official schedule attempts and exact date/away/home reconciliation. ESPN event IDs and NBA game IDs are different namespaces. |
+| CDN or Stats HTTP error | Endpoint-specific response and installed client version. The production CDN transport is independent of disabled Stats V3 diagnostics. |
+| Missing C3/C6 fields | Exact run coverage and provider audits. Never fill individual gaps with team totals, different rating methodologies, estimates, or assumed zeros. |
+| Player box lines disagree | The named player, team aliases, provider IDs, minutes, and changed statistics. Later source corrections may reconcile on a subsequent fetch; do not bypass the check. |
+| HTML absent | Collection/completeness outcome, dated verified JSON, its referenced archive, and the **Render** step. The renderer must not turn an incomplete collection into a verified page. |
+| HTML exists but live page is stale | Successful report commit, Pages deployment result, served game date, and the latest deployment workflow. A local or shadow render alone does not update the website. |
+| Old archive shows zero coverage | Use the current report's `source_archive.path` or the run's `input_archive` output; an original incomplete snapshot is deliberately preserved. |
 
-A complete report must pass game/participant reconciliation **and** the expected-category completeness gate. A partial shadow archive is valuable for investigation but is **not** a publishable complete report. Canonical archives include a SHA-256 hash for the input game/player payload and reject conflicting overwrite attempts.
+Historical fixtures remain useful for regression checks. In particular, the November 2 fixture contains 334 verified individual rating pairs but incomplete C6 data; it tests rating replay and the completeness gate, not complete contemporary source coverage.
 
-### Historic validation milestone
+## Maintenance and project identity
 
-November 2, 2026: **15 final games, 334 participants**, with individual ORtg/DRtg verified in the historical scored JSON. A subsequent integration replay verified that all 334 archived individual ratings could be matched back to their respective player records. The C6 breakdown was not fully supplied by that historical source, so the replay is **not** evidence of a fully populated 13-category run.
+Update this README alongside material changes to source mappings, output schemas, schedules, archive layout, workflow names, or scoring rules. Preserve the distinction between source availability, successful validation, generated HTML, and deployment.
 
-November 4, 2026: ESPN collection validated **14 final games and 314 participants**. The first experimental shadow runs produced useful coverage/failure artifacts, but not a complete-source QPIX score. Source audits must be assessed before treating any follow-on score comparison as definitive.
-
-## Running and troubleshooting
-
-### Run the existing dashboard
-
-Open **Actions → NBA Daily Report → Run workflow** on `main`. Alternatively, use the configured schedule. This workflow executes the existing dashboard path, **not** the experimental source-completeness gate.
-
-### Run the independent verified report
-
-Open **Actions → QPIX Independent Verified Report → Run workflow** on `main`. This can publish to the repository if source validation and scoring succeed, so do not use it for speculative collector debugging.
-
-### Run the experimental collector
-
-Open **Actions → QPIX Unified Source Branch - Daily Shadow Test → Run workflow** on `main`. The optional `date_et` input is an Eastern-calendar game date (`YYYY-MM-DD`); when omitted, it defaults to the previous Eastern date. The experimental branch is checked out by the workflow itself.
-
-If the GitHub mobile client does not expose the manual dispatch control, use GitHub's desktop/web interface. The dedicated control file `.github/qpix-shadow-trigger.txt` is an additional configured push-trigger mechanism for this **shadow** workflow only.
-
-### Interpreting failures
-
-1. **No ESPN games or incomplete final scoreboard:** inspect the source-stage failure in the partial archive.
-2. **ESPN/NBA ID mapping incomplete:** check the dated, matchup-verified crosswalk audit; do not assume an ESPN event ID is an NBA game ID.
-3. **403 or timeout from NBA Stats/CDN:** inspect the endpoint status. Knowing a schema or finding a `nba_api` module does not imply live access to its JSON response.
-4. **C3 or C6 incomplete:** inspect the category coverage table and source provenance. Do not silently replace missing individual values with team-level numbers, on-court metrics or zeros.
-5. **Collector fails before scoring:** verify that the `if: always()` artifact step uploaded the partial checkpoint and coverage JSON.
-
-For changes to the scoring formula, treat `generate-report.js` as authoritative and validate against existing historical fixtures; experimental source fixes should not silently change the scoring mathematics.
-
-## Maintenance
-
-**Every material change to the scoring engine, source mappings, output schema, scheduling, archive layout or workflow names should update this README in the same pull request.** Keep production behavior, tested experimental behavior and planned future capabilities explicitly separate.
-
-QPIX™, QPIX-R and QPIX-SFA are QCore Labs project terminology. This repository is not operated by or affiliated with the NBA, ESPN or Basketball-Reference.
+QPIX™, QPIX-R, and QPIX-SFA are QCore Labs project terminology. This repository is not operated by or affiliated with the NBA, ESPN, or Basketball Reference. See [`LICENSE`](LICENSE) for the repository's CC0 1.0 Universal dedication.

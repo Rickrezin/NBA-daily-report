@@ -1,0 +1,381 @@
+{
+  "date_et": "2026-11-19",
+  "players": 89,
+  "games": 4,
+  "categories": [
+    {
+      "category": "C1 Base production",
+      "present": 89,
+      "unavailable": 0,
+      "field_coverage": {
+        "points": 89,
+        "rebounds": 89,
+        "assists": 89,
+        "steals": 89,
+        "blocks": 89,
+        "turnovers": 89
+      }
+    },
+    {
+      "category": "C2 Shooting efficiency",
+      "present": 89,
+      "unavailable": 0,
+      "field_coverage": {
+        "points": 89,
+        "fga": 89,
+        "fta": 89,
+        "ftm": 89
+      }
+    },
+    {
+      "category": "C3 Individual O/D",
+      "present": 89,
+      "unavailable": 0,
+      "field_coverage": {
+        "offensive_rating": 89,
+        "defensive_rating": 89
+      }
+    },
+    {
+      "category": "C4 Defensive activity",
+      "present": 89,
+      "unavailable": 0,
+      "field_coverage": {
+        "steals": 89,
+        "blocks": 89,
+        "defensive_rebounds": 89,
+        "defensive_rating": 89,
+        "minutes": 89
+      }
+    },
+    {
+      "category": "C5 Playmaking",
+      "present": 89,
+      "unavailable": 0,
+      "field_coverage": {
+        "assists": 89,
+        "turnovers": 89
+      }
+    },
+    {
+      "category": "C6 Offensive context",
+      "present": 89,
+      "unavailable": 0,
+      "field_coverage": {
+        "points_in_paint": 89,
+        "fast_break_points": 89,
+        "second_chance_points": 89
+      }
+    },
+    {
+      "category": "C7 Gravity",
+      "present": 89,
+      "unavailable": 0,
+      "field_coverage": {
+        "fga": 89,
+        "fta": 89,
+        "points": 89,
+        "assists": 89
+      }
+    },
+    {
+      "category": "C8 Environment +/-",
+      "present": 89,
+      "unavailable": 0,
+      "field_coverage": {
+        "plus_minus": 89
+      }
+    },
+    {
+      "category": "C9 Multi-category",
+      "present": 89,
+      "unavailable": 0,
+      "field_coverage": {
+        "points": 89,
+        "rebounds": 89,
+        "assists": 89,
+        "steals": 89,
+        "blocks": 89
+      }
+    },
+    {
+      "category": "C10 Fatigue",
+      "present": 89,
+      "unavailable": 0,
+      "field_coverage": {
+        "minutes": 89,
+        "points": 89,
+        "fga": 89,
+        "fta": 89
+      }
+    },
+    {
+      "category": "C11 Momentum",
+      "present": 89,
+      "unavailable": 0,
+      "field_coverage": {
+        "points": 89,
+        "plus_minus": 89,
+        "fast_break_points": 89
+      }
+    },
+    {
+      "category": "C12 Bench anchor",
+      "present": 89,
+      "unavailable": 0,
+      "field_coverage": {
+        "minutes": 89,
+        "plus_minus": 89
+      }
+    },
+    {
+      "category": "C13 QPIX-R",
+      "present": 89,
+      "unavailable": 0,
+      "field_coverage": {
+        "fta": 89,
+        "ftm": 89
+      }
+    }
+  ],
+  "games_detail": [
+    {
+      "game_id": "ESPN_401910019",
+      "matchup": "GSW @ MEM",
+      "players": 25,
+      "categories": {
+        "C1 Base production": {
+          "present": 25,
+          "unavailable": 0
+        },
+        "C2 Shooting efficiency": {
+          "present": 25,
+          "unavailable": 0
+        },
+        "C3 Individual O/D": {
+          "present": 25,
+          "unavailable": 0
+        },
+        "C4 Defensive activity": {
+          "present": 25,
+          "unavailable": 0
+        },
+        "C5 Playmaking": {
+          "present": 25,
+          "unavailable": 0
+        },
+        "C6 Offensive context": {
+          "present": 25,
+          "unavailable": 0
+        },
+        "C7 Gravity": {
+          "present": 25,
+          "unavailable": 0
+        },
+        "C8 Environment +/-": {
+          "present": 25,
+          "unavailable": 0
+        },
+        "C9 Multi-category": {
+          "present": 25,
+          "unavailable": 0
+        },
+        "C10 Fatigue": {
+          "present": 25,
+          "unavailable": 0
+        },
+        "C11 Momentum": {
+          "present": 25,
+          "unavailable": 0
+        },
+        "C12 Bench anchor": {
+          "present": 25,
+          "unavailable": 0
+        },
+        "C13 QPIX-R": {
+          "present": 25,
+          "unavailable": 0
+        }
+      }
+    },
+    {
+      "game_id": "ESPN_401910020",
+      "matchup": "POR @ MIL",
+      "players": 21,
+      "categories": {
+        "C1 Base production": {
+          "present": 21,
+          "unavailable": 0
+        },
+        "C2 Shooting efficiency": {
+          "present": 21,
+          "unavailable": 0
+        },
+        "C3 Individual O/D": {
+          "present": 21,
+          "unavailable": 0
+        },
+        "C4 Defensive activity": {
+          "present": 21,
+          "unavailable": 0
+        },
+        "C5 Playmaking": {
+          "present": 21,
+          "unavailable": 0
+        },
+        "C6 Offensive context": {
+          "present": 21,
+          "unavailable": 0
+        },
+        "C7 Gravity": {
+          "present": 21,
+          "unavailable": 0
+        },
+        "C8 Environment +/-": {
+          "present": 21,
+          "unavailable": 0
+        },
+        "C9 Multi-category": {
+          "present": 21,
+          "unavailable": 0
+        },
+        "C10 Fatigue": {
+          "present": 21,
+          "unavailable": 0
+        },
+        "C11 Momentum": {
+          "present": 21,
+          "unavailable": 0
+        },
+        "C12 Bench anchor": {
+          "present": 21,
+          "unavailable": 0
+        },
+        "C13 QPIX-R": {
+          "present": 21,
+          "unavailable": 0
+        }
+      }
+    },
+    {
+      "game_id": "ESPN_401910021",
+      "matchup": "NYK @ MIN",
+      "players": 19,
+      "categories": {
+        "C1 Base production": {
+          "present": 19,
+          "unavailable": 0
+        },
+        "C2 Shooting efficiency": {
+          "present": 19,
+          "unavailable": 0
+        },
+        "C3 Individual O/D": {
+          "present": 19,
+          "unavailable": 0
+        },
+        "C4 Defensive activity": {
+          "present": 19,
+          "unavailable": 0
+        },
+        "C5 Playmaking": {
+          "present": 19,
+          "unavailable": 0
+        },
+        "C6 Offensive context": {
+          "present": 19,
+          "unavailable": 0
+        },
+        "C7 Gravity": {
+          "present": 19,
+          "unavailable": 0
+        },
+        "C8 Environment +/-": {
+          "present": 19,
+          "unavailable": 0
+        },
+        "C9 Multi-category": {
+          "present": 19,
+          "unavailable": 0
+        },
+        "C10 Fatigue": {
+          "present": 19,
+          "unavailable": 0
+        },
+        "C11 Momentum": {
+          "present": 19,
+          "unavailable": 0
+        },
+        "C12 Bench anchor": {
+          "present": 19,
+          "unavailable": 0
+        },
+        "C13 QPIX-R": {
+          "present": 19,
+          "unavailable": 0
+        }
+      }
+    },
+    {
+      "game_id": "ESPN_401910022",
+      "matchup": "LAC @ SAS",
+      "players": 24,
+      "categories": {
+        "C1 Base production": {
+          "present": 24,
+          "unavailable": 0
+        },
+        "C2 Shooting efficiency": {
+          "present": 24,
+          "unavailable": 0
+        },
+        "C3 Individual O/D": {
+          "present": 24,
+          "unavailable": 0
+        },
+        "C4 Defensive activity": {
+          "present": 24,
+          "unavailable": 0
+        },
+        "C5 Playmaking": {
+          "present": 24,
+          "unavailable": 0
+        },
+        "C6 Offensive context": {
+          "present": 24,
+          "unavailable": 0
+        },
+        "C7 Gravity": {
+          "present": 24,
+          "unavailable": 0
+        },
+        "C8 Environment +/-": {
+          "present": 24,
+          "unavailable": 0
+        },
+        "C9 Multi-category": {
+          "present": 24,
+          "unavailable": 0
+        },
+        "C10 Fatigue": {
+          "present": 24,
+          "unavailable": 0
+        },
+        "C11 Momentum": {
+          "present": 24,
+          "unavailable": 0
+        },
+        "C12 Bench anchor": {
+          "present": 24,
+          "unavailable": 0
+        },
+        "C13 QPIX-R": {
+          "present": 24,
+          "unavailable": 0
+        }
+      }
+    }
+  ],
+  "input_archive": "data/historical/qpix_input/2026-11-19.ceefb6468bdf20c3144fc341da1185f34fb1bce377952bbef25af91534792eab.json",
+  "input_sha256": "ceefb6468bdf20c3144fc341da1185f34fb1bce377952bbef25af91534792eab"
+}
