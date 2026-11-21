@@ -121,3 +121,5 @@ jobs:
           result['elapsed_s'] = round(time.monotonic() - started, 2)
           print(json.dumps(result), flush=True)
           PY
+
+# Manual diagnostic trigger requested 2026-11-20; no scoring changes.
