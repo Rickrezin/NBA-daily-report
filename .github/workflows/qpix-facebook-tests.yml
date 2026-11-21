@@ -1,0 +1,36 @@
+name: QPIX Facebook Publishing Tests
+
+on:
+  push:
+    branches: [main, feature/qpix-facebook-publishing]
+    paths:
+      - 'scripts/qpix_facebook.py'
+      - 'scripts/qpix_social.py'
+      - 'tests/test_qpix_facebook.py'
+      - 'tests/test_qpix_social.py'
+      - '.github/workflows/qpix-facebook*.yml'
+      - '.github/workflows/qpix-dashboard-deploy.yml'
+  pull_request:
+    paths:
+      - 'scripts/qpix_facebook.py'
+      - 'scripts/qpix_social.py'
+      - 'tests/test_qpix_facebook.py'
+      - 'tests/test_qpix_social.py'
+      - '.github/workflows/qpix-facebook*.yml'
+      - '.github/workflows/qpix-dashboard-deploy.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate social output and duplicate prevention without sending posts
+        run: python -m unittest discover -s tests -p 'test_qpix_*' -v

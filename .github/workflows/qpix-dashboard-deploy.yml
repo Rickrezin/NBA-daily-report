@@ -11,6 +11,8 @@ on:
     paths:
       - 'data/daily/**'
       - 'scripts/render_qpix_dashboard.py'
+      - 'scripts/qpix_facebook.py'
+      - 'scripts/qpix_social.py'
       - '.github/workflows/qpix-dashboard-deploy.yml'
   workflow_dispatch:
 
@@ -58,3 +60,15 @@ jobs:
       - name: Deploy HTML dashboard
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Freeze the exact deployed source for Facebook
+        run: python3 scripts/qpix_facebook.py bundle
+
+      - name: Preserve deployed source and publication manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: qpix-facebook-source-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ./.qpix-publication/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30
