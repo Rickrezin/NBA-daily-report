@@ -1,0 +1,619 @@
+{
+  "date_et": "2026-11-20",
+  "mode": "shadow",
+  "status": "VERIFIED",
+  "games": [
+    {
+      "game_id": "0022600043",
+      "game": "CHA at ATL",
+      "datasets": {
+        "cdn": {
+          "ok": true
+        },
+        "advanced": {
+          "ok": true
+        },
+        "hustle": {
+          "ok": true
+        },
+        "defense": {
+          "ok": true
+        },
+        "matchups": {
+          "ok": true
+        },
+        "traditional": {
+          "ok": true
+        }
+      },
+      "active_players": 20,
+      "eligible_players": 18,
+      "tracking_rows": {
+        "hustle": 19,
+        "defense": 20,
+        "matchups": 184
+      },
+      "verified": true
+    },
+    {
+      "game_id": "0022600044",
+      "game": "ORL at BKN",
+      "datasets": {
+        "cdn": {
+          "ok": true
+        },
+        "advanced": {
+          "ok": true
+        },
+        "hustle": {
+          "ok": true
+        },
+        "defense": {
+          "ok": true
+        },
+        "matchups": {
+          "ok": true
+        },
+        "traditional": {
+          "ok": true
+        }
+      },
+      "active_players": 19,
+      "eligible_players": 19,
+      "tracking_rows": {
+        "hustle": 19,
+        "defense": 19,
+        "matchups": 170
+      },
+      "verified": true
+    },
+    {
+      "game_id": "0022600045",
+      "game": "IND at CLE",
+      "datasets": {
+        "cdn": {
+          "ok": true
+        },
+        "advanced": {
+          "ok": true
+        },
+        "hustle": {
+          "ok": true
+        },
+        "defense": {
+          "ok": true
+        },
+        "matchups": {
+          "ok": true
+        },
+        "traditional": {
+          "ok": true
+        }
+      },
+      "active_players": 23,
+      "eligible_players": 21,
+      "tracking_rows": {
+        "hustle": 23,
+        "defense": 23,
+        "matchups": 228
+      },
+      "verified": true
+    },
+    {
+      "game_id": "0022600046",
+      "game": "TOR at DET",
+      "datasets": {
+        "cdn": {
+          "ok": true
+        },
+        "advanced": {
+          "ok": true
+        },
+        "hustle": {
+          "ok": true
+        },
+        "defense": {
+          "ok": true
+        },
+        "matchups": {
+          "ok": true
+        },
+        "traditional": {
+          "ok": true
+        }
+      },
+      "active_players": 19,
+      "eligible_players": 17,
+      "tracking_rows": {
+        "hustle": 18,
+        "defense": 19,
+        "matchups": 165
+      },
+      "verified": true
+    },
+    {
+      "game_id": "0022600047",
+      "game": "WAS at CHI",
+      "datasets": {
+        "cdn": {
+          "ok": true
+        },
+        "advanced": {
+          "ok": true
+        },
+        "hustle": {
+          "ok": true
+        },
+        "defense": {
+          "ok": true
+        },
+        "matchups": {
+          "ok": true
+        },
+        "traditional": {
+          "ok": true
+        }
+      },
+      "active_players": 21,
+      "eligible_players": 18,
+      "tracking_rows": {
+        "hustle": 20,
+        "defense": 21,
+        "matchups": 198
+      },
+      "verified": true
+    },
+    {
+      "game_id": "0022600048",
+      "game": "NOP at OKC",
+      "datasets": {
+        "cdn": {
+          "ok": true
+        },
+        "advanced": {
+          "ok": true
+        },
+        "hustle": {
+          "ok": true
+        },
+        "defense": {
+          "ok": true
+        },
+        "matchups": {
+          "ok": true
+        },
+        "traditional": {
+          "ok": true
+        }
+      },
+      "active_players": 20,
+      "eligible_players": 19,
+      "tracking_rows": {
+        "hustle": 18,
+        "defense": 20,
+        "matchups": 183
+      },
+      "verified": true
+    },
+    {
+      "game_id": "0022600049",
+      "game": "PHX at UTA",
+      "datasets": {
+        "cdn": {
+          "ok": true
+        },
+        "advanced": {
+          "ok": true
+        },
+        "hustle": {
+          "ok": true
+        },
+        "defense": {
+          "ok": true
+        },
+        "matchups": {
+          "ok": true
+        },
+        "traditional": {
+          "ok": true
+        }
+      },
+      "active_players": 20,
+      "eligible_players": 19,
+      "tracking_rows": {
+        "hustle": 20,
+        "defense": 20,
+        "matchups": 182
+      },
+      "verified": true
+    },
+    {
+      "game_id": "0022600050",
+      "game": "HOU at DEN",
+      "datasets": {
+        "cdn": {
+          "ok": true
+        },
+        "advanced": {
+          "ok": true
+        },
+        "hustle": {
+          "ok": true
+        },
+        "defense": {
+          "ok": true
+        },
+        "matchups": {
+          "ok": true
+        },
+        "traditional": {
+          "ok": true
+        }
+      },
+      "active_players": 20,
+      "eligible_players": 19,
+      "tracking_rows": {
+        "hustle": 20,
+        "defense": 20,
+        "matchups": 174
+      },
+      "verified": true
+    },
+    {
+      "game_id": "0022600051",
+      "game": "SAC at LAL",
+      "datasets": {
+        "cdn": {
+          "ok": true
+        },
+        "advanced": {
+          "ok": true
+        },
+        "hustle": {
+          "ok": true
+        },
+        "defense": {
+          "ok": true
+        },
+        "matchups": {
+          "ok": true
+        },
+        "traditional": {
+          "ok": true
+        }
+      },
+      "fallbacks": {
+        "hustle": {
+          "reason": "hustle returned a different team for awayTeam",
+          "source": "https://stats.nba.com/stats/leaguehustlestatsplayer?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&Height=&ISTRound=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&PlayerExperience=&PlayerPosition=&SeasonSegment=&TeamID=&VsConference=&VsDivision=&Weight=&LeagueID=00&PerMode=Totals&Season=2026-27&SeasonType=Regular+Season&DateFrom=11%2F20%2F2026&DateTo=11%2F20%2F2026",
+          "raw_file": "daily-hustle.json",
+          "normalized_file": "0022600051-hustle.json"
+        }
+      },
+      "active_players": 19,
+      "eligible_players": 19,
+      "tracking_rows": {
+        "hustle": 19,
+        "defense": 19,
+        "matchups": 170
+      },
+      "verified": true
+    }
+  ],
+  "sources": {
+    "scoreboard.json": {
+      "url": "https://stats.nba.com/stats/scoreboardv3?GameDate=2026-11-20&LeagueID=00",
+      "sha256": "612b02e4021368c1665c60988473aea14d8324e39f1f5b9c04e18beba20ecbdf",
+      "reused": true
+    },
+    "0022600043-cdn.json": {
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600043.json",
+      "sha256": "31d37453b30b7c6955ba4507cb0febb8df1ddf73e766612d2f71987155d9b600",
+      "reused": true
+    },
+    "0022600043-advanced.json": {
+      "url": "https://stats.nba.com/stats/boxscoreadvancedv3?LeagueID=00&GameID=0022600043&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "b6e29d4ea57abab84a2812eee82f10ec6329471f107b5c3eccb299b3a5c41dea",
+      "reused": true
+    },
+    "0022600043-hustle.json": {
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?LeagueID=00&GameID=0022600043&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "82829c96cee88bddb366edc7832c8ee222fdf55020301214c46ae7b27781af09",
+      "reused": true
+    },
+    "0022600043-defense.json": {
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?LeagueID=00&GameID=0022600043&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "358d66f9ea2825556c096096c1e91e7d643d7dce1ca7f2feb87bb8fd47efce06",
+      "reused": true
+    },
+    "0022600043-matchups.json": {
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?LeagueID=00&GameID=0022600043&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "e30779350e31cba8fc93051390937504b68ed5c4d6bf105ca81c413704e58ffe",
+      "reused": true
+    },
+    "0022600043-traditional.json": {
+      "url": "https://stats.nba.com/stats/boxscoretraditionalv3?LeagueID=00&GameID=0022600043&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "ec2b30dbc7e1ad9b63f8e95b41f1d7a99a7f97e7e8ed3b422109dd712b6d96ef",
+      "reused": true
+    },
+    "0022600044-cdn.json": {
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600044.json",
+      "sha256": "4245b54b2a25d2d6b44e5d15f27ee29484197d8ebd529be8359bd440e52f27c1",
+      "reused": true
+    },
+    "0022600044-advanced.json": {
+      "url": "https://stats.nba.com/stats/boxscoreadvancedv3?LeagueID=00&GameID=0022600044&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "47ad8d2f2c3cf62e0c9212ce018f333a97160beb5979d40a19a73c3e3242f6ea",
+      "reused": true
+    },
+    "0022600044-hustle.json": {
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?LeagueID=00&GameID=0022600044&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "4b70a46ea7ce3446e31207a625a1afd5ff4e76b5f5e3136c805c9bac14cac713",
+      "reused": true
+    },
+    "0022600044-defense.json": {
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?LeagueID=00&GameID=0022600044&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "b69ee6ca34e888fa3207e6630a9ec7e82142e5b708d4cc6baa77669eda5174a3",
+      "reused": true
+    },
+    "0022600044-matchups.json": {
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?LeagueID=00&GameID=0022600044&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "8664d6a5feed91090cae24c104a8678e7a82c37466bc0c32cfd14aaea4f3758c",
+      "reused": true
+    },
+    "0022600044-traditional.json": {
+      "url": "https://stats.nba.com/stats/boxscoretraditionalv3?LeagueID=00&GameID=0022600044&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "67625a72e7ed40310eb80ce1e740e5571b92772f6e1460c82a056303e1a98557",
+      "reused": true
+    },
+    "0022600045-cdn.json": {
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600045.json",
+      "sha256": "67b011278cb3ec9eefb1eb4db4a4471e9df72898fac47ffcd695ce07d5eec289",
+      "reused": true
+    },
+    "0022600045-advanced.json": {
+      "url": "https://stats.nba.com/stats/boxscoreadvancedv3?LeagueID=00&GameID=0022600045&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "36f7f84af68dcd4185633afbcd37442e3c60c4cf90967f47b92a90d7c134c685",
+      "reused": true
+    },
+    "0022600045-hustle.json": {
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?LeagueID=00&GameID=0022600045&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "a3886bd0bf4c583aff890321105bb342583c472e2abf0ea91d0d809870ea1edd",
+      "reused": true
+    },
+    "0022600045-defense.json": {
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?LeagueID=00&GameID=0022600045&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "b7194f66079140276f0671c82b389a332e402c7f8e3a6fb9a2de9313417f159e",
+      "reused": true
+    },
+    "0022600045-matchups.json": {
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?LeagueID=00&GameID=0022600045&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "739f9dca8fddba39499a82b9a5f2f3e6d11801f2e13776f1233ed7814bd8b080",
+      "reused": true
+    },
+    "0022600045-traditional.json": {
+      "url": "https://stats.nba.com/stats/boxscoretraditionalv3?LeagueID=00&GameID=0022600045&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "e1f02c0e79a40b83239fd61117c0c604051c1512ddd513cc97fa6dc3891dfc98",
+      "reused": true
+    },
+    "0022600046-cdn.json": {
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600046.json",
+      "sha256": "be476772e9200e69798bb158ec9d4834d6b4eea87798284cb67a138fb33e7dbc",
+      "reused": true
+    },
+    "0022600046-advanced.json": {
+      "url": "https://stats.nba.com/stats/boxscoreadvancedv3?LeagueID=00&GameID=0022600046&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "571df6adca0c3b06aa6666aefdd1a40ba86df0f3f0b7ec54d49fc8e2290fba13",
+      "reused": true
+    },
+    "0022600046-hustle.json": {
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?LeagueID=00&GameID=0022600046&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "b47a06f8907c6335bb45ad25d4c094847d0a9f812284d4c54c30c2a14ee69a67",
+      "reused": true
+    },
+    "0022600046-defense.json": {
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?LeagueID=00&GameID=0022600046&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "8154ecb763924776bf84e39b96de801b77d68d68573bac8bc709fbbf3c9d8cca",
+      "reused": true
+    },
+    "0022600046-matchups.json": {
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?LeagueID=00&GameID=0022600046&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "e856bebda63c1991380b52bb5b5a263983051d006a54c13659da67f504389fd3",
+      "reused": true
+    },
+    "0022600046-traditional.json": {
+      "url": "https://stats.nba.com/stats/boxscoretraditionalv3?LeagueID=00&GameID=0022600046&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "3e76ec80b1b28721f9fc89c01f3d96fe693c2b61a8f24b3b0e5811981998199a",
+      "reused": true
+    },
+    "0022600047-cdn.json": {
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600047.json",
+      "sha256": "379bf8e771d9d4e136022e0462a852172d1705394bcf58fa60e5bd775b36f229",
+      "reused": true
+    },
+    "0022600047-advanced.json": {
+      "url": "https://stats.nba.com/stats/boxscoreadvancedv3?LeagueID=00&GameID=0022600047&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "65a77f3219c47fc179fc1fa1c4430970ae828615a9f7f5576b58fc7daaf4e795",
+      "reused": true
+    },
+    "0022600047-hustle.json": {
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?LeagueID=00&GameID=0022600047&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "38634b410aba0fcd6890fea4779a619f9e1ddd839440df5fac3d631676d71c7e",
+      "reused": true
+    },
+    "0022600047-defense.json": {
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?LeagueID=00&GameID=0022600047&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "a56325c54274434a16ce95205576d6c5ae8e9ce85ca16a3b52400db194ee6d6e",
+      "reused": true
+    },
+    "0022600047-matchups.json": {
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?LeagueID=00&GameID=0022600047&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "c8dda54eb5247c7242472fb4c67c7149604d29c5648fe17693ea4352eb3376c7",
+      "reused": true
+    },
+    "0022600047-traditional.json": {
+      "url": "https://stats.nba.com/stats/boxscoretraditionalv3?LeagueID=00&GameID=0022600047&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "f948ae1c175cad3d09587f62f3a8d8daf06bf66e3a6102acd818d7f98a2c42a3",
+      "reused": true
+    },
+    "0022600048-cdn.json": {
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600048.json",
+      "sha256": "c5e8c8f0a575f05fb0d98bf870230ac740733974e1641ec226f91d81d40a7ddc",
+      "reused": true
+    },
+    "0022600048-advanced.json": {
+      "url": "https://stats.nba.com/stats/boxscoreadvancedv3?LeagueID=00&GameID=0022600048&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "fb2ba5299f7cee4d3239f353b656f8cf352398d853de232991cd4e8a608e6e2b",
+      "reused": true
+    },
+    "0022600048-hustle.json": {
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?LeagueID=00&GameID=0022600048&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "8aef0dd1962bc01501fe797889b9826399af5965bf12a9563c7bdab6f78bb0dd",
+      "reused": true
+    },
+    "0022600048-defense.json": {
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?LeagueID=00&GameID=0022600048&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "ec678c4269b03ca6e863ce82198b797e7b554b13ed776ded94cd221344b4ae4e",
+      "reused": true
+    },
+    "0022600048-matchups.json": {
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?LeagueID=00&GameID=0022600048&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "e78130ea40cd713fdee2e2dc756dc0c83e76ba4dcfae6fbf7397cfd7a339cc98",
+      "reused": true
+    },
+    "0022600048-traditional.json": {
+      "url": "https://stats.nba.com/stats/boxscoretraditionalv3?LeagueID=00&GameID=0022600048&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "6105792bfd17c2991fd43e2d18ba63996b4ee27de050a2d0f97cff41064a1053",
+      "reused": true
+    },
+    "0022600049-cdn.json": {
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600049.json",
+      "sha256": "7152df9298cbca7e5428effac1e617449292218a818678b679d4b4797e72ad23",
+      "reused": true
+    },
+    "0022600049-advanced.json": {
+      "url": "https://stats.nba.com/stats/boxscoreadvancedv3?LeagueID=00&GameID=0022600049&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "e86e622c773b9ca4167e3b51943f5efdbd8a3580d11e71c569aa7308fbce56e4",
+      "reused": true
+    },
+    "0022600049-hustle.json": {
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?LeagueID=00&GameID=0022600049&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "962f1741cfe32c6c3923f30f9a94c4a254b8303a9368621e2ee047da19240b87",
+      "reused": true
+    },
+    "0022600049-defense.json": {
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?LeagueID=00&GameID=0022600049&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "3ff38ff48c92cf098a4c0fa86bea47055225d000ed4a692180de124c93431db4",
+      "reused": true
+    },
+    "0022600049-matchups.json": {
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?LeagueID=00&GameID=0022600049&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "1cb9ffeee0a8b0a639daefbfe70fa1f245807d54f3da200b81c46928f4e90145",
+      "reused": true
+    },
+    "0022600049-traditional.json": {
+      "url": "https://stats.nba.com/stats/boxscoretraditionalv3?LeagueID=00&GameID=0022600049&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "ae315f99de728bc59e99acb4adb6c146e4757640f0c9a98ae78a98cc0f14c5fe",
+      "reused": true
+    },
+    "0022600050-cdn.json": {
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600050.json",
+      "sha256": "3805fcaee134eacc89b5b7101de45e018de30f8da06bcb277c6a75589b7ed33b",
+      "reused": true
+    },
+    "0022600050-advanced.json": {
+      "url": "https://stats.nba.com/stats/boxscoreadvancedv3?LeagueID=00&GameID=0022600050&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "007f09583e6e7f57a86753f35c36cff52dba1391c5050acfe972dbf1261b3fcc",
+      "reused": true
+    },
+    "0022600050-hustle.json": {
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?LeagueID=00&GameID=0022600050&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "0768aacda1d6909f1421a439d13536eaf74930c90116aed64db4017eeb58d4bf",
+      "reused": true
+    },
+    "0022600050-defense.json": {
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?LeagueID=00&GameID=0022600050&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "ddb738e8cd5795cfdf5887d7f6ebee567e101389fe3f24313bac5c374336f3f0",
+      "reused": true
+    },
+    "0022600050-matchups.json": {
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?LeagueID=00&GameID=0022600050&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "d88ba312d183a0e316b0e6b53cd429aebc6417e07a7ca0b927347e2217137247",
+      "reused": true
+    },
+    "0022600050-traditional.json": {
+      "url": "https://stats.nba.com/stats/boxscoretraditionalv3?LeagueID=00&GameID=0022600050&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "1ed007b1500cae43370cbf622719661764d6b45a891e98bdf64170fa1c31f2af",
+      "reused": true
+    },
+    "0022600051-cdn.json": {
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600051.json",
+      "sha256": "39da08a0eba3c7ab2f79eff7555ade2fc70731b632116502d92e85435c820a6a",
+      "reused": true
+    },
+    "0022600051-advanced.json": {
+      "url": "https://stats.nba.com/stats/boxscoreadvancedv3?LeagueID=00&GameID=0022600051&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "f48cbca32b5099512b844b3c753b1bab250ac0e6c9960bac1b5836c88a3108a0",
+      "reused": true
+    },
+    "0022600051-hustle-rejected.json": {
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?LeagueID=00&GameID=0022600051&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "5dfe9450eb01e4e584d39fc14a751e046e0edfa20de42b40dee6b8a1660aab7d",
+      "reused": true
+    },
+    "daily-hustle.json": {
+      "url": "https://stats.nba.com/stats/leaguehustlestatsplayer?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&Height=&ISTRound=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&PlayerExperience=&PlayerPosition=&SeasonSegment=&TeamID=&VsConference=&VsDivision=&Weight=&LeagueID=00&PerMode=Totals&Season=2026-27&SeasonType=Regular+Season&DateFrom=11%2F20%2F2026&DateTo=11%2F20%2F2026",
+      "sha256": "1b217104cd849b71c915baf7056330ef83ef056159a8c3d6f196da7c58328c2a"
+    },
+    "0022600051-defense.json": {
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?LeagueID=00&GameID=0022600051&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "1df1a21e2d867a0ff7a6bfd0604a40ee939b67c4fa512eb5ea39fba734cc00d7",
+      "reused": true
+    },
+    "0022600051-matchups.json": {
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?LeagueID=00&GameID=0022600051&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "2e34f471c366a17d36f2a23da4da869eeb237fbe6ab593b89841a80504778aaa",
+      "reused": true
+    },
+    "0022600051-traditional.json": {
+      "url": "https://stats.nba.com/stats/boxscoretraditionalv3?LeagueID=00&GameID=0022600051&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "sha256": "7d3d62bd65365d7125f1186565732ae83780aefb6eafecb143272e4ceaba5c98",
+      "reused": true
+    }
+  },
+  "errors": [],
+  "counting_discrepancies": [],
+  "c6_zeroed": [],
+  "reused_run": "qpix-shadow-2026-11-20-20261121T172156Z",
+  "previous_request_audit": {
+    "browser_request_releases": {
+      "count": 56,
+      "max_per_rolling_minute": 14,
+      "min_spacing_seconds": 4.203
+    },
+    "browser_reported_http_send_times": {
+      "count": 56,
+      "max_per_rolling_minute": 14,
+      "min_spacing_seconds": 4.198
+    },
+    "responses_without_a_release_or_browser_cache_event": [],
+    "throttle_error": null
+  },
+  "non_finals": [],
+  "scheduled_games": 9,
+  "finals": 9,
+  "request_audit": {
+    "browser_request_releases": {
+      "count": 2,
+      "max_per_rolling_minute": 2,
+      "min_spacing_seconds": 4.546
+    },
+    "browser_reported_http_send_times": {
+      "count": 2,
+      "max_per_rolling_minute": 2,
+      "min_spacing_seconds": 4.615
+    },
+    "responses_without_a_release_or_browser_cache_event": [],
+    "throttle_error": null
+  }
+}

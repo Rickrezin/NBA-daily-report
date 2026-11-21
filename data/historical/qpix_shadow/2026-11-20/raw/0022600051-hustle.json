@@ -1,0 +1,417 @@
+{
+  "boxScoreHustle": {
+    "gameId": "0022600051",
+    "derivedFrom": "leaguehustlestatsplayer",
+    "awayTeam": {
+      "teamId": 1610612758,
+      "teamTricode": "SAC",
+      "players": [
+        {
+          "personId": 1643411,
+          "name": "Darius Acuff Jr.",
+          "statistics": {
+            "contestedShots": 3,
+            "contestedShots2pt": 2,
+            "contestedShots3pt": 1,
+            "deflections": 1,
+            "chargesDrawn": 0,
+            "screenAssists": 0,
+            "screenAssistPoints": 0,
+            "looseBallsRecoveredOffensive": 0,
+            "looseBallsRecoveredDefensive": 0,
+            "looseBallsRecoveredTotal": 0,
+            "offensiveBoxOuts": 0,
+            "defensiveBoxOuts": 0,
+            "boxOutPlayerTeamRebounds": 0,
+            "boxOutPlayerRebounds": 0,
+            "boxOuts": 0
+          }
+        },
+        {
+          "personId": 1629631,
+          "name": "De'Andre Hunter",
+          "statistics": {
+            "contestedShots": 8,
+            "contestedShots2pt": 4,
+            "contestedShots3pt": 4,
+            "deflections": 3,
+            "chargesDrawn": 0,
+            "screenAssists": 0,
+            "screenAssistPoints": 0,
+            "looseBallsRecoveredOffensive": 0,
+            "looseBallsRecoveredDefensive": 0,
+            "looseBallsRecoveredTotal": 0,
+            "offensiveBoxOuts": 0,
+            "defensiveBoxOuts": 0,
+            "boxOutPlayerTeamRebounds": 0,
+            "boxOutPlayerRebounds": 0,
+            "boxOuts": 1
+          }
+        },
+        {
+          "personId": 1627734,
+          "name": "Domantas Sabonis",
+          "statistics": {
+            "contestedShots": 5,
+            "contestedShots2pt": 3,
+            "contestedShots3pt": 2,
+            "deflections": 0,
+            "chargesDrawn": 0,
+            "screenAssists": 3,
+            "screenAssistPoints": 0,
+            "looseBallsRecoveredOffensive": 1,
+            "looseBallsRecoveredDefensive": 0,
+            "looseBallsRecoveredTotal": 1,
+            "offensiveBoxOuts": 0,
+            "defensiveBoxOuts": 0,
+            "boxOutPlayerTeamRebounds": 0,
+            "boxOutPlayerRebounds": 0,
+            "boxOuts": 4
+          }
+        },
+        {
+          "personId": 1642928,
+          "name": "Dylan Cardwell",
+          "statistics": {
+            "contestedShots": 3,
+            "contestedShots2pt": 3,
+            "contestedShots3pt": 0,
+            "deflections": 1,
+            "chargesDrawn": 0,
+            "screenAssists": 2,
+            "screenAssistPoints": 0,
+            "looseBallsRecoveredOffensive": 0,
+            "looseBallsRecoveredDefensive": 0,
+            "looseBallsRecoveredTotal": 0,
+            "offensiveBoxOuts": 0,
+            "defensiveBoxOuts": 0,
+            "boxOutPlayerTeamRebounds": 0,
+            "boxOutPlayerRebounds": 0,
+            "boxOuts": 0
+          }
+        },
+        {
+          "personId": 1643567,
+          "name": "Emanuel Sharp",
+          "statistics": {
+            "contestedShots": 2,
+            "contestedShots2pt": 0,
+            "contestedShots3pt": 2,
+            "deflections": 1,
+            "chargesDrawn": 0,
+            "screenAssists": 0,
+            "screenAssistPoints": 0,
+            "looseBallsRecoveredOffensive": 0,
+            "looseBallsRecoveredDefensive": 0,
+            "looseBallsRecoveredTotal": 0,
+            "offensiveBoxOuts": 0,
+            "defensiveBoxOuts": 0,
+            "boxOutPlayerTeamRebounds": 0,
+            "boxOutPlayerRebounds": 0,
+            "boxOuts": 0
+          }
+        },
+        {
+          "personId": 1631099,
+          "name": "Keegan Murray",
+          "statistics": {
+            "contestedShots": 9,
+            "contestedShots2pt": 3,
+            "contestedShots3pt": 6,
+            "deflections": 2,
+            "chargesDrawn": 0,
+            "screenAssists": 0,
+            "screenAssistPoints": 0,
+            "looseBallsRecoveredOffensive": 0,
+            "looseBallsRecoveredDefensive": 0,
+            "looseBallsRecoveredTotal": 0,
+            "offensiveBoxOuts": 0,
+            "defensiveBoxOuts": 0,
+            "boxOutPlayerTeamRebounds": 0,
+            "boxOutPlayerRebounds": 0,
+            "boxOuts": 1
+          }
+        },
+        {
+          "personId": 1641778,
+          "name": "Leaky Black",
+          "statistics": {
+            "contestedShots": 1,
+            "contestedShots2pt": 0,
+            "contestedShots3pt": 1,
+            "deflections": 2,
+            "chargesDrawn": 0,
+            "screenAssists": 0,
+            "screenAssistPoints": 0,
+            "looseBallsRecoveredOffensive": 0,
+            "looseBallsRecoveredDefensive": 0,
+            "looseBallsRecoveredTotal": 0,
+            "offensiveBoxOuts": 0,
+            "defensiveBoxOuts": 0,
+            "boxOutPlayerTeamRebounds": 0,
+            "boxOutPlayerRebounds": 0,
+            "boxOuts": 0
+          }
+        },
+        {
+          "personId": 1628370,
+          "name": "Malik Monk",
+          "statistics": {
+            "contestedShots": 1,
+            "contestedShots2pt": 1,
+            "contestedShots3pt": 0,
+            "deflections": 1,
+            "chargesDrawn": 0,
+            "screenAssists": 0,
+            "screenAssistPoints": 0,
+            "looseBallsRecoveredOffensive": 0,
+            "looseBallsRecoveredDefensive": 0,
+            "looseBallsRecoveredTotal": 0,
+            "offensiveBoxOuts": 0,
+            "defensiveBoxOuts": 0,
+            "boxOutPlayerTeamRebounds": 0,
+            "boxOutPlayerRebounds": 0,
+            "boxOuts": 0
+          }
+        },
+        {
+          "personId": 203897,
+          "name": "Zach LaVine",
+          "statistics": {
+            "contestedShots": 5,
+            "contestedShots2pt": 2,
+            "contestedShots3pt": 3,
+            "deflections": 2,
+            "chargesDrawn": 0,
+            "screenAssists": 0,
+            "screenAssistPoints": 0,
+            "looseBallsRecoveredOffensive": 1,
+            "looseBallsRecoveredDefensive": 0,
+            "looseBallsRecoveredTotal": 1,
+            "offensiveBoxOuts": 0,
+            "defensiveBoxOuts": 0,
+            "boxOutPlayerTeamRebounds": 0,
+            "boxOutPlayerRebounds": 0,
+            "boxOuts": 0
+          }
+        }
+      ]
+    },
+    "homeTeam": {
+      "teamId": 1610612747,
+      "teamTricode": "LAL",
+      "players": [
+        {
+          "personId": 1643418,
+          "name": "Cameron Carr",
+          "statistics": {
+            "contestedShots": 2,
+            "contestedShots2pt": 0,
+            "contestedShots3pt": 2,
+            "deflections": 0,
+            "chargesDrawn": 0,
+            "screenAssists": 0,
+            "screenAssistPoints": 0,
+            "looseBallsRecoveredOffensive": 0,
+            "looseBallsRecoveredDefensive": 0,
+            "looseBallsRecoveredTotal": 0,
+            "offensiveBoxOuts": 0,
+            "defensiveBoxOuts": 0,
+            "boxOutPlayerTeamRebounds": 0,
+            "boxOutPlayerRebounds": 0,
+            "boxOuts": 0
+          }
+        },
+        {
+          "personId": 1629012,
+          "name": "Collin Sexton",
+          "statistics": {
+            "contestedShots": 2,
+            "contestedShots2pt": 1,
+            "contestedShots3pt": 1,
+            "deflections": 2,
+            "chargesDrawn": 0,
+            "screenAssists": 0,
+            "screenAssistPoints": 0,
+            "looseBallsRecoveredOffensive": 0,
+            "looseBallsRecoveredDefensive": 0,
+            "looseBallsRecoveredTotal": 0,
+            "offensiveBoxOuts": 0,
+            "defensiveBoxOuts": 0,
+            "boxOutPlayerTeamRebounds": 0,
+            "boxOutPlayerRebounds": 0,
+            "boxOuts": 1
+          }
+        },
+        {
+          "personId": 1631222,
+          "name": "Jake LaRavia",
+          "statistics": {
+            "contestedShots": 0,
+            "contestedShots2pt": 0,
+            "contestedShots3pt": 0,
+            "deflections": 0,
+            "chargesDrawn": 0,
+            "screenAssists": 0,
+            "screenAssistPoints": 0,
+            "looseBallsRecoveredOffensive": 0,
+            "looseBallsRecoveredDefensive": 1,
+            "looseBallsRecoveredTotal": 1,
+            "offensiveBoxOuts": 0,
+            "defensiveBoxOuts": 0,
+            "boxOutPlayerTeamRebounds": 0,
+            "boxOutPlayerRebounds": 0,
+            "boxOuts": 0
+          }
+        },
+        {
+          "personId": 1629020,
+          "name": "Jarred Vanderbilt",
+          "statistics": {
+            "contestedShots": 2,
+            "contestedShots2pt": 1,
+            "contestedShots3pt": 1,
+            "deflections": 2,
+            "chargesDrawn": 0,
+            "screenAssists": 0,
+            "screenAssistPoints": 0,
+            "looseBallsRecoveredOffensive": 1,
+            "looseBallsRecoveredDefensive": 0,
+            "looseBallsRecoveredTotal": 1,
+            "offensiveBoxOuts": 0,
+            "defensiveBoxOuts": 0,
+            "boxOutPlayerTeamRebounds": 0,
+            "boxOutPlayerRebounds": 0,
+            "boxOuts": 0
+          }
+        },
+        {
+          "personId": 1629029,
+          "name": "Luka Dončić",
+          "statistics": {
+            "contestedShots": 3,
+            "contestedShots2pt": 2,
+            "contestedShots3pt": 1,
+            "deflections": 6,
+            "chargesDrawn": 0,
+            "screenAssists": 0,
+            "screenAssistPoints": 0,
+            "looseBallsRecoveredOffensive": 0,
+            "looseBallsRecoveredDefensive": 0,
+            "looseBallsRecoveredTotal": 0,
+            "offensiveBoxOuts": 0,
+            "defensiveBoxOuts": 0,
+            "boxOutPlayerTeamRebounds": 0,
+            "boxOutPlayerRebounds": 0,
+            "boxOuts": 0
+          }
+        },
+        {
+          "personId": 1629680,
+          "name": "Matisse Thybulle",
+          "statistics": {
+            "contestedShots": 4,
+            "contestedShots2pt": 2,
+            "contestedShots3pt": 2,
+            "deflections": 3,
+            "chargesDrawn": 0,
+            "screenAssists": 0,
+            "screenAssistPoints": 0,
+            "looseBallsRecoveredOffensive": 0,
+            "looseBallsRecoveredDefensive": 0,
+            "looseBallsRecoveredTotal": 0,
+            "offensiveBoxOuts": 0,
+            "defensiveBoxOuts": 0,
+            "boxOutPlayerTeamRebounds": 0,
+            "boxOutPlayerRebounds": 0,
+            "boxOuts": 0
+          }
+        },
+        {
+          "personId": 1629656,
+          "name": "Quentin Grimes",
+          "statistics": {
+            "contestedShots": 4,
+            "contestedShots2pt": 2,
+            "contestedShots3pt": 2,
+            "deflections": 2,
+            "chargesDrawn": 0,
+            "screenAssists": 0,
+            "screenAssistPoints": 0,
+            "looseBallsRecoveredOffensive": 1,
+            "looseBallsRecoveredDefensive": 0,
+            "looseBallsRecoveredTotal": 1,
+            "offensiveBoxOuts": 0,
+            "defensiveBoxOuts": 0,
+            "boxOutPlayerTeamRebounds": 0,
+            "boxOutPlayerRebounds": 0,
+            "boxOuts": 0
+          }
+        },
+        {
+          "personId": 1630572,
+          "name": "Sandro Mamukelashvili",
+          "statistics": {
+            "contestedShots": 6,
+            "contestedShots2pt": 3,
+            "contestedShots3pt": 3,
+            "deflections": 1,
+            "chargesDrawn": 0,
+            "screenAssists": 0,
+            "screenAssistPoints": 0,
+            "looseBallsRecoveredOffensive": 0,
+            "looseBallsRecoveredDefensive": 3,
+            "looseBallsRecoveredTotal": 3,
+            "offensiveBoxOuts": 0,
+            "defensiveBoxOuts": 0,
+            "boxOutPlayerTeamRebounds": 0,
+            "boxOutPlayerRebounds": 0,
+            "boxOuts": 0
+          }
+        },
+        {
+          "personId": 1631117,
+          "name": "Walker Kessler",
+          "statistics": {
+            "contestedShots": 13,
+            "contestedShots2pt": 13,
+            "contestedShots3pt": 0,
+            "deflections": 2,
+            "chargesDrawn": 0,
+            "screenAssists": 5,
+            "screenAssistPoints": 0,
+            "looseBallsRecoveredOffensive": 0,
+            "looseBallsRecoveredDefensive": 0,
+            "looseBallsRecoveredTotal": 0,
+            "offensiveBoxOuts": 0,
+            "defensiveBoxOuts": 0,
+            "boxOutPlayerTeamRebounds": 0,
+            "boxOutPlayerRebounds": 0,
+            "boxOuts": 4
+          }
+        },
+        {
+          "personId": 1630533,
+          "name": "Ziaire Williams",
+          "statistics": {
+            "contestedShots": 0,
+            "contestedShots2pt": 0,
+            "contestedShots3pt": 0,
+            "deflections": 2,
+            "chargesDrawn": 0,
+            "screenAssists": 0,
+            "screenAssistPoints": 0,
+            "looseBallsRecoveredOffensive": 0,
+            "looseBallsRecoveredDefensive": 0,
+            "looseBallsRecoveredTotal": 0,
+            "offensiveBoxOuts": 0,
+            "defensiveBoxOuts": 0,
+            "boxOutPlayerTeamRebounds": 0,
+            "boxOutPlayerRebounds": 0,
+            "boxOuts": 0
+          }
+        }
+      ]
+    }
+  }
+}
