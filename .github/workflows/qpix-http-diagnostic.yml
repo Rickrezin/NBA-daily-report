@@ -16,7 +16,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install diagnostic HTTP clients
-        run: python -m pip install --disable-pip-version-check 'httpx[http2]' requests
+        run: python -m pip install --disable-pip-version-check --upgrade 'httpx[http2]' requests nba_api
       - name: Compare HTTP clients and V3 schema
         shell: bash
         run: |
@@ -77,4 +77,47 @@ jobs:
           report('requests-http1-session-warmup',requests_test)
           report('httpx-http1-session-warmup',lambda:httpx_test(False))
           report('httpx-http2-session-warmup',lambda:httpx_test(True))
+          PY
+      - name: Test current nba_api live NBA CDN box score
+        shell: bash
+        run: |
+          python - <<'PY'
+          import importlib.metadata
+          import json
+          import time
+
+          from nba_api.live.nba.endpoints import boxscore
+
+          game_id = '0022600177'
+          started = time.monotonic()
+          result = {
+              'test': 'nba_api-live-cdn-boxscore',
+              'nba_api_version': importlib.metadata.version('nba_api'),
+              'game_id': game_id,
+          }
+          try:
+              payload = boxscore.BoxScore(game_id=game_id, timeout=12).get_dict()
+              game = payload.get('game', {})
+              players = [
+                  player
+                  for team in ('homeTeam', 'awayTeam')
+                  for player in game.get(team, {}).get('players', [])
+              ]
+              fields = ('pointsFastBreak', 'pointsInThePaint', 'pointsSecondChance')
+              result.update({
+                  'success': True,
+                  'player_count': len(players),
+                  'player_stat_field_coverage': {
+                      field: sum(field in player.get('statistics', {}) for player in players)
+                      for field in fields
+                  },
+              })
+          except Exception as exc:
+              result.update({
+                  'success': False,
+                  'error_type': type(exc).__name__,
+                  'error': str(exc)[:300],
+              })
+          result['elapsed_s'] = round(time.monotonic() - started, 2)
+          print(json.dumps(result), flush=True)
           PY
