@@ -9,12 +9,10 @@ from zoneinfo import ZoneInfo
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from html.parser import HTMLParser
 from c6_sources import read_c6_fields, apply_c6_rows, misc_v3_player_rows
-from qpix_verified_sources import populate_verified_ratings
 from qpix_source_archive import canonical_snapshot, write_snapshot
 from qpix_collection_checkpoint import CollectionCheckpoint
 from qpix_game_crosswalk import resolve as resolve_nba_crosswalk
 from qpix_nba_live import NBAClient, apply_live_boxscore
-from qpix_bref_ratings import collect_game_ratings
 
 PROGRESS=None
 
@@ -34,14 +32,6 @@ def fetch(url, timeout=16):
     with urllib.request.urlopen(req,timeout=timeout) as r:return r.read().decode("utf-8","replace")
 
 def fetch_json(url,timeout=16):return json.loads(fetch(url,timeout))
-
-def fetch_bref(url,timeout=17):
-    # Use the same identified client as the working supplemental BRef audit.
-    headers={"User-Agent":"QCoreLabs-QPIX-Research/1.0 (https://github.com/Rickrezin/NBA-daily-report)",
-             "Accept":"application/json,text/html"}
-    with urllib.request.urlopen(urllib.request.Request(url,headers=headers),timeout=timeout) as response:
-        return response.read()
-
 
 DYNAMIC_MATCHUPS={}
 SCHEDULE_AUDIT={}
@@ -452,18 +442,6 @@ def create_report(result, quality):
          "","#QPIX #QCoreLabs #NBA #NBAStats #BasketballAnalytics #AdvancedStats #NBABasketball"]
     return "\n".join(m)+"\n"
 
-def basketball_reference_audit():
-    """Attempt independent Basketball-Reference access without fabricating unavailable stats."""
-    date=RUN_DATE
-    url=f"https://www.basketball-reference.com/boxscores/?month={int(date[5:7])}&day={int(date[8:10])}&year={date[:4]}"
-    try:
-        html=fetch(url,timeout=9)
-        if "NBA Games Played" not in html and "boxscores" not in html.lower():
-            return "Date index returned unexpected content; full player-level basic/advanced verification unavailable: "+url
-        return "Date index fetched, but individual basic and advanced box-score tables were not independently reconciled; primary per-player source is NBA LiveData or ESPN: "+url
-    except Exception as exc:
-        return "Date index inaccessible ("+str(exc)[:110]+"); individual Basketball-Reference basic and advanced validation unavailable; official NBA/ESPN used: "+url
-
 def main():
     global PROGRESS
     # Write-on-entry: even scoreboard failure leaves a durable partial artifact.
@@ -527,36 +505,15 @@ def main():
             PROGRESS.state["source_audits"]["NBA_CDN"]=cdn_audits
             PROGRESS.stage("collecting_live_CDN")
             print("NBA_CDN",json.dumps(rec,sort_keys=True),flush=True)
-    # C3 requires Basketball-Reference/Dean Oliver individual ratings,
-    # not NBA.com's different on-court ratings.
-    # Reuse date-matched verified historical ratings only after strict box-line checks.
-    archive_candidates=[dict(p) for p in players]
-    try:
-        c3archive=populate_verified_ratings(archive_candidates,RUN_DATE,ROOT)
-    except Exception as exc:
-        # A provisional or otherwise unusable replay must not prevent fresh,
-        # independently validated Basketball-Reference collection.
-        c3archive={"status":"unusable_archive","assigned":0,"players":len(players),
-                   "error":str(exc)[:300]}
-    else:
-        for player,candidate in zip(players,archive_candidates):
-            for field in ("offensive_rating","defensive_rating"):
-                if field in candidate:player[field]=candidate[field]
-    PROGRESS.state['source_audits']['C3']=c3archive
-    PROGRESS.stage('C3_reconciled')
-    print('C3 historical validation',c3archive['status'],c3archive['assigned'],'/',len(players),flush=True)
-    # A prior verified archive may be absent for a new day. Fetch the actual
-    # Basketball-Reference basic and advanced tables and reconcile each game.
+    # Cloud collection intentionally excludes Basketball-Reference.
+    # Do not reuse archived ratings or substitute NBA on-court ratings for
+    # the required individual Dean Oliver methodology. Record missing C3.
+    c3archive={"status":"disabled_in_cloud_pipeline","assigned":0,
+               "players":len(players),"reason":"Basketball-Reference excluded from automated collection"}
     bref_audits=[]
-    for game in games:
-        game_players=results[game["game_id"]][1]
-        if all("offensive_rating" in p and "defensive_rating" in p for p in game_players):
-            continue
-        rec=collect_game_ratings(game,game_players,RUN_DATE,ROOT,fetch_bref)
-        bref_audits.append({"game_id":game["game_id"],**rec})
-        PROGRESS.state["source_audits"]["Basketball_Reference"]=bref_audits
-        PROGRESS.stage("collecting_individual_ratings")
-        print("C3 Basketball-Reference",game["game_id"],json.dumps(rec,sort_keys=True),flush=True)
+    PROGRESS.state["source_audits"]["C3"]=c3archive
+    PROGRESS.stage("C3_unavailable")
+    print("C3 individual ratings unavailable: cloud Basketball-Reference collection disabled",flush=True)
     adv=[c3archive]
     misc=[]
     if ENABLE_NBA_V3:
@@ -587,7 +544,7 @@ def main():
     # Incomplete inputs produce an audit snapshot, but cannot be published as a
     # 'full category' report. Keep original scoring rules unchanged.
     source_audits={"ESPN_and_LiveData":SCHEDULE_AUDIT,"nba_crosswalk":crosswalk_audit,
-                   "NBA_CDN":cdn_audits,"C3_archive":c3archive,"Basketball_Reference":bref_audits,
+                   "NBA_CDN":cdn_audits,"C3":c3archive,
                    "AdvancedV3":adv,"C6":misc}
     snapshot=canonical_snapshot(games,players,RUN_DATE,source_audits,require_complete=False)
     archived_path=write_snapshot(snapshot,ROOT,allow_revision=True)
@@ -610,9 +567,9 @@ def main():
     # JS Number.isFinite(undefined) false and C4 defensive anchor check false.
     quality={
       "Source":f"ESPN final scoreboard/box scores or official NBA LiveData where accessible; all {len(games)} FINAL fixtures and player-point totals reconciled; "+str(SCHEDULE_AUDIT),
-      "Basketball-Reference":bref_audits or c3archive,
+      "C3 rating source":c3archive,
       "individual_ratings_verified":c3,
-      "C3 individual ORtg/DRtg": f"{c3}/{len(players)} validated individual Basketball-Reference/Dean Oliver ORtg/DRtg from fresh basic/advanced tables or a verified date-matched archive.",
+      "C3 individual ORtg/DRtg": f"{c3}/{len(players)} validated individual Dean Oliver ORtg/DRtg; automated Basketball-Reference collection disabled.",
       "C6 second-chance points":f"{c6['second_chance_points']}/{len(players)} individual records available; rest omitted (engine zero fallback)",
       "C6 fast-break points":f"{c6['fast_break_points']}/{len(players)} individual records available; rest omitted (engine zero fallback)",
       "C6 paint points":f"{c6['points_in_paint']}/{len(players)} individual records available; rest omitted (engine zero fallback)",
