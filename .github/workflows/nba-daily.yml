@@ -109,7 +109,6 @@ jobs:
             data/historical/qpix_input/${{ steps.game_date.outputs.date_et }}*
             data/historical/qpix_audits/${{ steps.game_date.outputs.date_et }}*
             data/historical/qpix_raw/${{ steps.game_date.outputs.date_et }}/
-            data/historical/qpix_bref_raw/${{ steps.game_date.outputs.date_et }}/
             data/nba_data.json
             data/daily/${{ steps.game_date.outputs.date_et }}.json
             data/daily/${{ steps.game_date.outputs.date_et }}.csv
@@ -139,7 +138,6 @@ jobs:
             "data/historical/qpix_input/$RUN_DATE.partial.json"
             "data/historical/qpix_audits/$RUN_DATE.coverage.json"
             "data/historical/qpix_raw/$RUN_DATE"
-            "data/historical/qpix_bref_raw/$RUN_DATE"
             "data/nba_data.json"
           )
           for path in "${paths[@]}"; do
