@@ -510,7 +510,6 @@ def main():
     # the required individual Dean Oliver methodology. Record missing C3.
     c3archive={"status":"disabled_in_cloud_pipeline","assigned":0,
                "players":len(players),"reason":"Basketball-Reference excluded from automated collection"}
-    bref_audits=[]
     PROGRESS.state["source_audits"]["C3"]=c3archive
     PROGRESS.stage("C3_unavailable")
     print("C3 individual ratings unavailable: cloud Basketball-Reference collection disabled",flush=True)
