@@ -1,0 +1,50 @@
+{
+  "0022600043": {
+    "date_et": "2026-11-20",
+    "filename": "0022600043-cdn.json",
+    "sha256": "31d37453b30b7c6955ba4507cb0febb8df1ddf73e766612d2f71987155d9b600",
+    "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600043.json"
+  },
+  "0022600050": {
+    "date_et": "2026-11-20",
+    "filename": "0022600050-cdn.json",
+    "sha256": "3805fcaee134eacc89b5b7101de45e018de30f8da06bcb277c6a75589b7ed33b",
+    "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600050.json"
+  },
+  "0022600051": {
+    "date_et": "2026-11-20",
+    "filename": "0022600051-cdn.json",
+    "sha256": "39da08a0eba3c7ab2f79eff7555ade2fc70731b632116502d92e85435c820a6a",
+    "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600051.json"
+  },
+  "0042500401": {
+    "date_et": "2026-06-03",
+    "filename": "0042500401-cdn.json",
+    "sha256": "ac5c344f170f325772751177a28eafc279399bcd664e646de84f8a90bffbe3a2",
+    "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0042500401.json"
+  },
+  "0042500402": {
+    "date_et": "2026-06-05",
+    "filename": "0042500402-cdn.json",
+    "sha256": "f653d5adb15a60db109e5a8fa50400482ff8076a9af714876dd17d71ab08a631",
+    "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0042500402.json"
+  },
+  "0042500403": {
+    "date_et": "2026-06-08",
+    "filename": "0042500403-cdn.json",
+    "sha256": "48e970ef651669bd1e8a74b9729ad795e9e8c933a4546fbd0aaa456dd4a429fb",
+    "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0042500403.json"
+  },
+  "0042500404": {
+    "date_et": "2026-06-10",
+    "filename": "0042500404-cdn.json",
+    "sha256": "cb703223072f268608591ebb399c8fb292bcea779d909491997bf6f9ddfbaf4f",
+    "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0042500404.json"
+  },
+  "0042500405": {
+    "date_et": "2026-06-13",
+    "filename": "0042500405-cdn.json",
+    "sha256": "7089ff1c50c6529405b2ba97289efc732b589a851b8d91ce2028fca0923b804b",
+    "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0042500405.json"
+  }
+}
