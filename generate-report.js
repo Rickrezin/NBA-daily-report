@@ -123,6 +123,41 @@ function loadNBAData() {
   return JSON.parse(raw);
 }
 
+function c2PlayerKey(p) {
+  const game = String(p.nba_game_id ?? p.game_id);
+  const player = String(p.nba_player_id ?? p.player_id);
+  if (!/^\d{10}$/.test(game) || !/^[1-9]\d*$/.test(player)) {
+    throw new Error(`Invalid NBA game/player ID for C2 shadow: ${game}/${player}`);
+  }
+  return `${game}/${player}`;
+}
+
+function loadC2Shadow(file, players) {
+  const { players: rows } = JSON.parse(readFileSync(file, "utf-8"));
+  if (!Array.isArray(rows) || rows.length !== players.length) {
+    throw new Error("C2 shadow requires one tracking row per player-game");
+  }
+  const adjustments = new Map();
+  for (const row of rows) {
+    const key = c2PlayerKey(row);
+    if (adjustments.has(key) || !Number.isInteger(row.fga) || row.fga < 0 ||
+        !Number.isInteger(row.classified_fga) || row.classified_fga < 0 || row.classified_fga > row.fga ||
+        !Number.isFinite(row.points_adjustment) || Math.abs(row.points_adjustment) > 3 * row.classified_fga) {
+      throw new Error(`Invalid or duplicate C2 shadow tracking row: ${key}`);
+    }
+    adjustments.set(key, row);
+  }
+  const used = new Set();
+  for (const player of players) {
+    const key = c2PlayerKey(player);
+    if (used.has(key) || !adjustments.has(key) || adjustments.get(key).fga !== player.fga) {
+      throw new Error(`C2 shadow player identity or attempts do not reconcile: ${key}`);
+    }
+    used.add(key);
+  }
+  return adjustments;
+}
+
 // ─── TS% HELPER ───────────────────────────────────────────────────
 function computeTS(p) {
   const denom = 2 * ((p.fga || 0) + 0.44 * (p.fta || 0));
@@ -155,23 +190,26 @@ function computeC1(p) {
 //   1 FGA  -> 1/3 weight
 //   2 FGA  -> 2/3 weight
 //   3+ FGA -> full weight
-function computeC2(p) {
+function computeC2(p, pointsAdjustment = 0) {
   const ts = computeTS(p);
   const fga = p.fga || 0;
 
-  if (fga === 0) return { score: 0, ts };
+  if (fga === 0) return { score: 0, ts, efficiencyTs: ts, lowEfficiencyPenalty: 0, attemptWeight: 0 };
 
-  let score = (ts - 55) * 0.3;
+  // Adjust only the continuous term. Keep traditional TS for the penalty and downstream categories.
+  const efficiencyTs = ts + 100 * pointsAdjustment / (2 * (fga + 0.44 * (p.fta || 0)));
+  let score = (efficiencyTs - 55) * 0.3;
 
   if (p.fta >= 8) score += 3;
   else if (p.fta >= 5) score += 1.5;
 
-  if (ts < 38 && fga > 5) score -= 4;
+  const lowEfficiencyPenalty = ts < 38 && fga > 5 ? 4 : 0;
+  score -= lowEfficiencyPenalty;
 
   const attemptWeight = Math.min(1, fga / 3);
   score *= attemptWeight;
 
-  return { score, ts };
+  return { score, ts, efficiencyTs, lowEfficiencyPenalty, attemptWeight };
 }
 
 // C3 — PROPRIETARY OFF/DEF ± SPLIT
@@ -560,7 +598,7 @@ function computeC13_QPIXR(p, qpixRaw) {
 }
 
 // ─── MAIN QPIX™ COMPUTE FUNCTION ─────────────────────────────────
-function computeQPIX(p, gameContext = {}) {
+function computeQPIX(p, gameContext = {}, c2Tracking) {
   let total = 0;
   const notes = [];
 
@@ -568,7 +606,8 @@ function computeQPIX(p, gameContext = {}) {
   total += computeC1(p);
 
   // C2
-  const { score: c2score, ts } = computeC2(p);
+  const c2 = computeC2(p, c2Tracking?.points_adjustment);
+  const { score: c2score, ts } = c2;
   total += c2score;
   p._ts = ts;
   if (ts >= 70) notes.push(`Elite TS% (${ts.toFixed(1)}%)`);
@@ -675,6 +714,7 @@ function computeQPIX(p, gameContext = {}) {
 
   return {
     score: qpixRaw,
+    ...(c2Tracking && { c2 }),
     ratingsAvailable: c3.ratingsAvailable,
     qpixSFA,
     sfaAdj,
@@ -891,14 +931,19 @@ function toggleRow(i) {
 
 // ─── MAIN ──────────────────────────────────────────────────────────
 async function main() {
+  const c2Input = process.env.QPIX_C2_SHADOW_INPUT;
+  const c2Output = process.env.QPIX_C2_SHADOW_OUTPUT;
+  if (Boolean(c2Input) !== Boolean(c2Output)) {
+    throw new Error("C2 shadow requires both QPIX_C2_SHADOW_INPUT and QPIX_C2_SHADOW_OUTPUT");
+  }
   const date = getYesterdayET();
   // NBA season-ending year (Aug–Dec belongs to the season that ends next year)
   REPORT_SEASON_END = Number(process.env.QPIX_SEASON_END) ||
     (Number(date.month) >= 8 ? date.year + 1 : date.year);
   console.log(`\n📊 QPIX™ Daily Report — ${date.label}`);
-  console.log(`Mode: ${isDryRun ? "DRY RUN" : "LIVE"}\n`);
+  console.log(`Mode: ${c2Input ? "C2 SHADOW" : isDryRun ? "DRY RUN" : "LIVE"}\n`);
 
-  if (process.env.GITHUB_ENV) {
+  if (!c2Input && process.env.GITHUB_ENV) {
     writeFileSync(process.env.GITHUB_ENV, `REPORT_DATE=${date.month}/${date.day}/${date.year}\n`, { flag: "a" });
   }
 
@@ -907,9 +952,11 @@ async function main() {
   console.log(`   Found ${games.length} games, ${allPlayers.length} players`);
 
   if (games.length === 0) {
+    if (c2Input) throw new Error("C2 shadow requires at least one game");
     console.log("   No games found. Exiting.");
     process.exit(0);
   }
+  const c2Adjustments = c2Input ? loadC2Shadow(c2Input, allPlayers) : null;
 
   // Build game results for context
   const gameResults = games.map(g => ({
@@ -934,9 +981,15 @@ async function main() {
       g.home_alias === p.home_alias && g.away_alias === p.away_alias
     ) || {};
     const gameContext = buildGameContext(p, gamePlayers, gameResult);
-    const result = computeQPIX(p, gameContext);
+    const c2Tracking = c2Adjustments?.get(c2PlayerKey(p));
+    const result = computeQPIX(p, gameContext, c2Tracking);
     return { ...p, ...result };
   }).sort((a, b) => b.score - a.score);
+
+  if (c2Output) {
+    writeFileSync(c2Output, JSON.stringify({ games, players: scoredPlayers }, null, 2), { flag: "wx" });
+    return;
+  }
 
   const top10 = scoredPlayers.slice(0, 10);
   console.log(`   Top: ${top10[0]?.name} | QPIX: ${top10[0]?.score} | QPIX-R: ${top10[0]?.qpixR}`);

@@ -12,6 +12,7 @@ on:
       - 'scripts/qpix_independent_run.py'
       - 'scripts/qpix_nba_live.py'
       - 'scripts/qpix_bref_ratings.py'
+      - 'scripts/build_qpix_c2_sidecar.py'
       - 'scripts/qpix_render_verified.py'
       - 'requirements.txt'
       - '.github/workflows/nba-daily.yml'
