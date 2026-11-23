@@ -1,0 +1,574 @@
+{
+  "season": "2026-27",
+  "first_final_et": "2026-10-20",
+  "last_final_et": "2026-11-22",
+  "schedule": {
+    "file": "raw/season-schedule.json",
+    "sha256": "d58b481aba7ee635e5b873f9facbab6bf9bad2dcbd1422dab97d1ae9ac1775c7",
+    "url": "https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_1.json"
+  },
+  "games": 248,
+  "player_games": 5545,
+  "batch_category_games": {
+    "traditional": 248,
+    "advanced": 248,
+    "scoring": 248,
+    "usage": 248,
+    "misc": 248
+  },
+  "passing_player_games": 5359,
+  "passing_complete_games": 231,
+  "game_source_counts": {
+    "cdn": 23,
+    "pbp": 1,
+    "four-factors": 1,
+    "hustle": 15,
+    "tracking": 1,
+    "defense": 15,
+    "matchups": 11
+  },
+  "sources": {
+    "raw/season-schedule.json": {
+      "file": "raw/season-schedule.json",
+      "sha256": "d58b481aba7ee635e5b873f9facbab6bf9bad2dcbd1422dab97d1ae9ac1775c7",
+      "url": "https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_1.json"
+    },
+    "raw/2026-10-20--2026-11-22-traditional.json": {
+      "file": "raw/2026-10-20--2026-11-22-traditional.json",
+      "sha256": "06ae92e119e0da0d32004112999e4f94eabcec08ab20824122e5f8a9e15329fe",
+      "url": "https://stats.nba.com/stats/playergamelogs?DateFrom=10%2F20%2F2026&DateTo=11%2F22%2F2026&GameSegment=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerID=&SeasonSegment=&ShotClockRange=&VsConference=&VsDivision=&LeagueID=00&Season=2026-27&SeasonType=Regular+Season&PerMode=Totals&MeasureType=Base"
+    },
+    "raw/2026-10-20--2026-11-22-advanced.json": {
+      "file": "raw/2026-10-20--2026-11-22-advanced.json",
+      "sha256": "8e2b99c3b2383ee85ad5e01d6a1c232e2097af5af5bc74e12ed7714511674ca7",
+      "url": "https://stats.nba.com/stats/playergamelogs?DateFrom=10%2F20%2F2026&DateTo=11%2F22%2F2026&GameSegment=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerID=&SeasonSegment=&ShotClockRange=&VsConference=&VsDivision=&LeagueID=00&Season=2026-27&SeasonType=Regular+Season&PerMode=Totals&MeasureType=Advanced"
+    },
+    "raw/2026-10-20--2026-11-22-scoring.json": {
+      "file": "raw/2026-10-20--2026-11-22-scoring.json",
+      "sha256": "88f082f928f61edaa5ac029769413d04b1c41b5a3eae7b8a433fe5b3feab5b0f",
+      "url": "https://stats.nba.com/stats/playergamelogs?DateFrom=10%2F20%2F2026&DateTo=11%2F22%2F2026&GameSegment=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerID=&SeasonSegment=&ShotClockRange=&VsConference=&VsDivision=&LeagueID=00&Season=2026-27&SeasonType=Regular+Season&PerMode=Totals&MeasureType=Scoring"
+    },
+    "raw/2026-10-20--2026-11-22-usage.json": {
+      "file": "raw/2026-10-20--2026-11-22-usage.json",
+      "sha256": "e7420bb652301da1dc8203421db0e5e2b771c1099b263eb6236ed34160a4436c",
+      "url": "https://stats.nba.com/stats/playergamelogs?DateFrom=10%2F20%2F2026&DateTo=11%2F22%2F2026&GameSegment=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerID=&SeasonSegment=&ShotClockRange=&VsConference=&VsDivision=&LeagueID=00&Season=2026-27&SeasonType=Regular+Season&PerMode=Totals&MeasureType=Usage"
+    },
+    "raw/2026-10-20--2026-11-22-misc.json": {
+      "file": "raw/2026-10-20--2026-11-22-misc.json",
+      "sha256": "b435b5cc8793c9f6ca6eefb795ee41320feed4e181d9fdcc8732d372806e8f85",
+      "url": "https://stats.nba.com/stats/playergamelogs?DateFrom=10%2F20%2F2026&DateTo=11%2F22%2F2026&GameSegment=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerID=&SeasonSegment=&ShotClockRange=&VsConference=&VsDivision=&LeagueID=00&Season=2026-27&SeasonType=Regular+Season&PerMode=Totals&MeasureType=Misc"
+    },
+    "raw/2026-10-20-passing.json": {
+      "file": "raw/2026-10-20-passing.json",
+      "sha256": "41e8fa49f573d52827026bdb5be42738fb7bba43121de65cf720fb0cdaf7f8b4",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=10%2F20%2F2026&DateTo=10%2F20%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-10-21-passing.json": {
+      "file": "raw/2026-10-21-passing.json",
+      "sha256": "0814f7486a8dcf470d9594ca459da19ff7fe57c5a9bd8a527c77338f292c20af",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=10%2F21%2F2026&DateTo=10%2F21%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-10-22-passing.json": {
+      "file": "raw/2026-10-22-passing.json",
+      "sha256": "4b2d0e779d25e38380f8929f3687120c4bede600c40143cf0098389b5eb1c9c6",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=10%2F22%2F2026&DateTo=10%2F22%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-10-23-passing.json": {
+      "file": "raw/2026-10-23-passing.json",
+      "sha256": "0df3a9b7a5ac00487e8aae4c955f78d85ea324107057ffcbf457f3a0b5b2064e",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=10%2F23%2F2026&DateTo=10%2F23%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-10-24-passing.json": {
+      "file": "raw/2026-10-24-passing.json",
+      "sha256": "6c121cbf706b8e1b2d8cdf7d7c1733f070cbd9a8a068cdae891888407663ce70",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=10%2F24%2F2026&DateTo=10%2F24%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-10-25-passing.json": {
+      "file": "raw/2026-10-25-passing.json",
+      "sha256": "6b2fde538dd9105ba94e6d137cdc51d1490e7b0741fddcbfe7c1f12fe9527908",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=10%2F25%2F2026&DateTo=10%2F25%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-10-26-passing.json": {
+      "file": "raw/2026-10-26-passing.json",
+      "sha256": "26119ad89ebaf832439bbff452e07b15f291396197cce150b02a81441b8cc006",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=10%2F26%2F2026&DateTo=10%2F26%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-10-27-passing.json": {
+      "file": "raw/2026-10-27-passing.json",
+      "sha256": "17b0638c8f9c0b0bcdfce73ea7a94513a907df47419e5d1605ac8d72dacb4bfc",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=10%2F27%2F2026&DateTo=10%2F27%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-10-28-passing.json": {
+      "file": "raw/2026-10-28-passing.json",
+      "sha256": "90a631181b98fad60984ffabf8d0851d40dc09f3de9878dbb4d0e0c9879013ca",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=10%2F28%2F2026&DateTo=10%2F28%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-10-29-passing.json": {
+      "file": "raw/2026-10-29-passing.json",
+      "sha256": "f92f6e1f90cb2c2cb926ca841990dc156b0ce749abdcab21ee80c650bb45d52e",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=10%2F29%2F2026&DateTo=10%2F29%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-10-30-passing.json": {
+      "file": "raw/2026-10-30-passing.json",
+      "sha256": "4c625948c891967c4131e1a1b0900f04a392ae0c1e4166e433e1eb7b9d6ada19",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=10%2F30%2F2026&DateTo=10%2F30%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-10-31-passing.json": {
+      "file": "raw/2026-10-31-passing.json",
+      "sha256": "c87718f1a2fab550b89069fc354ef838c7b68df7ea64f5bee7c077bf749f039e",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=10%2F31%2F2026&DateTo=10%2F31%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-11-01-passing.json": {
+      "file": "raw/2026-11-01-passing.json",
+      "sha256": "3de3e89d7e99f08683cab499b3c254e5520729b9e0eba8e0b83c5a636c7f8479",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=11%2F01%2F2026&DateTo=11%2F01%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-11-02-passing.json": {
+      "file": "raw/2026-11-02-passing.json",
+      "sha256": "0ebe89a2dc0e0208c95fc65c0f017d63be812dc1a8d9f5fa47eabf53b0e8d073",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=11%2F02%2F2026&DateTo=11%2F02%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-11-04-passing.json": {
+      "file": "raw/2026-11-04-passing.json",
+      "sha256": "e5c249f46d07a6379e93275e9921795d45b2563282e3eb7ec1f4f38ddee88811",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=11%2F04%2F2026&DateTo=11%2F04%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-11-05-passing.json": {
+      "file": "raw/2026-11-05-passing.json",
+      "sha256": "2caea0948b7d190d81e262498c7a99e0a9b3c45719e85a68557ec296e93b2abb",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=11%2F05%2F2026&DateTo=11%2F05%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-11-06-passing.json": {
+      "file": "raw/2026-11-06-passing.json",
+      "sha256": "c46b85c955c41d5cebe0784d8caf2d8853044e2e5a35599c5794ba949612e4ae",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=11%2F06%2F2026&DateTo=11%2F06%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-11-07-passing.json": {
+      "file": "raw/2026-11-07-passing.json",
+      "sha256": "6048d235f49ed44dbb3448eb427fbb1dedaaea56eb125fd9c32bfae40fde57c4",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=11%2F07%2F2026&DateTo=11%2F07%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-11-08-passing.json": {
+      "file": "raw/2026-11-08-passing.json",
+      "sha256": "9d192d94138c88eead561337ed07e9ed9d9206b193a9435fbf6f5218586cd9a1",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=11%2F08%2F2026&DateTo=11%2F08%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-11-09-passing.json": {
+      "file": "raw/2026-11-09-passing.json",
+      "sha256": "e37dafcc34c47c2a4d7550fc9dd6b6e9a121e26c0cfaf71185134715e46f9839",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=11%2F09%2F2026&DateTo=11%2F09%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-11-10-passing.json": {
+      "file": "raw/2026-11-10-passing.json",
+      "sha256": "c2b887d9a63881947ee81278cb9cd918900df2aac6175f0698b76237e48ac3e8",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=11%2F10%2F2026&DateTo=11%2F10%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-11-11-passing.json": {
+      "file": "raw/2026-11-11-passing.json",
+      "sha256": "204c0c1e5f8876e15faa52b2fc4e48779dfe95a04171f557c7c8f4caa6645cd1",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=11%2F11%2F2026&DateTo=11%2F11%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-11-12-passing.json": {
+      "file": "raw/2026-11-12-passing.json",
+      "sha256": "d94b553debaa4e3b80c073c130fca933cc0b747b2a2eff9376e8e38b209a7a66",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=11%2F12%2F2026&DateTo=11%2F12%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-11-13-passing.json": {
+      "file": "raw/2026-11-13-passing.json",
+      "sha256": "b8624f34baaad1129a957a5ce667d0dbfa48bed743efa7baaf52a947900c325e",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=11%2F13%2F2026&DateTo=11%2F13%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-11-14-passing.json": {
+      "file": "raw/2026-11-14-passing.json",
+      "sha256": "50814df0bc51ebe3146f29376e8a02d81d49cf06c8d791f17e9eb99489802a35",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=11%2F14%2F2026&DateTo=11%2F14%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-11-15-passing.json": {
+      "file": "raw/2026-11-15-passing.json",
+      "sha256": "c93ecb840943db08112f3ce844694dcea44666a722ba8b4afd918829470f86f4",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=11%2F15%2F2026&DateTo=11%2F15%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-11-16-passing.json": {
+      "file": "raw/2026-11-16-passing.json",
+      "sha256": "2747072b2deaff33ddc53597fcd919081e5d52a566ad2ed917320989549bbf8b",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=11%2F16%2F2026&DateTo=11%2F16%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-11-17-passing.json": {
+      "file": "raw/2026-11-17-passing.json",
+      "sha256": "21bb09e26c3c0412c8e87fbd1130621f201a9ed5b8e609b7d21568e44ded5b42",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=11%2F17%2F2026&DateTo=11%2F17%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-11-18-passing.json": {
+      "file": "raw/2026-11-18-passing.json",
+      "sha256": "98143cfdd2f1b9e35f18c1f9bc4cf29c7c7959029ba7ac54e36c4829915a6d21",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=11%2F18%2F2026&DateTo=11%2F18%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-11-19-passing.json": {
+      "file": "raw/2026-11-19-passing.json",
+      "sha256": "791329802ea4b9cf329a6c696a0f10ebf280501a491814074307f07922f8c4dd",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=11%2F19%2F2026&DateTo=11%2F19%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-11-20-passing.json": {
+      "file": "raw/2026-11-20-passing.json",
+      "sha256": "cbc6ce2f73178f1bc4eb753bffce1c4d4115e2ab8f5c7247022a7488426810ea",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=11%2F20%2F2026&DateTo=11%2F20%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-11-21-passing.json": {
+      "file": "raw/2026-11-21-passing.json",
+      "sha256": "aaeda0a039ce34839b3f8514f9bd763f85838f558afc494438be682615e2e541",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=11%2F21%2F2026&DateTo=11%2F21%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/2026-11-22-passing.json": {
+      "file": "raw/2026-11-22-passing.json",
+      "sha256": "804cccd4605fe5ebb8a7ae7cbbac18925c9fef8af707af96029ecfb5450e4c1e",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=11%2F22%2F2026&DateTo=11%2F22%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0"
+    },
+    "raw/0022600196-cdn.json": {
+      "file": "raw/0022600196-cdn.json",
+      "sha256": "f924c425d16a8b4f4fba6b460895351a2e0db7aae8811e60249366dccf5a8c25",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600196.json"
+    },
+    "raw/0022600197-cdn.json": {
+      "file": "raw/0022600197-cdn.json",
+      "sha256": "6497a5c7f3ba701fbc614116c98282cf425017d163872d84ce80568c031d5289",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600197.json"
+    },
+    "raw/0022600197-pbp.json": {
+      "file": "raw/0022600197-pbp.json",
+      "sha256": "4248ea2342c08507e6b35d0fff48d80cf72b3426df08f19e07af38d0ba19b906",
+      "url": "https://cdn.nba.com/static/json/liveData/playbyplay/playbyplay_0022600197.json"
+    },
+    "raw/0022600197-four-factors.json": {
+      "file": "raw/0022600197-four-factors.json",
+      "sha256": "6a115e879cec5fd38ef1dcc4bb45f0bf1ec1cbb27122a355f21ebf627694c20e",
+      "url": "https://stats.nba.com/stats/boxscorefourfactorsv3?GameID=0022600197&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600197-tracking.json": {
+      "file": "raw/0022600197-tracking.json",
+      "sha256": "e510ad3c616dfeb0fb15be63dddc0ca3c28c702d9f44777b8ce32c46ccaa3839",
+      "url": "https://stats.nba.com/stats/boxscoreplayertrackv3?GameID=0022600197&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600198-cdn.json": {
+      "file": "raw/0022600198-cdn.json",
+      "sha256": "8c79c5f5e74421003ceaef7dfb11562e20b3d0716fcf38626e45fbbc5287aeb8",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600198.json"
+    },
+    "raw/0022600199-cdn.json": {
+      "file": "raw/0022600199-cdn.json",
+      "sha256": "61cf58860fcb2bcbe05f5fcc4a09f1c0a93f2b2126eb99379eae2f1d69e15008",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600199.json"
+    },
+    "raw/0022600200-cdn.json": {
+      "file": "raw/0022600200-cdn.json",
+      "sha256": "1c40835acf7bc0f179c2ed1076c9ee22a58c0ac22a70ad633df77fef6dc91763",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600200.json"
+    },
+    "raw/0022600201-cdn.json": {
+      "file": "raw/0022600201-cdn.json",
+      "sha256": "4abdf9eb5c54121f543d29c0603c4e2debeea1cc4b187cda74cc33c76a72a7f2",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600201.json"
+    },
+    "raw/0022600202-cdn.json": {
+      "file": "raw/0022600202-cdn.json",
+      "sha256": "7c71010d1ee6cdd289fc84e5567403c80f2064cd34fb10f51cbc6cd1bea59c9e",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600202.json"
+    },
+    "raw/0022600043-cdn.json": {
+      "file": "raw/0022600043-cdn.json",
+      "sha256": "31d37453b30b7c6955ba4507cb0febb8df1ddf73e766612d2f71987155d9b600",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600043.json"
+    },
+    "raw/0022600043-hustle.json": {
+      "file": "raw/0022600043-hustle.json",
+      "sha256": "82829c96cee88bddb366edc7832c8ee222fdf55020301214c46ae7b27781af09",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600043&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600043-defense.json": {
+      "file": "raw/0022600043-defense.json",
+      "sha256": "358d66f9ea2825556c096096c1e91e7d643d7dce1ca7f2feb87bb8fd47efce06",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600043&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600043-matchups.json": {
+      "file": "raw/0022600043-matchups.json",
+      "sha256": "e30779350e31cba8fc93051390937504b68ed5c4d6bf105ca81c413704e58ffe",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600043&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600044-cdn.json": {
+      "file": "raw/0022600044-cdn.json",
+      "sha256": "4245b54b2a25d2d6b44e5d15f27ee29484197d8ebd529be8359bd440e52f27c1",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600044.json"
+    },
+    "raw/0022600044-hustle.json": {
+      "file": "raw/0022600044-hustle.json",
+      "sha256": "4b70a46ea7ce3446e31207a625a1afd5ff4e76b5f5e3136c805c9bac14cac713",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600044&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600044-defense.json": {
+      "file": "raw/0022600044-defense.json",
+      "sha256": "b69ee6ca34e888fa3207e6630a9ec7e82142e5b708d4cc6baa77669eda5174a3",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600044&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600044-matchups.json": {
+      "file": "raw/0022600044-matchups.json",
+      "sha256": "8664d6a5feed91090cae24c104a8678e7a82c37466bc0c32cfd14aaea4f3758c",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600044&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600045-cdn.json": {
+      "file": "raw/0022600045-cdn.json",
+      "sha256": "67b011278cb3ec9eefb1eb4db4a4471e9df72898fac47ffcd695ce07d5eec289",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600045.json"
+    },
+    "raw/0022600045-hustle.json": {
+      "file": "raw/0022600045-hustle.json",
+      "sha256": "a3886bd0bf4c583aff890321105bb342583c472e2abf0ea91d0d809870ea1edd",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600045&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600045-defense.json": {
+      "file": "raw/0022600045-defense.json",
+      "sha256": "b7194f66079140276f0671c82b389a332e402c7f8e3a6fb9a2de9313417f159e",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600045&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600045-matchups.json": {
+      "file": "raw/0022600045-matchups.json",
+      "sha256": "739f9dca8fddba39499a82b9a5f2f3e6d11801f2e13776f1233ed7814bd8b080",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600045&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600046-cdn.json": {
+      "file": "raw/0022600046-cdn.json",
+      "sha256": "be476772e9200e69798bb158ec9d4834d6b4eea87798284cb67a138fb33e7dbc",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600046.json"
+    },
+    "raw/0022600046-hustle.json": {
+      "file": "raw/0022600046-hustle.json",
+      "sha256": "b47a06f8907c6335bb45ad25d4c094847d0a9f812284d4c54c30c2a14ee69a67",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600046&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600046-defense.json": {
+      "file": "raw/0022600046-defense.json",
+      "sha256": "8154ecb763924776bf84e39b96de801b77d68d68573bac8bc709fbbf3c9d8cca",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600046&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600046-matchups.json": {
+      "file": "raw/0022600046-matchups.json",
+      "sha256": "e856bebda63c1991380b52bb5b5a263983051d006a54c13659da67f504389fd3",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600046&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600047-cdn.json": {
+      "file": "raw/0022600047-cdn.json",
+      "sha256": "379bf8e771d9d4e136022e0462a852172d1705394bcf58fa60e5bd775b36f229",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600047.json"
+    },
+    "raw/0022600047-hustle.json": {
+      "file": "raw/0022600047-hustle.json",
+      "sha256": "38634b410aba0fcd6890fea4779a619f9e1ddd839440df5fac3d631676d71c7e",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600047&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600047-defense.json": {
+      "file": "raw/0022600047-defense.json",
+      "sha256": "a56325c54274434a16ce95205576d6c5ae8e9ce85ca16a3b52400db194ee6d6e",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600047&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600047-matchups.json": {
+      "file": "raw/0022600047-matchups.json",
+      "sha256": "c8dda54eb5247c7242472fb4c67c7149604d29c5648fe17693ea4352eb3376c7",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600047&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600048-cdn.json": {
+      "file": "raw/0022600048-cdn.json",
+      "sha256": "c5e8c8f0a575f05fb0d98bf870230ac740733974e1641ec226f91d81d40a7ddc",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600048.json"
+    },
+    "raw/0022600048-hustle.json": {
+      "file": "raw/0022600048-hustle.json",
+      "sha256": "8aef0dd1962bc01501fe797889b9826399af5965bf12a9563c7bdab6f78bb0dd",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600048&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600048-defense.json": {
+      "file": "raw/0022600048-defense.json",
+      "sha256": "ec678c4269b03ca6e863ce82198b797e7b554b13ed776ded94cd221344b4ae4e",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600048&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600048-matchups.json": {
+      "file": "raw/0022600048-matchups.json",
+      "sha256": "e78130ea40cd713fdee2e2dc756dc0c83e76ba4dcfae6fbf7397cfd7a339cc98",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600048&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600049-cdn.json": {
+      "file": "raw/0022600049-cdn.json",
+      "sha256": "7152df9298cbca7e5428effac1e617449292218a818678b679d4b4797e72ad23",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600049.json"
+    },
+    "raw/0022600049-hustle.json": {
+      "file": "raw/0022600049-hustle.json",
+      "sha256": "962f1741cfe32c6c3923f30f9a94c4a254b8303a9368621e2ee047da19240b87",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600049&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600049-defense.json": {
+      "file": "raw/0022600049-defense.json",
+      "sha256": "3ff38ff48c92cf098a4c0fa86bea47055225d000ed4a692180de124c93431db4",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600049&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600049-matchups.json": {
+      "file": "raw/0022600049-matchups.json",
+      "sha256": "1cb9ffeee0a8b0a639daefbfe70fa1f245807d54f3da200b81c46928f4e90145",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600049&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600050-cdn.json": {
+      "file": "raw/0022600050-cdn.json",
+      "sha256": "3805fcaee134eacc89b5b7101de45e018de30f8da06bcb277c6a75589b7ed33b",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600050.json"
+    },
+    "raw/0022600050-hustle.json": {
+      "file": "raw/0022600050-hustle.json",
+      "sha256": "0768aacda1d6909f1421a439d13536eaf74930c90116aed64db4017eeb58d4bf",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600050&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600050-defense.json": {
+      "file": "raw/0022600050-defense.json",
+      "sha256": "ddb738e8cd5795cfdf5887d7f6ebee567e101389fe3f24313bac5c374336f3f0",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600050&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600050-matchups.json": {
+      "file": "raw/0022600050-matchups.json",
+      "sha256": "d88ba312d183a0e316b0e6b53cd429aebc6417e07a7ca0b927347e2217137247",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600050&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600051-cdn.json": {
+      "file": "raw/0022600051-cdn.json",
+      "sha256": "39da08a0eba3c7ab2f79eff7555ade2fc70731b632116502d92e85435c820a6a",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600051.json"
+    },
+    "raw/0022600051-hustle.json": {
+      "file": "raw/0022600051-hustle.json",
+      "sha256": "c0e2d21aeff7d0233da64c581f4d4ccda97c0902942028ad97576ae2a46eccdb",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600051&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600051-defense.json": {
+      "file": "raw/0022600051-defense.json",
+      "sha256": "1df1a21e2d867a0ff7a6bfd0604a40ee939b67c4fa512eb5ea39fba734cc00d7",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600051&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600051-matchups.json": {
+      "file": "raw/0022600051-matchups.json",
+      "sha256": "2e34f471c366a17d36f2a23da4da869eeb237fbe6ab593b89841a80504778aaa",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600051&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600274-cdn.json": {
+      "file": "raw/0022600274-cdn.json",
+      "sha256": "20903b63b83eb2077bcc4e799d45b21cda2e0e77aacd622b19cef7d9702cd023",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600274.json"
+    },
+    "raw/0022600274-hustle.json": {
+      "file": "raw/0022600274-hustle.json",
+      "sha256": "9680206742a5279333cddaae8300ecf98f74792b240756ef96c60871748a21f3",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600274&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600274-defense.json": {
+      "file": "raw/0022600274-defense.json",
+      "sha256": "fa5bbe928e1b3366898a5a8df3c07be941b47104a9377252cde8b340c673fd17",
+      "url": "https://www.nba.com/game/mil-vs-phi-0022600274/box-score?type=defense"
+    },
+    "raw/0022600275-cdn.json": {
+      "file": "raw/0022600275-cdn.json",
+      "sha256": "012efe77df721679091f6d82efb0eaa49e9d0e726d2856f542a50d5fb201c16b",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600275.json"
+    },
+    "raw/0022600275-hustle.json": {
+      "file": "raw/0022600275-hustle.json",
+      "sha256": "07bffabe30bacbc67cb6ae9f45229753c59e908da930e56aa7b4fc080ca9823b",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600275&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600275-defense.json": {
+      "file": "raw/0022600275-defense.json",
+      "sha256": "d40119abdae17127a81805b198f6d57ac224a5f799e679600381f2a70aeb13f6",
+      "url": "https://www.nba.com/game/por-vs-nyk-0022600275/box-score?type=defense"
+    },
+    "raw/0022600276-cdn.json": {
+      "file": "raw/0022600276-cdn.json",
+      "sha256": "a144099e47dd94b0ce77b1f85c73853d76e2e4a9d7c0026b1c08510d423f20d4",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600276.json"
+    },
+    "raw/0022600276-hustle.json": {
+      "file": "raw/0022600276-hustle.json",
+      "sha256": "76736213b12bb02ed98cec8a9ea040fdad9af70667199e98a0a2c73b6e4e48ea",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600276&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600276-defense.json": {
+      "file": "raw/0022600276-defense.json",
+      "sha256": "5b03ca47172fe6b8526e4a07774f959d1eb80b09301b44cd9135ac1acf0c3d0b",
+      "url": "https://www.nba.com/game/lac-vs-dal-0022600276/box-score?type=defense"
+    },
+    "raw/0022600277-cdn.json": {
+      "file": "raw/0022600277-cdn.json",
+      "sha256": "5f478089dee110bec2f817a8165fcadc9788665fb026271c5ddb90a5b11fb25d",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600277.json"
+    },
+    "raw/0022600277-hustle.json": {
+      "file": "raw/0022600277-hustle.json",
+      "sha256": "325afdc0240c3328d57a3872603ddce149268563e9e3c074111b3f3829c13abc",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600277&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600277-defense.json": {
+      "file": "raw/0022600277-defense.json",
+      "sha256": "b893821d2ba7e8f8340087aca79cad377b594af9983b3961752dcc14913fa735",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600277&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600278-cdn.json": {
+      "file": "raw/0022600278-cdn.json",
+      "sha256": "b81997ad2c75f32027d0aa4541ad171512db9b27066e4b4636c87b40437036d0",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600278.json"
+    },
+    "raw/0022600278-hustle.json": {
+      "file": "raw/0022600278-hustle.json",
+      "sha256": "d7bba029a0acee60f81d623523968b411a293ff6fdaeb424f2c5bdeca21be110",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600278&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600278-defense.json": {
+      "file": "raw/0022600278-defense.json",
+      "sha256": "bc42f0da26da4fd1e84af38d5ec3420715cf70f180928e9f8f2cb8c268aa51d3",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600278&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600278-matchups.json": {
+      "file": "raw/0022600278-matchups.json",
+      "sha256": "60eb6f787e339f88f19fb7bbe5b1658b7a671b107e68035f2ea5bc0d09d24641",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600278&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600279-cdn.json": {
+      "file": "raw/0022600279-cdn.json",
+      "sha256": "60bb2f50c055616141c13da9e11b9e9a3e46bfc0dfe12d91a924d8e5a55c1fed",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600279.json"
+    },
+    "raw/0022600279-hustle.json": {
+      "file": "raw/0022600279-hustle.json",
+      "sha256": "0d2b0931f875a1a749b9758f3ec414850c0d9099b5d677ab822f6ed17fa584ea",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600279&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600279-defense.json": {
+      "file": "raw/0022600279-defense.json",
+      "sha256": "142c6bf0d6b6c21ec745b84923543e514705ae9f56db9f8565a55f728a9eb560",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600279&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600279-matchups.json": {
+      "file": "raw/0022600279-matchups.json",
+      "sha256": "11f5fe4101a109beadc05d4c89e7927b19619c7cf7e7ed5d8fa53efbf527860b",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600279&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0"
+    },
+    "raw/0022600280-cdn.json": {
+      "file": "raw/0022600280-cdn.json",
+      "sha256": "4e6ef98b9388d91ddd53cdef7b04f6bb3d28fccfc891f879fdd4a95212d65595",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600280.json"
+    }
+  },
+  "scoring_replayed": false,
+  "provenance": {
+    "NBA_VERIFIED": "Direct result from a verified NBA source",
+    "ESTIMATED": "Model output, never promoted to NBA_VERIFIED",
+    "MISSING": "No verified value or unavailable source",
+    "NOT_APPLICABLE": "Stat does not apply to the record"
+  },
+  "notes": [
+    "A null player category is MISSING. An observed zero is NBA_VERIFIED.",
+    "Traditional and Misc batch values remain separate from CDN values when both exist. CDN is the preferred counting source.",
+    "NBA on-court ratings are archived as Advanced stats. Historical QPIX C3 requires compatible individual ratings and remains MISSING here."
+  ]
+}
