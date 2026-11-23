@@ -1,0 +1,26 @@
+{
+  "0022600196-cdn": {
+    "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600196.json",
+    "sha256": "f924c425d16a8b4f4fba6b460895351a2e0db7aae8811e60249366dccf5a8c25"
+  },
+  "0022600198-cdn": {
+    "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600198.json",
+    "sha256": "8c79c5f5e74421003ceaef7dfb11562e20b3d0716fcf38626e45fbbc5287aeb8"
+  },
+  "0022600199-cdn": {
+    "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600199.json",
+    "sha256": "61cf58860fcb2bcbe05f5fcc4a09f1c0a93f2b2126eb99379eae2f1d69e15008"
+  },
+  "0022600200-cdn": {
+    "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600200.json",
+    "sha256": "1c40835acf7bc0f179c2ed1076c9ee22a58c0ac22a70ad633df77fef6dc91763"
+  },
+  "0022600201-cdn": {
+    "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600201.json",
+    "sha256": "4abdf9eb5c54121f543d29c0603c4e2debeea1cc4b187cda74cc33c76a72a7f2"
+  },
+  "0022600202-cdn": {
+    "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600202.json",
+    "sha256": "7c71010d1ee6cdd289fc84e5567403c80f2064cd34fb10f51cbc6cd1bea59c9e"
+  }
+}

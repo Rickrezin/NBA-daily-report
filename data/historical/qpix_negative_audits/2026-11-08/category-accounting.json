@@ -1,0 +1,2148 @@
+{
+  "date_et": "2026-11-08",
+  "engine_blob_sha": "ef7b46da7c5dde2835424750119c483cdb705a6f",
+  "verified_original_players": 161,
+  "original_status": "PROVISIONAL_SHADOW_UNVALIDATED_QCORE_C3_MISSING_C6_AND_C11",
+  "games_with_negative_players": 6,
+  "crosscheck_method": "Final NBA CDN game ID, Eastern date, score, team and exact normalized full player name. ESPN and NBA IDs preserved independently.",
+  "sensitivity_method": "Original published input held fixed except each stated change. No replacement estimates or corrections applied to the published report.",
+  "negative_raw_players": [
+    {
+      "name": "Josh Okogie",
+      "team": "UTA",
+      "match": "UTA @ MIN",
+      "espn_player_id": "4065663",
+      "nba_game_id": "0022600198",
+      "published_minutes": 17,
+      "nba_minutes": "PT17M08.00S",
+      "eligible": true,
+      "raw_qpix": -28.4,
+      "rounded_sum": -28.4,
+      "unrounded_sum": -28.39096939842765,
+      "categories": {
+        "C1": 2.2,
+        "C2": -16.5,
+        "C3": -9.622851800000001,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -4.468117598427645,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": -26.5,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 1.9,
+      "c1_turnovers": -2,
+      "c2": {
+        "ts_pct": 0,
+        "fgm": 0,
+        "fga": 3,
+        "fta": 0,
+        "attempt_weight": 1,
+        "continuous": -16.5,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 17.844301,
+        "defensive_rating": 118.114259,
+        "offensive_contribution": -8,
+        "defensive_contribution": -1.6228518000000007
+      },
+      "c8": {
+        "plus_minus": -19,
+        "team_average_plus_minus": -6.25,
+        "road": true,
+        "familiar_venue_weight": 0.5,
+        "former_team_weight": 0.15749013123685915,
+        "notes": [
+          "Environment bonus +0.6"
+        ]
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1629006,
+        "nba_minutes": "PT17M08.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 0,
+          "fast_break_points": 0,
+          "second_chance_points": 0
+        }
+      },
+      "without_experimental_c3": -18.8,
+      "with_corrected_nba_counts_only": -28.4,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 0,
+        "c11": 0,
+        "raw_score_with_misc_only": -28.4
+      }
+    },
+    {
+      "name": "Herbert Jones",
+      "team": "NOP",
+      "match": "NOP @ LAC",
+      "espn_player_id": "4277813",
+      "nba_game_id": "0022600201",
+      "published_minutes": 20,
+      "nba_minutes": "PT19M50.00S",
+      "eligible": true,
+      "raw_qpix": -28,
+      "rounded_sum": -28,
+      "unrounded_sum": -28.01261433846154,
+      "categories": {
+        "C1": 3.5,
+        "C2": -10.5,
+        "C3": -15.7741528,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -5.238461538461539,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": -25.4,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 2.6,
+      "c1_turnovers": -2,
+      "c2": {
+        "ts_pct": 33.33333333333333,
+        "fgm": 2,
+        "fga": 6,
+        "fta": 0,
+        "attempt_weight": 1,
+        "continuous": -6.500000000000001,
+        "threshold_penalty": -4,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 70.66999,
+        "defensive_rating": 149.540754,
+        "offensive_contribution": -7.866002,
+        "defensive_contribution": -7.908150799999999
+      },
+      "c8": {
+        "plus_minus": -23,
+        "team_average_plus_minus": -6.153846153846154,
+        "road": true,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": [
+          "Environment bonus +1.5"
+        ]
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1630529,
+        "nba_minutes": "PT19M50.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 2,
+          "fast_break_points": 0,
+          "second_chance_points": 0
+        }
+      },
+      "without_experimental_c3": -12.2,
+      "with_corrected_nba_counts_only": -28,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 0,
+        "c11": 0,
+        "raw_score_with_misc_only": -28
+      }
+    },
+    {
+      "name": "Tim Hardaway Jr.",
+      "team": "MIA",
+      "match": "MIA @ SAC",
+      "espn_player_id": "2528210",
+      "nba_game_id": "0022600202",
+      "published_minutes": 7,
+      "nba_minutes": "PT07M12.00S",
+      "eligible": false,
+      "raw_qpix": -26.5,
+      "rounded_sum": -26.5,
+      "unrounded_sum": -26.459025733333334,
+      "categories": {
+        "C1": -2,
+        "C2": -11,
+        "C3": -9.6256924,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -3.833333333333334,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": -24.6,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 1.9,
+      "c1_turnovers": -2,
+      "c2": {
+        "ts_pct": 0,
+        "fgm": 0,
+        "fga": 2,
+        "fta": 0,
+        "attempt_weight": 0.6666666666666666,
+        "continuous": -11,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 0,
+        "defensive_rating": 118.128462,
+        "offensive_contribution": -8,
+        "defensive_contribution": -1.6256923999999997
+      },
+      "c8": {
+        "plus_minus": -10,
+        "team_average_plus_minus": 3.3333333333333335,
+        "road": true,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": [
+          "Environment bonus +1.5"
+        ]
+      },
+      "source_crosscheck": {
+        "nba_player_id": 203501,
+        "nba_minutes": "PT07M12.00S",
+        "traditional_mismatches": {
+          "fga": [
+            2,
+            3
+          ]
+        },
+        "misc": {
+          "points_in_paint": 0,
+          "fast_break_points": 0,
+          "second_chance_points": 0
+        }
+      },
+      "without_experimental_c3": -16.8,
+      "with_corrected_nba_counts_only": -32,
+      "nba_counts_category_changes": {
+        "C2": -5.5
+      },
+      "recovered_misc": {
+        "c6": 0,
+        "c11": 0,
+        "raw_score_with_misc_only": -26.5
+      }
+    },
+    {
+      "name": "Kel'el Ware",
+      "team": "MIL",
+      "match": "BOS @ MIL",
+      "espn_player_id": "5105623",
+      "nba_game_id": "0022600200",
+      "published_minutes": 9,
+      "nba_minutes": "PT09M01.00S",
+      "eligible": true,
+      "raw_qpix": -23,
+      "rounded_sum": -23,
+      "unrounded_sum": -23.013285666666665,
+      "categories": {
+        "C1": 2.5,
+        "C2": -11,
+        "C3": -11.846618999999999,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -2.6666666666666665,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": -19.6,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 3.4,
+      "c1_turnovers": -2,
+      "c2": {
+        "ts_pct": 0,
+        "fgm": 0,
+        "fga": 2,
+        "fta": 0,
+        "attempt_weight": 0.6666666666666666,
+        "continuous": -11,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 22.969281,
+        "defensive_rating": 129.233095,
+        "offensive_contribution": -8,
+        "defensive_contribution": -3.8466189999999982
+      },
+      "c8": {
+        "plus_minus": -15,
+        "team_average_plus_minus": -8.333333333333334,
+        "road": false,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": [
+          "Context gate: team avg -8.3 +/−"
+        ]
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1642276,
+        "nba_minutes": "PT09M01.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 0,
+          "fast_break_points": 0,
+          "second_chance_points": 0
+        }
+      },
+      "without_experimental_c3": -11.2,
+      "with_corrected_nba_counts_only": -23,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 0,
+        "c11": 0,
+        "raw_score_with_misc_only": -23
+      }
+    },
+    {
+      "name": "Svi Mykhailiuk",
+      "team": "UTA",
+      "match": "UTA @ MIN",
+      "espn_player_id": "3133602",
+      "nba_game_id": "0022600198",
+      "published_minutes": 6,
+      "nba_minutes": "PT06M10.00S",
+      "eligible": false,
+      "raw_qpix": -21.9,
+      "rounded_sum": -21.9,
+      "unrounded_sum": -21.864513600000002,
+      "categories": {
+        "C1": 0,
+        "C2": -11,
+        "C3": -10.8645136,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 0,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": -20,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 1.9,
+      "c1_turnovers": 0,
+      "c2": {
+        "ts_pct": 0,
+        "fgm": 0,
+        "fga": 2,
+        "fta": 0,
+        "attempt_weight": 0.6666666666666666,
+        "continuous": -11,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 0,
+        "defensive_rating": 124.322568,
+        "offensive_contribution": -8,
+        "defensive_contribution": -2.864513600000001
+      },
+      "c8": {
+        "plus_minus": 0,
+        "team_average_plus_minus": -6.25,
+        "road": true,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": []
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1629004,
+        "nba_minutes": "PT06M10.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 0,
+          "fast_break_points": 0,
+          "second_chance_points": 0
+        }
+      },
+      "without_experimental_c3": -11,
+      "with_corrected_nba_counts_only": -21.9,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 0,
+        "c11": 0,
+        "raw_score_with_misc_only": -21.9
+      }
+    },
+    {
+      "name": "Jonathan Kuminga",
+      "team": "MIN",
+      "match": "UTA @ MIN",
+      "espn_player_id": "4433247",
+      "nba_game_id": "0022600198",
+      "published_minutes": 25,
+      "nba_minutes": "PT25M27.00S",
+      "eligible": true,
+      "raw_qpix": -20.9,
+      "rounded_sum": -20.9,
+      "unrounded_sum": -20.90304710769231,
+      "categories": {
+        "C1": -2,
+        "C2": -4.5,
+        "C3": -8.0953548,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -6.307692307692308,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": -18.3,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 2.6,
+      "c1_turnovers": -6,
+      "c2": {
+        "ts_pct": 40,
+        "fgm": 2,
+        "fga": 5,
+        "fta": 0,
+        "attempt_weight": 1,
+        "continuous": -4.5,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 49.443113,
+        "defensive_rating": 110.476774,
+        "offensive_contribution": -8,
+        "defensive_contribution": -0.09535480000000121
+      },
+      "c8": {
+        "plus_minus": -10,
+        "team_average_plus_minus": 5.769230769230769,
+        "road": false,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": []
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1630228,
+        "nba_minutes": "PT25M27.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 4,
+          "fast_break_points": 2,
+          "second_chance_points": 0
+        }
+      },
+      "without_experimental_c3": -12.8,
+      "with_corrected_nba_counts_only": -20.9,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 1,
+        "c11": 0,
+        "raw_score_with_misc_only": -19.9
+      }
+    },
+    {
+      "name": "Noah Clowney",
+      "team": "BKN",
+      "match": "BKN @ DAL",
+      "espn_player_id": "4712896",
+      "nba_game_id": "0022600199",
+      "published_minutes": 8,
+      "nba_minutes": "PT07M47.00S",
+      "eligible": false,
+      "raw_qpix": -20.9,
+      "rounded_sum": -20.9,
+      "unrounded_sum": -20.922091799999997,
+      "categories": {
+        "C1": 0,
+        "C2": -6.500000000000001,
+        "C3": -14.022091799999998,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -0.4,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": -18.3,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 2.6,
+      "c1_turnovers": -2,
+      "c2": {
+        "ts_pct": 33.33333333333333,
+        "fgm": 1,
+        "fga": 3,
+        "fta": 0,
+        "attempt_weight": 1,
+        "continuous": -6.500000000000001,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 48.083993,
+        "defensive_rating": 140.110459,
+        "offensive_contribution": -8,
+        "defensive_contribution": -6.022091799999998
+      },
+      "c8": {
+        "plus_minus": -1,
+        "team_average_plus_minus": -15.416666666666666,
+        "road": true,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": []
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1641730,
+        "nba_minutes": "PT07M47.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 2,
+          "fast_break_points": 0,
+          "second_chance_points": 0
+        }
+      },
+      "without_experimental_c3": -6.9,
+      "with_corrected_nba_counts_only": -20.9,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 0,
+        "c11": 0,
+        "raw_score_with_misc_only": -20.9
+      }
+    },
+    {
+      "name": "Brice Sensabaugh",
+      "team": "UTA",
+      "match": "UTA @ MIN",
+      "espn_player_id": "5105839",
+      "nba_game_id": "0022600198",
+      "published_minutes": 13,
+      "nba_minutes": "PT12M32.00S",
+      "eligible": true,
+      "raw_qpix": -19.2,
+      "rounded_sum": -19.2,
+      "unrounded_sum": -19.215731400000003,
+      "categories": {
+        "C1": 8.6,
+        "C2": -17.5,
+        "C3": -8.715731400000001,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -1.6,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": -16.6,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 2.6,
+      "c1_turnovers": 0,
+      "c2": {
+        "ts_pct": 10,
+        "fgm": 1,
+        "fga": 10,
+        "fta": 0,
+        "attempt_weight": 1,
+        "continuous": -13.5,
+        "threshold_penalty": -4,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 37.410069,
+        "defensive_rating": 113.578657,
+        "offensive_contribution": -8,
+        "defensive_contribution": -0.7157314000000013
+      },
+      "c8": {
+        "plus_minus": -4,
+        "team_average_plus_minus": -6.25,
+        "road": true,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": []
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1641729,
+        "nba_minutes": "PT12M32.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 2,
+          "fast_break_points": 0,
+          "second_chance_points": 2
+        }
+      },
+      "without_experimental_c3": -10.5,
+      "with_corrected_nba_counts_only": -19.2,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 1.6,
+        "c11": 0,
+        "raw_score_with_misc_only": -17.6
+      }
+    },
+    {
+      "name": "Kasparas Jakucionis",
+      "team": "MIL",
+      "match": "BOS @ MIL",
+      "espn_player_id": "5214640",
+      "nba_game_id": "0022600200",
+      "published_minutes": 7,
+      "nba_minutes": "PT07M21.00S",
+      "eligible": false,
+      "raw_qpix": -19.2,
+      "rounded_sum": -19.2,
+      "unrounded_sum": -19.196861198581562,
+      "categories": {
+        "C1": -0.6000000000000001,
+        "C2": -2.840425531914893,
+        "C3": -14.689769000000002,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -1.0666666666666664,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": -19.2,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 0,
+      "c1_turnovers": -4,
+      "c2": {
+        "ts_pct": 26.595744680851062,
+        "fgm": 0,
+        "fga": 1,
+        "fta": 2,
+        "attempt_weight": 0.3333333333333333,
+        "continuous": -2.840425531914893,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 55.82023,
+        "defensive_rating": 143.448845,
+        "offensive_contribution": -8,
+        "defensive_contribution": -6.689769000000001
+      },
+      "c8": {
+        "plus_minus": -11,
+        "team_average_plus_minus": -8.333333333333334,
+        "road": false,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": [
+          "Context gate: team avg -8.3 +/−"
+        ]
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1642857,
+        "nba_minutes": "PT07M21.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 0,
+          "fast_break_points": 0,
+          "second_chance_points": 1
+        }
+      },
+      "without_experimental_c3": -4.5,
+      "with_corrected_nba_counts_only": -19.2,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 0.8,
+        "c11": 0,
+        "raw_score_with_misc_only": -18.4
+      }
+    },
+    {
+      "name": "Jericho Sims",
+      "team": "MIL",
+      "match": "BOS @ MIL",
+      "espn_player_id": "4277922",
+      "nba_game_id": "0022600200",
+      "published_minutes": 15,
+      "nba_minutes": "PT14M56.00S",
+      "eligible": true,
+      "raw_qpix": -18,
+      "rounded_sum": -18,
+      "unrounded_sum": -18.049462000000002,
+      "categories": {
+        "C1": 2.4000000000000004,
+        "C2": -6.500000000000001,
+        "C3": -13.149462,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -0.8,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": -14.6,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 3.4,
+      "c1_turnovers": -2,
+      "c2": {
+        "ts_pct": 33.33333333333333,
+        "fgm": 1,
+        "fga": 3,
+        "fta": 0,
+        "attempt_weight": 1,
+        "continuous": -6.500000000000001,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 49.665531,
+        "defensive_rating": 135.74731,
+        "offensive_contribution": -8,
+        "defensive_contribution": -5.149462
+      },
+      "c8": {
+        "plus_minus": -2,
+        "team_average_plus_minus": -8.333333333333334,
+        "road": false,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": []
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1630579,
+        "nba_minutes": "PT14M56.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 0,
+          "fast_break_points": 0,
+          "second_chance_points": 0
+        }
+      },
+      "without_experimental_c3": -4.9,
+      "with_corrected_nba_counts_only": -18,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 0,
+        "c11": 0,
+        "raw_score_with_misc_only": -18
+      }
+    },
+    {
+      "name": "Jordan Walsh",
+      "team": "BOS",
+      "match": "BOS @ MIL",
+      "espn_player_id": "4683689",
+      "nba_game_id": "0022600200",
+      "published_minutes": 11,
+      "nba_minutes": "PT11M01.00S",
+      "eligible": true,
+      "raw_qpix": -17.4,
+      "rounded_sum": -17.4,
+      "unrounded_sum": -17.438450200000002,
+      "categories": {
+        "C1": 1.5999999999999996,
+        "C2": -11,
+        "C3": -9.238450199999999,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 1.2000000000000002,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": -15.5,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 1.9,
+      "c1_turnovers": -2,
+      "c2": {
+        "ts_pct": 0,
+        "fgm": 0,
+        "fga": 2,
+        "fta": 0,
+        "attempt_weight": 0.6666666666666666,
+        "continuous": -11,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 23.911804,
+        "defensive_rating": 116.192251,
+        "offensive_contribution": -8,
+        "defensive_contribution": -1.2384501999999997
+      },
+      "c8": {
+        "plus_minus": 3,
+        "team_average_plus_minus": 7.6923076923076925,
+        "road": true,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": []
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1641775,
+        "nba_minutes": "PT11M01.00S",
+        "traditional_mismatches": {
+          "steals": [
+            0,
+            1
+          ]
+        },
+        "misc": {
+          "points_in_paint": 0,
+          "fast_break_points": 0,
+          "second_chance_points": 0
+        }
+      },
+      "without_experimental_c3": -8.2,
+      "with_corrected_nba_counts_only": -14.4,
+      "nba_counts_category_changes": {
+        "C1": 3
+      },
+      "recovered_misc": {
+        "c6": 0,
+        "c11": 0,
+        "raw_score_with_misc_only": -17.4
+      }
+    },
+    {
+      "name": "Bryce McGowens",
+      "team": "NOP",
+      "match": "NOP @ LAC",
+      "espn_player_id": "4576086",
+      "nba_game_id": "0022600201",
+      "published_minutes": 3,
+      "nba_minutes": "PT03M24.00S",
+      "eligible": false,
+      "raw_qpix": -17.2,
+      "rounded_sum": -17.2,
+      "unrounded_sum": -17.168221,
+      "categories": {
+        "C1": -2,
+        "C2": 0,
+        "C3": -15.968221,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 0.8,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": -15.3,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 1.9,
+      "c1_turnovers": -2,
+      "c2": {
+        "ts_pct": 0,
+        "fgm": 0,
+        "fga": 0,
+        "fta": 0,
+        "attempt_weight": 0,
+        "continuous": 0,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 0,
+        "defensive_rating": 149.841105,
+        "offensive_contribution": -8,
+        "defensive_contribution": -7.968221
+      },
+      "c8": {
+        "plus_minus": 2,
+        "team_average_plus_minus": -6.153846153846154,
+        "road": true,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": []
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1631121,
+        "nba_minutes": "PT03M24.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 0,
+          "fast_break_points": 0,
+          "second_chance_points": 0
+        }
+      },
+      "without_experimental_c3": -1.2,
+      "with_corrected_nba_counts_only": -17.2,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 0,
+        "c11": 0,
+        "raw_score_with_misc_only": -17.2
+      }
+    },
+    {
+      "name": "Terance Mann",
+      "team": "BKN",
+      "match": "BKN @ DAL",
+      "espn_player_id": "3907823",
+      "nba_game_id": "0022600199",
+      "published_minutes": 22,
+      "nba_minutes": "PT21M36.00S",
+      "eligible": true,
+      "raw_qpix": -16,
+      "rounded_sum": -16,
+      "unrounded_sum": -15.950292533333336,
+      "categories": {
+        "C1": 5.7,
+        "C2": -11,
+        "C3": -12.716959200000002,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 2.0666666666666664,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": -14.1,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 1.9,
+      "c1_turnovers": 0,
+      "c2": {
+        "ts_pct": 0,
+        "fgm": 0,
+        "fga": 2,
+        "fta": 0,
+        "attempt_weight": 0.6666666666666666,
+        "continuous": -11,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 29.803704,
+        "defensive_rating": 133.584796,
+        "offensive_contribution": -8,
+        "defensive_contribution": -4.7169592000000025
+      },
+      "c8": {
+        "plus_minus": -14,
+        "team_average_plus_minus": -15.416666666666666,
+        "road": true,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": [
+          "Context gate: team avg -15.4 +/−",
+          "Environment bonus +1.5"
+        ]
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1629611,
+        "nba_minutes": "PT21M36.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 0,
+          "fast_break_points": 0,
+          "second_chance_points": 0
+        }
+      },
+      "without_experimental_c3": -3.2,
+      "with_corrected_nba_counts_only": -16,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 0,
+        "c11": 0,
+        "raw_score_with_misc_only": -16
+      }
+    },
+    {
+      "name": "Tre Jones",
+      "team": "CHI",
+      "match": "PHI @ CHI",
+      "espn_player_id": "4395626",
+      "nba_game_id": "0022600196",
+      "published_minutes": 14,
+      "nba_minutes": "PT14M28.00S",
+      "eligible": true,
+      "raw_qpix": -15.7,
+      "rounded_sum": -15.7,
+      "unrounded_sum": -15.663622200000004,
+      "categories": {
+        "C1": 9.7,
+        "C2": -9.25,
+        "C3": -11.313622200000003,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -4.800000000000001,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": -13.8,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 1.9,
+      "c1_turnovers": -2,
+      "c2": {
+        "ts_pct": 37.5,
+        "fgm": 3,
+        "fga": 8,
+        "fta": 0,
+        "attempt_weight": 1,
+        "continuous": -5.25,
+        "threshold_penalty": -4,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 72.091534,
+        "defensive_rating": 128.659645,
+        "offensive_contribution": -7.581693200000001,
+        "defensive_contribution": -3.7319290000000023
+      },
+      "c8": {
+        "plus_minus": -15,
+        "team_average_plus_minus": -3,
+        "road": false,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": []
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1630200,
+        "nba_minutes": "PT14M28.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 6,
+          "fast_break_points": 0,
+          "second_chance_points": 0
+        }
+      },
+      "without_experimental_c3": -4.4,
+      "with_corrected_nba_counts_only": -15.7,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 0,
+        "c11": 0,
+        "raw_score_with_misc_only": -15.7
+      }
+    },
+    {
+      "name": "Jalen Pickett",
+      "team": "LAC",
+      "match": "NOP @ LAC",
+      "espn_player_id": "4398390",
+      "nba_game_id": "0022600201",
+      "published_minutes": 2,
+      "nba_minutes": "PT02M29.00S",
+      "eligible": false,
+      "raw_qpix": -15.4,
+      "rounded_sum": -15.4,
+      "unrounded_sum": -15.4426068,
+      "categories": {
+        "C1": -2,
+        "C2": 0,
+        "C3": -12.6426068,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -0.8,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": -13.5,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 1.9,
+      "c1_turnovers": -2,
+      "c2": {
+        "ts_pct": 0,
+        "fgm": 0,
+        "fga": 0,
+        "fta": 0,
+        "attempt_weight": 0,
+        "continuous": 0,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 0,
+        "defensive_rating": 133.213034,
+        "offensive_contribution": -8,
+        "defensive_contribution": -4.6426067999999985
+      },
+      "c8": {
+        "plus_minus": -2,
+        "team_average_plus_minus": 6.153846153846154,
+        "road": false,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": []
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1629618,
+        "nba_minutes": "PT02M29.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 0,
+          "fast_break_points": 0,
+          "second_chance_points": 0
+        }
+      },
+      "without_experimental_c3": -2.8,
+      "with_corrected_nba_counts_only": -15.4,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 0,
+        "c11": 0,
+        "raw_score_with_misc_only": -15.4
+      }
+    },
+    {
+      "name": "Chaney Johnson",
+      "team": "BKN",
+      "match": "BKN @ DAL",
+      "espn_player_id": "5174655",
+      "nba_game_id": "0022600199",
+      "published_minutes": 15,
+      "nba_minutes": "PT14M31.00S",
+      "eligible": true,
+      "raw_qpix": -14,
+      "rounded_sum": -14,
+      "unrounded_sum": -14.036862888888889,
+      "categories": {
+        "C1": 2.5,
+        "C2": -4.055555555555555,
+        "C3": -12.547974,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 0.06666666666666643,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": -14,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 0,
+      "c1_turnovers": -4,
+      "c2": {
+        "ts_pct": 34.72222222222222,
+        "fgm": 0,
+        "fga": 2,
+        "fta": 2,
+        "attempt_weight": 0.6666666666666666,
+        "continuous": -4.055555555555555,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 53.343064,
+        "defensive_rating": 132.73987,
+        "offensive_contribution": -8,
+        "defensive_contribution": -4.547973999999999
+      },
+      "c8": {
+        "plus_minus": -19,
+        "team_average_plus_minus": -15.416666666666666,
+        "road": true,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": [
+          "Context gate: team avg -15.4 +/−",
+          "Environment bonus +1.5"
+        ]
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1643052,
+        "nba_minutes": "PT14M31.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 0,
+          "fast_break_points": 0,
+          "second_chance_points": 2
+        }
+      },
+      "without_experimental_c3": -1.5,
+      "with_corrected_nba_counts_only": -14,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 1.6,
+        "c11": 0,
+        "raw_score_with_misc_only": -12.4
+      }
+    },
+    {
+      "name": "AJ Green",
+      "team": "MIL",
+      "match": "BOS @ MIL",
+      "espn_player_id": "4397475",
+      "nba_game_id": "0022600200",
+      "published_minutes": 18,
+      "nba_minutes": "PT17M44.00S",
+      "eligible": true,
+      "raw_qpix": -12.4,
+      "rounded_sum": -12.4,
+      "unrounded_sum": -12.438792066666666,
+      "categories": {
+        "C1": 8.2,
+        "C2": -3.9999999999999982,
+        "C3": -11.572125400000001,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -5.066666666666666,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": -10.5,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 1.9,
+      "c1_turnovers": -2,
+      "c2": {
+        "ts_pct": 41.66666666666667,
+        "fgm": 2,
+        "fga": 6,
+        "fta": 0,
+        "attempt_weight": 1,
+        "continuous": -3.9999999999999982,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 79.240177,
+        "defensive_rating": 137.100804,
+        "offensive_contribution": -6.1519645999999995,
+        "defensive_contribution": -5.420160800000002
+      },
+      "c8": {
+        "plus_minus": -21,
+        "team_average_plus_minus": -8.333333333333334,
+        "road": false,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": [
+          "Context gate: team avg -8.3 +/−"
+        ]
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1631260,
+        "nba_minutes": "PT17M44.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 2,
+          "fast_break_points": 0,
+          "second_chance_points": 0
+        }
+      },
+      "without_experimental_c3": -0.9,
+      "with_corrected_nba_counts_only": -12.4,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 0,
+        "c11": 0,
+        "raw_score_with_misc_only": -12.4
+      }
+    },
+    {
+      "name": "Rocco Zikarsky",
+      "team": "MIN",
+      "match": "UTA @ MIN",
+      "espn_player_id": "5157587",
+      "nba_game_id": "0022600198",
+      "published_minutes": 2,
+      "nba_minutes": "PT01M44.00S",
+      "eligible": false,
+      "raw_qpix": -10.4,
+      "rounded_sum": -10.4,
+      "unrounded_sum": -10.3809582,
+      "categories": {
+        "C1": -0.8,
+        "C2": 0,
+        "C3": -7.980958200000001,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -1.6,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": -7,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 3.4,
+      "c1_turnovers": -2,
+      "c2": {
+        "ts_pct": 0,
+        "fgm": 0,
+        "fga": 0,
+        "fta": 0,
+        "attempt_weight": 0,
+        "continuous": 0,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 53.611277,
+        "defensive_rating": 109.904791,
+        "offensive_contribution": -8,
+        "defensive_contribution": 0.019041799999999397
+      },
+      "c8": {
+        "plus_minus": -4,
+        "team_average_plus_minus": 5.769230769230769,
+        "road": false,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": []
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1642911,
+        "nba_minutes": "PT01M44.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 0,
+          "fast_break_points": 0,
+          "second_chance_points": 0
+        }
+      },
+      "without_experimental_c3": -2.4,
+      "with_corrected_nba_counts_only": -10.4,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 0,
+        "c11": 0,
+        "raw_score_with_misc_only": -10.4
+      }
+    },
+    {
+      "name": "Anfernee Simons",
+      "team": "PHI",
+      "match": "PHI @ CHI",
+      "espn_player_id": "4351851",
+      "nba_game_id": "0022600196",
+      "published_minutes": 16,
+      "nba_minutes": "PT15M35.00S",
+      "eligible": true,
+      "raw_qpix": -8.6,
+      "rounded_sum": -8.6,
+      "unrounded_sum": -8.6079632,
+      "categories": {
+        "C1": 8.8,
+        "C2": -7.5,
+        "C3": -7.9079632,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -2,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": -6.7,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 1.9,
+      "c1_turnovers": -2,
+      "c2": {
+        "ts_pct": 30,
+        "fgm": 1,
+        "fga": 5,
+        "fta": 0,
+        "attempt_weight": 1,
+        "continuous": -7.5,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 84.83139,
+        "defensive_rating": 124.371206,
+        "offensive_contribution": -5.033722,
+        "defensive_contribution": -2.8742412
+      },
+      "c8": {
+        "plus_minus": -5,
+        "team_average_plus_minus": 3.3333333333333335,
+        "road": true,
+        "familiar_venue_weight": 0.5,
+        "former_team_weight": 0.3968502629920499,
+        "notes": []
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1629014,
+        "nba_minutes": "PT15M35.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 0,
+          "fast_break_points": 0,
+          "second_chance_points": 3
+        }
+      },
+      "without_experimental_c3": -0.7,
+      "with_corrected_nba_counts_only": -8.6,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 2.4000000000000004,
+        "c11": 0,
+        "raw_score_with_misc_only": -6.2
+      }
+    },
+    {
+      "name": "Drake Powell",
+      "team": "BKN",
+      "match": "BKN @ DAL",
+      "espn_player_id": "5037873",
+      "nba_game_id": "0022600199",
+      "published_minutes": 9,
+      "nba_minutes": "PT09M25.00S",
+      "eligible": true,
+      "raw_qpix": -7.9,
+      "rounded_sum": -7.9,
+      "unrounded_sum": -7.925329533333333,
+      "categories": {
+        "C1": 1.9000000000000004,
+        "C2": -1,
+        "C3": -13.2919962,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 4.466666666666667,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": -6,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 1.9,
+      "c1_turnovers": -4,
+      "c2": {
+        "ts_pct": 50,
+        "fgm": 1,
+        "fga": 2,
+        "fta": 0,
+        "attempt_weight": 0.6666666666666666,
+        "continuous": -1,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 65.723908,
+        "defensive_rating": 136.459981,
+        "offensive_contribution": -8,
+        "defensive_contribution": -5.2919962
+      },
+      "c8": {
+        "plus_minus": -8,
+        "team_average_plus_minus": -15.416666666666666,
+        "road": true,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": [
+          "Context gate: team avg -15.4 +/−",
+          "Environment bonus +1.5"
+        ]
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1642962,
+        "nba_minutes": "PT09M25.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 2,
+          "fast_break_points": 0,
+          "second_chance_points": 2
+        }
+      },
+      "without_experimental_c3": 5.4,
+      "with_corrected_nba_counts_only": -7.9,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 1.6,
+        "c11": 0,
+        "raw_score_with_misc_only": -6.3
+      }
+    },
+    {
+      "name": "Ron Harper Jr.",
+      "team": "BOS",
+      "match": "BOS @ MIL",
+      "espn_player_id": "4397251",
+      "nba_game_id": "0022600200",
+      "published_minutes": 4,
+      "nba_minutes": "PT04M04.00S",
+      "eligible": false,
+      "raw_qpix": -6.5,
+      "rounded_sum": -6.5,
+      "unrounded_sum": -6.534990400000002,
+      "categories": {
+        "C1": 0,
+        "C2": 4.5,
+        "C3": -10.634990400000001,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -0.4,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": -4.6,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 1.9,
+      "c1_turnovers": -2,
+      "c2": {
+        "ts_pct": 100,
+        "fgm": 1,
+        "fga": 1,
+        "fta": 0,
+        "attempt_weight": 0.3333333333333333,
+        "continuous": 4.5,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 70.110813,
+        "defensive_rating": 123.285765,
+        "offensive_contribution": -7.977837400000001,
+        "defensive_contribution": -2.6571529999999997
+      },
+      "c8": {
+        "plus_minus": -1,
+        "team_average_plus_minus": 7.6923076923076925,
+        "road": true,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": []
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1631199,
+        "nba_minutes": "PT04M04.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 0,
+          "fast_break_points": 0,
+          "second_chance_points": 0
+        }
+      },
+      "without_experimental_c3": 4.1,
+      "with_corrected_nba_counts_only": -6.5,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 0,
+        "c11": 0,
+        "raw_score_with_misc_only": -6.5
+      }
+    },
+    {
+      "name": "Myles Turner",
+      "team": "MIL",
+      "match": "BOS @ MIL",
+      "espn_player_id": "3133628",
+      "nba_game_id": "0022600200",
+      "published_minutes": 24,
+      "nba_minutes": "PT24M04.00S",
+      "eligible": true,
+      "raw_qpix": -6,
+      "rounded_sum": -6,
+      "unrounded_sum": -6.043090045497633,
+      "categories": {
+        "C1": 18,
+        "C2": -15.16824644549763,
+        "C3": -11.174843600000003,
+        "C4": 0,
+        "C5": 2.5,
+        "C6": 0,
+        "C7": 1,
+        "C8": -1.2000000000000002,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": -2.8,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 3.2,
+      "c1_turnovers": -4,
+      "c2": {
+        "ts_pct": 17.77251184834123,
+        "fgm": 1,
+        "fga": 8,
+        "fta": 1,
+        "attempt_weight": 1,
+        "continuous": -11.16824644549763,
+        "threshold_penalty": -4,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 76.101112,
+        "defensive_rating": 131.97533,
+        "offensive_contribution": -6.7797776,
+        "defensive_contribution": -4.395066000000003
+      },
+      "c8": {
+        "plus_minus": -3,
+        "team_average_plus_minus": -8.333333333333334,
+        "road": false,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": []
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1626167,
+        "nba_minutes": "PT24M04.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 2,
+          "fast_break_points": 0,
+          "second_chance_points": 0
+        }
+      },
+      "without_experimental_c3": 5.1,
+      "with_corrected_nba_counts_only": -6,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 0,
+        "c11": 0,
+        "raw_score_with_misc_only": -6
+      }
+    },
+    {
+      "name": "Hugo Gonzalez",
+      "team": "BOS",
+      "match": "BOS @ MIL",
+      "espn_player_id": "5175647",
+      "nba_game_id": "0022600200",
+      "published_minutes": 10,
+      "nba_minutes": "PT10M16.00S",
+      "eligible": true,
+      "raw_qpix": -2.8,
+      "rounded_sum": -2.8,
+      "unrounded_sum": -2.8493383999999993,
+      "categories": {
+        "C1": 3.9,
+        "C2": -5.5,
+        "C3": -1.2493383999999992,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": 0,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": -0.9,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 1.9,
+      "c1_turnovers": 0,
+      "c2": {
+        "ts_pct": 0,
+        "fgm": 0,
+        "fga": 1,
+        "fta": 0,
+        "attempt_weight": 0.3333333333333333,
+        "continuous": -5.5,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 113.277675,
+        "defensive_rating": 119.524367,
+        "offensive_contribution": 0.6555350000000004,
+        "defensive_contribution": -1.9048733999999996
+      },
+      "c8": {
+        "plus_minus": 0,
+        "team_average_plus_minus": 7.6923076923076925,
+        "road": true,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": []
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1642864,
+        "nba_minutes": "PT10M16.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 0,
+          "fast_break_points": 0,
+          "second_chance_points": 0
+        }
+      },
+      "without_experimental_c3": -1.6,
+      "with_corrected_nba_counts_only": -2.8,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 0,
+        "c11": 0,
+        "raw_score_with_misc_only": -2.8
+      }
+    },
+    {
+      "name": "Cody Williams",
+      "team": "MIN",
+      "match": "UTA @ MIN",
+      "espn_player_id": "4895758",
+      "nba_game_id": "0022600198",
+      "published_minutes": 2,
+      "nba_minutes": "PT01M44.00S",
+      "eligible": false,
+      "raw_qpix": -1.6,
+      "rounded_sum": -1.6,
+      "unrounded_sum": -1.6,
+      "categories": {
+        "C1": 0,
+        "C2": 0,
+        "C3": 0,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -1.6,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": 1,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 2.6,
+      "c1_turnovers": 0,
+      "c2": {
+        "ts_pct": 0,
+        "fgm": 0,
+        "fga": 0,
+        "fta": 0,
+        "attempt_weight": 0,
+        "continuous": 0,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "unavailable",
+        "published_category_verified_flag": false,
+        "offensive_rating": null,
+        "defensive_rating": 110.745942,
+        "offensive_contribution": null,
+        "defensive_contribution": null
+      },
+      "c8": {
+        "plus_minus": -4,
+        "team_average_plus_minus": 5.769230769230769,
+        "road": false,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0.3968502629920499,
+        "notes": []
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1642262,
+        "nba_minutes": "PT01M44.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 0,
+          "fast_break_points": 0,
+          "second_chance_points": 0
+        }
+      },
+      "without_experimental_c3": -1.6,
+      "with_corrected_nba_counts_only": -1.6,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 0,
+        "c11": 0,
+        "raw_score_with_misc_only": -1.6
+      }
+    },
+    {
+      "name": "Isaiah Evans",
+      "team": "MIN",
+      "match": "UTA @ MIN",
+      "espn_player_id": "5061585",
+      "nba_game_id": "0022600198",
+      "published_minutes": 2,
+      "nba_minutes": "PT01M44.00S",
+      "eligible": false,
+      "raw_qpix": -1.6,
+      "rounded_sum": -1.6,
+      "unrounded_sum": -1.6,
+      "categories": {
+        "C1": 0,
+        "C2": 0,
+        "C3": 0,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -1.6,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": 1,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 2.6,
+      "c1_turnovers": 0,
+      "c2": {
+        "ts_pct": 0,
+        "fgm": 0,
+        "fga": 0,
+        "fta": 0,
+        "attempt_weight": 0,
+        "continuous": 0,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "unavailable",
+        "published_category_verified_flag": false,
+        "offensive_rating": null,
+        "defensive_rating": 110.745942,
+        "offensive_contribution": null,
+        "defensive_contribution": null
+      },
+      "c8": {
+        "plus_minus": -4,
+        "team_average_plus_minus": 5.769230769230769,
+        "road": false,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": []
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1642912,
+        "nba_minutes": "PT01M44.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 0,
+          "fast_break_points": 0,
+          "second_chance_points": 0
+        }
+      },
+      "without_experimental_c3": -1.6,
+      "with_corrected_nba_counts_only": -1.6,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 0,
+        "c11": 0,
+        "raw_score_with_misc_only": -1.6
+      }
+    },
+    {
+      "name": "Jonathan Mogbo",
+      "team": "SAC",
+      "match": "MIA @ SAC",
+      "espn_player_id": "5107897",
+      "nba_game_id": "0022600202",
+      "published_minutes": 2,
+      "nba_minutes": "PT02M28.00S",
+      "eligible": false,
+      "raw_qpix": -1.2,
+      "rounded_sum": -1.2,
+      "unrounded_sum": -1.2000000000000002,
+      "categories": {
+        "C1": 0,
+        "C2": 0,
+        "C3": 0,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -1.2000000000000002,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": 1.4,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 2.6,
+      "c1_turnovers": 0,
+      "c2": {
+        "ts_pct": 0,
+        "fgm": 0,
+        "fga": 0,
+        "fta": 0,
+        "attempt_weight": 0,
+        "continuous": 0,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "unavailable",
+        "published_category_verified_flag": false,
+        "offensive_rating": null,
+        "defensive_rating": 118.261342,
+        "offensive_contribution": null,
+        "defensive_contribution": null
+      },
+      "c8": {
+        "plus_minus": -3,
+        "team_average_plus_minus": -2.727272727272727,
+        "road": false,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": []
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1642367,
+        "nba_minutes": "PT02M28.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 0,
+          "fast_break_points": 0,
+          "second_chance_points": 0
+        }
+      },
+      "without_experimental_c3": -1.2,
+      "with_corrected_nba_counts_only": -1.2,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 0,
+        "c11": 0,
+        "raw_score_with_misc_only": -1.2
+      }
+    },
+    {
+      "name": "Cam Christie",
+      "team": "LAC",
+      "match": "NOP @ LAC",
+      "espn_player_id": "4845363",
+      "nba_game_id": "0022600201",
+      "published_minutes": 2,
+      "nba_minutes": "PT02M29.00S",
+      "eligible": false,
+      "raw_qpix": -0.8,
+      "rounded_sum": -0.8,
+      "unrounded_sum": -0.8,
+      "categories": {
+        "C1": 0,
+        "C2": 0,
+        "C3": 0,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -0.8,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": 1.1,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 1.9,
+      "c1_turnovers": 0,
+      "c2": {
+        "ts_pct": 0,
+        "fgm": 0,
+        "fga": 0,
+        "fta": 0,
+        "attempt_weight": 0,
+        "continuous": 0,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "unavailable",
+        "published_category_verified_flag": false,
+        "offensive_rating": null,
+        "defensive_rating": 133.213034,
+        "offensive_contribution": null,
+        "defensive_contribution": null
+      },
+      "c8": {
+        "plus_minus": -2,
+        "team_average_plus_minus": 6.153846153846154,
+        "road": false,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": []
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1642353,
+        "nba_minutes": "PT02M29.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 0,
+          "fast_break_points": 0,
+          "second_chance_points": 0
+        }
+      },
+      "without_experimental_c3": -0.8,
+      "with_corrected_nba_counts_only": -0.8,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 0,
+        "c11": 0,
+        "raw_score_with_misc_only": -0.8
+      }
+    },
+    {
+      "name": "Isaiah Collier",
+      "team": "UTA",
+      "match": "UTA @ MIN",
+      "espn_player_id": "4683766",
+      "nba_game_id": "0022600198",
+      "published_minutes": 16,
+      "nba_minutes": "PT16M28.00S",
+      "eligible": true,
+      "raw_qpix": -0.3,
+      "rounded_sum": -0.3,
+      "unrounded_sum": -0.30972219999999817,
+      "categories": {
+        "C1": 9.8,
+        "C2": -1.5,
+        "C3": -7.009722199999999,
+        "C4": 0,
+        "C5": 0,
+        "C6": 0,
+        "C7": 0,
+        "C8": -1.6,
+        "C9": 0,
+        "C10": 0,
+        "C11": 0,
+        "C12": 0
+      },
+      "qpix_r": 1.6,
+      "c13_ref_penalty": 0,
+      "c13_ref_bonus": 1.9,
+      "c1_turnovers": -4,
+      "c2": {
+        "ts_pct": 50,
+        "fgm": 3,
+        "fga": 6,
+        "fta": 0,
+        "attempt_weight": 1,
+        "continuous": -1.5,
+        "threshold_penalty": 0,
+        "foul_drawing_credit": 0
+      },
+      "c3": {
+        "source": "experimental_box_score_estimate",
+        "published_category_verified_flag": true,
+        "offensive_rating": 81.532402,
+        "defensive_rating": 116.581013,
+        "offensive_contribution": -5.693519599999999,
+        "defensive_contribution": -1.3162025999999998
+      },
+      "c8": {
+        "plus_minus": -14,
+        "team_average_plus_minus": -6.25,
+        "road": true,
+        "familiar_venue_weight": 0,
+        "former_team_weight": 0,
+        "notes": [
+          "Environment bonus +1.5"
+        ]
+      },
+      "source_crosscheck": {
+        "nba_player_id": 1642268,
+        "nba_minutes": "PT16M28.00S",
+        "traditional_mismatches": {},
+        "misc": {
+          "points_in_paint": 4,
+          "fast_break_points": 0,
+          "second_chance_points": 0
+        }
+      },
+      "without_experimental_c3": 6.7,
+      "with_corrected_nba_counts_only": -0.3,
+      "nba_counts_category_changes": {},
+      "recovered_misc": {
+        "c6": 0,
+        "c11": 0,
+        "raw_score_with_misc_only": -0.3
+      }
+    }
+  ]
+}
