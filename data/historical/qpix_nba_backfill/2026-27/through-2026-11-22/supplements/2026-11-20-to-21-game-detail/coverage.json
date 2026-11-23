@@ -1,0 +1,48 @@
+{
+  "dates": [
+    "2026-11-20",
+    "2026-11-21"
+  ],
+  "games": 15,
+  "players": 307,
+  "verified_games_by_category": {
+    "traditional": 15,
+    "advanced": 15,
+    "scoring": 15,
+    "usage": 15,
+    "misc": 15,
+    "cdn": 15,
+    "pbp": 15,
+    "four-factors": 15,
+    "hustle": 15,
+    "tracking": 15,
+    "defense": 12,
+    "matchups": 15,
+    "passing": 15
+  },
+  "missing": {
+    "0022600043": [],
+    "0022600044": [],
+    "0022600045": [],
+    "0022600046": [],
+    "0022600047": [],
+    "0022600048": [],
+    "0022600049": [],
+    "0022600050": [],
+    "0022600051": [],
+    "0022600274": [
+      "defense"
+    ],
+    "0022600275": [
+      "defense"
+    ],
+    "0022600276": [
+      "defense"
+    ],
+    "0022600277": [],
+    "0022600278": [],
+    "0022600279": []
+  },
+  "source_paths_relative_to": "data/historical/qpix_nba_backfill/2026-27/through-2026-11-22",
+  "scoring_replayed": false
+}

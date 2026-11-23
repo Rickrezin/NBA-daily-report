@@ -1,0 +1,35 @@
+{
+  "changed_or_missing_fields": [],
+  "nba_source_disagreements": [
+    {
+      "game_id": "0022600278",
+      "player_id": 1641705,
+      "field": "points_in_paint",
+      "nba_cdn": 24,
+      "nba_player_game_logs": 26
+    }
+  ],
+  "unresolved_historical_joins": [],
+  "passing_unresolved": [],
+  "rejected_sources": [
+    {
+      "game_id": "0022600274",
+      "category": "defense",
+      "file": "0022600274-defense.json",
+      "error": "No usable defense rows for away"
+    },
+    {
+      "game_id": "0022600275",
+      "category": "defense",
+      "file": "0022600275-defense.json",
+      "error": "No usable defense rows for away"
+    },
+    {
+      "game_id": "0022600276",
+      "category": "defense",
+      "file": "0022600276-defense.json",
+      "error": "No usable defense rows for away"
+    }
+  ],
+  "request_errors": {}
+}
