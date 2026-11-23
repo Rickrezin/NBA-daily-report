@@ -1,0 +1,116 @@
+{
+  "changed_or_missing_fields": [],
+  "nba_source_disagreements": [
+    {
+      "game_id": "0022600015",
+      "player_id": 1642275,
+      "field": "turnovers",
+      "nba_cdn": 0,
+      "nba_player_game_logs": 1
+    },
+    {
+      "game_id": "0022600018",
+      "player_id": 1626157,
+      "field": "turnovers",
+      "nba_cdn": 2,
+      "nba_player_game_logs": 3
+    },
+    {
+      "game_id": "0022600018",
+      "player_id": 1628969,
+      "field": "turnovers",
+      "nba_cdn": 1,
+      "nba_player_game_logs": 0
+    },
+    {
+      "game_id": "0022600168",
+      "player_id": 1643408,
+      "field": "assists",
+      "nba_cdn": 6,
+      "nba_player_game_logs": 5
+    },
+    {
+      "game_id": "0022600168",
+      "player_id": 1629640,
+      "field": "second_chance_points",
+      "nba_cdn": 2,
+      "nba_player_game_logs": 0
+    },
+    {
+      "game_id": "0022600168",
+      "player_id": 1641729,
+      "field": "assists",
+      "nba_cdn": 1,
+      "nba_player_game_logs": 2
+    },
+    {
+      "game_id": "0022600168",
+      "player_id": 1641729,
+      "field": "fg3a",
+      "nba_cdn": 6,
+      "nba_player_game_logs": 5
+    },
+    {
+      "game_id": "0022600172",
+      "player_id": 1626171,
+      "field": "points_in_paint",
+      "nba_cdn": 0,
+      "nba_player_game_logs": 2
+    },
+    {
+      "game_id": "0022600181",
+      "player_id": 201142,
+      "field": "turnovers",
+      "nba_cdn": 4,
+      "nba_player_game_logs": 5
+    },
+    {
+      "game_id": "0022600181",
+      "player_id": 203497,
+      "field": "steals",
+      "nba_cdn": 1,
+      "nba_player_game_logs": 0
+    },
+    {
+      "game_id": "0022600181",
+      "player_id": 1627832,
+      "field": "turnovers",
+      "nba_cdn": 3,
+      "nba_player_game_logs": 2
+    }
+  ],
+  "unresolved_historical_joins": [],
+  "passing_unresolved": [
+    {
+      "date_et": "2026-10-31",
+      "player_id": 1643721,
+      "team_id": 1610612747,
+      "games": 1
+    },
+    {
+      "date_et": "2026-10-31",
+      "player_id": 1642363,
+      "team_id": 1610612760,
+      "games": 1
+    },
+    {
+      "date_et": "2026-11-02",
+      "player_id": 1642363,
+      "team_id": 1610612760,
+      "games": 1
+    },
+    {
+      "date_et": "2026-11-04",
+      "player_id": 1642363,
+      "team_id": 1610612760,
+      "games": 1
+    }
+  ],
+  "rejected_sources": [],
+  "request_errors": {
+    "0022600181-tracking": {
+      "url": "https://stats.nba.com/stats/boxscoreplayertrackv3?GameID=0022600181&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "error": "Page.expect_response: Timeout 40000ms exceeded while waiting for event \"response\""
+    }
+  }
+}
