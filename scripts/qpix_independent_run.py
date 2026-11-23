@@ -583,6 +583,10 @@ def main():
       "C6 retrieval audit":json.dumps({"NBA_CDN":cdn_audits,"Stats_MiscV3":misc},ensure_ascii=False)
     }
     pathlib.Path("data").mkdir(exist_ok=True)
+    # 2AST: NBA-tracked secondary (hockey) assists. Null until independently sourced.
+    # Do not confuse missing tracking with a recorded zero or alter AST/QPIX scoring.
+    for player in players:
+        player.setdefault("2AST", None)
     pathlib.Path("data/nba_data.json").write_text(json.dumps({"games":games,"players":players},ensure_ascii=False,indent=2),encoding="utf-8")
     print("Now executing AUTHORIZED JS without formula alterations",flush=True)
     js=pathlib.Path("generate-report.js").read_text(encoding="utf-8")
@@ -598,6 +602,7 @@ def main():
     scored=json.loads(pathlib.Path("data/_qpix_scored_automated.json").read_text(encoding="utf-8"))
     ranked=scored["players"]
     for p in ranked:
+        p.setdefault("2AST", None)
         p["top10_eligible"] = bool(float(p.get("minutes") or 0)>8)
         # Presentation-schema aliases only; retain the exact authorized scores.
         p["raw_qpix"]=p["score"]
@@ -618,7 +623,7 @@ def main():
         output["scoring_engine"]["production_commit"]=os.environ["QPIX_ENGINE_REVISION"]
     (root/(RUN_DATE+".json")).write_text(json.dumps(output,ensure_ascii=False,indent=2,allow_nan=False)+"\n",encoding="utf-8")
     csvpath=root/(RUN_DATE+".csv")
-    fields=["rank","name","team","game","minutes","points","rebounds","assists","steals","blocks","turnovers","fgm","fga","fg3m","fg3a","ftm","fta","plus_minus","offensive_rating","defensive_rating","second_chance_points","fast_break_points","points_in_paint","ts","score","qpixR","refPenalty","refBonus","qpixSFA","sfaAdj","top10_eligible"]
+    fields=["rank","name","team","game","minutes","points","rebounds","assists","2AST","steals","blocks","turnovers","fgm","fga","fg3m","fg3a","ftm","fta","plus_minus","offensive_rating","defensive_rating","second_chance_points","fast_break_points","points_in_paint","ts","score","qpixR","refPenalty","refBonus","qpixSFA","sfaAdj","top10_eligible"]
     with csvpath.open("w",newline="",encoding="utf-8") as f:
         writer=csv.DictWriter(f,fieldnames=fields,extrasaction="ignore")
         writer.writeheader()
