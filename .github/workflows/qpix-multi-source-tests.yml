@@ -18,6 +18,7 @@ on:
       - '.github/workflows/qpix-independent.yml'
       - 'tests/test_qpix_nba_live.py'
       - 'tests/test_qpix_bref_ratings.py'
+      - 'tests/test_qpix_c2_threshold.py'
       - 'tests/test_c6_sources.py'
       - 'tests/test_qpix_verified_sources.py'
       - 'tests/test_qpix_source_archive.py'
