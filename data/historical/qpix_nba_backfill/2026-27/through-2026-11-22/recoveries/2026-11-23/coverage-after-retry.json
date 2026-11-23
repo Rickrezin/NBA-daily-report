@@ -1,0 +1,576 @@
+{
+  "games": 248,
+  "player_games": 5545,
+  "passing_player_games": 5359,
+  "verified_games_by_category": {
+    "advanced": 248,
+    "cdn": 248,
+    "defense": 232,
+    "four-factors": 248,
+    "hustle": 241,
+    "matchups": 235,
+    "misc": 248,
+    "passing": 231,
+    "pbp": 248,
+    "scoring": 248,
+    "tracking": 240,
+    "traditional": 248,
+    "usage": 248
+  },
+  "recovered": [
+    {
+      "date_et": "2026-10-23",
+      "game_id": "0022600101",
+      "away": "MEM",
+      "home": "GSW",
+      "category": "pbp",
+      "status": "NBA_VERIFIED",
+      "source": "raw/0022600101-pbp.json"
+    },
+    {
+      "date_et": "2026-10-26",
+      "game_id": "0022600123",
+      "away": "IND",
+      "home": "MIL",
+      "category": "matchups",
+      "status": "NBA_VERIFIED",
+      "source": "raw/0022600123-matchups.json"
+    },
+    {
+      "date_et": "2026-10-26",
+      "game_id": "0022600126",
+      "away": "MEM",
+      "home": "UTA",
+      "category": "pbp",
+      "status": "NBA_VERIFIED",
+      "source": "raw/0022600126-pbp.json"
+    },
+    {
+      "date_et": "2026-11-04",
+      "game_id": "0022600181",
+      "away": "MIN",
+      "home": "HOU",
+      "category": "tracking",
+      "status": "NBA_VERIFIED",
+      "source": "raw/0022600181-tracking.json"
+    },
+    {
+      "date_et": "2026-11-11",
+      "game_id": "0022600226",
+      "away": "OKC",
+      "home": "POR",
+      "category": "four-factors",
+      "status": "NBA_VERIFIED",
+      "source": "raw/0022600226-four-factors.json"
+    },
+    {
+      "date_et": "2026-11-11",
+      "game_id": "0022600226",
+      "away": "OKC",
+      "home": "POR",
+      "category": "tracking",
+      "status": "NBA_VERIFIED",
+      "source": "raw/0022600226-tracking.json"
+    },
+    {
+      "date_et": "2026-11-19",
+      "game_id": "0022600270",
+      "away": "GSW",
+      "home": "MEM",
+      "category": "four-factors",
+      "status": "NBA_VERIFIED",
+      "source": "raw/0022600270-four-factors.json"
+    }
+  ],
+  "missing_categories": [
+    {
+      "game_id": "0022600093",
+      "date_et": "2026-10-21",
+      "away": "SAC",
+      "home": "LAC",
+      "category": "passing",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600103",
+      "date_et": "2026-10-23",
+      "away": "POR",
+      "home": "SAC",
+      "category": "passing",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600108",
+      "date_et": "2026-10-24",
+      "away": "WAS",
+      "home": "CHI",
+      "category": "defense",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600108",
+      "date_et": "2026-10-24",
+      "away": "WAS",
+      "home": "CHI",
+      "category": "matchups",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600109",
+      "date_et": "2026-10-24",
+      "away": "SAS",
+      "home": "DAL",
+      "category": "defense",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600109",
+      "date_et": "2026-10-24",
+      "away": "SAS",
+      "home": "DAL",
+      "category": "matchups",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600112",
+      "date_et": "2026-10-25",
+      "away": "LAL",
+      "home": "UTA",
+      "category": "defense",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600112",
+      "date_et": "2026-10-25",
+      "away": "LAL",
+      "home": "UTA",
+      "category": "matchups",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600118",
+      "date_et": "2026-10-25",
+      "away": "MEM",
+      "home": "SAC",
+      "category": "defense",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600118",
+      "date_et": "2026-10-25",
+      "away": "MEM",
+      "home": "SAC",
+      "category": "matchups",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600130",
+      "date_et": "2026-10-27",
+      "away": "SAC",
+      "home": "SAS",
+      "category": "passing",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600145",
+      "date_et": "2026-10-29",
+      "away": "SAC",
+      "home": "NOP",
+      "category": "passing",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600150",
+      "date_et": "2026-10-31",
+      "away": "SAC",
+      "home": "MEM",
+      "category": "passing",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600164",
+      "date_et": "2026-11-02",
+      "away": "SAC",
+      "home": "DAL",
+      "category": "passing",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600185",
+      "date_et": "2026-11-04",
+      "away": "LAL",
+      "home": "SAC",
+      "category": "passing",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600033",
+      "date_et": "2026-11-06",
+      "away": "SAS",
+      "home": "SAC",
+      "category": "passing",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600189",
+      "date_et": "2026-11-07",
+      "away": "DEN",
+      "home": "IND",
+      "category": "tracking",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600189",
+      "date_et": "2026-11-07",
+      "away": "DEN",
+      "home": "IND",
+      "category": "defense",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600189",
+      "date_et": "2026-11-07",
+      "away": "DEN",
+      "home": "IND",
+      "category": "matchups",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600189",
+      "date_et": "2026-11-07",
+      "away": "DEN",
+      "home": "IND",
+      "category": "passing",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600216",
+      "date_et": "2026-11-10",
+      "away": "OKC",
+      "home": "POR",
+      "category": "defense",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600216",
+      "date_et": "2026-11-10",
+      "away": "OKC",
+      "home": "POR",
+      "category": "matchups",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600248",
+      "date_et": "2026-11-16",
+      "away": "PHI",
+      "home": "BKN",
+      "category": "passing",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600274",
+      "date_et": "2026-11-21",
+      "away": "MIL",
+      "home": "PHI",
+      "category": "defense",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600275",
+      "date_et": "2026-11-21",
+      "away": "POR",
+      "home": "NYK",
+      "category": "defense",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600276",
+      "date_et": "2026-11-21",
+      "away": "LAC",
+      "home": "DAL",
+      "category": "defense",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600280",
+      "date_et": "2026-11-22",
+      "away": "DET",
+      "home": "ATL",
+      "category": "hustle",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600280",
+      "date_et": "2026-11-22",
+      "away": "DET",
+      "home": "ATL",
+      "category": "tracking",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600280",
+      "date_et": "2026-11-22",
+      "away": "DET",
+      "home": "ATL",
+      "category": "defense",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600280",
+      "date_et": "2026-11-22",
+      "away": "DET",
+      "home": "ATL",
+      "category": "matchups",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600280",
+      "date_et": "2026-11-22",
+      "away": "DET",
+      "home": "ATL",
+      "category": "passing",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600281",
+      "date_et": "2026-11-22",
+      "away": "OKC",
+      "home": "MIA",
+      "category": "hustle",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600281",
+      "date_et": "2026-11-22",
+      "away": "OKC",
+      "home": "MIA",
+      "category": "tracking",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600281",
+      "date_et": "2026-11-22",
+      "away": "OKC",
+      "home": "MIA",
+      "category": "defense",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600281",
+      "date_et": "2026-11-22",
+      "away": "OKC",
+      "home": "MIA",
+      "category": "matchups",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600281",
+      "date_et": "2026-11-22",
+      "away": "OKC",
+      "home": "MIA",
+      "category": "passing",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600282",
+      "date_et": "2026-11-22",
+      "away": "ORL",
+      "home": "WAS",
+      "category": "hustle",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600282",
+      "date_et": "2026-11-22",
+      "away": "ORL",
+      "home": "WAS",
+      "category": "tracking",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600282",
+      "date_et": "2026-11-22",
+      "away": "ORL",
+      "home": "WAS",
+      "category": "defense",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600282",
+      "date_et": "2026-11-22",
+      "away": "ORL",
+      "home": "WAS",
+      "category": "matchups",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600282",
+      "date_et": "2026-11-22",
+      "away": "ORL",
+      "home": "WAS",
+      "category": "passing",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600283",
+      "date_et": "2026-11-22",
+      "away": "DEN",
+      "home": "CHI",
+      "category": "hustle",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600283",
+      "date_et": "2026-11-22",
+      "away": "DEN",
+      "home": "CHI",
+      "category": "tracking",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600283",
+      "date_et": "2026-11-22",
+      "away": "DEN",
+      "home": "CHI",
+      "category": "defense",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600283",
+      "date_et": "2026-11-22",
+      "away": "DEN",
+      "home": "CHI",
+      "category": "matchups",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600283",
+      "date_et": "2026-11-22",
+      "away": "DEN",
+      "home": "CHI",
+      "category": "passing",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600284",
+      "date_et": "2026-11-22",
+      "away": "DAL",
+      "home": "UTA",
+      "category": "hustle",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600284",
+      "date_et": "2026-11-22",
+      "away": "DAL",
+      "home": "UTA",
+      "category": "tracking",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600284",
+      "date_et": "2026-11-22",
+      "away": "DAL",
+      "home": "UTA",
+      "category": "defense",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600284",
+      "date_et": "2026-11-22",
+      "away": "DAL",
+      "home": "UTA",
+      "category": "matchups",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600284",
+      "date_et": "2026-11-22",
+      "away": "DAL",
+      "home": "UTA",
+      "category": "passing",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600285",
+      "date_et": "2026-11-22",
+      "away": "IND",
+      "home": "NYK",
+      "category": "hustle",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600285",
+      "date_et": "2026-11-22",
+      "away": "IND",
+      "home": "NYK",
+      "category": "tracking",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600285",
+      "date_et": "2026-11-22",
+      "away": "IND",
+      "home": "NYK",
+      "category": "defense",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600285",
+      "date_et": "2026-11-22",
+      "away": "IND",
+      "home": "NYK",
+      "category": "matchups",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600285",
+      "date_et": "2026-11-22",
+      "away": "IND",
+      "home": "NYK",
+      "category": "passing",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600286",
+      "date_et": "2026-11-22",
+      "away": "BOS",
+      "home": "GSW",
+      "category": "hustle",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600286",
+      "date_et": "2026-11-22",
+      "away": "BOS",
+      "home": "GSW",
+      "category": "tracking",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600286",
+      "date_et": "2026-11-22",
+      "away": "BOS",
+      "home": "GSW",
+      "category": "defense",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600286",
+      "date_et": "2026-11-22",
+      "away": "BOS",
+      "home": "GSW",
+      "category": "matchups",
+      "status": "MISSING"
+    },
+    {
+      "game_id": "0022600286",
+      "date_et": "2026-11-22",
+      "away": "BOS",
+      "home": "GSW",
+      "category": "passing",
+      "status": "MISSING"
+    }
+  ],
+  "scoring_replayed": false
+}
