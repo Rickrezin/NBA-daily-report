@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import re
 from urllib.parse import urlencode
+from urllib.request import Request, urlopen
 
 from qpix_nba_live import _alias, _game_date, _minutes
 
@@ -15,6 +16,13 @@ def tracking_url(game_id):
     query = urlencode({"GameID": game_id, "LeagueID": "00", "startPeriod": 0, "endPeriod": 0,
                        "startRange": 0, "endRange": 0, "rangeType": 0})
     return "https://stats.nba.com/stats/boxscoreplayertrackv3?" + query
+
+
+def fetch_tracking_response(url, timeout):
+    accept = "text/html" if url.startswith("https://www.nba.com/") else "application/json"
+    request = Request(url, headers={"User-Agent": "QCoreLabs-QPIX/1.0", "Accept": accept})
+    with urlopen(request, timeout=timeout) as response:
+        return response.read().decode("utf-8")
 
 
 def _count(value):

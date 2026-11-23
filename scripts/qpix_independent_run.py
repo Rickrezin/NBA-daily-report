@@ -13,7 +13,8 @@ from qpix_source_archive import canonical_snapshot, write_snapshot
 from qpix_collection_checkpoint import CollectionCheckpoint
 from qpix_game_crosswalk import resolve as resolve_nba_crosswalk
 from qpix_nba_live import NBAClient, apply_live_boxscore
-from qpix_secondary_assists import collect_secondary_assists, require_secondary_assist_coverage
+from qpix_secondary_assists import (collect_secondary_assists, fetch_tracking_response,
+                                   require_secondary_assist_coverage)
 
 PROGRESS=None
 
@@ -557,8 +558,7 @@ def main():
             nonlocal next_tracking_call
             time.sleep(max(0, next_tracking_call - time.monotonic()))
             next_tracking_call = time.monotonic() + 4.2
-            with urllib.request.urlopen(url,timeout=timeout) as response:
-                return response.read().decode("utf-8")
+            return fetch_tracking_response(url, timeout)
 
         for game in games:
             tracking_audits.append(collect_secondary_assists(
