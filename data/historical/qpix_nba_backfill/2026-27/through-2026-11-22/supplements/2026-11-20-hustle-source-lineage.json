@@ -1,0 +1,10 @@
+{
+  "replaces_metadata_for": "raw/0022600051-hustle.json",
+  "reason": "Archived player-game Hustle rows were attributed from the verified date-filtered NBA endpoint, not returned by the per-game endpoint.",
+  "source": {
+    "file": "raw/2026-11-20-daily-hustle.json",
+    "url": "https://stats.nba.com/stats/leaguehustlestatsplayer?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&Height=&ISTRound=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&PlayerExperience=&PlayerPosition=&SeasonSegment=&TeamID=&VsConference=&VsDivision=&Weight=&LeagueID=00&PerMode=Totals&Season=2026-27&SeasonType=Regular+Season&DateFrom=11%2F20%2F2026&DateTo=11%2F20%2F2026",
+    "sha256": "1b217104cd849b71c915baf7056330ef83ef056159a8c3d6f196da7c58328c2a"
+  },
+  "verification": "The source date, NBA team IDs, minute-positive NBA player IDs, and one game per player reconciled in the original run."
+}
