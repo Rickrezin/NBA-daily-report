@@ -1,0 +1,859 @@
+{
+  "changed_or_missing_fields": [],
+  "nba_source_disagreements": [
+    {
+      "game_id": "0022600085",
+      "player_id": 1628976,
+      "field": "steals",
+      "nba_cdn": 1,
+      "nba_player_game_logs": 2
+    },
+    {
+      "game_id": "0022600085",
+      "player_id": 1630217,
+      "field": "steals",
+      "nba_cdn": 3,
+      "nba_player_game_logs": 2
+    },
+    {
+      "game_id": "0022600087",
+      "player_id": 1630549,
+      "field": "steals",
+      "nba_cdn": 0,
+      "nba_player_game_logs": 1
+    },
+    {
+      "game_id": "0022600087",
+      "player_id": 1631165,
+      "field": "steals",
+      "nba_cdn": 2,
+      "nba_player_game_logs": 1
+    },
+    {
+      "game_id": "0022600088",
+      "player_id": 202695,
+      "field": "points_in_paint",
+      "nba_cdn": 2,
+      "nba_player_game_logs": 4
+    },
+    {
+      "game_id": "0022600088",
+      "player_id": 1626181,
+      "field": "steals",
+      "nba_cdn": 1,
+      "nba_player_game_logs": 2
+    },
+    {
+      "game_id": "0022600088",
+      "player_id": 1643591,
+      "field": "steals",
+      "nba_cdn": 1,
+      "nba_player_game_logs": 0
+    },
+    {
+      "game_id": "0022600091",
+      "player_id": 1630230,
+      "field": "fga",
+      "nba_cdn": 13,
+      "nba_player_game_logs": 14
+    },
+    {
+      "game_id": "0022600091",
+      "player_id": 1630230,
+      "field": "fg3a",
+      "nba_cdn": 6,
+      "nba_player_game_logs": 7
+    },
+    {
+      "game_id": "0022600092",
+      "player_id": 1631123,
+      "field": "rebounds",
+      "nba_cdn": 2,
+      "nba_player_game_logs": 1
+    },
+    {
+      "game_id": "0022600092",
+      "player_id": 1631123,
+      "field": "defensive_rebounds",
+      "nba_cdn": 2,
+      "nba_player_game_logs": 1
+    },
+    {
+      "game_id": "0022600092",
+      "player_id": 1642346,
+      "field": "rebounds",
+      "nba_cdn": 2,
+      "nba_player_game_logs": 3
+    },
+    {
+      "game_id": "0022600092",
+      "player_id": 1642346,
+      "field": "defensive_rebounds",
+      "nba_cdn": 1,
+      "nba_player_game_logs": 2
+    },
+    {
+      "game_id": "0022600007",
+      "player_id": 1631114,
+      "field": "steals",
+      "nba_cdn": 0,
+      "nba_player_game_logs": 1
+    },
+    {
+      "game_id": "0022600007",
+      "player_id": 1642349,
+      "field": "steals",
+      "nba_cdn": 5,
+      "nba_player_game_logs": 4
+    },
+    {
+      "game_id": "0022600007",
+      "player_id": 1641717,
+      "field": "rebounds",
+      "nba_cdn": 1,
+      "nba_player_game_logs": 2
+    },
+    {
+      "game_id": "0022600007",
+      "player_id": 1641717,
+      "field": "defensive_rebounds",
+      "nba_cdn": 1,
+      "nba_player_game_logs": 2
+    },
+    {
+      "game_id": "0022600007",
+      "player_id": 1631119,
+      "field": "rebounds",
+      "nba_cdn": 7,
+      "nba_player_game_logs": 6
+    },
+    {
+      "game_id": "0022600007",
+      "player_id": 1631119,
+      "field": "defensive_rebounds",
+      "nba_cdn": 7,
+      "nba_player_game_logs": 6
+    },
+    {
+      "game_id": "0022600007",
+      "player_id": 1643813,
+      "field": "assists",
+      "nba_cdn": 3,
+      "nba_player_game_logs": 2
+    },
+    {
+      "game_id": "0022600007",
+      "player_id": 1628963,
+      "field": "assists",
+      "nba_cdn": 1,
+      "nba_player_game_logs": 2
+    },
+    {
+      "game_id": "0022600007",
+      "player_id": 1641747,
+      "field": "rebounds",
+      "nba_cdn": 1,
+      "nba_player_game_logs": 0
+    },
+    {
+      "game_id": "0022600007",
+      "player_id": 1641747,
+      "field": "offensive_rebounds",
+      "nba_cdn": 1,
+      "nba_player_game_logs": 0
+    },
+    {
+      "game_id": "0022600007",
+      "player_id": 1643624,
+      "field": "rebounds",
+      "nba_cdn": 1,
+      "nba_player_game_logs": 2
+    },
+    {
+      "game_id": "0022600007",
+      "player_id": 1643624,
+      "field": "offensive_rebounds",
+      "nba_cdn": 1,
+      "nba_player_game_logs": 2
+    },
+    {
+      "game_id": "0022600009",
+      "player_id": 1630578,
+      "field": "plus_minus",
+      "nba_cdn": 3.0,
+      "nba_player_game_logs": 6
+    },
+    {
+      "game_id": "0022600009",
+      "player_id": 1628368,
+      "field": "plus_minus",
+      "nba_cdn": -14.0,
+      "nba_player_game_logs": -13
+    },
+    {
+      "game_id": "0022600009",
+      "player_id": 201142,
+      "field": "assists",
+      "nba_cdn": 6,
+      "nba_player_game_logs": 5
+    },
+    {
+      "game_id": "0022600009",
+      "player_id": 1642844,
+      "field": "plus_minus",
+      "nba_cdn": 4.0,
+      "nba_player_game_logs": 8
+    },
+    {
+      "game_id": "0022600009",
+      "player_id": 1631106,
+      "field": "second_chance_points",
+      "nba_cdn": 2,
+      "nba_player_game_logs": 4
+    },
+    {
+      "game_id": "0022600009",
+      "player_id": 1630170,
+      "field": "plus_minus",
+      "nba_cdn": 1.0,
+      "nba_player_game_logs": 5
+    },
+    {
+      "game_id": "0022600009",
+      "player_id": 1630577,
+      "field": "plus_minus",
+      "nba_cdn": 7.0,
+      "nba_player_game_logs": 2
+    },
+    {
+      "game_id": "0022600009",
+      "player_id": 203500,
+      "field": "plus_minus",
+      "nba_cdn": 6.0,
+      "nba_player_game_logs": 3
+    },
+    {
+      "game_id": "0022600009",
+      "player_id": 1642868,
+      "field": "plus_minus",
+      "nba_cdn": -5.0,
+      "nba_player_game_logs": -9
+    },
+    {
+      "game_id": "0022600094",
+      "player_id": 1630700,
+      "field": "assists",
+      "nba_cdn": 4,
+      "nba_player_game_logs": 5
+    },
+    {
+      "game_id": "0022600094",
+      "player_id": 203468,
+      "field": "assists",
+      "nba_cdn": 2,
+      "nba_player_game_logs": 1
+    },
+    {
+      "game_id": "0022600096",
+      "player_id": 1631094,
+      "field": "points_in_paint",
+      "nba_cdn": 8,
+      "nba_player_game_logs": 10
+    },
+    {
+      "game_id": "0022600102",
+      "player_id": 1627739,
+      "field": "rebounds",
+      "nba_cdn": 4,
+      "nba_player_game_logs": 5
+    },
+    {
+      "game_id": "0022600102",
+      "player_id": 1627739,
+      "field": "defensive_rebounds",
+      "nba_cdn": 4,
+      "nba_player_game_logs": 5
+    },
+    {
+      "game_id": "0022600104",
+      "player_id": 203471,
+      "field": "assists",
+      "nba_cdn": 4,
+      "nba_player_game_logs": 5
+    },
+    {
+      "game_id": "0022600104",
+      "player_id": 1631217,
+      "field": "assists",
+      "nba_cdn": 2,
+      "nba_player_game_logs": 1
+    },
+    {
+      "game_id": "0022600108",
+      "player_id": 1642273,
+      "field": "assists",
+      "nba_cdn": 5,
+      "nba_player_game_logs": 4
+    },
+    {
+      "game_id": "0022600108",
+      "player_id": 203076,
+      "field": "assists",
+      "nba_cdn": 4,
+      "nba_player_game_logs": 5
+    },
+    {
+      "game_id": "0022600109",
+      "player_id": 1642383,
+      "field": "fga",
+      "nba_cdn": 3,
+      "nba_player_game_logs": 2
+    },
+    {
+      "game_id": "0022600113",
+      "player_id": 203944,
+      "field": "points_in_paint",
+      "nba_cdn": 2,
+      "nba_player_game_logs": 4
+    },
+    {
+      "game_id": "0022600117",
+      "player_id": 1630194,
+      "field": "blocks",
+      "nba_cdn": 3,
+      "nba_player_game_logs": 2
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 203897,
+      "field": "turnovers",
+      "nba_cdn": 3,
+      "nba_player_game_logs": 4
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1629660,
+      "field": "assists",
+      "nba_cdn": 6,
+      "nba_player_game_logs": 7
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1627734,
+      "field": "turnovers",
+      "nba_cdn": 4,
+      "nba_player_game_logs": 3
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1627734,
+      "field": "fga",
+      "nba_cdn": 8,
+      "nba_player_game_logs": 9
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1643409,
+      "field": "points",
+      "nba_cdn": 16,
+      "nba_player_game_logs": 14
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1643409,
+      "field": "fgm",
+      "nba_cdn": 6,
+      "nba_player_game_logs": 5
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1643409,
+      "field": "fg3a",
+      "nba_cdn": 7,
+      "nba_player_game_logs": 8
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1643409,
+      "field": "points_in_paint",
+      "nba_cdn": 8,
+      "nba_player_game_logs": 6
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1642377,
+      "field": "rebounds",
+      "nba_cdn": 5,
+      "nba_player_game_logs": 7
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1642377,
+      "field": "offensive_rebounds",
+      "nba_cdn": 2,
+      "nba_player_game_logs": 3
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1642377,
+      "field": "defensive_rebounds",
+      "nba_cdn": 3,
+      "nba_player_game_logs": 4
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1642907,
+      "field": "points",
+      "nba_cdn": 15,
+      "nba_player_game_logs": 17
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1642907,
+      "field": "assists",
+      "nba_cdn": 2,
+      "nba_player_game_logs": 1
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1642907,
+      "field": "fgm",
+      "nba_cdn": 6,
+      "nba_player_game_logs": 7
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1642907,
+      "field": "fga",
+      "nba_cdn": 11,
+      "nba_player_game_logs": 13
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1642907,
+      "field": "points_in_paint",
+      "nba_cdn": 6,
+      "nba_player_game_logs": 8
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1630191,
+      "field": "steals",
+      "nba_cdn": 1,
+      "nba_player_game_logs": 0
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 203924,
+      "field": "rebounds",
+      "nba_cdn": 5,
+      "nba_player_game_logs": 6
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 203924,
+      "field": "defensive_rebounds",
+      "nba_cdn": 3,
+      "nba_player_game_logs": 4
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 203924,
+      "field": "steals",
+      "nba_cdn": 1,
+      "nba_player_game_logs": 0
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 203924,
+      "field": "blocks",
+      "nba_cdn": 2,
+      "nba_player_game_logs": 3
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 203924,
+      "field": "fga",
+      "nba_cdn": 8,
+      "nba_player_game_logs": 7
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1642285,
+      "field": "steals",
+      "nba_cdn": 0,
+      "nba_player_game_logs": 1
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1628370,
+      "field": "rebounds",
+      "nba_cdn": 1,
+      "nba_player_game_logs": 2
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1628370,
+      "field": "defensive_rebounds",
+      "nba_cdn": 0,
+      "nba_player_game_logs": 1
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1629631,
+      "field": "rebounds",
+      "nba_cdn": 6,
+      "nba_player_game_logs": 5
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1629631,
+      "field": "defensive_rebounds",
+      "nba_cdn": 3,
+      "nba_player_game_logs": 2
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1630590,
+      "field": "rebounds",
+      "nba_cdn": 2,
+      "nba_player_game_logs": 1
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1630590,
+      "field": "defensive_rebounds",
+      "nba_cdn": 2,
+      "nba_player_game_logs": 1
+    },
+    {
+      "game_id": "0022600118",
+      "player_id": 1643567,
+      "field": "turnovers",
+      "nba_cdn": 1,
+      "nba_player_game_logs": 0
+    },
+    {
+      "game_id": "0022600120",
+      "player_id": 1630162,
+      "field": "points_in_paint",
+      "nba_cdn": 18,
+      "nba_player_game_logs": 20
+    },
+    {
+      "game_id": "0022600121",
+      "player_id": 1628369,
+      "field": "turnovers",
+      "nba_cdn": 3,
+      "nba_player_game_logs": 4
+    },
+    {
+      "game_id": "0022600121",
+      "player_id": 1630568,
+      "field": "fga",
+      "nba_cdn": 3,
+      "nba_player_game_logs": 4
+    },
+    {
+      "game_id": "0022600121",
+      "player_id": 1631248,
+      "field": "fga",
+      "nba_cdn": 5,
+      "nba_player_game_logs": 4
+    },
+    {
+      "game_id": "0022600121",
+      "player_id": 201144,
+      "field": "turnovers",
+      "nba_cdn": 1,
+      "nba_player_game_logs": 0
+    },
+    {
+      "game_id": "0022600121",
+      "player_id": 1643637,
+      "field": "steals",
+      "nba_cdn": 0,
+      "nba_player_game_logs": 1
+    },
+    {
+      "game_id": "0022600121",
+      "player_id": 1642855,
+      "field": "steals",
+      "nba_cdn": 1,
+      "nba_player_game_logs": 0
+    },
+    {
+      "game_id": "0022600125",
+      "player_id": 1631106,
+      "field": "rebounds",
+      "nba_cdn": 8,
+      "nba_player_game_logs": 9
+    },
+    {
+      "game_id": "0022600125",
+      "player_id": 1631106,
+      "field": "offensive_rebounds",
+      "nba_cdn": 1,
+      "nba_player_game_logs": 2
+    },
+    {
+      "game_id": "0022600125",
+      "player_id": 1627832,
+      "field": "rebounds",
+      "nba_cdn": 4,
+      "nba_player_game_logs": 3
+    },
+    {
+      "game_id": "0022600125",
+      "player_id": 1627832,
+      "field": "offensive_rebounds",
+      "nba_cdn": 1,
+      "nba_player_game_logs": 0
+    },
+    {
+      "game_id": "0022600129",
+      "player_id": 1626157,
+      "field": "plus_minus",
+      "nba_cdn": -3.0,
+      "nba_player_game_logs": -4
+    },
+    {
+      "game_id": "0022600129",
+      "player_id": 203083,
+      "field": "plus_minus",
+      "nba_cdn": 15.0,
+      "nba_player_game_logs": 16
+    },
+    {
+      "game_id": "0022600130",
+      "player_id": 1630173,
+      "field": "points_in_paint",
+      "nba_cdn": 0,
+      "nba_player_game_logs": 2
+    },
+    {
+      "game_id": "0022600135",
+      "player_id": 1629614,
+      "field": "points_in_paint",
+      "nba_cdn": 6,
+      "nba_player_game_logs": 8
+    },
+    {
+      "game_id": "0022600138",
+      "player_id": 1643417,
+      "field": "fga",
+      "nba_cdn": 8,
+      "nba_player_game_logs": 7
+    },
+    {
+      "game_id": "0022600138",
+      "player_id": 1631260,
+      "field": "fga",
+      "nba_cdn": 5,
+      "nba_player_game_logs": 6
+    },
+    {
+      "game_id": "0022600139",
+      "player_id": 1630228,
+      "field": "rebounds",
+      "nba_cdn": 3,
+      "nba_player_game_logs": 4
+    },
+    {
+      "game_id": "0022600139",
+      "player_id": 1630228,
+      "field": "offensive_rebounds",
+      "nba_cdn": 1,
+      "nba_player_game_logs": 2
+    },
+    {
+      "game_id": "0022600139",
+      "player_id": 1630183,
+      "field": "rebounds",
+      "nba_cdn": 7,
+      "nba_player_game_logs": 6
+    },
+    {
+      "game_id": "0022600139",
+      "player_id": 1630183,
+      "field": "offensive_rebounds",
+      "nba_cdn": 2,
+      "nba_player_game_logs": 1
+    },
+    {
+      "game_id": "0022600144",
+      "player_id": 1630552,
+      "field": "plus_minus",
+      "nba_cdn": -3.0,
+      "nba_player_game_logs": -2
+    },
+    {
+      "game_id": "0022600144",
+      "player_id": 1628378,
+      "field": "plus_minus",
+      "nba_cdn": 1.0,
+      "nba_player_game_logs": 2
+    },
+    {
+      "game_id": "0022600144",
+      "player_id": 1629638,
+      "field": "plus_minus",
+      "nba_cdn": 1.0,
+      "nba_player_game_logs": 0
+    },
+    {
+      "game_id": "0022600144",
+      "player_id": 1630596,
+      "field": "plus_minus",
+      "nba_cdn": -1.0,
+      "nba_player_game_logs": -2
+    },
+    {
+      "game_id": "0022600144",
+      "player_id": 1628386,
+      "field": "plus_minus",
+      "nba_cdn": 5.0,
+      "nba_player_game_logs": 6
+    },
+    {
+      "game_id": "0022600144",
+      "player_id": 203468,
+      "field": "plus_minus",
+      "nba_cdn": 2.0,
+      "nba_player_game_logs": 3
+    },
+    {
+      "game_id": "0022600144",
+      "player_id": 1630700,
+      "field": "plus_minus",
+      "nba_cdn": -3.0,
+      "nba_player_game_logs": -2
+    },
+    {
+      "game_id": "0022600144",
+      "player_id": 1629652,
+      "field": "plus_minus",
+      "nba_cdn": -3.0,
+      "nba_player_game_logs": -4
+    },
+    {
+      "game_id": "0022600144",
+      "player_id": 1643412,
+      "field": "plus_minus",
+      "nba_cdn": 1.0,
+      "nba_player_game_logs": 0
+    },
+    {
+      "game_id": "0022600144",
+      "player_id": 1641854,
+      "field": "plus_minus",
+      "nba_cdn": -10.0,
+      "nba_player_game_logs": -11
+    }
+  ],
+  "unresolved_historical_joins": [],
+  "passing_unresolved": [
+    {
+      "date_et": "2026-10-21",
+      "player_id": 1642363,
+      "team_id": 1610612760,
+      "games": 1
+    },
+    {
+      "date_et": "2026-10-23",
+      "player_id": 1642363,
+      "team_id": 1610612760,
+      "games": 1
+    },
+    {
+      "date_et": "2026-10-27",
+      "player_id": 1642363,
+      "team_id": 1610612760,
+      "games": 1
+    },
+    {
+      "date_et": "2026-10-29",
+      "player_id": 1642363,
+      "team_id": 1610612760,
+      "games": 1
+    }
+  ],
+  "rejected_sources": [
+    {
+      "game_id": "0022600101",
+      "category": "pbp",
+      "file": "0022600101-pbp.json",
+      "error": "Play-by-play final does not match schedule",
+      "source": "raw/rejected/0b5e53dc12d4-0022600101-pbp.json"
+    },
+    {
+      "game_id": "0022600108",
+      "category": "defense",
+      "file": "0022600108-defense.json",
+      "error": "away team ID differs from schedule",
+      "source": "raw/rejected/84272b729950-0022600108-defense.json"
+    },
+    {
+      "game_id": "0022600108",
+      "category": "matchups",
+      "file": "0022600108-matchups.json",
+      "error": "home team ID differs from schedule",
+      "source": "raw/rejected/c42ed670f862-0022600108-matchups.json"
+    },
+    {
+      "game_id": "0022600109",
+      "category": "defense",
+      "file": "0022600109-defense.json",
+      "error": "home team ID differs from schedule",
+      "source": "raw/rejected/76d697ed6ed5-0022600109-defense.json"
+    },
+    {
+      "game_id": "0022600109",
+      "category": "matchups",
+      "file": "0022600109-matchups.json",
+      "error": "away team ID differs from schedule",
+      "source": "raw/rejected/82583ee27beb-0022600109-matchups.json"
+    },
+    {
+      "game_id": "0022600112",
+      "category": "defense",
+      "file": "0022600112-defense.json",
+      "error": "away team ID differs from schedule",
+      "source": "raw/rejected/4fdb9a8efe96-0022600112-defense.json"
+    },
+    {
+      "game_id": "0022600112",
+      "category": "matchups",
+      "file": "0022600112-matchups.json",
+      "error": "home team ID differs from schedule",
+      "source": "raw/rejected/e8de4e1406b6-0022600112-matchups.json"
+    },
+    {
+      "game_id": "0022600118",
+      "category": "defense",
+      "file": "0022600118-defense.json",
+      "error": "home team ID differs from schedule",
+      "source": "raw/rejected/d89c8fe93856-0022600118-defense.json"
+    },
+    {
+      "game_id": "0022600118",
+      "category": "matchups",
+      "file": "0022600118-matchups.json",
+      "error": "away team ID differs from schedule",
+      "source": "raw/rejected/a3c105cc9b5f-0022600118-matchups.json"
+    },
+    {
+      "game_id": "0022600126",
+      "category": "pbp",
+      "file": "0022600126-pbp.json",
+      "error": "Play-by-play lacks a completed-game event",
+      "source": "raw/rejected/ba032470ca29-0022600126-pbp.json"
+    }
+  ],
+  "request_errors": {
+    "0022600123-matchups": {
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600123&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "error": "Page.expect_response: Timeout 40000ms exceeded while waiting for event \"response\""
+    }
+  }
+}
