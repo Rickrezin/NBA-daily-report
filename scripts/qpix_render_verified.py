@@ -2,6 +2,7 @@
 """Render one verified, date-scoped report with the existing dashboard renderer."""
 from datetime import date
 import json
+from math import isfinite
 from pathlib import Path
 import sys
 
@@ -29,11 +30,25 @@ def main(date_et):
         raise ValueError("Report participant coverage is inconsistent")
     if not isinstance(report.get("leaderboards"), dict):
         raise ValueError("Report leaderboard schema is unavailable")
+    secondary = report.get("scoring_engine", {}).get("secondary_assists", {})
+    if secondary.get("enabled"):
+        tracking = archive.get("source_audit", {}).get("NBA_secondary_assists", {})
+        weight = secondary.get("weight")
+        if (tracking.get("verified") != len(players) or type(weight) not in (int, float)
+                or not isfinite(weight) or weight < 0):
+            raise ValueError("Weighted C5 is missing verified secondary-assist coverage or its coefficient")
+        inputs = {(p["game_id"], str(p["player_id"])): p for p in archive["players"]}
+        for player in players:
+            archived = inputs.get((player["game_id"], str(player["player_id"])), {})
+            count = archived.get("2AST")
+            if (type(count) is not int or count < 0 or player.get("2AST") != count
+                    or player.get("AST") != archived.get("assists")
+                    or player.get("weighted_assists") != player["AST"] + count * weight):
+                raise ValueError("Weighted assists differ from verified scoring inputs")
     for player in players:
         if player.get("raw_qpix") != player.get("score") or player.get("qpix_r") != player.get("qpixR"):
             raise ValueError("Display scores differ from authorized engine output")
     # Reuse the existing presentation while selecting the exact collected date.
-    # The renderer source and scoring formulas remain unchanged.
     dashboard.find_report = lambda: (path, report)
     dashboard.render()
 

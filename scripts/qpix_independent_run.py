@@ -13,6 +13,7 @@ from qpix_source_archive import canonical_snapshot, write_snapshot
 from qpix_collection_checkpoint import CollectionCheckpoint
 from qpix_game_crosswalk import resolve as resolve_nba_crosswalk
 from qpix_nba_live import NBAClient, apply_live_boxscore
+from qpix_secondary_assists import collect_secondary_assists, require_secondary_assist_coverage
 
 PROGRESS=None
 
@@ -24,6 +25,8 @@ if len(sys.argv)>1: RUN_DATE=sys.argv[1]
 PHASE="preseason" if (RUN_DATE<"2026-10-20") else "regular"
 ENABLE_NBA_V3=os.getenv("ENABLE_NBA_V3","false").strip().lower() in ("1","true","yes","on")
 ENABLE_NBA_CDN=os.getenv("ENABLE_NBA_CDN","true").strip().lower() in ("1","true","yes","on")
+SCORE_SECONDARY_ASSISTS=os.getenv("QPIX_ENABLE_SECONDARY_ASSISTS","false").strip().lower() in ("1","true","yes","on")
+COLLECT_SECONDARY_ASSISTS=SCORE_SECONDARY_ASSISTS or os.getenv("ENABLE_NBA_SECONDARY_ASSISTS","false").strip().lower() in ("1","true","yes","on")
 USER_AGENT="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131 Safari/537.36"
 EXPECTED_20261024=["0022600104","0022600105","0022600106","0022600107","0022600108","0022600109","0022600110","0022600111"]
 
@@ -443,6 +446,11 @@ def create_report(result, quality):
     return "\n".join(m)+"\n"
 
 def main():
+    if SCORE_SECONDARY_ASSISTS:
+        baseline_paths = [ROOT / "data/daily" / (RUN_DATE + "." + ext) for ext in ("json", "csv")]
+        baseline_paths.append(ROOT / "docs/reports" / (RUN_DATE + ".md"))
+        if any(path.exists() for path in baseline_paths):
+            raise RuntimeError("Existing dated report preserved; replay secondary assists outside the publication paths")
     global PROGRESS
     # Write-on-entry: even scoreboard failure leaves a durable partial artifact.
     PROGRESS=CollectionCheckpoint(ROOT,RUN_DATE)
@@ -539,12 +547,33 @@ def main():
         PROGRESS.state["source_audits"]["NBA_AdvancedV3"]=[adv[-1]]
         PROGRESS.state["source_audits"]["C6"]=[misc[-1]]
         print("NBA_V3_DISABLED: Stats AdvancedV3 and MiscV3 skipped; live CDN is independent",flush=True)
+    tracking_audits = []
+    for player in players:
+        player.setdefault("2AST", None)
+    if COLLECT_SECONDARY_ASSISTS:
+        next_tracking_call = time.monotonic() + 4.2
+
+        def fetch_tracking(url, timeout):
+            nonlocal next_tracking_call
+            time.sleep(max(0, next_tracking_call - time.monotonic()))
+            next_tracking_call = time.monotonic() + 4.2
+            with urllib.request.urlopen(url,timeout=timeout) as response:
+                return response.read().decode("utf-8")
+
+        for game in games:
+            tracking_audits.append(collect_secondary_assists(
+                game, results[game["game_id"]][1], RUN_DATE, ROOT, fetch_tracking))
+            PROGRESS.state["source_audits"]["NBA_secondary_assists"] = tracking_audits
+            PROGRESS.stage("collecting_secondary_assists")
+    tracked = sum(player["2AST"] is not None for player in players)
+    tracking_coverage = {"collect_enabled":COLLECT_SECONDARY_ASSISTS,"score_enabled":SCORE_SECONDARY_ASSISTS,
+                         "verified":tracked,"total":len(players),"games":tracking_audits}
     # Write a QCore-normalized archive BEFORE invoking the authorized engine.
     # Incomplete inputs produce an audit snapshot, but cannot be published as a
     # 'full category' report. Keep original scoring rules unchanged.
     source_audits={"ESPN_and_LiveData":SCHEDULE_AUDIT,"nba_crosswalk":crosswalk_audit,
                    "NBA_CDN":cdn_audits,"C3":c3archive,
-                   "AdvancedV3":adv,"C6":misc}
+                   "AdvancedV3":adv,"C6":misc,"NBA_secondary_assists":tracking_coverage}
     snapshot=canonical_snapshot(games,players,RUN_DATE,source_audits,require_complete=False)
     archived_path=write_snapshot(snapshot,ROOT,allow_revision=True)
     archive_relative=str(archived_path.relative_to(ROOT))
@@ -555,6 +584,8 @@ def main():
     PROGRESS.state["coverage"]=snapshot["coverage"]["fields"]
     PROGRESS.stage("source_validation_complete",canonical_archive={"path":str(archived_path),"sha256":snapshot["input_sha256"]})
     print("QCORE_FIELD_COVERAGE",json.dumps(snapshot["coverage"]["fields"],sort_keys=True),flush=True)
+    print("NBA_SECONDARY_ASSISTS",json.dumps(tracking_coverage,sort_keys=True),flush=True)
+    require_secondary_assist_coverage(SCORE_SECONDARY_ASSISTS, tracked, len(players))
     if not snapshot["coverage"]["complete"]:
         counts={k:len(v) for k,v in snapshot["coverage"]["missing"].items() if v}
         raise RuntimeError("Refusing incomplete full-category QPIX report; missing="+json.dumps(counts,sort_keys=True))
@@ -573,6 +604,7 @@ def main():
       "C6 fast-break points":f"{c6['fast_break_points']}/{len(players)} individual records available; rest omitted (engine zero fallback)",
       "C6 paint points":f"{c6['points_in_paint']}/{len(players)} individual records available; rest omitted (engine zero fallback)",
       "C11 fast-break bonus":f"Individual fast-break values available for {c6['fast_break_points']}/{len(players)} records; omitted where absent",
+      "Secondary assists":tracking_coverage,
       "QPIX-R":"Authorized generate-report.js seasonal/positional FTA baselines; no fabricated rolling-20 FTA",
       "QPIX-SFA":"Authorized checked-in former_team_familiarity.json, requiring verified individual ratings to trigger; no score-substitutes",
       "game-point reconciliation":"PASS: All team individual player points exactly match official final scores",
@@ -583,27 +615,15 @@ def main():
       "C6 retrieval audit":json.dumps({"NBA_CDN":cdn_audits,"Stats_MiscV3":misc},ensure_ascii=False)
     }
     pathlib.Path("data").mkdir(exist_ok=True)
-    # 2AST: NBA-tracked secondary (hockey) assists. Null until independently sourced.
-    # Do not confuse missing tracking with a recorded zero or alter AST/QPIX scoring.
-    for player in players:
-        player.setdefault("2AST", None)
     pathlib.Path("data/nba_data.json").write_text(json.dumps({"games":games,"players":players},ensure_ascii=False,indent=2),encoding="utf-8")
-    print("Now executing AUTHORIZED JS without formula alterations",flush=True)
-    js=pathlib.Path("generate-report.js").read_text(encoding="utf-8")
-    marker="  const top10 = scoredPlayers.slice(0, 10);"
-    if js.count(marker)!=1:raise RuntimeError("Authorized engine extraction marker changed; refusing substitute implementation")
-    instrument="  writeFileSync(join(process.cwd(), 'data', '_qpix_scored_automated.json'), JSON.stringify({games:gameResults, players:scoredPlayers}, null, 2));\n"
-    pathlib.Path("generate-report.js").write_text(js.replace(marker,instrument+"  const top10 = scoredPlayers.filter(p => (p.minutes || 0) > 8).slice(0, 10);"),encoding="utf-8")
-    try:
-        env=os.environ.copy();env["QPIX_PHASE"]=PHASE
-        subprocess.run(["node","generate-report.js"],check=True,env=env,timeout=120)
-    finally:
-        pathlib.Path("generate-report.js").write_text(js,encoding="utf-8")
-    scored=json.loads(pathlib.Path("data/_qpix_scored_automated.json").read_text(encoding="utf-8"))
+    print("Now executing authorized JavaScript",flush=True)
+    scored_path=pathlib.Path("data/_qpix_scored_automated.json")
+    env=os.environ.copy()
+    env.update(QPIX_PHASE=PHASE,QPIX_SCORED_OUTPUT=str(scored_path))
+    subprocess.run(["node","generate-report.js"],check=True,env=env,timeout=120)
+    scored=json.loads(scored_path.read_text(encoding="utf-8"))
     ranked=scored["players"]
     for p in ranked:
-        p.setdefault("2AST", None)
-        p["top10_eligible"] = bool(float(p.get("minutes") or 0)>8)
         # Presentation-schema aliases only; retain the exact authorized scores.
         p["raw_qpix"]=p["score"]
         p["qpix_r"]=p["qpixR"]
@@ -614,16 +634,16 @@ def main():
     root=pathlib.Path("data/daily");root.mkdir(parents=True,exist_ok=True)
     output={"schema_version":3,"season":"2026-27","date_et":RUN_DATE,"phase":PHASE,"status":"VERIFIED",
       "generated_at_utc":datetime.now(ZoneInfo("UTC")).isoformat(),
-      "scoring_engine":{"file":"generate-report.js","method":"Executed authorized JavaScript engine without modifying scoring formulas; ephemeral audit output injection and >8-minute ranking gate restored after run","rank_by":"RAW QPIX","top10_min_minutes_exclusive":8}, 
+      "scoring_engine":{"file":"generate-report.js","method":"Executed authorized JavaScript engine","rank_by":"RAW QPIX",
+                        "top10_min_minutes_exclusive":8,"secondary_assists":scored["secondary_assists"]},
       "source_archive":{"path":archive_relative,"input_sha256":snapshot["input_sha256"],"complete":True},
-      "leaderboards":{"top10":[p["player_id"] for p in eligible[:10]],
-                      "bottom10":[p["player_id"] for p in reversed(eligible[-10:])]},
+      "leaderboards":scored["leaderboards"],
       "data_quality":quality,"games":games,"players":ranked}
     if os.getenv("QPIX_ENGINE_REVISION"):
         output["scoring_engine"]["production_commit"]=os.environ["QPIX_ENGINE_REVISION"]
     (root/(RUN_DATE+".json")).write_text(json.dumps(output,ensure_ascii=False,indent=2,allow_nan=False)+"\n",encoding="utf-8")
     csvpath=root/(RUN_DATE+".csv")
-    fields=["rank","name","team","game","minutes","points","rebounds","assists","2AST","steals","blocks","turnovers","fgm","fga","fg3m","fg3a","ftm","fta","plus_minus","offensive_rating","defensive_rating","second_chance_points","fast_break_points","points_in_paint","ts","score","qpixR","refPenalty","refBonus","qpixSFA","sfaAdj","top10_eligible"]
+    fields=["rank","name","team","game","minutes","points","rebounds","assists","AST","2AST","weighted_assists","steals","blocks","turnovers","fgm","fga","fg3m","fg3a","ftm","fta","plus_minus","offensive_rating","defensive_rating","second_chance_points","fast_break_points","points_in_paint","ts","score","qpixR","refPenalty","refBonus","qpixSFA","sfaAdj","top10_eligible"]
     with csvpath.open("w",newline="",encoding="utf-8") as f:
         writer=csv.DictWriter(f,fieldnames=fields,extrasaction="ignore")
         writer.writeheader()

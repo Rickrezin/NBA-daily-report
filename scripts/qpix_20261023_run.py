@@ -48,7 +48,7 @@ assert len(players)>=200
 Path('data').mkdir(exist_ok=True)
 Path('data/nba_data.json').write_text(json.dumps({'games':outgames,'players':players}))
 code=Path('generate-report.js').read_text()
-marker='  const top10 = scoredPlayers.slice(0, 10);'
+marker='  const top10 = eligiblePlayers.slice(0, 10);'
 assert marker in code
 extra="""
   const ranked=scoredPlayers.map((p,i)=>({...p,rank:i+1}));

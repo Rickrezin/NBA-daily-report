@@ -51,6 +51,16 @@ The production renderer is a two-part path:
 
 The scored JSON exposes `raw_qpix = score` and `qpix_r = qpixR` for the dashboard, plus `leaderboards.top10` and `leaderboards.bottom10` player IDs. These are presentation fields derived from the engine's existing output, not new scoring formulas.
 
+### Secondary assists
+
+The NBA's [Player Tracking box score](https://www.nba.com/stats/help/glossary) supplies `secondaryAssists`. The collector verifies the Eastern date, NBA game ID, player ID and team before attaching the count as `2AST`. A verified zero is stored as `0`. An unverified count is stored as JSON `null`, a blank CSV cell and HTML “N/A”.
+
+- `ENABLE_NBA_SECONDARY_ASSISTS=true` collects and displays tracking data while keeping baseline scoring.
+- `QPIX_ENABLE_SECONDARY_ASSISTS=true` requires verified tracking for the entire slate and uses weighted assists in C5 only. The existing C5 volume tiers, assists-to-turnovers calculation and zero-turnover rules use the weighted assist value as their assist input. Official AST continues to drive ordinary box-score categories and double- and triple-doubles.
+- `QPIX_SECONDARY_ASSIST_WEIGHT` defaults to `0.75`. The weighted display is `AST + weight × 2AST` for verified rows. Both feature flags default to off in the publishing workflows.
+
+The collector preserves raw NBA responses and records per-game coverage and source conflicts. An enabled scoring run with incomplete tracking or an existing dated report stops before saving publication output. Compare old and new scores in a separate workspace before enabling the publishing workflow settings.
+
 **Generation and deployment are distinct checks.** A successful render creates HTML in the runner or local checkout. A successful publishing workflow saves the report and generated files and completes GitHub Pages deployment. For a live-site issue, inspect the deployment result and displayed game date as well as the source/HTML job.
 
 ## GitHub Actions and schedules

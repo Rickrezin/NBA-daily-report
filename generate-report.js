@@ -236,16 +236,35 @@ function computeC4(p) {
 
 // C5 — PLAYMAKING QUALITY
 // AST/TO ratio tiered with volume gates, zero-TO bonus
+const secondaryAssistEnv = typeof process === "undefined" ? {} : (process.env ?? {});
+const scoreSecondaryAssists = /^(1|true|yes|on)$/i.test(secondaryAssistEnv.QPIX_ENABLE_SECONDARY_ASSISTS?.trim() || "");
+const secondaryAssistWeight = Number(secondaryAssistEnv.QPIX_SECONDARY_ASSIST_WEIGHT?.trim() || 0.75);
+if (!Number.isFinite(secondaryAssistWeight) || secondaryAssistWeight < 0) {
+  throw new Error("QPIX_SECONDARY_ASSIST_WEIGHT must be a finite, nonnegative number");
+}
+
+function verifiedSecondaryAssists(p) {
+  const count = p["2AST"];
+  return Number.isSafeInteger(count) && count >= 0 ? count : null;
+}
+
 function computeC5(p) {
   let score = 0;
   const notes = [];
-  const ast = p.assists || 0;
+  const officialAst = p.assists || 0;
+  const secondaryAst = verifiedSecondaryAssists(p);
+  const weightedAssists = secondaryAst === null ? null : officialAst + secondaryAst * secondaryAssistWeight;
+  if (weightedAssists !== null && !Number.isFinite(weightedAssists)) {
+    throw new Error("Weighted assists must be finite");
+  }
+  const ast = scoreSecondaryAssists ? (weightedAssists ?? officialAst) : officialAst;
+  const astLabel = scoreSecondaryAssists && secondaryAst !== null ? `${ast} weighted AST` : `${ast}ast`;
   const to = p.turnovers || 0;
   const astToRatio = to > 0 ? ast / to : ast;
 
   if (ast >= 10) {
-    if (astToRatio >= 4.0)      { score += 8; notes.push(`Elite playmaking (${ast}ast/${to}TO)`); }
-    else if (astToRatio >= 2.5) { score += 5; notes.push(`Strong playmaking (${ast}ast/${to}TO)`); }
+    if (astToRatio >= 4.0)      { score += 8; notes.push(`Elite playmaking (${astLabel}/${to}TO)`); }
+    else if (astToRatio >= 2.5) { score += 5; notes.push(`Strong playmaking (${astLabel}/${to}TO)`); }
     else                        { score += 2; }
   } else if (ast >= 6) {
     if (astToRatio >= 4.0)      { score += 5; notes.push(`AST/TO ${astToRatio.toFixed(1)}`); }
@@ -259,7 +278,7 @@ function computeC5(p) {
     notes.push("Zero turnovers");
   }
 
-  return { score, notes };
+  return { score, notes, secondaryAst, weightedAssists };
 }
 
 // C6 — OFFENSIVE CONTEXT
@@ -587,7 +606,7 @@ function computeQPIX(p, gameContext = {}) {
   notes.push(...c4n);
 
   // C5
-  const { score: c5score, notes: c5n } = computeC5(p);
+  const { score: c5score, notes: c5n, secondaryAst, weightedAssists } = computeC5(p);
   total += c5score;
   notes.push(...c5n);
 
@@ -675,6 +694,9 @@ function computeQPIX(p, gameContext = {}) {
 
   return {
     score: qpixRaw,
+    AST: p.assists,
+    "2AST": secondaryAst,
+    weighted_assists: weightedAssists,
     ratingsAvailable: c3.ratingsAvailable,
     qpixSFA,
     sfaAdj,
@@ -750,7 +772,7 @@ function buildGameContext(player, allGamePlayers, gameResult) {
 }
 
 // ─── HTML BUILDERS ────────────────────────────────────────────────
-function buildDashboardHTML(top10, games, dateLabel) {
+function buildDashboardHTML(top10, bottom10, ranked, games, dateLabel) {
   const rows = top10.map((p, i) => {
     const offColor = p.offImpact >= 0 ? "#22c55e" : "#ef4444";
     const defColor = p.defImpact >= 0 ? "#3b82f6" : "#ef4444";
@@ -769,6 +791,8 @@ function buildDashboardHTML(top10, games, dateLabel) {
         <td style="padding:14px 8px;text-align:center;font-weight:900;color:#f97316;font-size:18px;">${p.points}</td>
         <td style="padding:14px 8px;text-align:center;color:#e2e8f0;">${p.rebounds}</td>
         <td style="padding:14px 8px;text-align:center;color:#e2e8f0;">${p.assists}</td>
+        <td style="padding:14px 8px;text-align:center;color:#e2e8f0;">${p["2AST"] ?? "N/A"}</td>
+        <td style="padding:14px 8px;text-align:center;color:#e2e8f0;">${p.weighted_assists ?? "N/A"}</td>
         <td style="padding:14px 8px;text-align:center;color:#e2e8f0;">${p.steals}/${p.blocks}</td>
         <td style="padding:14px 8px;text-align:center;font-size:13px;">
           ${p.ratingsAvailable === false
@@ -784,7 +808,7 @@ function buildDashboardHTML(top10, games, dateLabel) {
         </td>
       </tr>
       <tr id="detail-${i}" style="display:none;background:#0a1628;">
-        <td colspan="9" style="padding:16px 20px;">
+        <td colspan="11" style="padding:16px 20px;">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
             <div>
               <div style="font-size:11px;color:#f97316;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Full Stat Line</div>
@@ -808,6 +832,11 @@ function buildDashboardHTML(top10, games, dateLabel) {
         </td>
       </tr>`;
   }).join("");
+  const assistRankings = players => `<div class="table-wrap"><table>
+    <thead><tr><th>Rank</th><th>Player</th><th>AST</th><th>2AST</th><th>Weighted AST</th><th>QPIX</th></tr></thead>
+    <tbody>${players.map(p => `<tr><td>${p.rank}</td><td>${p.name} · ${p.team}</td><td>${p.assists}</td>
+      <td>${p["2AST"] ?? "N/A"}</td><td>${p.weighted_assists ?? "N/A"}</td><td>${p.score}</td></tr>`).join("")}</tbody>
+  </table></div>`;
 
   const scoreboard = games.map(g => `
     <div style="background:#0f1f35;border-radius:10px;padding:12px 16px;min-width:130px;">
@@ -825,6 +854,7 @@ function buildDashboardHTML(top10, games, dateLabel) {
   * { box-sizing:border-box; }
   body { margin:0; background:#060e1a; color:#f1f5f9; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
   table { width:100%; border-collapse:collapse; }
+  .table-wrap { overflow-x:auto; }
   .container { max-width:960px; margin:0 auto; padding:24px 16px 60px; }
   .card { background:#0c1520; border:1px solid #1e293b; border-radius:12px; overflow:hidden; margin-bottom:20px; }
   .card-header { padding:16px 20px; border-bottom:1px solid #1e293b; }
@@ -858,20 +888,30 @@ function buildDashboardHTML(top10, games, dateLabel) {
       <div style="font-size:13px;font-weight:800;color:#f97316;text-transform:uppercase;letter-spacing:1px;">QPIX™ Top 10</div>
       <div style="font-size:11px;color:#475569;margin-top:3px;">Click any row to expand · QPIX = raw · QPIX-R = referee-adjusted · QPIX-SFA = former-team adjusted (big nights vs a former team only)</div>
     </div>
-    <table>
+    <div class="table-wrap"><table>
       <thead><tr>
         <th style="width:44px;"></th>
         <th style="text-align:left;">Player</th>
         <th>PTS</th>
         <th class="hide-mobile">REB</th>
         <th class="hide-mobile">AST</th>
+        <th>2AST</th>
+        <th>Weighted AST</th>
         <th class="hide-mobile">STL/BLK</th>
         <th>O/D ±</th>
         <th class="hide-mobile">TS%</th>
         <th>QPIX</th>
       </tr></thead>
       <tbody>${rows}</tbody>
-    </table>
+    </table></div>
+  </div>
+  <div class="card">
+    <div class="card-header">QPIX™ Bottom 10</div>
+    ${assistRankings(bottom10)}
+  </div>
+  <div class="card">
+    <div class="card-header">Complete QPIX Rankings</div>
+    ${assistRankings(ranked)}
   </div>
   <div style="text-align:center;font-size:11px;color:#1e3a5f;line-height:1.8;">
     QPIX™ 13 Categories: Base Production · Shooting Efficiency · Proprietary Off/Def ± Split · Defensive Activity · Playmaking Quality · Offensive Context · Gravity Score · Context-Weighted +/− · Multi-Category Bonuses · Fatigue Curve · Momentum Swing · Second Unit Anchor · QPIX-R Referee Layer<br>
@@ -905,6 +945,9 @@ async function main() {
   console.log("1. Loading NBA data...");
   const { games, players: allPlayers } = loadNBAData();
   console.log(`   Found ${games.length} games, ${allPlayers.length} players`);
+  if (scoreSecondaryAssists && allPlayers.some(p => verifiedSecondaryAssists(p) === null)) {
+    throw new Error("Secondary-assist scoring requires verified tracking for every player");
+  }
 
   if (games.length === 0) {
     console.log("   No games found. Exiting.");
@@ -936,16 +979,28 @@ async function main() {
     const gameContext = buildGameContext(p, gamePlayers, gameResult);
     const result = computeQPIX(p, gameContext);
     return { ...p, ...result };
-  }).sort((a, b) => b.score - a.score);
+  }).sort((a, b) => b.score - a.score).map((p, i) => ({
+    ...p, rank: i + 1, top10_eligible: Number(p.minutes || 0) > 8,
+  }));
 
-  const top10 = scoredPlayers.slice(0, 10);
+  const eligiblePlayers = scoredPlayers.filter(p => p.top10_eligible);
+  const top10 = eligiblePlayers.slice(0, 10);
+  const bottom10 = eligiblePlayers.slice(-10).reverse();
+  if (process.env.QPIX_SCORED_OUTPUT) {
+    const report = {
+      games: gameResults, players: scoredPlayers,
+      leaderboards: { top10: top10.map(p => p.player_id), bottom10: bottom10.map(p => p.player_id) },
+      secondary_assists: { enabled: scoreSecondaryAssists, weight: secondaryAssistWeight },
+    };
+    writeFileSync(process.env.QPIX_SCORED_OUTPUT, JSON.stringify(report, null, 2));
+  }
   console.log(`   Top: ${top10[0]?.name} | QPIX: ${top10[0]?.score} | QPIX-R: ${top10[0]?.qpixR}`);
 
   writeFamiliarityReport(scoredPlayers, gameResults, `${date.year}-${date.month}-${date.day}`);
   console.log("   dashboard/familiarity.json written");
 
   console.log("4. Building dashboard...");
-  const dashboardHTML = buildDashboardHTML(top10, gameResults, date.label);
+  const dashboardHTML = buildDashboardHTML(top10, bottom10, scoredPlayers, gameResults, date.label);
 
   // Write into the repo's dashboard/ folder (what Pages uploads)
   const outDir = join(process.cwd(), "dashboard");

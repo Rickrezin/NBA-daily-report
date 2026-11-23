@@ -19,6 +19,9 @@ jobs:
     env:
       ENABLE_NBA_CDN: 'true'
       ENABLE_NBA_V3: 'false'
+      ENABLE_NBA_SECONDARY_ASSISTS: ${{ vars.ENABLE_NBA_SECONDARY_ASSISTS || 'false' }}
+      QPIX_ENABLE_SECONDARY_ASSISTS: ${{ vars.QPIX_ENABLE_SECONDARY_ASSISTS || 'false' }}
+      QPIX_SECONDARY_ASSIST_WEIGHT: ${{ vars.QPIX_SECONDARY_ASSIST_WEIGHT || '0.75' }}
       QPIX_ENGINE_REVISION: ${{ github.sha }}
     steps:
       - name: Checkout repo

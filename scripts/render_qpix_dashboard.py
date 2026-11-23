@@ -48,24 +48,26 @@ def render():
     provisional = "provisional" in path.name or "PROVISIONAL" in str(report.get("status", "")).upper() or "SHADOW" in str(report.get("status", "")).upper()
     status = "PROVISIONAL / SHADOW — NOT OFFICIALLY CERTIFIED" if provisional else "PUBLISHED QPIX RESULTS"
     players = report["players"]
-    by_id = {str(p.get("player_id")): p for p in players}
-    eligible = [p for p in players if float(p.get("minutes") or 0) > 8]
-    lb = report["leaderboards"]
-    def get_ranked(key, reverse):
-        ranked = [by_id[str(pid)] for pid in lb.get(key, []) if str(pid) in by_id]
-        ranked = [p for p in ranked if float(p.get("minutes") or 0) > 8]
-        if not ranked:
-            ranked = sorted(eligible, key=lambda p: float(p.get("raw_qpix_shadow") if provisional else p.get("raw_qpix", p.get("raw_qpix_shadow", 0)) or 0), reverse=reverse)[:10]
-        return ranked[:10]
-
-    top = get_ranked("top10", True)
-    bottom = get_ranked("bottom10", False)
     def score(p, kind="raw"):
         keys = ["raw_qpix_shadow", "raw_qpix"] if kind == "raw" else ["qpix_r_shadow", "qpix_r"]
         if not provisional:
             keys.reverse()
         return next((p[k] for k in keys if p.get(k) is not None), None)
 
+    by_id = {str(p.get("player_id")): p for p in players}
+    ranked_players = sorted(players, key=lambda p: float(score(p)) if score(p) is not None else -float("inf"),
+                            reverse=True)
+    eligible = [p for p in ranked_players if float(p.get("minutes") or 0) > 8]
+    lb = report["leaderboards"]
+    def get_ranked(key, reverse):
+        ranked = [by_id[str(pid)] for pid in lb.get(key, []) if str(pid) in by_id]
+        ranked = [p for p in ranked if float(p.get("minutes") or 0) > 8]
+        if len(ranked) != min(len(eligible), 10):
+            ranked = eligible if reverse else list(reversed(eligible))
+        return ranked[:10]
+
+    top = get_ranked("top10", True)
+    bottom = get_ranked("bottom10", False)
     games = "".join(
         '<div class="game"><small>FINAL</small><div>' + esc(g.get("away_alias")) + ' <b>' + esc(g.get("away_points")) + '</b></div><div>' + esc(g.get("home_alias")) + ' <b>' + esc(g.get("home_points")) + '</b></div></div>'
         for g in report["games"]
@@ -73,12 +75,14 @@ def render():
     def leaderboard(items, bottom=False):
         rows = []
         for i, p in enumerate(items, 1):
-            rows.append('<tr><td>' + str(i) + '</td><td><strong>' + esc(p.get("name")) + '</strong><span class="sub">' + esc(p.get("team")) + ' · ' + esc(p.get("game")) + '</span></td><td>' + esc(p.get("points")) + '</td><td>' + esc(p.get("rebounds")) + '</td><td>' + esc(p.get("assists")) + '</td><td class="accent">' + esc(num(score(p))) + '</td>' + ('' if bottom else '<td>' + esc(num(score(p, "r"))) + '</td>') + '</tr>')
-        return '<div class="table-wrap"><table><thead><tr><th>#</th><th>Player</th><th>PTS</th><th>REB</th><th>AST</th><th>RAW</th>' + ('' if bottom else '<th>QPIX-R</th>') + '</tr></thead><tbody>' + "".join(rows) + '</tbody></table></div>'
+            cells = (p.get("points"), p.get("rebounds"), p.get("assists"), p.get("2AST"), p.get("weighted_assists"))
+            statistics = "".join("<td>" + esc(value) + "</td>" for value in cells)
+            rows.append('<tr><td>' + str(i) + '</td><td><strong>' + esc(p.get("name")) + '</strong><span class="sub">' + esc(p.get("team")) + ' · ' + esc(p.get("game")) + '</span></td>' + statistics + '<td class="accent">' + esc(num(score(p))) + '</td>' + ('' if bottom else '<td>' + esc(num(score(p, "r"))) + '</td>') + '</tr>')
+        return '<div class="table-wrap"><table><thead><tr><th>#</th><th>Player</th><th>PTS</th><th>REB</th><th>AST</th><th>2AST</th><th>Weighted AST</th><th>RAW</th>' + ('' if bottom else '<th>QPIX-R</th>') + '</tr></thead><tbody>' + "".join(rows) + '</tbody></table></div>'
 
     all_rows = []
-    for p in sorted(players, key=lambda v: (str(v.get("team")), str(v.get("name")))):
-        details = '<details><summary>' + esc(p.get("name")) + ' — ' + esc(p.get("team")) + ' · ' + esc(num(score(p))) + ' RAW</summary><div class="stats">Minutes: ' + esc(p.get("minutes")) + ' · PTS: ' + esc(p.get("points")) + ' · REB: ' + esc(p.get("rebounds")) + ' · AST: ' + esc(p.get("assists")) + ' · STL: ' + esc(p.get("steals")) + ' · BLK: ' + esc(p.get("blocks")) + ' · TO: ' + esc(p.get("turnovers")) + ' · +/-: ' + esc(p.get("plus_minus")) + ' · QPIX-R: ' + esc(num(score(p, "r"))) + '</div></details>'
+    for rank, p in enumerate(ranked_players, 1):
+        details = '<details><summary>#' + str(rank) + ' · ' + esc(p.get("name")) + ' — ' + esc(p.get("team")) + ' · ' + esc(num(score(p))) + ' RAW</summary><div class="stats">Minutes: ' + esc(p.get("minutes")) + ' · PTS: ' + esc(p.get("points")) + ' · REB: ' + esc(p.get("rebounds")) + ' · AST: ' + esc(p.get("assists")) + ' · 2AST: ' + esc(p.get("2AST")) + ' · Weighted AST: ' + esc(p.get("weighted_assists")) + ' · STL: ' + esc(p.get("steals")) + ' · BLK: ' + esc(p.get("blocks")) + ' · TO: ' + esc(p.get("turnovers")) + ' · +/-: ' + esc(p.get("plus_minus")) + ' · QPIX-R: ' + esc(num(score(p, "r"))) + '</div></details>'
         all_rows.append(details)
 
     base = "https://github.com/Rickrezin/NBA-daily-report/blob/main/"
@@ -112,6 +116,12 @@ a{color:#fdba74}footer{margin:20px 0;color:#94a3b8;font-size:12px}
 <section><h2>Sources and Certification</h2><p>__QUALITY__</p><p><a href="__REPORTLINK__">Daily narrative</a> · <a href="__JSONLINK__">Every-player JSON</a> · <a href="__CSVLINK__">Every-player CSV</a></p></section>
 <footer>QCore Labs © 2026 · QPIX™ — Because the box score never tells the whole story.</footer></main></body></html>"""
     quality = ("Experimental QCore ratings; provider individual ORtg/DRtg and player-level paint, fast-break and second-chance inputs remain unverified. C6 and parts of C11 cannot be certified. Scores are provisional/shadow, not official." if provisional else "Published report; see the source audit for certification and metric availability.")
+    tracking = report.get("data_quality", {}).get("Secondary assists")
+    if isinstance(tracking, dict):
+        if provisional:
+            quality = "Shadow scoring preview. See the source audit for the inputs and coverage."
+        quality += f" Secondary-assist coverage: {tracking['verified']}/{tracking['total']} player records."
+        quality += " Weighted assists applied to C5." if tracking["score_enabled"] else " Baseline C5 scoring."
     substitutions = {
         "__DATE__": esc(display_date), "__STATUS__": esc(status), "__GAMES__": str(len(report["games"])), "__PLAYERS__": str(len(players)), "__ELIGIBLE__": str(len(eligible)),
         "__SCORES__": games, "__TOP__": leaderboard(top), "__BOTTOM__": leaderboard(bottom, True), "__ALL__": "".join(all_rows),
@@ -121,7 +131,7 @@ a{color:#fdba74}footer{margin:20px 0;color:#94a3b8;font-size:12px}
         html_page = html_page.replace(marker, val)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(html_page, encoding="utf-8")
-    if date_et not in OUT.read_text() and display_date not in OUT.read_text():
+    if display_date not in OUT.read_text(encoding="utf-8"):
         raise SystemExit("Dashboard read-back verification failed")
     print(f"Rendered {OUT}: {date_et}, {len(report['games'])} finals, {len(players)} players, {len(top)} top and {len(bottom)} bottom; provisional={provisional}")
 
