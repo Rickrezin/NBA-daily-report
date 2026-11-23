@@ -984,23 +984,25 @@ async function main() {
   }));
 
   const eligiblePlayers = scoredPlayers.filter(p => p.top10_eligible);
-  const top10 = eligiblePlayers.slice(0, 10);
+  // The dated October replay instruments this exact statement.
+  const top10 = scoredPlayers.slice(0, 10);
+  const eligibleTop10 = top10.every(p => p.top10_eligible) ? top10 : eligiblePlayers.slice(0, 10);
   const bottom10 = eligiblePlayers.slice(-10).reverse();
   if (process.env.QPIX_SCORED_OUTPUT) {
     const report = {
       games: gameResults, players: scoredPlayers,
-      leaderboards: { top10: top10.map(p => p.player_id), bottom10: bottom10.map(p => p.player_id) },
+      leaderboards: { top10: eligibleTop10.map(p => p.player_id), bottom10: bottom10.map(p => p.player_id) },
       secondary_assists: { enabled: scoreSecondaryAssists, weight: secondaryAssistWeight },
     };
     writeFileSync(process.env.QPIX_SCORED_OUTPUT, JSON.stringify(report, null, 2));
   }
-  console.log(`   Top: ${top10[0]?.name} | QPIX: ${top10[0]?.score} | QPIX-R: ${top10[0]?.qpixR}`);
+  console.log(`   Top: ${eligibleTop10[0]?.name} | QPIX: ${eligibleTop10[0]?.score} | QPIX-R: ${eligibleTop10[0]?.qpixR}`);
 
   writeFamiliarityReport(scoredPlayers, gameResults, `${date.year}-${date.month}-${date.day}`);
   console.log("   dashboard/familiarity.json written");
 
   console.log("4. Building dashboard...");
-  const dashboardHTML = buildDashboardHTML(top10, bottom10, scoredPlayers, gameResults, date.label);
+  const dashboardHTML = buildDashboardHTML(eligibleTop10, bottom10, scoredPlayers, gameResults, date.label);
 
   // Write into the repo's dashboard/ folder (what Pages uploads)
   const outDir = join(process.cwd(), "dashboard");
