@@ -1,0 +1,86 @@
+{
+  "2025-26-unfiltered-all": {
+    "url": "https://stats.nba.com/stats/leaguedashplayerptshot?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&DribbleRange=&GameSegment=&GeneralRange=&Height=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerExperience=&PlayerPosition=&SeasonSegment=&ShotClockRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=&LeagueID=00&Season=2025-26&SeasonType=Regular+Season&PerMode=Totals&CloseDefDistRange=&ShotDistRange=",
+    "sha256": "caf8633cfd5cedbd1b78a439b89e4f50e1a8a28b9518b1352bf7084ce879b4cf"
+  },
+  "2025-26-unfiltered-10plus": {
+    "url": "https://stats.nba.com/stats/leaguedashplayerptshot?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&DribbleRange=&GameSegment=&GeneralRange=&Height=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerExperience=&PlayerPosition=&SeasonSegment=&ShotClockRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=&LeagueID=00&Season=2025-26&SeasonType=Regular+Season&PerMode=Totals&CloseDefDistRange=&ShotDistRange=%3E%3D10.0",
+    "sha256": "7dedbc4f7c60140de3f3439a24176b96c69ee363d2f76798d060cc9c5bbb6bd2"
+  },
+  "2025-26-very-tight-all": {
+    "url": "https://stats.nba.com/stats/leaguedashplayerptshot?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&DribbleRange=&GameSegment=&GeneralRange=&Height=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerExperience=&PlayerPosition=&SeasonSegment=&ShotClockRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=&LeagueID=00&Season=2025-26&SeasonType=Regular+Season&PerMode=Totals&CloseDefDistRange=0-2+Feet+-+Very+Tight&ShotDistRange=",
+    "sha256": "8af36a86d9561e29ca2f247cbd1ad3e99ec62d329b93c5b2a1db6abad2a20cd5"
+  },
+  "2025-26-very-tight-10plus": {
+    "url": "https://stats.nba.com/stats/leaguedashplayerptshot?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&DribbleRange=&GameSegment=&GeneralRange=&Height=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerExperience=&PlayerPosition=&SeasonSegment=&ShotClockRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=&LeagueID=00&Season=2025-26&SeasonType=Regular+Season&PerMode=Totals&CloseDefDistRange=0-2+Feet+-+Very+Tight&ShotDistRange=%3E%3D10.0",
+    "sha256": "948d5ca6352885883180b4c1a3487681a9035c01c77ba8f230df9b99efa2f610"
+  },
+  "2025-26-unfiltered-16plus": {
+    "url": "https://stats.nba.com/stats/leaguedashplayerptshot?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&DribbleRange=&GameSegment=&GeneralRange=&Height=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerExperience=&PlayerPosition=&SeasonSegment=&ShotClockRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=&LeagueID=00&Season=2025-26&SeasonType=Regular+Season&PerMode=Totals&CloseDefDistRange=&ShotDistRange=%3E%3D16.0",
+    "error": "HTTP 400"
+  },
+  "2025-26-tight-all": {
+    "url": "https://stats.nba.com/stats/leaguedashplayerptshot?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&DribbleRange=&GameSegment=&GeneralRange=&Height=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerExperience=&PlayerPosition=&SeasonSegment=&ShotClockRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=&LeagueID=00&Season=2025-26&SeasonType=Regular+Season&PerMode=Totals&CloseDefDistRange=2-4+Feet+-+Tight&ShotDistRange=",
+    "sha256": "465cdbf81161592bf88cfa810f54643473949d47f47ca471d5e81525860d25c9"
+  },
+  "2025-26-tight-10plus": {
+    "url": "https://stats.nba.com/stats/leaguedashplayerptshot?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&DribbleRange=&GameSegment=&GeneralRange=&Height=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerExperience=&PlayerPosition=&SeasonSegment=&ShotClockRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=&LeagueID=00&Season=2025-26&SeasonType=Regular+Season&PerMode=Totals&CloseDefDistRange=2-4+Feet+-+Tight&ShotDistRange=%3E%3D10.0",
+    "sha256": "c310feba5ea5a06ce12945295dd02e8557ab713c4019d920295bdbc050ad5ef6"
+  },
+  "2025-26-open-all": {
+    "url": "https://stats.nba.com/stats/leaguedashplayerptshot?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&DribbleRange=&GameSegment=&GeneralRange=&Height=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerExperience=&PlayerPosition=&SeasonSegment=&ShotClockRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=&LeagueID=00&Season=2025-26&SeasonType=Regular+Season&PerMode=Totals&CloseDefDistRange=4-6+Feet+-+Open&ShotDistRange=",
+    "sha256": "c8799a542e61a30dc0f9979e05224e7fbd203f4728848edccb84597997008be0"
+  },
+  "2025-26-open-10plus": {
+    "url": "https://stats.nba.com/stats/leaguedashplayerptshot?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&DribbleRange=&GameSegment=&GeneralRange=&Height=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerExperience=&PlayerPosition=&SeasonSegment=&ShotClockRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=&LeagueID=00&Season=2025-26&SeasonType=Regular+Season&PerMode=Totals&CloseDefDistRange=4-6+Feet+-+Open&ShotDistRange=%3E%3D10.0",
+    "sha256": "226210812c48f0d0d1201b485b4be4f6e3875bdd55fe73631cc9f3dc0b1fb5ca"
+  },
+  "2025-26-wide-open-all": {
+    "url": "https://stats.nba.com/stats/leaguedashplayerptshot?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&DribbleRange=&GameSegment=&GeneralRange=&Height=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerExperience=&PlayerPosition=&SeasonSegment=&ShotClockRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=&LeagueID=00&Season=2025-26&SeasonType=Regular+Season&PerMode=Totals&CloseDefDistRange=6%2B+Feet+-+Wide+Open&ShotDistRange=",
+    "sha256": "efca5c6d9f44f51e6f84e072022a86b0a9cb8d8ed4f9e367892fa33b8104a8d5"
+  },
+  "2025-26-wide-open-10plus": {
+    "url": "https://stats.nba.com/stats/leaguedashplayerptshot?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&DribbleRange=&GameSegment=&GeneralRange=&Height=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerExperience=&PlayerPosition=&SeasonSegment=&ShotClockRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=&LeagueID=00&Season=2025-26&SeasonType=Regular+Season&PerMode=Totals&CloseDefDistRange=6%2B+Feet+-+Wide+Open&ShotDistRange=%3E%3D10.0",
+    "sha256": "af70dae92cb7528d711500841b1b332de7782be075fd44863e743b194531f683"
+  },
+  "2024-25-unfiltered-all": {
+    "url": "https://stats.nba.com/stats/leaguedashplayerptshot?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&DribbleRange=&GameSegment=&GeneralRange=&Height=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerExperience=&PlayerPosition=&SeasonSegment=&ShotClockRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=&LeagueID=00&Season=2024-25&SeasonType=Regular+Season&PerMode=Totals&CloseDefDistRange=&ShotDistRange=",
+    "sha256": "8fec66227a2b64b9b350c77513362caa84f88564e7d8480ba44cca1389142ad7"
+  },
+  "2024-25-unfiltered-10plus": {
+    "url": "https://stats.nba.com/stats/leaguedashplayerptshot?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&DribbleRange=&GameSegment=&GeneralRange=&Height=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerExperience=&PlayerPosition=&SeasonSegment=&ShotClockRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=&LeagueID=00&Season=2024-25&SeasonType=Regular+Season&PerMode=Totals&CloseDefDistRange=&ShotDistRange=%3E%3D10.0",
+    "sha256": "e5731e276873966643a9891061d475bac4198d9c2a6117cfff8a6efc5eeafd58"
+  },
+  "2024-25-very-tight-all": {
+    "url": "https://stats.nba.com/stats/leaguedashplayerptshot?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&DribbleRange=&GameSegment=&GeneralRange=&Height=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerExperience=&PlayerPosition=&SeasonSegment=&ShotClockRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=&LeagueID=00&Season=2024-25&SeasonType=Regular+Season&PerMode=Totals&CloseDefDistRange=0-2+Feet+-+Very+Tight&ShotDistRange=",
+    "sha256": "e2210991dbeb9e8b9ca0ca20435626c472892c18d3257f73a31d9fb437362cc2"
+  },
+  "2024-25-very-tight-10plus": {
+    "url": "https://stats.nba.com/stats/leaguedashplayerptshot?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&DribbleRange=&GameSegment=&GeneralRange=&Height=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerExperience=&PlayerPosition=&SeasonSegment=&ShotClockRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=&LeagueID=00&Season=2024-25&SeasonType=Regular+Season&PerMode=Totals&CloseDefDistRange=0-2+Feet+-+Very+Tight&ShotDistRange=%3E%3D10.0",
+    "sha256": "b0fdca1ad03903dd98aa311adc3c106f7ba8ebaa7ca5c44d60ef51bf756e5861"
+  },
+  "2024-25-tight-all": {
+    "url": "https://stats.nba.com/stats/leaguedashplayerptshot?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&DribbleRange=&GameSegment=&GeneralRange=&Height=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerExperience=&PlayerPosition=&SeasonSegment=&ShotClockRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=&LeagueID=00&Season=2024-25&SeasonType=Regular+Season&PerMode=Totals&CloseDefDistRange=2-4+Feet+-+Tight&ShotDistRange=",
+    "sha256": "1139b81b7f63d04a93f03dc1aa7c37e907fda514352ad81b2cb7f750e0b65130"
+  },
+  "2024-25-tight-10plus": {
+    "url": "https://stats.nba.com/stats/leaguedashplayerptshot?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&DribbleRange=&GameSegment=&GeneralRange=&Height=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerExperience=&PlayerPosition=&SeasonSegment=&ShotClockRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=&LeagueID=00&Season=2024-25&SeasonType=Regular+Season&PerMode=Totals&CloseDefDistRange=2-4+Feet+-+Tight&ShotDistRange=%3E%3D10.0",
+    "sha256": "78c623b1cca78b8144a243fa4d1a7c5406d999480a8aacea1452842d2bf64809"
+  },
+  "2024-25-open-all": {
+    "url": "https://stats.nba.com/stats/leaguedashplayerptshot?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&DribbleRange=&GameSegment=&GeneralRange=&Height=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerExperience=&PlayerPosition=&SeasonSegment=&ShotClockRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=&LeagueID=00&Season=2024-25&SeasonType=Regular+Season&PerMode=Totals&CloseDefDistRange=4-6+Feet+-+Open&ShotDistRange=",
+    "sha256": "b143b4c976f6edea692b345017eaa47c9c30794cec8eb7c79694ae726573da44"
+  },
+  "2024-25-open-10plus": {
+    "url": "https://stats.nba.com/stats/leaguedashplayerptshot?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&DribbleRange=&GameSegment=&GeneralRange=&Height=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerExperience=&PlayerPosition=&SeasonSegment=&ShotClockRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=&LeagueID=00&Season=2024-25&SeasonType=Regular+Season&PerMode=Totals&CloseDefDistRange=4-6+Feet+-+Open&ShotDistRange=%3E%3D10.0",
+    "sha256": "c2f56d95212a11092594e1cd7fc17f8dd6e60e9382d20da1e280ad52f3d9ac44"
+  },
+  "2024-25-wide-open-all": {
+    "url": "https://stats.nba.com/stats/leaguedashplayerptshot?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&DribbleRange=&GameSegment=&GeneralRange=&Height=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerExperience=&PlayerPosition=&SeasonSegment=&ShotClockRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=&LeagueID=00&Season=2024-25&SeasonType=Regular+Season&PerMode=Totals&CloseDefDistRange=6%2B+Feet+-+Wide+Open&ShotDistRange=",
+    "sha256": "b327bd03f60eb91223238c0ec3d5f3156e0d02fcc9e1b4654b8be4afe3ee6e1f"
+  },
+  "2024-25-wide-open-10plus": {
+    "url": "https://stats.nba.com/stats/leaguedashplayerptshot?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&DribbleRange=&GameSegment=&GeneralRange=&Height=&LastNGames=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&Period=&PlayerExperience=&PlayerPosition=&SeasonSegment=&ShotClockRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=&LeagueID=00&Season=2024-25&SeasonType=Regular+Season&PerMode=Totals&CloseDefDistRange=6%2B+Feet+-+Wide+Open&ShotDistRange=%3E%3D10.0",
+    "sha256": "a89deda10702b5c9fd3a4f39653cd81538df14584aaba006b30849caa87e5237"
+  }
+}
