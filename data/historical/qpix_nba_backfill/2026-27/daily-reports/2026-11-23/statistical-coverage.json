@@ -1,0 +1,2956 @@
+{
+  "schema_version": 1,
+  "date_et": "2026-11-23",
+  "season": "2026-27",
+  "game_count": 10,
+  "archive_status": "INCOMPLETE",
+  "coverage_by_endpoint": {
+    "cdn": {
+      "VERIFIED": 10
+    },
+    "referees": {
+      "VERIFIED": 10
+    },
+    "traditional": {
+      "VERIFIED": 9,
+      "PARTIAL": 1
+    },
+    "advanced": {
+      "VERIFIED": 10
+    },
+    "misc": {
+      "VERIFIED": 10
+    },
+    "four-factors": {
+      "VERIFIED": 10
+    },
+    "tracking": {
+      "VERIFIED": 10
+    },
+    "matchups": {
+      "VERIFIED": 7,
+      "PARTIAL": 3
+    },
+    "defense": {
+      "VERIFIED": 7,
+      "PARTIAL": 3
+    },
+    "hustle": {
+      "VERIFIED": 4,
+      "PARTIAL": 6
+    },
+    "pbp": {
+      "VERIFIED": 10
+    },
+    "passing": {
+      "VERIFIED": 9,
+      "PARTIAL": 1
+    },
+    "secondary-assists": {
+      "VERIFIED": 10
+    }
+  },
+  "gaps_by_endpoint": {
+    "traditional": [
+      "0022600289"
+    ],
+    "matchups": [
+      "0022600290",
+      "0022600294",
+      "0022600296"
+    ],
+    "defense": [
+      "0022600290",
+      "0022600294",
+      "0022600296"
+    ],
+    "hustle": [
+      "0022600288",
+      "0022600290",
+      "0022600291",
+      "0022600292",
+      "0022600295",
+      "0022600296"
+    ],
+    "passing": [
+      "0022600296"
+    ]
+  },
+  "games": {
+    "0022600287": {
+      "away": "MEM",
+      "home": "CHA",
+      "score": [
+        117,
+        111
+      ],
+      "endpoints": {
+        "cdn": {
+          "status": "VERIFIED",
+          "source": "raw/0022600287-cdn.json",
+          "active_players": 22
+        },
+        "referees": {
+          "status": "VERIFIED",
+          "source": "raw/0022600287-cdn.json",
+          "json_pointer": "/game/officials",
+          "crew": [
+            {
+              "jerseyNum": "60",
+              "assignment": "OFFICIAL1",
+              "personId": 202058,
+              "name": "James Williams",
+              "nameI": "J. Williams",
+              "firstName": "James",
+              "familyName": "Williams"
+            },
+            {
+              "jerseyNum": "23",
+              "assignment": "OFFICIAL2",
+              "personId": 202027,
+              "name": "Tre Maddox",
+              "nameI": "T. Maddox",
+              "firstName": "Tre",
+              "familyName": "Maddox"
+            },
+            {
+              "jerseyNum": "82",
+              "assignment": "OFFICIAL3",
+              "personId": 203270,
+              "name": "JP Primm",
+              "nameI": "J. Primm",
+              "firstName": "JP",
+              "familyName": "Primm"
+            }
+          ]
+        },
+        "traditional": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600287-traditional.json"
+        },
+        "advanced": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600287-advanced.json"
+        },
+        "misc": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600287-misc.json"
+        },
+        "four-factors": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600287-four-factors.json"
+        },
+        "tracking": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600287-tracking.json"
+        },
+        "matchups": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600287-matchups.json"
+        },
+        "defense": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600287-defense.json"
+        },
+        "hustle": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600287-hustle.json"
+        },
+        "pbp": {
+          "status": "VERIFIED",
+          "events": 594,
+          "last_period": 4,
+          "starters": {
+            "awayTeam": [
+              1629660,
+              1631200,
+              1641744,
+              1642377,
+              1642907
+            ],
+            "homeTeam": [
+              1629632,
+              1629675,
+              1631217,
+              1641706,
+              1642883
+            ]
+          },
+          "substitutions": 158,
+          "substitution_team_ids": [
+            1610612763,
+            1610612766
+          ],
+          "events_with_possession_team": 592,
+          "field_goal_events": 173,
+          "events_with_assist_player": 41,
+          "source": "raw/0022600287-pbp.json"
+        },
+        "passing": {
+          "status": "VERIFIED",
+          "source": "raw/2026-11-23-passing.json",
+          "method": "NBA passing date totals joined on team, player and minutes with GP=1",
+          "source_error": null,
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": []
+        },
+        "secondary-assists": {
+          "status": "VERIFIED",
+          "sources": [
+            "raw/2026-11-23-passing.json",
+            "raw/0022600287-tracking.json"
+          ],
+          "method": "Official Passing SECONDARY_AST and verified Tracking secondaryAssists; conflicting values excluded",
+          "conflicts": [],
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": []
+        }
+      },
+      "q_ortg_q_drtg_input_inventory": {
+        "possession_and_lineup_reconstruction_sources_present": true,
+        "final_box_and_starters": "raw/0022600287-cdn.json",
+        "event_stream": "raw/0022600287-pbp.json",
+        "official_ratings_reference": "raw/0022600287-advanced.json",
+        "four_factors": "raw/0022600287-four-factors.json",
+        "tracking_and_defense": {
+          "tracking": "VERIFIED",
+          "matchups": "VERIFIED",
+          "defense": "VERIFIED",
+          "hustle": "VERIFIED"
+        },
+        "passing_and_secondary_assists": {
+          "passing": "VERIFIED",
+          "secondary-assists": "VERIFIED"
+        },
+        "calculation_performed": false
+      }
+    },
+    "0022600288": {
+      "away": "POR",
+      "home": "PHI",
+      "score": [
+        128,
+        111
+      ],
+      "endpoints": {
+        "cdn": {
+          "status": "VERIFIED",
+          "source": "raw/0022600288-cdn.json",
+          "active_players": 25
+        },
+        "referees": {
+          "status": "VERIFIED",
+          "source": "raw/0022600288-cdn.json",
+          "json_pointer": "/game/officials",
+          "crew": [
+            {
+              "jerseyNum": "34",
+              "assignment": "OFFICIAL1",
+              "personId": 201246,
+              "name": "Kevin Cutler",
+              "nameI": "K. Cutler",
+              "firstName": "Kevin",
+              "familyName": "Cutler"
+            },
+            {
+              "jerseyNum": "98",
+              "assignment": "OFFICIAL2",
+              "personId": 1629178,
+              "name": "Sha'Rae Mitchell",
+              "nameI": "S. Mitchell",
+              "firstName": "Sha'Rae",
+              "familyName": "Mitchell"
+            },
+            {
+              "jerseyNum": "52",
+              "assignment": "OFFICIAL3",
+              "personId": 202053,
+              "name": "Scott Twardoski",
+              "nameI": "S. Twardoski",
+              "firstName": "Scott",
+              "familyName": "Twardoski"
+            }
+          ]
+        },
+        "traditional": {
+          "status": "VERIFIED",
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600288-traditional.json"
+        },
+        "advanced": {
+          "status": "VERIFIED",
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600288-advanced.json"
+        },
+        "misc": {
+          "status": "VERIFIED",
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600288-misc.json"
+        },
+        "four-factors": {
+          "status": "VERIFIED",
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600288-four-factors.json"
+        },
+        "tracking": {
+          "status": "VERIFIED",
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600288-tracking.json"
+        },
+        "matchups": {
+          "status": "VERIFIED",
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600288-matchups.json"
+        },
+        "defense": {
+          "status": "VERIFIED",
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600288-defense.json"
+        },
+        "hustle": {
+          "status": "PARTIAL",
+          "reason": "Missing or incorrect awayTeam",
+          "source": "statistical-audit/unverified/0022600288-hustle.json",
+          "other_attempt": {
+            "status": "INVALID",
+            "reason": "Missing or incorrect awayTeam",
+            "source": "statistical-audit/retry/0022600288-hustle.json"
+          },
+          "daily_hustle_fallback": {
+            "source": "raw/2026-11-23-daily-hustle.json",
+            "error": null,
+            "player_ids_recovered": [
+              2544,
+              201950,
+              203081,
+              203484,
+              1627759,
+              1629014,
+              1629057,
+              1629731,
+              1630166,
+              1630178,
+              1630703,
+              1631133,
+              1631230,
+              1631321,
+              1641737,
+              1641739,
+              1642270,
+              1642845,
+              1642905,
+              1643257
+            ],
+            "original_game_response_status": "INVALID"
+          },
+          "active_players": 25,
+          "matched_players": 20,
+          "missing_player_ids": [
+            1630695,
+            1642348,
+            1642382,
+            1642889,
+            1642910
+          ],
+          "unexpected_player_ids": []
+        },
+        "pbp": {
+          "status": "VERIFIED",
+          "events": 581,
+          "last_period": 4,
+          "starters": {
+            "awayTeam": [
+              203081,
+              1630166,
+              1631321,
+              1641739,
+              1642270
+            ],
+            "homeTeam": [
+              2544,
+              1627759,
+              1630178,
+              1631133,
+              1642845
+            ]
+          },
+          "substitutions": 146,
+          "substitution_team_ids": [
+            1610612755,
+            1610612757
+          ],
+          "events_with_possession_team": 579,
+          "field_goal_events": 177,
+          "events_with_assist_player": 57,
+          "source": "raw/0022600288-pbp.json"
+        },
+        "passing": {
+          "status": "VERIFIED",
+          "source": "raw/2026-11-23-passing.json",
+          "method": "NBA passing date totals joined on team, player and minutes with GP=1",
+          "source_error": null,
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": []
+        },
+        "secondary-assists": {
+          "status": "VERIFIED",
+          "sources": [
+            "raw/2026-11-23-passing.json",
+            "raw/0022600288-tracking.json"
+          ],
+          "method": "Official Passing SECONDARY_AST and verified Tracking secondaryAssists; conflicting values excluded",
+          "conflicts": [],
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": []
+        }
+      },
+      "q_ortg_q_drtg_input_inventory": {
+        "possession_and_lineup_reconstruction_sources_present": true,
+        "final_box_and_starters": "raw/0022600288-cdn.json",
+        "event_stream": "raw/0022600288-pbp.json",
+        "official_ratings_reference": "raw/0022600288-advanced.json",
+        "four_factors": "raw/0022600288-four-factors.json",
+        "tracking_and_defense": {
+          "tracking": "VERIFIED",
+          "matchups": "VERIFIED",
+          "defense": "VERIFIED",
+          "hustle": "PARTIAL"
+        },
+        "passing_and_secondary_assists": {
+          "passing": "VERIFIED",
+          "secondary-assists": "VERIFIED"
+        },
+        "calculation_performed": false
+      }
+    },
+    "0022600289": {
+      "away": "OKC",
+      "home": "IND",
+      "score": [
+        120,
+        125
+      ],
+      "endpoints": {
+        "cdn": {
+          "status": "VERIFIED",
+          "source": "raw/0022600289-cdn.json",
+          "active_players": 21
+        },
+        "referees": {
+          "status": "VERIFIED",
+          "source": "raw/0022600289-cdn.json",
+          "json_pointer": "/game/officials",
+          "crew": [
+            {
+              "jerseyNum": "25",
+              "assignment": "OFFICIAL1",
+              "personId": 1146,
+              "name": "Tony Brothers",
+              "nameI": "T. Brothers",
+              "firstName": "Tony",
+              "familyName": "Brothers"
+            },
+            {
+              "jerseyNum": "13",
+              "assignment": "OFFICIAL2",
+              "personId": 1628953,
+              "name": "Ashley Moyer-Gleich",
+              "nameI": "A. Moyer-Gleich",
+              "firstName": "Ashley",
+              "familyName": "Moyer-Gleich"
+            },
+            {
+              "jerseyNum": "56",
+              "assignment": "OFFICIAL3",
+              "personId": 1627519,
+              "name": "John Conley",
+              "nameI": "J. Conley",
+              "firstName": "John",
+              "familyName": "Conley"
+            }
+          ]
+        },
+        "traditional": {
+          "status": "PARTIAL",
+          "active_players": 21,
+          "matched_players": 19,
+          "missing_player_ids": [
+            1626162,
+            1643552
+          ],
+          "unexpected_player_ids": [],
+          "disputed_rows": [
+            {
+              "player_id": 1626162,
+              "fields": {
+                "steals": {
+                  "cdn": 0,
+                  "traditional_v3": 1,
+                  "nba_pbp_steal_events": 0,
+                  "nba_pbp_source": "raw/0022600289-pbp.json"
+                }
+              }
+            },
+            {
+              "player_id": 1643552,
+              "fields": {
+                "steals": {
+                  "cdn": 1,
+                  "traditional_v3": 0,
+                  "nba_pbp_steal_events": 1,
+                  "nba_pbp_source": "raw/0022600289-pbp.json"
+                }
+              }
+            }
+          ],
+          "source": "raw/0022600289-traditional.json",
+          "other_attempt": {
+            "status": "PARTIAL",
+            "active_players": 21,
+            "matched_players": 19,
+            "missing_player_ids": [
+              1626162,
+              1643552
+            ],
+            "unexpected_player_ids": [],
+            "disputed_rows": [
+              {
+                "player_id": 1626162,
+                "fields": {
+                  "steals": {
+                    "cdn": 0,
+                    "traditional_v3": 1
+                  }
+                }
+              },
+              {
+                "player_id": 1643552,
+                "fields": {
+                  "steals": {
+                    "cdn": 1,
+                    "traditional_v3": 0
+                  }
+                }
+              }
+            ],
+            "source": "statistical-audit/retry/0022600289-traditional.json"
+          }
+        },
+        "advanced": {
+          "status": "VERIFIED",
+          "active_players": 21,
+          "matched_players": 21,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600289-advanced.json"
+        },
+        "misc": {
+          "status": "VERIFIED",
+          "active_players": 21,
+          "matched_players": 21,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600289-misc.json"
+        },
+        "four-factors": {
+          "status": "VERIFIED",
+          "active_players": 21,
+          "matched_players": 21,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600289-four-factors.json"
+        },
+        "tracking": {
+          "status": "VERIFIED",
+          "active_players": 21,
+          "matched_players": 21,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600289-tracking.json"
+        },
+        "matchups": {
+          "status": "VERIFIED",
+          "active_players": 21,
+          "matched_players": 21,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600289-matchups.json"
+        },
+        "defense": {
+          "status": "VERIFIED",
+          "active_players": 21,
+          "matched_players": 21,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600289-defense.json"
+        },
+        "hustle": {
+          "status": "VERIFIED",
+          "active_players": 21,
+          "matched_players": 21,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600289-hustle.json"
+        },
+        "pbp": {
+          "status": "VERIFIED",
+          "events": 592,
+          "last_period": 4,
+          "starters": {
+            "awayTeam": [
+              1628392,
+              1628983,
+              1642272,
+              1642349,
+              1642877
+            ],
+            "homeTeam": [
+              1626162,
+              1627783,
+              1627826,
+              1629614,
+              1643552
+            ]
+          },
+          "substitutions": 126,
+          "substitution_team_ids": [
+            1610612754,
+            1610612760
+          ],
+          "events_with_possession_team": 590,
+          "field_goal_events": 208,
+          "events_with_assist_player": 51,
+          "source": "raw/0022600289-pbp.json"
+        },
+        "passing": {
+          "status": "VERIFIED",
+          "source": "raw/2026-11-23-passing.json",
+          "method": "NBA passing date totals joined on team, player and minutes with GP=1",
+          "source_error": null,
+          "active_players": 21,
+          "matched_players": 21,
+          "missing_player_ids": [],
+          "unexpected_player_ids": []
+        },
+        "secondary-assists": {
+          "status": "VERIFIED",
+          "sources": [
+            "raw/2026-11-23-passing.json",
+            "raw/0022600289-tracking.json"
+          ],
+          "method": "Official Passing SECONDARY_AST and verified Tracking secondaryAssists; conflicting values excluded",
+          "conflicts": [],
+          "active_players": 21,
+          "matched_players": 21,
+          "missing_player_ids": [],
+          "unexpected_player_ids": []
+        }
+      },
+      "q_ortg_q_drtg_input_inventory": {
+        "possession_and_lineup_reconstruction_sources_present": true,
+        "final_box_and_starters": "raw/0022600289-cdn.json",
+        "event_stream": "raw/0022600289-pbp.json",
+        "official_ratings_reference": "raw/0022600289-advanced.json",
+        "four_factors": "raw/0022600289-four-factors.json",
+        "tracking_and_defense": {
+          "tracking": "VERIFIED",
+          "matchups": "VERIFIED",
+          "defense": "VERIFIED",
+          "hustle": "VERIFIED"
+        },
+        "passing_and_secondary_assists": {
+          "passing": "VERIFIED",
+          "secondary-assists": "VERIFIED"
+        },
+        "calculation_performed": false
+      }
+    },
+    "0022600290": {
+      "away": "MIL",
+      "home": "TOR",
+      "score": [
+        116,
+        111
+      ],
+      "endpoints": {
+        "cdn": {
+          "status": "VERIFIED",
+          "source": "raw/0022600290-cdn.json",
+          "active_players": 22
+        },
+        "referees": {
+          "status": "VERIFIED",
+          "source": "raw/0022600290-cdn.json",
+          "json_pointer": "/game/officials",
+          "crew": [
+            {
+              "jerseyNum": "4",
+              "assignment": "OFFICIAL1",
+              "personId": 2882,
+              "name": "Sean Wright",
+              "nameI": "S. Wright",
+              "firstName": "Sean",
+              "familyName": "Wright"
+            },
+            {
+              "jerseyNum": "68",
+              "assignment": "OFFICIAL2",
+              "personId": 1627962,
+              "name": "Jacyn Goble",
+              "nameI": "J. Goble",
+              "firstName": "Jacyn",
+              "familyName": "Goble"
+            },
+            {
+              "jerseyNum": "43",
+              "assignment": "OFFICIAL3",
+              "personId": 202901,
+              "name": "Matt Myers",
+              "nameI": "M. Myers",
+              "firstName": "Matt",
+              "familyName": "Myers"
+            }
+          ]
+        },
+        "traditional": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600290-traditional.json"
+        },
+        "advanced": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600290-advanced.json"
+        },
+        "misc": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600290-misc.json"
+        },
+        "four-factors": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600290-four-factors.json"
+        },
+        "tracking": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600290-tracking.json"
+        },
+        "matchups": {
+          "status": "PARTIAL",
+          "active_players": 22,
+          "matched_players": 21,
+          "missing_player_ids": [
+            1631260
+          ],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600290-matchups.json",
+          "other_attempt": {
+            "status": "PARTIAL",
+            "active_players": 22,
+            "matched_players": 21,
+            "missing_player_ids": [
+              1631260
+            ],
+            "unexpected_player_ids": [],
+            "source": "statistical-audit/retry/0022600290-matchups.json"
+          }
+        },
+        "defense": {
+          "status": "PARTIAL",
+          "active_players": 22,
+          "matched_players": 21,
+          "missing_player_ids": [
+            1631260
+          ],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600290-defense.json",
+          "other_attempt": {
+            "status": "PARTIAL",
+            "active_players": 22,
+            "matched_players": 21,
+            "missing_player_ids": [
+              1631260
+            ],
+            "unexpected_player_ids": [],
+            "source": "statistical-audit/retry/0022600290-defense.json"
+          }
+        },
+        "hustle": {
+          "status": "PARTIAL",
+          "active_players": 22,
+          "matched_players": 20,
+          "missing_player_ids": [
+            1631260,
+            1642857
+          ],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600290-hustle.json",
+          "other_attempt": {
+            "status": "PARTIAL",
+            "active_players": 22,
+            "matched_players": 20,
+            "missing_player_ids": [
+              1631260,
+              1642857
+            ],
+            "unexpected_player_ids": [],
+            "source": "statistical-audit/retry/0022600290-hustle.json"
+          },
+          "daily_hustle_fallback": {
+            "source": "raw/2026-11-23-daily-hustle.json",
+            "error": null,
+            "player_ids_recovered": [],
+            "original_game_response_status": "PARTIAL"
+          }
+        },
+        "pbp": {
+          "status": "VERIFIED",
+          "events": 590,
+          "last_period": 4,
+          "starters": {
+            "awayTeam": [
+              1626167,
+              1628398,
+              1629639,
+              1631157,
+              1631170
+            ],
+            "homeTeam": [
+              1627751,
+              1630193,
+              1630567,
+              1642266,
+              1643512
+            ]
+          },
+          "substitutions": 134,
+          "substitution_team_ids": [
+            1610612749,
+            1610612761
+          ],
+          "events_with_possession_team": 588,
+          "field_goal_events": 176,
+          "events_with_assist_player": 51,
+          "source": "raw/0022600290-pbp.json"
+        },
+        "passing": {
+          "status": "VERIFIED",
+          "source": "raw/2026-11-23-passing.json",
+          "method": "NBA passing date totals joined on team, player and minutes with GP=1",
+          "source_error": null,
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": []
+        },
+        "secondary-assists": {
+          "status": "VERIFIED",
+          "sources": [
+            "raw/2026-11-23-passing.json",
+            "raw/0022600290-tracking.json"
+          ],
+          "method": "Official Passing SECONDARY_AST and verified Tracking secondaryAssists; conflicting values excluded",
+          "conflicts": [],
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": []
+        }
+      },
+      "q_ortg_q_drtg_input_inventory": {
+        "possession_and_lineup_reconstruction_sources_present": true,
+        "final_box_and_starters": "raw/0022600290-cdn.json",
+        "event_stream": "raw/0022600290-pbp.json",
+        "official_ratings_reference": "raw/0022600290-advanced.json",
+        "four_factors": "raw/0022600290-four-factors.json",
+        "tracking_and_defense": {
+          "tracking": "VERIFIED",
+          "matchups": "PARTIAL",
+          "defense": "PARTIAL",
+          "hustle": "PARTIAL"
+        },
+        "passing_and_secondary_assists": {
+          "passing": "VERIFIED",
+          "secondary-assists": "VERIFIED"
+        },
+        "calculation_performed": false
+      }
+    },
+    "0022600291": {
+      "away": "BKN",
+      "home": "MIN",
+      "score": [
+        116,
+        142
+      ],
+      "endpoints": {
+        "cdn": {
+          "status": "VERIFIED",
+          "source": "raw/0022600291-cdn.json",
+          "active_players": 25
+        },
+        "referees": {
+          "status": "VERIFIED",
+          "source": "raw/0022600291-cdn.json",
+          "json_pointer": "/game/officials",
+          "crew": [
+            {
+              "jerseyNum": "48",
+              "assignment": "OFFICIAL1",
+              "personId": 1162,
+              "name": "Scott Foster",
+              "nameI": "S. Foster",
+              "firstName": "Scott",
+              "familyName": "Foster"
+            },
+            {
+              "jerseyNum": "30",
+              "assignment": "OFFICIAL2",
+              "personId": 1628951,
+              "name": "John Butler",
+              "nameI": "J. Butler",
+              "firstName": "John",
+              "familyName": "Butler"
+            },
+            {
+              "jerseyNum": "88",
+              "assignment": "OFFICIAL3",
+              "personId": 1629171,
+              "name": "Agon Abazi",
+              "nameI": "A. Abazi",
+              "firstName": "Agon",
+              "familyName": "Abazi"
+            }
+          ]
+        },
+        "traditional": {
+          "status": "VERIFIED",
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600291-traditional.json"
+        },
+        "advanced": {
+          "status": "VERIFIED",
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600291-advanced.json"
+        },
+        "misc": {
+          "status": "VERIFIED",
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600291-misc.json"
+        },
+        "four-factors": {
+          "status": "VERIFIED",
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600291-four-factors.json"
+        },
+        "tracking": {
+          "status": "VERIFIED",
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600291-tracking.json"
+        },
+        "matchups": {
+          "status": "VERIFIED",
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600291-matchups.json"
+        },
+        "defense": {
+          "status": "VERIFIED",
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600291-defense.json"
+        },
+        "hustle": {
+          "status": "PARTIAL",
+          "active_players": 25,
+          "matched_players": 18,
+          "missing_player_ids": [
+            1629611,
+            1631165,
+            1631169,
+            1641780,
+            1642262,
+            1642389,
+            1642912
+          ],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600291-hustle.json",
+          "other_attempt": {
+            "status": "PARTIAL",
+            "active_players": 25,
+            "matched_players": 18,
+            "missing_player_ids": [
+              1629611,
+              1631165,
+              1631169,
+              1641780,
+              1642262,
+              1642389,
+              1642912
+            ],
+            "unexpected_player_ids": [],
+            "source": "statistical-audit/retry/0022600291-hustle.json"
+          },
+          "daily_hustle_fallback": {
+            "source": "raw/2026-11-23-daily-hustle.json",
+            "error": null,
+            "player_ids_recovered": [],
+            "original_game_response_status": "PARTIAL"
+          }
+        },
+        "pbp": {
+          "status": "VERIFIED",
+          "events": 562,
+          "last_period": 4,
+          "starters": {
+            "awayTeam": [
+              203944,
+              1629008,
+              1630549,
+              1642874,
+              1643414
+            ],
+            "homeTeam": [
+              203497,
+              1630163,
+              1630183,
+              1630228,
+              1630245
+            ]
+          },
+          "substitutions": 130,
+          "substitution_team_ids": [
+            1610612750,
+            1610612751
+          ],
+          "events_with_possession_team": 560,
+          "field_goal_events": 164,
+          "events_with_assist_player": 67,
+          "source": "raw/0022600291-pbp.json"
+        },
+        "passing": {
+          "status": "VERIFIED",
+          "source": "raw/2026-11-23-passing.json",
+          "method": "NBA passing date totals joined on team, player and minutes with GP=1",
+          "source_error": null,
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": []
+        },
+        "secondary-assists": {
+          "status": "VERIFIED",
+          "sources": [
+            "raw/2026-11-23-passing.json",
+            "raw/0022600291-tracking.json"
+          ],
+          "method": "Official Passing SECONDARY_AST and verified Tracking secondaryAssists; conflicting values excluded",
+          "conflicts": [],
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": []
+        }
+      },
+      "q_ortg_q_drtg_input_inventory": {
+        "possession_and_lineup_reconstruction_sources_present": true,
+        "final_box_and_starters": "raw/0022600291-cdn.json",
+        "event_stream": "raw/0022600291-pbp.json",
+        "official_ratings_reference": "raw/0022600291-advanced.json",
+        "four_factors": "raw/0022600291-four-factors.json",
+        "tracking_and_defense": {
+          "tracking": "VERIFIED",
+          "matchups": "VERIFIED",
+          "defense": "VERIFIED",
+          "hustle": "PARTIAL"
+        },
+        "passing_and_secondary_assists": {
+          "passing": "VERIFIED",
+          "secondary-assists": "VERIFIED"
+        },
+        "calculation_performed": false
+      }
+    },
+    "0022600292": {
+      "away": "CLE",
+      "home": "CHI",
+      "score": [
+        108,
+        122
+      ],
+      "endpoints": {
+        "cdn": {
+          "status": "VERIFIED",
+          "source": "raw/0022600292-cdn.json",
+          "active_players": 22
+        },
+        "referees": {
+          "status": "VERIFIED",
+          "source": "raw/0022600292-cdn.json",
+          "json_pointer": "/game/officials",
+          "crew": [
+            {
+              "jerseyNum": "7",
+              "assignment": "OFFICIAL1",
+              "personId": 2530,
+              "name": "Ed Malloy",
+              "nameI": "E. Malloy",
+              "firstName": "Ed",
+              "familyName": "Malloy"
+            },
+            {
+              "jerseyNum": "9",
+              "assignment": "OFFICIAL2",
+              "personId": 1627541,
+              "name": "Natalie Sago",
+              "nameI": "N. Sago",
+              "firstName": "Natalie",
+              "familyName": "Sago"
+            },
+            {
+              "jerseyNum": "92",
+              "assignment": "OFFICIAL3",
+              "personId": 1629175,
+              "name": "Brent Haskill",
+              "nameI": "B. Haskill",
+              "firstName": "Brent",
+              "familyName": "Haskill"
+            }
+          ]
+        },
+        "traditional": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600292-traditional.json"
+        },
+        "advanced": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600292-advanced.json"
+        },
+        "misc": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600292-misc.json"
+        },
+        "four-factors": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600292-four-factors.json"
+        },
+        "tracking": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600292-tracking.json"
+        },
+        "matchups": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600292-matchups.json"
+        },
+        "defense": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600292-defense.json"
+        },
+        "hustle": {
+          "status": "PARTIAL",
+          "active_players": 22,
+          "matched_players": 21,
+          "missing_player_ids": [
+            1642855
+          ],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600292-hustle.json",
+          "other_attempt": {
+            "status": "PARTIAL",
+            "active_players": 22,
+            "matched_players": 21,
+            "missing_player_ids": [
+              1642855
+            ],
+            "unexpected_player_ids": [],
+            "source": "statistical-audit/retry/0022600292-hustle.json"
+          },
+          "daily_hustle_fallback": {
+            "source": "raw/2026-11-23-daily-hustle.json",
+            "error": null,
+            "player_ids_recovered": [],
+            "original_game_response_status": "PARTIAL"
+          }
+        },
+        "pbp": {
+          "status": "VERIFIED",
+          "events": 567,
+          "last_period": 4,
+          "starters": {
+            "awayTeam": [
+              201935,
+              1628378,
+              1628386,
+              1630241,
+              1631212
+            ],
+            "homeTeam": [
+              1627741,
+              1630171,
+              1630188,
+              1630581,
+              1641824
+            ]
+          },
+          "substitutions": 116,
+          "substitution_team_ids": [
+            1610612739,
+            1610612741
+          ],
+          "events_with_possession_team": 565,
+          "field_goal_events": 174,
+          "events_with_assist_player": 56,
+          "source": "raw/0022600292-pbp.json"
+        },
+        "passing": {
+          "status": "VERIFIED",
+          "source": "raw/2026-11-23-passing.json",
+          "method": "NBA passing date totals joined on team, player and minutes with GP=1",
+          "source_error": null,
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": []
+        },
+        "secondary-assists": {
+          "status": "VERIFIED",
+          "sources": [
+            "raw/2026-11-23-passing.json",
+            "raw/0022600292-tracking.json"
+          ],
+          "method": "Official Passing SECONDARY_AST and verified Tracking secondaryAssists; conflicting values excluded",
+          "conflicts": [],
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": []
+        }
+      },
+      "q_ortg_q_drtg_input_inventory": {
+        "possession_and_lineup_reconstruction_sources_present": true,
+        "final_box_and_starters": "raw/0022600292-cdn.json",
+        "event_stream": "raw/0022600292-pbp.json",
+        "official_ratings_reference": "raw/0022600292-advanced.json",
+        "four_factors": "raw/0022600292-four-factors.json",
+        "tracking_and_defense": {
+          "tracking": "VERIFIED",
+          "matchups": "VERIFIED",
+          "defense": "VERIFIED",
+          "hustle": "PARTIAL"
+        },
+        "passing_and_secondary_assists": {
+          "passing": "VERIFIED",
+          "secondary-assists": "VERIFIED"
+        },
+        "calculation_performed": false
+      }
+    },
+    "0022600293": {
+      "away": "PHX",
+      "home": "NOP",
+      "score": [
+        123,
+        119
+      ],
+      "endpoints": {
+        "cdn": {
+          "status": "VERIFIED",
+          "source": "raw/0022600293-cdn.json",
+          "active_players": 20
+        },
+        "referees": {
+          "status": "VERIFIED",
+          "source": "raw/0022600293-cdn.json",
+          "json_pointer": "/game/officials",
+          "crew": [
+            {
+              "jerseyNum": "14",
+              "assignment": "OFFICIAL1",
+              "personId": 1155,
+              "name": "JB DeRosa",
+              "nameI": "J. DeRosa",
+              "firstName": "JB",
+              "familyName": "DeRosa"
+            },
+            {
+              "jerseyNum": "37",
+              "assignment": "OFFICIAL2",
+              "personId": 200833,
+              "name": "Eric Dalen",
+              "nameI": "E. Dalen",
+              "firstName": "Eric",
+              "familyName": "Dalen"
+            },
+            {
+              "jerseyNum": "67",
+              "assignment": "OFFICIAL3",
+              "personId": 1627961,
+              "name": "Brandon Adair",
+              "nameI": "B. Adair",
+              "firstName": "Brandon",
+              "familyName": "Adair"
+            }
+          ]
+        },
+        "traditional": {
+          "status": "VERIFIED",
+          "active_players": 20,
+          "matched_players": 20,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600293-traditional.json"
+        },
+        "advanced": {
+          "status": "VERIFIED",
+          "active_players": 20,
+          "matched_players": 20,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600293-advanced.json"
+        },
+        "misc": {
+          "status": "VERIFIED",
+          "active_players": 20,
+          "matched_players": 20,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600293-misc.json"
+        },
+        "four-factors": {
+          "status": "VERIFIED",
+          "active_players": 20,
+          "matched_players": 20,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600293-four-factors.json"
+        },
+        "tracking": {
+          "status": "VERIFIED",
+          "active_players": 20,
+          "matched_players": 20,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600293-tracking.json"
+        },
+        "matchups": {
+          "status": "VERIFIED",
+          "active_players": 20,
+          "matched_players": 20,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600293-matchups.json"
+        },
+        "defense": {
+          "status": "VERIFIED",
+          "active_players": 20,
+          "matched_players": 20,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600293-defense.json"
+        },
+        "hustle": {
+          "status": "VERIFIED",
+          "active_players": 20,
+          "matched_players": 20,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600293-hustle.json"
+        },
+        "pbp": {
+          "status": "VERIFIED",
+          "events": 644,
+          "last_period": 5,
+          "starters": {
+            "awayTeam": [
+              1626164,
+              1628415,
+              1628970,
+              1630224,
+              1642345
+            ],
+            "homeTeam": [
+              1629627,
+              1630529,
+              1630530,
+              1642274,
+              1642847
+            ]
+          },
+          "substitutions": 122,
+          "substitution_team_ids": [
+            1610612740,
+            1610612756
+          ],
+          "events_with_possession_team": 641,
+          "field_goal_events": 192,
+          "events_with_assist_player": 55,
+          "source": "raw/0022600293-pbp.json"
+        },
+        "passing": {
+          "status": "VERIFIED",
+          "source": "raw/2026-11-23-passing.json",
+          "method": "NBA passing date totals joined on team, player and minutes with GP=1",
+          "source_error": null,
+          "active_players": 20,
+          "matched_players": 20,
+          "missing_player_ids": [],
+          "unexpected_player_ids": []
+        },
+        "secondary-assists": {
+          "status": "VERIFIED",
+          "sources": [
+            "raw/2026-11-23-passing.json",
+            "raw/0022600293-tracking.json"
+          ],
+          "method": "Official Passing SECONDARY_AST and verified Tracking secondaryAssists; conflicting values excluded",
+          "conflicts": [],
+          "active_players": 20,
+          "matched_players": 20,
+          "missing_player_ids": [],
+          "unexpected_player_ids": []
+        }
+      },
+      "q_ortg_q_drtg_input_inventory": {
+        "possession_and_lineup_reconstruction_sources_present": true,
+        "final_box_and_starters": "raw/0022600293-cdn.json",
+        "event_stream": "raw/0022600293-pbp.json",
+        "official_ratings_reference": "raw/0022600293-advanced.json",
+        "four_factors": "raw/0022600293-four-factors.json",
+        "tracking_and_defense": {
+          "tracking": "VERIFIED",
+          "matchups": "VERIFIED",
+          "defense": "VERIFIED",
+          "hustle": "VERIFIED"
+        },
+        "passing_and_secondary_assists": {
+          "passing": "VERIFIED",
+          "secondary-assists": "VERIFIED"
+        },
+        "calculation_performed": false
+      }
+    },
+    "0022600294": {
+      "away": "LAC",
+      "home": "HOU",
+      "score": [
+        104,
+        116
+      ],
+      "endpoints": {
+        "cdn": {
+          "status": "VERIFIED",
+          "source": "raw/0022600294-cdn.json",
+          "active_players": 22
+        },
+        "referees": {
+          "status": "VERIFIED",
+          "source": "raw/0022600294-cdn.json",
+          "json_pointer": "/game/officials",
+          "crew": [
+            {
+              "jerseyNum": "64",
+              "assignment": "OFFICIAL1",
+              "personId": 203593,
+              "name": "Justin Van Duyne",
+              "nameI": "J. Van Duyne",
+              "firstName": "Justin",
+              "familyName": "Van Duyne"
+            },
+            {
+              "jerseyNum": "28",
+              "assignment": "OFFICIAL2",
+              "personId": 1628159,
+              "name": "Mousa Dagher",
+              "nameI": "M. Dagher",
+              "firstName": "Mousa",
+              "familyName": "Dagher"
+            },
+            {
+              "jerseyNum": "17",
+              "assignment": "OFFICIAL3",
+              "personId": 1627964,
+              "name": "Jonathan Sterling",
+              "nameI": "J. Sterling",
+              "firstName": "Jonathan",
+              "familyName": "Sterling"
+            }
+          ]
+        },
+        "traditional": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600294-traditional.json"
+        },
+        "advanced": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600294-advanced.json"
+        },
+        "misc": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600294-misc.json"
+        },
+        "four-factors": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600294-four-factors.json"
+        },
+        "tracking": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600294-tracking.json"
+        },
+        "matchups": {
+          "status": "PARTIAL",
+          "active_players": 22,
+          "matched_players": 21,
+          "missing_player_ids": [
+            1642394
+          ],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600294-matchups.json",
+          "other_attempt": {
+            "status": "PARTIAL",
+            "active_players": 22,
+            "matched_players": 21,
+            "missing_player_ids": [
+              1642394
+            ],
+            "unexpected_player_ids": [],
+            "source": "statistical-audit/retry/0022600294-matchups.json"
+          }
+        },
+        "defense": {
+          "status": "PARTIAL",
+          "active_players": 22,
+          "matched_players": 21,
+          "missing_player_ids": [
+            1642394
+          ],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600294-defense.json",
+          "other_attempt": {
+            "status": "PARTIAL",
+            "active_players": 22,
+            "matched_players": 21,
+            "missing_player_ids": [
+              1642394
+            ],
+            "unexpected_player_ids": [],
+            "source": "statistical-audit/retry/0022600294-defense.json"
+          }
+        },
+        "hustle": {
+          "status": "VERIFIED",
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600294-hustle.json"
+        },
+        "pbp": {
+          "status": "VERIFIED",
+          "events": 527,
+          "last_period": 4,
+          "starters": {
+            "awayTeam": [
+              201572,
+              1627742,
+              1627884,
+              1629060,
+              1629636
+            ],
+            "homeTeam": [
+              201142,
+              1627832,
+              1630578,
+              1631095,
+              1641708
+            ]
+          },
+          "substitutions": 114,
+          "substitution_team_ids": [
+            1610612745,
+            1610612746
+          ],
+          "events_with_possession_team": 525,
+          "field_goal_events": 179,
+          "events_with_assist_player": 66,
+          "source": "raw/0022600294-pbp.json"
+        },
+        "passing": {
+          "status": "VERIFIED",
+          "source": "raw/2026-11-23-passing.json",
+          "method": "NBA passing date totals joined on team, player and minutes with GP=1",
+          "source_error": null,
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": []
+        },
+        "secondary-assists": {
+          "status": "VERIFIED",
+          "sources": [
+            "raw/2026-11-23-passing.json",
+            "raw/0022600294-tracking.json"
+          ],
+          "method": "Official Passing SECONDARY_AST and verified Tracking secondaryAssists; conflicting values excluded",
+          "conflicts": [],
+          "active_players": 22,
+          "matched_players": 22,
+          "missing_player_ids": [],
+          "unexpected_player_ids": []
+        }
+      },
+      "q_ortg_q_drtg_input_inventory": {
+        "possession_and_lineup_reconstruction_sources_present": true,
+        "final_box_and_starters": "raw/0022600294-cdn.json",
+        "event_stream": "raw/0022600294-pbp.json",
+        "official_ratings_reference": "raw/0022600294-advanced.json",
+        "four_factors": "raw/0022600294-four-factors.json",
+        "tracking_and_defense": {
+          "tracking": "VERIFIED",
+          "matchups": "PARTIAL",
+          "defense": "PARTIAL",
+          "hustle": "VERIFIED"
+        },
+        "passing_and_secondary_assists": {
+          "passing": "VERIFIED",
+          "secondary-assists": "VERIFIED"
+        },
+        "calculation_performed": false
+      }
+    },
+    "0022600295": {
+      "away": "UTA",
+      "home": "LAL",
+      "score": [
+        94,
+        109
+      ],
+      "endpoints": {
+        "cdn": {
+          "status": "VERIFIED",
+          "source": "raw/0022600295-cdn.json",
+          "active_players": 23
+        },
+        "referees": {
+          "status": "VERIFIED",
+          "source": "raw/0022600295-cdn.json",
+          "json_pointer": "/game/officials",
+          "crew": [
+            {
+              "jerseyNum": "29",
+              "assignment": "OFFICIAL1",
+              "personId": 200834,
+              "name": "Mark Lindsay",
+              "nameI": "M. Lindsay",
+              "firstName": "Mark",
+              "familyName": "Lindsay"
+            },
+            {
+              "jerseyNum": "33",
+              "assignment": "OFFICIAL2",
+              "personId": 1151,
+              "name": "Sean Corbin",
+              "nameI": "S. Corbin",
+              "firstName": "Sean",
+              "familyName": "Corbin"
+            },
+            {
+              "jerseyNum": "81",
+              "assignment": "OFFICIAL3",
+              "personId": 1628481,
+              "name": "Simone Jelks",
+              "nameI": "S. Jelks",
+              "firstName": "Simone",
+              "familyName": "Jelks"
+            }
+          ]
+        },
+        "traditional": {
+          "status": "VERIFIED",
+          "active_players": 23,
+          "matched_players": 23,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600295-traditional.json"
+        },
+        "advanced": {
+          "status": "VERIFIED",
+          "active_players": 23,
+          "matched_players": 23,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600295-advanced.json"
+        },
+        "misc": {
+          "status": "VERIFIED",
+          "active_players": 23,
+          "matched_players": 23,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600295-misc.json"
+        },
+        "four-factors": {
+          "status": "VERIFIED",
+          "active_players": 23,
+          "matched_players": 23,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600295-four-factors.json"
+        },
+        "tracking": {
+          "status": "VERIFIED",
+          "active_players": 23,
+          "matched_players": 23,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600295-tracking.json"
+        },
+        "matchups": {
+          "status": "VERIFIED",
+          "active_players": 23,
+          "matched_players": 23,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600295-matchups.json"
+        },
+        "defense": {
+          "status": "VERIFIED",
+          "active_players": 23,
+          "matched_players": 23,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600295-defense.json"
+        },
+        "hustle": {
+          "status": "PARTIAL",
+          "active_players": 23,
+          "matched_players": 21,
+          "missing_player_ids": [
+            1641723,
+            1643418
+          ],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600295-hustle.json",
+          "other_attempt": {
+            "status": "PARTIAL",
+            "active_players": 23,
+            "matched_players": 21,
+            "missing_player_ids": [
+              1641723,
+              1643418
+            ],
+            "unexpected_player_ids": [],
+            "source": "statistical-audit/retry/0022600295-hustle.json"
+          },
+          "daily_hustle_fallback": {
+            "source": "raw/2026-11-23-daily-hustle.json",
+            "error": null,
+            "player_ids_recovered": [],
+            "original_game_response_status": "PARTIAL"
+          }
+        },
+        "pbp": {
+          "status": "VERIFIED",
+          "events": 615,
+          "last_period": 4,
+          "starters": {
+            "awayTeam": [
+              1628964,
+              1630182,
+              1641718,
+              1642846,
+              1643408
+            ],
+            "homeTeam": [
+              1629029,
+              1629656,
+              1629680,
+              1631117,
+              1631222
+            ]
+          },
+          "substitutions": 144,
+          "substitution_team_ids": [
+            1610612747,
+            1610612762
+          ],
+          "events_with_possession_team": 613,
+          "field_goal_events": 170,
+          "events_with_assist_player": 42,
+          "source": "raw/0022600295-pbp.json"
+        },
+        "passing": {
+          "status": "VERIFIED",
+          "source": "raw/2026-11-23-passing.json",
+          "method": "NBA passing date totals joined on team, player and minutes with GP=1",
+          "source_error": null,
+          "active_players": 23,
+          "matched_players": 23,
+          "missing_player_ids": [],
+          "unexpected_player_ids": []
+        },
+        "secondary-assists": {
+          "status": "VERIFIED",
+          "sources": [
+            "raw/2026-11-23-passing.json",
+            "raw/0022600295-tracking.json"
+          ],
+          "method": "Official Passing SECONDARY_AST and verified Tracking secondaryAssists; conflicting values excluded",
+          "conflicts": [],
+          "active_players": 23,
+          "matched_players": 23,
+          "missing_player_ids": [],
+          "unexpected_player_ids": []
+        }
+      },
+      "q_ortg_q_drtg_input_inventory": {
+        "possession_and_lineup_reconstruction_sources_present": true,
+        "final_box_and_starters": "raw/0022600295-cdn.json",
+        "event_stream": "raw/0022600295-pbp.json",
+        "official_ratings_reference": "raw/0022600295-advanced.json",
+        "four_factors": "raw/0022600295-four-factors.json",
+        "tracking_and_defense": {
+          "tracking": "VERIFIED",
+          "matchups": "VERIFIED",
+          "defense": "VERIFIED",
+          "hustle": "PARTIAL"
+        },
+        "passing_and_secondary_assists": {
+          "passing": "VERIFIED",
+          "secondary-assists": "VERIFIED"
+        },
+        "calculation_performed": false
+      }
+    },
+    "0022600296": {
+      "away": "SAS",
+      "home": "SAC",
+      "score": [
+        123,
+        107
+      ],
+      "endpoints": {
+        "cdn": {
+          "status": "VERIFIED",
+          "source": "raw/0022600296-cdn.json",
+          "active_players": 25
+        },
+        "referees": {
+          "status": "VERIFIED",
+          "source": "raw/0022600296-cdn.json",
+          "json_pointer": "/game/officials",
+          "crew": [
+            {
+              "jerseyNum": "36",
+              "assignment": "OFFICIAL1",
+              "personId": 201638,
+              "name": "Brent Barnaky",
+              "nameI": "B. Barnaky",
+              "firstName": "Brent",
+              "familyName": "Barnaky"
+            },
+            {
+              "jerseyNum": "12",
+              "assignment": "OFFICIAL2",
+              "personId": 202056,
+              "name": "CJ Washington",
+              "nameI": "C. Washington",
+              "firstName": "CJ",
+              "familyName": "Washington"
+            },
+            {
+              "jerseyNum": "72",
+              "assignment": "OFFICIAL3",
+              "personId": 202037,
+              "name": "J.T. Orr",
+              "nameI": "J. Orr",
+              "firstName": "J.T.",
+              "familyName": "Orr"
+            }
+          ]
+        },
+        "traditional": {
+          "status": "VERIFIED",
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600296-traditional.json"
+        },
+        "advanced": {
+          "status": "VERIFIED",
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600296-advanced.json"
+        },
+        "misc": {
+          "status": "VERIFIED",
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600296-misc.json"
+        },
+        "four-factors": {
+          "status": "VERIFIED",
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600296-four-factors.json"
+        },
+        "tracking": {
+          "status": "VERIFIED",
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600296-tracking.json"
+        },
+        "matchups": {
+          "status": "PARTIAL",
+          "active_players": 25,
+          "matched_players": 24,
+          "missing_player_ids": [
+            1631342
+          ],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600296-matchups.json",
+          "other_attempt": {
+            "status": "PARTIAL",
+            "active_players": 25,
+            "matched_players": 24,
+            "missing_player_ids": [
+              1631342
+            ],
+            "unexpected_player_ids": [],
+            "source": "statistical-audit/retry/0022600296-matchups.json"
+          }
+        },
+        "defense": {
+          "status": "PARTIAL",
+          "active_players": 25,
+          "matched_players": 24,
+          "missing_player_ids": [
+            1631342
+          ],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600296-defense.json",
+          "other_attempt": {
+            "status": "PARTIAL",
+            "active_players": 25,
+            "matched_players": 24,
+            "missing_player_ids": [
+              1631342
+            ],
+            "unexpected_player_ids": [],
+            "source": "statistical-audit/retry/0022600296-defense.json"
+          }
+        },
+        "hustle": {
+          "status": "PARTIAL",
+          "active_players": 25,
+          "matched_players": 20,
+          "missing_player_ids": [
+            1628370,
+            1631342,
+            1642284,
+            1642357,
+            1643576
+          ],
+          "unexpected_player_ids": [],
+          "source": "raw/0022600296-hustle.json",
+          "other_attempt": {
+            "status": "PARTIAL",
+            "active_players": 25,
+            "matched_players": 20,
+            "missing_player_ids": [
+              1628370,
+              1631342,
+              1642284,
+              1642357,
+              1643576
+            ],
+            "unexpected_player_ids": [],
+            "source": "statistical-audit/retry/0022600296-hustle.json"
+          },
+          "daily_hustle_fallback": {
+            "source": "raw/2026-11-23-daily-hustle.json",
+            "error": null,
+            "player_ids_recovered": [],
+            "original_game_response_status": "PARTIAL"
+          }
+        },
+        "pbp": {
+          "status": "VERIFIED",
+          "events": 576,
+          "last_period": 4,
+          "starters": {
+            "awayTeam": [
+              203084,
+              1628436,
+              1630170,
+              1630577,
+              1642264
+            ],
+            "homeTeam": [
+              203897,
+              1627734,
+              1629631,
+              1631099,
+              1643411
+            ]
+          },
+          "substitutions": 144,
+          "substitution_team_ids": [
+            1610612758,
+            1610612759
+          ],
+          "events_with_possession_team": 573,
+          "field_goal_events": 189,
+          "events_with_assist_player": 65,
+          "source": "raw/0022600296-pbp.json"
+        },
+        "passing": {
+          "status": "PARTIAL",
+          "source": "raw/2026-11-23-passing.json",
+          "method": "NBA passing date totals joined on team, player and minutes with GP=1",
+          "source_error": null,
+          "active_players": 25,
+          "matched_players": 24,
+          "missing_player_ids": [
+            1631342
+          ],
+          "unexpected_player_ids": [],
+          "missing_player_retry": {
+            "player_id": 1631342,
+            "source": "statistical-audit/retry/2026-11-23-1631342-passing.json",
+            "error": null,
+            "nba_passing_breakdown_rows_by_table": {
+              "PassesMade": 0,
+              "PassesReceived": 0
+            }
+          }
+        },
+        "secondary-assists": {
+          "status": "VERIFIED",
+          "sources": [
+            "raw/2026-11-23-passing.json",
+            "raw/0022600296-tracking.json"
+          ],
+          "method": "Official Passing SECONDARY_AST and verified Tracking secondaryAssists; conflicting values excluded",
+          "conflicts": [],
+          "active_players": 25,
+          "matched_players": 25,
+          "missing_player_ids": [],
+          "unexpected_player_ids": []
+        }
+      },
+      "q_ortg_q_drtg_input_inventory": {
+        "possession_and_lineup_reconstruction_sources_present": true,
+        "final_box_and_starters": "raw/0022600296-cdn.json",
+        "event_stream": "raw/0022600296-pbp.json",
+        "official_ratings_reference": "raw/0022600296-advanced.json",
+        "four_factors": "raw/0022600296-four-factors.json",
+        "tracking_and_defense": {
+          "tracking": "VERIFIED",
+          "matchups": "PARTIAL",
+          "defense": "PARTIAL",
+          "hustle": "PARTIAL"
+        },
+        "passing_and_secondary_assists": {
+          "passing": "PARTIAL",
+          "secondary-assists": "VERIFIED"
+        },
+        "calculation_performed": false
+      }
+    }
+  },
+  "sources": {
+    "raw/2026-11-23-passing.json": {
+      "sha256": "7d55804bd9fcbf011f39ee71361433937d537adce301cd358ee8f76e17a041d5",
+      "url": "https://stats.nba.com/stats/leaguedashptstats?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&Location=&Outcome=&PlayerExperience=&PlayerPosition=&SeasonSegment=&StarterBench=&VsConference=&VsDivision=&Weight=&DateFrom=11%2F23%2F2026&DateTo=11%2F23%2F2026&LastNGames=0&LeagueID=00&Month=0&OpponentTeamID=0&PORound=0&PerMode=Totals&PlayerOrTeam=Player&PtMeasureType=Passing&Season=2026-27&SeasonType=Regular+Season&TeamID=0",
+      "bytes": 19541,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/2026-11-23-daily-hustle.json": {
+      "sha256": "6b5955df68dd39d72920364ca6cbd35d6999f482945550199f5035110882004a",
+      "url": "https://stats.nba.com/stats/leaguehustlestatsplayer?College=&Conference=&Country=&Division=&DraftPick=&DraftYear=&Height=&ISTRound=&Location=&Month=&OpponentTeamID=&Outcome=&PORound=&PlayerExperience=&PlayerPosition=&SeasonSegment=&TeamID=&VsConference=&VsDivision=&Weight=&LeagueID=00&PerMode=Totals&Season=2026-27&SeasonType=Regular+Season&DateFrom=11%2F23%2F2026&DateTo=11%2F23%2F2026",
+      "bytes": 23569,
+      "origin": "NBA.com in Edge"
+    },
+    "statistical-audit/retry/2026-11-23-1631342-passing.json": {
+      "sha256": "c68fbbaff161b5b347a10e86d8b93199ecc548a5237a99b0cf05e5732c0a1c93",
+      "url": "https://stats.nba.com/stats/playerdashptpass?DateFrom=11%2F23%2F2026&DateTo=11%2F23%2F2026&GameSegment=&LastNGames=0&Location=&Month=0&OpponentTeamID=0&Outcome=&PORound=0&SeasonSegment=&VsConference=&VsDivision=&LeagueID=00&PlayerID=1631342&TeamID=1610612758&PerMode=Totals&Season=2026-27&SeasonType=Regular+Season",
+      "bytes": 928,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600287-cdn.json": {
+      "sha256": "3182001ee5dd68d0cea7c8479d17f7408a2461ce36120a484bbf0cc6cd9d8dbe",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600287.json",
+      "bytes": 41294,
+      "origin": "verified historical and local bytes"
+    },
+    "raw/0022600287-traditional.json": {
+      "sha256": "c85a4da3af094d583f312686b876aa0e7a5328957e45d1a3586a20e64d239c78",
+      "url": "https://stats.nba.com/stats/boxscoretraditionalv3?GameID=0022600287&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 17306,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600287-advanced.json": {
+      "sha256": "a3a8adfe5a82e1b985fa81da292563d01154345b3d6e516053233c397d4f80b2",
+      "url": "https://stats.nba.com/stats/boxscoreadvancedv3?LeagueID=00&GameID=0022600287&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "bytes": 19990,
+      "origin": "verified historical and local bytes"
+    },
+    "raw/0022600287-misc.json": {
+      "sha256": "c4ade2e869e62b38aba31ae9fe679b03bb6dc63f37bb514b7ad4c8ebeb5a64f1",
+      "url": "https://stats.nba.com/stats/boxscoremiscv3?GameID=0022600287&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 11830,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600287-four-factors.json": {
+      "sha256": "e2ed51a5e84a7d92bfb97637469e09e6014a951adeea71ea77959aff86ffe98f",
+      "url": "https://stats.nba.com/stats/boxscorefourfactorsv3?GameID=0022600287&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 12691,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600287-tracking.json": {
+      "sha256": "f9d06f95306d3f7e0c5709ddd5f9a8bf11700e0e5345680b5514b9072ee25020",
+      "url": "https://stats.nba.com/stats/boxscoreplayertrackv3?GameID=0022600287&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 19497,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600287-matchups.json": {
+      "sha256": "8aa03afd76ab60bbdfe030d745545b03910aafa52cdd1bfdf058676cd98bd50b",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600287&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 176345,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600287-defense.json": {
+      "sha256": "05289981ecedef925bd5e0547b3d714a57629b0628b6d3970b5a7384f72e89a6",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600287&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 12226,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600287-hustle.json": {
+      "sha256": "59656f7ccf206155d2cec78b27e58ab9ce0f92d92c9e8dd957c77deae9964fc3",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600287&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 13200,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600287-pbp.json": {
+      "sha256": "46aa79f0f5da60a1a154430363f351a4a56ec7298a19ab0d1fffc4a567147584",
+      "url": "https://cdn.nba.com/static/json/liveData/playbyplay/playbyplay_0022600287.json",
+      "bytes": 417115,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600288-cdn.json": {
+      "sha256": "4b3a611b416bf9a58bf8a938cb78a62e1947705773296ce8e9022dba56f0bc15",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600288.json",
+      "bytes": 39267,
+      "origin": "verified historical and local bytes"
+    },
+    "raw/0022600288-traditional.json": {
+      "sha256": "58fed55523d6d641510bb8c4960ab9799b94a1fcd58f470532a8f95acd7ae384",
+      "url": "https://stats.nba.com/stats/boxscoretraditionalv3?GameID=0022600288&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 18437,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600288-advanced.json": {
+      "sha256": "c6b1343fe9eecd5a5cb43309d13b779b8b38deb0bb5abd18848d53adec163e8c",
+      "url": "https://stats.nba.com/stats/boxscoreadvancedv3?LeagueID=00&GameID=0022600288&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "bytes": 21466,
+      "origin": "verified historical and local bytes"
+    },
+    "raw/0022600288-misc.json": {
+      "sha256": "3103a2a31dcf22a662b94b5850ad714b124ffb8deed06c413af9516ffd9ba5d2",
+      "url": "https://stats.nba.com/stats/boxscoremiscv3?GameID=0022600288&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 12683,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600288-four-factors.json": {
+      "sha256": "8cf0450e6927de1a87d7db1c1dc44da84bd03aec606335f2eb63410005b8f4b6",
+      "url": "https://stats.nba.com/stats/boxscorefourfactorsv3?GameID=0022600288&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 13601,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600288-tracking.json": {
+      "sha256": "87f6d22b72654f8ae1db240c22580467b530a8989931e9c7c871f563f73b4e09",
+      "url": "https://stats.nba.com/stats/boxscoreplayertrackv3?GameID=0022600288&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 20900,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600288-matchups.json": {
+      "sha256": "be64ff5fc5d0b7b3eca440fa628abd2c10e1d818c96c7e06fcf5140391be3364",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600288&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 171158,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600288-defense.json": {
+      "sha256": "14185f10ef819319c76aae9b4f0ad30efb61a0b06b1a3b13ec9d9ef4c5d99f0e",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600288&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 13819,
+      "origin": "NBA.com in Edge"
+    },
+    "statistical-audit/unverified/0022600288-hustle.json": {
+      "sha256": "0aec6dcea084178bbf6606914956b63a927aa3be0386f58c1d1608ead11ea1f8",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600288&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 2136,
+      "origin": "NBA.com in Edge"
+    },
+    "statistical-audit/retry/0022600288-hustle.json": {
+      "sha256": "0aec6dcea084178bbf6606914956b63a927aa3be0386f58c1d1608ead11ea1f8",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600288&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 2136,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600288-pbp.json": {
+      "sha256": "d1a7cb2667dcf6b884380d511381f726757b0070f6d2099bb50134a4082fce0a",
+      "url": "https://cdn.nba.com/static/json/liveData/playbyplay/playbyplay_0022600288.json",
+      "bytes": 410467,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600289-cdn.json": {
+      "sha256": "ee9aeca1c966570a77f1d2dc8e550e659a05c530fc34b544302d82981d4797b2",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600289.json",
+      "bytes": 40806,
+      "origin": "verified historical and local bytes"
+    },
+    "raw/0022600289-traditional.json": {
+      "sha256": "a990fa1b5d6481763b6028821919ffcd10a7bd5f769167baf931ac547b8b00eb",
+      "url": "https://stats.nba.com/stats/boxscoretraditionalv3?GameID=0022600289&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 17916,
+      "origin": "NBA.com in Edge"
+    },
+    "statistical-audit/retry/0022600289-traditional.json": {
+      "sha256": "a990fa1b5d6481763b6028821919ffcd10a7bd5f769167baf931ac547b8b00eb",
+      "url": "https://stats.nba.com/stats/boxscoretraditionalv3?GameID=0022600289&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 17916,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600289-advanced.json": {
+      "sha256": "a8ab12dd9b41c2d2b807eae9b5c6401ffc2e5c8174e5effbffa6da1e672213a4",
+      "url": "https://stats.nba.com/stats/boxscoreadvancedv3?LeagueID=00&GameID=0022600289&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "bytes": 20740,
+      "origin": "verified historical and local bytes"
+    },
+    "raw/0022600289-misc.json": {
+      "sha256": "3e24a88c3c3cd64f0ae86aa518f680105bc9a5e090295f287647a473029d3a73",
+      "url": "https://stats.nba.com/stats/boxscoremiscv3?GameID=0022600289&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 12307,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600289-four-factors.json": {
+      "sha256": "8359b01b650bb8944021da7269c0153ab514777389247da78521e858b6285208",
+      "url": "https://stats.nba.com/stats/boxscorefourfactorsv3?GameID=0022600289&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 13181,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600289-tracking.json": {
+      "sha256": "78094e6088b9cc18455ef48f5ce66602b53da4c978320636cf66594cecbfdb11",
+      "url": "https://stats.nba.com/stats/boxscoreplayertrackv3?GameID=0022600289&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 20284,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600289-matchups.json": {
+      "sha256": "0521dbc357b9d37a0b96d892afcf1678ad53e6fd58f76a957efcf8fb226437f8",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600289&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 167396,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600289-defense.json": {
+      "sha256": "bf799259c19ddc58eab1ecc886be52798ecafbdd5e3998ef2a80afd0c7eeed47",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600289&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 11738,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600289-hustle.json": {
+      "sha256": "91cb18715ad5566d79d9a447d5b5fe18258b927e8d1db3d60ea415ca8c693f2f",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600289&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 12694,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600289-pbp.json": {
+      "sha256": "66954c762fd5ebe6554eb4843319bd71282da7f00ed1793cb199b79b82f755a2",
+      "url": "https://cdn.nba.com/static/json/liveData/playbyplay/playbyplay_0022600289.json",
+      "bytes": 424727,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600290-cdn.json": {
+      "sha256": "7426c2c3be662dadf761f49e8ba74bffb70172af3cf5fd5c188e59135a582193",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600290.json",
+      "bytes": 39873,
+      "origin": "verified historical and local bytes"
+    },
+    "raw/0022600290-traditional.json": {
+      "sha256": "b46068ed48b73ad220d4656c8506cfa969430d0e391acc9ce3547156b7565392",
+      "url": "https://stats.nba.com/stats/boxscoretraditionalv3?GameID=0022600290&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 19097,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600290-advanced.json": {
+      "sha256": "3f0b7c74fcbdbf6f11bc8f5b920abe44c2edfd09229cdca80f1de078bb746e42",
+      "url": "https://stats.nba.com/stats/boxscoreadvancedv3?LeagueID=00&GameID=0022600290&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "bytes": 22151,
+      "origin": "verified historical and local bytes"
+    },
+    "raw/0022600290-misc.json": {
+      "sha256": "d35468d5ac3c247c9ff59f11d3a07a0706cc3abadc69ebcb5ce3c42f1db58cf8",
+      "url": "https://stats.nba.com/stats/boxscoremiscv3?GameID=0022600290&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 13199,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600290-four-factors.json": {
+      "sha256": "8b52c7f434f99a2054dbed1b75a9917a817bea674c0b8ec16d8a69812dead000",
+      "url": "https://stats.nba.com/stats/boxscorefourfactorsv3?GameID=0022600290&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 14127,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600290-tracking.json": {
+      "sha256": "b35e650c005fd43dc50104af11531c02513127101c2785fe3794999cf0d6bfa7",
+      "url": "https://stats.nba.com/stats/boxscoreplayertrackv3?GameID=0022600290&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 21710,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600290-matchups.json": {
+      "sha256": "e22a4ac7469b4a0339336e8de5dde4c200e8a8e5b726a860c4f60a8f31a98706",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600290&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 161481,
+      "origin": "NBA.com in Edge"
+    },
+    "statistical-audit/retry/0022600290-matchups.json": {
+      "sha256": "e22a4ac7469b4a0339336e8de5dde4c200e8a8e5b726a860c4f60a8f31a98706",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600290&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 161481,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600290-defense.json": {
+      "sha256": "d9ad22abf475891c632bff35999266c9151d0084d07e391322ef490aa62a10af",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600290&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 11717,
+      "origin": "NBA.com in Edge"
+    },
+    "statistical-audit/retry/0022600290-defense.json": {
+      "sha256": "d9ad22abf475891c632bff35999266c9151d0084d07e391322ef490aa62a10af",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600290&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 11717,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600290-hustle.json": {
+      "sha256": "3c26cbd5f70321086196705e4199658ad146ed268efab0d9907d8aa9410c28f2",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600290&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 12127,
+      "origin": "NBA.com in Edge"
+    },
+    "statistical-audit/retry/0022600290-hustle.json": {
+      "sha256": "3c26cbd5f70321086196705e4199658ad146ed268efab0d9907d8aa9410c28f2",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600290&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 12127,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600290-pbp.json": {
+      "sha256": "64223af1f2e1c7f825bb953c3b9799dffaa39fd8613cd934b7c7a8450574d982",
+      "url": "https://cdn.nba.com/static/json/liveData/playbyplay/playbyplay_0022600290.json",
+      "bytes": 419374,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600291-cdn.json": {
+      "sha256": "636ccc4e81e04d766d8f5126a685ba75c915297299dac9921d2bd67e5c8a2ec6",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600291.json",
+      "bytes": 40172,
+      "origin": "verified historical and local bytes"
+    },
+    "raw/0022600291-traditional.json": {
+      "sha256": "15b27411f69d5ebf73d5817634a48787f1e7b4d821f2f3e33f0aed413632f3b1",
+      "url": "https://stats.nba.com/stats/boxscoretraditionalv3?GameID=0022600291&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 17244,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600291-advanced.json": {
+      "sha256": "986cc32d875d65192ec0c9f79ddbf4539c7ca0896e0db13ca1e6ae756b02237f",
+      "url": "https://stats.nba.com/stats/boxscoreadvancedv3?LeagueID=00&GameID=0022600291&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "bytes": 19999,
+      "origin": "verified historical and local bytes"
+    },
+    "raw/0022600291-misc.json": {
+      "sha256": "c47d80bd83fa1c4e55260eb36deadcbcdbc11e6ffb3346fd0191314af20dfeef",
+      "url": "https://stats.nba.com/stats/boxscoremiscv3?GameID=0022600291&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 11767,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600291-four-factors.json": {
+      "sha256": "e8ec750ad6aca2fce737e37869f5386d563125bfc6f09aa331f9f7d671f954b0",
+      "url": "https://stats.nba.com/stats/boxscorefourfactorsv3?GameID=0022600291&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 12617,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600291-tracking.json": {
+      "sha256": "f0027ec82e28a57af4ba0de88aced965e779d0f7c388990309e09808c577e666",
+      "url": "https://stats.nba.com/stats/boxscoreplayertrackv3?GameID=0022600291&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 19423,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600291-matchups.json": {
+      "sha256": "4ebb4a8e3a981655ac67ec0a51336c64bd4a01c4f038575688dad6a2517e7cf6",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600291&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 170802,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600291-defense.json": {
+      "sha256": "fe97bb4221039f01f5f42765e2e1d6867d39ac4e05460ec448e9c05e826fbe28",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600291&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 13772,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600291-hustle.json": {
+      "sha256": "29d25e84f19fd21d9b6988890123abd7b14c3775a1323903e27562bd157de8ae",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600291&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 11033,
+      "origin": "NBA.com in Edge"
+    },
+    "statistical-audit/retry/0022600291-hustle.json": {
+      "sha256": "29d25e84f19fd21d9b6988890123abd7b14c3775a1323903e27562bd157de8ae",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600291&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 11033,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600291-pbp.json": {
+      "sha256": "ad0910d456a0fb63db18365fff108bb5ddc8597c17f225c636ab0e16467e7bee",
+      "url": "https://cdn.nba.com/static/json/liveData/playbyplay/playbyplay_0022600291.json",
+      "bytes": 401569,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600292-cdn.json": {
+      "sha256": "ada6c7831f618e8e0f9bbdda26757a363efdba9a20215db104fac7ae82cd0c69",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600292.json",
+      "bytes": 40154,
+      "origin": "verified historical and local bytes"
+    },
+    "raw/0022600292-traditional.json": {
+      "sha256": "f223c28aba36f3f8b57ea8748a6b3d1b3ac44bdb78060763947ef76d0594bb81",
+      "url": "https://stats.nba.com/stats/boxscoretraditionalv3?GameID=0022600292&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 18460,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600292-advanced.json": {
+      "sha256": "4f51dc7daaec938e2405821e4bbbb11a9fdee272d72297e8050e525e110f1088",
+      "url": "https://stats.nba.com/stats/boxscoreadvancedv3?LeagueID=00&GameID=0022600292&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "bytes": 21451,
+      "origin": "verified historical and local bytes"
+    },
+    "raw/0022600292-misc.json": {
+      "sha256": "92555ecff8e02f5e2aba1ad0d5e35d30a083156a595fad7b65583a7de4267505",
+      "url": "https://stats.nba.com/stats/boxscoremiscv3?GameID=0022600292&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 12700,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600292-four-factors.json": {
+      "sha256": "d6fc7acebd9aafe410b1489a4399d9722c008d34233569447a538b622d2ab97a",
+      "url": "https://stats.nba.com/stats/boxscorefourfactorsv3?GameID=0022600292&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 13622,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600292-tracking.json": {
+      "sha256": "d07cdfa3487a0640002f4d9400ccc02e38a7b809e92fb5476e993def63fd96af",
+      "url": "https://stats.nba.com/stats/boxscoreplayertrackv3?GameID=0022600292&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 20948,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600292-matchups.json": {
+      "sha256": "9051ddf0f966788c34bcb03503775112b1fb8dd14bb031d0003b8f3af9ca6755",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600292&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 186825,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600292-defense.json": {
+      "sha256": "bba87af97bb0a2fbd4a4e55a86f3f242f1d35a1c52d91a319730e51ccb6b3cfc",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600292&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 12189,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600292-hustle.json": {
+      "sha256": "575e852994659bdd34371b58a039c99d3d04aee6bef5c9ca922cee113fccd16f",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600292&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 12619,
+      "origin": "NBA.com in Edge"
+    },
+    "statistical-audit/retry/0022600292-hustle.json": {
+      "sha256": "575e852994659bdd34371b58a039c99d3d04aee6bef5c9ca922cee113fccd16f",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600292&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 12619,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600292-pbp.json": {
+      "sha256": "9dcf7fc8811821f6b0de2c416eef391491a64f6045cdb6caa896a670acdebc3e",
+      "url": "https://cdn.nba.com/static/json/liveData/playbyplay/playbyplay_0022600292.json",
+      "bytes": 403660,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600293-cdn.json": {
+      "sha256": "b1b16c55d9b4b2fa3c0b42c671e18bc6bfa0a47c4efb5e1905cad976a9788195",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600293.json",
+      "bytes": 40175,
+      "origin": "verified historical and local bytes"
+    },
+    "raw/0022600293-traditional.json": {
+      "sha256": "23f62748c237fe95656badaa01befad0afc619c08caeb32755e20ad33c241346",
+      "url": "https://stats.nba.com/stats/boxscoretraditionalv3?GameID=0022600293&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 19080,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600293-advanced.json": {
+      "sha256": "efcb7f7a5ddbcfbfed3b8549fcdac6091960763af2ab2f9b70e3993a640e404e",
+      "url": "https://stats.nba.com/stats/boxscoreadvancedv3?LeagueID=00&GameID=0022600293&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "bytes": 22139,
+      "origin": "verified historical and local bytes"
+    },
+    "raw/0022600293-misc.json": {
+      "sha256": "bec0280368fb7f8d9942e2903d09898475a951cef2c11cd21794a44adba82153",
+      "url": "https://stats.nba.com/stats/boxscoremiscv3?GameID=0022600293&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 13183,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600293-four-factors.json": {
+      "sha256": "799d3cb909eea49688bd27175cac59da6ebdf07c33466299a26a5b4b35f2f8ea",
+      "url": "https://stats.nba.com/stats/boxscorefourfactorsv3?GameID=0022600293&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 14080,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600293-tracking.json": {
+      "sha256": "078e54e522025379eb6912f096a5d2ad371ea1df566866a25c4b8a0ce3e09598",
+      "url": "https://stats.nba.com/stats/boxscoreplayertrackv3?GameID=0022600293&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 21707,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600293-matchups.json": {
+      "sha256": "3d253a184600c8a5e3090fcec286e3ec570cdf9dd633c092e95cca88a1a36edd",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600293&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 147604,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600293-defense.json": {
+      "sha256": "93238c8a3fbb8d7ba6f513568d9af11a04d92404c5a181c90309783a765ac9ac",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600293&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 11161,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600293-hustle.json": {
+      "sha256": "740180dec6ca921eff15d743a36beb28af47034817857d7e4fb41ea16921e9a5",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600293&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 12095,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600293-pbp.json": {
+      "sha256": "4d48c33c1cc59497f6f8075d32e2d70c05130743ff89f284fba5afd5696aa1cb",
+      "url": "https://cdn.nba.com/static/json/liveData/playbyplay/playbyplay_0022600293.json",
+      "bytes": 456233,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600294-cdn.json": {
+      "sha256": "5ff8ad82c9550e5a6a6e999c75d624a8cfbb4d4710cf60f02c735d15e30288d2",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600294.json",
+      "bytes": 40027,
+      "origin": "verified historical and local bytes"
+    },
+    "raw/0022600294-traditional.json": {
+      "sha256": "a5afc8255d535a2cc3f40664011f548e563240573528bf3dd94a4e8ad79537c4",
+      "url": "https://stats.nba.com/stats/boxscoretraditionalv3?GameID=0022600294&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 19069,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600294-advanced.json": {
+      "sha256": "f311fe55dd4de6c213bb09aefa4ba39189e86e6de7f3461fb047f799ec249ad2",
+      "url": "https://stats.nba.com/stats/boxscoreadvancedv3?LeagueID=00&GameID=0022600294&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "bytes": 22160,
+      "origin": "verified historical and local bytes"
+    },
+    "raw/0022600294-misc.json": {
+      "sha256": "0cea7a024ee9004a8d5f5211376203c82714b5fa1c74582fb17662cdfa6bd6da",
+      "url": "https://stats.nba.com/stats/boxscoremiscv3?GameID=0022600294&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 13178,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600294-four-factors.json": {
+      "sha256": "f3fa8b9f38f26ba310a87d8c94e39e98756e5eb49a170c6b84fd79643b82b9a5",
+      "url": "https://stats.nba.com/stats/boxscorefourfactorsv3?GameID=0022600294&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 14103,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600294-tracking.json": {
+      "sha256": "9148131dcc2228822de1b6ad055f5f09cbcd6a8e4a7c6dfdd6fa8d572bedc2c0",
+      "url": "https://stats.nba.com/stats/boxscoreplayertrackv3?GameID=0022600294&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 21705,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600294-matchups.json": {
+      "sha256": "b893c6d850fadc4c35a7761358a96ab18b00002fdbfa15aa197c301da9577bd8",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600294&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 170441,
+      "origin": "NBA.com in Edge"
+    },
+    "statistical-audit/retry/0022600294-matchups.json": {
+      "sha256": "b893c6d850fadc4c35a7761358a96ab18b00002fdbfa15aa197c301da9577bd8",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600294&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 170441,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600294-defense.json": {
+      "sha256": "aa9beceab981f60ca1375b52a29cf198ac6d0d486e7e17c50b612c823a7e4377",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600294&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 11716,
+      "origin": "NBA.com in Edge"
+    },
+    "statistical-audit/retry/0022600294-defense.json": {
+      "sha256": "aa9beceab981f60ca1375b52a29cf198ac6d0d486e7e17c50b612c823a7e4377",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600294&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 11716,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600294-hustle.json": {
+      "sha256": "8d4719f9f98266ff965d49a1723c9e02c3a2c677d10ed7c163364ec09c0f106d",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600294&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 13196,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600294-pbp.json": {
+      "sha256": "bc8d026d40bb8c3338670cbfef4d2a3ff4f50da2023757f9f0020fc36e09d2ca",
+      "url": "https://cdn.nba.com/static/json/liveData/playbyplay/playbyplay_0022600294.json",
+      "bytes": 377331,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600295-cdn.json": {
+      "sha256": "595ad7a15033395b0e4194f914746ee12547cd4d5929fa47391a0cff316d45e2",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600295.json",
+      "bytes": 41117,
+      "origin": "verified historical and local bytes"
+    },
+    "raw/0022600295-traditional.json": {
+      "sha256": "fc693284abe4bf75678b8a6b6e62a990c95d5fb9a61c0de042da256f029d978b",
+      "url": "https://stats.nba.com/stats/boxscoretraditionalv3?GameID=0022600295&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 19654,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600295-advanced.json": {
+      "sha256": "ac178d9207dd5a5eb3cf64f2d1b05f64fde2c1cad5a22f52f00e4f652504884b",
+      "url": "https://stats.nba.com/stats/boxscoreadvancedv3?LeagueID=00&GameID=0022600295&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "bytes": 22868,
+      "origin": "verified historical and local bytes"
+    },
+    "raw/0022600295-misc.json": {
+      "sha256": "ae5804d424a92f26f7d20f6130f441252beb4dc758febb720b54f0e1353b41b0",
+      "url": "https://stats.nba.com/stats/boxscoremiscv3?GameID=0022600295&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 13618,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600295-four-factors.json": {
+      "sha256": "44a5263712d4b9dc4ec8a38636630335250c09bbc1f790c4a0bbc87341a5f198",
+      "url": "https://stats.nba.com/stats/boxscorefourfactorsv3?GameID=0022600295&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 14568,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600295-tracking.json": {
+      "sha256": "444b010218020820e6dd56d393041fc7847a4d67a2b57ac749fc5b66e2a5f70d",
+      "url": "https://stats.nba.com/stats/boxscoreplayertrackv3?GameID=0022600295&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 22407,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600295-matchups.json": {
+      "sha256": "97f8885160a9f6cb32c1928a6b76e3ab0756357d2d2bf733c6aac4b82d6a7544",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600295&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 179395,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600295-defense.json": {
+      "sha256": "f38ec59c8305f94972a29e82d1aa2f367dc617d239c230c32e4abdfd24f13e3b",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600295&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 12760,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600295-hustle.json": {
+      "sha256": "d76c617875d54e5677ed4a5b3b692cdef8cfd6039bf1c35e155353965644b845",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600295&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 12684,
+      "origin": "NBA.com in Edge"
+    },
+    "statistical-audit/retry/0022600295-hustle.json": {
+      "sha256": "d76c617875d54e5677ed4a5b3b692cdef8cfd6039bf1c35e155353965644b845",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600295&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 12684,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600295-pbp.json": {
+      "sha256": "a2cbb8820ff8abd2a20493f7d2920b8f290e2ee76cce3a2cffe28fb774945aea",
+      "url": "https://cdn.nba.com/static/json/liveData/playbyplay/playbyplay_0022600295.json",
+      "bytes": 434869,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600296-cdn.json": {
+      "sha256": "5aa8d983dc3b58a0b65423eda740e196c6394923aa1d42852ab1e00ccbc6694d",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022600296.json",
+      "bytes": 40393,
+      "origin": "verified historical and local bytes"
+    },
+    "raw/0022600296-traditional.json": {
+      "sha256": "357401c46b0d7357c299946ae62aafbd9768a7248c40c5e5b83c04a31bc8d8bf",
+      "url": "https://stats.nba.com/stats/boxscoretraditionalv3?GameID=0022600296&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 17895,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600296-advanced.json": {
+      "sha256": "968f8637c45843b48f56edbaaaffc6a4350f04f3b65398dcb448d8200ab21582",
+      "url": "https://stats.nba.com/stats/boxscoreadvancedv3?LeagueID=00&GameID=0022600296&endPeriod=0&rangeType=0&startPeriod=0&startRange=0&endRange=28800",
+      "bytes": 20791,
+      "origin": "verified historical and local bytes"
+    },
+    "raw/0022600296-misc.json": {
+      "sha256": "be9800a71b74ea68ada5a9b6f204b85c3c40ecf6558818cd41a1565b3dec3286",
+      "url": "https://stats.nba.com/stats/boxscoremiscv3?GameID=0022600296&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 12267,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600296-four-factors.json": {
+      "sha256": "8abde813f0378bcb6cf58e9c10449143c085a1ea016bdf6e43410a8a0fccc7c8",
+      "url": "https://stats.nba.com/stats/boxscorefourfactorsv3?GameID=0022600296&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 13168,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600296-tracking.json": {
+      "sha256": "74c2ca3b7ffce3094451753649e5d84d1e04457002586a0dc8861545fc59935a",
+      "url": "https://stats.nba.com/stats/boxscoreplayertrackv3?GameID=0022600296&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 20236,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600296-matchups.json": {
+      "sha256": "3125a984c0cd273091b4c634d1f02381bf192a9727893f6b592a68fd4a868936",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600296&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 184552,
+      "origin": "NBA.com in Edge"
+    },
+    "statistical-audit/retry/0022600296-matchups.json": {
+      "sha256": "3125a984c0cd273091b4c634d1f02381bf192a9727893f6b592a68fd4a868936",
+      "url": "https://stats.nba.com/stats/boxscorematchupsv3?GameID=0022600296&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 184552,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600296-defense.json": {
+      "sha256": "ca2974c308bacc03445071512a502ac4d74c2a521abc03f3730f04841c45010c",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600296&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 13307,
+      "origin": "NBA.com in Edge"
+    },
+    "statistical-audit/retry/0022600296-defense.json": {
+      "sha256": "ca2974c308bacc03445071512a502ac4d74c2a521abc03f3730f04841c45010c",
+      "url": "https://stats.nba.com/stats/boxscoredefensivev2?GameID=0022600296&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 13307,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600296-hustle.json": {
+      "sha256": "39ae25eb9f27cbb5dfe3ccaf269dfac8af1d18dddf316735e7002023a0c32bb9",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600296&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 12150,
+      "origin": "NBA.com in Edge"
+    },
+    "statistical-audit/retry/0022600296-hustle.json": {
+      "sha256": "39ae25eb9f27cbb5dfe3ccaf269dfac8af1d18dddf316735e7002023a0c32bb9",
+      "url": "https://stats.nba.com/stats/boxscorehustlev2?GameID=0022600296&LeagueID=00&startPeriod=0&endPeriod=0&startRange=0&endRange=28800&rangeType=0",
+      "bytes": 12150,
+      "origin": "NBA.com in Edge"
+    },
+    "raw/0022600296-pbp.json": {
+      "sha256": "2502a254f3ed40a15147df12dd71445c13e53001a0e930b6eed381661ab2b763",
+      "url": "https://cdn.nba.com/static/json/liveData/playbyplay/playbyplay_0022600296.json",
+      "bytes": 410751,
+      "origin": "NBA.com in Edge"
+    }
+  },
+  "source_path_base": "daily-reports/2026-11-23",
+  "workflow_audit": {
+    "independent": {
+      "config": ".github/workflows/qpix-independent.yml",
+      "enable_nba_cdn": true,
+      "enable_nba_v3": false,
+      "default_game_date": "previous America/New_York calendar date"
+    },
+    "unified_shadow": {
+      "run_id": 45307494797,
+      "verified_artifact_game_date": "2026-11-22",
+      "artifact_id": 14880923347,
+      "enable_nba_v3": false
+    },
+    "daily": {
+      "run_id": 45303978767,
+      "verified_artifact_game_date": "2026-11-22",
+      "artifact_id": 14879063972,
+      "enable_nba_v3": false
+    },
+    "local_codex_qpix": {
+      "game_date": "2026-11-23",
+      "published_inputs": [
+        "NBA CDN LiveData",
+        "NBA Advanced V3"
+      ]
+    },
+    "workflows_changed": false
+  },
+  "local_recovery": {
+    "reused_final_historical_raw_files": 20,
+    "earlier_november_23_snapshots": "Last-night raw files covered CDN and Advanced only. Eight finals matched the final archive. Two early in-progress snapshots remained locally preserved.",
+    "additional_local_only_verified_endpoint_files_found": 0
+  },
+  "retrieval_audit": {
+    "first_pass_requested": 81,
+    "first_pass_received": 81,
+    "targeted_retry_requests": 15,
+    "targeted_retry_received": 15,
+    "cdn_or_advanced_refetches": 0,
+    "source_attempts": "Non-verifying initial and retry responses are retained as evidence and never counted as verified coverage."
+  },
+  "scoring_recalculated": false
+}
