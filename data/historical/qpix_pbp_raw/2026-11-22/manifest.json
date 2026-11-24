@@ -1,0 +1,237 @@
+{
+  "schema": "qpix_espn_pbp_raw_v1",
+  "date_et": "2026-11-22",
+  "created_utc": "2026-11-24T01:07:23.492520+00:00",
+  "source": "ESPN scoreboard and game summary JSON",
+  "final_games": 7,
+  "reconciled_games": 7,
+  "games": [
+    {
+      "espn_event_id": "401910029",
+      "game_date_et": "2026-11-22",
+      "status": "FINAL",
+      "home": {
+        "team_id": "1",
+        "alias": "ATL",
+        "points": 107
+      },
+      "away": {
+        "team_id": "8",
+        "alias": "DET",
+        "points": 97
+      },
+      "events": 485,
+      "periods": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "terminal_score": {
+        "away": 97,
+        "home": 107
+      },
+      "terminal_score_matches": true,
+      "event_ids_unique": true,
+      "coverage": "FOUR_PERIOD_SCORE_RECONCILED",
+      "raw_summary": "games/401910029/summary.json",
+      "raw_plays": "games/401910029/plays.json",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910029"
+    },
+    {
+      "espn_event_id": "401910030",
+      "game_date_et": "2026-11-22",
+      "status": "FINAL",
+      "home": {
+        "team_id": "14",
+        "alias": "MIA",
+        "points": 123
+      },
+      "away": {
+        "team_id": "25",
+        "alias": "OKC",
+        "points": 113
+      },
+      "events": 457,
+      "periods": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "terminal_score": {
+        "away": 113,
+        "home": 123
+      },
+      "terminal_score_matches": true,
+      "event_ids_unique": true,
+      "coverage": "FOUR_PERIOD_SCORE_RECONCILED",
+      "raw_summary": "games/401910030/summary.json",
+      "raw_plays": "games/401910030/plays.json",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910030"
+    },
+    {
+      "espn_event_id": "401910031",
+      "game_date_et": "2026-11-22",
+      "status": "FINAL",
+      "home": {
+        "team_id": "27",
+        "alias": "WSH",
+        "points": 116
+      },
+      "away": {
+        "team_id": "19",
+        "alias": "ORL",
+        "points": 96
+      },
+      "events": 430,
+      "periods": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "terminal_score": {
+        "away": 96,
+        "home": 116
+      },
+      "terminal_score_matches": true,
+      "event_ids_unique": true,
+      "coverage": "FOUR_PERIOD_SCORE_RECONCILED",
+      "raw_summary": "games/401910031/summary.json",
+      "raw_plays": "games/401910031/plays.json",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910031"
+    },
+    {
+      "espn_event_id": "401910032",
+      "game_date_et": "2026-11-22",
+      "status": "FINAL",
+      "home": {
+        "team_id": "4",
+        "alias": "CHI",
+        "points": 145
+      },
+      "away": {
+        "team_id": "7",
+        "alias": "DEN",
+        "points": 151
+      },
+      "events": 526,
+      "periods": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "terminal_score": {
+        "away": 151,
+        "home": 145
+      },
+      "terminal_score_matches": true,
+      "event_ids_unique": true,
+      "coverage": "FOUR_PERIOD_SCORE_RECONCILED",
+      "raw_summary": "games/401910032/summary.json",
+      "raw_plays": "games/401910032/plays.json",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910032"
+    },
+    {
+      "espn_event_id": "401910033",
+      "game_date_et": "2026-11-22",
+      "status": "FINAL",
+      "home": {
+        "team_id": "26",
+        "alias": "UTAH",
+        "points": 114
+      },
+      "away": {
+        "team_id": "6",
+        "alias": "DAL",
+        "points": 116
+      },
+      "events": 470,
+      "periods": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "terminal_score": {
+        "away": 116,
+        "home": 114
+      },
+      "terminal_score_matches": true,
+      "event_ids_unique": true,
+      "coverage": "FOUR_PERIOD_SCORE_RECONCILED",
+      "raw_summary": "games/401910033/summary.json",
+      "raw_plays": "games/401910033/plays.json",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910033"
+    },
+    {
+      "espn_event_id": "401910034",
+      "game_date_et": "2026-11-22",
+      "status": "FINAL",
+      "home": {
+        "team_id": "18",
+        "alias": "NY",
+        "points": 113
+      },
+      "away": {
+        "team_id": "11",
+        "alias": "IND",
+        "points": 106
+      },
+      "events": 525,
+      "periods": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "terminal_score": {
+        "away": 106,
+        "home": 113
+      },
+      "terminal_score_matches": true,
+      "event_ids_unique": true,
+      "coverage": "FOUR_PERIOD_SCORE_RECONCILED",
+      "raw_summary": "games/401910034/summary.json",
+      "raw_plays": "games/401910034/plays.json",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910034"
+    },
+    {
+      "espn_event_id": "401910035",
+      "game_date_et": "2026-11-22",
+      "status": "FINAL",
+      "home": {
+        "team_id": "9",
+        "alias": "GS",
+        "points": 88
+      },
+      "away": {
+        "team_id": "2",
+        "alias": "BOS",
+        "points": 87
+      },
+      "events": 478,
+      "periods": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "terminal_score": {
+        "away": 87,
+        "home": 88
+      },
+      "terminal_score_matches": true,
+      "event_ids_unique": true,
+      "coverage": "FOUR_PERIOD_SCORE_RECONCILED",
+      "raw_summary": "games/401910035/summary.json",
+      "raw_plays": "games/401910035/plays.json",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401910035"
+    }
+  ],
+  "errors": [],
+  "note": "Raw source only; no player-level C6/C11 or advanced ratings inferred."
+}
