@@ -1,0 +1,108 @@
+{
+  "schema": "qpix_espn_pbp_raw_v1",
+  "date_et": "2026-11-24",
+  "created_utc": "2026-11-25T22:39:41.700711+00:00",
+  "source": "ESPN scoreboard and game summary JSON",
+  "final_games": 3,
+  "reconciled_games": 3,
+  "games": [
+    {
+      "espn_event_id": "401909314",
+      "game_date_et": "2026-11-24",
+      "status": "FINAL",
+      "home": {
+        "team_id": "19",
+        "alias": "ORL",
+        "points": 86
+      },
+      "away": {
+        "team_id": "8",
+        "alias": "DET",
+        "points": 104
+      },
+      "events": 440,
+      "periods": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "terminal_score": {
+        "away": 104,
+        "home": 86
+      },
+      "terminal_score_matches": true,
+      "event_ids_unique": true,
+      "coverage": "FOUR_PERIOD_SCORE_RECONCILED",
+      "raw_summary": "games/401909314/summary.json",
+      "raw_plays": "games/401909314/plays.json",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909314"
+    },
+    {
+      "espn_event_id": "401909315",
+      "game_date_et": "2026-11-24",
+      "status": "FINAL",
+      "home": {
+        "team_id": "27",
+        "alias": "WSH",
+        "points": 116
+      },
+      "away": {
+        "team_id": "2",
+        "alias": "BOS",
+        "points": 131
+      },
+      "events": 524,
+      "periods": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "terminal_score": {
+        "away": 131,
+        "home": 116
+      },
+      "terminal_score_matches": true,
+      "event_ids_unique": true,
+      "coverage": "FOUR_PERIOD_SCORE_RECONCILED",
+      "raw_summary": "games/401909315/summary.json",
+      "raw_plays": "games/401909315/plays.json",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909315"
+    },
+    {
+      "espn_event_id": "401909316",
+      "game_date_et": "2026-11-24",
+      "status": "FINAL",
+      "home": {
+        "team_id": "7",
+        "alias": "DEN",
+        "points": 101
+      },
+      "away": {
+        "team_id": "6",
+        "alias": "DAL",
+        "points": 120
+      },
+      "events": 488,
+      "periods": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "terminal_score": {
+        "away": 120,
+        "home": 101
+      },
+      "terminal_score_matches": true,
+      "event_ids_unique": true,
+      "coverage": "FOUR_PERIOD_SCORE_RECONCILED",
+      "raw_summary": "games/401909316/summary.json",
+      "raw_plays": "games/401909316/plays.json",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909316"
+    }
+  ],
+  "errors": [],
+  "note": "Raw source only; no player-level C6/C11 or advanced ratings inferred."
+}
