@@ -22,6 +22,11 @@ on:
         description: 'Optional YYYY-MM-DD ET game date (defaults to previous ET day)'
         required: false
         type: string
+      archive_od_only:
+        description: 'Replay verified Memphis-Charlotte archive without live collection'
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -32,6 +37,7 @@ concurrency:
 
 jobs:
   source-shadow:
+    if: ${{ !inputs.archive_od_only }}
     name: Independently test verified sources and production scoring
     runs-on: ubuntu-latest
     env:
@@ -143,3 +149,32 @@ jobs:
           echo "Shadow test result: $OUTCOME" >> "$GITHUB_STEP_SUMMARY"
           echo 'No commits, pushes, or publication to main are performed by this workflow.' >> "$GITHUB_STEP_SUMMARY"
 
+
+  archive-od-shadow:
+    name: Archive-only experimental O/D replay
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.archive_od_only }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: 02533bf132971ca60399c1d5b6ff224f1d3863ce
+          path: archive-input
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Replay pinned archived game
+        run: |
+          node --check scripts/qpix_od_shadow.mjs
+          node scripts/qpix_od_shadow.mjs archive-input/data/historical/qpix_nba_backfill/2026-27/daily-reports/2026-11-23/raw 0022600287 shadow-output/0022600287-od.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qpix-od-experimental-0022600287
+          path: shadow-output/
+          if-no-files-found: warn
+          retention-days: 7
