@@ -1,0 +1,125 @@
+name: QPIX Facebook Page Publication
+
+on:
+  workflow_run:
+    workflows: [QPIX HTML Dashboard Deploy]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: 'Manual operations never create Facebook posts'
+        required: true
+        default: preview
+        type: choice
+        options: [preview, check_connection, reconcile]
+      date_et:
+        description: 'Preview/reconciliation game date (YYYY-MM-DD); blank selects yesterday in New York'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  actions: read
+
+# One running publisher. The durable receipt also protects manual reruns and crashes.
+concurrency:
+  group: qpix-facebook-page-61583650594496
+  cancel-in-progress: false
+
+jobs:
+  social:
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'workflow_dispatch' ||
+       (github.event.workflow_run.conclusion == 'success' &&
+        github.event.workflow_run.head_branch == 'main' &&
+        github.event.workflow_run.head_repository.full_name == github.repository))
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: write
+      actions: read
+    env:
+      QPIX_DEPLOY_RUN_ID: ${{ github.event.workflow_run.id }}
+      QPIX_DEPLOY_RUN_ATTEMPT: ${{ github.event.workflow_run.run_attempt }}
+      FACEBOOK_PAGE_ID: '61583650594496'
+      FACEBOOK_GRAPH_VERSION: ${{ vars.FACEBOOK_GRAPH_VERSION || 'v27.0' }}
+    steps:
+      - name: Checkout trusted publisher
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Download this deployment attempt's frozen source
+        if: github.event_name == 'workflow_run'
+        uses: actions/download-artifact@v4
+        with:
+          name: qpix-facebook-source-${{ github.event.workflow_run.id }}-${{ github.event.workflow_run.run_attempt }}
+          path: ./.qpix-publication/
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+
+      - name: Generate the deployed report's social preview
+        if: github.event_name == 'workflow_run'
+        id: preview
+        run: python3 scripts/qpix_facebook.py preview
+
+      - name: Generate a manual preview
+        if: github.event_name == 'workflow_dispatch' && inputs.operation == 'preview'
+        env:
+          PREVIEW_DATE: ${{ inputs.date_et }}
+        run: |
+          if [[ -z "$PREVIEW_DATE" ]]; then
+            PREVIEW_DATE="$(TZ=America/New_York date -d 'yesterday' +%F)"
+          fi
+          python3 scripts/qpix_facebook.py preview --date "$PREVIEW_DATE"
+
+      - name: Check the Page connection without posting
+        if: github.event_name == 'workflow_dispatch' && inputs.operation == 'check_connection'
+        env:
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+        run: python3 scripts/qpix_facebook.py check
+
+      - name: Reconcile an existing receipt without creating a post
+        if: github.event_name == 'workflow_dispatch' && inputs.operation == 'reconcile'
+        env:
+          RECEIPT_DATE: ${{ inputs.date_et }}
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          if [[ -z "$RECEIPT_DATE" ]]; then
+            RECEIPT_DATE="$(TZ=America/New_York date -d 'yesterday' +%F)"
+          fi
+          python3 scripts/qpix_facebook.py reconcile --date "$RECEIPT_DATE"
+
+      - name: Preserve social preview
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qpix-facebook-preview-${{ github.run_id }}-${{ github.run_attempt }}
+          path: docs/social/*.facebook.txt
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Publish one daily post to QPIX
+        if: >-
+          github.event_name == 'workflow_run' &&
+          steps.preview.outputs.eligible == 'true' &&
+          vars.QPIX_FACEBOOK_ENABLED == 'true'
+        env:
+          QPIX_FACEBOOK_ENABLED: 'true'
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/qpix_facebook.py publish
+
+      - name: Record connection status
+        if: github.event_name == 'workflow_run' && vars.QPIX_FACEBOOK_ENABLED != 'true'
+        run: |
+          echo 'Facebook publication is disabled. Add the Page authorization secret, then enable QPIX_FACEBOOK_ENABLED when ready.' >> "$GITHUB_STEP_SUMMARY"
