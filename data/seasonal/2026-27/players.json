@@ -2,7 +2,7 @@
   "schema_version": 1,
   "season": "2026-27",
   "season_start_et": "2026-10-20",
-  "through_date_et": "2026-11-25",
+  "through_date_et": "2026-11-26",
   "status": "PARTIAL_UNVERIFIED_SEASON_COVERAGE",
   "baseline_policy": {
     "current_game_excluded_from_pregame_average": true,
@@ -24,7 +24,8 @@
       "2026-11-22",
       "2026-11-23",
       "2026-11-24",
-      "2026-11-25"
+      "2026-11-25",
+      "2026-11-26"
     ],
     "source_audits": [
       {
